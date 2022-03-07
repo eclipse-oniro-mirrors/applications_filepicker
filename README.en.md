@@ -1,36 +1,60 @@
-# applications_filepicker
+# Filepicker<a name="EN-US_TOPIC_0000001103330836"></a>
 
-#### Description
-{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}
+-   [Introduction](#section11660541593)
+    -   [Architecture](#section125101832114213)
 
-#### Software Architecture
-Software architecture description
+-   [Directory Structure](#section161941989596)
+-   [Repositories Involved](#section1371113476307)
 
-#### Installation
+## Introduction<a name="section11660541593"></a>
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+Filepicker is a system app preinstalled in OpenHarmony. It provides users with file selection and saving functions.
 
-#### Instructions
+### Architecture<a name="section125101832114213"></a>
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+![](figures\FP_FMS_EN.png)
 
-#### Contribution
+## Directory Structure<a name="section161941989596"></a>
 
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
+```
+/applications/standard/filepicker
+├── figures                     # 架构图目录
+├── entry                       # 主entry模块目录
+│   └── src
+│       ├── main
+│           ├── js              # js代码目录
+│           ├── resources       # 资源配置文件存放目录
+│           └── config.json     # 全局配置文件
+├── product                     # 产品层模块目录
+│   └── pad                     # pad模式模块目录
+|       └── src
+|           ├── main
+|               ├── ets
+│                   ├── MainAbility              # MainAbility代码目录
+|                       ├── module               # 公共文件目录
+|                       ├── pages                # 业务特性的View层目录
+|                       ├── workers              # worker对于的js文件目录
+│                   └── AbilityStage.ts
+|               ├── resources   # 资源目录
+|               └── config.json # 项目配置信息
+│   └── phone                   # phone模式模块目录
+||       └── src
+|           ├── main
+|               ├── ets
+│                   ├── MainAbility              # MainAbility代码目录
+|                       ├── module               # 公共文件目录
+|                       ├── pages                # 业务特性的View层目录
+|                       ├── workers              # worker对于的js文件目录
+│                   └── AbilityStage.ts
+|               ├── resources   # 资源目录
+|               └── config.json # 项目配置信息
+├── signature                   # 证书文件目录
+├── LICENSE                     # 许可文件
+```
 
+## Repositories Involved<a name="section1371113476307"></a>
 
-#### Gitee Feature
+System apps
 
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+**applications_filepicker**
+
