@@ -12,7 +12,7 @@ Filepicker is a system app preinstalled in OpenHarmony. It provides users with f
 
 ### Architecture<a name="section125101832114213"></a>
 
-![](figures\FP_FMS_EN.png)
+![](figures\Fp_architecture.png)
 
 ## Directory Structure<a name="section161941989596"></a>
 
@@ -38,7 +38,7 @@ Filepicker is a system app preinstalled in OpenHarmony. It provides users with f
 |               ├── resources   # 资源目录
 |               └── config.json # 项目配置信息
 │   └── phone                   # phone模式模块目录
-||       └── src
+|       └── src
 |           ├── main
 |               ├── ets
 │                   ├── MainAbility              # MainAbility代码目录

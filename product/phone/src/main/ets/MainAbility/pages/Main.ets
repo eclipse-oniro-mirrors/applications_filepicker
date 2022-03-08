@@ -22,11 +22,11 @@ import { FileInfo, TopPathInfo } from '../module/FileInfo.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
 import { menuLevel, terminate_reason, media_type } from '../module/Constants.ets'
 import { LogInfo, LogDebug } from '../module/LogUtils.ets'
-import { getRootPath, changeStringToType, updateTopPathInfo } from '../module/Utils.ets'
+import { changeStringToType, updateTopPathInfo } from '../module/Utils.ets'
 import { terminateSelfWithResult } from '../module/AbilityUtils.ets'
 import { WarningDialog } from '../module/DialogUtils.ets'
 
-import { getFirstMenu, getListFile } from '../module/FileManagerServiceUtils.ets'
+import { getFirstMenu } from '../module/FileManagerServiceUtils.ets'
 
 @Entry
 @Component

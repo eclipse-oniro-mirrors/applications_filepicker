@@ -3,13 +3,13 @@ apply plugin: 'com.huawei.ohos.hap'
 ohos {
     signingConfigs {
         debug {
-            storeFile file('D:\\Code\\new_sign\\p12.p12')
-            storePassword '00000019692CC875C2B74C0BF49C5803DDA8F63D4020E3CDFD8708EC5AF1D6259A4E8B0CFCEC084EB9'
+            storeFile file('D:\\sign_files\\filepicker\\filepicker.p12')
+            storePassword '000000192B965A23BC71B95C8A7B2581FAEC87839B537006EC16B5A446ACD3A3E5954D4FC2B584E1CF'
             keyAlias = 'myApplicationDebug'
-            keyPassword '0000001916FEB3091B0CC132A29493DEF99BB6E6AE279792BC8F509B3E31DC1E06E1A64527B8EE20DB'
+            keyPassword '00000019A71CFB9ABDA0A950D1E5FB94C584A5189DF69B8F1F3F64B679B61A33919DE9E98173A4E56A'
             signAlg = 'SHA256withECDSA'
-            profile file('D:\\Code\\new_sign\\myApplication_ohos_Provision.p7b')
-            certpath file('D:\\Code\\new_sign\\myApplication_ohos.cer')
+            profile file('D:\\sign_files\\filepicker\\filepicker.p7b')
+            certpath file('D:\\sign_files\\filepicker\\filepicker.cer')
         }
     }
     compileSdkVersion 8
