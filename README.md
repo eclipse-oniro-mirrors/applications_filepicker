@@ -7,6 +7,7 @@
 - [相关仓](#section1371113476307)
 - [签名打包](#section161941989597)
 - [编译运行](#section161941989598)
+- [使用方法](#section161941989599)
 
 ## 简介<a name="section11660541593"></a>
 
@@ -70,3 +71,47 @@ FilePicker应用是OpenHarmony中预置的系统应用，为用户提供文件�
 2. 将编译生成的签名后的hap包 如phone模块的phone-entry-debug-standard-ark-signed.hap放到sig_hap.rar解压的目录下
 3. 修改sign-filepicker-phone.bat中的-inputFile、-outputFile并运行sign-filepicker-phone.bat即可生成可安装的hap包
 
+## 使用方法<a name="section161941989599"></a>
+
+通过startAbilityForResult拉起FilePicker并获取FilePicker返回的数据，示例代码如下
+
+``
+
+```js
+// 拉起file picker选择文件
+globalThis.context.startAbilityForResult(
+    {
+        bundleName: "com.ohos.filepicker",
+        abilityName: "com.ohos.filepicker.MainAbility",
+        parameters: {
+            'startMode': 'choose', //choose or save    
+        }
+    },
+    { windowMode: 102 }
+)
+    
+// 拉起file picker保存文件
+globalThis.context.startAbilityForResult(
+	{
+        bundleName: "com.ohos.filepicker",
+        abilityName: "com.ohos.filepicker.MainAbility",
+        parameters: {
+        'startMode': 'save', //choose or save
+        'saveFile': 'test.jpg',
+        }
+    },
+    { windowMode: 102 }
+)
+
+// file picker返回给startAbilityForResult的数据
+var abilityResult = {
+    resultCode: resultCode,
+    want: {
+        parameters: {
+            'startMode': startMode,
+            'result': result
+        }
+    }
+}
+globalThis.context.terminateSelfWithResult(abilityResult)
+```
