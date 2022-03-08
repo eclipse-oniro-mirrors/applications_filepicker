@@ -1,39 +1,117 @@
-# applications_filepicker
+# FilePicker<a name="ZH-CN_TOPIC_0000001103330836"></a>
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+- [简介](#section11660541593)
+    -   [架构图](#section125101832114213)
 
-#### 软件架构
-软件架构说明
+- [目录](#section161941989596)
+- [相关仓](#section1371113476307)
+- [签名打包](#section161941989597)
+- [编译运行](#section161941989598)
+- [使用方法](#section161941989599)
 
+## 简介<a name="section11660541593"></a>
 
-#### 安装教程
+FilePicker应用是OpenHarmony中预置的系统应用，为用户提供文件选择及保存功能。
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+### 架构图<a name="section125101832114213"></a>
 
-#### 使用说明
+![](figures\Fp_architecture.png)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+## 目录<a name="section161941989596"></a>
 
-#### 参与贡献
+```
+/applications/standard/filepicker
+├── figures                     # 架构图目录
+├── entry                       # 主entry模块目录
+│   └── src
+│       ├── main
+│           ├── js              # js代码目录
+│           ├── resources       # 资源配置文件存放目录
+│           └── config.json     # 全局配置文件
+├── product                     # 产品层模块目录
+│   └── pad                     # pad模式模块目录
+|       └── src
+|           ├── main
+|               ├── ets
+│                   ├── MainAbility              # MainAbility代码目录
+|                       ├── module               # 公共文件目录
+|                       ├── pages                # 业务特性的View层目录
+|                       ├── workers              # worker对于的js文件目录
+│                   └── AbilityStage.ts
+|               ├── resources   # 资源目录
+|               └── config.json # 项目配置信息
+│   └── phone                   # phone模式模块目录
+|       └── src
+|           ├── main
+|               ├── ets
+│                   ├── MainAbility              # MainAbility代码目录
+|                       ├── module               # 公共文件目录
+|                       ├── pages                # 业务特性的View层目录
+|                       ├── workers              # worker对于的js文件目录
+│                   └── AbilityStage.ts
+|               ├── resources   # 资源目录
+|               └── config.json # 项目配置信息
+├── signature                   # 证书文件目录
+├── LICENSE                     # 许可文件
+```
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+## 相关仓<a name="section1371113476307"></a>
 
+系统应用
 
-#### 特技
+**applications_filepicker**
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+## 签名打包<a name="section161941989597"></a>
+1. 针对product下的每一个模块，配置build.gradle中的signingConfigs，
+2. 将signature目录下的sign_files.rar解压后放在build.gradle目录中配置的相应路径即可；
+3. 把signature目录下的sig_hap.rar解压到任意目录
+
+## 编译运行<a name="section161941989598"></a>
+1. 签名配置完成后通过IDE Build -> Make All Modules即可编译出每个模块对应的hap包；
+2. 将编译生成的签名后的hap包 如phone模块的phone-entry-debug-standard-ark-signed.hap放到sig_hap.rar解压的目录下
+3. 修改sign-filepicker-phone.bat中的-inputFile、-outputFile并运行sign-filepicker-phone.bat即可生成可安装的hap包
+
+## 使用方法<a name="section161941989599"></a>
+
+通过startAbilityForResult拉起FilePicker并获取FilePicker返回的数据，示例代码如下
+
+``
+
+```js
+// 拉起file picker选择文件
+globalThis.context.startAbilityForResult(
+    {
+        bundleName: "com.ohos.filepicker",
+        abilityName: "com.ohos.filepicker.MainAbility",
+        parameters: {
+            'startMode': 'choose', //choose or save    
+        }
+    },
+    { windowMode: 102 }
+)
+    
+// 拉起file picker保存文件
+globalThis.context.startAbilityForResult(
+	{
+        bundleName: "com.ohos.filepicker",
+        abilityName: "com.ohos.filepicker.MainAbility",
+        parameters: {
+        'startMode': 'save', //choose or save
+        'saveFile': 'test.jpg',
+        }
+    },
+    { windowMode: 102 }
+)
+
+// file picker返回给startAbilityForResult的数据
+var abilityResult = {
+    resultCode: resultCode,
+    want: {
+        parameters: {
+            'startMode': startMode,
+            'result': result
+        }
+    }
+}
+globalThis.context.terminateSelfWithResult(abilityResult)
+```

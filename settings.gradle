@@ -1,0 +1,3 @@
+include ':entry', ':phone', ':pad'
+project(':phone').projectDir = new File('./product/phone')
+project(':pad').projectDir = new File('./product/pad')
