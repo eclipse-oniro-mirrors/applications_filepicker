@@ -14,6 +14,9 @@
  */
 
 import { FileInfo } from './FileInfo.ets'
+import { LogInfo } from './LogUtils.ets'
+
+let TAG: string = 'DialogUtils'
 
 @CustomDialog
 export struct WarningDialog {
@@ -87,11 +90,19 @@ export struct ChooseDialog {
         .height(px2vp(50))
         .backgroundColor(Color.White)
         .onClick(() => {
-          let item: FileInfo = AppStorage.Get<FileInfo>('selectedFileInfo')
-          if (item != null) {
+          let choseItem: FileInfo = AppStorage.Get<FileInfo>('selectedFileInfo')
+          if (choseItem != null) {
             let files: Array<FileInfo> = AppStorage.Get('choseFiles')
-            if (files.indexOf(item) == -1) {
-              files.push(item)
+            let flag: boolean = true
+            files.forEach((item: FileInfo) => {
+              LogInfo(TAG, 'item.name = ' + item.name + '; item.path = ' + item.path)
+              LogInfo(TAG, 'choseItem.name = ' + choseItem.name + '; choseItem.path = ' + choseItem.path)
+              if (item.name == choseItem.name && item.path == choseItem.path) {
+                  flag = false
+              }
+            })
+            if (flag) {
+              files.push(choseItem)
               AppStorage.Set('choseFiles', files)
             }
           }

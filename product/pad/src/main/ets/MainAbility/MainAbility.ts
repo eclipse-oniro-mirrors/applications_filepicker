@@ -14,6 +14,10 @@
  */
 
 import Ability from '@ohos.application.Ability'
+import display from '@ohos.display'
+
+let displayWidth: number = 0
+let displayHeight: number = 0
 
 export default class MainAbility extends Ability {
     onCreate(want, launchParam) {
@@ -35,11 +39,19 @@ export default class MainAbility extends Ability {
 
         globalThis.context = this.context
         windowStage.setUIContent(this.context, 'pages/Main', null)
+
+        display.getDefaultDisplay().then(dis => {
+            displayWidth = dis.width
+            displayHeight = dis.height
+        })
+
         windowStage.getMainWindow().then(win => {
-            console.log("cjl windowStage.getMainWindow()")
+            console.log("filePicker_MainAbility: windowStage.getMainWindow()")
             win.resetSize(vp2px(752), vp2px(446))
 
-            win.moveTo(100, 0)
+            let positionX: number = (displayWidth - vp2px(752)) / 2
+            let positionY: number = (displayHeight - vp2px(446)) / 2
+            win.moveTo(positionX, positionY)
 
             win.on('windowSizeChange', () => {
                 win.resetSize(vp2px(752), vp2px(446))

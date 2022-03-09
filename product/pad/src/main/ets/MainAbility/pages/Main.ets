@@ -14,6 +14,7 @@
  */
 
 import worker from '@ohos.worker'
+import inputConsumer from '@ohos.multimodalInput.inputConsumer'
 import { FirstLevelByType } from './FirstLevelByType.ets'
 import { SecondLevelByFold } from './SecondLevelByFold.ets'
 import { ThirdLevelHasDetail } from '../pages/ThirdLevelHasDetail.ets'
@@ -332,13 +333,25 @@ struct Index {
 @Component
 struct LeftDialogComponent {
   private TAG: string = 'LeftDialogComponent'
-  @Link mFirstMenuData: FileInfo[]
+  @Link @Watch('firstMenuDataChange') mFirstMenuData: FileInfo[]
   @Link @Watch('typeStatusChange') mType: string
   @Link mMenuLevel: number
   @Link mCurrentPath: string
 
   //@StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = getRootPath()
   @StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = updateTopPathInfo([], '文件类型', '')
+
+  private aboutToAppear() {
+    LogInfo(this.TAG, 'aboutToAppear')
+    //this.subscribeMultiInput()
+  }
+
+  firstMenuDataChange() {
+    LogInfo(this.TAG, 'firstMenuDataChange')
+    if (this.mFirstMenuData.length > 0) {
+      this.subscribeMultiInput()
+    }
+  }
 
   typeStatusChange() {
     LogInfo(this.TAG, 'typeStatusChange level = ' + this.mMenuLevel + ';mType = ' + this.mType)
@@ -349,6 +362,56 @@ struct LeftDialogComponent {
         item.list_background = ''
       }
     });
+  }
+
+  private subscribeMultiInput() {
+    LogInfo(this.TAG, 'subscribeMultiInput')
+    let mediaTypes: Array<string> = []
+    LogInfo(this.TAG, 'subscribeMultiInput mFirstMenuData = ' + this.mFirstMenuData.length)
+    this.mFirstMenuData.forEach((item: FileInfo) => {
+      mediaTypes.push(item.mediaType)
+      LogInfo(this.TAG, 'subscribeMultiInput mediaType = ' + item.mediaType)
+    })
+
+    let tabKeyOption = {
+      preKeys: [], finalKey: 2049, isFinalKeyDown: true, finalKeyDownDuration: 0
+    }
+    let leftKeyOption = {
+      preKeys: [], finalKey: 2014, isFinalKeyDown: true, finalKeyDownDuration: 0
+    }
+    let rightKeyOption = {
+      preKeys: [], finalKey: 2015, isFinalKeyDown: true, finalKeyDownDuration: 0
+    }
+    let upKeyOption = {
+      preKeys: [], finalKey: 2012, isFinalKeyDown: true, finalKeyDownDuration: 0
+    }
+    let downKeyOption = {
+      preKeys: [], finalKey: 2013, isFinalKeyDown: true, finalKeyDownDuration: 0
+    }
+    LogInfo(this.TAG, 'subscribeMultiInput 1')
+    inputConsumer.on('key', tabKeyOption, (keyOption) => {
+      let index: number = mediaTypes.indexOf(this.mType)
+      index = (index + 1) % mediaTypes.length
+      this.processClickEvent(mediaTypes[index], this.mFirstMenuData[index].path, menuLevel.MENU_SECOND_LEVEL_BY_FOLD)
+    })
+    LogInfo(this.TAG, 'subscribeMultiInput 2')
+    inputConsumer.on('key', leftKeyOption, (keyOption) => {
+      LogInfo(this.TAG, 'subscribeMultiInput 3')
+//      let index: number = mediaTypes.indexOf(this.mType)
+//      index = (index + 1) % mediaTypes.length
+//      this.processClickEvent(mediaTypes[index], this.mFirstMenuData[index].path, menuLevel.MENU_SECOND_LEVEL_BY_FOLD)
+    })
+    LogInfo(this.TAG, 'subscribeMultiInput 3')
+  }
+
+  private processClickEvent(mediaType: string, currentPath: string, menuLevel: number) {
+    LogInfo(this.TAG, 'processClickEvent')
+    updateTopPathInfo([], '文件类型', '')
+    updateTopPathInfo(AppStorage.Get('topPathInfo'), changeTypeToString(mediaType), currentPath)
+
+    this.mMenuLevel = menuLevel
+    this.mType = mediaType
+    this.mCurrentPath = currentPath
   }
 
   build() {
