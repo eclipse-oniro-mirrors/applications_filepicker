@@ -97,6 +97,17 @@ struct GridItemView {
     autoCancel: true
   })
   @State gridItem: FileInfo = new FileInfo('')
+  @StorageLink('choseFiles') @Watch('choseFilesChange') choseFiles: Array<FileInfo> = []
+
+  private choseFilesChange() {
+    this.choseFiles.forEach((item: FileInfo) => {
+      if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
+        this.gridItem.opacity = 1
+        this.gridItem.font_color = Color.White
+        this.gridItem.list_background = '#2E88FF'
+      }
+    })
+  }
 
   build() {
     Flex({
@@ -141,20 +152,25 @@ struct GridItemView {
     .gesture(
       LongPressGesture({ repeat: false })
         .onAction((event: GestureEvent) => {
-          AppStorage.SetOrCreate('selectedFileInfo', this.gridItem)
+          AppStorage.SetOrCreate<FileInfo>('selectedFileInfo', this.gridItem)
           this.dialogController.open()
       })
     )
     .onClick(() => {
       let choseFiles: Array<FileInfo> = AppStorage.Get('choseFiles')
-      let index: number = choseFiles.indexOf(this.gridItem)
+      let index: number = -1
+      choseFiles.forEach((item: FileInfo) => {
+        if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
+         index = choseFiles.indexOf(item)
+        }
+      })
       if (index == -1) {
         this.gridItem.opacity = 1
         this.gridItem.font_color = Color.White
         this.gridItem.list_background = '#2E88FF'
         choseFiles.push(this.gridItem)
       } else {
-        choseFiles.splice(index)
+        choseFiles.splice(index, 1)
         this.gridItem.opacity = 1
         this.gridItem.font_color = Color.Black
         this.gridItem.list_background = ''
