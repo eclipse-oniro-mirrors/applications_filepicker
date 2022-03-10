@@ -41,14 +41,14 @@ FilePicker应用是OpenHarmony中预置的系统应用，为用户提供文件�
 ```
 
 ## 签名
-1. 针对product下的每一个模块，配置build.gradle中的signingConfig.
-2. 将signature目录下的sign_files.rar解压后放在build.gradle目录中配置的相应路径即可完成默认签名配置.
-3. 把signature目录下的sig_hap.rar解压到任意目录.
+1. 针对product下的每一个模块，配置build.gradle中的signingConfig。
+2. 将signature目录下的sign_files.rar解压后放在build.gradle目录中配置的相应路径即可完成默认签名配置。
+3. 把signature目录下的sig_hap.rar解压到任意目录。
 
 ## 编译运行
-1. 签名配置完成后通过IDE Build -> Make All Modules即可编译出每个模块对应的hap包.
-2. 将编译生成的签名后的hap包 如phone模块的phone-entry-debug-standard-ark-signed.hap放到sig_hap.rar解压的目录.
-3. 修改sign-filepicker-phone.bat中的-inputFile、-outputFile并运行sign-filepicker-phone.bat即可生成可安装的hap包.
+1. 签名配置完成后通过IDE Build -> Make All Modules即可编译出每个模块对应的hap包。
+2. 将编译生成的签名后的hap包 如phone模块的phone-entry-debug-standard-ark-signed.hap放到sig_hap.rar解压的目录。
+3. 修改sign-filepicker-phone.bat中的-inputFile、-outputFile并运行sign-filepicker-phone.bat即可生成可安装的hap包。
 
 ## 使用方法
 
