@@ -6,11 +6,11 @@ FilePicker应用是OpenHarmony中预置的系统应用，为用户提供文件�
 
 ### 架构图
 
-![](figures\Fp_architecture.png)
+![](figures/Fp_architecture.png)
 
 ## 目录
 
-```js
+```
 /applications/standard/filepicker
 ├── figures                     # 架构图目录
 ├── product                     # 产品层模块目录
