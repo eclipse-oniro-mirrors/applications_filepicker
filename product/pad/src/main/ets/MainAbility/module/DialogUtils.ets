@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { FileInfo } from './FileInfo.ets'
-import { LogInfo } from './LogUtils.ets'
+import { FileInfo } from '../../../../../../../feature/FileInfo.ets'
+import { LogInfo } from '../../../../../../../common/LogUtils.ets'
 
 let TAG: string = 'DialogUtils'
 

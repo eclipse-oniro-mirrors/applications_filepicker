@@ -13,11 +13,14 @@
  * limitations under the License.
  */
 
+import { LogInfo } from '../../../../../../common/LogUtils.ets'
+
+let TAG: string = 'APP'
 export default {
   onCreate() {
-    console.info('Application onCreate')
+    LogInfo(TAG, 'Application onCreate')
   },
   onDestroy() {
-    console.info('Application onDestroy')
+    LogInfo(TAG, 'Application onDestroy')
   },
 }

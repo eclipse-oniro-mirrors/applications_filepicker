@@ -19,14 +19,15 @@ import { FirstLevelByType } from './FirstLevelByType.ets'
 import { SecondLevelByFold } from './SecondLevelByFold.ets'
 import { ThirdLevelHasDetail } from '../pages/ThirdLevelHasDetail.ets'
 import { ThirdLevelHasPic } from '../pages/ThirdLevelHasPic.ets'
-import { FileInfo, TopPathInfo } from '../module/FileInfo.ets'
+import { FileInfo, TopPathInfo } from '../../../../../../../feature/FileInfo.ets'
 import { menuLevel, terminate_reason, media_type, pad_size, mediaName } from '../module/Constants.ets'
-import { LogInfo, LogDebug } from '../module/LogUtils.ets'
-import { getRootPath, changeStringToType, changeTypeToString, updateTopPathInfo } from '../module/Utils.ets'
+import { LogInfo, LogDebug } from '../../../../../../../common/LogUtils.ets'
+import { changeStringToType, changeTypeToString, updateTopPathInfo } from '../module/Utils.ets'
 import { terminateSelfWithResult } from '../module/AbilityUtils.ets'
 import { WarningDialog } from '../module/DialogUtils.ets'
 
-import { getFirstMenu, getListFile } from '../module/FileManagerServiceUtils.ets'
+import { getFirstMenu } from '../module/FileManagerServiceUtils.ets'
+
 
 @Entry
 @Component
@@ -45,11 +46,11 @@ struct Index {
   @State mMenuLevel: number = menuLevel.MENU_FIRST_LEVEL_BY_TYPE
   @State mCurrentPath: string= ''
   @State code: number = 2;
-  //@StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = getRootPath()
   @StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = updateTopPathInfo([], '文件类型', '')
 
   private aboutToAppear() {
     LogInfo(this.TAG, 'aboutToAppear')
+
     if (globalThis.debugMode) {
       this.mFirstMenuData = getFirstMenu('')
       LogDebug(this.TAG, 'mFirstMenuData length = ' + this.mFirstMenuData.length)
@@ -187,7 +188,6 @@ struct Index {
                     updateTopPathInfo([], '文件类型', '')
                     this.mMenuLevel = menuLevel.MENU_FIRST_LEVEL_BY_TYPE
                     this.mType = ''
-                    //this.topPathInfo = getRootPath()
                   } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_PIC || (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL)) {
                     this.topPathInfo.pop()
                     this.topPathInfo[this.topPathInfo.length - 1].opacity = 1
@@ -338,7 +338,6 @@ struct LeftDialogComponent {
   @Link mMenuLevel: number
   @Link mCurrentPath: string
 
-  //@StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = getRootPath()
   @StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = updateTopPathInfo([], '文件类型', '')
 
   private aboutToAppear() {
@@ -440,7 +439,6 @@ struct LeftDialogComponent {
       .onClick((event: ClickEvent) => {
         if (this.mMenuLevel != menuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
           updateTopPathInfo([], '文件类型', '')
-          //this.topPathInfo = getRootPath()
           this.mMenuLevel = menuLevel.MENU_FIRST_LEVEL_BY_TYPE
           this.mType = ''
           this.mCurrentPath = ''
@@ -470,9 +468,6 @@ struct LeftDialogComponent {
               this.mCurrentPath = item.path
               this.mMenuLevel = menuLevel.MENU_SECOND_LEVEL_BY_FOLD
               this.mType = item.mediaType
-//              let path: Array<TopPathInfo> = getRootPath()
-//              path.push(new TopPathInfo(changeTypeToString(this.mType), this.mCurrentPath))
-//              AppStorage.Set('topPathInfo', path)
               updateTopPathInfo([], '文件类型', '')
               updateTopPathInfo(AppStorage.Get('topPathInfo'), changeTypeToString(this.mType), this.mCurrentPath)
 

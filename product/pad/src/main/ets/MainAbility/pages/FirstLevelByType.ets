@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-import { FileInfo, TopPathInfo } from '../module/FileInfo.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
-import { LogInfo } from '../module/LogUtils.ets'
 import { menuLevel, pad_size } from '../module/Constants.ets'
+import { FileInfo } from '../../../../../../../feature/FileInfo.ets'
+import { LogInfo } from '../../../../../../../common/LogUtils.ets'
 
 @Component
 export struct FirstLevelByType {

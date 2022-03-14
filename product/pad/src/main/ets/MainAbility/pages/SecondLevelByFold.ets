@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { FileInfo, TopPathInfo } from '../module/FileInfo.ets'
-import { changeTypeToString, getRootPath, updateTopPathInfo } from '../module/Utils.ets'
-import { LogInfo, LogDebug } from '../module/LogUtils.ets'
+import { FileInfo, TopPathInfo } from '../../../../../../../feature/FileInfo.ets'
+import { changeTypeToString, updateTopPathInfo } from '../module/Utils.ets'
+import { LogInfo, LogDebug } from '../../../../../../../common/LogUtils.ets'
 import { menuLevel, pad_size } from '../module/Constants.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
 import { getListFile } from '../module/FileManagerServiceUtils.ets'
@@ -48,11 +48,8 @@ export struct SecondLevelByFold {
         path: this.mCurrentPath
       })
     }
-//    let path: Array<TopPathInfo> = getRootPath()
-//    path.push(new TopPathInfo(changeTypeToString(this.mType), this.mCurrentPath))
-//    AppStorage.Set('topPathInfo', path)
 
-    updateTopPathInfo([], '文件类型', '')
+    updateTopPathInfo([], '鏂囦欢绫诲瀷', '')
     updateTopPathInfo(AppStorage.Get('topPathInfo'), changeTypeToString(this.mType), this.mCurrentPath)
   }
 
@@ -69,10 +66,6 @@ export struct SecondLevelByFold {
         path: this.mCurrentPath
       })
     }
-
-//    let path: Array<TopPathInfo> = []
-//    path.push(new TopPathInfo(changeTypeToString(this.mType), this.mCurrentPath))
-//    AppStorage.Set('topPathInfo', path)
   }
 
   build() {
@@ -110,10 +103,6 @@ export struct SecondLevelByFold {
             } else {
               this.mMenuLevel = menuLevel.MENU_THIRD_LEVEL_HAS_PIC
             }
-//            let path: Array<TopPathInfo> = AppStorage.Get('topPathInfo')
-//            path.push(new TopPathInfo(fileItem.name, fileItem.path))
-//            AppStorage.Set('topPathInfo', path)
-//              LogInfo(TAG, 'SecondLevelByFold onClick ' + path)
             updateTopPathInfo(AppStorage.Get('topPathInfo'), fileItem.name, fileItem.mCurrentPath)
           })
         }, fileItem => fileItem.name)

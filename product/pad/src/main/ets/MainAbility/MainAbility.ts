@@ -21,7 +21,7 @@ let displayHeight: number = 0
 
 export default class MainAbility extends Ability {
     onCreate(want, launchParam) {
-        console.log(`MainAbility onCreate is called ${want} and ${launchParam}`)
+        console.log(`filePicker_MainAbility:  onCreate is called ${want} and ${launchParam}`)
         globalThis.startMode = want.parameters.startMode
         globalThis.saveFile = want.parameters.saveFile
         globalThis.debugMode = want.parameters.debugMode
@@ -31,11 +31,11 @@ export default class MainAbility extends Ability {
     }
 
     onDestroy() {
-        console.log("MainAbility onDestroy is called")
+        console.log('filePicker_MainAbility: onDestroy is called')
     }
 
     onWindowStageCreate(windowStage) {
-        console.log("MainAbility onWindowStageCreate is called")
+        console.log('filePicker_MainAbility: onWindowStageCreate is called')
 
         globalThis.context = this.context
         windowStage.setUIContent(this.context, 'pages/Main', null)
@@ -60,14 +60,14 @@ export default class MainAbility extends Ability {
     }
 
     onWindowStageDestroy() {
-        console.log("MainAbility onWindowStageDestroy is called")
+        console.log("filePicker_MainAbility: onWindowStageDestroy is called")
     }
 
     onForeground() {
-        console.log("MainAbility onForeground is called")
+        console.log("filePicker_MainAbility: onForeground is called")
     }
 
     onBackground() {
-        console.log("MainAbility onBackground is called")
+        console.log("filePicker_MainAbility: onBackground is called")
     }
 }

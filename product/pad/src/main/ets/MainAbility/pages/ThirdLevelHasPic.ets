@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { getItemNumberInGrid } from '../module/Utils.ets'
-import { FileInfo } from '../module/FileInfo.ets'
-import { LogInfo, LogDebug } from '../module/LogUtils.ets'
-import { GridItemSize, pad_size } from '../module/Constants.ets'
+import { FileInfo } from '../../../../../../../feature/FileInfo.ets'
+import { LogInfo, LogDebug } from '../../../../../../../common/LogUtils.ets'
+import { pad_size } from '../module/Constants.ets'
 import { getListFile } from '../module/FileManagerServiceUtils.ets'
 import { ChooseDialog } from '../module/DialogUtils.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
@@ -38,9 +37,6 @@ export struct ThirdLevelHasPic {
 
   private aboutToAppear() {
     this.displayInfo = AppStorage.Get('displayInfo')
-//    let gridWidth = px2vp(this.displayInfo.mainDialogWidth) - 24 * 2
-//    this.mColumnTemplate = getItemNumberInGrid(GridItemSize.GRID_ITEM_WIDTH,
-//      GridItemSize.GRID_ITEM_COLUMNS_GAP,gridWidth)
 
     if (globalThis.debugMode) {
       this.mFileList = getListFile('local', this.mType, this.mCurrentPath)

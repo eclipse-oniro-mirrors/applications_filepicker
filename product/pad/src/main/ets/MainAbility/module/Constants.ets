@@ -30,7 +30,6 @@ export enum media_type {
 
 export enum GridItemSize {
   GRID_ITEM_HEIGHT = 126,
-  //GRID_ITEM_WIDTH = 112,
   GRID_ITEM_WIDTH = 96,
   GRID_ITEM_COLUMNS_GAP = 8,
   GRID_ITEM_ROWS_GAP = 8,

@@ -24,15 +24,15 @@ export function terminateSelfWithResult(resultCode: number, result: string): voi
   LogInfo(TAG, 'terminateSelfWithResult')
   let startMode: string = AppStorage.Get<string>('startMode')
   var abilityResult = {
-    'resultCode': resultCode,
-    'want': {
-      'parameters': {
+    resultCode: resultCode,
+    want: {
+      parameters: {
         'startMode': startMode,
         'result': result
       }
     }
   }
-  featureAbility.terminateSelfWithResult(abilityResult, (error, data) => {
+  globalThis.context.terminateSelfWithResult(abilityResult, (error, data) => {
     if (error) {
       LogInfo(TAG, 'Operation failed. Cause: ' + JSON.stringify(error))
       return

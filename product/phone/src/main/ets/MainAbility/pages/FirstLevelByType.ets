@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { FileInfo, TopPathInfo } from '../module/FileInfo.ets'
+import { FileInfo } from '../module/FileInfo.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
 import { LogInfo } from '../module/LogUtils.ets'
 import { menuLevel } from '../module/Constants.ets'

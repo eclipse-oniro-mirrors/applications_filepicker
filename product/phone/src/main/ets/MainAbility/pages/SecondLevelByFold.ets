@@ -14,7 +14,7 @@
  */
 
 import { FileInfo, TopPathInfo } from '../module/FileInfo.ets'
-import { changeTypeToString, getRootPath, updateTopPathInfo } from '../module/Utils.ets'
+import { changeTypeToString, updateTopPathInfo } from '../module/Utils.ets'
 import { LogInfo, LogDebug } from '../module/LogUtils.ets'
 import { menuLevel } from '../module/Constants.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
@@ -36,40 +36,36 @@ export struct SecondLevelByFold {
     LogInfo(TAG, 'aboutToAppear')
     this.displayInfo = AppStorage.Get('displayInfo')
 
-    this.mFileList = getListFile('local', this.mType, this.mCurrentPath) // TODO
-    LogDebug(TAG, 'mFileList length = ' + this.mFileList.length)
+    if (globalThis.debugMode) {
+      this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
+      LogDebug(TAG, 'mFileList length = ' + this.mFileList.length)
+    } else {
+      this.mWorker.postMessage({
+        request_data: 'listFile',
+        device_name: 'local',
+        menu_level: this.mMenuLevel,
+        media_type: this.mType,
+        path: this.mCurrentPath
+      })
+    }
 
-//    let path: Array<TopPathInfo> = getRootPath()
-//    path.push(new TopPathInfo(changeTypeToString(this.mType), this.mCurrentPath))
-//    AppStorage.Set('topPathInfo', path)
-
-    updateTopPathInfo([], '文件类型', '')
+    updateTopPathInfo([], '鏂囦欢绫诲瀷', '')
     updateTopPathInfo(AppStorage.Get('topPathInfo'), changeTypeToString(this.mType), this.mCurrentPath)
-
-
-    this.mWorker.postMessage({
-      request_data: 'listFile',
-      device_name: 'local',
-      menu_level: this.mMenuLevel,
-      media_type: this.mType,
-      path: this.mCurrentPath
-    })
   }
 
   fileTypeChange() {
     LogInfo(TAG, 'fileTypeChange ' + this.mType)
-    this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
-//    let path: Array<TopPathInfo> = []
-//    path.push(new TopPathInfo(changeTypeToString(this.mType), this.mCurrentPath))
-//    AppStorage.Set('topPathInfo', path)
-
-    this.mWorker.postMessage({
-      request_data: 'listFile',
-      device_name: 'local',
-      menu_level: this.mMenuLevel,
-      media_type: this.mType,
-      path: this.mCurrentPath
-    })
+    if (globalThis.debugMode) {
+      this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
+    } else {
+      this.mWorker.postMessage({
+        request_data: 'listFile',
+        device_name: 'local',
+        menu_level: this.mMenuLevel,
+        media_type: this.mType,
+        path: this.mCurrentPath
+      })
+    }
   }
 
   build() {
@@ -124,9 +120,6 @@ struct SecondRowView {
     .onClick(() => {
       LogInfo(TAG, 'onClick this.mCurrentPath = ' + this.mCurrentPath)
       this.mCurrentPath = this.item.path
-//      let path: Array<TopPathInfo> = AppStorage.Get('topPathInfo')
-//      path.push(new TopPathInfo(this.item.name, this.mCurrentPath))
-//      AppStorage.Set('topPathInfo', path)
       updateTopPathInfo(AppStorage.Get('topPathInfo'), this.item.name, this.mCurrentPath)
 
       if (this.item.path.includes('dataability:///album') == false) {

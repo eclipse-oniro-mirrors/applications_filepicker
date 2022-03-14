@@ -14,9 +14,8 @@
  */
 
 import display from '@ohos.display'
-import window from '@ohos.window';
 import featureAbility from '@ohos.ability.featureAbility'
-import { LogInfo } from '../module/LogUtils.ets'
+import { LogInfo } from '../../../../../../../common/LogUtils.ets'
 import { DisplayInfo } from './DisplayInfo.ets'
 
 var TAG: string = 'AbilityUtils'
@@ -33,7 +32,6 @@ export function terminateSelfWithResult(resultCode: number, result: string): voi
       }
     }
   }
-  //featureAbility.terminateSelfWithResult(abilityResult, (error, data) => {
   globalThis.context.terminateSelfWithResult(abilityResult, (error, data) => {
     if (error) {
       LogInfo(TAG, 'Operation failed. Cause: ' + JSON.stringify(error))
@@ -72,19 +70,6 @@ function initWindowScale(): void {
     LogInfo(TAG, 'mainDialogHeight = ' + displayInfo.mainDialogHeight)
     AppStorage.SetOrCreate('displayInfo', displayInfo)
 
-//    window.getTopWindow().then((windowData) => {
-//      windowData.resetSize(showWidth, showHeight)
-//      windowData.moveTo((dis.width - showWidth) / 2, (dis.height - showHeight) / 2)
-//      windowData.setOutsideTouchable(false)
-//      windowData.getProperties((err, data) => {
-//        if (err) {
-//          LogInfo(TAG, 'Failed to obtain the window properties. Cause: ' + JSON.stringify(err))
-//          return
-//        }
-//        LogInfo(TAG, 'Succeeded in obtaining the window properties.')
-//        data.isRoundCorner = true
-//      })
-//    })
   })
 }
 

@@ -13,15 +13,16 @@
  * limitations under the License.
  */
 
-import { LogInfo, LogDebug } from '../module/LogUtils.ets'
+import { LogInfo, LogDebug } from '../../../../../../../common/LogUtils.ets'
 import worker from '@ohos.worker'
 import filemanager from '@ohos.filemanager'
 
 var TAG = 'DataWorker'
 const parentPort = worker.parentPort
 parentPort.onmessage = function (e) {
-    LogInfo(TAG, 'onMessage')
+    LogInfo(TAG, 'DataWorker onMessage')
     let data = e.data
+    LogInfo(TAG, 'DataWorker onMessage ' + data.request_data)
     if (data.request_data == 'getRoot') {
         getRootData(data)
     } else if (data.request_data == 'listFile') {
@@ -40,38 +41,26 @@ parentPort.onerror = function (data) {
 }
 
 function getRootData(data) {
-//    let options = {
-//        "dev": {
-//            "name": "external_storage"
-//        }
-//    }
     filemanager.getRoot()
         .then(file => {
             handleData(file, data)
         })
         .catch((error) => {
-            LogDebug(TAG, 'getRoot 2 error' + error)
+            LogDebug(TAG, 'getRoot error' + error)
         });
 }
 
 function getListFileData(data) {
-    LogDebug(TAG, 'getListFileData 1')
     if (data.offset == undefined || data.count == undefined) {
         LogDebug(TAG, 'path = ' + data.path + " type = " + data.media_type)
 
-//        let options = {
-//            "dev": {
-//                "name": "external_storage"
-//            }
-//        }
         filemanager.listFile(data.path, data.media_type)
             .then(file => {
                 handleData(file, data)
             })
             .catch((error) => {
-                LogDebug(TAG, 'getListFileData 2 error' + error)
+                LogDebug(TAG, 'getListFileData error' + error)
             })
-
     } else {
         filemanager.listFile(data.path, data.media_type, {
             'offset': data.offset,
@@ -81,7 +70,7 @@ function getListFileData(data) {
                 handleData(file, data)
             })
             .catch((error) => {
-                LogDebug(TAG, 'getListFileData 3 error' + error)
+                LogDebug(TAG, 'getListFileData error' + error)
             })
     }
 }
