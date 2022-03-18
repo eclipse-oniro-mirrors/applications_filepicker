@@ -228,7 +228,6 @@ struct Index {
                         .onClick(() => {
                           if (item.name == mediaName.FILE_TYPE) {
                             updateTopPathInfo([], '文件类型', '')
-                            //this.topPathInfo = getRootPath()
                             this.mMenuLevel = menuLevel.MENU_FIRST_LEVEL_BY_TYPE
                             this.mType = ''
                           } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
@@ -334,15 +333,15 @@ struct Index {
 struct LeftDialogComponent {
   private TAG: string = 'LeftDialogComponent'
   @Link @Watch('firstMenuDataChange') mFirstMenuData: FileInfo[]
-  @Link @Watch('typeStatusChange') mType: string
+  @Link mType: string
   @Link mMenuLevel: number
   @Link mCurrentPath: string
 
   @StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = updateTopPathInfo([], '文件类型', '')
+  @StorageLink('selectedItem') selectedItem: FileInfo = new FileInfo('')
 
   private aboutToAppear() {
     LogInfo(this.TAG, 'aboutToAppear')
-    //this.subscribeMultiInput()
   }
 
   firstMenuDataChange() {
@@ -350,17 +349,6 @@ struct LeftDialogComponent {
     if (this.mFirstMenuData.length > 0) {
       this.subscribeMultiInput()
     }
-  }
-
-  typeStatusChange() {
-    LogInfo(this.TAG, 'typeStatusChange level = ' + this.mMenuLevel + ';mType = ' + this.mType)
-    this.mFirstMenuData.forEach(item => {
-      if (item.mediaType == this.mType) {
-        item.list_background = '#1A000000'
-      } else {
-        item.list_background = ''
-      }
-    });
   }
 
   private subscribeMultiInput() {
@@ -387,20 +375,22 @@ struct LeftDialogComponent {
     let downKeyOption = {
       preKeys: [], finalKey: 2013, isFinalKeyDown: true, finalKeyDownDuration: 0
     }
-    LogInfo(this.TAG, 'subscribeMultiInput 1')
+
     inputConsumer.on('key', tabKeyOption, (keyOption) => {
       let index: number = mediaTypes.indexOf(this.mType)
       index = (index + 1) % mediaTypes.length
       this.processClickEvent(mediaTypes[index], this.mFirstMenuData[index].path, menuLevel.MENU_SECOND_LEVEL_BY_FOLD)
     })
-    LogInfo(this.TAG, 'subscribeMultiInput 2')
-    inputConsumer.on('key', leftKeyOption, (keyOption) => {
-      LogInfo(this.TAG, 'subscribeMultiInput 3')
-//      let index: number = mediaTypes.indexOf(this.mType)
-//      index = (index + 1) % mediaTypes.length
-//      this.processClickEvent(mediaTypes[index], this.mFirstMenuData[index].path, menuLevel.MENU_SECOND_LEVEL_BY_FOLD)
+    inputConsumer.on('key', upKeyOption, (keyOption) => {
+      let index: number = mediaTypes.indexOf(this.mType)
+      index = (index - 1 + mediaTypes.length) % mediaTypes.length
+      this.processClickEvent(mediaTypes[index], this.mFirstMenuData[index].path, menuLevel.MENU_SECOND_LEVEL_BY_FOLD)
     })
-    LogInfo(this.TAG, 'subscribeMultiInput 3')
+    inputConsumer.on('key', downKeyOption, (keyOption) => {
+      let index: number = mediaTypes.indexOf(this.mType)
+      index = (index + 1) % mediaTypes.length
+      this.processClickEvent(mediaTypes[index], this.mFirstMenuData[index].path, menuLevel.MENU_SECOND_LEVEL_BY_FOLD)
+    })
   }
 
   private processClickEvent(mediaType: string, currentPath: string, menuLevel: number) {
@@ -446,7 +436,7 @@ struct LeftDialogComponent {
       })
 
       List() {
-        ForEach(this.mFirstMenuData, (item, FileInfo) => {
+        ForEach(this.mFirstMenuData, (item: FileInfo) => {
           ListItem() {
             Row() {
               Image(item.thumbnail)
@@ -462,7 +452,11 @@ struct LeftDialogComponent {
             .width(pad_size.ONE_HUNDRED_AND_SEVENTY_SIX)
             .height(pad_size.FIFTY_SIX)
             .margin({ left: pad_size.TWELVE, right: pad_size.TWELVE })
-            .backgroundColor(item.list_background)
+            .linearGradient({
+              angle: 90,
+              direction: GradientDirection.Left,
+              colors: this.selectedItem.name == item.name ? [[0xDCEAF9, 0.0], [0xF1F3F5, 1]] : [[0xF2F2F2, 0.0], [0xF2F2F2, 1.0]]
+            })
             .border({ radius: pad_size.TWENTY })
             .onClick((event: ClickEvent) => {
               this.mCurrentPath = item.path
@@ -470,7 +464,7 @@ struct LeftDialogComponent {
               this.mType = item.mediaType
               updateTopPathInfo([], '文件类型', '')
               updateTopPathInfo(AppStorage.Get('topPathInfo'), changeTypeToString(this.mType), this.mCurrentPath)
-
+              AppStorage.Set('selectedItem', item)
             })
           }
         }, item => item.name)

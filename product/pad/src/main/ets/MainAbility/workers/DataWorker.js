@@ -53,15 +53,16 @@ function getRootData(data) {
 function getListFileData(data) {
     if (data.offset == undefined || data.count == undefined) {
         LogDebug(TAG, 'path = ' + data.path + " type = " + data.media_type)
-
         filemanager.listFile(data.path, data.media_type)
             .then(file => {
                 handleData(file, data)
             })
             .catch((error) => {
                 LogDebug(TAG, 'getListFileData error' + error)
+                handleData([], data)
             })
     } else {
+        LogDebug(TAG, 'path = ' + data.path + " type = " + data.media_type + " offset = " + data.offset)
         filemanager.listFile(data.path, data.media_type, {
             'offset': data.offset,
             'count': data.count
@@ -70,7 +71,8 @@ function getListFileData(data) {
                 handleData(file, data)
             })
             .catch((error) => {
-                LogDebug(TAG, 'getListFileData error' + error)
+                LogDebug(TAG, 'getListFileData offset error' + error)
+                handleData([], data)
             })
     }
 }

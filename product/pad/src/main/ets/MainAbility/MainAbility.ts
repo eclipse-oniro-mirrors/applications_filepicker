@@ -57,6 +57,18 @@ export default class MainAbility extends Ability {
                 win.resetSize(vp2px(752), vp2px(446))
             })
         })
+
+        let permissionList: Array<string> = [
+            "ohos.permission.MEDIA_LOCATION",
+            "ohos.permission.READ_MEDIA",
+            "ohos.permission.WRITE_MEDIA"
+        ]
+        globalThis.context.requestPermissionsFromUser(permissionList)
+            .then(function(data) {
+                console.log('filePicker_MainAbility: request permission data result = ' + data.authResults)
+            }, (error) => {
+                console.log('filePicker_MainAbility: fail to request permission error code = ' + error.code)
+            })
     }
 
     onWindowStageDestroy() {

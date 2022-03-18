@@ -40,6 +40,7 @@ export struct SecondLevelByFold {
       this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
       LogDebug(TAG, 'mFileList length = ' + this.mFileList.length)
     } else {
+      LogInfo(TAG, 'aboutToAppear send message to worker')
       this.mWorker.postMessage({
         request_data: 'listFile',
         device_name: 'local',
@@ -58,6 +59,7 @@ export struct SecondLevelByFold {
     if (globalThis.debugMode) {
       this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
     } else {
+      LogInfo(TAG, 'fileTypeChange send message to worker')
       this.mWorker.postMessage({
         request_data: 'listFile',
         device_name: 'local',
@@ -98,6 +100,7 @@ export struct SecondLevelByFold {
           }
           .onClick(() => {
             this.mCurrentPath = fileItem.path
+            LogInfo(TAG, 'fileItem.mediaType = ' + fileItem.mediaType)
             if (fileItem.mediaType == 'file') {
               this.mMenuLevel = menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL
             } else {

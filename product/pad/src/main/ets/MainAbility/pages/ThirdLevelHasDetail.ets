@@ -81,8 +81,9 @@ export struct ThirdLevelHasDetail {
             })
           }
         }, (item: FileInfo) => item.name)
-      }
+      }.align(Alignment.Top)
     }
+    .height(pad_size.TWO_HUNDRED_AND_SIXTY)
     .alignItems(HorizontalAlign.Start)
     .opacity(0.9)
     .backgroundColor(Color.White)

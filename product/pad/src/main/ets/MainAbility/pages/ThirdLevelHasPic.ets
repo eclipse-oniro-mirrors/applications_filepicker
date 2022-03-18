@@ -33,15 +33,16 @@ export struct ThirdLevelHasPic {
   @Link mMenuLevel: number
   @Link mType: string
   @Link mCurrentPath: string
-  @StorageLink('choseFiles') tmpFiles: Array<FileInfo> = []
 
   private aboutToAppear() {
+    LogInfo(TAG, 'aboutToAppear')
     this.displayInfo = AppStorage.Get('displayInfo')
 
     if (globalThis.debugMode) {
       this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
       LogDebug(TAG, 'mFileList length = ' + this.mFileList.length)
     } else {
+      LogInfo(TAG, 'aboutToAppear send message to worker')
       this.mWorker.postMessage({
         request_data: 'listFile',
         device_name: 'local',
@@ -97,10 +98,13 @@ struct GridItemView {
 
   private choseFilesChange() {
     this.choseFiles.forEach((item: FileInfo) => {
+      LogInfo(TAG, 'choseFilesChange item.name =  ' + item.name + ' gridItem.name = ' + this.gridItem.name)
+      LogInfo(TAG, 'choseFilesChange item.path =  ' + item.path + ' gridItem.path = ' + this.gridItem.path)
       if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
         this.gridItem.opacity = 1
         this.gridItem.font_color = Color.White
         this.gridItem.list_background = '#2E88FF'
+        return;
       }
     })
   }
