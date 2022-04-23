@@ -13,10 +13,22 @@
  * limitations under the License.
  */
 
-import AbilityStage from '@ohos.application.AbilityStage'
+export enum menuLevel {
+  MENU_FIRST_LEVEL_BY_TYPE = 1,
+  MENU_SECOND_LEVEL_BY_FOLD = 2,
+  MENU_THIRD_LEVEL_HAS_PIC = 3,
+  MENU_THIRD_LEVEL_HAS_DETAIL = 4,
+}
 
-export default class MyAbilityStage extends AbilityStage {
-    onCreate() {
-        console.log("filePicker_MyAbilityStage: onCreate is called")
-    }
+export enum mediaType {
+  MEDIA_TYPE_FILE = 1,
+  MEDIA_TYPE_IMAGE = 3,
+  MEDIA_TYPE_VIDEO = 4,
+  MEDIA_TYPE_AUDIO = 5,
+  MEDIA_TYPE_ALBUM = 8
+}
+
+export enum terminateReason {
+  SUCCESS = 0,
+  NO_ACTION = -1,
 }

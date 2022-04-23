@@ -14,8 +14,8 @@
  */
 
 import { media_type } from './Constants.ets';
-import { FileInfo } from '../module/FileInfo.ets'
-import { LogInfo } from '../module/LogUtils.ets'
+import { FileInfo } from '../../../../../../../feature/FileInfo.ets'
+import { LogInfo } from '../../../../../../../common/LogUtils.ets'
 
 var TAG = 'FileManagerServiceUtils'
 var isDebug: boolean = true;

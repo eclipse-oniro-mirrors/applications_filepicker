@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { FileInfo, TopPathInfo } from '../module/FileInfo.ets'
-import { changeTypeToString, getRootPath, updateTopPathInfo } from '../module/Utils.ets'
-import { LogInfo, LogDebug } from '../module/LogUtils.ets'
+import { FileInfo, TopPathInfo } from '../../../../../../../feature/FileInfo.ets'
+import { changeTypeToString, updateTopPathInfo } from '../module/Utils.ets'
+import { LogInfo, LogDebug } from '../../../../../../../common/LogUtils.ets'
 import { menuLevel, pad_size } from '../module/Constants.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
 import { getListFile } from '../module/FileManagerServiceUtils.ets'
@@ -40,6 +40,7 @@ export struct SecondLevelByFold {
       this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
       LogDebug(TAG, 'mFileList length = ' + this.mFileList.length)
     } else {
+      LogInfo(TAG, 'aboutToAppear send message to worker')
       this.mWorker.postMessage({
         request_data: 'listFile',
         device_name: 'local',
@@ -48,11 +49,8 @@ export struct SecondLevelByFold {
         path: this.mCurrentPath
       })
     }
-//    let path: Array<TopPathInfo> = getRootPath()
-//    path.push(new TopPathInfo(changeTypeToString(this.mType), this.mCurrentPath))
-//    AppStorage.Set('topPathInfo', path)
 
-    updateTopPathInfo([], '文件类型', '')
+    updateTopPathInfo([], '鏂囦欢绫诲瀷', '')
     updateTopPathInfo(AppStorage.Get('topPathInfo'), changeTypeToString(this.mType), this.mCurrentPath)
   }
 
@@ -61,6 +59,7 @@ export struct SecondLevelByFold {
     if (globalThis.debugMode) {
       this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
     } else {
+      LogInfo(TAG, 'fileTypeChange send message to worker')
       this.mWorker.postMessage({
         request_data: 'listFile',
         device_name: 'local',
@@ -69,10 +68,6 @@ export struct SecondLevelByFold {
         path: this.mCurrentPath
       })
     }
-
-//    let path: Array<TopPathInfo> = []
-//    path.push(new TopPathInfo(changeTypeToString(this.mType), this.mCurrentPath))
-//    AppStorage.Set('topPathInfo', path)
   }
 
   build() {
@@ -105,15 +100,12 @@ export struct SecondLevelByFold {
           }
           .onClick(() => {
             this.mCurrentPath = fileItem.path
+            LogInfo(TAG, 'fileItem.mediaType = ' + fileItem.mediaType)
             if (fileItem.mediaType == 'file') {
               this.mMenuLevel = menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL
             } else {
               this.mMenuLevel = menuLevel.MENU_THIRD_LEVEL_HAS_PIC
             }
-//            let path: Array<TopPathInfo> = AppStorage.Get('topPathInfo')
-//            path.push(new TopPathInfo(fileItem.name, fileItem.path))
-//            AppStorage.Set('topPathInfo', path)
-//              LogInfo(TAG, 'SecondLevelByFold onClick ' + path)
             updateTopPathInfo(AppStorage.Get('topPathInfo'), fileItem.name, fileItem.mCurrentPath)
           })
         }, fileItem => fileItem.name)

@@ -16,6 +16,12 @@
     "deviceType": [
       "phone"
     ],
+    "reqPermissions": [
+      { "name": "ohos.permission.MEDIA_LOCATION" },
+      { "name": "ohos.permission.READ_MEDIA" },
+      { "name": "ohos.permission.WRITE_MEDIA" },
+      { "name": "ohos.permission.GET_BUNDLE_INFO_PRIVILEGED" }
+    ],
     "distro": {
       "deliveryWithInstall": true,
       "moduleName": "pad",

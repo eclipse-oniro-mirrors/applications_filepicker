@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { FileInfo, TopPathInfo } from '../module/FileInfo.ets'
-import { LogInfo } from '../module/LogUtils.ets'
-import { changeTypeToString, getShowIconBySuffix, getRootPath, updateTopPathInfo } from '../module/Utils.ets'
+import { FileInfo } from '../../../../../../../feature/FileInfo.ets'
+import { LogInfo } from '../../../../../../../common/LogUtils.ets'
+import { getShowIconBySuffix, updateTopPathInfo } from '../module/Utils.ets'
 import { media_type, pad_size } from '../module/Constants.ets'
 import { ChooseDialog } from '../module/DialogUtils.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
@@ -81,8 +81,9 @@ export struct ThirdLevelHasDetail {
             })
           }
         }, (item: FileInfo) => item.name)
-      }
+      }.align(Alignment.Top)
     }
+    .height(pad_size.TWO_HUNDRED_AND_SIXTY)
     .alignItems(HorizontalAlign.Start)
     .opacity(0.9)
     .backgroundColor(Color.White)
@@ -174,10 +175,6 @@ struct DetailRowView {
     .onClick(() => {
       if (this.item.type == media_type.MEDIA_TYPE_ALBUM) {
         this.mCurrentPath = this.item.path
-
-//        let path: Array<TopPathInfo> = AppStorage.Get('topPathInfo')
-//        path.push(new TopPathInfo(this.item.name, this.item.path))
-//        AppStorage.Set('topPathInfo', path)
         updateTopPathInfo(AppStorage.Get('topPathInfo'), this.item.name, this.item.path)
       } else {
         var index = this.tmpChoseFiles.indexOf(this.item)

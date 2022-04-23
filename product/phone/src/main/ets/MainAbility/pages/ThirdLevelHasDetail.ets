@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { FileInfo, TopPathInfo } from '../module/FileInfo.ets'
+import { FileInfo } from '../module/FileInfo.ets'
 import { LogInfo } from '../module/LogUtils.ets'
-import { changeTypeToString, getShowIconBySuffix, getRootPath, updateTopPathInfo } from '../module/Utils.ets'
+import { getShowIconBySuffix, updateTopPathInfo } from '../module/Utils.ets'
 import { media_type} from '../module/Constants.ets'
 import { ChooseDialog } from '../module/DialogUtils.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
@@ -37,16 +37,18 @@ export struct ThirdLevelHasDetail {
   private aboutToAppear(): void{
     LogInfo(TAG, 'aboutToAppear')
     this.displayInfo = AppStorage.Get('displayInfo')
-    this.mCurrentMode = AppStorage.Get<string>('startMode')
-    this.mFileInfo = getListFile('local', this.mType, this.mCurrentPath)
 
-//    this.mWorker.postMessage({
-//      request_data: 'listFile',
-//      device_name: 'local',
-//      menu_level: this.mMenuLevel,
-//      media_type: this.mType,
-//      path: this.mCurrentPath
-//    })
+    if (globalThis.debugMode) {
+      this.mFileInfo = getListFile('local', this.mType, this.mCurrentPath)
+    } else {
+      this.mWorker.postMessage({
+        request_data: 'listFile',
+        device_name: 'local',
+        menu_level: this.mMenuLevel,
+        media_type: this.mType,
+        path: this.mCurrentPath
+      })
+    }
   }
 
   private aboutToDisappear() {
@@ -173,11 +175,6 @@ struct DetailRowView {
       if (this.item.type == media_type.MEDIA_TYPE_ALBUM) {
         LogInfo(TAG, 'fold onClick')
         this.mCurrentPath = this.item.path
-
-//        let path: Array<TopPathInfo> = AppStorage.Get('topPathInfo')
-//        path.push(new TopPathInfo(this.item.name, this.item.path))
-//        AppStorage.Set('topPathInfo', path)
-
         updateTopPathInfo(AppStorage.Get('topPathInfo'), this.item.name, this.item.path)
       } else {
         var index = this.tmpChoseFiles.indexOf(this.item)

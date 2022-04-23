@@ -13,10 +13,8 @@
  * limitations under the License.
  */
 
-import { getItemNumberInGrid, updateTopPathInfo } from '../module/Utils.ets'
 import { FileInfo } from '../module/FileInfo.ets'
 import { LogInfo, LogDebug } from '../module/LogUtils.ets'
-import { GridItemSize } from '../module/Constants.ets'
 import { getListFile } from '../module/FileManagerServiceUtils.ets'
 import { ChooseDialog } from '../module/DialogUtils.ets'
 import { DisplayInfo } from '../module/DisplayInfo.ets'
@@ -39,26 +37,21 @@ export struct ThirdLevelHasPic {
 
   private aboutToAppear() {
     this.displayInfo = AppStorage.Get('displayInfo')
-    this.mCurrentMode = AppStorage.Get('startMode')
-    //LogInfo(TAG, 'aboutToAppear mainDialogWidth = ' + this.displayInfo.mainDialogWidth)
-    LogDebug(TAG, "mCurrentMode = " + this.mCurrentMode)
-//    let gridWidth = px2vp(this.displayInfo.mainDialogWidth) - 24 * 2
-//    this.mColumnTemplate = getItemNumberInGrid(GridItemSize.GRID_ITEM_WIDTH,
-//      GridItemSize.GRID_ITEM_COLUMNS_GAP,gridWidth)
 
-    this.mFileList = getListFile('local', this.mType, this.mCurrentPath) // TODO
-    LogDebug(TAG, 'mFileList length = ' + this.mFileList.length)
-
-
-//    this.mWorker.postMessage({
-//      request_data: 'listFile',
-//      device_name: 'local',
-//      menu_level: this.mMenuLevel,
-//      media_type: this.mType,
-//      path: this.mCurrentPath,
-//      offset: 0,
-//      count: 100
-//    })
+    if (globalThis.debugMode) {
+      this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
+      LogDebug(TAG, 'mFileList length = ' + this.mFileList.length)
+    } else {
+      this.mWorker.postMessage({
+        request_data: 'listFile',
+        device_name: 'local',
+        menu_level: this.mMenuLevel,
+        media_type: this.mType,
+        path: this.mCurrentPath,
+        offset: 0,
+        count: 100
+      })
+    }
   }
 
   private aboutToDisappear() {
@@ -69,7 +62,7 @@ export struct ThirdLevelHasPic {
 
 
   build() {
-    if (this.mCurrentMode == 'choose') {
+    if (globalThis.startMode == 'choose') {
       Column() {
         Grid() {
           ForEach(this.mFileList, (item: FileInfo) => {

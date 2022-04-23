@@ -14,7 +14,7 @@
  */
 
 import { TopPathInfo } from '../module/FileInfo.ets'
-import { LogInfo } from '../module/LogUtils.ets'
+import { LogInfo } from '../../../../../../../common/LogUtils.ets'
 
 var TAG: string = 'Utils'
 

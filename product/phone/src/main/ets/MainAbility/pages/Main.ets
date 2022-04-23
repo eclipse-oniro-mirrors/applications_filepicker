@@ -48,30 +48,31 @@ struct Index {
   @State code: number = 2;
 
   @StorageLink('startMode') mCurrentMode: string = 'choose'
-  //@StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = getRootPath()
   @StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = updateTopPathInfo([], '文件类型', '')
 
 
   private aboutToAppear() {
+    LogInfo(this.TAG, 'aboutToAppear')
     this.displayInfo = AppStorage.Get('displayInfo')
-    this.mFirstMenuData = getFirstMenu('')
-    LogDebug(this.TAG, 'mFirstMenuData length = ' + this.mFirstMenuData.length)
-
-    LogDebug(this.TAG, 'aboutToAppear 1')
-//    this.initWork()
-    LogDebug(this.TAG, 'aboutToAppear 2')
-//    this.mWorker.postMessage({
-//      request_data: 'getRoot',
-//      device_name: 'local',
-//      menu_level: this.mMenuLevel,
-//      media_type: this.mType,
-//      path: this.mCurrentPath
-//    })
-    LogDebug(this.TAG, 'aboutToAppear 3')
+    if (globalThis.debugMode) {
+      this.mFirstMenuData = getFirstMenu('')
+      LogDebug(this.TAG, 'mFirstMenuData length = ' + this.mFirstMenuData.length)
+    } else {
+      this.initWork()
+      LogInfo(this.TAG, 'send message to worker')
+      this.mWorker.postMessage({
+        request_data: 'getRoot',
+        device_name: 'local',
+        menu_level: this.mMenuLevel,
+        media_type: this.mType,
+        path: this.mCurrentPath
+      })
+    }
   }
 
   private initWork() {
     if (this.mWorker == undefined) {
+      LogInfo(this.TAG, 'initWorker')
       this.mWorker = new worker.Worker('workers/DataWorker.js', { type: 'classic', name: 'filePicker' })
       this.mWorker.onerror = this.onError.bind(this)
       this.mWorker.onmessageerror = this.onMessageError.bind(this)
@@ -94,7 +95,7 @@ struct Index {
   }
 
   private onMessage(result) {
-    LogInfo(this.TAG, 'onMessage')
+    LogInfo(this.TAG, 'main thread onMessage')
     var params = result.data.params
     var file = JSON.parse(String.fromCharCode.apply(null, new Uint16Array(result.data.data)))
     if (params.request_data == 'createFile') {
@@ -104,11 +105,9 @@ struct Index {
         if (params.path == 'dataability:///album') {
           this.code = 2;
           this.customDialogController.open()
-          // showWarningDialog(getWarningDialogMessage(2))
         } else {
           this.code = file.code
           this.customDialogController.open()
-          // showWarningDialog(getWarningDialogMessage(file.code))
         }
       }
       return
@@ -150,7 +149,7 @@ struct Index {
         }
         listData.push(item)
       }
-      if (params.menu_level == menuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
+      if (params.menu_level == menuLevel.MENU_FIRST_LEVEL_BY_TYPE && params.request_data == 'getRoot') {
         LogDebug(this.TAG, 'mFirstMenuData length = ' + listData.length)
         this.mFirstMenuData = listData
       } else if (params.menu_level == menuLevel.MENU_SECOND_LEVEL_BY_FOLD) {
@@ -204,7 +203,6 @@ struct Index {
                             updateTopPathInfo([], '文件类型', '')
                             this.mMenuLevel = menuLevel.MENU_FIRST_LEVEL_BY_TYPE
                             this.mType = ''
-                            //this.topPathInfo = getRootPath()
                           } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
                             this.mCurrentPath = item.path
                             LogInfo(this.TAG, 'item.path' + item.path)
@@ -230,6 +228,7 @@ struct Index {
               .listDirection(Axis.Horizontal)
             }
             .alignItems(VerticalAlign.Center)
+            .width('100%')
             .height(48 * 2)
             .margin({ left: 24 * 2, top: 4 * 2 })
             .padding({ top: 13 * 2, bottom: 13 * 2 })
@@ -282,7 +281,8 @@ struct Index {
         mWorker: this.mWorker
       })
     }
-    .width('100%')
+    .width(this.displayInfo.width)
+    //.width('100%')
     .height(this.displayInfo.height)
     .border({ radius: 24 * 2 })
     .backgroundColor('#F1F3F5')
@@ -312,21 +312,23 @@ struct TopBarArea {
 struct BottomBar {
   private TAG: string = 'BottomBar'
   private mWorker
-  private mSaveFileName: string
-
-  @Link mCurrentPath: string
-  @Link mMenuLevel: number
+  @State currentChoseFiles: Array<string> = []
   @Link mType: string
+  @Link mMenuLevel: number
+  @Link mCurrentPath: string
   @StorageLink('choseFiles') @Watch('choseFileChange') choseFiles: Array<FileInfo> = []
 
   private aboutToAppear() {
-    this.mSaveFileName = AppStorage.Get<string>('saveName')
-    LogInfo(this.TAG, 'choseFiles number = ' + this.choseFiles.length)
-    LogInfo(this.TAG, 'current mode = ' + globalThis.startMode)
+    LogInfo(this.TAG, 'current choose file number = ' + this.currentChoseFiles.length)
   }
 
   private choseFileChange() {
-    LogInfo(this.TAG, 'choseFiles number = ' + this.choseFiles.length)
+    this.currentChoseFiles = []
+    let files: Array<FileInfo> = AppStorage.Get('choseFiles')
+    files.forEach((item: FileInfo) => {
+      this.currentChoseFiles.push(item.name)
+    })
+    LogInfo(this.TAG, 'current choose file number = ' + this.currentChoseFiles.length)
   }
 
   build() {
@@ -371,7 +373,7 @@ struct BottomBar {
             menu_level: this.mMenuLevel,
             media_type: this.mType,
             path: this.mCurrentPath,
-            save_name: this.mSaveFileName,
+            save_name: globalThis.saveFile,
           })
         })
       } else {
