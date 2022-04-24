@@ -1,11 +1,15 @@
 {
   "string": [
-    {
-      "name": "pad_MainAbility",
+     {
+      "name": "pad_desc",
       "value": "文件选择器"
     },
     {
-      "name": "description_mainability",
+      "name": "MainAbility_desc",
+      "value": "文件选择器"
+    },
+    {
+      "name": "MainAbility_label",
       "value": "文件选择器"
     },
     {

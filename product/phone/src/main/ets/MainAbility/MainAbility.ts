@@ -1,18 +1,3 @@
-/*
- * Copyright (c) 2021 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import Ability from '@ohos.application.Ability'
 import display from '@ohos.display'
 
@@ -21,7 +6,8 @@ let displayHeight: number = 0
 
 export default class MainAbility extends Ability {
     onCreate(want, launchParam) {
-        console.log(`MainAbility onCreate is called ${want} and ${launchParam}`)
+        console.log("filePicker_MainAbility: onCreate")
+        globalThis.abilityWant = want;
 
         globalThis.startMode = want.parameters.startMode
         globalThis.saveFile = want.parameters.saveFile
@@ -32,20 +18,27 @@ export default class MainAbility extends Ability {
     }
 
     onDestroy() {
-        console.log("MainAbility onDestroy is called")
+        console.log("[Demo] MainAbility onDestroy")
     }
 
     onWindowStageCreate(windowStage) {
-        console.log("MainAbility onWindowStageCreate is called")
+        // Main window is created, set main page for this ability
+        console.log("[Demo] MainAbility onWindowStageCreate")
 
-         display.getDefaultDisplay().then(dis => {
-             displayWidth = dis.width
-             displayHeight = dis.height
-             console.log("cjl displayWidth = " + displayWidth + " displayHeight = " + displayHeight)
-         })
+        display.getDefaultDisplay().then(dis => {
+            displayWidth = dis.width
+            displayHeight = dis.height
+
+            globalThis.width = dis.width
+            globalThis.height = dis.height
+            globalThis.mainDialogWidth = dis.width
+            globalThis.mainDialogHeight = dis.height * 0.65
+
+            console.log("cjl displayWidth = " + displayWidth + " displayHeight = " + displayHeight)
+        })
 
         globalThis.context = this.context
-        windowStage.setUIContent(this.context, 'pages/Main', null)
+        windowStage.setUIContent(this.context, "pages/index", null)
 
         windowStage.getMainWindow().then(win => {
             console.log("cjl windowStage.getMainWindow()")
@@ -60,14 +53,17 @@ export default class MainAbility extends Ability {
     }
 
     onWindowStageDestroy() {
-        console.log("MainAbility onWindowStageDestroy is called")
+        // Main window is destroyed, release UI related resources
+        console.log("[Demo] MainAbility onWindowStageDestroy")
     }
 
     onForeground() {
-        console.log("MainAbility onForeground is called")
+        // Ability has brought to foreground
+        console.log("[Demo] MainAbility onForeground")
     }
 
     onBackground() {
-        console.log("MainAbility onBackground is called")
+        // Ability has back to background
+        console.log("[Demo] MainAbility onBackground")
     }
-}
+};

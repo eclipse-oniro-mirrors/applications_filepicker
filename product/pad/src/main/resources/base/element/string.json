@@ -1,12 +1,16 @@
 {
   "string": [
     {
-      "name": "pad_MainAbility",
-      "value": "file picker"
+      "name": "pad_desc",
+      "value": "description"
     },
     {
-      "name": "description_mainability",
-      "value": "file picker"
+      "name": "MainAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "label"
     },
     {
       "name": "btn_upload",

@@ -1,12 +1,16 @@
 {
   "string": [
     {
-      "name": "phone_MainAbility",
-      "value": "phone_MainAbility"
+      "name": "phone_desc",
+      "value": "description"
     },
     {
-      "name": "description_mainability",
-      "value": "eTS_Empty Ability"
+      "name": "MainAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "label"
     },
     {
       "name": "btn_upload",

@@ -1,0 +1,52 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "storePassword": "000000197693B06A2481EE7630784AF7019E188CDC9DBD8BD436C2A54CAFFD35EDEF55C0BD6EADD919",
+          "certpath": "C:/My/Applications/filepicker/signature/sign_files/filepicker.cer",
+          "keyAlias": "myApplicationDebug",
+          "keyPassword": "00000019FA057C4EAA73DEF600DC6994788B35FF12B7547E6B53FFA4FB6BBCB98A7F2D0BAA34DB7610",
+          "profile": "C:/My/Applications/filepicker/signature/sign_files/filepicker.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/My/Applications/filepicker/signature/sign_files/filepicker.p12"
+        }
+      }
+    ],
+    "compileSdkVersion": 9,
+    "compatibleSdkVersion": 9,
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "pad",
+      "srcPath": "./product/pad",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "phone",
+      "srcPath": "./product/phone",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
