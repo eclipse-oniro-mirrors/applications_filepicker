@@ -49,8 +49,6 @@ struct Index {
 
   aboutToAppear() {
     LogInfo(this.TAG, 'aboutToAppear')
-    globalThis.debugMode = true
-    globalThis.startMode = 'choose'
     if (globalThis.debugMode) {
       this.mFirstMenuData = getFirstMenu('')
       LogDebug(this.TAG, 'mFirstMenuData length = ' + this.mFirstMenuData.length)
