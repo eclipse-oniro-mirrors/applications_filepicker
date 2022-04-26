@@ -50,8 +50,6 @@ struct Index {
 
 
   aboutToAppear() {
-    globalThis.debugMode = true
-    globalThis.startMode = 'choose'
     LogInfo(this.TAG, 'aboutToAppear')
     if (globalThis.debugMode) {
       this.mFirstMenuData = getFirstMenu('')
