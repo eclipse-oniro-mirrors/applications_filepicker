@@ -97,7 +97,7 @@ struct GridItemView {
       alignItems: ItemAlign.Center,
       justifyContent: FlexAlign.Center
     }) {
-      Image($r("app.media.icon"))
+      Image(`${this.gridItem.path}/thumbnail/160/160`)
         .objectFit(ImageFit.Contain)
         .width(80 * 2)
         .height(80 * 2)

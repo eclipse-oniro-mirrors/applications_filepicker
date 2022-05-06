@@ -24,7 +24,6 @@ import { LogInfo, LogDebug } from '../module/LogUtils'
 import { changeStringToType, updateTopPathInfo } from '../module/Utils'
 import { terminateSelfWithResult } from '../module/AbilityUtils'
 import { WarningDialog } from '../module/DialogUtils'
-
 import { getFirstMenu } from '../module/FileManagerServiceUtils'
 
 @Entry
@@ -33,9 +32,8 @@ struct Index {
   private TAG: string= 'Main'
   private mWorker
   private customDialogController: CustomDialogController = new CustomDialogController({
-    builder: WarningDialog({code: $code})
+    builder: WarningDialog({ code: $code })
   })
-
   @State mFirstMenuData: FileInfo[] = []
   @State mSecondMenuData: FileInfo[] = []
   @State mThirdMenuPicData: FileInfo[]= []
@@ -44,10 +42,8 @@ struct Index {
   @State mMenuLevel: number = menuLevel.MENU_FIRST_LEVEL_BY_TYPE
   @State mCurrentPath: string= ''
   @State code: number = 2;
-
   @StorageLink('startMode') mCurrentMode: string = 'choose'
   @StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = updateTopPathInfo([], '文件类型', '')
-
 
   aboutToAppear() {
     LogInfo(this.TAG, 'aboutToAppear')
@@ -171,103 +167,103 @@ struct Index {
       TopBarArea()
 
       Column() {
-        Scroll() {
-          Column() {
-            Row() {
-              List() {
-                ForEach(this.topPathInfo, (item: TopPathInfo) => {
-                  ListItem() {
-                    Row() {
-                      if (item.name != '文件类型') {
-                        Image($r("app.media.ic_public_right"))
-                          .width(12 * 2)
-                          .height(24 * 2)
-                          .margin({
-                            left: 4 * 2,
-                            right: 4 * 2
-                          })
-                      }
-
-                      Text(item.name)
+        //        Scroll() {
+        Column() {
+          Row() {
+            List() {
+              ForEach(this.topPathInfo, (item: TopPathInfo) => {
+                ListItem() {
+                  Row() {
+                    if (item.name != '文件类型') {
+                      Image($r("app.media.ic_public_right"))
+                        .width(12 * 2)
                         .height(24 * 2)
-                        .fontColor('#000000')
-                        .fontSize(16 * 2)
-                        .fontWeight(FontWeight.Medium)
-                        .opacity(item.opacity)
-                        .onClick(() => {
-                          LogInfo(this.TAG, item.name + ' onClick')
-                          if (item.name == '文件类型') {
-                            updateTopPathInfo([], '文件类型', '')
-                            this.mMenuLevel = menuLevel.MENU_FIRST_LEVEL_BY_TYPE
-                            this.mType = ''
-                          } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
-                            this.mCurrentPath = item.path
-                            LogInfo(this.TAG, 'item.path' + item.path)
-                            let topPathInfo: Array<TopPathInfo> = AppStorage.Get('topPathInfo')
-                            let index: number = topPathInfo.indexOf(item)
-                            if (index != -1) {
-                              var deleteNum = topPathInfo.length - index + 1
-                              topPathInfo.splice(index + 1, deleteNum)
-                              topPathInfo[topPathInfo.length - 1].opacity = 1
-                              AppStorage.Set('topPathInfo', topPathInfo)
-                            }
-                          } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_PIC) {
-                            this.mMenuLevel = menuLevel.MENU_SECOND_LEVEL_BY_FOLD
-                            this.mType = changeStringToType(item.name)
-                            LogInfo(this.TAG, 'item.path 2 ' + item.path)
-                            this.mCurrentPath = item.path
-                          }
+                        .margin({
+                          left: 4 * 2,
+                          right: 4 * 2
                         })
                     }
-                  }
-                }, item => item.name.toString())
-              }
-              .listDirection(Axis.Horizontal)
-            }
-            .alignItems(VerticalAlign.Center)
-            .width('100%')
-            .height(48 * 2)
-            .margin({ left: 24 * 2, top: 4 * 2 })
-            .padding({ top: 13 * 2, bottom: 13 * 2 })
 
-            Row() {
-              if (this.mMenuLevel == menuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
-                FirstLevelByType({
-                  mFileList: this.mFirstMenuData,
-                  mType: $mType,
-                  mMenuLevel: $mMenuLevel,
-                  mCurrentPath: $mCurrentPath,
-                  mWorker: this.mWorker,
-                })
-              } else if (this.mMenuLevel == menuLevel.MENU_SECOND_LEVEL_BY_FOLD) {
-                SecondLevelByFold({
-                  mType: $mType,
-                  mMenuLevel: $mMenuLevel,
-                  mCurrentPath: $mCurrentPath,
-                  mWorker: this.mWorker,
-                  mFileList: $mSecondMenuData
-                })
-              } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_PIC) {
-                ThirdLevelHasPic({
-                  mType: $mType,
-                  mMenuLevel: $mMenuLevel,
-                  mCurrentPath: $mCurrentPath,
-                  mWorker: this.mWorker,
-                  mFileList: $mThirdMenuPicData
-                })
-              } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
-                ThirdLevelHasDetail({
-                  mType: $mType,
-                  mMenuLevel: $mMenuLevel,
-                  mCurrentPath: $mCurrentPath,
-                  mWorker: this.mWorker,
-                  mFileInfo: $mThirdMenuDetailData
-                })
-              }
+                    Text(item.name)
+                      .height(24 * 2)
+                      .fontColor('#000000')
+                      .fontSize(16 * 2)
+                      .fontWeight(FontWeight.Medium)
+                      .opacity(item.opacity)
+                      .onClick(() => {
+                        LogInfo(this.TAG, item.name + ' onClick')
+                        if (item.name == '文件类型') {
+                          updateTopPathInfo([], '文件类型', '')
+                          this.mMenuLevel = menuLevel.MENU_FIRST_LEVEL_BY_TYPE
+                          this.mType = ''
+                        } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
+                          this.mCurrentPath = item.path
+                          LogInfo(this.TAG, 'item.path' + item.path)
+                          let topPathInfo: Array<TopPathInfo> = AppStorage.Get('topPathInfo')
+                          let index: number = topPathInfo.indexOf(item)
+                          if (index != -1) {
+                            var deleteNum = topPathInfo.length - index + 1
+                            topPathInfo.splice(index + 1, deleteNum)
+                            topPathInfo[topPathInfo.length - 1].opacity = 1
+                            AppStorage.Set('topPathInfo', topPathInfo)
+                          }
+                        } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_PIC) {
+                          this.mMenuLevel = menuLevel.MENU_SECOND_LEVEL_BY_FOLD
+                          this.mType = changeStringToType(item.name)
+                          LogInfo(this.TAG, 'item.path 2 ' + item.path)
+                          this.mCurrentPath = item.path
+                        }
+                      })
+                  }
+                }
+              }, item => item.name.toString())
+            }
+            .listDirection(Axis.Horizontal)
+          }
+          .alignItems(VerticalAlign.Center)
+          .width('100%')
+          .height(48 * 2)
+          .margin({ left: 24 * 2, top: 4 * 2 })
+          .padding({ top: 13 * 2, bottom: 13 * 2 })
+
+          Row() {
+            if (this.mMenuLevel == menuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
+              FirstLevelByType({
+                mFileList: this.mFirstMenuData,
+                mType: $mType,
+                mMenuLevel: $mMenuLevel,
+                mCurrentPath: $mCurrentPath,
+                mWorker: this.mWorker,
+              })
+            } else if (this.mMenuLevel == menuLevel.MENU_SECOND_LEVEL_BY_FOLD) {
+              SecondLevelByFold({
+                mType: $mType,
+                mMenuLevel: $mMenuLevel,
+                mCurrentPath: $mCurrentPath,
+                mWorker: this.mWorker,
+                mFileList: $mSecondMenuData
+              })
+            } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_PIC) {
+              ThirdLevelHasPic({
+                mType: $mType,
+                mMenuLevel: $mMenuLevel,
+                mCurrentPath: $mCurrentPath,
+                mWorker: this.mWorker,
+                mFileList: $mThirdMenuPicData
+              })
+            } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
+              ThirdLevelHasDetail({
+                mType: $mType,
+                mMenuLevel: $mMenuLevel,
+                mCurrentPath: $mCurrentPath,
+                mWorker: this.mWorker,
+                mFileInfo: $mThirdMenuDetailData
+              })
             }
           }
-          .alignItems(HorizontalAlign.Start)
         }
+        .alignItems(HorizontalAlign.Start)
+        //        }
       }
       .height(globalThis.mainDialogHeight - (48 * 2))
 
@@ -287,7 +283,6 @@ struct Index {
 
 @Component
 struct TopBarArea {
-
   build() {
     Row() {
       Text('文件类型')
@@ -296,7 +291,7 @@ struct TopBarArea {
         .fontSize(24 * 2)
         .fontColor('#182431')
     }
-    .height(56  * 2)
+    .height(56 * 2)
     .width('100%')
     .border({ radius: '24px' })
     .margin({ left: 24 * 2 })
@@ -383,7 +378,7 @@ struct BottomBar {
             .textAlign(TextAlign.Center)
         }
         .backgroundColor(this.choseFiles.length != 0 ? '#E5E8EA' : '#ECEEF0')
-        .stateEffect(this.choseFiles.length != 0 )
+        .stateEffect(this.choseFiles.length != 0)
         .margin({ left: 12 * 2 })
         .height(40 * 2)
         .width(150 * 2)
