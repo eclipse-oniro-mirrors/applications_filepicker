@@ -1,8 +1,11 @@
 import Ability from '@ohos.application.Ability'
 import display from '@ohos.display'
+import { LogInfo, LogDebug } from '../module/LogUtils'
 
 let displayWidth: number = 0
 let displayHeight: number = 0
+
+const TAG = "MainAbility"
 
 export default class MainAbility extends Ability {
     onCreate(want, launchParam) {
@@ -23,7 +26,11 @@ export default class MainAbility extends Ability {
 
     onWindowStageCreate(windowStage) {
         // Main window is created, set main page for this ability
-        console.log("[Demo] MainAbility onWindowStageCreate")
+        LogInfo(TAG, "[Demo] MainAbility onWindowStageCreate")
+
+        globalThis.context = this.context
+
+        this.requestPermissions()
 
         display.getDefaultDisplay().then(dis => {
             displayWidth = dis.width
@@ -34,20 +41,36 @@ export default class MainAbility extends Ability {
             globalThis.mainDialogWidth = dis.width
             globalThis.mainDialogHeight = dis.height * 0.65
 
-            console.log("cjl displayWidth = " + displayWidth + " displayHeight = " + displayHeight)
-        })
+            LogInfo(TAG, "cjl displayWidth = " + displayWidth + " displayHeight = " + displayHeight)
 
-        globalThis.context = this.context
-        windowStage.setUIContent(this.context, "pages/index", null)
+            windowStage.getMainWindow().then(win => {
+                LogInfo(TAG, "cjl windowStage.getMainWindow()")
 
-        windowStage.getMainWindow().then(win => {
-            console.log("cjl windowStage.getMainWindow()")
-            win.resetSize(displayWidth, (displayHeight * 0.65))
+                win.setBackgroundColor('#000000', (err, data) => {
+                    if (err.code) {
+                        LogInfo(TAG, 'Failed to set the background color. Data: ' + JSON.stringify(data))
+                    } else {
+                        LogInfo(TAG, 'Succeeded in setting the background color. Data: ' + JSON.stringify(data))
+                    }
+                })
 
-            win.moveTo(0, (displayHeight * 0.23))
+                win.disableWindowDecor((err, data) => {
+                    if (err.code) {
+                        LogInfo(TAG, 'Failed to set the disableWindowDecor. Data: ' + JSON.stringify(data))
+                    } else {
+                        LogInfo(TAG, 'Succeeded in setting the disableWindowDecor. Data: ' + JSON.stringify(data))
+                    }
+                })
 
-            win.on('windowSizeChange', () => {
-                win.resetSize(displayWidth, (displayHeight * 0.65))
+                win.setWindowMode(2, (err, data) => {
+                    if (err.code) {
+                        LogInfo(TAG, 'Failed to set the setWindowMode. Data: ' + JSON.stringify(data))
+                    } else {
+                        LogInfo(TAG, 'Succeeded in setting the setWindowMode. Data: ' + JSON.stringify(data))
+                    }
+                })
+
+                windowStage.setUIContent(this.context, "pages/index", null)
             })
         })
     }
@@ -65,5 +88,19 @@ export default class MainAbility extends Ability {
     onBackground() {
         // Ability has back to background
         console.log("[Demo] MainAbility onBackground")
+    }
+
+    private requestPermissions() {
+        let permissionList: Array<string> = [
+            "ohos.permission.MEDIA_LOCATION",
+            "ohos.permission.READ_MEDIA",
+            "ohos.permission.WRITE_MEDIA"
+        ]
+        globalThis.context.requestPermissionsFromUser(permissionList)
+            .then(function (data) {
+                LogInfo(TAG, 'filePicker_MainAbility: request permission data result = ' + data.authResults)
+            }, (error) => {
+                LogInfo(TAG, 'filePicker_MainAbility: fail to request permission error code = ' + error.code)
+            })
     }
 };

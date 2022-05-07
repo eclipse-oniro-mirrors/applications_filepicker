@@ -35,6 +35,9 @@ export default class MainAbility extends Ability {
 
         windowStage.getMainWindow().then(win => {
             console.log("filePicker_MainAbility: windowStage.getMainWindow()")
+            win.setWindowMode(102, (err, data) => {
+            })
+
             win.resetSize(vp2px(752), vp2px(446))
 
             let positionX: number = (displayWidth - vp2px(752)) / 2
@@ -52,7 +55,7 @@ export default class MainAbility extends Ability {
             "ohos.permission.WRITE_MEDIA"
         ]
         globalThis.context.requestPermissionsFromUser(permissionList)
-            .then(function(data) {
+            .then(function (data) {
                 console.log('filePicker_MainAbility: request permission data result = ' + data.authResults)
             }, (error) => {
                 console.log('filePicker_MainAbility: fail to request permission error code = ' + error.code)
