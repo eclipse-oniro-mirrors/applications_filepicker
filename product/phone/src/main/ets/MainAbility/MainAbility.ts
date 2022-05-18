@@ -15,9 +15,12 @@ export default class MainAbility extends Ability {
         globalThis.startMode = want.parameters.startMode
         globalThis.saveFile = want.parameters.saveFile
         globalThis.debugMode = want.parameters.debugMode
+        globalThis.proportion = 1
         console.log('filePicker_MainAbility: startMode = ' + globalThis.startMode)
         console.log('filePicker_MainAbility: file_name = ' + globalThis.saveFile)
         console.log('filePicker_MainAbility: debugMode = ' + globalThis.debugMode)
+
+
     }
 
     onDestroy() {
@@ -39,20 +42,18 @@ export default class MainAbility extends Ability {
             globalThis.width = dis.width
             globalThis.height = dis.height
             globalThis.mainDialogWidth = dis.width
-            globalThis.mainDialogHeight = dis.height * 0.65
+            globalThis.mainDialogHeight = (((displayHeight) - 240) * 0.7) / 3
 
             LogInfo(TAG, "cjl displayWidth = " + displayWidth + " displayHeight = " + displayHeight)
 
             windowStage.getMainWindow().then(win => {
                 LogInfo(TAG, "cjl windowStage.getMainWindow()")
 
-                win.setBackgroundColor('#000000', (err, data) => {
-                    if (err.code) {
-                        LogInfo(TAG, 'Failed to set the background color. Data: ' + JSON.stringify(data))
-                    } else {
-                        LogInfo(TAG, 'Succeeded in setting the background color. Data: ' + JSON.stringify(data))
-                    }
-                })
+                win.resetSize(displayWidth - 30, displayHeight - 168)
+
+                win.moveTo(0, 0)
+
+                win.setTransparent(true)
 
                 win.disableWindowDecor((err, data) => {
                     if (err.code) {
@@ -62,7 +63,7 @@ export default class MainAbility extends Ability {
                     }
                 })
 
-                win.setWindowMode(2, (err, data) => {
+                win.setWindowMode(1, (err, data) => {
                     if (err.code) {
                         LogInfo(TAG, 'Failed to set the setWindowMode. Data: ' + JSON.stringify(data))
                     } else {

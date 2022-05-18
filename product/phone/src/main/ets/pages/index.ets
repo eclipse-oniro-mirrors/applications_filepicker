@@ -28,6 +28,33 @@ import { getFirstMenu } from '../module/FileManagerServiceUtils'
 
 @Entry
 @Component
+struct allIndex {
+  build() {
+    Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.End, justifyContent: FlexAlign.SpaceBetween }) {
+      Stack({ alignContent: Alignment.Bottom }) {
+        Column() {
+        }
+        .onClick(() => {
+          globalThis.context.terminateSelf((err, data) => {
+            console.log('terminateSelf success')
+          })
+        })
+        .width('100%')
+        .height('100%')
+
+        Index()
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .backgroundColor('rgba(0,0,0,0.1)')
+    .position({ x: 0, y: 0 })
+    .width('100%')
+    .height('100%')
+  }
+}
+
+@Component
 struct Index {
   private TAG: string= 'Main'
   private mWorker
@@ -44,6 +71,7 @@ struct Index {
   @State code: number = 2;
   @StorageLink('startMode') mCurrentMode: string = 'choose'
   @StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = updateTopPathInfo([], '文件类型', '')
+  scroller: Scroller = new Scroller()
 
   aboutToAppear() {
     LogInfo(this.TAG, 'aboutToAppear')
@@ -167,7 +195,6 @@ struct Index {
       TopBarArea()
 
       Column() {
-        //        Scroll() {
         Column() {
           Row() {
             List() {
@@ -176,18 +203,18 @@ struct Index {
                   Row() {
                     if (item.name != '文件类型') {
                       Image($r("app.media.ic_public_right"))
-                        .width(12 * 2)
-                        .height(24 * 2)
+                        .width(12)
+                        .height(24)
                         .margin({
-                          left: 4 * 2,
-                          right: 4 * 2
+                          left: 4,
+                          right: 4
                         })
                     }
 
                     Text(item.name)
-                      .height(24 * 2)
+                      .height(24)
                       .fontColor('#000000')
-                      .fontSize(16 * 2)
+                      .fontSize(16)
                       .fontWeight(FontWeight.Medium)
                       .opacity(item.opacity)
                       .onClick(() => {
@@ -218,54 +245,62 @@ struct Index {
                 }
               }, item => item.name.toString())
             }
+            .padding({ right: 24 })
             .listDirection(Axis.Horizontal)
           }
           .alignItems(VerticalAlign.Center)
           .width('100%')
-          .height(48 * 2)
-          .margin({ left: 24 * 2, top: 4 * 2 })
-          .padding({ top: 13 * 2, bottom: 13 * 2 })
+          .height(48)
+          .margin({ left: 24, top: 4 })
+          .padding({ top: 13, bottom: 13 })
 
-          Row() {
-            if (this.mMenuLevel == menuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
-              FirstLevelByType({
-                mFileList: this.mFirstMenuData,
-                mType: $mType,
-                mMenuLevel: $mMenuLevel,
-                mCurrentPath: $mCurrentPath,
-                mWorker: this.mWorker,
-              })
-            } else if (this.mMenuLevel == menuLevel.MENU_SECOND_LEVEL_BY_FOLD) {
-              SecondLevelByFold({
-                mType: $mType,
-                mMenuLevel: $mMenuLevel,
-                mCurrentPath: $mCurrentPath,
-                mWorker: this.mWorker,
-                mFileList: $mSecondMenuData
-              })
-            } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_PIC) {
-              ThirdLevelHasPic({
-                mType: $mType,
-                mMenuLevel: $mMenuLevel,
-                mCurrentPath: $mCurrentPath,
-                mWorker: this.mWorker,
-                mFileList: $mThirdMenuPicData
-              })
-            } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
-              ThirdLevelHasDetail({
-                mType: $mType,
-                mMenuLevel: $mMenuLevel,
-                mCurrentPath: $mCurrentPath,
-                mWorker: this.mWorker,
-                mFileInfo: $mThirdMenuDetailData
-              })
+          Scroll(this.scroller) {
+            Column() {
+              if (this.mMenuLevel == menuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
+                FirstLevelByType({
+                  mFileList: this.mFirstMenuData,
+                  mType: $mType,
+                  mMenuLevel: $mMenuLevel,
+                  mCurrentPath: $mCurrentPath,
+                  mWorker: this.mWorker,
+                })
+              } else if (this.mMenuLevel == menuLevel.MENU_SECOND_LEVEL_BY_FOLD) {
+                SecondLevelByFold({
+                  mType: $mType,
+                  mMenuLevel: $mMenuLevel,
+                  mCurrentPath: $mCurrentPath,
+                  mWorker: this.mWorker,
+                  mFileList: $mSecondMenuData
+                })
+              } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_PIC) {
+                ThirdLevelHasPic({
+                  mType: $mType,
+                  mMenuLevel: $mMenuLevel,
+                  mCurrentPath: $mCurrentPath,
+                  mWorker: this.mWorker,
+                  mFileList: $mThirdMenuPicData
+                })
+              } else if (this.mMenuLevel == menuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
+                ThirdLevelHasDetail({
+                  mType: $mType,
+                  mMenuLevel: $mMenuLevel,
+                  mCurrentPath: $mCurrentPath,
+                  mWorker: this.mWorker,
+                  mFileInfo: $mThirdMenuDetailData
+                })
+              }
+              Row() {
+              }.width('100%').height(53)
             }
+            .alignItems(HorizontalAlign.Start)
           }
+          .scrollBar(BarState.Off)
+          .scrollable(ScrollDirection.Vertical)
         }
         .alignItems(HorizontalAlign.Start)
-        //        }
       }
-      .height(globalThis.mainDialogHeight - (48 * 2))
+      .alignItems(HorizontalAlign.Start)
+      .height(globalThis.mainDialogHeight - 140)
 
       BottomBar({
         mCurrentPath: $mCurrentPath,
@@ -274,9 +309,9 @@ struct Index {
         mWorker: this.mWorker
       })
     }
-    .width(globalThis.width)
-    .height(globalThis.height)
-    .border({ radius: 24 * 2 })
+    .width('100%')
+    .height(globalThis.mainDialogHeight)
+    .border({ radius: 24 })
     .backgroundColor('#F1F3F5')
   }
 }
@@ -286,16 +321,18 @@ struct TopBarArea {
   build() {
     Row() {
       Text('文件类型')
-        .width(98 * 2)
-        .height(33 * 2)
-        .fontSize(24 * 2)
+        .width(98)
+        .height(33)
+        .fontSize(24)
         .fontColor('#182431')
+        .fontWeight(FontWeight.Medium)
+        .margin({ left: 12 })
     }
-    .height(56 * 2)
+    .height(64)
     .width('100%')
-    .border({ radius: '24px' })
-    .margin({ left: 24 * 2 })
-    .padding({ top: 8 * 2, bottom: 11 * 2 })
+    .border({ radius: 24 })
+    .margin({ left: 24 })
+    .padding({ top: 8 })
   }
 }
 
@@ -326,16 +363,16 @@ struct BottomBar {
     Row() {
       Button() {
         Text('取消')
-          .width(110 * 2)
-          .height(22 * 2)
-          .fontSize(16 * 2)
+          .width(110)
+          .height(22)
+          .fontSize(16)
           .fontWeight(FontWeight.Medium)
           .fontColor('#007DFF')
           .textAlign(TextAlign.Center)
       }
-      .width(150 * 2)
-      .height(40 * 2)
-      .margin({ left: 24 })
+      .width(150)
+      .height(40)
+      .margin({ left: 24, top: 12, bottom: 24 })
       .backgroundColor('#E5E8EA')
       .onClick((event: ClickEvent) => {
         terminateSelfWithResult(terminate_reason.NO_ACTION, '')
@@ -345,17 +382,22 @@ struct BottomBar {
       if (globalThis.startMode == 'save') {
         Button() {
           Text($r("app.string.btn_upload"))
-            .width(110 * 2)
-            .height(22 * 2)
-            .fontSize(16 * 2)
+            .width(110)
+            .height(22)
+            .fontSize(16)
             .fontWeight(FontWeight.Medium)
             .fontColor('#007DFF')
             .textAlign(TextAlign.Center)
+            .opacity(this.choseFiles.length != 0 ? 1 : 0.4)
         }
-        .backgroundColor(this.mMenuLevel == menuLevel.MENU_FIRST_LEVEL_BY_TYPE ? '#ECEEF0' : '#E5E8EA')
-        .margin({ left: 12 * 2 })
-        .height(40 * 2)
-        .width(150 * 2)
+        .backgroundColor(this.choseFiles.length != 0 ? '#E5E8EA' : '#ECEEF0')
+        .margin({
+          left: 12,
+          top: 12,
+          bottom: 24
+        })
+        .height(40)
+        .width(150)
         .stateEffect(this.mMenuLevel == menuLevel.MENU_FIRST_LEVEL_BY_TYPE ? false : true)
         .onClick((event: ClickEvent) => {
           this.mWorker.postMessage({
@@ -370,18 +412,23 @@ struct BottomBar {
       } else {
         Button() {
           Text($r("app.string.btn_upload"))
-            .width(110 * 2)
-            .height(22 * 2)
-            .fontSize(16 * 2)
+            .width(110)
+            .height(22)
+            .fontSize(16)
             .fontWeight(FontWeight.Medium)
             .fontColor('#007DFF')
             .textAlign(TextAlign.Center)
+            .opacity(this.choseFiles.length != 0 ? 1 : 0.4)
         }
         .backgroundColor(this.choseFiles.length != 0 ? '#E5E8EA' : '#ECEEF0')
         .stateEffect(this.choseFiles.length != 0)
-        .margin({ left: 12 * 2 })
-        .height(40 * 2)
-        .width(150 * 2)
+        .margin({
+          left: 12,
+          top: 12,
+          bottom: 24
+        })
+        .height(40)
+        .width(150)
         .onClick(() => {
           let result: string = ''
           this.choseFiles.forEach((item: FileInfo) => {
@@ -394,10 +441,6 @@ struct BottomBar {
     }
     .height(76)
     .width('100%')
-    .margin({
-      left: 24 * 2,
-      top: 12 * 2,
-      bottom: 24 * 2
-    })
+    .backgroundColor('#F1F3F5')
   }
 }

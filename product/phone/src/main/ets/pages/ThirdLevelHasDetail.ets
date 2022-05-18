@@ -16,7 +16,7 @@
 import { FileInfo } from '../module/FileInfo'
 import { LogInfo } from '../module/LogUtils'
 import { getShowIconBySuffix, updateTopPathInfo } from '../module/Utils'
-import { media_type} from '../module/Constants'
+import { media_type } from '../module/Constants'
 import { ChooseDialog } from '../module/DialogUtils'
 import { getListFile } from '../module/FileManagerServiceUtils'
 
@@ -26,7 +26,6 @@ let TAG: string = 'ThirdLevelHasDetail'
 export struct ThirdLevelHasDetail {
   private mCurrentMode: string
   private mWorker
-
   @Link mFileInfo: Array<FileInfo>
   @Link @Watch('refreshFiles') mCurrentPath: string
   @Link mMenuLevel: number
@@ -67,20 +66,34 @@ export struct ThirdLevelHasDetail {
 
   build() {
     Column() {
-      ForEach(this.mFileInfo, (item: FileInfo) => {
-        DetailRowView({
-          item: item,
-          mMenuLevel: $mMenuLevel,
-          mCurrentPath: $mCurrentPath
-        })
+      Flex({
+        direction: FlexDirection.Row,
+        wrap: FlexWrap.Wrap,
+        justifyContent: FlexAlign.Start,
+        alignItems: ItemAlign.Start
+      }) {
+        ForEach(this.mFileInfo, (item: FileInfo, index: number) => {
+          Column() {
+            DetailRowView({
+              item: item,
+              mMenuLevel: $mMenuLevel,
+              mCurrentPath: $mCurrentPath
+            })
 
-        Divider().color('#000000').opacity(0.05)
-          .margin({ left: 50 * 2, right: 12 * 2 })
-      }, (item: FileInfo) => item.name)
+            Divider()
+              .color('#000000')
+              .opacity(0.05)
+              .visibility(this.mFileInfo.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
+              .width('71%')
+              .margin({ left: 64, right: 12 })
+          }
+        }, (item: FileInfo) => item.name)
+      }
     }
+    .padding({ bottom: 4 })
     .alignItems(HorizontalAlign.Start)
-    .border({ radius: 24 * 2 })
-    .margin({ left: 12 * 2, right: 12 * 2 })
+    .border({ radius: 24 })
+    .margin({ left: 12, right: 12 })
     .opacity(0.9)
     .backgroundColor(Color.White)
   }
@@ -90,10 +103,10 @@ export struct ThirdLevelHasDetail {
 struct DetailRowView {
   private dialogController: CustomDialogController = new CustomDialogController({
     builder: ChooseDialog(),
-    cancel: () => {},
+    cancel: () => {
+    },
     autoCancel: true
   })
-
   @State item: FileInfo = new FileInfo('')
   @Link mCurrentPath: string
   @Link mMenuLevel: number
@@ -102,69 +115,80 @@ struct DetailRowView {
   build() {
     Row() {
       if (this.item.type == media_type.MEDIA_TYPE_ALBUM) {
-        Image($r("app.media.ic_file_fold"))
-          .width(22 * 2)
-          .height(19 * 2)
-          .margin({ left: 12 * 2 })
-        Text(this.item.name)
-          .fontSize(16 * 2)
-          .fontColor('#182431')
-          .fontWeight(FontWeight.Medium)
-          .margin({ left: 16 * 2 })
-          .maxLines(1)
-          .textOverflow({ overflow: TextOverflow.Ellipsis })
-        Blank()
-        Image($r("app.media.ic_right"))
-          .width(12 * 2)
-          .height(24 * 2)
-          .margin({ right: 12 * 2 })
+        Row() {
+          Image($r("app.media.ic_type_bigfile"))
+            .width(40)
+            .height(40)
+            .margin({ left: 10 })
+          Text(this.item.name)
+            .fontSize(16)
+            .fontColor('#182431')
+            .fontWeight(FontWeight.Medium)
+            .margin({ left: 16 })
+            .maxLines(1)
+            .textOverflow({ overflow: TextOverflow.Ellipsis })
+          Blank()
+          Image($r("app.media.ic_right"))
+            .width(12)
+            .height(24)
+            .margin({ right: 12 })
+        }
+        .margin({ right: 12 })
+        .height(64)
+        .width(328)
+        .backgroundColor(this.item.list_background)
       } else {
         Row() {
           Image(getShowIconBySuffix(this.item.name.substring(this.item.name.lastIndexOf('.'))))
-            .width(40 * 2)
-            .height(40 * 2)
-            .margin({ left: 8 * 2 })
+            .width(40)
+            .height(40)
+            .margin({ left: 8 })
           Column() {
             Text(this.item.name)
-              .height(22 * 2)
-              .fontSize(16 * 2)
+              .height(22)
+              .fontSize(16)
               .fontColor(this.item.font_color)
               .fontWeight(FontWeight.Medium)
               .maxLines(1)
               .textOverflow({ overflow: TextOverflow.Ellipsis })
-              .margin({ top: 10 * 2 })
+              .margin({ top: 10 })
+              .height(22)
+              .width(248)
             Row() {
               Text('' + this.item.modified_time)
-                .fontSize(14 * 2)
+                .fontSize(14)
                 .fontColor(this.item.font_color)
                 .fontWeight(FontWeight.Regular)
                 .maxLines(1)
                 .textOverflow({ overflow: TextOverflow.Ellipsis })
               Text('-')
-                .fontSize(14 * 2)
+                .fontSize(14)
                 .fontColor(this.item.font_color)
                 .margin({ left: '8vp' })
               Text('' + this.item.size)
-                .fontSize(14 * 2)
+                .fontSize(14)
                 .fontColor(this.item.font_color)
                 .fontWeight(FontWeight.Regular)
                 .margin({ left: '8vp' })
                 .maxLines(1)
                 .textOverflow({ overflow: TextOverflow.Ellipsis })
-            }.opacity(0.6)
+            }
+            .width(248)
+            .height(19)
+            .margin({ top: 2 })
+            .opacity(0.6)
           }
-          .height(64 * 2)
+          .height(64)
           .alignItems(HorizontalAlign.Start)
-          .margin({ left: 16 * 2 })
+          .margin({ left: 16 })
         }
-        .width(globalThis.mainDialogWidth - (24 * 2 + 8 * 4))
-        .margin({ left: 4 * 2, top: 4 * 2, right: 4 * 2 }) // TODO
+        .width(328)
+        .height(64) // TODO
 
       }
     }
-    .height(56 * 2)
-    .width(globalThis.mainDialogWidth - (24 * 2)) // TODO
-    .border({ radius: 20 * 2 })
+    .margin({ top: 4, left: 4, right: 4 })
+    .border({ radius: 20 })
     .backgroundColor(this.item.list_background)
     .onClick(() => {
       if (this.item.type == media_type.MEDIA_TYPE_ALBUM) {
@@ -174,9 +198,9 @@ struct DetailRowView {
       } else {
         var index = this.tmpChoseFiles.indexOf(this.item)
         if (index == -1) {
-          this.item.font_color = Color.White
+          this.item.font_color = Color.Black
           this.item.opacity = 0.1
-          this.item.list_background = '#0A59F7'
+          this.item.list_background = 'rgba(46,136,255,0.1)'
           this.tmpChoseFiles.push(this.item)
         } else {
           this.item.font_color = Color.Black
@@ -187,13 +211,13 @@ struct DetailRowView {
       }
     })
     .gesture(
-      LongPressGesture({ repeat: false })
-        .onAction((event: GestureEvent) => {
-          if (this.item.type != media_type.MEDIA_TYPE_ALBUM) {
-            AppStorage.SetOrCreate<FileInfo>('selectedFileInfo', this.item)
-            this.dialogController.open()
-          }
-        })
+    LongPressGesture({ repeat: false })
+      .onAction((event: GestureEvent) => {
+        if (this.item.type != media_type.MEDIA_TYPE_ALBUM) {
+          AppStorage.SetOrCreate<FileInfo>('selectedFileInfo', this.item)
+          this.dialogController.open()
+        }
+      })
     )
   }
 }

@@ -26,7 +26,6 @@ export struct ThirdLevelHasPic {
   private mCurrentMode: string
   private mCurrentIndex: number
   private mWorker
-
   @Link mFileList: Array<FileInfo>
   @Link mMenuLevel: number
   @Link mType: string
@@ -55,26 +54,24 @@ export struct ThirdLevelHasPic {
     AppStorage.Set('choseFiles', [])
   }
 
-
-
   build() {
     if (globalThis.startMode == 'choose') {
       Column() {
-        Grid() {
+        Flex({
+          direction: FlexDirection.Row,
+          wrap: FlexWrap.Wrap,
+          justifyContent: FlexAlign.Start,
+          alignItems: ItemAlign.Start
+        }) {
           ForEach(this.mFileList, (item: FileInfo) => {
-            GridItem() {
-              GridItemView({ gridItem: item })
-            }
+            GridItemView({ gridItem: item })
           }, item => item.name)
         }
-        .height(300)
-        //.height(globalThis.mainDialogHeight - (48 * 2)) // TODO
-        .columnsTemplate('1fr 1fr 1fr')
-        .margin({ top: 8 * 2 })
+        .margin({ top: 8 })
       }
       .alignItems(HorizontalAlign.Start)
-      .border({ radius: 24 * 2 })
-      .margin({ left: 12 * 2, right: 12 * 2 })
+      .border({ radius: 24 })
+      .margin({ left: 12, right: 12 })
       .opacity(0.9)
       .backgroundColor(Color.White)
     }
@@ -86,7 +83,8 @@ export struct ThirdLevelHasPic {
 struct GridItemView {
   private dialogController: CustomDialogController = new CustomDialogController({
     builder: ChooseDialog(),
-    cancel: () => {},
+    cancel: () => {
+    },
     autoCancel: true
   })
   @State gridItem: FileInfo = new FileInfo('')
@@ -98,42 +96,47 @@ struct GridItemView {
       justifyContent: FlexAlign.Center
     }) {
       Image(`${this.gridItem.path}/thumbnail/160/160`)
+        .borderRadius(12)
         .objectFit(ImageFit.Contain)
-        .width(80 * 2)
-        .height(80 * 2)
+        .width(80)
+        .height(80)
         .margin({
-          left: 8 * 2,
-          right: 8 * 2,
-          top: 4 * 2
+          left: 8,
+          right: 8,
+          top: 4
         })
       Row() {
         Text(this.gridItem.name)
-          .width(82 * 2)
-          .fontSize(12 * 2)
-          .fontColor(this.gridItem.font_color)
+          .width(82)
+          .fontSize(12)
+          .fontColor(this.gridItem.list_background == 'rgba(46,136,255,0.1)' ? Color.White : Color.Black)
           .fontWeight(FontWeight.Regular)
           .opacity(0.9)
           .textAlign(TextAlign.Center)
           .maxLines(2)
           .textOverflow({ overflow: TextOverflow.Ellipsis })
-          .margin({ top: 2 * 2 })
+          .margin({ top: 2 })
+          .padding({ right: 4, left: 4 })
       }
+      .borderRadius(12)
+      .backgroundColor(this.gridItem.list_background == 'rgba(46,136,255,0.1)' ? 0x2E8BFF : '')
       .alignItems(VerticalAlign.Top)
-      .width(82 * 2)
-      .height(36 * 2)
-      .margin({ top: 2 * 2 })
+      .width(82)
+      .height(36)
+      .margin({ top: 4 })
     }
-    .width(96 * 2)
-    .height(126 * 2)
-    .margin({ bottom: 12 * 2 })
-    .border({ radius: 20 * 2 })
+    .padding({ bottom: 8 })
+    .width(96)
+    .height(126)
+    .margin({ bottom: 12, left: 12 })
+    .border({ radius: 20 })
     .backgroundColor(this.gridItem.list_background)
     .gesture(
-      LongPressGesture({ repeat: false })
-        .onAction((event: GestureEvent) => {
-          AppStorage.SetOrCreate('selectedFileInfo', this.gridItem)
-          this.dialogController.open()
-        })
+    LongPressGesture({ repeat: false })
+      .onAction((event: GestureEvent) => {
+        AppStorage.SetOrCreate('selectedFileInfo', this.gridItem)
+        this.dialogController.open()
+      })
     )
     .onClick(() => {
       let choseFiles: Array<FileInfo> = AppStorage.Get('choseFiles')
@@ -141,7 +144,7 @@ struct GridItemView {
       if (index == -1) {
         this.gridItem.opacity = 0.1
         this.gridItem.font_color = '#FFFFFF'
-        this.gridItem.list_background = '#2E88FF'
+        this.gridItem.list_background = 'rgba(46,136,255,0.1)'
         choseFiles.push(this.gridItem)
       } else {
         choseFiles.splice(index)

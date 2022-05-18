@@ -65,20 +65,32 @@ export struct SecondLevelByFold {
 
   build() {
     Column() {
-      ForEach(this.mFileList, (item: FileInfo) => {
-        SecondRowView({
-          item: item,
-          mMenuLevel: $mMenuLevel,
-          mCurrentPath: $mCurrentPath
-        })
+      ForEach(this.mFileList, (item: FileInfo, index: number) => {
+        Column() {
+          SecondRowView({
+            item: item,
+            mMenuLevel: $mMenuLevel,
+            mCurrentPath: $mCurrentPath,
+            isType: $mType
+          })
 
-        Divider().color('#000000').opacity(0.05)
-          .margin({ left: 50 * 2, right: 12 * 2 })
+          Divider()
+            .color('#000000')
+            .opacity(0.05)
+            .width('74%')
+            .visibility(this.mFileList.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
+            .margin({ left: 40 })
+        }
+        .width(312)
+        .height(56)
+        .margin({ left: 12, right: 12 })
       }, item => item.name.toString())
     }
+    .padding({ top: 4, bottom: 4 })
+    .width(336)
     .alignItems(HorizontalAlign.Start)
-    .border({ radius: 24 * 2 })
-    .margin({ left: 12 * 2, right: 12 * 2 })
+    .border({ radius: 24 })
+    .margin({ left: 12, right: 12 })
     .opacity(0.9)
     .backgroundColor(Color.White)
   }
@@ -89,26 +101,26 @@ struct SecondRowView {
   private item: FileInfo = new FileInfo('')
   @Link mMenuLevel: number
   @Link mCurrentPath: string
+  @Link isType: string
 
   build() {
     Row() {
-      Image($r("app.media.ic_file_manager"))
-        .width(22 * 2)
-        .height(19 * 2)
-        .margin({ left: 12 * 2 })
+      Image($r("app.media.ic_type_smallfile"))
+        .width(24)
+        .height(24)
       Text(this.item.name)
-        .fontSize(16 * 2)
+        .fontSize(16)
         .fontColor('#182431')
         .fontWeight(FontWeight.Medium)
-        .margin({ left: 16 * 2 })
+        .margin({ left: 17 })
       Blank()
       Image($r("app.media.ic_right"))
-        .width(12 * 2)
-        .height(24 * 2)
-        .margin({ right: 12 * 2 })
+        .width(12)
+        .height(24)
+        .margin({ right: 12, left: 12 })
     }
-    .height(56 * 2)
-    .width(globalThis.mainDialogWidth - (24 * 2)) // TODO
+    .height(56)
+    .width(312) // TODO
     .backgroundColor(this.item.list_background)
     .onClick(() => {
       LogInfo(TAG, 'onClick this.mCurrentPath = ' + this.mCurrentPath)
@@ -116,7 +128,7 @@ struct SecondRowView {
       updateTopPathInfo(AppStorage.Get('topPathInfo'), this.item.name, this.mCurrentPath)
 
       if (this.item.path.includes('dataability:///album') == false) {
-        if (this.item.mediaType != 'file') {
+        if (this.isType != 'file') {
           LogInfo(TAG, 'MENU_THIRD_LEVEL_HAS_PIC - onClick')
           this.mMenuLevel = menuLevel.MENU_THIRD_LEVEL_HAS_PIC
         } else {
