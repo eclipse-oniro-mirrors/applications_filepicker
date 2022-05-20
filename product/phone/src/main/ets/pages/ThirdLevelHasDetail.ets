@@ -84,7 +84,6 @@ export struct ThirdLevelHasDetail {
               .color('#000000')
               .opacity(0.05)
               .visibility(this.mFileInfo.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
-              .width('71%')
               .margin({ left: 64, right: 12 })
           }
         }, (item: FileInfo) => item.name)
@@ -93,7 +92,6 @@ export struct ThirdLevelHasDetail {
     .padding({ bottom: 4 })
     .alignItems(HorizontalAlign.Start)
     .border({ radius: 24 })
-    .margin({ left: 12, right: 12 })
     .opacity(0.9)
     .backgroundColor(Color.White)
   }
@@ -135,7 +133,7 @@ struct DetailRowView {
         }
         .margin({ right: 12 })
         .height(64)
-        .width(328)
+        .width('100%')
         .backgroundColor(this.item.list_background)
       } else {
         Row() {
@@ -182,7 +180,7 @@ struct DetailRowView {
           .alignItems(HorizontalAlign.Start)
           .margin({ left: 16 })
         }
-        .width(328)
+        .width('100%')
         .height(64) // TODO
 
       }

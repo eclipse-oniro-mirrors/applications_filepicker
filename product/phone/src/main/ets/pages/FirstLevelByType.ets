@@ -40,22 +40,19 @@ export struct FirstLevelByType {
           Divider()
             .color('#000000')
             .opacity(0.1)
-            .width('74%')
             .visibility(this.mFileList.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
             .margin({ left: 40 })
         }
-        .width(312)
+        .width('100%')
         .height(56)
-        .margin({ right: 12, left: 12 })
       }, item => item.name.toString())
     }
-    .padding({ top: 4, bottom: 4 })
+    .padding({ top: 4, bottom: 4, right: 12, left: 12 })
     .alignItems(HorizontalAlign.Start) // 导致圆角消失
     .border({ radius: 24 })
-    .margin({ left: 12, right: 12 })
     .opacity(0.9)
     .backgroundColor('#FFFFFF')
-    .width(336)
+    .width('100%')
   }
 }
 
@@ -82,7 +79,7 @@ struct RowView {
         .height(24)
     }
     .height(56)
-    .width(312) // TODO
+    .width('100%') // TODO
     .backgroundColor(this.item.list_background)
     .onClick(() => {
       this.mType = this.item.mediaType

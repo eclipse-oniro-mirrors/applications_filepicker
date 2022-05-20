@@ -77,20 +77,17 @@ export struct SecondLevelByFold {
           Divider()
             .color('#000000')
             .opacity(0.05)
-            .width('74%')
             .visibility(this.mFileList.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
             .margin({ left: 40 })
         }
-        .width(312)
+        .width('100%')
         .height(56)
-        .margin({ left: 12, right: 12 })
       }, item => item.name.toString())
     }
-    .padding({ top: 4, bottom: 4 })
-    .width(336)
+    .padding({ top: 4, bottom: 4, left: 12, right: 12 })
+    .width('100%')
     .alignItems(HorizontalAlign.Start)
     .border({ radius: 24 })
-    .margin({ left: 12, right: 12 })
     .opacity(0.9)
     .backgroundColor(Color.White)
   }
@@ -117,10 +114,9 @@ struct SecondRowView {
       Image($r("app.media.ic_right"))
         .width(12)
         .height(24)
-        .margin({ right: 12, left: 12 })
     }
     .height(56)
-    .width(312) // TODO
+    .width('100%') // TODO
     .backgroundColor(this.item.list_background)
     .onClick(() => {
       LogInfo(TAG, 'onClick this.mCurrentPath = ' + this.mCurrentPath)

@@ -251,7 +251,7 @@ struct Index {
           .alignItems(VerticalAlign.Center)
           .width('100%')
           .height(48)
-          .margin({ left: 24, top: 4 })
+          .margin({ left: 12, top: 4 })
           .padding({ top: 13, bottom: 13 })
 
           Scroll(this.scroller) {
@@ -300,7 +300,7 @@ struct Index {
         .alignItems(HorizontalAlign.Start)
       }
       .alignItems(HorizontalAlign.Start)
-      .height(globalThis.mainDialogHeight - 140)
+      .height(px2vp(globalThis.mainDialogHeight) - 140)
 
       BottomBar({
         mCurrentPath: $mCurrentPath,
@@ -309,8 +309,9 @@ struct Index {
         mWorker: this.mWorker
       })
     }
+    .padding({ left: 12, right: 12 })
     .width('100%')
-    .height(globalThis.mainDialogHeight)
+    .height(px2vp(globalThis.mainDialogHeight))
     .border({ radius: 24 })
     .backgroundColor('#F1F3F5')
   }
@@ -331,7 +332,6 @@ struct TopBarArea {
     .height(64)
     .width('100%')
     .border({ radius: 24 })
-    .margin({ left: 24 })
     .padding({ top: 8 })
   }
 }
@@ -372,7 +372,7 @@ struct BottomBar {
       }
       .width(150)
       .height(40)
-      .margin({ left: 24, top: 12, bottom: 24 })
+      .margin({ left: 12, top: 12, bottom: 24 })
       .backgroundColor('#E5E8EA')
       .onClick((event: ClickEvent) => {
         terminateSelfWithResult(terminate_reason.NO_ACTION, '')

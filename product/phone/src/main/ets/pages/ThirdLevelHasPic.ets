@@ -71,7 +71,6 @@ export struct ThirdLevelHasPic {
       }
       .alignItems(HorizontalAlign.Start)
       .border({ radius: 24 })
-      .margin({ left: 12, right: 12 })
       .opacity(0.9)
       .backgroundColor(Color.White)
     }

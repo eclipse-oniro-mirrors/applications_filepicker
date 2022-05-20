@@ -15,11 +15,9 @@ export default class MainAbility extends Ability {
         globalThis.startMode = want.parameters.startMode
         globalThis.saveFile = want.parameters.saveFile
         globalThis.debugMode = want.parameters.debugMode
-        globalThis.proportion = 1
         console.log('filePicker_MainAbility: startMode = ' + globalThis.startMode)
         console.log('filePicker_MainAbility: file_name = ' + globalThis.saveFile)
         console.log('filePicker_MainAbility: debugMode = ' + globalThis.debugMode)
-
 
     }
 
@@ -42,7 +40,7 @@ export default class MainAbility extends Ability {
             globalThis.width = dis.width
             globalThis.height = dis.height
             globalThis.mainDialogWidth = dis.width
-            globalThis.mainDialogHeight = (((displayHeight) - 240) * 0.7) / 3
+            globalThis.mainDialogHeight = (((displayHeight) - 240) * 0.7)
 
             LogInfo(TAG, "cjl displayWidth = " + displayWidth + " displayHeight = " + displayHeight)
 
@@ -63,7 +61,7 @@ export default class MainAbility extends Ability {
                     }
                 })
 
-                win.setWindowMode(1, (err, data) => {
+                win.setWindowMode(102, (err, data) => {
                     if (err.code) {
                         LogInfo(TAG, 'Failed to set the setWindowMode. Data: ' + JSON.stringify(data))
                     } else {
