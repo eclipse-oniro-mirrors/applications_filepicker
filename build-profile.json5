@@ -4,13 +4,13 @@
       {
         "name": "default",
         "material": {
-          "storePassword": "000000197693B06A2481EE7630784AF7019E188CDC9DBD8BD436C2A54CAFFD35EDEF55C0BD6EADD919",
-          "certpath": "C:/My/Applications/filepicker/signature/sign_files/filepicker.cer",
-          "keyAlias": "myApplicationDebug",
-          "keyPassword": "00000019FA057C4EAA73DEF600DC6994788B35FF12B7547E6B53FFA4FB6BBCB98A7F2D0BAA34DB7610",
-          "profile": "C:/My/Applications/filepicker/signature/sign_files/filepicker.p7b",
+          "certpath": "C:\\Users\\Administrator\\.ohos\\config\\openharmony\\auto_ohos.cer",
+          "storePassword": "0000001866B30A00583E19F2A7810409DC21FD1736310F045F4BBAD68308661D5508F6887C450EDE",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001839D4D8FF10ED142C94E5132CADD090081785A1D581C24FA2D1056AFF1718E4AA97DF4B32",
+          "profile": "C:\\Users\\Administrator\\.ohos\\config\\openharmony\\auto_ohos_default_com.ohos.filepicker.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/My/Applications/filepicker/signature/sign_files/filepicker.p12"
+          "storeFile": "C:\\Users\\Administrator\\.ohos\\config\\openharmony\\auto_ohos.p12"
         }
       }
     ],
@@ -39,6 +39,18 @@
     {
       "name": "phone",
       "srcPath": "./product/phone",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RK",
+      "srcPath": "./product/RK",
       "targets": [
         {
           "name": "default",

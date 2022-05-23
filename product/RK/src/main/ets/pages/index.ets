@@ -203,18 +203,18 @@ struct Index {
                   Row() {
                     if (item.name != '文件类型') {
                       Image($r("app.media.ic_public_right"))
-                        .width(12)
-                        .height(24)
+                        .width(12 * 1.3)
+                        .height(24 * 1.3)
                         .margin({
-                          left: 4,
-                          right: 4
+                          left: 4 * 1.3,
+                          right: 4 * 1.3
                         })
                     }
 
                     Text(item.name)
-                      .height(24)
+                      .height(24 * 1.3)
                       .fontColor('#000000')
-                      .fontSize(16)
+                      .fontSize(16 * 1.3)
                       .fontWeight(FontWeight.Medium)
                       .opacity(item.opacity)
                       .onClick(() => {
@@ -245,14 +245,14 @@ struct Index {
                 }
               }, item => item.name.toString())
             }
-            .padding({ right: 24 })
+            .padding({ right: 24 * 1.3 })
             .listDirection(Axis.Horizontal)
           }
           .alignItems(VerticalAlign.Center)
           .width('100%')
-          .height(48)
-          .margin({ left: 12, top: 4 })
-          .padding({ top: 13, bottom: 13 })
+          .height(48 * 1.3)
+          .margin({ left: 12 * 1.3, top: 4 * 1.3 })
+          .padding({ top: 13 * 1.3, bottom: 13 * 1.3 })
 
           Scroll(this.scroller) {
             Column() {
@@ -290,7 +290,7 @@ struct Index {
                 })
               }
               Row() {
-              }.width('100%').height(53)
+              }.width('100%').height(53 * 1.3)
             }
             .alignItems(HorizontalAlign.Start)
           }
@@ -300,7 +300,7 @@ struct Index {
         .alignItems(HorizontalAlign.Start)
       }
       .alignItems(HorizontalAlign.Start)
-      .height(px2vp(globalThis.mainDialogHeight) - 140)
+      .height(globalThis.mainDialogHeight - 182)
 
       BottomBar({
         mCurrentPath: $mCurrentPath,
@@ -309,9 +309,9 @@ struct Index {
         mWorker: this.mWorker
       })
     }
-    .padding({ left: 12, right: 12 })
+    .padding({ left: 12 * 1.3, right: 12 * 1.3 })
     .width('100%')
-    .height(px2vp(globalThis.mainDialogHeight))
+    .height(globalThis.mainDialogHeight)
     .border({ radius: 24 })
     .backgroundColor('#F1F3F5')
   }
@@ -322,17 +322,17 @@ struct TopBarArea {
   build() {
     Row() {
       Text('文件类型')
-        .width(98)
-        .height(33)
-        .fontSize(24)
+        .width(98 * 1.3)
+        .height(33 * 1.3)
+        .fontSize(24 * 1.3)
         .fontColor('#182431')
         .fontWeight(FontWeight.Medium)
-        .margin({ left: 12 })
+        .margin({ left: 12 * 1.3 })
     }
-    .height(64)
+    .height(64 * 1.3)
     .width('100%')
     .border({ radius: 24 })
-    .padding({ top: 8 })
+    .padding({ top: 8 * 1.3 })
   }
 }
 
@@ -363,16 +363,16 @@ struct BottomBar {
     Row() {
       Button() {
         Text('取消')
-          .width(110)
-          .height(22)
-          .fontSize(16)
+          .width(110 * 1.3)
+          .height(22 * 1.3)
+          .fontSize(16 * 1.3)
           .fontWeight(FontWeight.Medium)
           .fontColor('#007DFF')
           .textAlign(TextAlign.Center)
       }
-      .width(150)
-      .height(40)
-      .margin({ left: 12, top: 12, bottom: 24 })
+      .width(150 * 1.3)
+      .height(40 * 1.3)
+      .margin({ left: 12 * 1.3, top: 12 * 1.3, bottom: 24 * 1.3 })
       .backgroundColor('#E5E8EA')
       .onClick((event: ClickEvent) => {
         terminateSelfWithResult(terminate_reason.NO_ACTION, '')
@@ -382,9 +382,9 @@ struct BottomBar {
       if (globalThis.startMode == 'save') {
         Button() {
           Text($r("app.string.btn_upload"))
-            .width(110)
-            .height(22)
-            .fontSize(16)
+            .width(110 * 1.3)
+            .height(22 * 1.3)
+            .fontSize(16 * 1.3)
             .fontWeight(FontWeight.Medium)
             .fontColor('#007DFF')
             .textAlign(TextAlign.Center)
@@ -392,12 +392,12 @@ struct BottomBar {
         }
         .backgroundColor(this.choseFiles.length != 0 ? '#E5E8EA' : '#ECEEF0')
         .margin({
-          left: 12,
-          top: 12,
-          bottom: 24
+          left: 12 * 1.3,
+          top: 12 * 1.3,
+          bottom: 24 * 1.3
         })
-        .height(40)
-        .width(150)
+        .height(40 * 1.3)
+        .width(150 * 1.3)
         .stateEffect(this.mMenuLevel == menuLevel.MENU_FIRST_LEVEL_BY_TYPE ? false : true)
         .onClick((event: ClickEvent) => {
           this.mWorker.postMessage({
@@ -412,9 +412,9 @@ struct BottomBar {
       } else {
         Button() {
           Text($r("app.string.btn_upload"))
-            .width(110)
-            .height(22)
-            .fontSize(16)
+            .width(110 * 1.3)
+            .height(22 * 1.3)
+            .fontSize(16 * 1.3)
             .fontWeight(FontWeight.Medium)
             .fontColor('#007DFF')
             .textAlign(TextAlign.Center)
@@ -423,12 +423,12 @@ struct BottomBar {
         .backgroundColor(this.choseFiles.length != 0 ? '#E5E8EA' : '#ECEEF0')
         .stateEffect(this.choseFiles.length != 0)
         .margin({
-          left: 12,
-          top: 12,
-          bottom: 24
+          left: 12 * 1.3,
+          top: 12 * 1.3,
+          bottom: 24 * 1.3
         })
-        .height(40)
-        .width(150)
+        .height(40 * 1.3)
+        .width(150 * 1.3)
         .onClick(() => {
           let result: string = ''
           this.choseFiles.forEach((item: FileInfo) => {
@@ -439,7 +439,7 @@ struct BottomBar {
         })
       }
     }
-    .height(76)
+    .height(76 * 1.3)
     .width('100%')
     .backgroundColor('#F1F3F5')
   }
