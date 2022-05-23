@@ -32,8 +32,8 @@ export function terminateSelfWithResult(resultCode: number, result: string): voi
       }
     }
   }
-  globalThis.context.terminateSelfWithResult(abilityResult, (error, data) => {
-    if (error) {
+  globalThis.context.terminateSelfWithResult(abilityResult, (error) => {
+    if (error.code) {
       LogInfo(TAG, 'Operation failed. Cause: ' + JSON.stringify(error))
       return
     }
