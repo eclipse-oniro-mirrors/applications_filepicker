@@ -16,6 +16,7 @@
 import { FileInfo } from '../module/FileInfo'
 import { LogInfo } from '../module/LogUtils'
 import { menuLevel } from '../module/Constants'
+import { displayChange } from '../module/DisplayInfo'
 
 @Component
 export struct FirstLevelByType {
@@ -41,13 +42,13 @@ export struct FirstLevelByType {
             .color('#000000')
             .opacity(0.1)
             .visibility(this.mFileList.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
-            .margin({ left: 40 })
+            .margin({ left: displayChange(40) })
         }
         .width('100%')
-        .height(56)
+        .height(displayChange(56))
       }, item => item.name.toString())
     }
-    .padding({ top: 4, bottom: 4, right: 12, left: 12 })
+    .padding({ top: displayChange(4), bottom: displayChange(4), right: displayChange(12), left: displayChange(12) })
     .alignItems(HorizontalAlign.Start) // 导致圆角消失
     .border({ radius: 24 })
     .opacity(0.9)
@@ -66,19 +67,19 @@ struct RowView {
   build() {
     Row() {
       Image($r("app.media.ic_type_smallfile"))
-        .width(24)
-        .height(24)
+        .width(displayChange(24))
+        .height(displayChange(24))
       Text(this.item.name)
-        .fontSize(16)
+        .fontSize(displayChange(16))
         .fontColor('#182431')
         .fontWeight(FontWeight.Medium)
-        .margin({ left: 16 })
+        .margin({ left: displayChange(16) })
       Blank()
       Image($r("app.media.ic_right"))
-        .width(12)
-        .height(24)
+        .width(displayChange(12))
+        .height(displayChange(24))
     }
-    .height(56)
+    .height(displayChange(56))
     .width('100%') // TODO
     .backgroundColor(this.item.list_background)
     .onClick(() => {

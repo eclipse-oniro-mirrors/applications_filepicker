@@ -18,6 +18,7 @@ import { changeTypeToString, updateTopPathInfo } from '../module/Utils'
 import { LogInfo, LogDebug } from '../module/LogUtils'
 import { menuLevel } from '../module/Constants'
 import { getListFile } from '../module/FileManagerServiceUtils'
+import { displayChange } from '../module/DisplayInfo'
 
 let TAG: string = 'SecondLevelByFold'
 
@@ -78,16 +79,16 @@ export struct SecondLevelByFold {
             .color('#000000')
             .opacity(0.05)
             .visibility(this.mFileList.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
-            .margin({ left: 40 })
+            .margin({ left: displayChange(40) })
         }
         .width('100%')
-        .height(56)
+        .height(displayChange(56))
       }, item => item.name.toString())
     }
-    .padding({ top: 4, bottom: 4, left: 12, right: 12 })
+    .padding({ top: displayChange(4), bottom: displayChange(4), left: displayChange(12), right: displayChange(12) })
     .width('100%')
     .alignItems(HorizontalAlign.Start)
-    .border({ radius: 24 })
+    .border({ radius: displayChange(24) })
     .opacity(0.9)
     .backgroundColor(Color.White)
   }
@@ -103,19 +104,19 @@ struct SecondRowView {
   build() {
     Row() {
       Image($r("app.media.ic_type_smallfile"))
-        .width(24)
-        .height(24)
+        .width(displayChange(24))
+        .height(displayChange(24))
       Text(this.item.name)
         .fontSize(16)
         .fontColor('#182431')
         .fontWeight(FontWeight.Medium)
-        .margin({ left: 17 })
+        .margin({ left: displayChange(17) })
       Blank()
       Image($r("app.media.ic_right"))
-        .width(12)
-        .height(24)
+        .width(displayChange(12))
+        .height(displayChange(24))
     }
-    .height(56)
+    .height(displayChange(56))
     .width('100%') // TODO
     .backgroundColor(this.item.list_background)
     .onClick(() => {

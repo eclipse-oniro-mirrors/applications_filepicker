@@ -25,6 +25,7 @@ import { changeStringToType, updateTopPathInfo } from '../module/Utils'
 import { terminateSelfWithResult } from '../module/AbilityUtils'
 import { WarningDialog } from '../module/DialogUtils'
 import { getFirstMenu } from '../module/FileManagerServiceUtils'
+import { displayChange } from '../module/DisplayInfo'
 
 @Entry
 @Component
@@ -203,18 +204,18 @@ struct Index {
                   Row() {
                     if (item.name != '文件类型') {
                       Image($r("app.media.ic_public_right"))
-                        .width(12)
-                        .height(24)
+                        .width(displayChange(12))
+                        .height(displayChange(24))
                         .margin({
-                          left: 4,
-                          right: 4
+                          left: displayChange(4),
+                          right: displayChange(4)
                         })
                     }
 
                     Text(item.name)
-                      .height(24)
+                      .height(displayChange(24))
                       .fontColor('#000000')
-                      .fontSize(16)
+                      .fontSize(displayChange(16))
                       .fontWeight(FontWeight.Medium)
                       .opacity(item.opacity)
                       .onClick(() => {
@@ -245,14 +246,14 @@ struct Index {
                 }
               }, item => item.name.toString())
             }
-            .padding({ right: 24 })
+            .padding({ right: displayChange(24) })
             .listDirection(Axis.Horizontal)
           }
           .alignItems(VerticalAlign.Center)
           .width('100%')
-          .height(48)
-          .margin({ left: 12, top: 4 })
-          .padding({ top: 13, bottom: 13 })
+          .height(displayChange(48))
+          .margin({ left: displayChange(12), top: displayChange(4) })
+          .padding({ top: displayChange(13), bottom: displayChange(13) })
 
           Scroll(this.scroller) {
             Column() {
@@ -290,7 +291,7 @@ struct Index {
                 })
               }
               Row() {
-              }.width('100%').height(53)
+              }.width('100%').height(displayChange(53))
             }
             .alignItems(HorizontalAlign.Start)
           }
@@ -300,7 +301,7 @@ struct Index {
         .alignItems(HorizontalAlign.Start)
       }
       .alignItems(HorizontalAlign.Start)
-      .height(px2vp(globalThis.mainDialogHeight) - 140)
+      .height(globalThis.scrollHeight)
 
       BottomBar({
         mCurrentPath: $mCurrentPath,
@@ -309,9 +310,9 @@ struct Index {
         mWorker: this.mWorker
       })
     }
-    .padding({ left: 12, right: 12 })
+    .padding({ left: displayChange(12), right: displayChange(12) })
     .width('100%')
-    .height(px2vp(globalThis.mainDialogHeight))
+    .height(globalThis.mainDialogHeight)
     .border({ radius: 24 })
     .backgroundColor('#F1F3F5')
   }
@@ -322,17 +323,17 @@ struct TopBarArea {
   build() {
     Row() {
       Text('文件类型')
-        .width(98)
-        .height(33)
-        .fontSize(24)
+        .width(displayChange(98))
+        .height(displayChange(33))
+        .fontSize(displayChange(24))
         .fontColor('#182431')
         .fontWeight(FontWeight.Medium)
-        .margin({ left: 12 })
+        .margin({ left: displayChange(12) })
     }
-    .height(64)
+    .height(displayChange(64))
     .width('100%')
     .border({ radius: 24 })
-    .padding({ top: 8 })
+    .padding({ top: displayChange(8) })
   }
 }
 
@@ -363,16 +364,16 @@ struct BottomBar {
     Row() {
       Button() {
         Text('取消')
-          .width(110)
-          .height(22)
-          .fontSize(16)
+          .width(displayChange(110))
+          .height(displayChange(22))
+          .fontSize(displayChange(16))
           .fontWeight(FontWeight.Medium)
           .fontColor('#007DFF')
           .textAlign(TextAlign.Center)
       }
-      .width(150)
-      .height(40)
-      .margin({ left: 12, top: 12, bottom: 24 })
+      .width(displayChange(150))
+      .height(displayChange(40))
+      .margin({ left: displayChange(12), top: displayChange(12), bottom: displayChange(24) })
       .backgroundColor('#E5E8EA')
       .onClick((event: ClickEvent) => {
         terminateSelfWithResult(terminate_reason.NO_ACTION, '')
@@ -382,9 +383,9 @@ struct BottomBar {
       if (globalThis.startMode == 'save') {
         Button() {
           Text($r("app.string.btn_upload"))
-            .width(110)
-            .height(22)
-            .fontSize(16)
+            .width(displayChange(110))
+            .height(displayChange(22))
+            .fontSize(displayChange(16))
             .fontWeight(FontWeight.Medium)
             .fontColor('#007DFF')
             .textAlign(TextAlign.Center)
@@ -392,12 +393,12 @@ struct BottomBar {
         }
         .backgroundColor(this.choseFiles.length != 0 ? '#E5E8EA' : '#ECEEF0')
         .margin({
-          left: 12,
-          top: 12,
-          bottom: 24
+          left: displayChange(12),
+          top: displayChange(12),
+          bottom: displayChange(24)
         })
-        .height(40)
-        .width(150)
+        .height(displayChange(40))
+        .width(displayChange(150))
         .stateEffect(this.mMenuLevel == menuLevel.MENU_FIRST_LEVEL_BY_TYPE ? false : true)
         .onClick((event: ClickEvent) => {
           this.mWorker.postMessage({
@@ -412,9 +413,9 @@ struct BottomBar {
       } else {
         Button() {
           Text($r("app.string.btn_upload"))
-            .width(110)
-            .height(22)
-            .fontSize(16)
+            .width(displayChange(110))
+            .height(displayChange(22))
+            .fontSize(displayChange(16))
             .fontWeight(FontWeight.Medium)
             .fontColor('#007DFF')
             .textAlign(TextAlign.Center)
@@ -423,12 +424,12 @@ struct BottomBar {
         .backgroundColor(this.choseFiles.length != 0 ? '#E5E8EA' : '#ECEEF0')
         .stateEffect(this.choseFiles.length != 0)
         .margin({
-          left: 12,
-          top: 12,
-          bottom: 24
+          left: displayChange(12),
+          top: displayChange(12),
+          bottom: displayChange(24)
         })
-        .height(40)
-        .width(150)
+        .height(displayChange(40))
+        .width(displayChange(150))
         .onClick(() => {
           let result: string = ''
           this.choseFiles.forEach((item: FileInfo) => {
@@ -439,7 +440,7 @@ struct BottomBar {
         })
       }
     }
-    .height(76)
+    .height(displayChange(76))
     .width('100%')
     .backgroundColor('#F1F3F5')
   }
