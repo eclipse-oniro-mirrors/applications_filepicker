@@ -19,3 +19,11 @@ export class DisplayInfo {
   mainDialogWidth: number
   mainDialogHeight: number
 }
+
+export function displayChange(length: number) {
+  if (globalThis.width == 720 && globalThis.height == 1280) {
+    return (length) * 1.3
+  } else {
+    return length
+  }
+}

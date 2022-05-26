@@ -40,14 +40,26 @@ export default class MainAbility extends Ability {
             globalThis.width = dis.width
             globalThis.height = dis.height
             globalThis.mainDialogWidth = dis.width
-            globalThis.mainDialogHeight = (((displayHeight) - 240) * 0.7)
+
+
+            if (globalThis.width == 720 && globalThis.height == 1280) {
+                globalThis.windowWidth = displayWidth
+                globalThis.windowHeight = displayHeight - 120
+                globalThis.mainDialogHeight = (((displayHeight) - 180) * 0.7) / 1.3
+                globalThis.scrollHeight = globalThis.mainDialogHeight - 182
+            } else {
+                globalThis.windowWidth = displayWidth - 30
+                globalThis.windowHeight = displayHeight - 168
+                globalThis.mainDialogHeight = (((displayHeight) - 240) * 0.7) / 3
+                globalThis.scrollHeight = globalThis.mainDialogHeight - 140
+            }
 
             LogInfo(TAG, "cjl displayWidth = " + displayWidth + " displayHeight = " + displayHeight)
 
             windowStage.getMainWindow().then(win => {
                 LogInfo(TAG, "cjl windowStage.getMainWindow()")
 
-                win.resetSize(displayWidth - 30, displayHeight - 168)
+                win.resetSize(globalThis.windowWidth, globalThis.windowHeight)
 
                 win.moveTo(0, 0)
 

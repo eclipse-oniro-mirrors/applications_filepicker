@@ -19,6 +19,7 @@ import { getShowIconBySuffix, updateTopPathInfo } from '../module/Utils'
 import { media_type } from '../module/Constants'
 import { ChooseDialog } from '../module/DialogUtils'
 import { getListFile } from '../module/FileManagerServiceUtils'
+import { displayChange } from '../module/DisplayInfo'
 
 let TAG: string = 'ThirdLevelHasDetail'
 
@@ -84,12 +85,12 @@ export struct ThirdLevelHasDetail {
               .color('#000000')
               .opacity(0.05)
               .visibility(this.mFileInfo.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
-              .margin({ left: 64, right: 12 })
+              .margin({ left: displayChange(64), right: displayChange(12) })
           }
         }, (item: FileInfo) => item.name)
       }
     }
-    .padding({ bottom: 4 })
+    .padding({ bottom: displayChange(4) })
     .alignItems(HorizontalAlign.Start)
     .border({ radius: 24 })
     .opacity(0.9)
@@ -115,77 +116,77 @@ struct DetailRowView {
       if (this.item.type == media_type.MEDIA_TYPE_ALBUM) {
         Row() {
           Image($r("app.media.ic_type_bigfile"))
-            .width(40)
-            .height(40)
-            .margin({ left: 10 })
+            .width(displayChange(40))
+            .height(displayChange(40))
+            .margin({ left: displayChange(10) })
           Text(this.item.name)
-            .fontSize(16)
+            .fontSize(displayChange(16))
             .fontColor('#182431')
             .fontWeight(FontWeight.Medium)
-            .margin({ left: 16 })
+            .margin({ left: displayChange(16) })
             .maxLines(1)
             .textOverflow({ overflow: TextOverflow.Ellipsis })
           Blank()
           Image($r("app.media.ic_right"))
-            .width(12)
-            .height(24)
-            .margin({ right: 12 })
+            .width(displayChange(12))
+            .height(displayChange(24))
+            .margin({ right: displayChange(12) })
         }
-        .margin({ right: 12 })
-        .height(64)
+        .margin({ right: displayChange(12) })
+        .height(displayChange(64))
         .width('100%')
         .backgroundColor(this.item.list_background)
       } else {
         Row() {
           Image(getShowIconBySuffix(this.item.name.substring(this.item.name.lastIndexOf('.'))))
-            .width(40)
-            .height(40)
-            .margin({ left: 8 })
+            .width(displayChange(40))
+            .height(displayChange(40))
+            .margin({ left: displayChange(8) })
           Column() {
             Text(this.item.name)
-              .height(22)
-              .fontSize(16)
+              .height(displayChange(22))
+              .fontSize(displayChange(16))
               .fontColor(this.item.font_color)
               .fontWeight(FontWeight.Medium)
               .maxLines(1)
               .textOverflow({ overflow: TextOverflow.Ellipsis })
-              .margin({ top: 10 })
-              .height(22)
-              .width(248)
+              .margin({ top: displayChange(10) })
+              .height(displayChange(22))
+              .width(displayChange(248))
             Row() {
               Text('' + this.item.modified_time)
-                .fontSize(14)
+                .fontSize(displayChange(14))
                 .fontColor(this.item.font_color)
                 .fontWeight(FontWeight.Regular)
                 .maxLines(1)
                 .textOverflow({ overflow: TextOverflow.Ellipsis })
               Text('-')
-                .fontSize(14)
+                .fontSize(displayChange(14))
                 .fontColor(this.item.font_color)
-                .margin({ left: '8vp' })
+                .margin({ left: displayChange(8) })
               Text('' + this.item.size)
-                .fontSize(14)
+                .fontSize(displayChange(14))
                 .fontColor(this.item.font_color)
                 .fontWeight(FontWeight.Regular)
-                .margin({ left: '8vp' })
+                .margin({ left: displayChange(8) })
                 .maxLines(1)
                 .textOverflow({ overflow: TextOverflow.Ellipsis })
             }
-            .width(248)
-            .height(19)
-            .margin({ top: 2 })
+            .width(displayChange(248))
+            .height(displayChange(19))
+            .margin({ top: displayChange(2) })
             .opacity(0.6)
           }
-          .height(64)
+          .height(displayChange(64))
           .alignItems(HorizontalAlign.Start)
-          .margin({ left: 16 })
+          .margin({ left: displayChange(16) })
         }
         .width('100%')
-        .height(64) // TODO
+        .height(displayChange(64)) // TODO
 
       }
     }
-    .margin({ top: 4, left: 4, right: 4 })
+    .margin({ top: displayChange(4), left: displayChange(4), right: displayChange(4) })
     .border({ radius: 20 })
     .backgroundColor(this.item.list_background)
     .onClick(() => {
