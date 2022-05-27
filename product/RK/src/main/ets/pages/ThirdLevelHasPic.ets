@@ -67,7 +67,7 @@ export struct ThirdLevelHasPic {
             GridItemView({ gridItem: item })
           }, item => item.name)
         }
-        .margin({ top: 8 })
+        .margin({ top: 8 * 1.3 })
       }
       .alignItems(HorizontalAlign.Start)
       .border({ radius: 24 })
@@ -97,37 +97,37 @@ struct GridItemView {
       Image(`${this.gridItem.path}/thumbnail/160/160`)
         .borderRadius(12)
         .objectFit(ImageFit.Contain)
-        .width(80)
-        .height(80)
+        .width(80 * 1.3)
+        .height(80 * 1.3)
         .margin({
-          left: 8,
-          right: 8,
-          top: 4
+          left: 8 * 1.3,
+          right: 8 * 1.3,
+          top: 4 * 1.3
         })
       Row() {
         Text(this.gridItem.name)
-          .width(82)
-          .fontSize(12)
+          .width(82 * 1.3)
+          .fontSize(12 * 1.3)
           .fontColor(this.gridItem.list_background == 'rgba(46,136,255,0.1)' ? Color.White : Color.Black)
           .fontWeight(FontWeight.Regular)
           .opacity(0.9)
           .textAlign(TextAlign.Center)
           .maxLines(2)
           .textOverflow({ overflow: TextOverflow.Ellipsis })
-          .margin({ top: 2 })
-          .padding({ right: 4, left: 4 })
+          .margin({ top: 2 * 1.3 })
+          .padding({ right: 4 * 1.3, left: 4 * 1.3 })
       }
       .borderRadius(12)
       .backgroundColor(this.gridItem.list_background == 'rgba(46,136,255,0.1)' ? 0x2E8BFF : '')
       .alignItems(VerticalAlign.Top)
-      .width(82)
-      .height(36)
-      .margin({ top: 4 })
+      .width(82 * 1.3)
+      .height(36 * 1.3)
+      .margin({ top: 4 * 1.3 })
     }
-    .padding({ bottom: 8 })
-    .width(96)
-    .height(126)
-    .margin({ bottom: 12, left: 12 })
+    .padding({ bottom: 8 * 1.3 })
+    .width(96 * 1.3)
+    .height(126 * 1.3)
+    .margin({ bottom: 12 * 1.3, left: 12 * 1.3 })
     .border({ radius: 20 })
     .backgroundColor(this.gridItem.list_background)
     .gesture(

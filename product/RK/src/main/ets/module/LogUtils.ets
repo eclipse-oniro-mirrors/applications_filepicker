@@ -13,9 +13,10 @@
  * limitations under the License.
  */
 
-export class DisplayInfo {
-  width: number
-  height: number
-  mainDialogWidth: number
-  mainDialogHeight: number
+export function LogInfo(TAG: string, message: string | number): void {
+  console.info('filePicker_' + TAG + ': ' + message)
+}
+
+export function LogDebug(TAG: string, message: string | number): void {
+  console.debug('filePicker_' + TAG + ': ' + message)
 }
