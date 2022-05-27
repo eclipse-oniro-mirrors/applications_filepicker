@@ -13,9 +13,33 @@
  * limitations under the License.
  */
 
-export class DisplayInfo {
-  width: number
-  height: number
-  mainDialogWidth: number
-  mainDialogHeight: number
+import { media_type } from './Constants.ets'
+
+export class FileInfo {
+  name: string
+  path: string
+  type: number= media_type.MEDIA_TYPE_ALBUM
+  size: string
+  dataAdded_time: string
+  modified_time: string
+  mediaType: string
+  thumbnail: Resource
+  font_color: Color | string | Resource
+  opacity: number
+  list_background: string | Resource
+
+  constructor(name: string) {
+    this.name = name
+  }
+}
+
+export class TopPathInfo {
+  name: string
+  path: string
+  opacity: number = 1
+
+  constructor(name: string, path: string) {
+    this.name = name
+    this.path = path
+  }
 }

@@ -47,6 +47,18 @@
           ]
         }
       ]
+    },
+    {
+      "name": "RK",
+      "srcPath": "./product/RK",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
     }
   ]
 }

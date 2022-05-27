@@ -41,13 +41,13 @@ export struct FirstLevelByType {
             .color('#000000')
             .opacity(0.1)
             .visibility(this.mFileList.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
-            .margin({ left: 40 })
+            .margin({ left: 40 * 1.3 })
         }
         .width('100%')
-        .height(56)
+        .height(56 * 1.3)
       }, item => item.name.toString())
     }
-    .padding({ top: 4, bottom: 4, right: 12, left: 12 })
+    .padding({ top: 4 * 1.3, bottom: 4 * 1.3, right: 12 * 1.3, left: 12 * 1.3 })
     .alignItems(HorizontalAlign.Start) // 导致圆角消失
     .border({ radius: 24 })
     .opacity(0.9)
@@ -66,19 +66,19 @@ struct RowView {
   build() {
     Row() {
       Image($r("app.media.ic_type_smallfile"))
-        .width(24)
-        .height(24)
+        .width(24 * 1.3)
+        .height(24 * 1.3)
       Text(this.item.name)
-        .fontSize(16)
+        .fontSize(16 * 1.3)
         .fontColor('#182431')
         .fontWeight(FontWeight.Medium)
-        .margin({ left: 16 })
+        .margin({ left: 16 * 1.3 })
       Blank()
       Image($r("app.media.ic_right"))
-        .width(12)
-        .height(24)
+        .width(12 * 1.3)
+        .height(24 * 1.3)
     }
-    .height(56)
+    .height(56 * 1.3)
     .width('100%') // TODO
     .backgroundColor(this.item.list_background)
     .onClick(() => {

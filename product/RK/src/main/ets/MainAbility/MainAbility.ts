@@ -40,14 +40,14 @@ export default class MainAbility extends Ability {
             globalThis.width = dis.width
             globalThis.height = dis.height
             globalThis.mainDialogWidth = dis.width
-            globalThis.mainDialogHeight = (((displayHeight) - 240) * 0.7)
+            globalThis.mainDialogHeight = (((displayHeight) - 180) * 0.7)/1.3
 
             LogInfo(TAG, "cjl displayWidth = " + displayWidth + " displayHeight = " + displayHeight)
 
             windowStage.getMainWindow().then(win => {
                 LogInfo(TAG, "cjl windowStage.getMainWindow()")
 
-                win.resetSize(displayWidth - 30, displayHeight - 168)
+                win.resetSize(displayWidth, displayHeight - 120)
 
                 win.moveTo(0, 0)
 
