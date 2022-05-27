@@ -1,7 +1,7 @@
 {
   "module": {
     "name": "RK",
-    "type": "entry",
+    "type": "feature",
     "srcEntrance": "./ets/Application/AbilityStage.ts",
     "description": "$string:RK_desc",
     "mainElement": "MainAbility",
@@ -13,6 +13,12 @@
     "installationFree": false,
     "pages": "$profile:main_pages",
     "uiSyntax": "ets",
+    "requestPermissions": [
+      { "name": "ohos.permission.MEDIA_LOCATION" },
+      { "name": "ohos.permission.READ_MEDIA" },
+      { "name": "ohos.permission.WRITE_MEDIA" },
+      { "name": "ohos.permission.GET_BUNDLE_INFO_PRIVILEGED" }
+    ],
     "abilities": [
       {
         "name": "MainAbility",
