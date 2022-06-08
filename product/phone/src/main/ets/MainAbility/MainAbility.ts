@@ -85,7 +85,13 @@ export default class MainAbility extends Ability {
 
                 win.moveTo(0, 0)
 
-                win.setTransparent(true)
+                win.setBackgroundColor("#00FFFFFF", (err, data) => {
+                    if (err.code) {
+                        LogInfo(TAG, "Fail to set the background color" + JSON.stringify(err))
+                    } else {
+                        LogInfo(TAG, "Success to set the background color" + JSON.stringify(data))
+                    }
+                })
 
                 win.disableWindowDecor((err, data) => {
                     if (err.code) {

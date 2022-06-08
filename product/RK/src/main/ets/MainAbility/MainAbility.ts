@@ -79,10 +79,9 @@ export default class MainAbility extends Ability {
             windowStage.getMainWindow().then(win => {
                 LogInfo(TAG, "cjl windowStage.getMainWindow()")
 
-                win.resetSize(displayWidth - 30, displayHeight - 168)
+                win.resetSize(displayWidth, displayHeight - 120)
 
                 win.moveTo(0, 0)
-                LogInfo(TAG, "moveTo")
 
                 win.setBackgroundColor("#00FFFFFF", (err, data) => {
                     if (err.code) {
@@ -91,7 +90,6 @@ export default class MainAbility extends Ability {
                         LogInfo(TAG, "Success to set the background color" + JSON.stringify(data))
                     }
                 })
-                LogInfo(TAG, "setBackgroundColor")
 
                 win.disableWindowDecor((err, data) => {
                     if (err.code) {
@@ -100,7 +98,6 @@ export default class MainAbility extends Ability {
                         LogInfo(TAG, 'Succeeded in setting the disableWindowDecor. Data: ' + JSON.stringify(data))
                     }
                 })
-                LogInfo(TAG, "disableWindowDecor")
 
                 win.setWindowMode(102, (err, data) => {
                     if (err.code) {
@@ -109,7 +106,6 @@ export default class MainAbility extends Ability {
                         LogInfo(TAG, 'Succeeded in setting the setWindowMode. Data: ' + JSON.stringify(data))
                     }
                 })
-                LogInfo(TAG, "setWindowMode")
 
                 windowStage.setUIContent(this.context, "pages/index", null)
             })
