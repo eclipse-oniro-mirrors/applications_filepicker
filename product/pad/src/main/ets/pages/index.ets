@@ -68,7 +68,7 @@ struct Index {
   private initWorker() {
     if (this.mWorker == undefined) {
       LogInfo(this.TAG, 'initWorker')
-      this.mWorker = new worker.Worker('workers/DataWorker.js', { type: 'classic', name: 'filePicker' })
+      this.mWorker = new worker.Worker('pad/ets/workers/DataWorker.js', { type: 'classic', name: 'filePicker' })
       this.mWorker.onerror = this.onError.bind(this)
       this.mWorker.onmessageerror = this.onMessageError.bind(this)
       this.mWorker.onexit = this.onExit.bind(this)
