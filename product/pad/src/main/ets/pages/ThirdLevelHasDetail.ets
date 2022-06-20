@@ -13,192 +13,199 @@
  * limitations under the License.
  */
 
-import { FileInfo } from '../../../../../../feature/FileInfo'
-import { LogInfo } from '../../../../../../common/LogUtils'
-import { getShowIconBySuffix, updateTopPathInfo } from '../module/Utils'
-import { media_type, pad_size } from '../module/Constants'
-import { ChooseDialog } from '../module/DialogUtils'
-import { DisplayInfo } from '../module/DisplayInfo'
-import { getListFile } from '../module/FileManagerServiceUtils'
+import { MediaType } from '../../../../../../common/src/main/ets/components/Data/Constants'
+import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
+import { logInfo } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
+import { getListFile } from '../../../../../../common/src/main/ets/components/Utils/FileManagerServiceUtils'
+import { getShowIconBySuffix, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/utils/utils'
+import { ChooseDialog } from '../../../../../../common/src/main/ets/components/View/ChooseDialog'
+import { PadSize } from '../module/Constants'
 
 @Component
 export struct ThirdLevelHasDetail {
-  private TAG: string = 'ThirdLevelHasDetail'
-  private mWorker
-  private displayInfo: DisplayInfo = new DisplayInfo()
+    private TAG: string = 'ThirdLevelHasDetail'
+    private mWorker
+    @Link mFileInfo: Array<FileInfo>
+    @Link @Watch('refreshFiles') mCurrentPath: string
+    @Link mMenuLevel: number
+    @Link mType: string
 
-  @Link mFileInfo: Array<FileInfo>
-  @Link @Watch('refreshFiles') mCurrentPath: string
-  @Link mMenuLevel: number
-  @Link mType: string
-
-  private aboutToAppear(): void{
-    LogInfo(this.TAG, 'aboutToAppear')
-    this.displayInfo = AppStorage.Get('displayInfo')
-
-    if (globalThis.debugMode) {
-      this.mFileInfo = getListFile('local', this.mType, this.mCurrentPath)
-    } else {
-      this.mWorker.postMessage({
-        request_data: 'listFile',
-        device_name: 'local',
-        menu_level: this.mMenuLevel,
-        media_type: this.mType,
-        path: this.mCurrentPath
-      })
-    }
-  }
-
-  private aboutToDisappear() {
-    LogInfo(this.TAG, 'aboutToDisappear')
-    AppStorage.Set('choseFiles', [])
-  }
-
-  refreshFiles() {
-    LogInfo(this.TAG, 'refreshFiles')
-    AppStorage.Set('choseFiles', [])
-
-    if (!globalThis.debugMode) {
-      this.mWorker.postMessage({
-        request_data: 'listFile',
-        device_name: 'local',
-        menu_level: this.mMenuLevel,
-        media_type: this.mType,
-        path: this.mCurrentPath
-      })
-    }
-  }
-
-  build() {
-    Column() {
-      List() {
-        ForEach(this.mFileInfo, (item: FileInfo) => {
-          ListItem() {
-            DetailRowView({
-              item: item,
-              mMenuLevel: $mMenuLevel,
-              mCurrentPath: $mCurrentPath
+    private aboutToAppear(): void{
+        logInfo(this.TAG, 'aboutToAppear')
+        if (globalThis.debugMode) {
+            this.mFileInfo = getListFile('local', this.mType, this.mCurrentPath)
+        } else {
+            this.mWorker.postMessage({
+                request_data: 'listFile',
+                device_name: 'local',
+                menu_level: this.mMenuLevel,
+                MediaType: this.mType,
+                path: this.mCurrentPath
             })
-          }
-        }, (item: FileInfo) => item.name)
-      }.align(Alignment.Top)
+        }
     }
-    .height(pad_size.TWO_HUNDRED_AND_SIXTY)
-    .alignItems(HorizontalAlign.Start)
-    .opacity(0.9)
-    .backgroundColor(Color.White)
-    .border({ radius: pad_size.TWENTY_FOUR })
-    .margin({ top: pad_size.SIXTEEN })
-  }
+
+    private aboutToDisappear() {
+        logInfo(this.TAG, 'aboutToDisappear')
+        AppStorage.Set('choseFiles', [])
+    }
+
+    refreshFiles() {
+        logInfo(this.TAG, 'refreshFiles')
+        AppStorage.Set('choseFiles', [])
+        if (!globalThis.debugMode) {
+            this.mWorker.postMessage({
+                request_data: 'listFile',
+                device_name: 'local',
+                menu_level: this.mMenuLevel,
+                MediaType: this.mType,
+                path: this.mCurrentPath
+            })
+        }
+    }
+
+    build() {
+        Column() {
+            List() {
+                ForEach(this.mFileInfo, (item: FileInfo) => {
+                    ListItem() {
+                        DetailRowView({
+                            listItem: item,
+                            mMenuLevel: $mMenuLevel,
+                            mCurrentPath: $mCurrentPath
+                        })
+                    }
+                }, (item: FileInfo) => item.name)
+            }.align(Alignment.Top)
+        }
+        .height(PadSize.TWO_HUNDRED_AND_SIXTY)
+        .alignItems(HorizontalAlign.Start)
+        .opacity(0.9)
+        .backgroundColor(Color.White)
+        .border({ radius: PadSize.TWENTY_FOUR })
+        .margin({ top: PadSize.SIXTEEN })
+    }
 }
 
 @Component
 struct DetailRowView {
-  private TAG: string = 'DetailRowView'
-  private displayInfo: DisplayInfo = AppStorage.Get('displayInfo')
-  private dialogController: CustomDialogController = new CustomDialogController({
-    builder: ChooseDialog(),
-    cancel: () => {},
-    autoCancel: true
-  })
-
-  @State item: FileInfo = new FileInfo('')
-  @Link mCurrentPath: string
-  @Link mMenuLevel: number
-  @StorageLink('choseFiles') tmpChoseFiles: Array<FileInfo> = []
-
-  build() {
-    Row() {
-      if (this.item.type == media_type.MEDIA_TYPE_ALBUM) {
-        Image($r("app.media.ic_file_fold"))
-          .width(pad_size.FORTY)
-          .height(pad_size.FORTY)
-          .margin({ left: pad_size.TWELVE })
-        Text(this.item.name)
-          .fontSize(pad_size.SIXTEEN)
-          .fontColor('#182431')
-          .fontWeight(FontWeight.Medium)
-          .margin({ left: pad_size.SIXTEEN })
-          .maxLines(pad_size.ONE)
-          .textOverflow({ overflow: TextOverflow.Ellipsis })
-        Blank()
-        Image($r("app.media.ic_right"))
-          .width(pad_size.TWELVE)
-          .height(pad_size.TWENTY_FOUR)
-          .margin({ right: pad_size.TWENTY_FOUR })
-      } else {
-        Image(getShowIconBySuffix(this.item.name.substring(this.item.name.lastIndexOf('.'))))
-          .width(pad_size.FORTY)
-          .height(pad_size.FORTY)
-          .margin({ left: pad_size.EIGHT })
-        Column() {
-          Text(this.item.name)
-            .height(pad_size.TWENTY_TWO)
-            .fontSize(pad_size.SIXTEEN)
-            .fontWeight(FontWeight.Medium)
-            .fontColor(this.item.font_color)
-            .maxLines(1)
-            .textOverflow({ overflow: TextOverflow.Ellipsis })
-            .margin({ top: pad_size.TEN })
-          Row() {
-            Text('' + this.item.modified_time)
-              .fontSize(pad_size.FOURTEEN)
-              .fontWeight(FontWeight.Regular)
-              .fontColor(this.item.font_color)
-              .maxLines(pad_size.ONE)
-              .textOverflow({ overflow: TextOverflow.Ellipsis })
-            Text('-')
-              .fontSize(pad_size.FOURTEEN)
-              .fontColor(this.item.font_color)
-              .margin({ left: pad_size.EIGHT })
-            Text('' + this.item.size)
-              .fontSize(pad_size.FOURTEEN)
-              .fontWeight(FontWeight.Regular)
-              .fontColor(this.item.font_color)
-              .margin({ left: pad_size.EIGHT })
-              .maxLines(pad_size.ONE)
-              .textOverflow({ overflow: TextOverflow.Ellipsis })
-          }
-          .opacity(0.6)
-          .height(pad_size.NINETEEN)
-          .margin({ top: pad_size.TWO, bottom: pad_size.ELEVEN })
-        }
-        .alignItems(HorizontalAlign.Start)
-        .margin({ left: pad_size.SIXTEEN })
-      }
-    }
-    .width(pad_size.FIVE_HUNDRED_AND_FOUR) // TODO
-    .height(pad_size.SIXTY_FOUR)
-    .margin({ left: pad_size.SIXTEEN, right: pad_size.TWENTY_FOUR, bottom: pad_size.TWO })
-    .border({ radius: pad_size.TWENTY })
-    .backgroundColor(this.item.list_background)
-    .onClick(() => {
-      if (this.item.type == media_type.MEDIA_TYPE_ALBUM) {
-        this.mCurrentPath = this.item.path
-        updateTopPathInfo(AppStorage.Get('topPathInfo'), this.item.name, this.item.path)
-      } else {
-        var index = this.tmpChoseFiles.indexOf(this.item)
-        if (index == -1) {
-          this.item.opacity = 0.1
-          this.item.font_color = Color.White
-          this.item.list_background = '#0A59F7'
-          this.tmpChoseFiles.push(this.item)
-        } else {
-          this.item.opacity = 1
-          this.item.font_color = Color.Black
-          this.item.list_background = ''
-          this.tmpChoseFiles.splice(index, 1)
-        }
-      }
+    private TAG: string = 'DetailRowView'
+    private dialogController: CustomDialogController = new CustomDialogController({
+        builder: ChooseDialog(),
+        cancel: () => {
+        },
+        autoCancel: true
     })
-    .gesture(
-      LongPressGesture({ repeat: false })
-        .onAction((event: GestureEvent) => {
-          if (this.item.type != media_type.MEDIA_TYPE_ALBUM) {
-            AppStorage.SetOrCreate<FileInfo>('selectedFileInfo', this.item)
-            this.dialogController.open()
-          }
+    @State listItem: FileInfo = new FileInfo('')
+    @Link mCurrentPath: string
+    @Link mMenuLevel: number
+    @StorageLink('choseFiles') @Watch('choseFilesChange') choseFiles: Array<FileInfo> = []
+
+    private choseFilesChange() {
+        this.choseFiles.forEach((item: FileInfo) => {
+            logInfo(this.TAG, 'choseFilesChange item.name =  ' + item.name + ' gridItem.name = ' + this.listItem.name)
+            logInfo(this.TAG, 'choseFilesChange item.path =  ' + item.path + ' gridItem.path = ' + this.listItem.path)
+            if (item.name == this.listItem.name && item.path == this.listItem.path) {
+                this.listItem.list_background = '#19007DFF'
+            } else {
+                this.listItem.list_background = ''
+            }
+
         })
-    )
-  }
+    }
+
+    build() {
+        Stack() {
+            Divider()
+                .vertical(false)
+                .color("#0C000000")
+                .margin({ left: PadSize.EIGHTY, top: PadSize.SIXTY_FOUR, right: PadSize.TWENTY_FOUR })
+            Row() {
+                if (this.listItem.type == MediaType.MEDIA_TYPE_ALBUM) {
+                    Image($r("app.media.ic_file_fold"))
+                        .width(PadSize.FORTY)
+                        .height(PadSize.FORTY)
+                        .margin({ left: PadSize.EIGHT })
+                    Text(this.listItem.name)
+                        .fontSize(PadSize.SIXTEEN)
+                        .fontColor('#182431')
+                        .fontWeight(FontWeight.Medium)
+                        .margin({ left: PadSize.SIXTEEN })
+                        .maxLines(PadSize.ONE)
+                        .textOverflow({ overflow: TextOverflow.Ellipsis })
+                    Blank()
+                    Image($r("app.media.ic_right"))
+                        .width(PadSize.TWELVE)
+                        .height(PadSize.TWENTY_FOUR)
+                } else {
+                    Image(getShowIconBySuffix(this.listItem.name.substring(this.listItem.name.lastIndexOf('.'))))
+                        .width(PadSize.FORTY)
+                        .height(PadSize.FORTY)
+                        .margin({ left: PadSize.EIGHT })
+                    Column() {
+                        Text(this.listItem.name)
+                            .height(PadSize.TWENTY_TWO)
+                            .fontSize(PadSize.SIXTEEN)
+                            .fontWeight(FontWeight.Medium)
+                            .fontColor(this.listItem.font_color)
+                            .maxLines(1)
+                            .textOverflow({ overflow: TextOverflow.Ellipsis })
+                            .margin({ top: PadSize.TEN })
+                        Row() {
+                            Text('' + this.listItem.modified_time)
+                                .fontSize(PadSize.FOURTEEN)
+                                .fontWeight(FontWeight.Regular)
+                                .fontColor(this.listItem.font_color)
+                                .maxLines(PadSize.ONE)
+                                .textOverflow({ overflow: TextOverflow.Ellipsis })
+                            Text('-')
+                                .fontSize(PadSize.FOURTEEN)
+                                .fontColor(this.listItem.font_color)
+                                .margin({ left: PadSize.EIGHT })
+                            Text('' + this.listItem.size)
+                                .fontSize(PadSize.FOURTEEN)
+                                .fontWeight(FontWeight.Regular)
+                                .fontColor(this.listItem.font_color)
+                                .margin({ left: PadSize.EIGHT })
+                                .maxLines(PadSize.ONE)
+                                .textOverflow({ overflow: TextOverflow.Ellipsis })
+                        }
+                        .opacity(0.6)
+                        .height(PadSize.NINETEEN)
+                        .margin({ top: PadSize.TWO, bottom: PadSize.ELEVEN })
+                    }
+                    .alignItems(HorizontalAlign.Start)
+                    .margin({ left: PadSize.SIXTEEN })
+                }
+            }
+            .width(PadSize.FIVE_HUNDRED_AND_FOUR) // TODO
+            .height(PadSize.SIXTY_FOUR)
+            .margin({ left: PadSize.SIXTEEN, right: PadSize.TWENTY_FOUR, bottom: PadSize.ONE })
+            .border({ radius: PadSize.TWENTY })
+            .backgroundColor(this.listItem.list_background)
+            .onClick(() => {
+                if (this.listItem.type == MediaType.MEDIA_TYPE_ALBUM) {
+                    this.mCurrentPath = this.listItem.path
+                    updateTopPathInfo(AppStorage.Get('topPathInfo'), this.listItem.name, this.listItem.path)
+                } else {
+                    var index = this.choseFiles.indexOf(this.listItem)
+                    this.choseFiles.splice(0, this.choseFiles.length)
+                    if (index == -1) {
+                        this.listItem.list_background = '#19007DFF'
+                        this.choseFiles.push(this.listItem)
+                    } else {
+                        this.listItem.list_background = ''
+                    }
+                }
+            })
+            .gesture(LongPressGesture({ repeat: false })
+                .onAction((event: GestureEvent) => {
+                    if (this.listItem.type != MediaType.MEDIA_TYPE_ALBUM) {
+                        AppStorage.SetOrCreate<FileInfo>('selectedFileInfo', this.listItem)
+                        this.dialogController.open()
+                    }
+                })
+            )
+        }
+    }
 }

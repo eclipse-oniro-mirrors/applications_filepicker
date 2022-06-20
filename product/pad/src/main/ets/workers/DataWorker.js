@@ -13,16 +13,16 @@
  * limitations under the License.
  */
 
-import { LogInfo, LogDebug } from '../../../../../../common/LogUtils'
-import worker from '@ohos.worker'
 import filemanager from '@ohos.filemanager'
+import worker from '@ohos.worker'
+import { logInfo, logDebug, logError } from '../../../../../../common/src/main/ets/components/utils/logutils'
 
 var TAG = 'DataWorker'
 const parentPort = worker.parentPort
 parentPort.onmessage = function (e) {
-    LogInfo(TAG, 'DataWorker onMessage')
+    logInfo(TAG, 'DataWorker onMessage')
     let data = e.data
-    LogInfo(TAG, 'DataWorker onMessage ' + data.request_data)
+    logInfo(TAG, 'DataWorker onMessage ' + data.request_data)
     if (data.request_data == 'getRoot') {
         getRootData(data)
     } else if (data.request_data == 'listFile') {
@@ -33,11 +33,11 @@ parentPort.onmessage = function (e) {
 }
 
 parentPort.onmessageerror = function () {
-    LogInfo(TAG, 'onmessageerror')
+    logInfo(TAG, 'onmessageerror')
 }
 
 parentPort.onerror = function (data) {
-    LogInfo(TAG, 'onerror')
+    logInfo(TAG, 'onerror')
 }
 
 function getRootData(data) {
@@ -46,52 +46,46 @@ function getRootData(data) {
             handleData(file, data)
         })
         .catch((error) => {
-            LogDebug(TAG, 'getRoot error' + error)
+            logError(TAG, 'getRoot error' + error)
         });
 }
 
 function getListFileData(data) {
     if (data.offset == undefined || data.count == undefined) {
-        LogDebug(TAG, 'path = ' + data.path + " type = " + data.media_type)
-        filemanager.listFile(data.path, data.media_type)
-            .then(file => {
-                handleData(file, data)
-            })
-            .catch((error) => {
-                LogDebug(TAG, 'getListFileData error' + error)
-                handleData([], data)
-            })
+        logDebug(TAG, 'path = ' + data.path + " type = " + data.MediaType)
+        filemanager.listFile(data.path, data.MediaType).then(file => {
+            handleData(file, data)
+        }).catch((error) => {
+            logError(TAG, 'getListFileData error' + error)
+            handleData([], data)
+        })
     } else {
-        LogDebug(TAG, 'path = ' + data.path + " type = " + data.media_type + " offset = " + data.offset)
-        filemanager.listFile(data.path, data.media_type, {
+        logDebug(TAG, 'path = ' + data.path + " type = " + data.MediaType + " offset = " + data.offset)
+        filemanager.listFile(data.path, data.MediaType, {
             'offset': data.offset,
             'count': data.count
+        }).then(file => {
+            handleData(file, data)
+        }).catch((error) => {
+            logError(TAG, 'getListFileData offset error' + error)
+            handleData([], data)
         })
-            .then(file => {
-                handleData(file, data)
-            })
-            .catch((error) => {
-                LogDebug(TAG, 'getListFileData offset error' + error)
-                handleData([], data)
-            })
     }
 }
 
 function createFile(data) {
-    LogDebug(TAG, 'path = ' + data.path + ' files = ' + data.save_name)
-    filemanager.createFile(data.path, data.save_name)
-        .then((uri) => {
-            handleData(uri, data)
-        })
-        .catch((error) => {
-            LogDebug(TAG, 'createFile error' + error)
-        })
+    logDebug(TAG, 'path = ' + data.path + ' files = ' + data.save_name)
+    filemanager.createFile(data.path, data.save_name).then((uri) => {
+        handleData(uri, data)
+    }).catch((error) => {
+        logError(TAG, 'createFile error' + error)
+    })
 }
 
 function handleData(file, data) {
-    LogInfo(TAG, 'handleData')
+    logInfo(TAG, 'handleData')
     var info = JSON.stringify(file)
-    LogInfo(TAG, 'info = ' + info.length)
+    logInfo(TAG, 'info = ' + info.length)
     var buf = new ArrayBuffer(info.length * 2)
     var bufView = new Uint16Array(buf)
     for (var index = 0; index < info.length; index++) {

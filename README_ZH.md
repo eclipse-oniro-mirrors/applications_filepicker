@@ -57,7 +57,7 @@ FilePicker应用是OpenHarmony中预置的系统应用，为用户提供文件�
 globalThis.context.startAbilityForResult(
     {
         bundleName: "com.ohos.filepicker",
-        abilityName: "com.ohos.filepicker.MainAbility",
+        abilityName: "MainAbility",
         parameters: {
             'startMode': 'choose', //choose or save    
         }
@@ -69,7 +69,7 @@ globalThis.context.startAbilityForResult(
 globalThis.context.startAbilityForResult(
 	{
         bundleName: "com.ohos.filepicker",
-        abilityName: "com.ohos.filepicker.MainAbility",
+        abilityName: "MainAbility",
         parameters: {
         'startMode': 'save', //choose or save
         'saveFile': 'test.jpg',
