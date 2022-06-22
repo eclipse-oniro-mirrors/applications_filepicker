@@ -1,30 +1,42 @@
-import Ability from '@ohos.application.Ability'
-import display from '@ohos.display'
-import { Callback } from 'basic'
+/*
+ * Copyright (c) 2021 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-let displayWidth: number = 0
-let displayHeight: number = 0
+import Ability from '@ohos.application.Ability';
+import { Callback } from 'basic';
+import { logInfo, logError } from '../../../../../../common/src/main/ets/components/Utils/LogUtils';
+
+const TAG: string = 'MainAbility'
 
 export default class MainAbility extends Ability {
     onCreate(want, launchParam) {
-        console.log("filePicker_MainAbility: onCreate")
+        logInfo(TAG, "onCreate")
         globalThis.abilityWant = want;
 
         globalThis.startMode = want.parameters.startMode
         globalThis.saveFile = want.parameters.saveFile
         globalThis.debugMode = want.parameters.debugMode
-        console.log('filePicker_MainAbility: startMode = ' + globalThis.startMode)
-        console.log('filePicker_MainAbility: file_name = ' + globalThis.saveFile)
-        console.log('filePicker_MainAbility: debugMode = ' + globalThis.debugMode)
+        logInfo(TAG, `parameters ${JSON.stringify(want.parameters)}`)
     }
 
     onDestroy() {
-        console.log("[Demo] MainAbility onDestroy")
+        logInfo(TAG, "onDestroy")
     }
 
     onWindowStageCreate(windowStage) {
         // Main window is created, set main page for this ability
-        console.log("filePicker_MainAbility: onWindowStageCreate")
+        logInfo(TAG, "onWindowStageCreate")
 
         globalThis.context = this.context
         this.requestPermissions(() => this.displayWindow(windowStage))
@@ -32,17 +44,17 @@ export default class MainAbility extends Ability {
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("[Demo] MainAbility onWindowStageDestroy")
+        logInfo(TAG, "onWindowStageDestroy")
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("[Demo] MainAbility onForeground")
+        logInfo(TAG, "onForeground")
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("[Demo] MainAbility onBackground")
+        logInfo(TAG, "onBackground")
     }
 
     private requestPermissions(callback: Callback<void>) {
@@ -52,35 +64,19 @@ export default class MainAbility extends Ability {
             "ohos.permission.WRITE_MEDIA"
         ]
         globalThis.context.requestPermissionsFromUser(permissionList).then(function (data) {
-            console.log('filePicker_MainAbility: request permission data result = ' + data.authResults)
+            logInfo(TAG, `request permission data result = ${data.authResults}`)
             callback()
         }, (error) => {
-            console.log('filePicker_MainAbility: fail to request permission error code = ' + error.code)
+            logError(TAG, `fail to request permission error code = ${error.code}`)
         })
     }
 
     private displayWindow(windowStage) {
+        logInfo(TAG, "displayWindow()")
         windowStage.setUIContent(this.context, "pages/index", null)
-
-        display.getDefaultDisplay().then(dis => {
-            displayWidth = dis.width
-            displayHeight = dis.height
-        })
-
         windowStage.getMainWindow().then(win => {
-            console.log("filePicker_MainAbility: windowStage.getMainWindow()")
-            win.setWindowMode(102, (err, data) => {
-            })
-
-            win.resetSize(vp2px(752), vp2px(446))
-
-            let positionX: number = (displayWidth - vp2px(752)) / 2
-            let positionY: number = (displayHeight - vp2px(446)) / 2
-            win.moveTo(positionX, positionY)
-
-            win.on('windowSizeChange', () => {
-                win.resetSize(vp2px(752), vp2px(446))
-            })
+            logInfo(TAG, "windowStage.getMainWindow()")
+            win.resetSize(vp2px(752), vp2px(450))
         })
     }
 };

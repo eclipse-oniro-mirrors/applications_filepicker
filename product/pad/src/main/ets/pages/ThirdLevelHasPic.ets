@@ -13,169 +13,167 @@
  * limitations under the License.
  */
 
-import { FileInfo } from '../../../../../../feature/FileInfo'
-import { LogInfo, LogDebug } from '../../../../../../common/LogUtils'
-import { pad_size } from '../module/Constants'
-import { getListFile } from '../module/FileManagerServiceUtils'
-import { ChooseDialog } from '../module/DialogUtils'
-import { DisplayInfo } from '../module/DisplayInfo'
+import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
+import { getListFile } from '../../../../../../common/src/main/ets/components/Utils/FileManagerServiceUtils'
+import { logDebug, logInfo } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
+import { ChooseDialog } from '../../../../../../common/src/main/ets/components/View/ChooseDialog'
+import { PadSize } from '../module/Constants'
 
 let TAG: string = 'ThirdLevelHasPic'
 
 @Component
 export struct ThirdLevelHasPic {
-  private mWorker
-  private mColumnTemplate: string
-  private mCurrentIndex: number
-  private displayInfo: DisplayInfo = new DisplayInfo()
+    private mWorker
+    private mColumnTemplate: string
+    private mCurrentIndex: number
+    @Link mFileList: Array<FileInfo>
+    @Link mMenuLevel: number
+    @Link mType: string
+    @Link mCurrentPath: string
 
-  @Link mFileList: Array<FileInfo>
-  @Link mMenuLevel: number
-  @Link mType: string
-  @Link mCurrentPath: string
-
-  private aboutToAppear() {
-    LogInfo(TAG, 'aboutToAppear')
-    this.displayInfo = AppStorage.Get('displayInfo')
-
-    if (globalThis.debugMode) {
-      this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
-      LogDebug(TAG, 'mFileList length = ' + this.mFileList.length)
-    } else {
-      LogInfo(TAG, 'aboutToAppear send message to worker')
-      this.mWorker.postMessage({
-        request_data: 'listFile',
-        device_name: 'local',
-        menu_level: this.mMenuLevel,
-        media_type: this.mType,
-        path: this.mCurrentPath,
-        offset: 0,
-        count: 100
-      })
-    }
-  }
-
-  private aboutToDisappear() {
-    LogInfo(TAG, 'aboutToDisappear')
-    AppStorage.Set('choseFiles', [])
-  }
-
-  build() {
-    if (globalThis.startMode == 'choose') {
-      Column() {
-        Grid() {
-          ForEach(this.mFileList, (item: FileInfo) => {
-            GridItem() {
-              GridItemView({ gridItem: item })
-            }
-          }, item => item.name)
+    aboutToAppear() {
+        logInfo(TAG, 'aboutToAppear send message to worker')
+        if (globalThis.debugMode) {
+            this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
+            logDebug(TAG, 'mFileList length = ' + this.mFileList.length)
+        } else {
+            this.mWorker.postMessage({
+                request_data: 'listFile',
+                device_name: 'local',
+                menu_level: this.mMenuLevel,
+                MediaType: this.mType,
+                path: this.mCurrentPath,
+                offset: 0,
+                count: 100
+            })
         }
-        //.height(300)
-        //.height(this.displayInfo.mainDialogHeight - (48 * 2))
-        .columnsTemplate('1fr 1fr 1fr 1fr')
-        //            .height(px2vp(this.displayInfo.mainDialogHeight)) // 必须参数
-        //            .columnsTemplate(this.mColumnTemplate)
-
-      }
-      .alignItems(HorizontalAlign.Start)
-      .border({ radius: pad_size.TWENTY_FOUR })
-      .opacity(0.9)
-      .backgroundColor(Color.White)
-      .margin({ top: pad_size.SIXTEEN })
     }
-  }
+
+    private aboutToDisappear() {
+        logInfo(TAG, 'aboutToDisappear')
+        AppStorage.Set('choseFiles', [])
+    }
+
+    build() {
+        if (globalThis.startMode == 'choose') {
+            Column() {
+                Grid() {
+                    ForEach(this.mFileList, (item: FileInfo) => {
+                        GridItem() {
+                            GridItemView({ gridItem: item })
+                        }
+                    }, item => item.name)
+                }
+                .columnsTemplate('1fr 1fr 1fr 1fr')
+
+            }
+            .width(PadSize.GRID_WIDTH)
+            .alignItems(HorizontalAlign.Start)
+            .border({ radius: PadSize.TWENTY_FOUR })
+            .opacity(0.9)
+            .backgroundColor(Color.White)
+            .margin({ top: PadSize.SIXTEEN })
+        }
+    }
 }
 
 @Component
 struct GridItemView {
-  private dialogController: CustomDialogController = new CustomDialogController({
-    builder: ChooseDialog(),
-    cancel: () => {},
-    autoCancel: true
-  })
-  @State gridItem: FileInfo = new FileInfo('')
-  @StorageLink('choseFiles') @Watch('choseFilesChange') choseFiles: Array<FileInfo> = []
-
-  private choseFilesChange() {
-    this.choseFiles.forEach((item: FileInfo) => {
-      LogInfo(TAG, 'choseFilesChange item.name =  ' + item.name + ' gridItem.name = ' + this.gridItem.name)
-      LogInfo(TAG, 'choseFilesChange item.path =  ' + item.path + ' gridItem.path = ' + this.gridItem.path)
-      if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
-        this.gridItem.opacity = 1
-        this.gridItem.font_color = Color.White
-        this.gridItem.list_background = '#2E88FF'
-        return;
-      }
+    private dialogController: CustomDialogController = new CustomDialogController({
+        builder: ChooseDialog(),
+        cancel: () => {
+        },
+        autoCancel: true
     })
-  }
+    @State gridItem: FileInfo = new FileInfo('')
+    @StorageLink('choseFiles') @Watch('choseFilesChange') choseFiles: Array<FileInfo> = []
 
-  build() {
-    Flex({
-      direction: FlexDirection.Column,
-      alignItems: ItemAlign.Center,
-      justifyContent: FlexAlign.Center
-    }) {
-      Image(`${this.gridItem.path}/thumbnail/${pad_size.EIGHTY_TWO}/${pad_size.EIGHTY_TWO}`)
-        .objectFit(ImageFit.Contain)
-        .width(pad_size.EIGHTY_TWO)
-        .height(pad_size.EIGHTY_TWO)
-        .margin({
-          left: pad_size.ELEVEN,
-          right: pad_size.ELEVEN,
-          top: pad_size.FOUR,
-          bottom: pad_size.TWO
+    private choseFilesChange() {
+        this.choseFiles.forEach((item: FileInfo) => {
+            logInfo(TAG, 'choseFilesChange item.name =  ' + item.name + ' gridItem.name = ' + this.gridItem.name)
+            logInfo(TAG, 'choseFilesChange item.path =  ' + item.path + ' gridItem.path = ' + this.gridItem.path)
+            if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
+                this.gridItem.font_color = Color.White
+                this.gridItem.list_background = '#19007DFF'
+                this.gridItem.textBackground = "#007DFF"
+                return;
+            } else {
+                this.gridItem.font_color = Color.Black
+                this.gridItem.list_background = ''
+                this.gridItem.textBackground = ""
+            }
         })
-
-      Row() {
-        Text(this.gridItem.name)
-          .width(pad_size.EIGHTY_EIGHT)
-          .fontSize(pad_size.FOURTEEN)
-          .fontColor(this.gridItem.font_color)
-          .fontWeight(FontWeight.Regular)
-          .maxLines(2)
-          .opacity(0.9)
-          .textAlign(TextAlign.Center)
-          .textOverflow({ overflow: TextOverflow.Ellipsis })
-          .margin({ top: pad_size.FOUR })
-      }
-      .alignItems(VerticalAlign.Top)
-      .width(pad_size.NINETY_SIX)
-      .height(pad_size.FORTY_SIX)
-      .margin({ left: pad_size.FOUR, right: pad_size.FOUR, bottom: pad_size.FOUR })
     }
-    .width(pad_size.ONE_HUNDRED_AND_FOUR)
-    .height(pad_size.ONE_HUNDRED_AND_THIRTY_FOUR)
-    .margin({ bottom: pad_size.SIXTEEN })
-    .border({ radius: pad_size.TWELVE })
-    .opacity(this.gridItem.opacity)
-    .backgroundColor(this.gridItem.list_background)
-    .gesture(
-      LongPressGesture({ repeat: false })
-        .onAction((event: GestureEvent) => {
-          AppStorage.SetOrCreate<FileInfo>('selectedFileInfo', this.gridItem)
-          this.dialogController.open()
-      })
-    )
-    .onClick(() => {
-      let choseFiles: Array<FileInfo> = AppStorage.Get('choseFiles')
-      let index: number = -1
-      choseFiles.forEach((item: FileInfo) => {
-        if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
-         index = choseFiles.indexOf(item)
-        }
-      })
-      if (index == -1) {
-        this.gridItem.opacity = 1
-        this.gridItem.font_color = Color.White
-        this.gridItem.list_background = '#2E88FF'
-        choseFiles.push(this.gridItem)
-      } else {
-        choseFiles.splice(index, 1)
-        this.gridItem.opacity = 1
-        this.gridItem.font_color = Color.Black
-        this.gridItem.list_background = ''
-      }
-    })
 
-  }
+    build() {
+        Flex({
+            direction: FlexDirection.Column,
+            alignItems: ItemAlign.Center,
+            justifyContent: FlexAlign.Center
+        }) {
+            Image(`${this.gridItem.path}/thumbnail/${PadSize.EIGHTY}/${PadSize.EIGHTY}`)
+                .objectFit(ImageFit.Contain)
+                .width(PadSize.EIGHTY)
+                .height(PadSize.EIGHTY)
+                .margin({
+                    left: PadSize.TWELVE,
+                    right: PadSize.TWELVE,
+                    top: PadSize.FOUR,
+                    bottom: PadSize.TWO
+                })
+                .border({ radius: PadSize.TWELVE, width: 0, style: BorderStyle.Solid })
+
+            Row() {
+                Text(this.gridItem.name)
+                    .width(PadSize.EIGHTY_EIGHT)
+                    .fontSize(PadSize.FOURTEEN)
+                    .fontColor(this.gridItem.font_color)
+                    .fontWeight(FontWeight.Regular)
+                    .maxLines(2)
+                    .opacity(0.9)
+                    .textAlign(TextAlign.Center)
+                    .textOverflow({ overflow: TextOverflow.Ellipsis })
+                    .margin(PadSize.FOUR)
+            }
+            .alignItems(VerticalAlign.Top)
+            .width(PadSize.NINETY_SIX)
+            .height(PadSize.FORTY_SIX)
+            .margin({ left: PadSize.FOUR, right: PadSize.FOUR, bottom: PadSize.FOUR })
+            .border({ radius: PadSize.TWELVE, width: 0, style: BorderStyle.Solid })
+            .backgroundColor(this.gridItem.textBackground)
+        }
+        .width(PadSize.ONE_HUNDRED_AND_FOUR)
+        .height(PadSize.ONE_HUNDRED_AND_THIRTY_SIX)
+        .margin({ left: PadSize.SIXTEEN, right: PadSize.EIGHT, bottom: PadSize.TWENTY })
+        .border({ radius: PadSize.TWELVE })
+        .opacity(this.gridItem.opacity)
+        .backgroundColor(this.gridItem.list_background)
+        .gesture(
+        LongPressGesture({ repeat: false })
+            .onAction((event: GestureEvent) => {
+                AppStorage.SetOrCreate<FileInfo>('selectedFileInfo', this.gridItem)
+                this.dialogController.open()
+            })
+        )
+        .onClick(() => {
+            let choseFiles: Array<FileInfo> = AppStorage.Get('choseFiles')
+            let index: number = -1
+            choseFiles.forEach((item: FileInfo) => {
+                if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
+                    index = choseFiles.indexOf(item)
+                }
+            })
+            choseFiles.splice(0, choseFiles.length)
+            if (index == -1) {
+                this.gridItem.font_color = Color.White
+                this.gridItem.list_background = '#19007DFF'
+                this.gridItem.textBackground = "#007DFF"
+                choseFiles.push(this.gridItem)
+            } else {
+                this.gridItem.font_color = Color.Black
+                this.gridItem.list_background = ''
+                this.gridItem.textBackground = ""
+            }
+        })
+    }
 }
