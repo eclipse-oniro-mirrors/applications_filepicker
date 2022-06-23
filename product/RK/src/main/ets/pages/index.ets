@@ -21,16 +21,16 @@ import { ThirdLevelHasPic } from '../pages/ThirdLevelHasPic'
 import { MenuLevel, TerminateReason, MediaType } from '../../../../../../common/src/main/ets/components/Data/Constants'
 import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
 import { TopPathInfo } from '../../../../../../common/src/main/ets/components/Data/TopPathInfo'
-import { terminateSelfWithResult } from '../../../../../../common/src/main/ets/components/utils/AbilityUtils'
+import { terminateSelfWithResult } from '../../../../../../common/src/main/ets/components/Utils/AbilityUtils'
 import { getFirstMenu } from '../../../../../../common/src/main/ets/components/Utils/FileManagerServiceUtils'
 import { logInfo, logDebug, logError } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
-import { changeStringToType, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/utils/Utils'
+import { changeStringToType, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/Utils/Utils'
 import { WarningDialog } from '../../../../../../common/src/main/ets/components/View/WarningDialog'
 
 @Entry
 @Component
 struct allIndex {
-    private TAG: string= 'Main'
+    private TAG: string = 'Main'
 
     build() {
         Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.End, justifyContent: FlexAlign.SpaceBetween }) {
@@ -59,18 +59,18 @@ struct allIndex {
 
 @Component
 struct Index {
-    private TAG: string= 'Main'
+    private TAG: string = 'Main'
     private mWorker
     private customDialogController: CustomDialogController = new CustomDialogController({
         builder: WarningDialog({ code: $code })
     })
     @State mFirstMenuData: FileInfo[] = []
     @State mSecondMenuData: FileInfo[] = []
-    @State mThirdMenuPicData: FileInfo[]= []
-    @State mThirdMenuDetailData: FileInfo[]= []
+    @State mThirdMenuPicData: FileInfo[] = []
+    @State mThirdMenuDetailData: FileInfo[] = []
     @State mType: string = ''
     @State mMenuLevel: number = MenuLevel.MENU_FIRST_LEVEL_BY_TYPE
-    @State mCurrentPath: string= ''
+    @State mCurrentPath: string = ''
     @State code: number = 2;
     @StorageLink('startMode') mCurrentMode: string = 'choose'
     @StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = updateTopPathInfo([], '文件类型', '')

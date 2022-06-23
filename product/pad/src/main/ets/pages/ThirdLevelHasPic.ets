@@ -15,7 +15,7 @@
 
 import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
 import { getListFile } from '../../../../../../common/src/main/ets/components/Utils/FileManagerServiceUtils'
-import { logDebug, logInfo } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
+import { logInfo } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
 import { ChooseDialog } from '../../../../../../common/src/main/ets/components/View/ChooseDialog'
 import { PadSize } from '../module/Constants'
 
@@ -35,7 +35,7 @@ export struct ThirdLevelHasPic {
         logInfo(TAG, 'aboutToAppear send message to worker')
         if (globalThis.debugMode) {
             this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
-            logDebug(TAG, 'mFileList length = ' + this.mFileList.length)
+            logInfo(TAG, 'mFileList length = ' + this.mFileList.length)
         } else {
             this.mWorker.postMessage({
                 request_data: 'listFile',
@@ -49,7 +49,7 @@ export struct ThirdLevelHasPic {
         }
     }
 
-    private aboutToDisappear() {
+    aboutToDisappear() {
         logInfo(TAG, 'aboutToDisappear')
         AppStorage.Set('choseFiles', [])
     }

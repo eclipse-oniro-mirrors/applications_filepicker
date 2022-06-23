@@ -21,16 +21,16 @@ import { ThirdLevelHasPic } from '../pages/ThirdLevelHasPic'
 import { MenuLevel, TerminateReason, MediaType } from '../../../../../../common/src/main/ets/components/Data/Constants'
 import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
 import { TopPathInfo } from '../../../../../../common/src/main/ets/components/Data/TopPathInfo'
-import { terminateSelfWithResult } from '../../../../../../common/src/main/ets/components/utils/AbilityUtils'
+import { terminateSelfWithResult } from '../../../../../../common/src/main/ets/components/Utils/AbilityUtils'
 import { getFirstMenu } from '../../../../../../common/src/main/ets/components/Utils/FileManagerServiceUtils'
-import { logInfo, logDebug, logError } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
-import { changeStringToType, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/utils/Utils'
+import { logInfo, logError } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
+import { changeStringToType, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/Utils/Utils'
 import { WarningDialog } from '../../../../../../common/src/main/ets/components/View/WarningDialog'
 
 @Entry
 @Component
 struct allIndex {
-    private TAG: string= 'Main'
+    private TAG: string = 'Main'
 
     build() {
         Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.End, justifyContent: FlexAlign.SpaceBetween }) {
@@ -59,18 +59,18 @@ struct allIndex {
 
 @Component
 struct Index {
-    private TAG: string= 'Main'
+    private TAG: string = 'Main'
     private mWorker
     private customDialogController: CustomDialogController = new CustomDialogController({
         builder: WarningDialog({ code: $code })
     })
     @State mFirstMenuData: FileInfo[] = []
     @State mSecondMenuData: FileInfo[] = []
-    @State mThirdMenuPicData: FileInfo[]= []
-    @State mThirdMenuDetailData: FileInfo[]= []
+    @State mThirdMenuPicData: FileInfo[] = []
+    @State mThirdMenuDetailData: FileInfo[] = []
     @State mType: string = ''
     @State mMenuLevel: number = MenuLevel.MENU_FIRST_LEVEL_BY_TYPE
-    @State mCurrentPath: string= ''
+    @State mCurrentPath: string = ''
     @State code: number = 2;
     @StorageLink('startMode') mCurrentMode: string = 'choose'
     @StorageLink('topPathInfo') topPathInfo: Array<TopPathInfo> = updateTopPathInfo([], '文件类型', '')
@@ -80,7 +80,7 @@ struct Index {
         logInfo(this.TAG, 'aboutToAppear')
         if (globalThis.debugMode) {
             this.mFirstMenuData = getFirstMenu('')
-            logDebug(this.TAG, 'mFirstMenuData length = ' + this.mFirstMenuData.length)
+            logInfo(this.TAG, 'mFirstMenuData length = ' + this.mFirstMenuData.length)
         } else {
             this.initWork()
             logInfo(this.TAG, 'send message to worker')
@@ -174,16 +174,16 @@ struct Index {
                 listData.push(item)
             }
             if (params.menu_level == MenuLevel.MENU_FIRST_LEVEL_BY_TYPE && params.request_data == 'getRoot') {
-                logDebug(this.TAG, 'mFirstMenuData length = ' + listData.length)
+                logInfo(this.TAG, 'mFirstMenuData length = ' + listData.length)
                 this.mFirstMenuData = listData
             } else if (params.menu_level == MenuLevel.MENU_SECOND_LEVEL_BY_FOLD) {
-                logDebug(this.TAG, 'mSecondMenuData length = ' + listData.length)
+                logInfo(this.TAG, 'mSecondMenuData length = ' + listData.length)
                 this.mSecondMenuData = listData
             } else if (params.menu_level == MenuLevel.MENU_THIRD_LEVEL_HAS_PIC) {
-                logDebug(this.TAG, 'mThirdMenuPicData length = ' + listData.length)
+                logInfo(this.TAG, 'mThirdMenuPicData length = ' + listData.length)
                 this.mThirdMenuPicData = listData
             } else if (params.menu_level == MenuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
-                logDebug(this.TAG, 'mThirdMenuDetailData length = ' + listData.length)
+                logInfo(this.TAG, 'mThirdMenuDetailData length = ' + listData.length)
                 if (listData.length > 0) {
                     this.mThirdMenuDetailData = listData
                 } else {
