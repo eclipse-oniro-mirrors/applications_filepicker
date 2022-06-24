@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import filemanager from '@ohos.filemanager'
+import filemanager from '@ohos.fileManager'
 import worker from '@ohos.worker'
-import { logInfo, logDebug, logError } from '../../../../../../common/src/main/ets/components/utils/logutils'
+import { logInfo, logDebug, logError } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
 
 var TAG = 'DataWorker'
 const parentPort = worker.parentPort

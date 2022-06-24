@@ -17,7 +17,7 @@ import { MediaType } from '../../../../../../common/src/main/ets/components/Data
 import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
 import { logInfo } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
 import { getListFile } from '../../../../../../common/src/main/ets/components/Utils/FileManagerServiceUtils'
-import { getShowIconBySuffix, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/utils/utils'
+import { getShowIconBySuffix, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/Utils/Utils'
 import { ChooseDialog } from '../../../../../../common/src/main/ets/components/View/ChooseDialog'
 import { PadSize } from '../module/Constants'
 
@@ -30,7 +30,7 @@ export struct ThirdLevelHasDetail {
     @Link mMenuLevel: number
     @Link mType: string
 
-    private aboutToAppear(): void{
+    aboutToAppear(): void{
         logInfo(this.TAG, 'aboutToAppear')
         if (globalThis.debugMode) {
             this.mFileInfo = getListFile('local', this.mType, this.mCurrentPath)
@@ -45,7 +45,7 @@ export struct ThirdLevelHasDetail {
         }
     }
 
-    private aboutToDisappear() {
+    aboutToDisappear() {
         logInfo(this.TAG, 'aboutToDisappear')
         AppStorage.Set('choseFiles', [])
     }

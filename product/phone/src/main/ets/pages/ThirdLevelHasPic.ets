@@ -50,7 +50,7 @@ export struct ThirdLevelHasPic {
         }
     }
 
-    private aboutToDisappear() {
+    aboutToDisappear() {
         logInfo(TAG, 'aboutToDisappear')
         AppStorage.Set('choseFiles', [])
     }

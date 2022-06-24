@@ -17,8 +17,8 @@ import { PadSize } from '../module/Constants'
 import { MediaName, MenuLevel } from '../../../../../../common/src/main/ets/components/Data/Constants'
 import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
 import { getListFile } from '../../../../../../common/src/main/ets/components/Utils/FileManagerServiceUtils'
-import { logDebug, logInfo } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
-import { changeTypeToString, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/utils/Utils'
+import { logInfo } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
+import { changeTypeToString, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/Utils/Utils'
 
 let TAG: string = 'SecondLevelByFold'
 
@@ -34,7 +34,7 @@ export struct SecondLevelByFold {
         logInfo(TAG, 'aboutToAppear')
         if (globalThis.debugMode) {
             this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
-            logDebug(TAG, 'mFileList length = ' + this.mFileList.length)
+            logInfo(TAG, 'mFileList length = ' + this.mFileList.length)
         } else {
             this.mWorker.postMessage({
                 request_data: 'listFile',

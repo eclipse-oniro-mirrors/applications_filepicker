@@ -17,7 +17,7 @@ import { MenuLevel } from '../../../../../../common/src/main/ets/components/Data
 import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
 import { getListFile } from '../../../../../../common/src/main/ets/components/Utils/FileManagerServiceUtils'
 import { logDebug, logInfo } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
-import { changeTypeToString, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/utils/Utils'
+import { changeTypeToString, updateTopPathInfo } from '../../../../../../common/src/main/ets/components/Utils/Utils'
 
 let TAG: string = 'SecondLevelByFold'
 
