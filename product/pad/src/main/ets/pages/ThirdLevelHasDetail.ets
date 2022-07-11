@@ -106,9 +106,9 @@ struct DetailRowView {
             logInfo(this.TAG, 'choseFilesChange item.name =  ' + item.name + ' gridItem.name = ' + this.listItem.name)
             logInfo(this.TAG, 'choseFilesChange item.path =  ' + item.path + ' gridItem.path = ' + this.listItem.path)
             if (item.name == this.listItem.name && item.path == this.listItem.path) {
-                this.listItem.list_background = '#19007DFF'
+                this.listItem.listBackground = '#19007DFF'
             } else {
-                this.listItem.list_background = ''
+                this.listItem.listBackground = ''
             }
 
         })
@@ -147,25 +147,25 @@ struct DetailRowView {
                             .height(PadSize.TWENTY_TWO)
                             .fontSize(PadSize.SIXTEEN)
                             .fontWeight(FontWeight.Medium)
-                            .fontColor(this.listItem.font_color)
+                            .fontColor(this.listItem.fontColor)
                             .maxLines(1)
                             .textOverflow({ overflow: TextOverflow.Ellipsis })
                             .margin({ top: PadSize.TEN })
                         Row() {
-                            Text('' + this.listItem.modified_time)
+                            Text('' + this.listItem.modifiedTime)
                                 .fontSize(PadSize.FOURTEEN)
                                 .fontWeight(FontWeight.Regular)
-                                .fontColor(this.listItem.font_color)
+                                .fontColor(this.listItem.fontColor)
                                 .maxLines(PadSize.ONE)
                                 .textOverflow({ overflow: TextOverflow.Ellipsis })
                             Text('-')
                                 .fontSize(PadSize.FOURTEEN)
-                                .fontColor(this.listItem.font_color)
+                                .fontColor(this.listItem.fontColor)
                                 .margin({ left: PadSize.EIGHT })
                             Text('' + this.listItem.size)
                                 .fontSize(PadSize.FOURTEEN)
                                 .fontWeight(FontWeight.Regular)
-                                .fontColor(this.listItem.font_color)
+                                .fontColor(this.listItem.fontColor)
                                 .margin({ left: PadSize.EIGHT })
                                 .maxLines(PadSize.ONE)
                                 .textOverflow({ overflow: TextOverflow.Ellipsis })
@@ -182,7 +182,7 @@ struct DetailRowView {
             .height(PadSize.SIXTY_FOUR)
             .margin({ left: PadSize.SIXTEEN, right: PadSize.TWENTY_FOUR, bottom: PadSize.ONE })
             .border({ radius: PadSize.TWENTY })
-            .backgroundColor(this.listItem.list_background)
+            .backgroundColor(this.listItem.listBackground)
             .onClick(() => {
                 if (this.listItem.type == MediaType.MEDIA_TYPE_ALBUM) {
                     this.mCurrentPath = this.listItem.path
@@ -191,10 +191,10 @@ struct DetailRowView {
                     var index = this.choseFiles.indexOf(this.listItem)
                     this.choseFiles.splice(0, this.choseFiles.length)
                     if (index == -1) {
-                        this.listItem.list_background = '#19007DFF'
+                        this.listItem.listBackground = '#19007DFF'
                         this.choseFiles.push(this.listItem)
                     } else {
-                        this.listItem.list_background = ''
+                        this.listItem.listBackground = ''
                     }
                 }
             })

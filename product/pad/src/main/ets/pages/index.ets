@@ -118,8 +118,8 @@ struct Index {
                 item.path = info.path
                 item.type = info.type
                 item.size = info.size
-                item.dataAdded_time = info.added_time
-                item.modified_time = info.modified_time
+                item.addedTime = info.added_time
+                item.modifiedTime = info.modified_time
                 if (params.menu_level == MenuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
                     if (item.name == 'image_album') {
                         item.name = "图片"

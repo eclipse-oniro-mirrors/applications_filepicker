@@ -21,7 +21,6 @@ export function logInfo(TAG: string, message: string | number): void {
     console.info('FilePicker_' + TAG + ': ' + message)
 }
 
-
 export function logWarn(TAG: string, message: string | number): void {
     console.warn('FilePicker_' + TAG + ': ' + message)
 }

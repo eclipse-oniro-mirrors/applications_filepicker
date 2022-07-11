@@ -117,7 +117,7 @@ struct SecondRowView {
         }
         .height(56)
         .width('100%') // TODO
-        .backgroundColor(this.item.list_background)
+        .backgroundColor(this.item.listBackground)
         .onClick(() => {
             logInfo(TAG, 'onClick this.mCurrentPath = ' + this.mCurrentPath)
             this.mCurrentPath = this.item.path

@@ -76,7 +76,7 @@ export struct ThirdLevelHasDetail {
                 ForEach(this.mFileInfo, (item: FileInfo, index: number) => {
                     Column() {
                         DetailRowView({
-                            item: item,
+                            listItem: item,
                             mMenuLevel: $mMenuLevel,
                             mCurrentPath: $mCurrentPath
                         })
@@ -106,20 +106,33 @@ struct DetailRowView {
         },
         autoCancel: true
     })
-    @State item: FileInfo = new FileInfo('')
+    @State listItem: FileInfo = new FileInfo('')
     @Link mCurrentPath: string
     @Link mMenuLevel: number
-    @StorageLink('choseFiles') tmpChoseFiles: Array<FileInfo> = []
+    @StorageLink('choseFiles') @Watch('choseFilesChange') choseFiles: Array<FileInfo> = []
+
+    private choseFilesChange() {
+        this.choseFiles.forEach((item: FileInfo) => {
+            logInfo(TAG, 'choseFilesChange item.name =  ' + item.name + ' gridItem.name = ' + this.listItem.name)
+            logInfo(TAG, 'choseFilesChange item.path =  ' + item.path + ' gridItem.path = ' + this.listItem.path)
+            if (item.name == this.listItem.name && item.path == this.listItem.path) {
+                this.listItem.listBackground = '#19007DFF'
+            } else {
+                this.listItem.listBackground = ''
+            }
+
+        })
+    }
 
     build() {
         Row() {
-            if (this.item.type == MediaType.MEDIA_TYPE_ALBUM) {
+            if (this.listItem.type == MediaType.MEDIA_TYPE_ALBUM) {
                 Row() {
                     Image($r("app.media.ic_type_bigfile"))
                         .width(40 * 1.3)
                         .height(40 * 1.3)
                         .margin({ left: 10 * 1.3 })
-                    Text(this.item.name)
+                    Text(this.listItem.name)
                         .fontSize(16 * 1.3)
                         .fontColor('#182431')
                         .fontWeight(FontWeight.Medium)
@@ -135,18 +148,18 @@ struct DetailRowView {
                 .margin({ right: 12 * 1.3 })
                 .height(64 * 1.3)
                 .width('100%')
-                .backgroundColor(this.item.list_background)
+                .backgroundColor(this.listItem.listBackground)
             } else {
                 Row() {
-                    Image(getShowIconBySuffix(this.item.name.substring(this.item.name.lastIndexOf('.'))))
+                    Image(getShowIconBySuffix(this.listItem.name.substring(this.listItem.name.lastIndexOf('.'))))
                         .width(40 * 1.3)
                         .height(40 * 1.3)
                         .margin({ left: 8 * 1.3 })
                     Column() {
-                        Text(this.item.name)
+                        Text(this.listItem.name)
                             .height(22 * 1.3)
                             .fontSize(16 * 1.3)
-                            .fontColor(this.item.font_color)
+                            .fontColor(this.listItem.fontColor)
                             .fontWeight(FontWeight.Medium)
                             .maxLines(1)
                             .textOverflow({ overflow: TextOverflow.Ellipsis })
@@ -154,19 +167,19 @@ struct DetailRowView {
                             .height(22 * 1.3)
                             .width(248 * 1.3)
                         Row() {
-                            Text('' + this.item.modified_time)
+                            Text('' + this.listItem.modifiedTime)
                                 .fontSize(14 * 1.3)
-                                .fontColor(this.item.font_color)
+                                .fontColor(this.listItem.fontColor)
                                 .fontWeight(FontWeight.Regular)
                                 .maxLines(1)
                                 .textOverflow({ overflow: TextOverflow.Ellipsis })
                             Text('-')
                                 .fontSize(14 * 1.3)
-                                .fontColor(this.item.font_color)
+                                .fontColor(this.listItem.fontColor)
                                 .margin({ left: 8 * 1.3 })
-                            Text('' + this.item.size)
+                            Text('' + this.listItem.size)
                                 .fontSize(14 * 1.3)
-                                .fontColor(this.item.font_color)
+                                .fontColor(this.listItem.fontColor)
                                 .fontWeight(FontWeight.Regular)
                                 .margin({ left: 8 * 1.3 })
                                 .maxLines(1)
@@ -188,32 +201,32 @@ struct DetailRowView {
         }
         .margin({ top: 4 * 1.3, left: 4 * 1.3, right: 4 * 1.3 })
         .border({ radius: 20 })
-        .backgroundColor(this.item.list_background)
+        .backgroundColor(this.listItem.listBackground)
         .onClick(() => {
-            if (this.item.type == MediaType.MEDIA_TYPE_ALBUM) {
+            if (this.listItem.type == MediaType.MEDIA_TYPE_ALBUM) {
                 logInfo(TAG, 'fold onClick')
-                this.mCurrentPath = this.item.path
-                updateTopPathInfo(AppStorage.Get('topPathInfo'), this.item.name, this.item.path)
+                this.mCurrentPath = this.listItem.path
+                updateTopPathInfo(AppStorage.Get('topPathInfo'), this.listItem.name, this.listItem.path)
             } else {
-                var index = this.tmpChoseFiles.indexOf(this.item)
+                var index = this.choseFiles.indexOf(this.listItem)
+                this.choseFiles.splice(0, this.choseFiles.length)
                 if (index == -1) {
-                    this.item.font_color = Color.Black
-                    this.item.opacity = 0.1
-                    this.item.list_background = 'rgba(46,136,255,0.1)'
-                    this.tmpChoseFiles.push(this.item)
+                    this.listItem.fontColor = Color.Black
+                    this.listItem.opacity = 0.1
+                    this.listItem.listBackground = 'rgba(46,136,255,0.1)'
+                    this.choseFiles.push(this.listItem)
                 } else {
-                    this.item.font_color = Color.Black
-                    this.item.opacity = 1
-                    this.item.list_background = ''
-                    this.tmpChoseFiles.splice(index, 1)
+                    this.listItem.fontColor = Color.Black
+                    this.listItem.opacity = 1
+                    this.listItem.listBackground = ''
                 }
             }
         })
         .gesture(
         LongPressGesture({ repeat: false })
             .onAction((event: GestureEvent) => {
-                if (this.item.type != MediaType.MEDIA_TYPE_ALBUM) {
-                    AppStorage.SetOrCreate<FileInfo>('selectedFileInfo', this.item)
+                if (this.listItem.type != MediaType.MEDIA_TYPE_ALBUM) {
+                    AppStorage.SetOrCreate<FileInfo>('selectedFileInfo', this.listItem)
                     this.dialogController.open()
                 }
             })

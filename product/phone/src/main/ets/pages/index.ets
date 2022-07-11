@@ -144,8 +144,8 @@ struct Index {
                 item.path = info.path
                 item.type = info.type
                 item.size = info.size
-                item.dataAdded_time = info.added_time
-                item.modified_time = info.modified_time
+                item.addedTime = info.added_time
+                item.modifiedTime = info.modified_time
                 if (params.menu_level == MenuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
                     if (item.name == 'image_album') {
                         item.name = '图片'
@@ -384,16 +384,16 @@ struct BottomBar {
 
             if (globalThis.startMode == 'save') {
                 Button() {
-                    Text($r("app.string.btn_upload"))
+                    Text($r("app.string.btn_save"))
                         .width(110)
                         .height(22)
                         .fontSize(16)
                         .fontWeight(FontWeight.Medium)
                         .fontColor('#007DFF')
                         .textAlign(TextAlign.Center)
-                        .opacity(this.choseFiles.length != 0 ? 1 : 0.4)
+                        .opacity(this.mMenuLevel != MenuLevel.MENU_FIRST_LEVEL_BY_TYPE ? 1 : 0.4)
                 }
-                .backgroundColor(this.choseFiles.length != 0 ? '#E5E8EA' : '#ECEEF0')
+                .backgroundColor(this.mMenuLevel != MenuLevel.MENU_FIRST_LEVEL_BY_TYPE ? '#E5E8EA' : '#ECEEF0')
                 .margin({
                     left: 12,
                     top: 12,
