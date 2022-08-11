@@ -18,7 +18,12 @@ import { FirstLevelByType } from './FirstLevelByType'
 import { SecondLevelByFold } from './SecondLevelByFold'
 import { ThirdLevelHasDetail } from '../pages/ThirdLevelHasDetail'
 import { ThirdLevelHasPic } from '../pages/ThirdLevelHasPic'
-import { MenuLevel, TerminateReason, MediaType } from '../../../../../../common/src/main/ets/components/Data/Constants'
+import {
+    MenuLevel,
+    TerminateReason,
+    MediaType,
+    MediaName
+} from '../../../../../../common/src/main/ets/components/Data/Constants'
 import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
 import { TopPathInfo } from '../../../../../../common/src/main/ets/components/Data/TopPathInfo'
 import { terminateSelfWithResult } from '../../../../../../common/src/main/ets/components/Utils/AbilityUtils'
@@ -164,6 +169,14 @@ struct Index {
                         item.mediaType = 'file'
                         item.thumbnail = $r("app.media.ic_type_file")
                     }
+                }
+
+                if (item.name == "Camera" || item.name == "Pictures") {
+                    continue
+                }
+
+                if (item.mediaType == MediaName.IMAGE || item.mediaType == MediaName.VIDEO) {
+                    continue
                 }
 
                 if (params.menu_level == MenuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
