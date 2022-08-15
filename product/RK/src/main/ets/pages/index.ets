@@ -171,7 +171,7 @@ struct Index {
                     }
                 }
 
-                if (item.name == "Camera" || item.name == "Pictures") {
+                if (item.name == "Camera" || item.name == "Pictures" || item.name == "Videos") {
                     continue
                 }
 
