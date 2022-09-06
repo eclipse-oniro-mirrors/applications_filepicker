@@ -88,6 +88,23 @@ struct GridItemView {
         autoCancel: true
     })
     @State gridItem: FileInfo = new FileInfo('')
+    @StorageLink('choseFiles') @Watch('choseFilesChange') choseFiles: Array<FileInfo> = []
+
+    private choseFilesChange() {
+        this.choseFiles.forEach((item: FileInfo) => {
+            logInfo(TAG, 'choseFilesChange item.name =  ' + item.name + ' gridItem.name = ' + this.gridItem.name)
+            logInfo(TAG, 'choseFilesChange item.path =  ' + item.path + ' gridItem.path = ' + this.gridItem.path)
+            if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
+                this.gridItem.opacity = 0.1
+                this.gridItem.fontColor = '#FFFFFF'
+                this.gridItem.listBackground = 'rgba(46,136,255,0.1)'
+            } else {
+                this.gridItem.opacity = 1
+                this.gridItem.fontColor = '#000000'
+                this.gridItem.listBackground = ''
+            }
+        })
+    }
 
     build() {
         Flex({
@@ -109,7 +126,7 @@ struct GridItemView {
                 Text(this.gridItem.name)
                     .width(82)
                     .fontSize(12)
-                    .fontColor(this.gridItem.list_background == 'rgba(46,136,255,0.1)' ? Color.White : Color.Black)
+                    .fontColor(this.gridItem.listBackground == 'rgba(46,136,255,0.1)' ? Color.White : Color.Black)
                     .fontWeight(FontWeight.Regular)
                     .opacity(0.9)
                     .textAlign(TextAlign.Center)
@@ -119,7 +136,7 @@ struct GridItemView {
                     .padding({ right: 4, left: 4 })
             }
             .borderRadius(12)
-            .backgroundColor(this.gridItem.list_background == 'rgba(46,136,255,0.1)' ? 0x2E8BFF : '')
+            .backgroundColor(this.gridItem.listBackground == 'rgba(46,136,255,0.1)' ? 0x2E8BFF : '')
             .alignItems(VerticalAlign.Top)
             .width(82)
             .height(36)
@@ -130,7 +147,7 @@ struct GridItemView {
         .height(126)
         .margin({ bottom: 12, left: 12 })
         .border({ radius: 20 })
-        .backgroundColor(this.gridItem.list_background)
+        .backgroundColor(this.gridItem.listBackground)
         .gesture(
         LongPressGesture({ repeat: false })
             .onAction((event: GestureEvent) => {
@@ -140,17 +157,22 @@ struct GridItemView {
         )
         .onClick(() => {
             let choseFiles: Array<FileInfo> = AppStorage.Get('choseFiles')
-            let index: number = choseFiles.indexOf(this.gridItem)
+            let index: number = -1
+            choseFiles.forEach((item: FileInfo) => {
+                if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
+                    index = choseFiles.indexOf(item)
+                }
+            })
+            choseFiles.splice(0, choseFiles.length)
             if (index == -1) {
                 this.gridItem.opacity = 0.1
-                this.gridItem.font_color = '#FFFFFF'
-                this.gridItem.list_background = 'rgba(46,136,255,0.1)'
+                this.gridItem.fontColor = '#FFFFFF'
+                this.gridItem.listBackground = 'rgba(46,136,255,0.1)'
                 choseFiles.push(this.gridItem)
             } else {
-                choseFiles.splice(index)
                 this.gridItem.opacity = 1
-                this.gridItem.font_color = '#000000'
-                this.gridItem.list_background = ''
+                this.gridItem.fontColor = '#000000'
+                this.gridItem.listBackground = ''
             }
         })
 

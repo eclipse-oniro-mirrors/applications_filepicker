@@ -93,13 +93,13 @@ struct GridItemView {
             logInfo(TAG, 'choseFilesChange item.name =  ' + item.name + ' gridItem.name = ' + this.gridItem.name)
             logInfo(TAG, 'choseFilesChange item.path =  ' + item.path + ' gridItem.path = ' + this.gridItem.path)
             if (item.name == this.gridItem.name && item.path == this.gridItem.path) {
-                this.gridItem.font_color = Color.White
-                this.gridItem.list_background = '#19007DFF'
+                this.gridItem.fontColor = Color.White
+                this.gridItem.listBackground = '#19007DFF'
                 this.gridItem.textBackground = "#007DFF"
                 return;
             } else {
-                this.gridItem.font_color = Color.Black
-                this.gridItem.list_background = ''
+                this.gridItem.fontColor = Color.Black
+                this.gridItem.listBackground = ''
                 this.gridItem.textBackground = ""
             }
         })
@@ -127,7 +127,7 @@ struct GridItemView {
                 Text(this.gridItem.name)
                     .width(PadSize.EIGHTY_EIGHT)
                     .fontSize(PadSize.FOURTEEN)
-                    .fontColor(this.gridItem.font_color)
+                    .fontColor(this.gridItem.fontColor)
                     .fontWeight(FontWeight.Regular)
                     .maxLines(2)
                     .opacity(0.9)
@@ -147,7 +147,7 @@ struct GridItemView {
         .margin({ left: PadSize.SIXTEEN, right: PadSize.EIGHT, bottom: PadSize.TWENTY })
         .border({ radius: PadSize.TWELVE })
         .opacity(this.gridItem.opacity)
-        .backgroundColor(this.gridItem.list_background)
+        .backgroundColor(this.gridItem.listBackground)
         .gesture(
         LongPressGesture({ repeat: false })
             .onAction((event: GestureEvent) => {
@@ -165,13 +165,13 @@ struct GridItemView {
             })
             choseFiles.splice(0, choseFiles.length)
             if (index == -1) {
-                this.gridItem.font_color = Color.White
-                this.gridItem.list_background = '#19007DFF'
+                this.gridItem.fontColor = Color.White
+                this.gridItem.listBackground = '#19007DFF'
                 this.gridItem.textBackground = "#007DFF"
                 choseFiles.push(this.gridItem)
             } else {
-                this.gridItem.font_color = Color.Black
-                this.gridItem.list_background = ''
+                this.gridItem.fontColor = Color.Black
+                this.gridItem.listBackground = ''
                 this.gridItem.textBackground = ""
             }
         })

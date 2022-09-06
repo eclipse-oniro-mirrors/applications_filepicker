@@ -20,14 +20,21 @@ import { SecondLevelByFold } from './SecondLevelByFold'
 import { ThirdLevelHasDetail } from '../pages/ThirdLevelHasDetail'
 import { ThirdLevelHasPic } from '../pages/ThirdLevelHasPic'
 import { PadSize } from '../module/Constants'
-import { MenuLevel, TerminateReason, MediaType, MediaName
+import {
+    MenuLevel,
+    TerminateReason,
+    MediaType,
+    MediaName
 } from '../../../../../../common/src/main/ets/components/Data/Constants'
 import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
 import { TopPathInfo } from '../../../../../../common/src/main/ets/components/Data/TopPathInfo'
 import { terminateSelfWithResult } from '../../../../../../common/src/main/ets/components/Utils/AbilityUtils'
 import { getFirstMenu } from '../../../../../../common/src/main/ets/components/Utils/FileManagerServiceUtils'
 import { logInfo, logError } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
-import { changeStringToType, changeTypeToString, updateTopPathInfo
+import {
+    changeStringToType,
+    changeTypeToString,
+    updateTopPathInfo
 } from '../../../../../../common/src/main/ets/components/Utils/Utils'
 import { WarningDialog } from '../../../../../../common/src/main/ets/components/View/WarningDialog'
 
@@ -118,8 +125,8 @@ struct Index {
                 item.path = info.path
                 item.type = info.type
                 item.size = info.size
-                item.dataAdded_time = info.added_time
-                item.modified_time = info.modified_time
+                item.addedTime = info.added_time
+                item.modifiedTime = info.modified_time
                 if (params.menu_level == MenuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
                     if (item.name == 'image_album') {
                         item.name = "图片"
@@ -138,6 +145,14 @@ struct Index {
                         item.mediaType = MediaName.FILE
                         item.thumbnail = $r("app.media.ic_public_file")
                     }
+                }
+
+                if (item.name == "Camera" || item.name == "Pictures" || item.name == "Videos") {
+                    continue
+                }
+
+                if (item.mediaType == MediaName.IMAGE || item.mediaType == MediaName.VIDEO) {
+                    continue
                 }
 
                 if (params.menu_level == MenuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {

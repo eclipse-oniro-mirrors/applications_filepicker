@@ -79,7 +79,7 @@ struct RowView {
         }
         .height(56)
         .width('100%') // TODO
-        .backgroundColor(this.item.list_background)
+        .backgroundColor(this.item.listBackground)
         .onClick(() => {
             this.mType = this.item.mediaType
             this.mCurrentPath = this.item.path

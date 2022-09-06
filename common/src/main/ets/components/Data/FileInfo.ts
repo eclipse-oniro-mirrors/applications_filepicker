@@ -20,13 +20,13 @@ export class FileInfo {
     path: string
     type: number= MediaType.MEDIA_TYPE_ALBUM
     size: string
-    dataAdded_time: string
-    modified_time: string
+    addedTime: string
+    modifiedTime: string
     mediaType: string
     thumbnail: Resource
-    font_color: Color | string | Resource
+    fontColor: Color | string | Resource
     opacity: number
-    list_background: string | Resource
+    listBackground: string | Resource
     textBackground: string | Resource
 
     constructor(name: string) {

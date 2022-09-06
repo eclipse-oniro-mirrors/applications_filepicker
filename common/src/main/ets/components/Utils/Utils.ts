@@ -19,6 +19,9 @@ import { logInfo } from './LogUtils'
 
 var TAG: string = 'Utils'
 
+const TYPE_INDEX = 0
+const NAME_INDEX = 1
+
 var strTypeArr = [
     [MediaName.IMAGE, '图片'],
     [MediaName.VIDEO, '视频'],

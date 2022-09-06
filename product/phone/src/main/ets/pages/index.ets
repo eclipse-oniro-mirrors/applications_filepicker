@@ -18,7 +18,12 @@ import { FirstLevelByType } from './FirstLevelByType'
 import { SecondLevelByFold } from './SecondLevelByFold'
 import { ThirdLevelHasDetail } from '../pages/ThirdLevelHasDetail'
 import { ThirdLevelHasPic } from '../pages/ThirdLevelHasPic'
-import { MenuLevel, TerminateReason, MediaType } from '../../../../../../common/src/main/ets/components/Data/Constants'
+import {
+    MenuLevel,
+    TerminateReason,
+    MediaType,
+    MediaName
+} from '../../../../../../common/src/main/ets/components/Data/Constants'
 import { FileInfo } from '../../../../../../common/src/main/ets/components/Data/FileInfo'
 import { TopPathInfo } from '../../../../../../common/src/main/ets/components/Data/TopPathInfo'
 import { terminateSelfWithResult } from '../../../../../../common/src/main/ets/components/Utils/AbilityUtils'
@@ -144,8 +149,8 @@ struct Index {
                 item.path = info.path
                 item.type = info.type
                 item.size = info.size
-                item.dataAdded_time = info.added_time
-                item.modified_time = info.modified_time
+                item.addedTime = info.added_time
+                item.modifiedTime = info.modified_time
                 if (params.menu_level == MenuLevel.MENU_FIRST_LEVEL_BY_TYPE) {
                     if (item.name == 'image_album') {
                         item.name = '图片'
@@ -164,6 +169,14 @@ struct Index {
                         item.mediaType = 'file'
                         item.thumbnail = $r("app.media.ic_type_file")
                     }
+                }
+
+                if (item.name == "Camera" || item.name == "Pictures" || item.name == "Videos") {
+                    continue
+                }
+
+                if (item.mediaType == MediaName.IMAGE || item.mediaType == MediaName.VIDEO) {
+                    continue
                 }
 
                 if (params.menu_level == MenuLevel.MENU_THIRD_LEVEL_HAS_DETAIL) {
@@ -384,16 +397,16 @@ struct BottomBar {
 
             if (globalThis.startMode == 'save') {
                 Button() {
-                    Text($r("app.string.btn_upload"))
+                    Text($r("app.string.btn_save"))
                         .width(110)
                         .height(22)
                         .fontSize(16)
                         .fontWeight(FontWeight.Medium)
                         .fontColor('#007DFF')
                         .textAlign(TextAlign.Center)
-                        .opacity(this.choseFiles.length != 0 ? 1 : 0.4)
+                        .opacity(this.mMenuLevel != MenuLevel.MENU_FIRST_LEVEL_BY_TYPE ? 1 : 0.4)
                 }
-                .backgroundColor(this.choseFiles.length != 0 ? '#E5E8EA' : '#ECEEF0')
+                .backgroundColor(this.mMenuLevel != MenuLevel.MENU_FIRST_LEVEL_BY_TYPE ? '#E5E8EA' : '#ECEEF0')
                 .margin({
                     left: 12,
                     top: 12,
