@@ -16,7 +16,8 @@
 @Entry
 @Component
 export struct MainPage {
-    @State message: string = 'Hello World'
-    build() {
-    }
+  @State message: string = 'Hello World'
+
+  build() {
+  }
 }

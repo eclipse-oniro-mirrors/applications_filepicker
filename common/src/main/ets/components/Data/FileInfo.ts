@@ -16,20 +16,20 @@
 import { MediaType } from './Constants'
 
 export class FileInfo {
-    name: string
-    path: string
-    type: number= MediaType.MEDIA_TYPE_ALBUM
-    size: string
-    addedTime: string
-    modifiedTime: string
-    mediaType: string
-    thumbnail: Resource
-    fontColor: Color | string | Resource
-    opacity: number
-    listBackground: string | Resource
-    textBackground: string | Resource
+	name: string
+	path: string
+	type: number = MediaType.MEDIA_TYPE_ALBUM
+	size: string
+	addedTime: string
+	modifiedTime: string
+	mediaType: string
+	thumbnail: Resource
+	fontColor: Color | string | Resource
+	opacity: number
+	listBackground: string | Resource
+	textBackground: string | Resource
 
-    constructor(name: string) {
-        this.name = name
-    }
+	constructor(name: string) {
+		this.name = name
+	}
 }

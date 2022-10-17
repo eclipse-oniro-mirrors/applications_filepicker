@@ -19,7 +19,7 @@ import { logInfo } from '../../../../../../common/src/main/ets/components/Utils/
 const TAG = "MyAbilityStage"
 
 export default class MyAbilityStage extends AbilityStage {
-    onCreate() {
-        logInfo(TAG, "onCreate")
-    }
+	onCreate() {
+		logInfo(TAG, "onCreate")
+	}
 }
