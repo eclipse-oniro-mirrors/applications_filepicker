@@ -14,12 +14,12 @@
  */
 
 export class TopPathInfo {
-    name: string
-    path: string
-    opacity: number = 1
+	name: string
+	path: string
+	opacity: number = 1
 
-    constructor(name: string, path: string) {
-        this.name = name
-        this.path = path
-    }
+	constructor(name: string, path: string) {
+		this.name = name
+		this.path = path
+	}
 }

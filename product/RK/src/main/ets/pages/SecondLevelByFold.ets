@@ -23,115 +23,117 @@ let TAG: string = 'SecondLevelByFold'
 
 @Component
 export struct SecondLevelByFold {
-    private mWorker
-    @Link mFileList: FileInfo[]
-    @Link @Watch('fileTypeChange') mType: string
-    @Link mMenuLevel: number
-    @Link mCurrentPath: string
+  private mWorker
+  @Link mFileList: FileInfo[]
+  @Link @Watch('fileTypeChange') mType: string
+  @Link mMenuLevel: number
+  @Link mCurrentPath: string
 
-    aboutToAppear(): void{
-        logInfo(TAG, 'aboutToAppear')
-        if (globalThis.debugMode) {
-            this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
-            logDebug(TAG, 'mFileList length = ' + this.mFileList.length)
-        } else {
-            this.mWorker.postMessage({
-                request_data: 'listFile',
-                device_name: 'local',
-                menu_level: this.mMenuLevel,
-                MediaType: this.mType,
-                path: this.mCurrentPath
-            })
-        }
-
-        updateTopPathInfo([], '文件类型', '')
-        updateTopPathInfo(AppStorage.Get('topPathInfo'), changeTypeToString(this.mType), this.mCurrentPath)
+  aboutToAppear(): void{
+    logInfo(TAG, 'aboutToAppear')
+    if (globalThis.debugMode) {
+      this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
+      logDebug(TAG, 'mFileList length = ' + this.mFileList.length)
+    } else {
+      this.mWorker.postMessage({
+        request_data: 'listFile',
+        device_name: 'local',
+        menu_level: this.mMenuLevel,
+        MediaType: this.mType,
+        path: this.mCurrentPath,
+        context: globalThis.context,
+      })
     }
 
-    fileTypeChange() {
-        logInfo(TAG, 'fileTypeChange ' + this.mType)
-        if (globalThis.debugMode) {
-            this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
-        } else {
-            this.mWorker.postMessage({
-                request_data: 'listFile',
-                device_name: 'local',
-                menu_level: this.mMenuLevel,
-                MediaType: this.mType,
-                path: this.mCurrentPath
-            })
-        }
-    }
+    updateTopPathInfo([], '文件类型', '')
+    updateTopPathInfo(AppStorage.Get('topPathInfo'), changeTypeToString(this.mType), this.mCurrentPath)
+  }
 
-    build() {
+  fileTypeChange() {
+    logInfo(TAG, 'fileTypeChange ' + this.mType)
+    if (globalThis.debugMode) {
+      this.mFileList = getListFile('local', this.mType, this.mCurrentPath)
+    } else {
+      this.mWorker.postMessage({
+        request_data: 'listFile',
+        device_name: 'local',
+        menu_level: this.mMenuLevel,
+        MediaType: this.mType,
+        path: this.mCurrentPath,
+        context: globalThis.context,
+      })
+    }
+  }
+
+  build() {
+    Column() {
+      ForEach(this.mFileList, (item: FileInfo, index: number) => {
         Column() {
-            ForEach(this.mFileList, (item: FileInfo, index: number) => {
-                Column() {
-                    SecondRowView({
-                        item: item,
-                        mMenuLevel: $mMenuLevel,
-                        mCurrentPath: $mCurrentPath,
-                        isType: $mType
-                    })
+          SecondRowView({
+            item: item,
+            mMenuLevel: $mMenuLevel,
+            mCurrentPath: $mCurrentPath,
+            isType: $mType
+          })
 
-                    Divider()
-                        .color('#000000')
-                        .opacity(0.05)
-                        .visibility(this.mFileList.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
-                        .margin({ left: 40 * 1.3 })
-                }
-                .width('100%')
-                .height(56 * 1.3)
-            }, item => item.name.toString())
+          Divider()
+            .color('#000000')
+            .opacity(0.05)
+            .visibility(this.mFileList.length == index + 1 ? Visibility.Hidden : Visibility.Visible)
+            .margin({ left: 40 * 1.3 })
         }
-        .padding({ top: 4 * 1.3, bottom: 4 * 1.3, left: 12 * 1.3, right: 12 * 1.3 })
         .width('100%')
-        .alignItems(HorizontalAlign.Start)
-        .border({ radius: 24 })
-        .opacity(0.9)
-        .backgroundColor(Color.White)
+        .height(56 * 1.3)
+      }, item => item.name.toString())
     }
+    .padding({ top: 4 * 1.3, bottom: 4 * 1.3, left: 12 * 1.3, right: 12 * 1.3 })
+    .width('100%')
+    .alignItems(HorizontalAlign.Start)
+    .border({ radius: 24 })
+    .opacity(0.9)
+    .backgroundColor(Color.White)
+  }
 }
 
 @Component
 struct SecondRowView {
-    private item: FileInfo = new FileInfo('')
-    @Link mMenuLevel: number
-    @Link mCurrentPath: string
-    @Link isType: string
+  private item: FileInfo = new FileInfo('')
+  @Link mMenuLevel: number
+  @Link mCurrentPath: string
+  @Link isType: string
 
-    build() {
-        Row() {
-            Image($r("app.media.ic_type_smallfile"))
-                .width(24 * 1.3)
-                .height(24 * 1.3)
-            Text(this.item.name)
-                .fontSize(16 * 1.3)
-                .fontColor('#182431')
-                .fontWeight(FontWeight.Medium)
-                .margin({ left: 17 * 1.3 })
-            Blank()
-            Image($r("app.media.ic_right"))
-                .width(12 * 1.3)
-                .height(24 * 1.3)
-        }
-        .height(56 * 1.3)
-        .width('100%') // TODO
-        .backgroundColor(this.item.listBackground)
-        .onClick(() => {
-            logInfo(TAG, 'onClick this.mCurrentPath = ' + this.mCurrentPath)
-            this.mCurrentPath = this.item.path
-            updateTopPathInfo(AppStorage.Get('topPathInfo'), this.item.name, this.mCurrentPath)
-
-            if (this.item.path.includes('dataability:///album') == false) {
-                if (this.isType != 'file') {
-                    logInfo(TAG, 'MENU_THIRD_LEVEL_HAS_PIC - onClick')
-                    this.mMenuLevel = MenuLevel.MENU_THIRD_LEVEL_HAS_PIC
-                } else {
-                    this.mMenuLevel = MenuLevel.MENU_THIRD_LEVEL_HAS_DETAIL
-                    logInfo(TAG, 'MENU_THIRD_LEVEL_HAS_DETAIL - onClick')
-                }
-            }
-        })
+  build() {
+    Row() {
+      Image($r("app.media.ic_type_smallfile"))
+        .width(24 * 1.3)
+        .height(24 * 1.3)
+      Text(this.item.name)
+        .fontSize(16 * 1.3)
+        .fontColor('#182431')
+        .fontWeight(FontWeight.Medium)
+        .margin({ left: 17 * 1.3 })
+      Blank()
+      Image($r("app.media.ic_right"))
+        .width(12 * 1.3)
+        .height(24 * 1.3)
     }
+    .height(56 * 1.3)
+    .width('100%') // TODO
+    .backgroundColor(this.item.listBackground)
+    .onClick(() => {
+      logInfo(TAG, 'onClick this.mCurrentPath = ' + this.mCurrentPath)
+      this.mCurrentPath = this.item.path
+      updateTopPathInfo(AppStorage.Get('topPathInfo'), this.item.name, this.mCurrentPath)
+
+      if (this.item.path.includes('datashare:///media/root') == false) {
+        if (this.isType != 'file') {
+          logInfo(TAG, 'MENU_THIRD_LEVEL_HAS_PIC - onClick')
+          this.mMenuLevel = MenuLevel.MENU_THIRD_LEVEL_HAS_PIC
+        } else {
+          this.mMenuLevel = MenuLevel.MENU_THIRD_LEVEL_HAS_DETAIL
+          logInfo(TAG, 'MENU_THIRD_LEVEL_HAS_DETAIL - onClick')
+        }
+      }
+    })
+  }
 }

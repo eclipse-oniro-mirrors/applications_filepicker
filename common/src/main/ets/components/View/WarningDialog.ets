@@ -15,37 +15,37 @@
 
 @CustomDialog
 export struct WarningDialog {
-    @Link code: number
-    controller: CustomDialogController
-    cancel: () => void
-    confirm: () => void
+  @Link code: number
+  controller: CustomDialogController
+  cancel: () => void
+  confirm: () => void
 
-    build() {
-        Column() {
-            Text('Warning Title').fontSize(20).margin(10)
-            if (this.code == 1) {
-                Text($r("app.string.save_file_has_same_file")).fontSize(16).margin(10)
-            } else if (this.code == 2) {
-                Text($r("app.string.save_file_no_media_permission")).fontSize(16).margin(10)
-            } else {
-                Text($r("app.string.save_file_unknown_reason")).fontSize(16).margin(10)
-            }
-            Flex({ justifyContent: FlexAlign.SpaceAround }) {
-                Button('cancel')
-                    .onClick(() => {
-                        this.controller.close()
-                        this.cancel()
-                    })
-                    .backgroundColor("0xffffff")
-                    .fontColor(Color.Black)
-                Button('confirm')
-                    .onClick(() => {
-                        this.controller.close()
-                        this.confirm()
-                    })
-                    .backgroundColor("0xffffff")
-                    .fontColor(Color.Red)
-            }.margin({ bottom: 10 })
-        }
+  build() {
+    Column() {
+      Text('Warning Title').fontSize(20).margin(10)
+      if (this.code == 1) {
+        Text($r("app.string.save_file_has_same_file")).fontSize(16).margin(10)
+      } else if (this.code == 2) {
+        Text($r("app.string.save_file_no_media_permission")).fontSize(16).margin(10)
+      } else {
+        Text($r("app.string.save_file_unknown_reason")).fontSize(16).margin(10)
+      }
+      Flex({ justifyContent: FlexAlign.SpaceAround }) {
+        Button('cancel')
+          .onClick(() => {
+            this.controller.close()
+            this.cancel()
+          })
+          .backgroundColor("0xffffff")
+          .fontColor(Color.Black)
+        Button('confirm')
+          .onClick(() => {
+            this.controller.close()
+            this.confirm()
+          })
+          .backgroundColor("0xffffff")
+          .fontColor(Color.Red)
+      }.margin({ bottom: 10 })
     }
+  }
 }

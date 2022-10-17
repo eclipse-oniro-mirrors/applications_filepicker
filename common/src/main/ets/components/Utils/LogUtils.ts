@@ -14,17 +14,17 @@
  */
 
 export function logDebug(TAG: string, message: string | number): void {
-    console.debug('FilePicker_' + TAG + ': ' + message)
+	console.debug('FilePicker_' + TAG + ': ' + message)
 }
 
 export function logInfo(TAG: string, message: string | number): void {
-    console.info('FilePicker_' + TAG + ': ' + message)
+	console.info('FilePicker_' + TAG + ': ' + message)
 }
 
 export function logWarn(TAG: string, message: string | number): void {
-    console.warn('FilePicker_' + TAG + ': ' + message)
+	console.warn('FilePicker_' + TAG + ': ' + message)
 }
 
 export function logError(TAG: string, message: string | number): void {
-    console.error('FilePicker_' + TAG + ': ' + message)
+	console.error('FilePicker_' + TAG + ': ' + message)
 }

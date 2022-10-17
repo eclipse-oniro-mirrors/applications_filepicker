@@ -18,22 +18,22 @@ import { logInfo, logWarn } from './LogUtils'
 var TAG: string = 'AbilityUtils'
 
 export function terminateSelfWithResult(resultCode: number, result: string): void {
-    logInfo(TAG, 'terminateSelfWithResult')
-    let startMode: string = AppStorage.Get<string>('startMode')
-    var abilityResult = {
-        resultCode: resultCode,
-        want: {
-            parameters: {
-                'startMode': startMode,
-                'result': result
-            }
-        }
-    }
-    globalThis.context.terminateSelfWithResult(abilityResult, (error) => {
-        if (error.code) {
-            logWarn(TAG, 'Operation failed. Cause: ' + JSON.stringify(error))
-            return
-        }
-        logInfo(TAG, 'Operation succeeded')
-    })
+	logInfo(TAG, 'terminateSelfWithResult')
+	let startMode: string = AppStorage.Get<string>('startMode')
+	var abilityResult = {
+		resultCode: resultCode,
+		want: {
+			parameters: {
+				'startMode': startMode,
+				'result': result
+			}
+		}
+	}
+	globalThis.context.terminateSelfWithResult(abilityResult, (error) => {
+		if (error.code) {
+			logWarn(TAG, 'Operation failed. Cause: ' + JSON.stringify(error))
+			return
+		}
+		logInfo(TAG, 'Operation succeeded')
+	})
 }
