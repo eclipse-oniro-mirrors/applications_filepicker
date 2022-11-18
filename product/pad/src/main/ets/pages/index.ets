@@ -101,10 +101,41 @@ struct Index {
   }
 
   private onMessage(result) {
-    logInfo(this.TAG, 'main thread onMessage')
-    var params = result.data.params
-    var file = JSON.parse(String.fromCharCode.apply(null, new Uint16Array(result.data.data)))
-    if (params.request_data == 'createFile') {
+    logInfo(this.TAG, 'main thread onMessage');
+    var params = result.data.params;
+    if (params.save_name && params.retCode == -17) {
+      logInfo(this.TAG, 'main thread onMessage pop-up window');
+      AlertDialog.show(
+        {
+          title: '文件已存在',
+          message: '是否覆盖原文件?',
+          primaryButton: {
+            value: '取消',
+            action: () => {
+            }
+          },
+          secondaryButton: {
+            value: '确定',
+            action: () => {
+              logInfo(this.TAG, 'main thread onMessage confirm and conver file');
+              this.mWorker.postMessage({
+                request_data: 'coverFile',
+                device_name: 'local',
+                MediaType: this.mType,
+                path: this.mCurrentPath,
+                cover_name: params.save_name,
+                context: globalThis.context,
+              })
+            }
+          },
+          cancel: () => {
+          }
+        }
+      )
+      return
+    }
+    var file = JSON.parse(String.fromCharCode.apply(null, new Uint16Array(result.data.data)));
+    if (params.request_data == 'createFile' || params.request_data == 'coverFile') {
       if (file.code == undefined) {
         terminateSelfWithResult(TerminateReason.SUCCESS, file)
       } else {

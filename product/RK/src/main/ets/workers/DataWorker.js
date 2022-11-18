@@ -44,6 +44,8 @@ parentPort.onmessage = function (e) {
     });
   } else if (data.request_data == 'createFile') {
     createFile(data, fileAccessHelper);
+  } else if (data.request_data == 'coverFile') {
+    coverFile(data, fileAccessHelper);
   }
 }
 
@@ -74,7 +76,6 @@ function createFileAccessHelper(data, wantInfos) {
     logError(TAG, 'createFileAccessHelper error: ' + error);
     return null;
   }
-  ;
   return fileAccessHelper;
 }
 
@@ -244,8 +245,8 @@ function getRoots(data, fileAccessHelper) {
               path: result.value.uri,
               type: result.value.mimeType,
               size: result.value.size,
-              addedTime: 0,
-              modifiedTime: 0,
+              addedTime: result.value.mTime,
+              modifiedTime: result.value.mTime,
               mode: result.value.mode,
             })
           }
@@ -287,8 +288,8 @@ function listFile(data, fileInfo) {
           path: result.value.uri,
           type: result.value.mimeType,
           size: result.value.size,
-          addedTime: 0,
-          modifiedTime: 0,
+          addedTime: result.value.mTime,
+          modifiedTime: result.value.mTime,
           mode: result.value.mode,
         })
       }
@@ -306,15 +307,46 @@ function createFile(data, fileAccessHelper) {
   logInfo(TAG, `createFile - start`);
   fileAccessHelper.createFile(data.path, data.save_name, (ret, uri) => {
     logInfo(TAG, `createFile - end`);
+    data.retCode = ret.code;
     if (ret.code == 0) {
       handleData(uri, data)
     } else if (ret.code == -2002 || ret.code == -3000) {
       logError(TAG, 'created file type does not match the directory')
     } else {
-      logError(TAG, 'createFile error' + ret.code)
+      logError(TAG, 'createFile error ' + ret.code)
       handleData([], data)
     }
   })
+}
+
+function coverFile(data, fileAccessHelper) {
+  logInfo(TAG, 'coverFile path = ' + data.path + ' files = ' + data.cover_name)
+
+  getFileInfo(data.path, fileAccessHelper).then((file) => {
+    let subFileInfos = getOtherFileInfos(file);
+    let index = subFileInfos.findIndex((fileInfo) => {
+      return fileInfo.fileName == data.cover_name;
+    });
+    let delFile = null;
+    logInfo(TAG, `coverFile - delFile` + index);
+    if (index != -1) {
+      delFile = subFileInfos[index];
+    }
+
+    logInfo(TAG, `delete - start` + delFile.uri + " - " + delFile.fileName);
+    fileAccessHelper.delete(delFile.uri, (ret, uri) => {
+      logInfo(TAG, `delete - end` + ret.code + uri);
+      data.retCode = ret.code;
+      if (ret.code == 0) {
+        data.save_name = data.cover_name;
+        data.cover_name = "";
+        createFile(data, fileAccessHelper);
+      } else {
+        logError(TAG, 'coverFile error ' + ret.code)
+        handleData([], data)
+      }
+    })
+  });
 }
 
 function handleData(file, data) {
