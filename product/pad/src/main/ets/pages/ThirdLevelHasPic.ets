@@ -110,7 +110,7 @@ struct GridItemView {
       alignItems: ItemAlign.Center,
       justifyContent: FlexAlign.Center
     }) {
-      Image(`${this.gridItem.path}/thumbnail/${PadSize.EIGHTY}/${PadSize.EIGHTY}`)
+      Image(`${this.gridItem.path}`)
         .objectFit(ImageFit.Contain)
         .width(PadSize.EIGHTY)
         .height(PadSize.EIGHTY)
