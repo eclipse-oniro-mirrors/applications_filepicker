@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import fileAccess from '@ohos.data.fileAccess'
-import fileExtensionInfo from '@ohos.fileExtensionInfo';
+import fileAccess from '@ohos.file.fileAccess'
+import fileExtensionInfo from '@ohos.file.fileExtensionInfo';
 import worker from '@ohos.worker'
 import { logInfo, logError } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
 
