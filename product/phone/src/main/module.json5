@@ -39,7 +39,15 @@
         "label": "$string:MainAbility_label",
         "visible": true,
         "startWindowIcon": "$media:icon",
-        "startWindowBackground": "$color:color_1"
+        "startWindowBackground": "$color:color_1",
+        "skills": [
+          {
+            "actions": [
+              "ohos.want.action.OPEN_FILE",
+              "ohos.want.action.CREATE_FILE"
+            ]
+          }
+        ]
       }
     ]
   }

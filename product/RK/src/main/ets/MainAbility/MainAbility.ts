@@ -1,4 +1,4 @@
-import Ability from '@ohos.application.Ability'
+import UIAbility from '@ohos.app.ability.UIAbility'
 import display from '@ohos.display'
 import { Callback } from 'basic'
 import { logInfo, logError, logWarn } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
@@ -8,7 +8,7 @@ let displayHeight: number = 0
 
 const TAG = "MainAbility"
 
-export default class MainAbility extends Ability {
+export default class MainAbility extends UIAbility {
 	onCreate(want, launchParam) {
 		logInfo(TAG, "onCreate")
 		globalThis.abilityWant = want;
