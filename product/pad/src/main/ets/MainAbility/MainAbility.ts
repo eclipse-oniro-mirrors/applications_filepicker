@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import Ability from '@ohos.application.Ability';
+import UIAbility from '@ohos.app.ability.UIAbility';
 import { Callback } from 'basic';
 import { logInfo, logError } from '../../../../../../common/src/main/ets/components/Utils/LogUtils';
 
 const TAG: string = 'MainAbility'
 
-export default class MainAbility extends Ability {
+export default class MainAbility extends UIAbility {
 	onCreate(want, launchParam) {
 		logInfo(TAG, "onCreate")
 		globalThis.abilityWant = want;

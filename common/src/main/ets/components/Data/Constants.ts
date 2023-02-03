@@ -47,3 +47,8 @@ export enum TerminateReason {
 	SUCCESS = 0,
 	NO_ACTION = -1,
 }
+
+export enum FileAccessErrorCode {
+	DIR_MATCH_ERROR1 = -2000,
+	DIR_MATCH_ERROR2 = -3000,
+}

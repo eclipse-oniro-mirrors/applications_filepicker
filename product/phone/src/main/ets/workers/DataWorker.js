@@ -17,6 +17,7 @@ import fileAccess from '@ohos.file.fileAccess'
 import fileExtensionInfo from '@ohos.file.fileExtensionInfo';
 import worker from '@ohos.worker'
 import { logInfo, logError } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
+import { FileAccessErrorCode } from '../../../../../../common/src/main/ets/components/Data/Constants'
 
 var TAG = 'DataWorker'
 const parentPort = worker.parentPort
@@ -307,15 +308,23 @@ function createFile(data, fileAccessHelper) {
   logInfo(TAG, `createFile - start`);
   fileAccessHelper.createFile(data.path, data.save_name, (ret, uri) => {
     logInfo(TAG, `createFile - end`);
-    data.retCode = ret.code;
+    if (ret == undefined) {
+      data.retCode = 0
+      handleData(uri, data)
+      return
+    }
+    data.retCode = ret.code
     if (ret.code == 0) {
       handleData(uri, data)
-    } else if (ret.code == -2002 || ret.code == -3000) {
-      logError(TAG, 'created file type does not match the directory')
-    } else {
-      logError(TAG, 'createFile error ' + ret.code)
-      handleData([], data)
+      return
     }
+    if (ret.code == FileAccessErrorCode.DIR_MATCH_ERROR1 || ret.code == FileAccessErrorCode.DIR_MATCH_ERROR2) {
+      logError(TAG, 'created file type does not match the directory')
+      return
+    }
+
+    logError(TAG, 'createFile error ' + ret.code)
+    handleData([], data)
   })
 }
 
