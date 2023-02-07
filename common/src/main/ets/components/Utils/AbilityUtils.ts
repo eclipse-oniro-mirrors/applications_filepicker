@@ -25,6 +25,7 @@ export function terminateSelfWithResult(resultCode: number, result: string): voi
 		want: {
 			parameters: {
 				'startMode': startMode,
+				'result': result,
 				'select_item_list': [result],
 				'pick_path_return': [result]
 			}
