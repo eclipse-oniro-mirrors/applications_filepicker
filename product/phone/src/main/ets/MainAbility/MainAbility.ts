@@ -1,6 +1,8 @@
+import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
 import UIAbility from '@ohos.app.ability.UIAbility'
 import display from '@ohos.display'
 import { Callback } from 'basic'
+import {Permissions} from 'permissions'
 import { logInfo, logError, logWarn } from '../../../../../../common/src/main/ets/components/Utils/LogUtils'
 
 let displayWidth: number = 0
@@ -48,17 +50,23 @@ export default class MainAbility extends UIAbility {
 	}
 
 	private requestPermissions(callback: Callback<void>) {
-		let permissionList: Array<string> = [
+		let permissionList: Array<Permissions> = [
 			"ohos.permission.MEDIA_LOCATION",
 			"ohos.permission.READ_MEDIA",
 			"ohos.permission.WRITE_MEDIA"
 		]
-		globalThis.context.requestPermissionsFromUser(permissionList).then(function (data) {
-			logInfo(TAG, 'request permission data result = ' + data.authResults)
-			callback()
-		}, (error) => {
-			logError(TAG, 'fail to request permission error code = ' + error.code)
-		})
+
+		let atManager = abilityAccessCtrl.createAtManager();
+		try {
+			atManager.requestPermissionsFromUser(globalThis.context, permissionList).then((data) => {
+				logInfo(TAG, 'request permission data result = ' + data.authResults)
+				callback()
+			}).catch((err) => {
+				logError(TAG, 'requestPermissionsFromUser data err: ' + JSON.stringify(err))
+			})
+		} catch (err) {
+			logError(TAG, 'requestPermissionsFromUser err: ' + JSON.stringify(err))
+		}
 	}
 
 	private displayWindow(windowStage) {

@@ -6,6 +6,12 @@
       "default",
       "tablet"
     ],
-    "uiSyntax": "ets"
+    "uiSyntax": "ets",
+    "metadata": [
+      {
+        "name": "ArkTSPartialUpdate",
+        "value": "false"
+      }
+    ]
   }
 }
