@@ -30,9 +30,9 @@
 
         <filefilterlist>
             <filefilter name="binaryFileTypePolicyFilter" desc="Filters for binary file policies">
-                <filteritem type="filepath" name="common/src/main/resources/base/media/.*.png" desc="self developed image"/>
-                <filteritem type="filepath" name="product/phone/src/main/resources/base/media/.*.png" desc="self developed image"/>
-                <filteritem type="filepath" name="product/pad/src/main/resources/base/media/.*.png" desc="self developed image"/>
+                <filteritem type="filepath" name="entry/src/main/resources/base/media/.*.png" desc="self developed image"/>
+                <filteritem type="filepath" name="entry/src/main/resources/base/media/.*.webp" desc="self developed image"/>
+                <filteritem type="filepath" name="entry/src/ohosTest/resources/base/media/.*.png" desc="self developed image"/>
             </filefilter>
 
 
