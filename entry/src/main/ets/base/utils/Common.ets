@@ -74,31 +74,7 @@ export const setImmersion = (isImmersion: boolean) => {
  * @param fileName 文件名
  * @return 是否合法
  */
-export function checkFileName(fileName): boolean {
-  if (FILENAME_REGEXP.test(fileName)) {
-    return false
-  }
-  return true
-}
-
-/**
- * 获取媒体库对象实例的统一接口
- */
-export function getMediaLibrary(): MediaLibrary.MediaLibrary {
-  if (!mediaLibrary) {
-    let tempMediaLibrary = undefined
-    let isFail = false
-    try {
-      tempMediaLibrary = MediaLibrary.getMediaLibrary(globalThis.abilityContext)
-    } catch (error) {
-      isFail = true
-      Logger.e(TAG, 'getMediaLibrary fail, error:' + JSON.stringify(error))
-    }
-    if (isFail || !tempMediaLibrary) {
-      return undefined
-    }
-    mediaLibrary = tempMediaLibrary
-  }
-  return mediaLibrary
+export function isValidFileName(fileName): boolean {
+  return FILENAME_REGEXP.test(fileName)
 }
 

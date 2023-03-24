@@ -20,7 +20,6 @@
 
 @Component
 export struct TopOperateBar {
-  private isShowAddFolder: boolean = false
   public addFolder: () => void // 点击新建的事件回调
   // 是否可用
   isDisabled: boolean = false
@@ -33,34 +32,23 @@ export struct TopOperateBar {
 
   build() {
     Row() {
-      Row() {
-        if (this.isShowAddFolder) {
-          Column() {
-            Image($r('app.media.hidisk_ic_huaweidrive_menu_add_nor'))
-              .objectFit(ImageFit.Contain)
-              .width($r('app.float.common_size24'))
-              .height($r('app.float.common_size24'))
-          }.padding({
-            left: $r('app.float.common_padding12'),
-            right: $r('app.float.common_padding12'),
-            top: $r('app.float.common_padding10'),
-            bottom: $r('app.float.common_padding10')
-          })
-          .stateStyles({
-            pressed: pressedStyles
-          })
-          .onClick(() => {
-            this.addFolder.call(this)
-          })
-        }
+      Column() {
+        Image($r('app.media.hidisk_ic_add_folder'))
+          .objectFit(ImageFit.Contain)
+          .width($r('app.float.common_size24'))
+          .height($r('app.float.common_size24'))
       }.padding({
-        top: $r('app.float.common_padding10'),
-        bottom: $r('app.float.common_padding10'),
         left: $r('app.float.common_padding12'),
-        right: $r('app.float.common_padding12')
+        right: $r('app.float.common_padding12'),
+        top: $r('app.float.common_padding10'),
+        bottom: $r('app.float.common_padding10')
       })
       .stateStyles({
         pressed: pressedStyles
+      })
+      .onClick(() => {
+        if (this.isDisabled) return
+        this.addFolder.call(this)
       })
 
       Column() {

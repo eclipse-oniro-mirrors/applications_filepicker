@@ -17,7 +17,6 @@ import UIAbility from '@ohos.app.ability.UIAbility'
 import window from '@ohos.window'
 import AbilityCommonUtil from '../base/utils/AbilityCommonUtil'
 import Logger from '../base/log/Logger'
-import ParseUtil from '../base/utils/ParseUtil'
 
 const TAG = 'EntryAbility'
 
@@ -27,28 +26,29 @@ export default class EntryAbility extends UIAbility {
     globalThis.action = want.action
     globalThis.abilityContext = this.context
 
+    const parameters = want.parameters
     if (globalThis.action == 'ohos.want.action.OPEN_FILE') {
       // 文件选择器
-      // 文件类型过滤，不传默认全部 支持image、video、audio、text、application、*，支持image/jpeg、image/*此种格式
-      const keyPickType = ParseUtil.jsonParse(want.parameters.key_pick_type || '')
-      const keyPickTypeList = ParseUtil.jsonParse(want.parameters.key_pick_type_list || '')
-      let newKeyPickTypeList = [keyPickType, ...keyPickTypeList]
-      globalThis.keyPickTypeList = newKeyPickTypeList.filter(item => item)
+      // 选择文件的类型列表
+      globalThis.keyPickTypeList = AbilityCommonUtil.getKeyPickTypeList(parameters.key_pick_type, parameters.key_pick_type_list)
+      // 选择文件个数
+      globalThis.filePickNum = AbilityCommonUtil.getPickFileNum(parameters.key_pick_num)
+      // 文件选择范围：0-本地 1-云盘 不传则默认展示全部路径(未实现)
+      globalThis.filePickLocation = parameters.key_pick_location
+      // 选择指定目录下的文件(未实现)
+      globalThis.keyPickDirPath = parameters.key_pick_dir_path
+      globalThis.pickerCallerUid = parameters[AbilityCommonUtil.CALLER_UID]
       globalThis.filePickerViewFlag = true
-      globalThis.keyPickFilePathUri = want.parameters.key_pick_file_path_uri
-      // 选择文件最大个数，上限500
-      let filePickNum = +ParseUtil.jsonParse(want.parameters.key_pick_num)
-      globalThis.filePickNum = (filePickNum && filePickNum <= 500) ? filePickNum : 500
-      // 文件选择范围：0-本地 1-云盘 不传则默认展示全部路径
-      globalThis.filePickLocation = ParseUtil.jsonParse(want.parameters.key_pick_location)
-      globalThis.pickerCallerUid = want.parameters[AbilityCommonUtil.CALLER_UID]
     } else {
       // 路径选择器
       globalThis.pathAbilityContext = this.context
-      globalThis.keyPickFileName = want.parameters.key_pick_file_name
-      globalThis.keyPickFileLocation = want.parameters.key_pick_file_location
-      globalThis.keyPickFilePaths = want.parameters.key_pick_file_paths
-      globalThis.pathCallerUid = want.parameters[AbilityCommonUtil.CALLER_UID]
+      // 保存文件时的文件名列表
+      globalThis.keyPickFileName = parameters.key_pick_file_name || []
+      // 保存位置，[本地、云盘](未实现)
+      globalThis.keyPickFileLocation = parameters.key_pick_file_location
+      // 保存云盘文件到本地时云盘文件的uri列表(未实现)
+      globalThis.keyPickFilePaths = parameters.key_pick_file_paths
+      globalThis.pathCallerUid = parameters[AbilityCommonUtil.CALLER_UID]
     }
     Logger.i(TAG, ' onCreate, parameters: ' + JSON.stringify(want.parameters))
   }

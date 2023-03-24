@@ -16,10 +16,10 @@
 import { fileTree } from './component/dialog/FileMoveDialog'
 import FileAccessExec from '../base/utils/FileAccessExec'
 import Logger from '../base/log/Logger'
-import ParseUtil from '../base/utils/ParseUtil'
 import ErrorCodeConst from '../base//constants/ErrorCodeConst'
-import { toast } from '../base/utils/Common'
+import { toast, setSystemBar, setImmersion } from '../base/utils/Common'
 import AbilityCommonUtil from '../base/utils/AbilityCommonUtil'
+import { SYSTEM_BAR_COLOR } from '../base/constants/UiConstant'
 
 const TAG = 'PathSelector'
 
@@ -27,18 +27,22 @@ const TAG = 'PathSelector'
 @Component
 struct PathSelector {
 
+  aboutToAppear(){
+    setImmersion(false)
+    setSystemBar(SYSTEM_BAR_COLOR.WHITE, SYSTEM_BAR_COLOR.WHITE, SYSTEM_BAR_COLOR.BLACK, SYSTEM_BAR_COLOR.BLACK)
+  }
+
   async saveFileCallback(res): Promise<void> {
     if (res?.cancel) {
       globalThis.pathAbilityContext.terminateSelf()
       return
     } else {
-      let pathName = ParseUtil.jsonParse(globalThis.keyPickFileName)
-      Logger.i(TAG, 'pathFileName length ' + JSON.stringify(pathName.length))
+      let fileNameList = globalThis.keyPickFileName
       // 保存单个文件时文件名可修改，需使用修改后的文件名来创建文件
-      if (pathName.length === 1) {
-        pathName = [res.pathTitle]
+      if (fileNameList.length <= 1) {
+        fileNameList = [res.fileName]
       }
-      this.createFile(res, pathName).then((createdFileList) => {
+      this.createFile(res.selectUri, fileNameList).then((createdFileList) => {
         AbilityCommonUtil.terminatePathPicker(createdFileList)
       }).catch((err) => {
         let errorMessage = ''
@@ -65,14 +69,14 @@ struct PathSelector {
     }
   }
 
-  async createFile(e, pathName): Promise<Array<string>> {
+  async createFile(folderUri: string, fileNameList: Array<string>): Promise<Array<string>> {
     let createdFileUriList = []
     return new Promise(async (resolve, reject) => {
       let resolveFileName = ''
       try {
-        for (let i = 0; i < pathName.length; i++) {
-          resolveFileName = pathName[i]
-          const newFileUri = await FileAccessExec.createFile(e.selectUri, resolveFileName)
+        for (let i = 0; i < fileNameList.length; i++) {
+          resolveFileName = fileNameList[i]
+          const newFileUri = await FileAccessExec.createFile(folderUri, resolveFileName)
           createdFileUriList.push(newFileUri)
         }
         resolve(createdFileUriList)

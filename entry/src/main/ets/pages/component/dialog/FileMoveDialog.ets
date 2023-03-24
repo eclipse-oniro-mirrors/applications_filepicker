@@ -15,14 +15,15 @@
 
 import { FilesData } from '../../../databases/model/FileData'
 import FileAccessExec from '../../../base/utils/FileAccessExec'
-import { toast } from '../../../base/utils/Common'
+import { toast, isValidFileName } from '../../../base/utils/Common'
 import { TreeItem } from '../TreeItem'
 import { FileMkdirDialog } from './FileMkdirDialog'
 import { emit } from '../../../base/utils/EventBus'
 import { getResourceString } from '../../../base/utils/Tools'
-import ParseUtil from '../../../base/utils/ParseUtil'
+import { FILENAME_MAX_LENGTH } from '../../../base/constants/Constant'
+import StringUtil from '../../../base/utils/StringUtil'
 
-@Styles function pressedStyles() {
+@Styles function pressedStyles () {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
 }
@@ -40,7 +41,7 @@ export struct fileTree {
   @State folderList: FilesData[] = new Array<FilesData>()
   @State fileList: FilesData[] = new Array<FilesData>()
   @State changeTitle: Resource = undefined
-  @State pathTitle: string = ''
+  @State fileName: string = ''
   @State suffix: string = ''
   fileMkdirDialog: CustomDialogController = new CustomDialogController({
     builder: FileMkdirDialog({
@@ -53,19 +54,22 @@ export struct fileTree {
     offset: { dx: 0, dy: -80 }
   })
   @State isSelectRootPath: boolean = true
+  @State errorText: Resource = undefined
 
   async aboutToAppear() {
     toast($r('app.string.select_location'))
-    const pathName = ParseUtil.jsonParse(globalThis.keyPickFileName)
-    this.listLength = pathName.length
-    const fileName: string = pathName[0]
-    const dotIndex = fileName.lastIndexOf('.')
-    if (dotIndex > 0) {
-      this.pathTitle = fileName.substring(0, dotIndex)
-      this.suffix = fileName.substring(dotIndex + 1)
-    } else {
-      this.pathTitle = fileName
-      this.suffix = ''
+    const fileNameList = globalThis.keyPickFileName
+    this.listLength = fileNameList.length
+    const fileName: string = fileNameList[0]
+    if (fileName) {
+      const dotIndex = fileName.lastIndexOf('.')
+      if (dotIndex > 0) {
+        this.fileName = fileName.substring(0, dotIndex)
+        this.suffix = fileName.substring(dotIndex + 1)
+      } else {
+        this.fileName = fileName
+        this.suffix = ''
+      }
     }
     this.nameChange()
     this.isSelectRootPath = true
@@ -102,7 +106,7 @@ export struct fileTree {
   }
 
   nameChange() {
-    this.changeTitle = this.listLength === 1 ? $r('app.string.to_save', this.selectName) : $r('app.string.to_save_plural', this.listLength, this.selectName)
+    this.changeTitle = this.listLength <= 1 ? $r('app.string.to_save', this.selectName) : $r('app.string.to_save_plural', this.listLength, this.selectName)
     if (this.isSelectRootPath) {
       this.isSelectRootPath = false
     }
@@ -125,7 +129,7 @@ export struct fileTree {
             })
           })
         Blank()
-        Image($r('app.media.hidisk_ic_huaweidrive_menu_add_nor'))
+        Image($r('app.media.hidisk_ic_add_folder'))
           .width($r('app.float.common_size46'))
           .height($r('app.float.common_size30'))
           .objectFit(ImageFit.Contain)
@@ -149,10 +153,23 @@ export struct fileTree {
             pressed: pressedStyles
           })
           .onClick(() => {
-            this.moveCallback({
-              selectUri: this.selectUri,
-              pathTitle: this.pathTitle + '.' + this.suffix
-            })
+            const prefix = this.fileName.trim()
+            if (!prefix) {
+              this.errorText = $r('app.string.input_nothing')
+              return
+            }
+            const fileName = `${prefix}${this.suffix ? '.' : ''}${this.suffix}`
+            if (StringUtil.getBytesCount(fileName) > FILENAME_MAX_LENGTH) {
+              this.errorText = $r('app.string.max_input_length')
+            } else if (!isValidFileName(fileName)) {
+              this.errorText = $r('app.string.input_invalid')
+            } else {
+              this.errorText = null
+              this.moveCallback({
+                selectUri: this.selectUri,
+                fileName: fileName
+              })
+            }
           })
       }.width('100%')
       .padding({
@@ -164,7 +181,7 @@ export struct fileTree {
       .borderRadius($r('app.float.common_borderRadius10'))
 
       Row() {
-        if (this.listLength !== 1) {
+        if (this.listLength > 1) {
           Image($r('app.media.hidisk_icon_unknown'))
             .objectFit(ImageFit.Contain)
             .renderMode(ImageRenderMode.Original)
@@ -176,7 +193,10 @@ export struct fileTree {
             .borderRadius($r('app.float.common_borderRadius8'))
         }
         Column() {
-          Text(this.changeTitle).fontSize($r('app.float.common_font_size19'))
+          Text(this.changeTitle)
+            .fontSize($r('app.float.common_font_size16'))
+            .maxLines(1)
+            .textOverflow({ overflow: TextOverflow.Ellipsis })
         }
         .layoutWeight(1).alignItems(HorizontalAlign.Start)
       }
@@ -186,12 +206,13 @@ export struct fileTree {
         bottom: $r('app.float.common_padding15')
       })
 
-      if (this.listLength === 1) {
+      if (this.listLength <= 1) {
         Column() {
-          TextInput({ text: this.pathTitle })
+          TextInput({ text: this.fileName })
             .backgroundColor($r('app.color.text_input_bg_color'))
             .onChange((newVal) => {
-              this.pathTitle = newVal
+              this.fileName = newVal
+              this.errorText = null
             })
           Divider().vertical(false).strokeWidth(1).color(Color.Gray)
             .margin({
@@ -199,6 +220,19 @@ export struct fileTree {
               right: $r('app.float.common_margin20'),
               bottom: $r('app.float.common_margin2')
             })
+
+          Text(this.errorText)
+            .margin({
+              left: $r('app.float.common_margin20'),
+              right: $r('app.float.common_margin20')
+            })
+            .padding({
+              top: $r('app.float.common_padding5'),
+              bottom: $r('app.float.common_padding10')
+            })
+            .fontSize($r('app.float.common_font_size14'))
+            .fontColor($r('app.color.error_message_color'))
+            .alignSelf(ItemAlign.Start)
         }
         .margin({ bottom: $r('app.float.common_size10') })
       }
@@ -221,7 +255,7 @@ export struct fileTree {
           .renderMode(ImageRenderMode.Original)
           .aspectRatio(1)
           .width($r('app.float.common_size15'))
-          .rotate({ z: 90, angle: !this.topRotate ? -90 : 0 })
+          .rotate({ z: 90, angle: this.topRotate ? 90 : 0 })
       }
       .width('100%')
       .padding({
@@ -244,7 +278,7 @@ export struct fileTree {
 
       Scroll() {
         Column() {
-          if (this.rootData.length && !this.topRotate) {
+          if (this.rootData.length && this.topRotate) {
             ForEach(this.rootData, (item) => {
               TreeItem({
                 fileItem: item,
@@ -262,7 +296,7 @@ export struct fileTree {
       .width('100%')
       .scrollBar(BarState.Off)
       .padding({ bottom: $r('app.float.common_padding2') })
-
+      .layoutWeight(1)
     }
     .width('100%')
     .height('100%')

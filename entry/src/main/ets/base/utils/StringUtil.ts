@@ -64,6 +64,27 @@ namespace StringUtil {
     export function padStart(num: number | string, maxLen = 2, placeholder = '0') {
         return num.toString().padStart(maxLen, placeholder)
     }
+
+    /**
+     * 获得字符串字节长度
+     * @param str 字符串
+     * @return 字节长度
+     */
+    export function getBytesCount(str: string): number {
+        let bytesCount = 0
+        if (str) {
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charAt(i)
+                if (char.match(/[^\x00-\xff]/ig) != null) {
+                    // 汉字占用字节数和编码有关，utf-8编码：占3个字节，GB2312编码：占2个字节
+                    bytesCount += 3
+                } else {
+                    bytesCount += 1
+                }
+            }
+        }
+        return bytesCount
+    }
 }
 
 export default StringUtil

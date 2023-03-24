@@ -47,6 +47,11 @@ namespace AbilityCommonUtil {
   export const CALLER_UID = 'ohos.aafwk.param.callerUid'
 
   /**
+   * 最大选择文件的个数
+   */
+  export const MAX_FILE_PICK_NUM = 500
+
+  /**
    * picker对外返回的响应码
    */
   export const RESULT_CODE = {
@@ -153,10 +158,14 @@ namespace AbilityCommonUtil {
       for (let uri of uriList) {
         try {
           await FileShare.grantUriPermission(uri, bundleName, flag)
+          if (flag === wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION) {
+            await FileShare.grantUriPermission(uri, bundleName, wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION)
+          }
           Logger.d(TAG, `grantUriPermission success, uri: ${uri}`)
         } catch (error) {
           resolve(false)
           Logger.e(TAG, `grantUriPermission fail, uri: ${uri}, error: ${JSON.stringify(error)}`)
+          return
         }
         resolve(true)
       }
@@ -240,29 +249,53 @@ namespace AbilityCommonUtil {
   }
 
   /**
+   * 获取选择文件的最大个数
+   * @param num 调用方传入的个数
+   */
+  export function getPickFileNum(num: number): number {
+    if(!num || num > MAX_FILE_PICK_NUM){
+      return MAX_FILE_PICK_NUM
+    }
+    return num
+  }
+
+  /**
+   * 获取选择文件的类型列表
+   * @param keyPickType 调用方传入文件类型（兼容双框架action）
+   * @param keyPickTypeList 调用方传入文件类型列表
+   */
+  export function getKeyPickTypeList(keyPickType, keyPickTypeList): Array<string>{
+    let typeList =[]
+    if (keyPickType) {
+      typeList.push(keyPickType)
+    }
+    if (keyPickTypeList && keyPickTypeList.length !== 0) {
+      typeList = typeList.concat(keyPickTypeList)
+    }
+    return typeList.filter(item => item)
+  }
+
+  /**
    * 获取媒体库对象实例的统一接口
    */
   export function getMediaLibrary(): MediaLibrary.MediaLibrary {
     if (!mediaLibrary) {
-      let tempMediaLibrary = undefined
-      let isFail = false
       try {
-        tempMediaLibrary = MediaLibrary.getMediaLibrary(globalThis.abilityContext)
+        mediaLibrary = MediaLibrary.getMediaLibrary(globalThis.abilityContext)
       } catch (error) {
-        isFail = true
         Logger.e(TAG, 'getMediaLibrary fail, error:' + JSON.stringify(error))
       }
-      if (isFail || !tempMediaLibrary) {
-        return undefined
-      }
-      mediaLibrary = tempMediaLibrary
     }
     return mediaLibrary
   }
 
   export function releaseMediaLibrary(): void {
     if (!mediaLibrary) {
-      mediaLibrary.release()
+      try {
+        mediaLibrary.release()
+      } catch (error) {
+        Logger.e(TAG, 'releaseMediaLibrary fail, error: ' + JSON.stringify(error))
+      }
     }
   }
 }

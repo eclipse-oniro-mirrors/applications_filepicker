@@ -99,6 +99,18 @@
     {
       "name": "save_file_fail",
       "value": "保存失败"
+    },
+    {
+      "name": "input_nothing",
+      "value": "内容为空"
+    },
+    {
+      "name": "input_invalid",
+      "value": "不支持 \" \\ /： * ? < > |"
+    },
+    {
+      "name": "max_input_length",
+      "value": "已达到长度上限"
     }
   ]
 }

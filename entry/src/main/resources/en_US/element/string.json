@@ -99,6 +99,18 @@
     {
       "name": "save_file_fail",
       "value": "Saving failed"
+    },
+    {
+      "name": "input_nothing",
+      "value": "There is no content."
+    },
+    {
+      "name": "input_invalid",
+      "value": "\" \\ / : * ? < > | are not supported."
+    },
+    {
+      "name": "max_input_length",
+      "value": "Maximum length reached"
     }
   ]
 }

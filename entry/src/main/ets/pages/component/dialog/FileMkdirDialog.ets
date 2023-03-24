@@ -15,7 +15,7 @@
 
 import { FilesData } from '../../../databases/model/FileData'
 import FileAccessExec from '../../../base/utils/FileAccessExec'
-import { toast, checkFileName } from '../../../base/utils/Common'
+import { toast, isValidFileName } from '../../../base/utils/Common'
 import { createName, getResourceString } from '../../../base/utils/Tools'
 import Logger from '../../../base/log/Logger'
 import { DialogTitle, DialogButton, DialogButtonDivider } from '../common/DialogComponent'
@@ -88,7 +88,7 @@ export struct FileMkdirDialog {
           text: $r('app.string.confirm'),
           isDisabled: !this.folderName.trim(),
           click: () => {
-            if (!checkFileName(this.folderName)) {
+            if (!isValidFileName(this.folderName)) {
               this.errorText = getResourceString($r('app.string.illegal'))
             } else if (this.isSameName()) {
               this.errorText = getResourceString($r('app.string.sameName'))

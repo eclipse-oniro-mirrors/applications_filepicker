@@ -28,6 +28,7 @@ import { Loading } from '../../component/common/Loading'
 import { getMediaType, getDurationByUri } from '../../../databases/model/FileAssetModel'
 import Logger from '../../../base/log/Logger'
 import multimedia_image from '@ohos.multimedia.image'
+import AbilityCommonUtil from '../../../base/utils/AbilityCommonUtil'
 
 const TAG = 'myPhone'
 
@@ -176,7 +177,7 @@ struct MyPhone {
 
   backCallback(): void {
     if (!this.isMulti) {
-      router.back()
+      AbilityCommonUtil.terminateFilePicker([], AbilityCommonUtil.RESULT_CODE.CANCEL)
     } else {
       this.initData()
     }
@@ -216,6 +217,9 @@ struct MyPhone {
   }
 
   onDireListChange(): void {
+    if (this.isMulti) {
+      this.backCallback()
+    }
     this.setShowLoading(true)
     if (this.direList.length) {
       const lastBreadCrumb = this.direList[this.direList.length-1]
@@ -276,7 +280,6 @@ struct MyPhone {
 
       TopOperateBar({
         isDisabled: this.isMulti,
-        isShowAddFolder: true,
         addFolder: this.addCallBack.bind(this)
       })
 
@@ -292,10 +295,6 @@ struct MyPhone {
           })
         }
       }.layoutWeight(1)
-      .padding({
-        bottom: this.isMulti || !this.direList.length ? $r('app.float.multi_menu_padding') : $r('app.float.notMulti_menu_padding')
-      })
-
     }
     .width('100%')
   }

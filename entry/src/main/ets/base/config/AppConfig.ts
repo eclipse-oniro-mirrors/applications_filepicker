@@ -31,7 +31,7 @@ namespace AppConfig {
     /**
      * 应用版本号
      */
-    export const APP_VERSION = '1.0.0.100'
+    export const APP_VERSION = '1.1.0.300'
 }
 
 export default AppConfig

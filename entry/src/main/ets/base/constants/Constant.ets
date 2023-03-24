@@ -29,6 +29,8 @@ export const BYTE = {
   ONE_TB: 1024 * 1024 * 1024 * 1024
 }
 
-export const FILENAME_REGEXP = /[\/:*?<>|&%#;!\\""]/g
+export const FILENAME_REGEXP = /^[^\\/:*?<>\"|]+$/
+
+export const FILENAME_MAX_LENGTH = 250
 
 export const DOCUMENTS_FOLDER = 'Documents'

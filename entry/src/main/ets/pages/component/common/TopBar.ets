@@ -162,7 +162,7 @@ export struct TopBar {
           .onClick(() => {
             this.terminate()
           })
-          .opacity(this.checkSelectedFileList() ? $r('app.float.common_opacity10') : $r('app.float.common_opacity6'))
+          .opacity(this.checkSelectedFileList() ? $r('app.float.common_opacity10') : $r('app.float.common_opacity4'))
         }
       }
     }
