@@ -254,7 +254,7 @@ struct MyPhone {
             this.getRootListFile()
           }
         } else {
-          router.back()
+          AbilityCommonUtil.terminateFilePicker([], AbilityCommonUtil.RESULT_CODE.CANCEL)
         }
       }
       return true
