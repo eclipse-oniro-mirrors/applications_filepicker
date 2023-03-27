@@ -11,8 +11,8 @@
   },
   "modules": [
     {
-      "name": "pad",
-      "srcPath": "./product/pad",
+      "name": "entry",
+      "srcPath": "./entry",
       "targets": [
         {
           "name": "default",
@@ -21,34 +21,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "phone",
-      "srcPath": "./product/phone",
-      "targets": [
-        {
-          "name": "default",
-          "applyToProducts": [
-            "default"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "RK",
-      "srcPath": "./product/RK",
-      "targets": [
-        {
-          "name": "default",
-          "applyToProducts": [
-            "default"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "common",
-      "srcPath": "./common"
     }
   ]
 }

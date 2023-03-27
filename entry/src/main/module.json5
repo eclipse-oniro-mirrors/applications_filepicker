@@ -1,0 +1,65 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "srcEntrance": "./ets/application/PickerAbilityStage.ets",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "metadata": [
+      {
+        "name": "ArkTSPartialUpdate",
+        "value": "false"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntrance": "./ets/entryability/EntryAbility.ts",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:app_icon",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:app_icon",
+        "startWindowBackground": "$color:start_window_background",
+        "visible": true,
+        "skills": [
+          {
+            "actions": [
+              "ohos.want.action.OPEN_FILE",
+              "ohos.want.action.CREATE_FILE"
+            ]
+          }
+        ]
+      }
+    ],
+    requestPermissions: [
+      // 媒体库管理权限
+      {
+        name: "ohos.permission.MEDIA_LOCATION"
+      },
+      {
+        name: "ohos.permission.READ_MEDIA"
+      },
+      {
+        name: "ohos.permission.WRITE_MEDIA"
+      },
+      // 文件管理权限
+      {
+        name: "ohos.permission.FILE_ACCESS_MANAGER"
+      },
+      // 应用程序包管理权限
+      {
+        name: 'ohos.permission.GET_BUNDLE_INFO'
+      },
+      {
+        name: 'ohos.permission.GET_BUNDLE_INFO_PRIVILEGED'
+      }
+    ]
+  }
+}
