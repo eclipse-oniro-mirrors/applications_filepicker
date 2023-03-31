@@ -4,7 +4,7 @@
     "type": "entry",
     "srcEntrance": "./ets/application/PickerAbilityStage.ets",
     "description": "$string:module_desc",
-    "mainElement": "EntryAbility",
+    "mainElement": "MainAbility",
     "deviceTypes": [
       "default",
       "tablet"
@@ -20,8 +20,8 @@
     ],
     "abilities": [
       {
-        "name": "EntryAbility",
-        "srcEntrance": "./ets/entryability/EntryAbility.ts",
+        "name": "MainAbility",
+        "srcEntrance": "./ets/entryability/MainAbility.ts",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:app_icon",
         "label": "$string:EntryAbility_label",
