@@ -198,7 +198,8 @@ namespace AbilityCommonUtil {
         abilityName: ABILITY_LIST.FILE_PICKER,
         parameters: {
           'select_item_list': result,
-          message: message
+          message: message,
+          'result': result[0]
         }
       }
     }
@@ -235,7 +236,9 @@ namespace AbilityCommonUtil {
         parameters: {
           'pick_path_return': result,
           'key_pick_select_clouddisk': false,
-          'message': message
+          'message': message,
+          // 兼容老版本picker
+          'result': result[0]
         }
       }
     }

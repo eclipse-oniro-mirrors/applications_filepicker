@@ -18,16 +18,18 @@ import window from '@ohos.window'
 import AbilityCommonUtil from '../base/utils/AbilityCommonUtil'
 import Logger from '../base/log/Logger'
 
-const TAG = 'EntryAbility'
+const TAG = 'MainAbility'
 
-export default class EntryAbility extends UIAbility {
+export default class MainAbility extends UIAbility {
   onCreate(want, launchParam) {
     Logger.i(TAG, 'onCreate')
     globalThis.action = want.action
     globalThis.abilityContext = this.context
-
+    globalThis.startMode = want.parameters.startMode
+    globalThis.saveFile = want.parameters.saveFile ? [want.parameters.saveFile] : []
+    Logger.i(TAG, 'globalThis.startMode: ' + globalThis.startMode + ', ' + (globalThis.startMode == 'choose'))
     const parameters = want.parameters
-    if (globalThis.action == 'ohos.want.action.OPEN_FILE') {
+    if (globalThis.action == 'ohos.want.action.OPEN_FILE' || globalThis.startMode == 'choose') {
       // 文件选择器
       // 选择文件的类型列表
       globalThis.keyPickTypeList = AbilityCommonUtil.getKeyPickTypeList(parameters.key_pick_type, parameters.key_pick_type_list)
@@ -43,7 +45,7 @@ export default class EntryAbility extends UIAbility {
       // 路径选择器
       globalThis.pathAbilityContext = this.context
       // 保存文件时的文件名列表
-      globalThis.keyPickFileName = parameters.key_pick_file_name || []
+      globalThis.keyPickFileName = parameters.key_pick_file_name || globalThis.saveFile || []
       // 保存位置，[本地、云盘](未实现)
       globalThis.keyPickFileLocation = parameters.key_pick_file_location
       // 保存云盘文件到本地时云盘文件的uri列表(未实现)
@@ -65,8 +67,8 @@ export default class EntryAbility extends UIAbility {
       windowStage.getMainWindow((err, data) => {
         globalThis.windowClass = data
       })
-      if (globalThis.action == 'ohos.want.action.OPEN_FILE') {
-        //                路径选择器
+      if (globalThis.action == 'ohos.want.action.OPEN_FILE' || globalThis.startMode == 'choose') {
+        // 文件选择器
         windowStage.loadContent('pages/browser/storage/MyPhone', (err, data) => {
           if (err.code) {
             Logger.e(TAG, 'Failed to load the content: ' + JSON.stringify(err));
@@ -75,7 +77,7 @@ export default class EntryAbility extends UIAbility {
           Logger.i(TAG, 'data: ' + JSON.stringify(data));
         })
       } else {
-        //                文件选择器
+        // 路径选择器
         windowStage.loadContent('pages/PathPicker', (err, data) => {
           if (err.code) {
             Logger.e(TAG, 'Failed to load the content. Cause: ' + JSON.stringify(err))
