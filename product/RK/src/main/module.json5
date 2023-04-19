@@ -1,7 +1,7 @@
 {
   "module": {
     "name": "RK",
-    "type": "feature",
+    "type": "entry",
     "srcEntrance": "./ets/Application/AbilityStage.ts",
     "description": "$string:RK_desc",
     "mainElement": "MainAbility",
