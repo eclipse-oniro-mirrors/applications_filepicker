@@ -177,7 +177,7 @@ struct MyPhone {
 
   backCallback(): void {
     if (!this.isMulti) {
-      AbilityCommonUtil.terminateFilePicker([], AbilityCommonUtil.RESULT_CODE.CANCEL)
+      AbilityCommonUtil.terminateFilePicker([], [], AbilityCommonUtil.RESULT_CODE.CANCEL)
     } else {
       this.initData()
     }
@@ -254,7 +254,7 @@ struct MyPhone {
             this.getRootListFile()
           }
         } else {
-          AbilityCommonUtil.terminateFilePicker([], AbilityCommonUtil.RESULT_CODE.CANCEL)
+          AbilityCommonUtil.terminateFilePicker([], [], AbilityCommonUtil.RESULT_CODE.CANCEL)
         }
       }
       return true

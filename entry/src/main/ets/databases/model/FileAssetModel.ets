@@ -176,7 +176,7 @@ export class FileAssetModel {
   }
 
   pickFile(): void {
-    AbilityCommonUtil.terminateFilePicker([this.uri])
+    AbilityCommonUtil.terminateFilePicker([this.uri], [this.fileName])
   }
 }
 
