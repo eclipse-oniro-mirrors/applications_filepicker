@@ -79,7 +79,8 @@ export struct TopBar {
       return
     }
     const uriList = this.checkedList.map(item => item.uri)
-    AbilityCommonUtil.terminateFilePicker(uriList)
+    const fileNameList = this.checkedList.map(item => item.fileName)
+    AbilityCommonUtil.terminateFilePicker(uriList, fileNameList)
   }
 
   build() {

@@ -182,7 +182,7 @@ export class FilesData {
   }
 
   pickFile(): void {
-    AbilityCommonUtil.terminateFilePicker([this.uri])
+    AbilityCommonUtil.terminateFilePicker([this.uri], [this.fileName])
   }
 }
 

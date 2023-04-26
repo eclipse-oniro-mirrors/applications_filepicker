@@ -166,9 +166,9 @@ namespace AbilityCommonUtil {
           resolve(false)
           Logger.e(TAG, `grantUriPermission fail, uri: ${uri}, error: ${JSON.stringify(error)}`)
           return
-        }
-        resolve(true)
+        }        
       }
+      resolve(true)
     })
 
   }
@@ -179,7 +179,7 @@ namespace AbilityCommonUtil {
    * @param result
    * @param message
    */
-  export async function terminateFilePicker(result: Array<string> = [], resultCode: number = RESULT_CODE.SUCCESS, message: string = ''): Promise<void> {
+  export async function terminateFilePicker(result: Array<string> = [], displayNames: Array<string> = [], resultCode: number = RESULT_CODE.SUCCESS, message: string = ''): Promise<void> {
     const bundleName = await AbilityCommonUtil.getBundleNameByUid(globalThis.pickerCallerUid)
     if (result.length && bundleName) {
       // uri授权
@@ -188,6 +188,7 @@ namespace AbilityCommonUtil {
         resultCode = ErrorCodeConst.PICKER.GRANT_URI_PERMISSION_FAIL,
         result = []
         message = 'uri grant permission fail'
+        displayNames = []
       }
     }
 
@@ -198,8 +199,9 @@ namespace AbilityCommonUtil {
         abilityName: ABILITY_LIST.FILE_PICKER,
         parameters: {
           'select_item_list': result,
+          'file_name_list': displayNames,
           message: message,
-          'result': result[0]
+          'result': result[0], 
         }
       }
     }
