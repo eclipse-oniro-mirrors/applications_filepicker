@@ -22,6 +22,8 @@ import { MimeType } from './MimeType'
 import { BasicDataSource } from './BasicDataSource'
 import fileExtensionInfo from '@ohos.file.fileExtensionInfo'
 import AbilityCommonUtil from '../../base/utils/AbilityCommonUtil'
+import { FileUtil } from '../../base/utils/FileUtil'
+import { ArrayUtil } from '../../base/utils/ArrayUtil'
 
 export class BreadData {
   title: string
@@ -133,9 +135,14 @@ export class FilesData {
   isFolder: boolean = false
   duration: number
   mimeTypeObj: MimeType
+  subFolderList: Array<FilesData>;
+  subFileList: Array<FilesData>;
+  layer:number;
+  autoShow: boolean = false;
+  currentDir?: string;
 
   constructor(obj) {
-    this.isFolder = !!(obj.mode & fileExtensionInfo.DocumentFlag.REPRESENTS_DIR)
+    this.isFolder = obj.isFolder || FileUtil.isFolder(obj.mode);
     this.id = obj.id || randomId()
     this.uri = obj.uri || ''
     this.deviceId = obj.deviceId || ''
@@ -148,7 +155,7 @@ export class FilesData {
     this.mtime = obj.mtime * MILLISECOND.ONE_SECOND || 0
     this.mimeType = obj.mimeType || ''
     this.isChecked = false
-    this.path = obj.path || ''
+    this.path = obj.path || obj.relativePath || ''
     this.sub = obj.sub || 0
     this.scale = obj.scale || 1
     this.angle = obj.angle || 0
@@ -163,11 +170,12 @@ export class FilesData {
     this.gridIcon = this.mimeTypeObj.getGridResID()
     this.localGridIcon = this.mimeTypeObj.getLocalGridResID()
     if (this.mimeTypeObj.isMedia()) {
-      this.thumbUri = `${this.uri}/thumbnail/${THUMBNAIL_SIZE.WIDTH}/${THUMBNAIL_SIZE.HEIGHT}`
+      this.thumbUri = this.uri
     }
     if (this.isFolder) {
       this.sub = getSubFileNum(this.fileIterator)
     }
+    this.currentDir = FileUtil.getCurrentDir(this.path, this.isFolder);
   }
 
   setFileName(fileName: string): void {
@@ -183,6 +191,49 @@ export class FilesData {
 
   pickFile(): void {
     AbilityCommonUtil.terminateFilePicker([this.uri], [this.fileName])
+  }
+
+  setSubFolderList(subFolderList: Array<FilesData>) {
+    this.subFolderList = subFolderList;
+  }
+
+  setSubList(subList: Array<FilesData>) {
+    if (!ArrayUtil.isEmpty(subList)) {
+      let folderList = new Array<FilesData>();
+      let fileList = new Array<FilesData>();
+      for (let i = 0; i < subList.length; i++) {
+        let fileData: FilesData = subList[i];
+        if (fileData.isFolder) {
+          folderList.push(fileData);
+        } else {
+          fileList.push(fileData);
+        }
+      }
+      this.subFolderList = folderList;
+      this.subFileList = fileList;
+    }
+  }
+
+  hasSubFolderList(): boolean {
+    if (ArrayUtil.isEmpty(this.subFolderList)) {
+      return false;
+    }
+    return this.subFolderList.length > 0;
+  }
+
+  getSubFolderList(): Array<FilesData> {
+    return this.subFolderList;
+  }
+
+  setLayer(layer: number) {
+    this.layer = layer;
+  }
+
+  getLayer(): number {
+    if (this.layer) {
+      return this.layer;
+    }
+    return 1;
   }
 }
 

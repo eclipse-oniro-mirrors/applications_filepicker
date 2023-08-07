@@ -16,7 +16,7 @@
 import { FilesData } from '../../../databases/model/FileData'
 import FileAccessExec from '../../../base/utils/FileAccessExec'
 import { toast, isValidFileName } from '../../../base/utils/Common'
-import { createName, getResourceString } from '../../../base/utils/Tools'
+import { getResourceString } from '../../../base/utils/Tools'
 import Logger from '../../../base/log/Logger'
 import { DialogTitle, DialogButton, DialogButtonDivider } from '../common/DialogComponent'
 
@@ -29,12 +29,25 @@ export struct FileMkdirDialog {
   cancel: Function
   confirm: Function
   @State folderName: string = ''
-  @State errorText: string = ''
+  @State errorText: Resource = null
   fileItems: Array<FilesData>
   getCurrentDir: string = ''
 
   aboutToAppear() {
-    this.folderName = createName(this.fileItems, getResourceString($r('app.string.addFolder')))
+    this.folderName = this.getNewFolderName()
+  }
+
+  getNewFolderName(): string {
+    const newFolderText = getResourceString($r('app.string.addFolder'));
+    const regExp = new RegExp(`^${newFolderText}([ ]{1}[0-9]+)*$`);
+    const tempFolderList = this.fileItems.filter(item => item.isFolder && regExp.test(item.fileName));
+    let tempFolderName = newFolderText;
+    let index = 0;
+    while (tempFolderList.some(item => item.fileName === tempFolderName)) {
+      index += 1;
+      tempFolderName = newFolderText + ' ' + index.toString();
+    };
+    return tempFolderName;
   }
 
   isSameName() {
@@ -61,7 +74,7 @@ export struct FileMkdirDialog {
         })
         .onChange((value: string) => {
           this.folderName = value
-          this.errorText = ''
+          this.errorText = null
         })
       Divider().vertical(false).strokeWidth(1).color(Color.Gray)
         .margin({
@@ -89,9 +102,9 @@ export struct FileMkdirDialog {
           isDisabled: !this.folderName.trim(),
           click: () => {
             if (!isValidFileName(this.folderName)) {
-              this.errorText = getResourceString($r('app.string.illegal'))
+              this.errorText = $r('app.string.illegal')
             } else if (this.isSameName()) {
-              this.errorText = getResourceString($r('app.string.sameName'))
+              this.errorText = $r('app.string.sameName')
             } else {
               FileAccessExec.createFolder(this.getCurrentDir, this.folderName).then(folderUri => {
                 this.confirm({

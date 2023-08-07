@@ -111,6 +111,14 @@
     {
       "name": "max_input_length",
       "value": "已达到长度上限"
+    },
+    {
+      "name": "save_file_has_same_file",
+      "value": "已有重名文件"
+    },
+    {
+      "name": "permission_storage_reason_tips",
+      "value": "用于获取和存储照片、媒体内容和文件"
     }
   ]
 }
