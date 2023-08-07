@@ -31,6 +31,60 @@ export const BYTE = {
 
 export const FILENAME_REGEXP = /^[^\\/:*?<>\"|]+$/
 
-export const FILENAME_MAX_LENGTH = 250
+export const FILENAME_MAX_LENGTH = 225
+
+/**
+ * 重命名连接符
+ */
+export const RENAME_CONNECT_CHARACTER = ' ';
+
+export const DOCS_FOLDER = 'Docs'
+
+export const DESKTOP_FOLDER = 'Desktop'
 
 export const DOCUMENTS_FOLDER = 'Documents'
+
+/**
+ * 内部存储根目录Uri
+ */
+export const INTERNAL_STORAGE_ROOT_URI: string = 'file://media/root';
+
+/**
+ * picker支持的文件选择模式
+ */
+export const SELECT_MODE = {
+  FILE: 0,
+  FOLDER: 1,
+  MIX: 2
+}
+
+/**
+ * 文件后缀相关常量定义
+ */
+export const FILE_SUFFIX = {
+  SUFFIX_SPLIT: ',',
+  SUFFIX_START: '.'
+}
+
+/**
+ * 目录层级定义
+ */
+export const FOLDER_LEVEL = {
+  MIN_LEVEL: 1,
+  MAX_LEVEL: 21
+}
+
+/**
+ * 页面类型
+ */
+export const PAGE_TYPE = {
+  MY_PHONE : 'myPhone'
+}
+
+export const FILE_MANAGER_PREFERENCES = {
+  name: 'FileManagerPreferences',
+  lastSelectPath: {
+    key: 'lastSelectPath',
+    defaultValue: ''
+  }
+}

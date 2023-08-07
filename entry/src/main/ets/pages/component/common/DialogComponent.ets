@@ -17,6 +17,11 @@
   .backgroundColor($r('app.color.button_pressStyles'))
 }
 
+@Styles function normalStyles () {
+  .borderRadius($r('app.float.common_borderRadius8'))
+  .backgroundColor($r('app.color.transparent_color'))
+}
+
 @Component
 export struct DialogTitle {
   title: Resource
@@ -63,7 +68,8 @@ export struct DialogButton {
     .layoutWeight(1)
     .backgroundColor(this.bgColor)
     .stateStyles({
-      pressed: pressStyles
+      pressed: pressStyles,
+      normal: normalStyles
     })
     .opacity(this.isDisabled ? $r('app.float.common_opacity5') : $r('app.float.common_opacity10'))
     .borderRadius($r('app.float.common_borderRadius18'))

@@ -30,6 +30,11 @@ const filePickerViewFlag = globalThis.filePickerViewFlag
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
 }
 
+@Styles function normalStyles() {
+  .borderRadius($r('app.float.common_borderRadius8'))
+  .backgroundColor($r('app.color.transparent_color'))
+}
+
 @Extend(Text) function grayText() {
   .fontSize($r('app.float.common_font_size12'))
   .fontColor($r('app.color.black'))
@@ -144,6 +149,9 @@ struct FileListItem {
 
   getRightIcon(item): Resource {
     if (this.isMulti) {
+      if (pickerStatus(this.fileItem, this.checkedNum).differentTypes) {
+        return
+      }
       return item.isChecked ? $r("app.media.checkbox_b") : $r("app.media.checkbox_g")
     } else if (item.isFolder && this.isList) {
       return $r("app.media.ic_arrow_right")
@@ -163,7 +171,8 @@ struct FileListItem {
       this.onClickEvent()
     })
     .stateStyles({
-      pressed: pressedStyles
+      pressed: pressedStyles,
+      normal: normalStyles
     })
     .gesture(
     LongPressGesture({ repeat: false })
@@ -181,11 +190,15 @@ struct FileListItem {
     Logger.i(TAG, 'longPressEvent start');
     if (!this.isMulti) {
       this.isMulti = true
-      if (pickerStatus(this.fileItem, this.checkedNum).exceedLimit) {
+      if (this.fileItem.isFolder) {
+        return
+      }
+      let status = pickerStatus(this.fileItem, this.checkedNum);
+      if (status.exceedLimit) {
         filePickerTip()
         return
       }
-      if (!this.fileItem.isFolder && pickerStatus(this.fileItem, this.checkedNum).differentTypes) {
+      if (status.differentTypes) {
         return
       }
 
@@ -195,22 +208,18 @@ struct FileListItem {
     }
   }
 
-  /**
-   * 选择器页面，判断文件不是用户期望的类型
-   */
-  notTargetType(): boolean {
-    return!this.fileItem.isFolder
-    && pickerStatus(this.fileItem, this.checkedNum).differentTypes
-  }
-
   onClickEvent() {
     Logger.i(TAG, 'onClickEvent start');
+    let status = pickerStatus(this.fileItem, this.checkedNum);
     if (this.isMulti) {
+      if (this.fileItem.isFolder) {
+        return
+      }
       // 选择器页面，选择文件超出上限
-      if (pickerStatus(this.fileItem, this.checkedNum).exceedLimit) {
+      if (status.exceedLimit) {
         filePickerTip()
         return
-      } else if (this.notTargetType()) {
+      } else if (status.differentTypes) {
         return
       }
 
@@ -225,15 +234,15 @@ struct FileListItem {
         }
       }
     } else {
-      if (this.notTargetType()) {
-        return
-      }
-      if (!pickerStatus(this.fileItem, this.checkedNum).exceedLimit
-      && !pickerStatus(this.fileItem, this.checkedNum).differentTypes
-      && !this.fileItem.isFolder) {
-        // 选中的数据回调给三方应用
-        this.fileItem.pickFile()
-        return
+      if (!this.fileItem.isFolder) {
+        if (status.differentTypes) {
+          return
+        }
+        if (!status.exceedLimit && !status.differentTypes) {
+          // 选中的数据回调给三方应用
+          this.fileItem.pickFile()
+          return
+        }
       }
       this.clickFolder()
     }
@@ -251,10 +260,9 @@ struct FileListItem {
   }
 
   calOpacity() {
-    return pickerStatus(this.fileItem, this.checkedNum).exceedLimit
-           || (!this.fileItem.isFolder &&
-    pickerStatus(this.fileItem, this.checkedNum)
-      .differentTypes) ? $r('app.float.common_opacity2') : $r('app.float.common_opacity10')
+    const statusObj = pickerStatus(this.fileItem, this.checkedNum)
+    return statusObj.exceedLimit || (!this.fileItem.isFolder && statusObj.differentTypes) || (this.isMulti && this.fileItem.isFolder)
+      ? $r('app.float.common_opacity2') : $r('app.float.common_opacity10')
   }
 
   @Builder
@@ -267,9 +275,9 @@ struct FileListItem {
           .height($r('app.float.common_size36'))
           .width($r('app.float.common_size36'))
           .borderRadius($r('app.float.album_borderRadius_5'))
-          .onError(() => {
+          .onError((error) => {
             this.isImageLoaded = false
-            Logger.e(TAG, 'onError: ' + this.fileItem.fileName + ', ' + this.fileItem.thumbUri)
+            Logger.e(TAG, 'onError: ' + this.fileItem.fileName + ', ' + this.fileItem.thumbUri + ',' + JSON.stringify(error))
           })
         if (isDlpFile(this.fileItem.fileName)) {
           Image($r("app.media.lockNoBorder"))
@@ -311,11 +319,13 @@ struct FileListItem {
       .margin({ left: $r('app.float.common_margin10') })
       .width('70%')
 
-      Image(this.getRightIcon(this.fileItem))
-        .objectFit(ImageFit.Contain)
-        .autoResize(false)
-        .height($r('app.float.common_size20'))
-        .width($r('app.float.common_size20'))
+      if ((this.fileItem.isFolder && !this.isMulti) || (this.isMulti && !this.fileItem.isFolder)) {
+        Image(this.getRightIcon(this.fileItem))
+          .objectFit(ImageFit.Contain)
+          .autoResize(false)
+          .height($r('app.float.common_size20'))
+          .width($r('app.float.common_size20'))
+      }
     }
     .height($r('app.float.common_size64'))
     .padding({ right: $r('app.float.common_padding16'), left: $r('app.float.common_padding16') })
@@ -334,13 +344,15 @@ struct FileListItem {
             .onError(() => {
               this.isImageLoaded = false
             })
-          Image(this.getRightIcon(this.fileItem))
-            .objectFit(ImageFit.Fill)
-            .width($r('app.float.common_size20'))
-            .height($r('app.float.common_size20'))
-            .opacity(true ? 1 : $r('app.float.common_opacity4'))
-            .markAnchor({ x: $r('app.float.common_vp26'), y: $r('app.float.common_vp26') })
-            .position({ x: '100%', y: '100%' })
+          if ((this.fileItem.isFolder && !this.isMulti) || (this.isMulti && !this.fileItem.isFolder)) {
+            Image(this.getRightIcon(this.fileItem))
+              .objectFit(ImageFit.Fill)
+              .width($r('app.float.common_size20'))
+              .height($r('app.float.common_size20'))
+              .opacity(true ? 1 : $r('app.float.common_opacity4'))
+              .markAnchor({ x: $r('app.float.common_vp26'), y: $r('app.float.common_vp26') })
+              .position({ x: '100%', y: '100%' })
+          }
           if (isDlpFile(this.fileItem.fileName)) {
             Image($r("app.media.lockNoBorder"))
               .objectFit(ImageFit.Fill)

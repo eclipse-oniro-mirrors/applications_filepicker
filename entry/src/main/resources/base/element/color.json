@@ -59,6 +59,14 @@
     {
       "name": "error_message_color",
       "value": "#FF3300"
+    },
+    {
+      "name": "path_pick_selected_bg",
+      "value": "#1A254FF7"
+    },
+    {
+      "name": "list_item_pressed_bg",
+      "value": "#1A000000"
     }
   ]
 }

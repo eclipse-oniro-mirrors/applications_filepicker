@@ -17,30 +17,38 @@ import UIAbility from '@ohos.app.ability.UIAbility'
 import window from '@ohos.window'
 import AbilityCommonUtil from '../base/utils/AbilityCommonUtil'
 import Logger from '../base/log/Logger'
+import { FileUtil } from '../base/utils/FileUtil'
 
 const TAG = 'MainAbility'
 
 export default class MainAbility extends UIAbility {
   onCreate(want, launchParam) {
     Logger.i(TAG, 'onCreate')
-    globalThis.action = want.action
-    globalThis.abilityContext = this.context
-    globalThis.startMode = want.parameters.startMode
-    globalThis.saveFile = want.parameters.saveFile ? [want.parameters.saveFile] : []
-    Logger.i(TAG, 'globalThis.startMode: ' + globalThis.startMode + ', ' + (globalThis.startMode == 'choose'))
+    globalThis.action = want.action;
+    globalThis.abilityContext = this.context;
+    globalThis.startMode = want.parameters.startMode;
+    globalThis.saveFile = want.parameters.saveFile ? [want.parameters.saveFile] : [];
+    Logger.i(TAG, 'globalThis.startMode: ' + globalThis.startMode + ', ' + (globalThis.startMode == 'choose'));
     const parameters = want.parameters
     if (globalThis.action == 'ohos.want.action.OPEN_FILE' || globalThis.startMode == 'choose') {
       // 文件选择器
       // 选择文件的类型列表
-      globalThis.keyPickTypeList = AbilityCommonUtil.getKeyPickTypeList(parameters.key_pick_type, parameters.key_pick_type_list)
+      globalThis.keyPickTypeList = AbilityCommonUtil.getKeyPickTypeList(parameters.key_pick_type, parameters.key_pick_type_list);
       // 选择文件个数
-      globalThis.filePickNum = AbilityCommonUtil.getPickFileNum(parameters.key_pick_num)
+      globalThis.filePickNum = AbilityCommonUtil.getPickFileNum(parameters.key_pick_num);
       // 文件选择范围：0-本地 1-云盘 不传则默认展示全部路径(未实现)
-      globalThis.filePickLocation = parameters.key_pick_location
-      // 选择指定目录下的文件(未实现)
-      globalThis.keyPickDirPath = parameters.key_pick_dir_path
-      globalThis.pickerCallerUid = parameters[AbilityCommonUtil.CALLER_UID]
-      globalThis.filePickerViewFlag = true
+      globalThis.filePickLocation = parameters.key_pick_location;
+      // 选择指定目录下的文件
+      globalThis.keyFileDefaultPickPath = FileUtil.getUriPath(parameters.key_pick_dir_path);
+      // 选择文件模式，默认只支持文件选择
+      globalThis.keySelectMode = AbilityCommonUtil.getKeySelectMode(parameters.key_select_mode);
+      // 指定文件后缀,string[]
+      if (parameters.key_file_suffix_filter instanceof Array) {
+        globalThis.keyFileSuffixFilter = AbilityCommonUtil.getKeyFileSuffixFilter(parameters.key_file_suffix_filter);
+      }
+      globalThis.pickerCallerUid = parameters[AbilityCommonUtil.CALLER_UID];
+      globalThis.pickerCallerBundleName = parameters[AbilityCommonUtil.CALLER_BUNDLE_NAME]
+      globalThis.filePickerViewFlag = true;
     } else {
       // 路径选择器
       globalThis.pathAbilityContext = this.context
@@ -50,7 +58,13 @@ export default class MainAbility extends UIAbility {
       globalThis.keyPickFileLocation = parameters.key_pick_file_location
       // 保存云盘文件到本地时云盘文件的uri列表(未实现)
       globalThis.keyPickFilePaths = parameters.key_pick_file_paths
+      globalThis.keyPathDefaultPickDir = FileUtil.getUriPath(parameters.key_pick_dir_path);
+      // 指定文件后缀,只获取第一个有效的后缀
+      if (parameters.key_file_suffix_choices instanceof Array) {
+        globalThis.keyFileSuffixChoices = AbilityCommonUtil.getKeyFileSuffixChoices(parameters.key_file_suffix_choices);
+      }
       globalThis.pathCallerUid = parameters[AbilityCommonUtil.CALLER_UID]
+      globalThis.pathCallerBundleName = parameters[AbilityCommonUtil.CALLER_BUNDLE_NAME]
     }
     Logger.i(TAG, ' onCreate, parameters: ' + JSON.stringify(want.parameters))
   }

@@ -18,16 +18,20 @@
  */
 import Logger from '../log/Logger'
 import { FilesData } from '../../databases/model/FileData'
-import { DOCUMENTS_FOLDER } from '../constants/Constant'
-import { sortDataByTime, randomId } from './Tools'
+import { FOLDER_LEVEL, DOCS_FOLDER, DESKTOP_FOLDER } from '../constants/Constant'
+import { sortDataByTime, randomId, sortBaseDataByOrderTime } from './Tools'
 import fileAccess from '@ohos.file.fileAccess'
 import fileExtensionInfo from '@ohos.file.fileExtensionInfo'
+import { FileBase } from '../../databases/model/base/FileBase'
+import ObjectUtil from './ObjectUtil'
+import { FileUtil } from './FileUtil'
+import fs from '@ohos.file.fs'
 
 const TAG = 'FileAccessExec'
 
 namespace FileAccessExec {
 
-  // 创建文件夹
+// 创建文件夹
   export function createFolder(sourceUri: string, folderName: string): any {
     return new Promise((resolve, reject) => {
       try {
@@ -65,26 +69,6 @@ namespace FileAccessExec {
     })
   }
 
-  // 打开文件
-  export function openFile(sourceUri: string): any {
-    return new Promise((resolve, reject) => {
-      try {
-        //  - 0o0：只读打开 0o1：只写打开  0o2：读写打开
-        globalThis.fileAcsHelper.openFile(sourceUri, 0o2, (ret, data) => {
-          if (ret && ret.code !== '0') {
-            reject(ret)
-            Logger.e(TAG, 'openFile fail:' + JSON.stringify(ret))
-          } else {
-            resolve(data)
-          }
-        })
-      } catch (error) {
-        reject(error)
-        Logger.e(TAG, 'openFile error occurred:' + error)
-      }
-    })
-  }
-
   export function getFileData(): any {
     let folderList = new Array<FilesData>()
     let fileList = new Array<FilesData>()
@@ -100,24 +84,26 @@ namespace FileAccessExec {
         }))
       }
     })
+
     return { folderList, fileList }
   }
 
-  export function getFileByCurIterator(fileInfo: fileAccess.FileInfo, isRoot: boolean = false): Array<FilesData> {
-    let fileArr = []
-    let fileIterator = fileInfo.listFile()
-    let documentsFolder: fileAccess.FileInfo = null
-    if (!fileIterator) {
-      return
-    }
-    let result = fileIterator.next()
-    let isDone = result.done
-    while (!isDone) {
-      try {
-        const {fileName, uri, mode, size, mtime, mimeType} = result.value
+  export function getFileByCurIterator(fileInfo: fileAccess.FileInfo | fileAccess.RootInfo): Array<FilesData> {
+    let fileList: Array<FilesData> = []
+    try {
+      let fileIterator = fileInfo.listFile()
+      if (!fileIterator) {
+        Logger.w(TAG, 'getFileByCurIterator fail, fileIterator is null')
+        return fileList
+      }
+      let result = fileIterator.next()
+      let isDone = result.done
+      while (!isDone) {
+        const {fileName, relativePath,uri, mode, size, mtime, mimeType} = result.value
         let tempFile = new FilesData({
           id: randomId(),
           fileName,
+          relativePath,
           uri,
           mode,
           size,
@@ -125,72 +111,71 @@ namespace FileAccessExec {
           mimeType,
           fileIterator: result.value
         })
-        // 根目录下不显示Documents文件夹
-        if (isRoot && result.value.fileName === DOCUMENTS_FOLDER) {
-          globalThis.documentInfo = tempFile
-          documentsFolder = result.value
-        } else {
-          fileArr.push(tempFile)
-        }
+        fileList.push(tempFile)
         result = fileIterator.next()
         isDone = result.done
+      }
+      fileList = sortDataByTime(fileList)
+    } catch (error) {
+      fileList = []
+      Logger.e(TAG, 'getFileByCurIterator fail, error:' + JSON.stringify(error) + error)
+    }
+    return fileList
+  }
+
+  export function getPathPickSubFiles(fileInfo: fileAccess.FileInfo, defaultPathPick: string, level: number): Array<FileBase> {
+    let fileArr: Array<FileBase> = [];
+    let fileIterator = fileInfo.listFile();
+    if (!fileIterator) {
+      return fileArr;
+    }
+    let result = fileIterator.next();
+    let isDone = result.done;
+    while (!isDone) {
+      try {
+        let fileInfo: fileAccess.FileInfo = result.value;
+        if (!ObjectUtil.isNullOrUndefined(fileInfo)) {
+          let tempFile = new FileBase(result.value, false);
+          if (tempFile.isFolder) {
+            if (FileUtil.hasSubFolder(defaultPathPick, tempFile.currentDir) && level <= FOLDER_LEVEL.MAX_LEVEL) {
+              tempFile.subList = getPathPickSubFiles(fileInfo, defaultPathPick, level + 1);
+            }
+          }
+          // 根目录下不显示Documents文件夹
+          fileArr.push(tempFile);
+        }
+        result = fileIterator.next();
+        isDone = result.done;
       } catch (e) {
-        Logger.e(TAG, 'getFileByCurIterator error: ' + e.toString())
-        isDone = true
+        Logger.e(TAG, 'getSubFileByIterator error: ' + e.toString());
+        isDone = true;
       }
     }
-    // 处理Documents目录
-    if (documentsFolder) {
-      // 获取Documents目录下的文件列表
-      const documentFileList = getFileByCurIterator(documentsFolder)
-      // 将Documents目录下的文件合并入根目录
-      fileArr = fileArr.concat(documentFileList)
-    } else if (isRoot) {
-      Logger.e(TAG, 'not found Documents folder in root path')
-    }
-
-    fileArr = sortDataByTime(fileArr)
-    return fileArr
+    fileArr = sortBaseDataByOrderTime(fileArr, true);
+    return fileArr;
   }
 
 
   export function getRootFolder(): Array<FilesData> {
+    let fileList: Array<FilesData> = []
     if (!globalThis.rootInfoArr) {
-      Logger.e(TAG, 'globalThis.rootInfoArr is null ')
-      return []
+      Logger.e(TAG, 'getRootFolder fail, rootInfoArr is null')
+      return fileList
     }
-    // 过滤本地磁盘
-    const rootInfo: fileAccess.RootInfo = globalThis.rootInfoArr.find(item => item.deviceType === fileExtensionInfo.DeviceType.DEVICE_LOCAL_DISK)
-
-    if (!rootInfo) {
-      Logger.e(TAG, 'getRootFolder rootInfo is null ')
-      return []
-    }
-    const fileIterator: fileAccess.FileIterator = rootInfo.listFile()
-    if (!fileIterator) {
-      Logger.e(TAG, 'getRootFolder fileIterator is null ')
-      return []
-    }
-    let isDone = false
-    let tempFileIterator = null
-    while (!isDone) {
-      const nextFileRes: {
-        value: fileAccess.FileInfo,
-        done: boolean
-      } = fileIterator.next()
-      const nextFileName = nextFileRes.value.fileName
-      if (nextFileName.indexOf('FILE') !== -1) {
-        tempFileIterator = nextFileRes.value
-        isDone = true
+    try {
+      const rootFolder: fileAccess.RootInfo = globalThis.rootInfoArr.find((item: fileAccess.RootInfo) => item.deviceType === fileExtensionInfo.DeviceType.DEVICE_LOCAL_DISK)
+      if (rootFolder) {
+        globalThis.documentInfo = rootFolder
+        fileList = getFileByCurIterator(rootFolder)
+        fileList = fileList.filter(item => item.fileName !== DESKTOP_FOLDER)
       } else {
-        isDone = nextFileRes.done
+        Logger.e(TAG, 'rootFolder is null')
       }
+    } catch (error) {
+      fileList = []
+      Logger.e(TAG, 'getRootFolder fail, error:' + JSON.stringify(error) + error)
     }
-    if (!tempFileIterator) {
-      Logger.e(TAG, 'getRootFolder tempFileIterator is null ')
-      return []
-    }
-    return getFileByCurIterator(tempFileIterator, true)
+    return fileList
   }
 }
 
