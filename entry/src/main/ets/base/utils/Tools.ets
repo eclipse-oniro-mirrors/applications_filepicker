@@ -18,6 +18,7 @@ import LanguageUtil from './LanguageUtil'
 import { FileMimeTypeUtil } from './FileMimeTypeUtil'
 import { MimeType } from '../../databases/model/MimeType'
 import Logger from '../log/Logger'
+import { FileBase } from '../../databases/model/base/FileBase'
 
 const TAG = 'Tools'
 
@@ -148,40 +149,6 @@ function compareStr(str1: string, str2: string) {
   return str2.localeCompare(str1, language)
 }
 
-/**
- * @description 文件夹名/文件名自动+1
- * @param fileItems: 当前列表/目标列表
- * @param filename: 需要+1的字符串
- * @param name: filename如果有后缀
- */
-export const createName = (fileItems: any[], filename: string, name?: string): string => {
-  try {
-    const fileNameList = fileItems.map(({ fileName }) => fileName)
-    name = name ?? ''
-    let copyReg = /[()]*/g // 复制文件重名时格式化文件名
-    let lastNum = /([0-9]*)$/ // 获取末尾数字
-    while (fileNameList.includes(name ? filename + ' ' + name : filename)) {
-      if (name) {
-        filename = filename.replace(copyReg, '').replace(lastNum, res => {
-          res = res < '1' ? '1' : res
-          const len = res.length
-          const num = '(' + (+res + 1) + ')'
-          return num.padStart(len, '0')
-        })
-      } else {
-        filename = filename.replace(lastNum, res => {
-          const len = res.length
-          const num = +res + 1 + ''
-          return num.padStart(len, '0')
-        })
-      }
-    }
-    return filename
-  } catch (err) {
-    return filename
-  }
-}
-
 export const gridName = (fileName) => {
   // 文件名超长是中间部分'...'显示
   const MAX_LENGTH = 11
@@ -203,4 +170,18 @@ export const isDlpFile = (value): boolean => {
     return true
   }
   return false
+}
+
+
+export const sortBaseDataByOrderTime = (dataList: Array<FileBase>, isDesc: boolean = false) => {
+  // 规避@State修饰的数组变量执行sort方法不生效问题
+  const fileList = dataList.filter(item => item);
+  return fileList.sort((a, b) => {
+    if (b.modifyTime !== a.modifyTime) {
+      return isDesc ? b.modifyTime - a.modifyTime : a.modifyTime - b.modifyTime;
+    } else {
+      const language = LanguageUtil.getSystemLanguage();
+      return isDesc ? b.fileName.localeCompare(a.fileName, language) : a.fileName.localeCompare(b.fileName, language);
+    }
+  })
 }

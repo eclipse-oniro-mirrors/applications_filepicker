@@ -18,11 +18,16 @@
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
 }
 
+@Styles function normalStyles () {
+  .borderRadius($r('app.float.common_borderRadius8'))
+  .backgroundColor($r('app.color.transparent_color'))
+}
+
 @Component
 export struct TopOperateBar {
   public addFolder: () => void // 点击新建的事件回调
   // 是否可用
-  isDisabled: boolean = false
+  @Prop isDisabled: boolean = false
   // 列表或宫格
   @Consume isList: boolean
 
@@ -44,7 +49,8 @@ export struct TopOperateBar {
         bottom: $r('app.float.common_padding10')
       })
       .stateStyles({
-        pressed: pressedStyles
+        pressed: pressedStyles,
+        normal: normalStyles
       })
       .onClick(() => {
         if (this.isDisabled) return
@@ -71,7 +77,8 @@ export struct TopOperateBar {
         if (this.isDisabled) return
         this.isList = !this.isList
       }).stateStyles({
-        pressed: pressedStyles
+        pressed: pressedStyles,
+        normal: normalStyles
       })
     }
     .width('100%')

@@ -551,6 +551,28 @@ export class FileMimeTypeUtil {
     return mimeType
   }
 
+  public  static getFileSuffix(fileName: string): String {
+    const unKnown: string = '';
+    if (StringUtil.isEmpty(fileName)) {
+      return unKnown;
+    }
+
+    const splitList = fileName.split('.')
+    if (splitList.length < 2) {
+      return unKnown;
+    }
+
+    let suffix = splitList[splitList.length-1].toUpperCase()
+    // 判断DLP加密文件
+    if (suffix === FileMimeTypeUtil.SUFFIX_DLP) {
+      if (splitList.length === 2) {
+        return unKnown;
+      }
+      suffix = splitList[splitList.length-2].toUpperCase()
+    }
+    return suffix
+  }
+
   public static getFileTypeOrder(fileName: string): number {
     const mimeType = this.getFileMimeType(fileName)
     return mimeType.getFileTypeSort()

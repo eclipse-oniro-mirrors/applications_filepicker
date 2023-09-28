@@ -15,6 +15,9 @@
 
 import { toast } from '../../base/utils/Common'
 import { FileMimeTypeUtil } from '../../base/utils/FileMimeTypeUtil'
+import { FILE_SUFFIX, SELECT_MODE } from '../constants/Constant';
+import Logger from '../log/Logger';
+import ObjectUtil from './ObjectUtil';
 
 /**
  * 文件选择器文件状态
@@ -28,21 +31,78 @@ export function pickerStatus(item, checkedNum) {
     // 选择是否超限
     exceedLimit: globalThis.filePickerViewFlag && (checkedNum >= globalThis.filePickNum && !item.isChecked),
     // 选择类型是否不匹配
-    differentTypes: !checkFileSelectable(item.fileName)
+    differentTypes: !checkFileSelectable(item)
   }
 }
 
 /**
  * 根据文件后缀判断文件是否可选
- * @param fileName
+ * @param item
  */
-function checkFileSelectable(fileName){
-  if (!fileName) {
-    return false
-  }
+function checkFileSelectable(item): boolean {
   // 非文件选择器场景
   if (!globalThis.filePickerViewFlag) {
-    return true
+    return true;
+  }
+
+  // selectMode检查
+  let selectMode: number = globalThis.keySelectMode;
+  let isFolder = false;
+  if (ObjectUtil.hasKey(item, 'isFolder')) {
+    isFolder = item.isFolder;
+  }
+  // 文件夹模式，直接返回
+  if(selectMode === SELECT_MODE.FOLDER){
+    return isFolder;
+  }
+
+  if (isFolder) {
+    // 混选模式下，文件夹直接返回
+    if (selectMode === SELECT_MODE.MIX) {
+      return true;
+    }
+    // 文件模式下，文件夹直接返回false
+    return false;
+  }
+  // 后缀检查
+  let keyFileSuffixFilter: Array<string> = globalThis.keyFileSuffixFilter;
+  if (Array.isArray(keyFileSuffixFilter) && keyFileSuffixFilter.length > 0) {
+    return checkFileSuffix(item.fileName, keyFileSuffixFilter);
+  }
+
+  // mimeType检查
+  return checkFileMimetype(item.fileName);
+}
+
+/**
+ * 校验选中的文件后缀
+ *
+ * @param fileName 文件名称
+ * @param keyFileSuffixFilter 指定后缀
+ * @return 如果文件后缀满足三方指定，则返回true
+ */
+function checkFileSuffix(fileName: string, keyFileSuffixFilter: Array<string>): boolean {
+  if (keyFileSuffixFilter) {
+    if (fileName) {
+      const suffix = FILE_SUFFIX.SUFFIX_START + FileMimeTypeUtil.getFileSuffix(fileName);
+      if (keyFileSuffixFilter.includes(suffix)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  return true;
+}
+
+/**
+ * 校验选中的文件mimetype
+ *
+ * @param fileName 文件名称
+ * @return 条件满足返回true
+ */
+function checkFileMimetype(fileName: string): boolean {
+  if (!fileName) {
+    return false
   }
   let keyPickTypeList: Array<string> = globalThis.keyPickTypeList
   // 输入的类型全转换成小写，避免大小敏感问题

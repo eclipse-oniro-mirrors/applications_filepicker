@@ -29,6 +29,10 @@ import { getMediaType, getDurationByUri } from '../../../databases/model/FileAss
 import Logger from '../../../base/log/Logger'
 import multimedia_image from '@ohos.multimedia.image'
 import AbilityCommonUtil from '../../../base/utils/AbilityCommonUtil'
+import ObjectUtil from '../../../base/utils/ObjectUtil'
+import StringUtil from '../../../base/utils/StringUtil'
+import { FileUtil } from '../../../base/utils/FileUtil'
+import fileAccess from '@ohos.file.fileAccess'
 
 const TAG = 'myPhone'
 
@@ -89,41 +93,59 @@ struct MyPhone {
   }
 
   async getBreadCrumb(data: string): Promise<void> {
-    if (data.startsWith('Documents/')) {
-      data = data.replace('Documents/', '')
+    if (!data) {
+      data = "";
     }
-    let arr = data.split('/')
-    arr.pop()
-    if (arr.length == 0) {
-      this.getRootListFile()
-      return
+    if (FileUtil.isUriPath(data)) {
+      let fileHelper = await FileUtil.getFileAccessHelperAsync(globalThis.abilityContext);
+      // 将uri转换成相对路径
+      let curFileInfo: fileAccess.FileInfo = await FileUtil.getFileInfoByUri(data, fileHelper);
+      if (!ObjectUtil.isNullOrUndefined(curFileInfo)) {
+        data = FileUtil.getCurrentDir(curFileInfo.relativePath, FileUtil.isFolder(curFileInfo.mode));
+      }
     }
-    const lastItem = arr[arr.length-1]
-    if (lastItem.indexOf('.') > -1) {
-      arr.pop()
-    }
+    data = FileUtil.getPathWithFileSplit(data);
+
     let fileIterator
     let fileData
-    for (let j = 0;j < arr.length; j++) {
-      const e = arr[j]
-      if (j === 0) {
+    let isContinue:boolean = true;
+    let isRoot: boolean = true;
+    while (isContinue) {
+      isContinue = false;
+      if (!fileIterator) {
         fileData = FileAccessExec.getRootFolder()
+        isRoot = true;
       } else {
-        fileData = FileAccessExec.getFileByCurIterator(fileIterator, false)
+        fileData = FileAccessExec.getFileByCurIterator(fileIterator)
+        isRoot = false;
       }
       if (Array.isArray(fileData)) {
+        isContinue = true;
         for (let i = 0;i < fileData.length; i++) {
-          if (fileData[i].fileName == e) {
-            this.direList.push({ title: e, url: fileData[i].uri, fileIterator: fileData[i].fileIterator })
-            fileIterator = fileData[i].fileIterator
-            break
+          let fileName:string = fileData[i].fileName;
+          let currentDir:string =  FileUtil.getPathWithFileSplit(fileData[i].currentDir);
+          if (data.startsWith(currentDir)) {
+            if (fileData[i].isFolder) {
+              this.direList.push({ title: fileName, url: fileData[i].uri, fileIterator: fileData[i].fileIterator })
+              fileIterator = fileData[i].fileIterator
+              if (data === currentDir) {
+                isContinue = false;
+              } else {
+                break;
+              }
+            }
           }
         }
       }
+      if (isRoot && !fileIterator) {
+        isContinue = false;
+      }
     }
-    if (arr.length >= 1) {
-      fileData = FileAccessExec.getFileByCurIterator(fileIterator, false)
+    if (fileIterator) {
+      fileData = FileAccessExec.getFileByCurIterator(fileIterator)
       this.fileListSource.setData(fileData)
+    } else {
+      this.getRootListFile();
     }
   }
 
@@ -143,7 +165,7 @@ struct MyPhone {
   }
 
   getListFile(fileInfo) {
-    let fileList = FileAccessExec.getFileByCurIterator(fileInfo, false)
+    let fileList = FileAccessExec.getFileByCurIterator(fileInfo)
     this.fileListSource.setData(fileList)
     this.getVideoAudioDuration(fileList)
   }
@@ -208,12 +230,28 @@ struct MyPhone {
     multimedia_image.createPixelMap(new ArrayBuffer(4096), { size: { height: 1, width: 2 } }).then((pixelMap) => {
     })
     this.setShowLoading(true)
-    if (!router.getParams()) {
-      this.getRootListFile()
+    let pickPath = this.getParams();
+    if (StringUtil.isEmpty(pickPath)) {
+      this.getRootListFile();
     } else {
-      this.getBreadCrumb(router.getParams()['path'])
+      this.getBreadCrumb(pickPath);
     }
-    this.setShowLoading(false)
+    this.setShowLoading(false);
+  }
+
+  getParams(): string {
+    let defaultPickPath = globalThis.keyFileDefaultPickPath;
+    if (!ObjectUtil.isNullOrUndefined(defaultPickPath)) {
+      return defaultPickPath;
+    }
+    let params = router.getParams();
+    if (!ObjectUtil.isNullOrUndefined(params)) {
+      defaultPickPath = params['path'];
+      if (!ObjectUtil.isNullOrUndefined(defaultPickPath)) {
+        return defaultPickPath;
+      }
+    }
+    return "";
   }
 
   onDireListChange(): void {

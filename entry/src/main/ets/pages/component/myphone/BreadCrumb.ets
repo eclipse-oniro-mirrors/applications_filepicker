@@ -20,6 +20,11 @@ import { BreadData } from '../../../databases/model/FileData'
   .borderRadius($r('app.float.common_borderRadius8'))
 }
 
+@Styles function normalStyles () {
+  .backgroundColor($r('app.color.transparent_color'))
+  .borderRadius($r('app.float.common_borderRadius8'))
+}
+
 @Component
 export struct BreadCrumb {
   @Link @Watch("onDireListUpdated") direList: BreadData[]
@@ -27,7 +32,9 @@ export struct BreadCrumb {
 
   // 监听面包屑变化，滚动到指定位置
   onDireListUpdated(): void {
-    this.scroller.scrollEdge(Edge.End)
+    setTimeout(() => {
+      this.scroller.scrollEdge(Edge.End)
+    }, 10);
   }
 
   build() {
@@ -40,13 +47,15 @@ export struct BreadCrumb {
           .fontColor(this.direList.length ? $r('app.color.detail_path_text_color') : $r('app.color.black'))
           .textOverflow({ overflow: TextOverflow.Ellipsis })
           .stateStyles({
-            pressed: pressedStyles
+            pressed: pressedStyles,
+            normal: normalStyles
           })
         if (this.direList.length) {
           Image($r("app.media.ic_arrow_right"))
             .objectFit(ImageFit.Contain)
             .height($r('app.float.common_size15'))
             .width($r('app.float.common_size15'))
+            .interpolation(ImageInterpolation.Medium)
         }
       }
       .onClick(() => {
@@ -103,7 +112,8 @@ struct BreadCrumbItem {
         .textAlign(TextAlign.Center)
         .maxLines(1)
         .stateStyles({
-          pressed: pressedStyles
+          pressed: pressedStyles,
+          normal: normalStyles
         })
       if (!this.isLast()) {
         Image($r("app.media.ic_arrow_right"))

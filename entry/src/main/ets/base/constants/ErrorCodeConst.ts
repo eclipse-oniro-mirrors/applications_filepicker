@@ -63,7 +63,11 @@ namespace ErrorCodeConst {
         /**
          * 其他未知错误
          */
-        OTHER_ERROR = 9001
+        OTHER_ERROR = 9001,
+        /**
+         * 创建正常
+         */
+        NORMAL = 1000
     }
 }
 
