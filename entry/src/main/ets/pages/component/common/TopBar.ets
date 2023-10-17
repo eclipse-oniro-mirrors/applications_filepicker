@@ -22,6 +22,11 @@ import AbilityCommonUtil from '../../../base//utils/AbilityCommonUtil'
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
 }
 
+@Styles function normalStyles () {
+  .borderRadius($r('app.float.common_borderRadius8'))
+  .backgroundColor($r('app.color.transparent_color'))
+}
+
 @Extend(Text) function subtitleStyles(fontSize: Resource) {
   .fontSize(fontSize)
   .alignSelf(ItemAlign.Start)
@@ -90,6 +95,7 @@ export struct TopBar {
           .objectFit(ImageFit.Contain)
           .width($r('app.float.common_size24'))
           .height($r('app.float.common_size24'))
+          .interpolation(ImageInterpolation.Medium)
       }.padding({
         left: $r('app.float.common_padding12'),
         right: $r('app.float.common_padding12'),
@@ -97,7 +103,8 @@ export struct TopBar {
         bottom: $r('app.float.common_padding10')
       })
       .stateStyles({
-        pressed: pressedStyles
+        pressed: pressedStyles,
+        normal: normalStyles
       })
       .onClick(() => {
         this.backCallback.call(this)
@@ -132,6 +139,7 @@ export struct TopBar {
               .objectFit(ImageFit.Contain)
               .width($r('app.float.common_size24'))
               .height($r('app.float.common_size24'))
+              .interpolation(ImageInterpolation.Medium)
           }.padding({
             left: $r('app.float.common_padding12'),
             right: $r('app.float.common_padding12'),
@@ -139,7 +147,8 @@ export struct TopBar {
             bottom: $r('app.float.common_padding10')
           })
           .stateStyles({
-            pressed: pressedStyles
+            pressed: pressedStyles,
+            normal: normalStyles
           })
           .onClick(() => {
             let abilityContext = getContext(this) as context.UIAbilityContext
@@ -158,7 +167,8 @@ export struct TopBar {
             bottom: $r('app.float.common_padding10')
           })
           .stateStyles({
-            pressed: pressedStyles
+            pressed: pressedStyles,
+            normal: normalStyles
           })
           .onClick(() => {
             this.terminate()
