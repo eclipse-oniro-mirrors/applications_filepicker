@@ -107,6 +107,10 @@ export struct fileTree {
     this.loadDefaultExpandPath();
   }
 
+  aboutToDisappear() {
+    this.fileMkdirDialog = null;
+  }
+
   fileMkdir(e) {
     emit('fileMkdir', e)
     if (this.isSelectRootPath) {
