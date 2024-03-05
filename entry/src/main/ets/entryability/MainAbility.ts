@@ -78,9 +78,7 @@ export default class MainAbility extends UIAbility {
     // Main window is created, set main page for this ability
     Logger.i(TAG, 'onWindowStageCreate')
     AbilityCommonUtil.init().then(() => {
-      windowStage.getMainWindow((err, data) => {
-        globalThis.windowClass = data
-      })
+      globalThis.windowClass = windowStage.getMainWindowSync();
       if (globalThis.action == 'ohos.want.action.OPEN_FILE' || globalThis.startMode == 'choose') {
         // 文件选择器
         windowStage.loadContent('pages/browser/storage/MyPhone', (err, data) => {

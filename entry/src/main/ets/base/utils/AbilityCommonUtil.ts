@@ -171,24 +171,22 @@ namespace AbilityCommonUtil {
    * uri授权
    * @param uriList 待授权的uri列表
    * @param bundleName 授权应用的包名
-   * @param flag 授权的权限，只读或读写
    */
-  export function grantUriPermission(uriList: Array<string>, bundleName: string, flag: wantConstant.Flags): Promise<boolean> {
+  export function grantUriPermission(uriList: Array<string>, bundleName: string): Promise<boolean> {
     return new Promise(async (resolve, reject) => {
       Logger.i(TAG, "grantUriPermission start,grantSize = " + uriList?.length);
       let grantSuccessCount: number = 0;
       for (let uri of uriList) {
         try {
-          if (flag === wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION) {
-            await FileShare.grantUriPermission(uri, bundleName, flag | wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION)
-          } else {
-            await FileShare.grantUriPermission(uri, bundleName, flag)
-          }
+          await FileShare.grantUriPermission(
+            uri,
+            bundleName,
+            wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION);
           grantSuccessCount++;
         } catch (error) {
-          resolve(false)
-          Logger.e(TAG, `grantUriPermission fail,grantSuccessCount:${grantSuccessCount}}, uri: ${uri}, error: ${JSON.stringify(error)}`)
-          return
+          resolve(false);
+          Logger.e(TAG, `grantUriPermission fail,grantSuccessCount:${grantSuccessCount}}, uri: ${uri}, error: ${JSON.stringify(error)}`);
+          return;
         }
       }
       Logger.i(TAG, "grantUriPermission end,grantSuccessCount = " + grantSuccessCount);
@@ -207,7 +205,7 @@ namespace AbilityCommonUtil {
     const bundleName = globalThis.pickerCallerBundleName
     if (result.length && bundleName) {
       // uri授权
-      const isSuccess = await grantUriPermission(result, bundleName, wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION)
+      const isSuccess = await grantUriPermission(result, bundleName);
       if (!isSuccess) {
         resultCode = ErrorCodeConst.PICKER.GRANT_URI_PERMISSION_FAIL,
         result = []
@@ -247,8 +245,7 @@ namespace AbilityCommonUtil {
     const bundleName = globalThis.pathCallerBundleName
     if (result.length && bundleName) {
       // uri授权
-      const flag = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION
-      const isSuccess = await grantUriPermission(result, bundleName, flag)
+      const isSuccess = await grantUriPermission(result, bundleName);
       if (!isSuccess) {
         resultCode = ErrorCodeConst.PICKER.GRANT_URI_PERMISSION_FAIL,
         result = []

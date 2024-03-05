@@ -58,7 +58,10 @@ export const setSystemBar = async (navigationBarColor?: string, statusBarColor?:
  * @param isImmersion 是否沉浸式
  */
 export const setImmersion = (isImmersion: boolean) => {
-  let TAG = 'setImmersion'
+  let TAG = 'setImmersion';
+  if (!globalThis.windowClass) {
+    return;
+  }
   globalThis.windowClass.setFullScreen(isImmersion, (err, data) => {
     if (err.code) {
       Logger.e(TAG, 'Failed to enable the full-screen mode. Cause:' + JSON.stringify(err))
