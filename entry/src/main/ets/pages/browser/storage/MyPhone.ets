@@ -239,6 +239,10 @@ struct MyPhone {
     this.setShowLoading(false);
   }
 
+  aboutToDisappear() {
+    this.fileMkdirDialog = null;
+  }
+
   getParams(): string {
     let defaultPickPath = globalThis.keyFileDefaultPickPath;
     if (!ObjectUtil.isNullOrUndefined(defaultPickPath)) {
