@@ -17,139 +17,128 @@ export class MimeType {
   /**
    * 文件大分类：图片
    */
-  public static FILE_CATEGORY_IMAGE = 1
-
+  public static FILE_CATEGORY_IMAGE = 1;
   /**
    * 文件大分类：视频
    */
-  public static FILE_CATEGORY_VIDEO = 2
-
+  public static FILE_CATEGORY_VIDEO = 2;
   /**
    * 文件大分类：音频
    */
-  public static FILE_CATEGORY_AUDIO = 3
-
+  public static FILE_CATEGORY_AUDIO = 3;
   /**
    * 文件大分类：文档
    */
-  public static FILE_CATEGORY_TXT = 4
-
+  public static FILE_CATEGORY_TXT = 4;
   /**
    * 文件大分类：压缩包
    */
-  public static FILE_CATEGORY_ZIP = 5
-
+  public static FILE_CATEGORY_ZIP = 5;
   /**
    * 文件大分类：APK
    */
-  public static FILE_CATEGORY_PKG = 6
-
+  public static FILE_CATEGORY_PKG = 6;
   /**
    * 文件大分类：未知
    */
-  public static FILE_CATEGORY_UNKNOW = 7
-
+  public static FILE_CATEGORY_UNKNOW = 7;
   /**
    * 文件后缀对应的整形定义，用于文件的大分类
    */
-  private fileCategory: number
-
+  private fileCategory: number;
   /**
    * 文件后缀对应的整形定义，用于文件细分的类型
    */
-  private fileTypeSort: number
-
+  private fileTypeSort: number;
   /**
    * 文件细分的类型对应的默认图标
    */
-  private resID: Resource
-
+  private resID: Resource;
   /**
    * 文件细分的类型对应的云盘宫格默认图标
    */
-  private gridResID: Resource
-
+  private gridResID: Resource;
   /**
    * 文件细分的类型对应的本地宫格默认图标
    */
-  private localGridResID: Resource
-
+  private localGridResID: Resource;
   /**
    * 文件的mimetype
    */
-  private mimeType: string
-
+  private mimeType: string;
   /**
    * 文件后缀
    */
-  private extension: string
+  private extension: string;
 
-  constructor(extension: string, fileCategory: number, fileTypeSort: number, resID: Resource, gridResID: Resource, localGridResID: Resource, mimeType: string) {
-    this.extension = extension
-    this.fileCategory = fileCategory
-    this.fileTypeSort = fileTypeSort
-    this.resID = resID
-    this.gridResID = gridResID
-    this.localGridResID = localGridResID
-    this.mimeType = mimeType
+  constructor(extension: string, fileCategory: number, fileTypeSort: number,
+              resID: Resource, gridResID: Resource, localGridResID: Resource, mimeType: string) {
+    this.extension = extension;
+    this.fileCategory = fileCategory;
+    this.fileTypeSort = fileTypeSort;
+    this.resID = resID;
+    this.gridResID = gridResID;
+    this.localGridResID = localGridResID;
+    this.mimeType = mimeType;
   }
 
   getFileCategory(): number {
-    return this.fileCategory
+    return this.fileCategory;
   }
 
-  getMimeType(){
-    return this.mimeType
+  getMimeType() {
+    return this.mimeType;
   }
 
   getFileTypeSort(): number {
-    return this.fileTypeSort
+    return this.fileTypeSort;
   }
 
   // 预留获取墨水屏显示默认图标能力
-  getResID(): Resource{
-    return this.resID
+  getResID(): Resource {
+    return this.resID;
   }
 
   // 预留获取墨水屏显示默认图标能力
-  getGridResID(): Resource{
-    return this.gridResID
+  getGridResID(): Resource {
+    return this.gridResID;
   }
 
   // 预留获取墨水屏显示默认图标能力
-  getLocalGridResID(): Resource{
-    return this.localGridResID
+  getLocalGridResID(): Resource {
+    return this.localGridResID;
   }
 
   isMedia(): boolean {
-    return this.fileCategory === MimeType.FILE_CATEGORY_IMAGE || this.fileCategory === MimeType.FILE_CATEGORY_VIDEO || this.fileCategory === MimeType.FILE_CATEGORY_AUDIO
+    return this.fileCategory === MimeType.FILE_CATEGORY_IMAGE ||
+      this.fileCategory === MimeType.FILE_CATEGORY_VIDEO || this.fileCategory === MimeType.FILE_CATEGORY_AUDIO;
   }
 
   isAudioOrVideo(): boolean {
-    return this.fileCategory === MimeType.FILE_CATEGORY_VIDEO || this.fileCategory === MimeType.FILE_CATEGORY_AUDIO
+    return this.fileCategory === MimeType.FILE_CATEGORY_VIDEO || this.fileCategory === MimeType.FILE_CATEGORY_AUDIO;
   }
 
   isDoc(): boolean {
-    return this.fileCategory === MimeType.FILE_CATEGORY_TXT
+    return this.fileCategory === MimeType.FILE_CATEGORY_TXT;
   }
 
   isAudio(): boolean {
-    return this.fileCategory === MimeType.FILE_CATEGORY_AUDIO
+    return this.fileCategory === MimeType.FILE_CATEGORY_AUDIO;
   }
 
   isVideo(): boolean {
-    return this.fileCategory === MimeType.FILE_CATEGORY_VIDEO
+    return this.fileCategory === MimeType.FILE_CATEGORY_VIDEO;
   }
 
   isImage(): boolean {
-    return this.fileCategory === MimeType.FILE_CATEGORY_IMAGE
+    return this.fileCategory === MimeType.FILE_CATEGORY_IMAGE;
   }
 
   isZip(): boolean {
-    return this.fileCategory === MimeType.FILE_CATEGORY_ZIP
+    return this.fileCategory === MimeType.FILE_CATEGORY_ZIP;
   }
 
   isPKG(): boolean {
-    return this.fileCategory === MimeType.FILE_CATEGORY_PKG
+    return this.fileCategory === MimeType.FILE_CATEGORY_PKG;
   }
 }

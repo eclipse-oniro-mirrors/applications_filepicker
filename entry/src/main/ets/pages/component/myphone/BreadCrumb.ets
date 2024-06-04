@@ -13,27 +13,29 @@
  * limitations under the License.
  */
 
-import { BreadData } from '../../../databases/model/FileData'
+import { BreadData } from '../../../databases/model/FileData';
 
-@Styles function pressedStyles () {
+@Styles
+function pressedStyles() {
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
   .borderRadius($r('app.float.common_borderRadius8'))
 }
 
-@Styles function normalStyles () {
+@Styles
+function normalStyles() {
   .backgroundColor($r('app.color.transparent_color'))
   .borderRadius($r('app.float.common_borderRadius8'))
 }
 
 @Component
 export struct BreadCrumb {
-  @Link @Watch("onDireListUpdated") direList: BreadData[]
-  scroller: Scroller = new Scroller()
+  @Link @Watch('onDireListUpdated') direList: BreadData[];
+  scroller: Scroller = new Scroller();
 
   // 监听面包屑变化，滚动到指定位置
   onDireListUpdated(): void {
     setTimeout(() => {
-      this.scroller.scrollEdge(Edge.End)
+      this.scroller.scrollEdge(Edge.End);
     }, 10);
   }
 
@@ -51,7 +53,7 @@ export struct BreadCrumb {
             normal: normalStyles
           })
         if (this.direList.length) {
-          Image($r("app.media.ic_arrow_right"))
+          Image($r('app.media.ic_arrow_right'))
             .objectFit(ImageFit.Contain)
             .height($r('app.float.common_size15'))
             .width($r('app.float.common_size15'))
@@ -60,9 +62,9 @@ export struct BreadCrumb {
       }
       .onClick(() => {
         if (!this.direList.length) {
-          return
+          return;
         }
-        this.direList = []
+        this.direList = [];
       })
 
       Scroll(this.scroller) {
@@ -87,17 +89,17 @@ export struct BreadCrumb {
 
 @Component
 struct BreadCrumbItem {
-  direItem: BreadData
-  index: number
-  @Link direList: BreadData[]
+  direItem: BreadData;
+  index: number;
+  @Link direList: BreadData[];
 
   getTitle(breadCrumb: string) {
-    const breadCrumbMaxLength = 10
-    return breadCrumb.length > breadCrumbMaxLength ? breadCrumb.substring(0, breadCrumbMaxLength) + '...' : breadCrumb
+    const breadCrumbMaxLength = 10;
+    return breadCrumb.length > breadCrumbMaxLength ? breadCrumb.substring(0, breadCrumbMaxLength) + '...' : breadCrumb;
   }
 
   isLast(): boolean {
-    return this.index === this.direList.length - 1
+    return this.index === this.direList.length - 1;
   }
 
   build() {
@@ -116,7 +118,7 @@ struct BreadCrumbItem {
           normal: normalStyles
         })
       if (!this.isLast()) {
-        Image($r("app.media.ic_arrow_right"))
+        Image($r('app.media.ic_arrow_right'))
           .objectFit(ImageFit.Contain)
           .autoResize(false)
           .height($r('app.float.common_size15'))
@@ -126,9 +128,9 @@ struct BreadCrumbItem {
     .height($r('app.float.common_size30'))
     .onClick(() => {
       if (this.isLast()) {
-        return
+        return;
       }
-      this.direList.splice(this.index + 1)
+      this.direList.splice(this.index + 1);
     })
   }
 }

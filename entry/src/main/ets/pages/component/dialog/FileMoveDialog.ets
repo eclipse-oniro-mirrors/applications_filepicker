@@ -13,20 +13,20 @@
  * limitations under the License.
  */
 
-import { FilesData } from '../../../databases/model/FileData'
-import FileAccessExec from '../../../base/utils/FileAccessExec'
-import { toast, isValidFileName } from '../../../base/utils/Common'
-import { TreeItem } from '../TreeItem'
-import { FileMkdirDialog } from './FileMkdirDialog'
-import { emit } from '../../../base/utils/EventBus'
-import { getResourceString } from '../../../base/utils/Tools'
-import { FILENAME_MAX_LENGTH, FILE_MANAGER_PREFERENCES, FOLDER_LEVEL } from '../../../base/constants/Constant'
-import StringUtil from '../../../base/utils/StringUtil'
-import { setPreferencesValue } from '../../../base/utils/PreferencesUtil'
-import { FileUtil } from '../../../base/utils/FileUtil'
-import Logger from '../../../base/log/Logger'
-import { ArrayUtil } from '../../../base/utils/ArrayUtil'
-import ErrorCodeConst from '../../../base/constants/ErrorCodeConst'
+import { FilesData } from '../../../databases/model/FileData';
+import FileAccessExec from '../../../base/utils/FileAccessExec';
+import { toast, isValidFileName } from '../../../base/utils/Common';
+import { TreeItem } from '../TreeItem';
+import { FileMkdirDialog } from './FileMkdirDialog';
+import { emit } from '../../../base/utils/EventBus';
+import { getResourceString } from '../../../base/utils/Tools';
+import { FILENAME_MAX_LENGTH, FILE_MANAGER_PREFERENCES, FOLDER_LEVEL } from '../../../base/constants/Constant';
+import StringUtil from '../../../base/utils/StringUtil';
+import { setPreferencesValue } from '../../../base/utils/PreferencesUtil';
+import { FileUtil } from '../../../base/utils/FileUtil';
+import Logger from '../../../base/log/Logger';
+import { ArrayUtil } from '../../../base/utils/ArrayUtil';
+import ErrorCodeConst from '../../../base/constants/ErrorCodeConst';
 
 @Styles function pressedStyles () {
   .borderRadius($r('app.float.common_borderRadius8'))
@@ -42,19 +42,19 @@ const TAG = 'fileTree';
 
 @Component
 export struct fileTree {
-  @State listLength: number = 0
-  @State positionY: string | number = '100%'
-  @State topRotate: boolean = false
-  @State rootData: Array<FilesData> = new Array<FilesData>()
-  @State selectUri: string = ''
-  @State @Watch('nameChange') selectName: string = getResourceString($r('app.string.myPhone'))
-  public moveCallback: (e) => void
-  @State @Watch('selectChange') chooseItem: FilesData = new FilesData({})
-  @State folderList: FilesData[] = new Array<FilesData>()
-  @State fileList: FilesData[] = new Array<FilesData>()
-  @State changeTitle: Resource = undefined
-  @State fileName: string = ''
-  @State suffix: string = ''
+  @State listLength: number = 0;
+  @State positionY: string | number = '100%';
+  @State topRotate: boolean = false;
+  @State rootData: FilesData[] = [];
+  @State selectUri: string = '';
+  @State @Watch('nameChange') selectName: string = getResourceString($r('app.string.myPhone'));
+  public moveCallback: (e) => void;
+  @State @Watch('selectChange') chooseItem: FilesData = new FilesData({});
+  @State folderList: FilesData[] = [];
+  @State fileList: FilesData[] = [];
+  @State changeTitle: Resource = undefined;
+  @State fileName: string = '';
+  @State suffix: string = '';
   fileMkdirDialog: CustomDialogController = new CustomDialogController({
     builder: FileMkdirDialog({
       fileItems: this.folderList,
@@ -64,10 +64,10 @@ export struct fileTree {
     autoCancel: true,
     alignment: DialogAlignment.Bottom,
     offset: { dx: 0, dy: -80 }
-  })
-  @State isSelectRootPath: boolean = true
-  @State errorText: Resource = undefined
-  @State isNeedLoadDefaultPath: boolean = false
+  });
+  @State isSelectRootPath: boolean = true;
+  @State errorText: Resource = undefined;
+  @State isNeedLoadDefaultPath: boolean = false;
   @State isClickExpand: boolean = false;
   @Link @Watch('createFileFailTypeChange') createFileFailType: number;
   lastSelectPath: string = AppStorage.Get<string>(FILE_MANAGER_PREFERENCES.lastSelectPath.key);
@@ -77,11 +77,11 @@ export struct fileTree {
 
   async aboutToAppear() {
     toast($r('app.string.select_location'))
-    const fileNameList = globalThis.keyPickFileName
-    this.listLength = fileNameList.length
-    const fileName: string = fileNameList[0]
+    const fileNameList = globalThis.keyPickFileName;
+    this.listLength = fileNameList.length;
+    const fileName: string = fileNameList[0];
     if (fileName) {
-      const dotIndex = fileName.lastIndexOf('.')
+      const dotIndex = fileName.lastIndexOf('.');
       let fileSuffix = globalThis.keyFileSuffixChoices;
       if (!StringUtil.isEmpty(fileSuffix)) {
         this.suffix = fileSuffix;
@@ -94,15 +94,15 @@ export struct fileTree {
         this.fileName = fileName;
       }
     }
-    this.nameChange()
-    this.isSelectRootPath = true
-    let { folderList, fileList } = FileAccessExec.getFileData()
-    this.fileList = fileList
-    this.rootData = folderList
-    this.folderList = this.rootData
-    this.topRotate = !this.topRotate
+    this.nameChange();
+    this.isSelectRootPath = true;
+    let { folderList, fileList } = FileAccessExec.getFileData();
+    this.fileList = fileList;
+    this.rootData = folderList;
+    this.folderList = this.rootData;
+    this.topRotate = !this.topRotate;
     if (globalThis.documentInfo) {
-      this.selectUri = globalThis.documentInfo.uri
+      this.selectUri = globalThis.documentInfo.uri;
     }
     this.loadDefaultExpandPath();
   }
@@ -115,28 +115,29 @@ export struct fileTree {
     emit('fileMkdir', e)
     if (this.isSelectRootPath) {
       // 获取当前选中文件夹下的所有子文件
-      let { folderList, fileList } = FileAccessExec.getFileData()
-      this.rootData = folderList
+      let { folderList, fileList } = FileAccessExec.getFileData();
+      this.rootData = folderList;
       // 查找刚刚新建的文件夹index
-      const index = this.rootData.findIndex(item => item.fileName === e.mkdirName)
+      const index = this.rootData.findIndex(item => item.fileName === e.mkdirName);
       if (index !== -1) {
         // 默认选中刚刚新建的文件夹
-        this.selectUri = this.rootData[index].uri
-        this.selectName = this.rootData[index].fileName
-        this.topRotate = true
-        this.fileList = []
-        this.folderList = []
+        this.selectUri = this.rootData[index].uri;
+        this.selectName = this.rootData[index].fileName;
+        this.topRotate = true;
+        this.fileList = [];
+        this.folderList = [];
       } else {
-        this.fileList = fileList
-        this.folderList = folderList
+        this.fileList = fileList;
+        this.folderList = folderList;
       }
     }
   }
 
   nameChange() {
-    this.changeTitle = this.listLength <= 1 ? $r('app.string.to_save', this.selectName) : $r('app.string.to_save_plural', this.listLength, this.selectName)
+    this.changeTitle = this.listLength <= 1 ?
+    $r('app.string.to_save', this.selectName) : $r('app.string.to_save_plural', this.listLength, this.selectName)
     if (this.isSelectRootPath) {
-      this.isSelectRootPath = false
+      this.isSelectRootPath = false;
     }
   }
 
@@ -154,13 +155,14 @@ export struct fileTree {
       this.chooseItem.autoShow = false;
     }
     if (!this.isClickExpand || autoShow) {
-      let loadSubFinish = FileUtil.loadSubFinish(this.defaultExpandPath, this.chooseItem.currentDir, FOLDER_LEVEL.MAX_LEVEL - 2);
+      let loadSubFinish = FileUtil.loadSubFinish(this.defaultExpandPath,
+        this.chooseItem.currentDir, FOLDER_LEVEL.MAX_LEVEL - 2);
       if (loadSubFinish || autoShow) {
-        let allData: Array<FilesData> = new Array<FilesData>();
+        let allData: FilesData[] = [];
         let pos = this.getSelectItemPos(this.rootData, allData);
         let itemHeight: number = this.context.resourceManager.getNumber($r('app.float.common_size56'));
         let scrollY: number = itemHeight * (pos - 1);
-        Logger.i(TAG, "selectItemPos = " + pos + ",itemHeight = " + itemHeight + " ; scrollY = " + scrollY)
+        Logger.i(TAG, 'selectItemPos = ' + pos + ',itemHeight = ' + itemHeight + ' ; scrollY = ' + scrollY);
         setTimeout(() => {
           if (scrollY < 0) {
             this.scroller.scrollEdge(Edge.Start);
@@ -172,7 +174,7 @@ export struct fileTree {
     }
   }
 
-  private getSelectItemPos(fileList: Array<FilesData>, allData: Array<FilesData>): number {
+  private getSelectItemPos(fileList: FilesData[], allData: FilesData[]): number {
     if (ArrayUtil.isEmpty(allData)) {
       allData = [];
     }
@@ -184,7 +186,7 @@ export struct fileTree {
           return allData.length;
         }
         if (fileData.hasSubFolderList()) {
-          let subFolderList: Array<FilesData> = fileData.getSubFolderList();
+          let subFolderList: FilesData[] = fileData.getSubFolderList();
           let result = this.getSelectItemPos(subFolderList, allData);
           if (result > 0) {
             return result;
@@ -209,7 +211,7 @@ export struct fileTree {
       let fileInfo = await FileUtil.getFileInfoByUri(loadUri, fileHelper);
       if (fileInfo) {
         this.defaultExpandPath = FileUtil.getCurrentFolderByFileInfo(fileInfo);
-        Logger.i(TAG, "loadDefaultExpandPath = " + this.defaultExpandPath);
+        Logger.i(TAG, 'loadDefaultExpandPath = ' + this.defaultExpandPath);
         // 值为true，说明需要刷新树布局，并且传入loadPath
         this.isNeedLoadDefaultPath = !StringUtil.isEmpty(this.defaultExpandPath);
       }
@@ -226,7 +228,7 @@ export struct fileTree {
   build() {
     Column() {
       Row() {
-        Image($r("app.media.hidisk_cancel_normal"))
+        Image($r('app.media.hidisk_cancel_normal'))
           .width($r('app.float.common_size46'))
           .height($r('app.float.common_size46'))
           .objectFit(ImageFit.Contain)
@@ -239,7 +241,7 @@ export struct fileTree {
           .onClick(() => {
             this.moveCallback.call(this, {
               cancel: true
-            })
+            });
           })
         Blank()
         Image($r('app.media.hidisk_ic_add_folder'))
@@ -256,7 +258,7 @@ export struct fileTree {
           .opacity(this.canCreateFolder() ? $r('app.float.common_opacity10') : $r('app.float.common_opacity2'))
           .interpolation(ImageInterpolation.Medium)
           .onClick(() => {
-            this.fileMkdirDialog.open()
+            this.fileMkdirDialog.open();
           })
         Image($r('app.media.ic_ok'))
           .width($r('app.float.common_size46'))
@@ -270,24 +272,25 @@ export struct fileTree {
             normal: normalStyles
           })
           .onClick(async () => {
-            setPreferencesValue(FILE_MANAGER_PREFERENCES.name, FILE_MANAGER_PREFERENCES.lastSelectPath.key, this.selectUri);
+            setPreferencesValue(FILE_MANAGER_PREFERENCES.name,
+              FILE_MANAGER_PREFERENCES.lastSelectPath.key, this.selectUri);
             AppStorage.SetOrCreate<string>(FILE_MANAGER_PREFERENCES.lastSelectPath.key, this.selectUri);
-            const prefix = this.fileName.trim()
+            const prefix = this.fileName.trim();
             if (!prefix) {
-              this.errorText = $r('app.string.input_nothing')
-              return
+              this.errorText = $r('app.string.input_nothing');
+              return;
             }
-            const fileName = this.fileName.trim()
+            const fileName = this.fileName.trim();
             if (StringUtil.getBytesCount(fileName) > FILENAME_MAX_LENGTH) {
-              this.errorText = $r('app.string.max_input_length')
+              this.errorText = $r('app.string.max_input_length');
             } else if (!isValidFileName(fileName)) {
-              this.errorText = $r('app.string.input_invalid')
+              this.errorText = $r('app.string.input_invalid');
             } else {
-              this.errorText = null
+              this.errorText = null;
               this.moveCallback({
                 selectUri: this.selectUri,
                 fileName: fileName
-              })
+              });
             }
           })
       }.width('100%')
@@ -386,14 +389,14 @@ export struct fileTree {
       })
       .backgroundColor(this.isSelectRootPath ? $r('app.color.path_pick_selected_bg') : '')
       .onClick(async () => {
-        this.selectName = getResourceString($r('app.string.myPhone'))
-        this.selectUri = globalThis.documentInfo && globalThis.documentInfo?.uri
-        this.isSelectRootPath = true
-        let { folderList, fileList } = await FileAccessExec.getFileData()
-        this.topRotate = !this.topRotate
-        this.fileList = fileList
-        this.rootData = folderList
-        this.folderList = this.rootData
+        this.selectName = getResourceString($r('app.string.myPhone'));
+        this.selectUri = globalThis.documentInfo && globalThis.documentInfo?.uri;
+        this.isSelectRootPath = true;
+        let { folderList, fileList } = await FileAccessExec.getFileData();
+        this.topRotate = !this.topRotate;
+        this.fileList = fileList;
+        this.rootData = folderList;
+        this.folderList = this.rootData;
         this.isClickExpand = true;
         this.defaultExpandPath = '';
       })

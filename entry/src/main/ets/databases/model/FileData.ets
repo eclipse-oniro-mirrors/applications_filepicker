@@ -13,194 +13,192 @@
  * limitations under the License.
  */
 
-import { getFileIcon, randomId, formatSuffix } from '../../base/utils/Tools'
-import { MILLISECOND } from '../../base/constants/Constant'
-import fileAccess from '@ohos.file.fileAccess'
-import { THUMBNAIL_SIZE } from '../../base/constants/UiConstant'
-import { FileMimeTypeUtil } from '../../base/utils/FileMimeTypeUtil'
-import { MimeType } from './MimeType'
-import { BasicDataSource } from './BasicDataSource'
-import fileExtensionInfo from '@ohos.file.fileExtensionInfo'
-import AbilityCommonUtil from '../../base/utils/AbilityCommonUtil'
-import { FileUtil } from '../../base/utils/FileUtil'
-import { ArrayUtil } from '../../base/utils/ArrayUtil'
+import { getFileIcon, randomId, formatSuffix } from '../../base/utils/Tools';
+import { MILLISECOND } from '../../base/constants/Constant';
+import fileAccess from '@ohos.file.fileAccess';
+import { THUMBNAIL_SIZE } from '../../base/constants/UiConstant';
+import { MimeType } from './MimeType';
+import { BasicDataSource } from './BasicDataSource';
+import AbilityCommonUtil from '../../base/utils/AbilityCommonUtil';
+import { FileUtil } from '../../base/utils/FileUtil';
+import { ArrayUtil } from '../../base/utils/ArrayUtil';
 
 export class BreadData {
-  title: string
-  url: string
-  fileIterator?: fileAccess.FileInfo
+  title: string;
+  url: string;
+  fileIterator?: fileAccess.FileInfo;
 
   constructor(obj) {
-    this.title = obj.title
-    this.url = obj.url
-    this.fileIterator = obj.fileIterator
+    this.title = obj.title;
+    this.url = obj.url;
+    this.fileIterator = obj.fileIterator;
   }
 }
 
 export class FileDataSource extends BasicDataSource {
-  private dataArray: FilesData[] = []
-  dataCount: number = 0
+  private dataArray: FilesData[] = [];
+  dataCount: number = 0;
 
   public totalCount(): number {
-    return this.dataArray.length
+    return this.dataArray.length;
   }
 
   public getDataArray(): FilesData[] {
-    return this.dataArray
+    return this.dataArray;
   }
 
   public getFileList(): FilesData[] {
-    return this.dataArray.filter(item =>!item.isFolder)
+    return this.dataArray.filter(item =>!item.isFolder);
   }
 
   public setData(data: FilesData[]): void {
-    this.dataArray = [...data]
-    this.dataCount = this.dataArray.length
-    this.notifyDataReload()
+    this.dataArray = [...data];
+    this.dataCount = this.dataArray.length;
+    this.notifyDataReload();
   }
 
   public getData(index: number): FilesData {
-    return this.dataArray[index]
+    return this.dataArray[index];
   }
 
   public selectAll(isSelected): void {
     this.dataArray.forEach(item => {
-      item.isChecked = isSelected
-    })
+      item.isChecked = isSelected;
+    });
   }
 
   public getIndex(uri): number {
-    return this.dataArray.findIndex(item => item.uri === uri)
+    return this.dataArray.findIndex(item => item.uri === uri);
   }
 
   public getSelectedFileList(): FilesData[] {
-    return this.dataArray.filter(item => item.isChecked)
+    return this.dataArray.filter(item => item.isChecked);
   }
 
   public replaceData(index, data: FilesData): void {
-    this.dataArray.splice(index, 1, data)
-    this.notifyDataChange(index)
+    this.dataArray.splice(index, 1, data);
+    this.notifyDataChange(index);
   }
 
   public addData(index: number, data: FilesData): void {
-    this.dataArray.splice(index, 0, data)
-    this.dataCount = this.dataArray.length
-    this.notifyDataAdd(index)
+    this.dataArray.splice(index, 0, data);
+    this.dataCount = this.dataArray.length;
+    this.notifyDataAdd(index);
   }
 
   public pushData(data: FilesData): void {
-    this.dataArray.push(data)
-    this.dataCount = this.dataArray.length
-    this.notifyDataAdd(this.dataArray.length - 1)
+    this.dataArray.push(data);
+    this.dataCount = this.dataArray.length;
+    this.notifyDataAdd(this.dataArray.length - 1);
   }
 
   public deleteData(index: number): void {
-    this.dataArray.splice(index, 1)
-    this.dataCount = this.dataArray.length
-    this.notifyDataDelete(index)
+    this.dataArray.splice(index, 1);
+    this.dataCount = this.dataArray.length;
+    this.notifyDataDelete(index);
   }
 }
 
 export class FilesData {
-  id: string
-  uri: string
-  thumbUri: string
-  displayName: string
-  deviceId: string
-  flags: number
-  name: string
-  fileName: string
-  mode: string
-  size: number
-  mtime: number
-  suffix: string
-  mimeType: string
-  icon: any
-  gridIcon: any
-  localGridIcon: any
-  isChecked: boolean
-  path?: string
-  sub?: number
-  scale?: number
-  angle?: number
-  offsetX?: number | string
-  offsetY?: number | string
-  picWidth?: number | string
-  picHeight?: number | string
-  fileIterator?: fileAccess.FileInfo
-  isMedia: boolean = false
-  isImage: boolean = false
-  isVideo: boolean = false
-  isAudio: boolean = false
-  isFolder: boolean = false
-  duration: number
-  mimeTypeObj: MimeType
-  subFolderList: Array<FilesData>;
-  subFileList: Array<FilesData>;
-  layer:number;
+  id: string;
+  uri: string;
+  thumbUri: string;
+  displayName: string;
+  deviceId: string;
+  flags: number;
+  name: string;
+  fileName: string;
+  mode: string;
+  size: number;
+  mtime: number;
+  suffix: string;
+  mimeType: string;
+  icon: any;
+  gridIcon: any;
+  localGridIcon: any;
+  isChecked: boolean;
+  path?: string;
+  sub?: number;
+  scale?: number;
+  angle?: number;
+  offsetX?: number | string;
+  offsetY?: number | string;
+  picWidth?: number | string;
+  picHeight?: number | string;
+  fileIterator?: fileAccess.FileInfo;
+  isMedia: boolean = false;
+  isImage: boolean = false;
+  isVideo: boolean = false;
+  isAudio: boolean = false;
+  isFolder: boolean = false;
+  duration: number;
+  mimeTypeObj: MimeType;
+  subFolderList: FilesData[];
+  subFileList: FilesData[];
+  layer: number;
   autoShow: boolean = false;
   currentDir?: string;
 
   constructor(obj) {
     this.isFolder = obj.isFolder || FileUtil.isFolder(obj.mode);
-    this.id = obj.id || randomId()
-    this.uri = obj.uri || ''
-    this.deviceId = obj.deviceId || ''
-    this.flags = obj.flags || 0
-    this.name = obj.name || ''
-    this.fileName = obj.fileName || obj.displayName || ''
-    this.suffix = formatSuffix(this.fileName)
-    this.mode = obj.mode || ''
-    this.size = obj.size || 0
-    this.mtime = obj.mtime * MILLISECOND.ONE_SECOND || 0
-    this.mimeType = obj.mimeType || ''
-    this.isChecked = false
-    this.path = obj.path || obj.relativePath || ''
-    this.sub = obj.sub || 0
-    this.scale = obj.scale || 1
-    this.angle = obj.angle || 0
-    this.offsetX = obj.offsetX || 0
-    this.offsetY = obj.offsetY || 0
-    this.picWidth = obj.picWidth || '100%'
-    this.picHeight = obj.picHeight || '100%'
-    this.fileIterator = obj.fileIterator
-    this.duration = obj.duration || 0
-    this.mimeTypeObj = getFileIcon(this.fileName, this.isFolder)
-    this.icon = this.mimeTypeObj.getResID()
-    this.gridIcon = this.mimeTypeObj.getGridResID()
-    this.localGridIcon = this.mimeTypeObj.getLocalGridResID()
+    this.id = obj.id || randomId();
+    this.uri = obj.uri || '';
+    this.deviceId = obj.deviceId || '';
+    this.flags = obj.flags || 0;
+    this.name = obj.name || '';
+    this.fileName = obj.fileName || obj.displayName || '';
+    this.suffix = formatSuffix(this.fileName);
+    this.mode = obj.mode || '';
+    this.size = obj.size || 0;
+    this.mtime = obj.mtime * MILLISECOND.ONE_SECOND || 0;
+    this.mimeType = obj.mimeType || '';
+    this.isChecked = false;
+    this.path = obj.path || obj.relativePath || '';
+    this.sub = obj.sub || 0;
+    this.scale = obj.scale || 1;
+    this.angle = obj.angle || 0;
+    this.offsetX = obj.offsetX || 0;
+    this.offsetY = obj.offsetY || 0;
+    this.picWidth = obj.picWidth || '100%';
+    this.picHeight = obj.picHeight || '100%';
+    this.fileIterator = obj.fileIterator;
+    this.duration = obj.duration || 0;
+    this.mimeTypeObj = getFileIcon(this.fileName, this.isFolder);
+    this.icon = this.mimeTypeObj.getResID();
+    this.gridIcon = this.mimeTypeObj.getGridResID();
+    this.localGridIcon = this.mimeTypeObj.getLocalGridResID();
     if (this.mimeTypeObj.isMedia()) {
-      this.thumbUri = this.uri
+      this.thumbUri = this.uri;
     }
     if (this.isFolder) {
-      this.sub = getSubFileNum(this.fileIterator)
+      this.sub = getSubFileNum(this.fileIterator);
     }
     this.currentDir = FileUtil.getCurrentDir(this.path, this.isFolder);
   }
 
   setFileName(fileName: string): void {
-    this.fileName = fileName
-    this.mimeTypeObj = getFileIcon(this.fileName)
-    this.icon = this.mimeTypeObj.getResID()
-    this.gridIcon = this.mimeTypeObj.getGridResID()
-    this.localGridIcon = this.mimeTypeObj.getLocalGridResID()
+    this.fileName = fileName;
+    this.mimeTypeObj = getFileIcon(this.fileName);
+    this.icon = this.mimeTypeObj.getResID();
+    this.gridIcon = this.mimeTypeObj.getGridResID();
+    this.localGridIcon = this.mimeTypeObj.getLocalGridResID();
     if (this.mimeTypeObj.isMedia()) {
-      this.thumbUri = `${this.uri}/thumbnail/${THUMBNAIL_SIZE.WIDTH}/${THUMBNAIL_SIZE.HEIGHT}`
+      this.thumbUri = `${this.uri}/thumbnail/${THUMBNAIL_SIZE.WIDTH}/${THUMBNAIL_SIZE.HEIGHT}`;
     }
   }
 
   pickFile(): void {
-    AbilityCommonUtil.terminateFilePicker([this.uri], [this.fileName])
+    AbilityCommonUtil.terminateFilePicker([this.uri], [this.fileName]);
   }
 
-  setSubFolderList(subFolderList: Array<FilesData>) {
+  setSubFolderList(subFolderList: FilesData[]) {
     this.subFolderList = subFolderList;
   }
 
-  setSubList(subList: Array<FilesData>) {
+  setSubList(subList: FilesData[]) {
     if (!ArrayUtil.isEmpty(subList)) {
-      let folderList = new Array<FilesData>();
-      let fileList = new Array<FilesData>();
+      let folderList: FilesData[] =[];
+      let fileList: FilesData[] = [];
       for (let i = 0; i < subList.length; i++) {
         let fileData: FilesData = subList[i];
         if (fileData.isFolder) {
@@ -221,7 +219,7 @@ export class FilesData {
     return this.subFolderList.length > 0;
   }
 
-  getSubFolderList(): Array<FilesData> {
+  getSubFolderList(): FilesData[] {
     return this.subFolderList;
   }
 
@@ -237,109 +235,109 @@ export class FilesData {
   }
 }
 
-
 export function getSubFileNum(fileInfo: fileAccess.FileInfo): number {
-  let subFileNum = 0
+  let subFileNum = 0;
   if (!fileInfo) {
-    return subFileNum
+    return subFileNum;
   }
-  let fileIterator = fileInfo.listFile()
+  let fileIterator = fileInfo.listFile();
   if (!fileIterator) {
-    return subFileNum
+    return subFileNum;
   }
-  let result = fileIterator.next()
-  let isDone = result.done
+  let result = fileIterator.next();
+  let isDone = result.done;
   while (!isDone) {
-    subFileNum += 1
-    result = fileIterator.next()
-    isDone = result.done
+    subFileNum += 1;
+    result = fileIterator.next();
+    isDone = result.done;
   }
-  return subFileNum
+  return subFileNum;
 }
 
 export class selectedFileData {
-  id?: string
-  uri: string
-  mimeType: string
-  thumbUri: string
-  title: string
-  fileName: string
-  mode: string
-  relativePath: string
-  size: number
-  albumUri: string
-  albumName: string
-  isFolder: boolean
-  displayName?: string
+  id?: string;
+  uri: string;
+  mimeType: string;
+  thumbUri: string;
+  title: string;
+  fileName: string;
+  mode: string;
+  relativePath: string;
+  size: number;
+  albumUri: string;
+  albumName: string;
+  isFolder: boolean;
+  displayName?: string;
 
   constructor(obj) {
-    this.id = obj.id || -1
-    this.uri = obj.uri || ''
-    this.mimeType = obj.mimetype || ''
-    this.thumbUri = obj.thumbUri || ''
-    this.title = obj.title || ''
-    this.fileName = obj.fileName || obj.displayName || ''
-    this.mode = obj.mode || ''
-    this.isFolder = obj.isFolder
-    this.relativePath = obj.relativePath || ''
-    this.size = obj.size || 0
-    this.albumUri = obj.albumUri || ''
-    this.albumName = obj.albumName || ''
+    this.id = obj.id || -1;
+    this.uri = obj.uri || '';
+    this.mimeType = obj.mimetype || '';
+    this.thumbUri = obj.thumbUri || '';
+    this.title = obj.title || '';
+    this.fileName = obj.fileName || obj.displayName || '';
+    this.mode = obj.mode || '';
+    this.isFolder = obj.isFolder;
+    this.relativePath = obj.relativePath || '';
+    this.size = obj.size || 0;
+    this.albumUri = obj.albumUri || '';
+    this.albumName = obj.albumName || '';
   }
 }
 
 export class FileData {
-  id: string
-  fileName: string
-  thumbnail: string
-  editedTime: string
-  subItemSize: number
-  parentFolder: string
-  fileType: string
-  fileSize: number
-  isChecked: boolean
-  children: []
+  id: string;
+  fileName: string;
+  thumbnail: string;
+  editedTime: string;
+  subItemSize: number;
+  parentFolder: string;
+  fileType: string;
+  fileSize: number;
+  isChecked: boolean;
+  children: [];
 
-  constructor(id: string, fileName: string, thumbnail: string, editedTime: string, subItemSize: number, parentFolder: string, fileType: string, fileSize: number, isChecked: boolean, children: []) {
-    this.id = id
-    this.fileName = fileName
-    this.thumbnail = thumbnail
-    this.editedTime = editedTime
-    this.subItemSize = subItemSize
-    this.parentFolder = parentFolder
-    this.fileType = fileType
-    this.fileSize = fileSize
-    this.isChecked = isChecked
-    this.children = children
+  constructor(id: string, fileName: string, thumbnail: string, editedTime: string, subItemSize: number,
+              parentFolder: string, fileType: string, fileSize: number, isChecked: boolean, children: []) {
+    this.id = id;
+    this.fileName = fileName;
+    this.thumbnail = thumbnail;
+    this.editedTime = editedTime;
+    this.subItemSize = subItemSize;
+    this.parentFolder = parentFolder;
+    this.fileType = fileType;
+    this.fileSize = fileSize;
+    this.isChecked = isChecked;
+    this.children = children;
   }
 }
 
 export class fileDetail {
-  key: string | Resource
-  value: string | Resource
-  path?: string = ''
-  params?: any
+  key: string | Resource;
+  value: string | Resource;
+  path?: string = '';
+  params?: any;
 
   constructor(key: string, value: string, path: string, params: any) {
-    this.key = key
-    this.value = value
-    this.path = path
-    this.params = params
+    this.key = key;
+    this.value = value;
+    this.path = path;
+    this.params = params;
   }
 }
 
 export class bottomOptions {
-  optionName: string
-  name: string
-  icon: Resource
-  disabled: boolean = false
-  display: boolean = true
+  optionName: string;
+  name: string;
+  icon: Resource;
+  disabled: boolean = false;
+  display: boolean = true;
 
   constructor(optionName: string, name: string, icon: Resource, disabled: boolean, display: boolean) {
-    this.optionName = optionName
-    this.name = name
-    this.icon = icon
-    this.disabled = disabled
-    this.display = display
+    this.optionName = optionName;
+    this.name = name;
+    this.icon = icon;
+    this.disabled = disabled;
+    this.display = display;
   }
 }
