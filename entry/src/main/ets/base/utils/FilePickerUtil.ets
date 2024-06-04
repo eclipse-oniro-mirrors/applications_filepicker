@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { toast } from '../../base/utils/Common'
-import { FileMimeTypeUtil } from '../../base/utils/FileMimeTypeUtil'
+import { toast } from '../../base/utils/Common';
+import { FileMimeTypeUtil } from '../../base/utils/FileMimeTypeUtil';
 import { FILE_SUFFIX, SELECT_MODE } from '../constants/Constant';
-import Logger from '../log/Logger';
 import ObjectUtil from './ObjectUtil';
 
 /**
@@ -32,7 +31,7 @@ export function pickerStatus(item, checkedNum) {
     exceedLimit: globalThis.filePickerViewFlag && (checkedNum >= globalThis.filePickNum && !item.isChecked),
     // 选择类型是否不匹配
     differentTypes: !checkFileSelectable(item)
-  }
+  };
 }
 
 /**
@@ -52,7 +51,7 @@ function checkFileSelectable(item): boolean {
     isFolder = item.isFolder;
   }
   // 文件夹模式，直接返回
-  if(selectMode === SELECT_MODE.FOLDER){
+  if (selectMode === SELECT_MODE.FOLDER) {
     return isFolder;
   }
 
@@ -65,7 +64,7 @@ function checkFileSelectable(item): boolean {
     return false;
   }
   // 后缀检查
-  let keyFileSuffixFilter: Array<string> = globalThis.keyFileSuffixFilter;
+  let keyFileSuffixFilter: string[] = globalThis.keyFileSuffixFilter;
   if (Array.isArray(keyFileSuffixFilter) && keyFileSuffixFilter.length > 0) {
     return checkFileSuffix(item.fileName, keyFileSuffixFilter);
   }
@@ -102,40 +101,41 @@ function checkFileSuffix(fileName: string, keyFileSuffixFilter: Array<string>): 
  */
 function checkFileMimetype(fileName: string): boolean {
   if (!fileName) {
-    return false
+    return false;
   }
-  let keyPickTypeList: Array<string> = globalThis.keyPickTypeList
+  let keyPickTypeList: string[] = globalThis.keyPickTypeList;
   // 输入的类型全转换成小写，避免大小敏感问题
-  keyPickTypeList.forEach(item => item.toLowerCase())
+  keyPickTypeList.forEach(item => item.toLowerCase());
   // 类型列表为空或包含*或*/*时,可选择所有文件
-  if (!keyPickTypeList || keyPickTypeList.length === 0 || keyPickTypeList.includes('*') || keyPickTypeList.includes('*/*')) {
-    return true
+  if (!keyPickTypeList || keyPickTypeList.length === 0 ||
+    keyPickTypeList.includes('*') || keyPickTypeList.includes('*/*')) {
+    return true;
   }
 
-  const mimeTypeObj = FileMimeTypeUtil.getFileMimeType(fileName)
-  const mimeType = mimeTypeObj.getMimeType()
+  const mimeTypeObj = FileMimeTypeUtil.getFileMimeType(fileName);
+  const mimeType = mimeTypeObj.getMimeType();
 
   // mimeType未知不可选
   if (!mimeType) {
-    return false
+    return false;
   }
 
   // mimeType完全匹配
   if (keyPickTypeList.includes(mimeType)) {
-    return true
+    return true;
   }
 
-  let fileCategory = mimeType
-  const index = mimeType.indexOf('/')
+  let fileCategory = mimeType;
+  const index = mimeType.indexOf('/');
   if (index > 0) {
-    fileCategory = mimeType.substring(0, index)
+    fileCategory = mimeType.substring(0, index);
   }
   // 某一类文件
   if (keyPickTypeList.includes(fileCategory) || keyPickTypeList.includes(`${fileCategory}/*`)) {
-    return true
+    return true;
   }
 
-  return false
+  return false;
 }
 
 /**
@@ -144,9 +144,10 @@ function checkFileMimetype(fileName: string): boolean {
  * @param isImmersion 是否沉浸式
  */
 export const filePickerTip = () => {
-  globalThis.abilityContext.resourceManager.getPluralString($r('app.plural.filePickerTip').id, globalThis.filePickNum).then((value) => {
-    toast(value)
-  })
+  globalThis.abilityContext.resourceManager.getPluralString($r('app.plural.filePickerTip').id, globalThis.filePickNum)
+    .then((value) => {
+      toast(value)
+    })
 }
 
 

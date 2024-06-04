@@ -16,36 +16,35 @@
 /**
  * FileAccessManager删除、复制、移动、重命名等操作
  */
-import Logger from '../log/Logger'
-import { FilesData } from '../../databases/model/FileData'
-import { FOLDER_LEVEL, DOCS_FOLDER, DESKTOP_FOLDER } from '../constants/Constant'
-import { sortDataByTime, randomId, sortBaseDataByOrderTime } from './Tools'
-import fileAccess from '@ohos.file.fileAccess'
-import fileExtensionInfo from '@ohos.file.fileExtensionInfo'
-import { FileBase } from '../../databases/model/base/FileBase'
-import ObjectUtil from './ObjectUtil'
-import { FileUtil } from './FileUtil'
-import fs from '@ohos.file.fs'
+import Logger from '../log/Logger';
+import { FilesData } from '../../databases/model/FileData';
+import { FOLDER_LEVEL, DESKTOP_FOLDER } from '../constants/Constant';
+import { sortDataByTime, randomId, sortBaseDataByOrderTime } from './Tools';
+import fileAccess from '@ohos.file.fileAccess';
+import fileExtensionInfo from '@ohos.file.fileExtensionInfo';
+import { FileBase } from '../../databases/model/base/FileBase';
+import ObjectUtil from './ObjectUtil';
+import { FileUtil } from './FileUtil';
 
-const TAG = 'FileAccessExec'
+const TAG = 'FileAccessExec';
 
 namespace FileAccessExec {
 
-// 创建文件夹
+  // 创建文件夹
   export function createFolder(sourceUri: string, folderName: string): any {
     return new Promise((resolve, reject) => {
       try {
         globalThis.fileAcsHelper.mkDir(sourceUri, folderName, (ret, data) => {
           if (ret && ret.code !== '0') {
-            reject(ret)
-            Logger.e(TAG, 'createFolder fail:' + JSON.stringify(ret))
+            reject(ret);
+            Logger.e(TAG, 'createFolder fail:' + JSON.stringify(ret));
           } else {
-            resolve(data)
+            resolve(data);
           }
         })
       } catch (error) {
-        reject(error)
-        Logger.e(TAG, 'createFolder error occurred:' + error)
+        reject(error);
+        Logger.e(TAG, 'createFolder error occurred:' + error);
       }
     })
   }
@@ -56,50 +55,50 @@ namespace FileAccessExec {
       try {
         globalThis.fileAcsHelper.createFile(sourceUri, fileName, (ret, data) => {
           if (ret && ret.code !== '0') {
-            reject(ret)
-            Logger.e(TAG, 'createFile fail:' + JSON.stringify(ret))
+            reject(ret);
+            Logger.e(TAG, 'createFile fail:' + JSON.stringify(ret));
           } else {
-            resolve(data)
+            resolve(data);
           }
         })
       } catch (error) {
-        reject(error)
-        Logger.e(TAG, 'createFile error occurred:' + error)
+        reject(error);
+        Logger.e(TAG, 'createFile error occurred:' + error);
       }
     })
   }
 
   export function getFileData(): any {
-    let folderList = new Array<FilesData>()
-    let fileList = new Array<FilesData>()
-    const allData = getRootFolder()
+    let folderList: FilesData[] = [];
+    let fileList: FilesData[] = [];
+    const allData = getRootFolder();
     allData.forEach((item) => {
       if (item.isFolder) {
         folderList.push(new FilesData({
           ...item
-        }))
+        }));
       } else {
         fileList.push(new FilesData({
           ...item
-        }))
+        }));
       }
     })
 
-    return { folderList, fileList }
+    return { folderList, fileList };
   }
 
-  export function getFileByCurIterator(fileInfo: fileAccess.FileInfo | fileAccess.RootInfo): Array<FilesData> {
-    let fileList: Array<FilesData> = []
+  export function getFileByCurIterator(fileInfo: fileAccess.FileInfo | fileAccess.RootInfo): FilesData[] {
+    let fileList: FilesData[] = [];
     try {
-      let fileIterator = fileInfo.listFile()
+      let fileIterator = fileInfo.listFile();
       if (!fileIterator) {
-        Logger.w(TAG, 'getFileByCurIterator fail, fileIterator is null')
-        return fileList
+        Logger.w(TAG, 'getFileByCurIterator fail, fileIterator is null');
+        return fileList;
       }
-      let result = fileIterator.next()
-      let isDone = result.done
+      let result = fileIterator.next();
+      let isDone = result.done;
       while (!isDone) {
-        const {fileName, relativePath,uri, mode, size, mtime, mimeType} = result.value
+        const {fileName, relativePath,uri, mode, size, mtime, mimeType} = result.value;
         let tempFile = new FilesData({
           id: randomId(),
           fileName,
@@ -110,20 +109,21 @@ namespace FileAccessExec {
           mtime,
           mimeType,
           fileIterator: result.value
-        })
-        fileList.push(tempFile)
-        result = fileIterator.next()
-        isDone = result.done
+        });
+        fileList.push(tempFile);
+        result = fileIterator.next();
+        isDone = result.done;
       }
-      fileList = sortDataByTime(fileList)
+      fileList = sortDataByTime(fileList);
     } catch (error) {
-      fileList = []
-      Logger.e(TAG, 'getFileByCurIterator fail, error:' + JSON.stringify(error) + error)
+      fileList = [];
+      Logger.e(TAG, 'getFileByCurIterator fail, error:' + JSON.stringify(error) + error);
     }
-    return fileList
+    return fileList;
   }
 
-  export function getPathPickSubFiles(fileInfo: fileAccess.FileInfo, defaultPathPick: string, level: number): Array<FileBase> {
+  export function getPathPickSubFiles(fileInfo: fileAccess.FileInfo,
+                                      defaultPathPick: string, level: number): FileBase[] {
     let fileArr: Array<FileBase> = [];
     let fileIterator = fileInfo.listFile();
     if (!fileIterator) {
@@ -156,28 +156,28 @@ namespace FileAccessExec {
   }
 
 
-  export function getRootFolder(): Array<FilesData> {
-    let fileList: Array<FilesData> = []
+  export function getRootFolder(): FilesData[] {
+    let fileList: Array<FilesData> = [];
     if (!globalThis.rootInfoArr) {
-      Logger.e(TAG, 'getRootFolder fail, rootInfoArr is null')
-      return fileList
+      Logger.e(TAG, 'getRootFolder fail, rootInfoArr is null');
+      return fileList;
     }
     try {
-      const rootFolder: fileAccess.RootInfo = globalThis.rootInfoArr.find((item: fileAccess.RootInfo) => item.deviceType === fileExtensionInfo.DeviceType.DEVICE_LOCAL_DISK)
+      const rootFolder: fileAccess.RootInfo = globalThis.rootInfoArr.find(
+        (item: fileAccess.RootInfo) => item.deviceType === fileExtensionInfo.DeviceType.DEVICE_LOCAL_DISK);
       if (rootFolder) {
-        globalThis.documentInfo = rootFolder
-        fileList = getFileByCurIterator(rootFolder)
-        fileList = fileList.filter(item => item.fileName !== DESKTOP_FOLDER)
+        globalThis.documentInfo = rootFolder;
+        fileList = getFileByCurIterator(rootFolder);
+        fileList = fileList.filter(item => item.fileName !== DESKTOP_FOLDER);
       } else {
-        Logger.e(TAG, 'rootFolder is null')
+        Logger.e(TAG, 'rootFolder is null');
       }
     } catch (error) {
-      fileList = []
-      Logger.e(TAG, 'getRootFolder fail, error:' + JSON.stringify(error) + error)
+      fileList = [];
+      Logger.e(TAG, 'getRootFolder fail, error:' + JSON.stringify(error) + error);
     }
-    return fileList
+    return fileList;
   }
 }
 
-
-export default FileAccessExec
+export default FileAccessExec;

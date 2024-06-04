@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import AbilityStage from "@ohos.app.ability.AbilityStage"
-import Logger from '../base/log/Logger'
+import AbilityStage from '@ohos.app.ability.AbilityStage';
+import Logger from '../base/log/Logger';
 
-const TAG = "PickerAbilityStage"
+const TAG = 'PickerAbilityStage';
 
 export default class PickerAbilityStage extends AbilityStage {
   onCreate() {
-    Logger.i(TAG, "onCreate")
+    Logger.i(TAG, 'onCreate');
   }
 }

@@ -13,17 +13,17 @@
  * limitations under the License.
  */
 
-import { BreadData, FilesData, FileDataSource } from '../../../databases/model/FileData'
-import { renderSize, gridName, isDlpFile } from '../../../base/utils/Tools'
-import DateTimeUtil from '../../../base/utils/DateTimeUtil'
-import { pickerStatus, filePickerTip } from '../../../base/utils/FilePickerUtil'
-import { Z_INDEX } from '../../../base/constants/UiConstant'
-import Logger from '../../../base/log/Logger'
-import { NoContent } from '../common/NoContent'
-import { VideoDurationTag } from '../common/VideoDurationTag'
+import { BreadData, FilesData, FileDataSource } from '../../../databases/model/FileData';
+import { renderSize, gridName, isDlpFile } from '../../../base/utils/Tools';
+import DateTimeUtil from '../../../base/utils/DateTimeUtil';
+import { pickerStatus, filePickerTip } from '../../../base/utils/FilePickerUtil';
+import { Z_INDEX } from '../../../base/constants/UiConstant';
+import Logger from '../../../base/log/Logger';
+import { NoContent } from '../common/NoContent';
+import { VideoDurationTag } from '../common/VideoDurationTag';
 
-const TAG = 'MyPhone_FilesList'
-const filePickerViewFlag = globalThis.filePickerViewFlag
+const TAG = 'MyPhone_FilesList';
+const filePickerViewFlag = globalThis.filePickerViewFlag;
 
 @Styles function pressedStyles() {
   .borderRadius($r('app.float.common_borderRadius8'))
@@ -44,32 +44,31 @@ const filePickerViewFlag = globalThis.filePickerViewFlag
 
 @Component
 export struct FilesList {
-  @Link fileListSource: FileDataSource
-
+  @Link fileListSource: FileDataSource;
   /**
    * 面包屑
    */
-  @Link direList: BreadData[]
-  @Link isMulti: boolean
+  @Link direList: BreadData[];
+  @Link isMulti: boolean;
   /**
    * 已选择项数
    */
-  @Link checkedNum: number
+  @Link checkedNum: number;
   /**
    * 列表展示
    */
-  @Consume isList: boolean
+  @Consume isList: boolean;
 
   build() {
     Column() {
       if (this.fileListSource.dataCount) {
         if (this.isList) {
-          this.buildListView()
+          this.buildListView();
         } else {
-          this.buildGridView()
+          this.buildGridView();
         }
       } else {
-        NoContent()
+        NoContent();
       }
     }
     .width('100%')
@@ -121,65 +120,64 @@ export struct FilesList {
 
 @Component
 struct FileListItem {
-  @Consume isList: boolean
-  @State fileItem: FilesData = new FilesData({})
-  @Link fileListSource: FileDataSource
-  @Link direList: BreadData[]
-  @Link @Watch('isMultiChange') isMulti: boolean
-  @Link checkedNum: number
-  @State isChecked: boolean = false
-  @State filePickerViewFlag: boolean = globalThis.filePickerViewFlag
-  @State isImageLoaded: boolean = true
+  @Consume isList: boolean;
+  @State fileItem: FilesData = new FilesData({});
+  @Link fileListSource: FileDataSource;
+  @Link direList: BreadData[];
+  @Link @Watch('isMultiChange') isMulti: boolean;
+  @Link checkedNum: number;
+  @State isChecked: boolean = false;
+  @State filePickerViewFlag: boolean = globalThis.filePickerViewFlag;
+  @State isImageLoaded: boolean = true;
 
   isShowThumbnail(item) {
-    return this.isImageLoaded && item.thumbUri
+    return this.isImageLoaded && item.thumbUri;
   }
 
   isMultiChange() {
-    this.isChecked = false
+    this.isChecked = false;
   }
 
   async aboutToAppear(): Promise<void> {
-    this.isChecked = this.fileItem.isChecked
+    this.isChecked = this.fileItem.isChecked;
     if (!this.isMulti) {
-      this.isChecked = false
-      this.fileItem.isChecked = false
+      this.isChecked = false;
+      this.fileItem.isChecked = false;
     }
   }
 
   getRightIcon(item): Resource {
     if (this.isMulti) {
       if (pickerStatus(this.fileItem, this.checkedNum).differentTypes) {
-        return
+        return;
       }
-      return item.isChecked ? $r("app.media.checkbox_b") : $r("app.media.checkbox_g")
+      return item.isChecked ? $r('app.media.checkbox_b') : $r('app.media.checkbox_g');
     } else if (item.isFolder && this.isList) {
-      return $r("app.media.ic_arrow_right")
+      return $r('app.media.ic_arrow_right');
     }
   }
 
   build() {
     Row() {
       if (this.isList) {
-        this.buildListItemView()
+        this.buildListItemView();
       } else {
-        this.buildGridItemView()
+        this.buildGridItemView();
       }
     }
     .opacity(this.calOpacity())
     .onClick(async () => {
-      this.onClickEvent()
+      this.onClickEvent();
     })
     .stateStyles({
       pressed: pressedStyles,
       normal: normalStyles
     })
     .gesture(
-    LongPressGesture({ repeat: false })
-      //长按动作存在会连续触发
-      .onAction((event: GestureEvent) => {
-        this.longPressEvent()
-      })
+      LongPressGesture({ repeat: false })//长按动作存在会连续触发
+        .onAction((event: GestureEvent) => {
+          this.longPressEvent();
+        })
     )
   }
 
@@ -189,22 +187,22 @@ struct FileListItem {
   longPressEvent() {
     Logger.i(TAG, 'longPressEvent start');
     if (!this.isMulti) {
-      this.isMulti = true
+      this.isMulti = true;
       if (this.fileItem.isFolder) {
-        return
+        return;
       }
       let status = pickerStatus(this.fileItem, this.checkedNum);
       if (status.exceedLimit) {
-        filePickerTip()
-        return
+        filePickerTip();
+        return;
       }
       if (status.differentTypes) {
-        return
+        return;
       }
 
-      this.fileItem.isChecked = true
-      this.isChecked = true
-      this.checkedNum++
+      this.fileItem.isChecked = true;
+      this.isChecked = true;
+      this.checkedNum++;
     }
   }
 
@@ -213,38 +211,38 @@ struct FileListItem {
     let status = pickerStatus(this.fileItem, this.checkedNum);
     if (this.isMulti) {
       if (this.fileItem.isFolder) {
-        return
+        return;
       }
       // 选择器页面，选择文件超出上限
       if (status.exceedLimit) {
-        filePickerTip()
-        return
+        filePickerTip();
+        return;
       } else if (status.differentTypes) {
-        return
+        return;
       }
 
       // 多选模式下文件选择状态切换
-      this.fileItem.isChecked = !this.fileItem.isChecked
-      this.isChecked = this.fileItem.isChecked
+      this.fileItem.isChecked = !this.fileItem.isChecked;
+      this.isChecked = this.fileItem.isChecked;
       if (this.isChecked) {
-        this.checkedNum++
+        this.checkedNum++;
       } else {
         if (this.checkedNum > 0) {
-          this.checkedNum--
+          this.checkedNum--;
         }
       }
     } else {
       if (!this.fileItem.isFolder) {
         if (status.differentTypes) {
-          return
+          return;
         }
         if (!status.exceedLimit && !status.differentTypes) {
           // 选中的数据回调给三方应用
-          this.fileItem.pickFile()
-          return
+          this.fileItem.pickFile();
+          return;
         }
       }
-      this.clickFolder()
+      this.clickFolder();
     }
   }
 
@@ -256,13 +254,13 @@ struct FileListItem {
       title: this.fileItem.fileName,
       url: this.fileItem.uri,
       fileIterator: this.fileItem.fileIterator
-    })
+    });
   }
 
   calOpacity() {
-    const statusObj = pickerStatus(this.fileItem, this.checkedNum)
-    return statusObj.exceedLimit || (!this.fileItem.isFolder && statusObj.differentTypes) || (this.isMulti && this.fileItem.isFolder)
-      ? $r('app.float.common_opacity2') : $r('app.float.common_opacity10')
+    const statusObj = pickerStatus(this.fileItem, this.checkedNum);
+    return statusObj.exceedLimit || (!this.fileItem.isFolder && statusObj.differentTypes) ||
+      (this.isMulti && this.fileItem.isFolder) ? $r('app.float.common_opacity2') : $r('app.float.common_opacity10');
   }
 
   @Builder
@@ -277,10 +275,11 @@ struct FileListItem {
           .borderRadius($r('app.float.album_borderRadius_5'))
           .onError((error) => {
             this.isImageLoaded = false
-            Logger.e(TAG, 'onError: ' + this.fileItem.fileName + ', ' + this.fileItem.thumbUri + ',' + JSON.stringify(error))
+            Logger.e(TAG, 'onError: ' + this.fileItem.fileName +
+              ', ' + this.fileItem.thumbUri + ',' + JSON.stringify(error))
           })
         if (isDlpFile(this.fileItem.fileName)) {
-          Image($r("app.media.lockNoBorder"))
+          Image($r('app.media.lockNoBorder'))
             .objectFit(ImageFit.Fill)
             .width($r('app.float.common_size6'))
             .height($r('app.float.common_size8'))
@@ -288,7 +287,7 @@ struct FileListItem {
             .position({ x: $r('app.float.common_position24'), y: $r('app.float.common_position26') })
         }
         if (this.fileItem.mimeTypeObj.isVideo() && this.isShowThumbnail(this.fileItem)) {
-          Image($r("app.media.hidisk_ic_video_list"))
+          Image($r('app.media.hidisk_ic_video_list'))
             .objectFit(ImageFit.Contain)
             .autoResize(false)
             .height($r('app.float.common_size20'))
@@ -354,7 +353,7 @@ struct FileListItem {
               .position({ x: '100%', y: '100%' })
           }
           if (isDlpFile(this.fileItem.fileName)) {
-            Image($r("app.media.lockNoBorder"))
+            Image($r('app.media.lockNoBorder'))
               .objectFit(ImageFit.Fill)
               .width($r('app.float.common_size10'))
               .height($r('app.float.common_size12'))
