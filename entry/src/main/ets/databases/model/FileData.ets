@@ -24,9 +24,9 @@ import { FileUtil } from '../../base/utils/FileUtil';
 import { ArrayUtil } from '../../base/utils/ArrayUtil';
 
 export class BreadData {
-  title: string;
-  url: string;
-  fileIterator?: fileAccess.FileInfo;
+  public title: string;
+  public url: string;
+  public fileIterator?: fileAccess.FileInfo;
 
   constructor(obj) {
     this.title = obj.title;
@@ -37,7 +37,7 @@ export class BreadData {
 
 export class FileDataSource extends BasicDataSource {
   private dataArray: FilesData[] = [];
-  dataCount: number = 0;
+  public dataCount: number = 0;
 
   public totalCount(): number {
     return this.dataArray.length;
@@ -100,44 +100,44 @@ export class FileDataSource extends BasicDataSource {
 }
 
 export class FilesData {
-  id: string;
-  uri: string;
-  thumbUri: string;
-  displayName: string;
-  deviceId: string;
-  flags: number;
-  name: string;
-  fileName: string;
-  mode: string;
-  size: number;
-  mtime: number;
-  suffix: string;
-  mimeType: string;
-  icon: any;
-  gridIcon: any;
-  localGridIcon: any;
-  isChecked: boolean;
-  path?: string;
-  sub?: number;
-  scale?: number;
-  angle?: number;
-  offsetX?: number | string;
-  offsetY?: number | string;
-  picWidth?: number | string;
-  picHeight?: number | string;
-  fileIterator?: fileAccess.FileInfo;
-  isMedia: boolean = false;
-  isImage: boolean = false;
-  isVideo: boolean = false;
-  isAudio: boolean = false;
-  isFolder: boolean = false;
-  duration: number;
-  mimeTypeObj: MimeType;
-  subFolderList: FilesData[];
-  subFileList: FilesData[];
-  layer: number;
-  autoShow: boolean = false;
-  currentDir?: string;
+  public id: string;
+  public uri: string;
+  public thumbUri: string;
+  public displayName: string;
+  public deviceId: string;
+  public flags: number;
+  public name: string;
+  public fileName: string;
+  public mode: string;
+  public size: number;
+  public mtime: number;
+  public suffix: string;
+  public mimeType: string;
+  public icon: any;
+  public gridIcon: any;
+  public localGridIcon: any;
+  public isChecked: boolean;
+  public path?: string;
+  public sub?: number;
+  public scale?: number;
+  public angle?: number;
+  public offsetX?: number | string;
+  public offsetY?: number | string;
+  public picWidth?: number | string;
+  public picHeight?: number | string;
+  public fileIterator?: fileAccess.FileInfo;
+  public isMedia: boolean = false;
+  public isImage: boolean = false;
+  public isVideo: boolean = false;
+  public isAudio: boolean = false;
+  public isFolder: boolean = false;
+  public duration: number;
+  public mimeTypeObj: MimeType;
+  public subFolderList: FilesData[];
+  public subFileList: FilesData[];
+  public layer: number;
+  public autoShow: boolean = false;
+  public currentDir?: string;
 
   constructor(obj) {
     this.isFolder = obj.isFolder || FileUtil.isFolder(obj.mode);
@@ -254,20 +254,20 @@ export function getSubFileNum(fileInfo: fileAccess.FileInfo): number {
   return subFileNum;
 }
 
-export class selectedFileData {
-  id?: string;
-  uri: string;
-  mimeType: string;
-  thumbUri: string;
-  title: string;
-  fileName: string;
-  mode: string;
-  relativePath: string;
-  size: number;
-  albumUri: string;
-  albumName: string;
-  isFolder: boolean;
-  displayName?: string;
+export class SelectedFileData {
+  public id?: string;
+  public uri: string;
+  public mimeType: string;
+  public thumbUri: string;
+  public title: string;
+  public fileName: string;
+  public mode: string;
+  public relativePath: string;
+  public size: number;
+  public albumUri: string;
+  public albumName: string;
+  public isFolder: boolean;
+  public displayName?: string;
 
   constructor(obj) {
     this.id = obj.id || -1;
@@ -286,16 +286,16 @@ export class selectedFileData {
 }
 
 export class FileData {
-  id: string;
-  fileName: string;
-  thumbnail: string;
-  editedTime: string;
-  subItemSize: number;
-  parentFolder: string;
-  fileType: string;
-  fileSize: number;
-  isChecked: boolean;
-  children: [];
+  public id: string;
+  public fileName: string;
+  public thumbnail: string;
+  public editedTime: string;
+  public subItemSize: number;
+  public parentFolder: string;
+  public fileType: string;
+  public fileSize: number;
+  public isChecked: boolean;
+  public children: [];
 
   constructor(id: string, fileName: string, thumbnail: string, editedTime: string, subItemSize: number,
               parentFolder: string, fileType: string, fileSize: number, isChecked: boolean, children: []) {
@@ -312,11 +312,11 @@ export class FileData {
   }
 }
 
-export class fileDetail {
-  key: string | Resource;
-  value: string | Resource;
-  path?: string = '';
-  params?: any;
+export class FileDetail {
+  public key: string | Resource;
+  public value: string | Resource;
+  public path?: string = '';
+  public params?: any;
 
   constructor(key: string, value: string, path: string, params: any) {
     this.key = key;
@@ -326,12 +326,12 @@ export class fileDetail {
   }
 }
 
-export class bottomOptions {
-  optionName: string;
-  name: string;
-  icon: Resource;
-  disabled: boolean = false;
-  display: boolean = true;
+export class BottomOptions {
+  public optionName: string;
+  public name: string;
+  public icon: Resource;
+  public disabled: boolean = false;
+  public display: boolean = true;
 
   constructor(optionName: string, name: string, icon: Resource, disabled: boolean, display: boolean) {
     this.optionName = optionName;

@@ -112,7 +112,7 @@ struct PathSelector {
           result = await this.tryRenameFileOperate(fileAccessHelper, currName, dirPath, 0, fileNameList);
         }
         if (ObjectUtil.isUndefined(result.err)) {
-          Logger.i(TAG, "saveFiles createOK: " + result.uri);
+          Logger.i(TAG, 'saveFiles createOK: ' + result.uri);
           successArr.push(result.uri);
           continue;
         }
