@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 
-import DateTimeUtil from '../../../base/utils/DateTimeUtil'
+import DateTimeUtil from '../../../base/utils/DateTimeUtil';
 
 @Component
 export struct VideoDurationTag {
-  @Prop duration: number
+  @Prop duration: number;
 
   build() {
     Row() {
-      Image($r("app.media.ic_news_video_play_tag"))
+      Image($r('app.media.ic_news_video_play_tag'))
         .objectFit(ImageFit.Contain)
         .height($r('app.float.common_size6'))
         .width($r('app.float.common_size6'))

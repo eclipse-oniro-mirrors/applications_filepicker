@@ -13,41 +13,44 @@
  * limitations under the License.
  */
 
-import context from '@ohos.app.ability.common'
-import { renderSize } from '../../../base/utils/Tools'
-import AbilityCommonUtil from '../../../base//utils/AbilityCommonUtil'
+import context from '@ohos.app.ability.common';
+import { renderSize } from '../../../base/utils/Tools';
+import AbilityCommonUtil from '../../../base//utils/AbilityCommonUtil';
 
-@Styles function pressedStyles() {
+@Styles
+function pressedStyles() {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
 }
 
-@Styles function normalStyles () {
+@Styles
+function normalStyles () {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.transparent_color'))
 }
 
-@Extend(Text) function subtitleStyles(fontSize: Resource) {
+@Extend(Text)
+function subtitleStyles(fontSize: Resource) {
   .fontSize(fontSize)
   .alignSelf(ItemAlign.Start)
 }
 
-const filePickerViewFlag = globalThis.filePickerViewFlag
+const filePickerViewFlag = globalThis.filePickerViewFlag;
 
 @Component
 export struct TopBar {
-  private title?: string = ''
-  private subtitle?: string = ''
-  private fileSize?: number = 0
-  @Prop selectAll: boolean
-  @Prop isMulti: boolean
-  @Link checkedNum: number
-  @Link checkedList: any[]
-  @State active: boolean = false
-  @State rActive: boolean = false
-  public backCallback: () => void // 点击返回键的事件回调
-  public menuCallback: () => void // 点击全选的事件回调
-  filterCallBack: Function
+  private title?: string = '';
+  private subtitle?: string = '';
+  private fileSize?: number = 0;
+  @Prop selectAll: boolean;
+  @Prop isMulti: boolean;
+  @Link checkedNum: number;
+  @Link checkedList: any[];
+  @State active: boolean = false;
+  @State rActive: boolean = false;
+  public backCallback: () => void; // 点击返回键的事件回调
+  public menuCallback: () => void; // 点击全选的事件回调
+  filterCallBack: Function;
 
   aboutToAppear() {
 
@@ -55,43 +58,44 @@ export struct TopBar {
 
   initTitle(): string | Resource {
     if (this.isMulti && !filePickerViewFlag) {
-      return this.checkedNum === 0 ? $r('app.string.selected_none') : this.checkedNum === 1 ? $r('app.string.selected_items_singular', this.checkedNum) : $r('app.string.selected_items_plural', this.checkedNum)
+      return this.checkedNum === 0 ? $r('app.string.selected_none') : this.checkedNum === 1 ?
+      $r('app.string.selected_items_singular', this.checkedNum) : $r('app.string.selected_items_plural', this.checkedNum);
     } else {
-      return this.title
+      return this.title;
     }
   }
 
   filePickerTitle() {
     if (this.isMulti) {
-      return this.checkedNum === 0 ? $r('app.string.selected_none') : $r('app.string.selected', this.checkedNum, globalThis.filePickNum)
+      return this.checkedNum === 0 ? $r('app.string.selected_none') : $r('app.string.selected', this.checkedNum, globalThis.filePickNum);
     } else {
-      return this.title
+      return this.title;
     }
   }
 
   checkSelectedFileList(): boolean {
     if (!this.checkedNum) {
-      return false
+      return false;
     }
     if (this.checkedList.some(item => item.isFolder)) {
-      return false
+      return false;
     }
-    return true
+    return true;
   }
 
   terminate(): void {
     if (!this.checkSelectedFileList()) {
-      return
+      return;
     }
-    const uriList = this.checkedList.map(item => item.uri)
-    const fileNameList = this.checkedList.map(item => item.fileName)
-    AbilityCommonUtil.terminateFilePicker(uriList, fileNameList)
+    const uriList = this.checkedList.map(item => item.uri);
+    const fileNameList = this.checkedList.map(item => item.fileName);
+    AbilityCommonUtil.terminateFilePicker(uriList, fileNameList);
   }
 
   build() {
     Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start }) {
       Column() {
-        Image(this.isMulti ? $r("app.media.hidisk_cancel_normal") : $r("app.media.hidisk_ic_return"))
+        Image(this.isMulti ? $r('app.media.hidisk_cancel_normal') : $r('app.media.hidisk_ic_return'))
           .objectFit(ImageFit.Contain)
           .width($r('app.float.common_size24'))
           .height($r('app.float.common_size24'))
@@ -107,7 +111,7 @@ export struct TopBar {
         normal: normalStyles
       })
       .onClick(() => {
-        this.backCallback.call(this)
+        this.backCallback.call(this);
       })
 
       Column() {
@@ -135,7 +139,7 @@ export struct TopBar {
       if (filePickerViewFlag) {
         if (!this.isMulti) {
           Column() {
-            Image($r("app.media.hidisk_cancel_normal"))
+            Image($r('app.media.hidisk_cancel_normal'))
               .objectFit(ImageFit.Contain)
               .width($r('app.float.common_size24'))
               .height($r('app.float.common_size24'))
@@ -151,12 +155,12 @@ export struct TopBar {
             normal: normalStyles
           })
           .onClick(() => {
-            let abilityContext = getContext(this) as context.UIAbilityContext
-            abilityContext.terminateSelf()
+            let abilityContext = getContext(this) as context.UIAbilityContext;
+            abilityContext.terminateSelf();
           })
         } else {
           Column() {
-            Image($r("app.media.ic_ok"))
+            Image($r('app.media.ic_ok'))
               .objectFit(ImageFit.Contain)
               .width($r('app.float.common_size24'))
               .height($r('app.float.common_size24'))
@@ -171,7 +175,7 @@ export struct TopBar {
             normal: normalStyles
           })
           .onClick(() => {
-            this.terminate()
+            this.terminate();
           })
           .opacity(this.checkSelectedFileList() ? $r('app.float.common_opacity10') : $r('app.float.common_opacity4'))
         }

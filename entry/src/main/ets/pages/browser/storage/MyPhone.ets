@@ -13,28 +13,28 @@
  * limitations under the License.
  */
 
-import { BreadData, FilesData, FileDataSource } from '../../../databases/model/FileData'
-import { TopBar } from '../../component/common/TopBar'
-import { BreadCrumb } from '../../component/myphone/BreadCrumb'
-import { FilesList } from '../../component/myphone/FilesList'
-import { setSystemBar, setImmersion } from '../../../base/utils/Common'
-import router from '@ohos.router'
-import FileAccessExec from '../../../base/utils/FileAccessExec'
-import { SYSTEM_BAR_COLOR } from '../../../base/constants/UiConstant'
-import { getResourceString } from '../../../base/utils/Tools'
-import { TopOperateBar } from '../../component/common/TopOperateBar'
-import { FileMkdirDialog } from '../../component/dialog/FileMkdirDialog'
-import { Loading } from '../../component/common/Loading'
-import { getMediaType, getDurationByUri } from '../../../databases/model/FileAssetModel'
-import Logger from '../../../base/log/Logger'
-import multimedia_image from '@ohos.multimedia.image'
-import AbilityCommonUtil from '../../../base/utils/AbilityCommonUtil'
-import ObjectUtil from '../../../base/utils/ObjectUtil'
-import StringUtil from '../../../base/utils/StringUtil'
-import { FileUtil } from '../../../base/utils/FileUtil'
-import fileAccess from '@ohos.file.fileAccess'
+import { BreadData, FilesData, FileDataSource } from '../../../databases/model/FileData';
+import { TopBar } from '../../component/common/TopBar';
+import { BreadCrumb } from '../../component/myphone/BreadCrumb';
+import { FilesList } from '../../component/myphone/FilesList';
+import { setSystemBar, setImmersion } from '../../../base/utils/Common';
+import router from '@ohos.router';
+import FileAccessExec from '../../../base/utils/FileAccessExec';
+import { SYSTEM_BAR_COLOR } from '../../../base/constants/UiConstant';
+import { getResourceString } from '../../../base/utils/Tools';
+import { TopOperateBar } from '../../component/common/TopOperateBar';
+import { FileMkdirDialog } from '../../component/dialog/FileMkdirDialog';
+import { Loading } from '../../component/common/Loading';
+import { getMediaType, getDurationByUri } from '../../../databases/model/FileAssetModel';
+import Logger from '../../../base/log/Logger';
+import multimedia_image from '@ohos.multimedia.image';
+import AbilityCommonUtil from '../../../base/utils/AbilityCommonUtil';
+import ObjectUtil from '../../../base/utils/ObjectUtil';
+import StringUtil from '../../../base/utils/StringUtil';
+import { FileUtil } from '../../../base/utils/FileUtil';
+import fileAccess from '@ohos.file.fileAccess';
 
-const TAG = 'myPhone'
+const TAG = 'myPhone';
 
 @Entry
 @Component
@@ -42,24 +42,22 @@ struct MyPhone {
   /**
    * 正在加载
    */
-  @State isShowLoading: boolean = true
-
+  @State isShowLoading: boolean = true;
   /**
    * 文件或文件夹数据
    */
-  @State fileListSource: FileDataSource = new FileDataSource()
-
+  @State fileListSource: FileDataSource = new FileDataSource();
   /**
    * 面包屑
    */
-  @State @Watch('onDireListChange') direList: BreadData[] = []
-  @State selectFilesList: FilesData[] = []
-  @State isMulti: boolean = false
-  @State selectAll: boolean = false
-  @State @Watch('checkedNumChange') checkedNum: number = 0
-  @Provide isList: boolean = true
-  @State selectName: string = ''
-  @State fileSize: number = 0
+  @State @Watch('onDireListChange') direList: BreadData[] = [];
+  @State selectFilesList: FilesData[] = [];
+  @State isMulti: boolean = false;
+  @State selectAll: boolean = false;
+  @State @Watch('checkedNumChange') checkedNum: number = 0;
+  @Provide isList: boolean = true;
+  @State selectName: string = '';
+  @State fileSize: number = 0;
   fileMkdirDialog: CustomDialogController = new CustomDialogController({
     builder: FileMkdirDialog({
       fileItems: this.fileListSource.getDataArray(),
@@ -69,32 +67,32 @@ struct MyPhone {
     autoCancel: true,
     alignment: DialogAlignment.Bottom,
     offset: { dx: 0, dy: -80 }
-  })
+  });
 
   checkedNumChange(): void {
-    this.selectAll = this.checkedNum === this.fileListSource.totalCount()
-    this.selectFilesList = this.fileListSource.getSelectedFileList()
-    this.fileSize = 0
+    this.selectAll = this.checkedNum === this.fileListSource.totalCount();
+    this.selectFilesList = this.fileListSource.getSelectedFileList();
+    this.fileSize = 0;
     this.selectFilesList.forEach(item => {
-      this.fileSize += item.size
-    })
+      this.fileSize += item.size;
+    });
   }
 
   getCurrentDirUri(): string {
     if (this.direList.length) {
-      const lastBread = this.direList[this.direList.length-1]
-      return lastBread.url
+      const lastBread = this.direList[this.direList.length-1];
+      return lastBread.url;
     } else if (globalThis.documentInfo) {
-      return globalThis.documentInfo.uri
+      return globalThis.documentInfo.uri;
     } else {
-      Logger.e(TAG, 'currentDir uri is null')
-      return ''
+      Logger.e(TAG, 'currentDir uri is null');
+      return '';
     }
   }
 
   async getBreadCrumb(data: string): Promise<void> {
     if (!data) {
-      data = "";
+      data = '';
     }
     if (FileUtil.isUriPath(data)) {
       let fileHelper = await FileUtil.getFileAccessHelperAsync(globalThis.abilityContext);
@@ -106,28 +104,28 @@ struct MyPhone {
     }
     data = FileUtil.getPathWithFileSplit(data);
 
-    let fileIterator
-    let fileData
-    let isContinue:boolean = true;
+    let fileIterator;
+    let fileData;
+    let isContinue: boolean = true;
     let isRoot: boolean = true;
     while (isContinue) {
       isContinue = false;
       if (!fileIterator) {
-        fileData = FileAccessExec.getRootFolder()
+        fileData = FileAccessExec.getRootFolder();
         isRoot = true;
       } else {
-        fileData = FileAccessExec.getFileByCurIterator(fileIterator)
+        fileData = FileAccessExec.getFileByCurIterator(fileIterator);
         isRoot = false;
       }
       if (Array.isArray(fileData)) {
         isContinue = true;
         for (let i = 0;i < fileData.length; i++) {
-          let fileName:string = fileData[i].fileName;
-          let currentDir:string =  FileUtil.getPathWithFileSplit(fileData[i].currentDir);
+          let fileName: string = fileData[i].fileName;
+          let currentDir: string = FileUtil.getPathWithFileSplit(fileData[i].currentDir);
           if (data.startsWith(currentDir)) {
             if (fileData[i].isFolder) {
-              this.direList.push({ title: fileName, url: fileData[i].uri, fileIterator: fileData[i].fileIterator })
-              fileIterator = fileData[i].fileIterator
+              this.direList.push({ title: fileName, url: fileData[i].uri, fileIterator: fileData[i].fileIterator });
+              fileIterator = fileData[i].fileIterator;
               if (data === currentDir) {
                 isContinue = false;
               } else {
@@ -142,8 +140,8 @@ struct MyPhone {
       }
     }
     if (fileIterator) {
-      fileData = FileAccessExec.getFileByCurIterator(fileIterator)
-      this.fileListSource.setData(fileData)
+      fileData = FileAccessExec.getFileByCurIterator(fileIterator);
+      this.fileListSource.setData(fileData);
     } else {
       this.getRootListFile();
     }
@@ -152,76 +150,76 @@ struct MyPhone {
   onPageShow() {
     // 文件选择器并且是多选模式下详情返回不更新，避免原有多选被重置
     if (globalThis.filePickerViewFlag && this.isMulti) {
-      return
+      return;
     }
-    setImmersion(false)
-    setSystemBar(SYSTEM_BAR_COLOR.WHITE, SYSTEM_BAR_COLOR.WHITE, SYSTEM_BAR_COLOR.BLACK, SYSTEM_BAR_COLOR.BLACK)
+    setImmersion(false);
+    setSystemBar(SYSTEM_BAR_COLOR.WHITE, SYSTEM_BAR_COLOR.WHITE, SYSTEM_BAR_COLOR.BLACK, SYSTEM_BAR_COLOR.BLACK);
   }
 
   getRootListFile() {
-    let fileList = FileAccessExec.getRootFolder()
-    this.fileListSource.setData(fileList)
-    this.getVideoAudioDuration(fileList)
+    let fileList = FileAccessExec.getRootFolder();
+    this.fileListSource.setData(fileList);
+    this.getVideoAudioDuration(fileList);
   }
 
   getListFile(fileInfo) {
-    let fileList = FileAccessExec.getFileByCurIterator(fileInfo)
-    this.fileListSource.setData(fileList)
-    this.getVideoAudioDuration(fileList)
+    let fileList = FileAccessExec.getFileByCurIterator(fileInfo);
+    this.fileListSource.setData(fileList);
+    this.getVideoAudioDuration(fileList);
   }
 
   async getVideoAudioDuration(fileList) {
-    const videoAudioList = fileList.filter(item => item.mimeTypeObj.isVideo() || item.mimeTypeObj.isAudio())
+    const videoAudioList = fileList.filter(item => item.mimeTypeObj.isVideo() || item.mimeTypeObj.isAudio());
     for (let item of videoAudioList) {
-      const mediaType = getMediaType(item.fileName)
+      const mediaType = getMediaType(item.fileName);
       await getDurationByUri(mediaType, item.uri).then((duration) => {
-        item.duration = duration
-        let index = this.fileListSource.getIndex(item.uri)
+        item.duration = duration;
+        let index = this.fileListSource.getIndex(item.uri);
         if (index >= 0) {
-          this.fileListSource.replaceData(index, item)
+          this.fileListSource.replaceData(index, item);
         }
       })
     }
   }
 
   addCallBack() {
-    this.fileMkdirDialog.open()
+    this.fileMkdirDialog.open();
   }
 
   initData(): void {
-    this.selectFilesList = []
-    this.selectAll = false
-    this.isMulti = false
-    this.checkedNum = 0
+    this.selectFilesList = [];
+    this.selectAll = false;
+    this.isMulti = false;
+    this.checkedNum = 0;
     // 全部数据列表的isChecked置为false
-    this.fileListSource.selectAll(false)
+    this.fileListSource.selectAll(false);
   }
 
   backCallback(): void {
     if (!this.isMulti) {
-      AbilityCommonUtil.terminateFilePicker([], [], AbilityCommonUtil.RESULT_CODE.CANCEL)
+      AbilityCommonUtil.terminateFilePicker([], [], AbilityCommonUtil.RESULT_CODE.CANCEL);
     } else {
-      this.initData()
+      this.initData();
     }
   }
 
   menuCallback(): void {
-    this.selectAll = !this.selectAll
-    this.fileListSource.selectAll(this.selectAll)
+    this.selectAll = !this.selectAll;
+    this.fileListSource.selectAll(this.selectAll);
     if (this.selectAll) {
-      this.checkedNum = this.fileListSource.totalCount()
+      this.checkedNum = this.fileListSource.totalCount();
     } else {
-      this.checkedNum = 0
-      this.selectFilesList = []
+      this.checkedNum = 0;
+      this.selectFilesList = [];
     }
   }
 
   refreshData() {
     if (this.direList.length) {
-      const lastBread = this.direList[this.direList.length-1]
-      this.getListFile(lastBread.fileIterator)
+      const lastBread = this.direList[this.direList.length-1];
+      this.getListFile(lastBread.fileIterator);
     } else {
-      this.getRootListFile()
+      this.getRootListFile();
     }
   }
 
@@ -229,7 +227,7 @@ struct MyPhone {
     // 激活image媒体库，能够读取缩略图pixelMap
     multimedia_image.createPixelMap(new ArrayBuffer(4096), { size: { height: 1, width: 2 } }).then((pixelMap) => {
     })
-    this.setShowLoading(true)
+    this.setShowLoading(true);
     let pickPath = this.getParams();
     if (StringUtil.isEmpty(pickPath)) {
       this.getRootListFile();
@@ -255,51 +253,51 @@ struct MyPhone {
         return defaultPickPath;
       }
     }
-    return "";
+    return '';
   }
 
   onDireListChange(): void {
     if (this.isMulti) {
-      this.backCallback()
+      this.backCallback();
     }
-    this.setShowLoading(true)
+    this.setShowLoading(true);
     if (this.direList.length) {
-      const lastBreadCrumb = this.direList[this.direList.length-1]
-      this.getListFile(lastBreadCrumb.fileIterator)
+      const lastBreadCrumb = this.direList[this.direList.length-1];
+      this.getListFile(lastBreadCrumb.fileIterator);
     } else {
-      this.getRootListFile()
+      this.getRootListFile();
     }
-    this.setShowLoading(false)
-    Logger.i(TAG, 'onDireListChange BreadCrumb length:' + this.direList.length)
+    this.setShowLoading(false);
+    Logger.i(TAG, 'onDireListChange BreadCrumb length:' + this.direList.length);
   }
 
   setShowLoading(isShow: boolean) {
-    this.isShowLoading = isShow
+    this.isShowLoading = isShow;
   }
 
   onBackPress() {
-    const direList = this.direList
-    const dirLen = this.direList.length
+    const direList = this.direList;
+    const dirLen = this.direList.length;
     if (this.isMulti) {
-      this.initData()
-      return true
+      this.initData();
+      return true;
     } else {
       if (router.getParams()) {
-        router.back()
+        router.back();
       } else {
         if (dirLen) {
-          direList.splice(-1, 1)
+          direList.splice(-1, 1);
           if (direList.length) {
-            const lastDir = direList[direList.length-1]
-            this.getListFile(lastDir.fileIterator)
+            const lastDir = direList[direList.length-1];
+            this.getListFile(lastDir.fileIterator);
           } else {
-            this.getRootListFile()
+            this.getRootListFile();
           }
         } else {
-          AbilityCommonUtil.terminateFilePicker([], [], AbilityCommonUtil.RESULT_CODE.CANCEL)
+          AbilityCommonUtil.terminateFilePicker([], [], AbilityCommonUtil.RESULT_CODE.CANCEL);
         }
       }
-      return true
+      return true;
     }
   }
 

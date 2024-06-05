@@ -13,25 +13,25 @@
  * limitations under the License.
  */
 
-import window from '@ohos.window'
-import prompt from '@ohos.prompt'
-import { getResourceString } from './Tools'
-import { MILLISECOND, FILENAME_REGEXP } from '../constants/Constant'
-import Logger from '../log/Logger'
-import MediaLibrary from '@ohos.multimedia.mediaLibrary'
+import window from '@ohos.window';
+import prompt from '@ohos.prompt';
+import { getResourceString } from './Tools';
+import { MILLISECOND, FILENAME_REGEXP } from '../constants/Constant';
+import Logger from '../log/Logger';
+import MediaLibrary from '@ohos.multimedia.mediaLibrary';
 
-const TAG = 'commonUtil'
+const TAG = 'commonUtil';
 
-let mediaLibrary: MediaLibrary.MediaLibrary = null
+let mediaLibrary: MediaLibrary.MediaLibrary = null;
 
-export const toast = (text: string | Resource, time= MILLISECOND.ONE_SECOND) => {
-  let resourceString = undefined
+export const toast = (text: string | Resource, time = MILLISECOND.ONE_SECOND) => {
+  let resourceString = undefined;
   if (typeof text !== 'string') {
-    resourceString = getResourceString(text)
+    resourceString = getResourceString(text);
   } else {
-    resourceString = text
+    resourceString = text;
   }
-  prompt.showToast({ message: resourceString, duration: time })
+  prompt.showToast({ message: resourceString, duration: time });
 }
 
 /**
@@ -42,14 +42,15 @@ export const toast = (text: string | Resource, time= MILLISECOND.ONE_SECOND) => 
  * @param navigationBarContentColor 导航栏文字颜色
  * @param statusBarContentColor 状态栏文字颜色
  */
-export const setSystemBar = async (navigationBarColor?: string, statusBarColor?: string, navigationBarContentColor?: string, statusBarContentColor?: string) => {
-  let w = await window.getTopWindow(getContext(this))
+export const setSystemBar = async (navigationBarColor?: string, statusBarColor?: string,
+                                   navigationBarContentColor?: string, statusBarContentColor?: string) => {
+  let w = await window.getTopWindow(getContext(this));
   await w.setSystemBarProperties({
     navigationBarColor,
     statusBarColor,
     navigationBarContentColor,
     statusBarContentColor
-  })
+  });
 }
 
 /**
@@ -64,10 +65,10 @@ export const setImmersion = (isImmersion: boolean) => {
   }
   globalThis.windowClass.setFullScreen(isImmersion, (err, data) => {
     if (err.code) {
-      Logger.e(TAG, 'Failed to enable the full-screen mode. Cause:' + JSON.stringify(err))
-      return
+      Logger.e(TAG, 'Failed to enable the full-screen mode. Cause:' + JSON.stringify(err));
+      return;
     }
-    Logger.i(TAG, 'Succeeded in enabling the full-screen mode. Data: ' + JSON.stringify(data))
+    Logger.i(TAG, 'Succeeded in enabling the full-screen mode. Data: ' + JSON.stringify(data));
   })
 }
 
@@ -78,6 +79,6 @@ export const setImmersion = (isImmersion: boolean) => {
  * @return 是否合法
  */
 export function isValidFileName(fileName): boolean {
-  return FILENAME_REGEXP.test(fileName)
+  return FILENAME_REGEXP.test(fileName);
 }
 

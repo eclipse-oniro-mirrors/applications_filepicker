@@ -13,26 +13,28 @@
  * limitations under the License.
  */
 
-@Styles function pressedStyles () {
+@Styles
+function pressedStyles() {
   .borderRadius($r('app.float.common_borderRadius10'))
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
 }
 
-@Styles function normalStyles () {
+@Styles
+function normalStyles() {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.transparent_color'))
 }
 
 @Component
 export struct TopOperateBar {
-  public addFolder: () => void // 点击新建的事件回调
+  public addFolder: () => void; // 点击新建的事件回调
   // 是否可用
-  @Prop isDisabled: boolean = false
+  @Prop isDisabled: boolean = false;
   // 列表或宫格
-  @Consume isList: boolean
+  @Consume isList: boolean;
 
   getUsageHabitsKey(prefix: string, suffix: string): string {
-    return prefix + suffix.charAt(0).toLocaleUpperCase() + suffix.substring(1)
+    return prefix + suffix.charAt(0).toLocaleUpperCase() + suffix.substring(1);
   }
 
   build() {
@@ -53,8 +55,8 @@ export struct TopOperateBar {
         normal: normalStyles
       })
       .onClick(() => {
-        if (this.isDisabled) return
-        this.addFolder.call(this)
+        if (this.isDisabled) return;
+        this.addFolder.call(this);
       })
 
       Column() {
@@ -74,8 +76,8 @@ export struct TopOperateBar {
         right: $r('app.float.common_padding12')
       })
       .onClick(() => {
-        if (this.isDisabled) return
-        this.isList = !this.isList
+        if (this.isDisabled) return;
+        this.isList = !this.isList;
       }).stateStyles({
         pressed: pressedStyles,
         normal: normalStyles
