@@ -13,18 +13,20 @@
  * limitations under the License.
  */
 
-@Styles function pressStyles () {
+@Styles
+function pressStyles() {
   .backgroundColor($r('app.color.button_pressStyles'))
 }
 
-@Styles function normalStyles () {
+@Styles
+function normalStyles() {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.transparent_color'))
 }
 
 @Component
 export struct DialogTitle {
-  title: Resource
+  title: Resource;
 
   build() {
     Text(this.title)
@@ -41,11 +43,11 @@ export struct DialogTitle {
 
 @Component
 export struct DialogButton {
-  text: Resource
-  color: Resource = $r('app.color.dialog_button_blue')
-  bgColor: Resource = $r('app.color.transparent_color')
-  @Prop isDisabled: boolean
-  click: Function
+  text: Resource;
+  color: Resource = $r('app.color.dialog_button_blue');
+  bgColor: Resource = $r('app.color.transparent_color');
+  @Prop isDisabled: boolean;
+  click: Function;
 
   build() {
     Row() {

@@ -13,19 +13,20 @@
  * limitations under the License.
  */
 
-import { FilesData } from '../../databases/model/FileData'
-import { on } from '../../base/utils/EventBus'
-import FileAccessExec from '../../base/utils/FileAccessExec'
-import { TREE_LAYER } from '../../base/constants/UiConstant'
-import { FOLDER_LEVEL } from '../../base/constants/Constant'
-import { FileUtil } from '../../base/utils/FileUtil'
-import { ArrayUtil } from '../../base/utils/ArrayUtil'
-import { FileBase } from '../../databases/model/base/FileBase'
-import Logger from '../../base/log/Logger'
-import fileAccess from '@ohos.file.fileAccess'
-import ObjectUtil from '../../base/utils/ObjectUtil'
+import { FilesData } from '../../databases/model/FileData';
+import { on } from '../../base/utils/EventBus';
+import FileAccessExec from '../../base/utils/FileAccessExec';
+import { TREE_LAYER } from '../../base/constants/UiConstant';
+import { FOLDER_LEVEL } from '../../base/constants/Constant';
+import { FileUtil } from '../../base/utils/FileUtil';
+import { ArrayUtil } from '../../base/utils/ArrayUtil';
+import { FileBase } from '../../databases/model/base/FileBase';
+import Logger from '../../base/log/Logger';
+import fileAccess from '@ohos.file.fileAccess';
+import ObjectUtil from '../../base/utils/ObjectUtil';
 
-@Styles function pressedStyles() {
+@Styles
+function pressedStyles() {
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
 }
 
@@ -33,18 +34,18 @@ const TAG = 'TreeItem';
 
 @Component
 export struct TreeItem {
-  fileItem: FilesData = new FilesData({})
+  fileItem: FilesData = new FilesData({});
   loadPath?: string = '';
   isNeedExpand: boolean = false;
-  @State iconRotate: boolean = false
-  @State subFolderList: Array<FilesData> = new Array<FilesData>()
-  @Link chooseItem: FilesData
-  @Link selectUri: string
-  @Link selectName: string
-  @Link fileList: Array<FilesData>
-  @Link folderList: Array<FilesData>
-  @State isShowArrow: boolean = true
-  @Prop layer: number
+  @State iconRotate: boolean = false;
+  @State subFolderList: FilesData[] = [];
+  @Link chooseItem: FilesData;
+  @Link selectUri: string;
+  @Link selectName: string;
+  @Link fileList: FilesData[];
+  @Link folderList: FilesData[];
+  @State isShowArrow: boolean = true;
+  @Prop layer: number;
   @State isLoading: boolean = false;
   @Link @Watch('clickExpandChange') isClickExpand: boolean;
 
@@ -71,7 +72,7 @@ export struct TreeItem {
     call(folderList);
   }
 
-  private async getPickPathListFiles(dirUri: string, expandPath: string, level: number): Promise<Array<FileBase>> {
+  private async getPickPathListFiles(dirUri: string, expandPath: string, level: number): Promise<FileBase[]> {
     let fileHelper = await FileUtil.getFileAccessHelperAsync(globalThis.abilityContext);
     let fileInfo: fileAccess.FileInfo = await FileUtil.getFileInfoByUri(dirUri, fileHelper);
     if (ObjectUtil.isNullOrUndefined(fileInfo) || !FileUtil.isFolder(fileInfo.mode)) {
@@ -87,8 +88,8 @@ export struct TreeItem {
   }
 
   transfer(list: FilesData[]) {
-    let folderList = new Array<FilesData>();
-    let fileList = new Array<FilesData>();
+    let folderList: FilesData[] = [];
+    let fileList: FilesData[] = [];
     if (ArrayUtil.isEmpty(list)) {
       return { folderList, fileList };
     }
@@ -103,8 +104,8 @@ export struct TreeItem {
     return { folderList, fileList };
   }
 
-  fileBaseToFileData(list: Array<FileBase>): Array<FilesData> {
-    let fileArray = new Array<FilesData>();
+  fileBaseToFileData(list: FileBase[]): FilesData[] {
+    let fileArray: FilesData[] = [];
     if (ArrayUtil.isEmpty(list)) {
       return fileArray;
     }
@@ -120,7 +121,7 @@ export struct TreeItem {
       fileData.currentDir = data.currentDir;
       if (data.isFolder) {
         if (!ArrayUtil.isEmpty(data.subList)) {
-          fileData.setSubList(this.fileBaseToFileData(data.subList))
+          fileData.setSubList(this.fileBaseToFileData(data.subList));
         }
       }
       fileArray.push(fileData);
@@ -149,23 +150,23 @@ export struct TreeItem {
     return this.layer <= FOLDER_LEVEL.MAX_LEVEL;
   }
 
-  loadSubFolder(subFolderList: Array<FilesData>) {
+  loadSubFolder(subFolderList: FilesData[]) {
     this.subFolderList = subFolderList;
     this.folderList = this.subFolderList;
     this.fileItem.setSubFolderList(subFolderList);
-    Logger.i(TAG, "loadSubFolder:selectUri = " + this.selectUri +
-      " ; subFolderListSize = " + this.subFolderList.length +
-      " ; iconRotate = " + this.iconRotate);
+    Logger.i(TAG, 'loadSubFolder:selectUri = ' + this.selectUri +
+      ' ; subFolderListSize = ' + this.subFolderList.length +
+      ' ; iconRotate = ' + this.iconRotate);
   }
 
   aboutToAppear() {
     on('fileMkdir', async (e) => {
       if (this.selectUri === this.fileItem.uri) {
         // 获取当前选中文件夹下的所有子文件
-        let queryArray = await this.getPickPathListFiles(this.fileItem.uri, "", this.fileItem.layer);
-        let subList: Array<FilesData> = this.fileBaseToFileData(queryArray);
+        let queryArray = await this.getPickPathListFiles(this.fileItem.uri, '', this.fileItem.layer);
+        let subList: FilesData[] = this.fileBaseToFileData(queryArray);
         let { folderList, fileList } = this.transfer(subList);
-        this.fileList = fileList
+        this.fileList = fileList;
         // 获取当前选中文件夹下的所有子文件
         this.subFolderList = folderList;
         this.expandSubFolderCall(folderList);
@@ -184,8 +185,8 @@ export struct TreeItem {
     this.fileItem.setLayer(this.layer);
     this.isNeedExpand = this.needExpandPath();
     if (this.isNeedExpand) {
-      Logger.i(TAG, "NeedExpand:loadPath = " + this.loadPath +
-        " ; path = " + this.fileItem.currentDir);
+      Logger.i(TAG, 'NeedExpand:loadPath = ' + this.loadPath +
+        ' ; path = ' + this.fileItem.currentDir);
       this.clickExpand(false);
     }
   }
@@ -211,7 +212,7 @@ export struct TreeItem {
     }
   }
 
-  private expandSubFolderCall(subFolderList: Array<FilesData>) {
+  private expandSubFolderCall(subFolderList: FilesData[]) {
     this.iconRotate = !this.iconRotate;
     this.loadSubFolder(subFolderList);
     this.isShowArrow = this.subFolderList.length !== 0;
