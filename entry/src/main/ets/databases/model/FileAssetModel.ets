@@ -30,7 +30,7 @@ const TAG = 'FileAssetModel';
 
 export class FileAssetLazyModel extends BasicDataSource {
   private dataArray: FileAssetModel[] = [];
-  dataCount: number = 0;
+  public dataCount: number = 0;
 
   public totalCount(): number {
     return this.dataArray.length;
@@ -92,39 +92,39 @@ export class FileAssetLazyModel extends BasicDataSource {
  * 媒体文件信息类
  */
 export class FileAssetModel {
-  id: number;
-  uri: string;
-  mimeType: string;
-  mediaType: number;
-  displayName: string;
-  title: string;
-  relativePath: string;
-  parent: number;
-  size: number;
-  dateAdded: number;
-  dateModified: number;
-  dateTaken: number;
-  artist: string;
-  audioAlbum: string;
-  width: number;
-  height: number;
-  orientation: number;
-  duration: number;
-  albumId: number;
-  albumUri: string;
-  albumName: string;
+  public id: number;
+  public uri: string;
+  public mimeType: string;
+  public mediaType: number;
+  public displayName: string;
+  public title: string;
+  public relativePath: string;
+  public parent: number;
+  public size: number;
+  public dateAdded: number;
+  public dateModified: number;
+  public dateTaken: number;
+  public artist: string;
+  public audioAlbum: string;
+  public width: number;
+  public height: number;
+  public orientation: number;
+  public duration: number;
+  public albumId: number;
+  public albumUri: string;
+  public albumName: string;
   // MediaLibrary.FileAsset对象外的属性
-  fileName: string;
-  fullPath: string;
-  isChecked: boolean = false;
-  suffix: string;
-  icon: Resource | PixelMap;
-  gridIcon: Resource | PixelMap;
-  localGridIcon: Resource | PixelMap;
-  lastModifiedDate: string | Resource;
-  thumbUri: string;
-  sortLabel: string = '';
-  mimeTypeObj: MimeType;
+  public fileName: string;
+  public fullPath: string;
+  public isChecked: boolean = false;
+  public suffix: string;
+  public icon: Resource | PixelMap;
+  public gridIcon: Resource | PixelMap;
+  public localGridIcon: Resource | PixelMap;
+  public lastModifiedDate: string | Resource;
+  public thumbUri: string;
+  public sortLabel: string = '';
+  public mimeTypeObj: MimeType;
 
   constructor(file) {
     this.id = file.id;
@@ -202,12 +202,12 @@ function sortFileAssetList(dataList) {
  * 媒体库查询条件类
  */
 export class MediaFetchOptions {
-  selections: string = MediaLibrary.FileKey.MEDIA_TYPE + '=?';
-  selectionArgs: string[] = [];
-  order: string = MediaLibrary.FileKey.DATE_MODIFIED + ' DESC';
-  uri: string;
-  networkId: string;
-  extendArgs: string;
+  public selections: string = MediaLibrary.FileKey.MEDIA_TYPE + '=?';
+  public selectionArgs: string[] = [];
+  public order: string = MediaLibrary.FileKey.DATE_MODIFIED + ' DESC';
+  public uri: string;
+  public networkId: string;
+  public extendArgs: string;
 
   constructor(mediaTypeArg: string = '') {
     if (!mediaTypeArg) {
