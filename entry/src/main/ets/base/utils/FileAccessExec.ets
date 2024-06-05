@@ -124,7 +124,7 @@ namespace FileAccessExec {
 
   export function getPathPickSubFiles(fileInfo: fileAccess.FileInfo,
                                       defaultPathPick: string, level: number): FileBase[] {
-    let fileArr: Array<FileBase> = [];
+    let fileArr: FileBase[] = [];
     let fileIterator = fileInfo.listFile();
     if (!fileIterator) {
       return fileArr;
@@ -157,7 +157,7 @@ namespace FileAccessExec {
 
 
   export function getRootFolder(): FilesData[] {
-    let fileList: Array<FilesData> = [];
+    let fileList: FilesData[] = [];
     if (!globalThis.rootInfoArr) {
       Logger.e(TAG, 'getRootFolder fail, rootInfoArr is null');
       return fileList;

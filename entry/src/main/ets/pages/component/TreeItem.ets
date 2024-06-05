@@ -66,7 +66,7 @@ export struct TreeItem {
 
     let queryRes = await this.getPickPathListFiles(dirUri, defaultExpandPath, this.fileItem.layer);
     this.isLoading = false;
-    let subList: Array<FilesData> = this.fileBaseToFileData(queryRes);
+    let subList: FilesData[] = this.fileBaseToFileData(queryRes);
     let { folderList, fileList } = this.transfer(subList);
     this.fileList = fileList
     call(folderList);

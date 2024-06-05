@@ -55,7 +55,9 @@ export struct TopOperateBar {
         normal: normalStyles
       })
       .onClick(() => {
-        if (this.isDisabled) return;
+        if (this.isDisabled) {
+          return;
+        }
         this.addFolder.call(this);
       })
 
@@ -76,7 +78,9 @@ export struct TopOperateBar {
         right: $r('app.float.common_padding12')
       })
       .onClick(() => {
-        if (this.isDisabled) return;
+        if (this.isDisabled) {
+          return;
+        }
         this.isList = !this.isList;
       }).stateStyles({
         pressed: pressedStyles,
