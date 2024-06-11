@@ -25,10 +25,6 @@ export class LocalResourceManager {
     return this.localAudioManager.getLocalAudio(offset, limit, context)
   }
 
-  public getFileAssetResource(index: number): userFileManager.FileAsset {
-    return this.localAudioManager.getFileAsset(index)
-  }
-
   /**
    * 用户选择文件后，返回结果URI列表并赋予临时权限
    */

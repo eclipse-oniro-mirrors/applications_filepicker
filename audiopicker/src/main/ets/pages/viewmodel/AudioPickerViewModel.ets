@@ -64,7 +64,6 @@ export class AudioPickerViewModel extends AbsBaseViewModel<LocalAudioFile> {
             this.audioPickerViewData.append(value)
             this.audioTotal = value.length
             logger.info(`queryAudioPickerList: ${JSON.stringify(value.length)}`)
-            this.getState().setViewState(BaseState.NORMAL)
             resolve(true)
           })
       } catch (err) {
@@ -73,10 +72,6 @@ export class AudioPickerViewModel extends AbsBaseViewModel<LocalAudioFile> {
         resolve(false)
       }
     })
-  }
-
-  queryFileAsset(index: number) {
-    return this.localResourceManager.getFileAssetResource(index).getThumbnail()
   }
 
   /**
@@ -90,7 +85,7 @@ export class AudioPickerViewModel extends AbsBaseViewModel<LocalAudioFile> {
         return
       }
       let pageNum = pageNo + 1
-      this.queryAudioPickerList(pageNum, context).then((isSuccess: boolean) => {
+      this.queryAudioPickerList(pageNum,context).then((isSuccess: boolean) => {
         logger.info(`loadMoreMusic: ${isSuccess}`)
         if (isSuccess) {
           resolve(true)

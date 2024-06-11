@@ -24,7 +24,4 @@ export class Constants {
    * 每次请求参数
    */
   static readonly PAGE_COUNT: number = 1
-
-  // AUDIO PICKER
-  static readonly AUDIO_PICKER_PAGE_TYPE:string = 'aodioPickerMusic'
 }

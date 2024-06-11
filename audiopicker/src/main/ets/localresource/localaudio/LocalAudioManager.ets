@@ -3,6 +3,7 @@
  */
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import userFileManager from '@ohos.filemanagement.userFileManager';
+import { image } from '@kit.ImageKit';
 
 import { Logger } from '../../common/util/HiLogger'
 import { LocalAudioFile } from './LocalAudioFile'
@@ -13,7 +14,7 @@ const logger: Logger = new Logger('LocalAudioManager')
  * 对接媒体库/文件系统，提供本地音频查询能力，本地音频分页查询能力
  */
 export class LocalAudioManager {
-  public fileAssets: Array<userFileManager.FileAsset> = []
+  private fileAssets: Array<userFileManager.FileAsset> = []
 
   /**
    * 获取FetchResult<FileAsset>
@@ -44,6 +45,7 @@ export class LocalAudioManager {
             resolve(localAudioFile)
           } else {
             logger.error('fileAssets is null')
+            resolve([])
           }
         }
       } catch (err) {
@@ -66,9 +68,18 @@ export class LocalAudioManager {
           let name = fileAsset.get(userFileManager.AudioKey.TITLE.toString()).toString() || fileAsset.displayName
           let artist = fileAsset.get(userFileManager.AudioKey.ARTIST.toString()).toString() || ''
           let album = fileAsset.get(userFileManager.AudioKey.AUDIOALBUM.toString()).toString() || ''
+          let displayName = fileAsset.displayName
+          let getThumbnail: image.PixelMap | Resource
+          try {
+            getThumbnail = await fileAsset.getThumbnail()
+          } catch (err) {
+            getThumbnail = $r('app.media.default')
+            logger.error('transferGetThumbnail failed: ' + err)
+          }
           if (uri) {
-            let localAudioFileItem: LocalAudioFile = new LocalAudioFile(uri, name, artist, album)
+            let localAudioFileItem: LocalAudioFile = new LocalAudioFile(uri, name, artist, album, displayName, getThumbnail)
             localAudioFile.push(localAudioFileItem)
+            logger.info(`localAudioFileItem: uri: ${uri}, name: ${name}, artist: ${artist}, album: ${album}, getThumbnail: ${JSON.stringify(getThumbnail)}}`)
           } else {
             logger.error('transferFileAssetsToLocalAudioFiles failed!')
           }
@@ -76,9 +87,5 @@ export class LocalAudioManager {
       }
       resolve(localAudioFile)
     })
-  }
-
-  getFileAsset(index: number) {
-    return this.fileAssets[index]
   }
 }

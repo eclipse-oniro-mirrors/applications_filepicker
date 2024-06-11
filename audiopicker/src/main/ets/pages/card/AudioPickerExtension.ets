@@ -35,21 +35,6 @@ struct AudioPickerExtension {
     this.isShow = true
   }
 
-  onPageShow() {
-
-  }
-
-  onBackPress(): boolean | void {
-    this.routerBack()
-  }
-
-  routerBack(): void {
-    if (this.session !== undefined) {
-      this.session?.sendData({ 'isShowUIExtension': false })
-      this.session?.terminateSelf()
-    }
-  }
-
   aboutToDisappear(): void {
     storage.clear()
   }
@@ -71,7 +56,6 @@ struct AudioPickerExtension {
     Column() {
       AudioPickerView({
         isShow: $isShow,
-        routerBack: this.routerBack,
         session: this.session
       });
     }
@@ -87,9 +71,9 @@ struct AudioPickerExtension {
       this.myBuilder(), //builder：配置半模态页面内容
       {
         title: this.titleStyle,
-        dragBar: true, //是否显示控制条，默认显示
+        height: SheetSize.FIT_CONTENT,
+        dragBar: false, //是否显示控制条，默认显示
         preferType: SheetType.CENTER,
-        showClose: true,
         onAppear: () => {
           logger.info("BindSheet onAppear.") //半模态页面显示回调函数
         },
@@ -103,4 +87,3 @@ struct AudioPickerExtension {
       })
   }
 }
-
