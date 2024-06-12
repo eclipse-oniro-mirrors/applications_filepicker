@@ -134,15 +134,6 @@ export struct AudioPickerView {
     this.routerBack()
   }
 
-  getAudioPickerThumbnail(index: number) {
-    this.audioPickerViewModel.queryFileAsset(index).then((val) => {
-      this.thumbnail.push(val)
-    }).catch(() => {
-      this.thumbnail.push($r('app.media.default'))
-    })
-    return this.thumbnail[index]
-  }
-
   /**
    * 是否是列表最后一个音频
    */
@@ -189,7 +180,7 @@ export struct AudioPickerView {
               GridItem() {
                 Column() {
                   Row() {
-                    Image(this.getAudioPickerThumbnail(index))
+                    Image(item.getThumbnail)
                       .width(48)
                       .height(48)
                       .margin({ right: 16 })
