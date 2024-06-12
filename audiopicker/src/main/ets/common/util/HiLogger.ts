@@ -1,6 +1,6 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2022. All rights reserved.
- */
+* Copyright (c) Huawei Technologies Co., Ltd. 2021-2024. All rights reserved.
+*/
 
 /**
  * [日志工具类]<BR>

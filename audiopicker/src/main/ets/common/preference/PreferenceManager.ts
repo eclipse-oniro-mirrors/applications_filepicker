@@ -1,7 +1,6 @@
-/**
- * Copyright (c) 2021-2022 Huawei Device Co., Ltd.
-
- */
+/*
+* Copyright (c) Huawei Technologies Co., Ltd. 2021-2024. All rights reserved.
+*/
 
 import data_preferences from '@ohos.data.preferences';
 import { Logger } from '../util/HiLogger'

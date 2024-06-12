@@ -3,7 +3,7 @@
  */
 
 import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession';
-import { common, Want } from '@kit.AbilityKit';
+import { common } from '@kit.AbilityKit';
 
 import { Logger } from '../../common/util/HiLogger'
 import {  MusicApp } from '../../common/global/globalmodel/GlobalModel';
@@ -75,14 +75,14 @@ struct AudioPickerExtension {
         dragBar: false, //是否显示控制条，默认显示
         preferType: SheetType.CENTER,
         onAppear: () => {
-          logger.info("BindSheet onAppear.") //半模态页面显示回调函数
+          logger.info('BindSheet onAppear.') //半模态页面显示回调函数
         },
         onDisappear: () => {
           if (this.session !== undefined) {
             this.session.sendData({ 'isShowUIExtension': false })
             this.session.terminateSelf()
           }
-          logger.info("BindSheet onDisappear.") //半模态页面回退回调函数
+          logger.info('BindSheet onDisappear.') //半模态页面回退回调函数
         }
       })
   }

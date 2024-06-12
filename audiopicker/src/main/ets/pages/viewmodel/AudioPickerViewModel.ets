@@ -12,7 +12,7 @@ import { Constants } from '../../constant/Constants'
 import { LocalAudioFile } from '../../localresource/localaudio/LocalAudioFile'
 import { Context } from '@kit.AbilityKit'
 
-const logger: Logger = new Logger("AudioPickerViewModel")
+const logger: Logger = new Logger('AudioPickerViewModel')
 
 /**
  * [audioPicker页面 viewmodel]

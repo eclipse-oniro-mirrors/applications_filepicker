@@ -1,6 +1,6 @@
-/**
- * Copyright (c) 2021-2022 Huawei Device Co., Ltd.
- */
+/*
+* Copyright (c) Huawei Technologies Co., Ltd. 2021-2024. All rights reserved.
+*/
 
 /**
  * [系统全局globalThis挂载的对象类型定义]

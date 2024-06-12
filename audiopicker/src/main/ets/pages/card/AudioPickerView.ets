@@ -70,7 +70,7 @@ export struct AudioPickerView {
         Image($r('app.media.ic_public_privacy_big'))
           .height(28)
           .fillColor($r('sys.color.ohos_id_color_component_activated'))
-        Image($r("app.media.img"))
+        Image($r('app.media.img'))
           .width(24)
           .height(24)
           .zIndex(99)
@@ -134,15 +134,6 @@ export struct AudioPickerView {
     this.routerBack()
   }
 
-  getAudioPickerThumbnail(index: number) {
-    this.audioPickerViewModel.queryFileAsset(index).then((val) => {
-      this.thumbnail.push(val)
-    }).catch(() => {
-      this.thumbnail.push($r('app.media.default'))
-    })
-    return this.thumbnail[index]
-  }
-
   /**
    * 是否是列表最后一个音频
    */
@@ -189,7 +180,7 @@ export struct AudioPickerView {
               GridItem() {
                 Column() {
                   Row() {
-                    Image(this.getAudioPickerThumbnail(index))
+                    Image(item.getThumbnail)
                       .width(48)
                       .height(48)
                       .margin({ right: 16 })
@@ -291,7 +282,7 @@ export struct AudioPickerView {
             }
             // 判断是否是在加载中
             if (this.audioPickerData.isLoadMore || !this.audioPickerData.hasMoreData) {
-              logger.warn('audioPickerData is showing more view : ' + this.showLoadMore + " no more data: " + this.audioPickerData.hasMoreData)
+              logger.warn('audioPickerData is showing more view : ' + this.showLoadMore + ' no more data: ' + this.audioPickerData.hasMoreData)
               return
             }
             // 查询下一页数据
