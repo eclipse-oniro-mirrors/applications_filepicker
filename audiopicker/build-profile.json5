@@ -17,6 +17,9 @@
       }
     },
   ],
+  "entryModules": [
+    "entry"
+  ],
   "targets": [
     {
       "name": "default"

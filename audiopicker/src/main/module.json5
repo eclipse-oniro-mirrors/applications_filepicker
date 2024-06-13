@@ -1,7 +1,7 @@
 {
   "module": {
     "name": "audiopicker",
-    "type": "entry",
+    "type": "feature",
     "description": "$string:module_desc",
     "mainElement": "AudiopickerAbility",
     "deviceTypes": [
