@@ -795,7 +795,6 @@ export class DeviceInfo {
   /**
    * User-Agent
    *
-   * model=FFG-AL00,brand=HUAWEI,rom=EmotionUI_12.0.1,emui=EmotionUI_12.0.1,os=11,apilevel=30,manufacturer=HUAWEI,useBrandCust=0,extChannel=,cpucore=8,memory=8.0G,srceenHeight=2529,screenWidth=1200,harmonyApiLevel=6,huaweiOsBrand=harmony
    */
   ua: string = ''
   /**
