@@ -1,7 +1,7 @@
 {
   "module": {
     "name": "audiopicker",
-    "type": "feature",
+    "type": "entry",
     "description": "$string:module_desc",
     "mainElement": "AudiopickerAbility",
     "deviceTypes": [
@@ -51,7 +51,7 @@
         "srcEntry": "./ets/audiopickerability/AudioPickerUIExtensionAbility.ets",
         "description": "$string:audiopicker_desc",
         "label": "$string:audiopicker_label",
-        "type": "sysPicker/audioPicker",
+        "type": "sys/commonUI",
         "exported": true
       }
     ]
