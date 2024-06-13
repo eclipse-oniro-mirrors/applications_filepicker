@@ -34,13 +34,13 @@ export class LocalResourceManager {
       let uriList: Array<string> = []
       for(let item of localAudioFile) {
         try {
-          await fileShare.grantUriPermission(item.uri, Constants.AUDIO_PICKER_BUNDLE, wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION |
-          wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION)
+          await fileShare.grantUriPermission(item.uri, Constants.AUDIO_PICKER_BUNDLE, wantConstant
+            .Flags.FLAG_AUTH_READ_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION)
           uriList.push(item.uri)
           logger.info('push uriList length: ' + uriList.length)
         } catch (err) {
           let error: BusinessError = err as BusinessError;
-          logger.error("grantUriPermission failed with error:" + JSON.stringify(error));
+          logger.error('grantUriPermission failed with error:' + JSON.stringify(error));
           resolve([])
           return
         }

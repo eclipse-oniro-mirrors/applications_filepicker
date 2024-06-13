@@ -3,7 +3,7 @@
  */
 
 import { Logger } from '../../common/util/HiLogger'
-import {  ObservedArray } from '../../data/ObservedArray'
+import { ObservedArray } from '../../data/ObservedArray'
 import { AbsBaseViewModel } from '../../basemvvm/AbsBaseViewModel'
 import { BaseState, ViewState } from '../../basemvvm/ViewState'
 import { AudioPickerViewData } from '../model/AudioPickerViewData'
@@ -59,13 +59,13 @@ export class AudioPickerViewModel extends AbsBaseViewModel<LocalAudioFile> {
   public queryAudioPickerList(pageNo: number, context: Context): Promise<boolean> {
     return new Promise<boolean>((resolve) => {
       try {
-        this.localResourceManager.getLocalAudioResource(pageNo * Constants.PICKER_PAGE_SIZE, Constants.PICKER_PAGE_SIZE, context)
-          .then((value) => {
-            this.audioPickerViewData.append(value)
-            this.audioTotal = value.length
-            logger.info(`queryAudioPickerList: ${JSON.stringify(value.length)}`)
-            resolve(true)
-          })
+        this.localResourceManager.getLocalAudioResource(pageNo * Constants.PICKER_PAGE_SIZE,
+          Constants.PICKER_PAGE_SIZE, context).then((value) => {
+          this.audioPickerViewData.append(value)
+          this.audioTotal = value.length
+          logger.info(`queryAudioPickerList: ${JSON.stringify(value.length)}`)
+          resolve(true)
+        })
       } catch (err) {
         logger.error(`localAudioFile error: ${JSON.stringify(err)}`)
         this.getState().setViewState(BaseState.ERROR)
@@ -85,7 +85,7 @@ export class AudioPickerViewModel extends AbsBaseViewModel<LocalAudioFile> {
         return
       }
       let pageNum = pageNo + 1
-      this.queryAudioPickerList(pageNum,context).then((isSuccess: boolean) => {
+      this.queryAudioPickerList(pageNum, context).then((isSuccess: boolean) => {
         logger.info(`loadMoreMusic: ${isSuccess}`)
         if (isSuccess) {
           resolve(true)

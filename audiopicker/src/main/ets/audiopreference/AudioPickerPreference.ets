@@ -7,19 +7,21 @@ import { MusicApp } from '../common/global/globalmodel/GlobalModel';
 import { createOrGet, globalKeys } from '../common/global/GlobalThisHelper'
 import { PreferenceManager } from '../common/preference/PreferenceManager'
 
-const Key_Permission_TipLog = 'Key_Permission_TipLog'
-const logger: Logger = new Logger("AudioPickerPreference")
+const key_Permission_TipLog = 'Key_Permission_TipLog'
+const logger: Logger = new Logger('AudioPickerPreference')
 const app: MusicApp = createOrGet(MusicApp, globalKeys.app, ['phone']);
 
-export class  AudioPickerPreference{
-  private preferenceManager: PreferenceManager = createOrGet(PreferenceManager, globalKeys.preferenceManager, [app.abilityContext])
+export class AudioPickerPreference {
+  private preferenceManager: PreferenceManager = createOrGet(PreferenceManager,
+    globalKeys.preferenceManager, [app.abilityContext])
 
   /**
    * 保存安全提示状态
    * @param isFirstStartUp
    */
   public saveSafetyTipStatus(isFirstStartUp: boolean): void {
-    this.preferenceManager.put(Key_Permission_TipLog, isFirstStartUp, true, this.preferenceManager.preferKeys.audioPicker).then((res) => {
+    this.preferenceManager.put(key_Permission_TipLog, isFirstStartUp, true,
+      this.preferenceManager.preferKeys.audioPicker).then((res) => {
       logger.info(`saveSafetyTipStatus Success ? : ${res}`)
     }).catch((err: BusinessError) => {
       logger.error(`saveSafetyTipStatus Fail, err name:${err.name} , err message:${err.message}`)
@@ -33,7 +35,8 @@ export class  AudioPickerPreference{
    */
   public getSafetyTipStatus(): Promise<boolean> {
     return new Promise((resolve) => {
-      this.preferenceManager.get(Key_Permission_TipLog, false, this.preferenceManager.preferKeys.audioPicker).then((res) => {
+      this.preferenceManager.get(key_Permission_TipLog, false,
+        this.preferenceManager.preferKeys.audioPicker).then((res) => {
         resolve(res as boolean)
       }).catch((err: BusinessError) => {
         logger.error(`getPrivacyStatus error, err name:${err.name}, err message:${err.message}`)

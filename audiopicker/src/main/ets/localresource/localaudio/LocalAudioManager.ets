@@ -77,7 +77,8 @@ export class LocalAudioManager {
             logger.error('transferGetThumbnail failed: ' + err)
           }
           if (uri) {
-            let localAudioFileItem: LocalAudioFile = new LocalAudioFile(uri, name, artist, album, displayName, getThumbnail)
+            let localAudioFileItem: LocalAudioFile = new LocalAudioFile(uri, name, artist, album,
+              displayName, getThumbnail)
             localAudioFile.push(localAudioFileItem)
             logger.info(`localAudioFileItem: uri: ${uri}, name: ${name}, artist: ${artist}, album: ${album}, getThumbnail: ${JSON.stringify(getThumbnail)}}`)
           } else {

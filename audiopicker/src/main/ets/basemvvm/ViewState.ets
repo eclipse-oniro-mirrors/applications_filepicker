@@ -26,7 +26,7 @@ export enum BaseState {
 
 @Observed
 export class ViewState {
-  baseState: BaseState = BaseState.DEFAULT
+  public baseState: BaseState = BaseState.DEFAULT
 
   constructor(baseState: BaseState = BaseState.DEFAULT) {
     this.baseState = baseState

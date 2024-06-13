@@ -275,7 +275,8 @@ export struct AudioPickerView {
             }
             // 判断首页数据是否满足一页
             if (this.audioPickerData) {
-              if (this.audioPickerData.totalCount() < Constants.PICKER_PAGE_SIZE && this.pageNo === Constants.PAGE_COUNT) {
+              if (this.audioPickerData.totalCount() < Constants.PICKER_PAGE_SIZE &&
+                this.pageNo === Constants.PAGE_COUNT) {
                 logger.warn('audioPickerData less than 100,size: ' + this.audioPickerData.totalCount())
                 return
               }

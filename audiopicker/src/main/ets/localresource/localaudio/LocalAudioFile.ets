@@ -17,7 +17,8 @@ export class LocalAudioFile {
   // 缩略图
   getThumbnail?: image.PixelMap | Resource
 
-  constructor(uri: string, name: string, artist: string, album: string, displayName: string, getThumbnail?: image.PixelMap | Resource) {
+  constructor(uri: string, name: string, artist: string, album: string,
+    displayName: string, getThumbnail?: image.PixelMap | Resource) {
     this.uri = uri
     this.name = name
     this.artist = artist
