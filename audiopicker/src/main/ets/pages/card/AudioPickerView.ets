@@ -32,6 +32,7 @@ export struct AudioPickerView {
   @State showLoadMore: boolean = false
   @State requestCounts: number = 0
   @State isSelect: boolean = false
+  @State indexArr: Array<number> = []
   // load more 提前的条目数量
   private loadMoreAdvance: number = 3
   private pageNo: number = 0;
@@ -239,17 +240,25 @@ export struct AudioPickerView {
                         .onChange((value) => {
                           if (value) {
                             this.isSelectedAudioPickerList.push(item)
+                            this.indexArr.push(index)
                           } else {
                             this.isSelectedAudioPickerList = this.isSelectedAudioPickerList.filter(val => val != item)
+                            let selectIndex = this.indexArr.indexOf(index)
+                            if(selectIndex != -1){
+                              this.indexArr.splice(selectIndex, 1)
+                            }
                           }
-                          let keyPickNum = this.want?.parameters?.key_pick_num
-                          if (keyPickNum) {
-                            if (this.isSelectedAudioPickerList.length < keyPickNum) {
+                          let key_pick_num = this.want?.parameters?.key_pick_num
+                          logger.info('key_pick_num: ' + JSON.stringify(key_pick_num))
+                          if (key_pick_num) {
+                            if (this.isSelectedAudioPickerList.length < key_pick_num) {
                               this.isSelect = true
                             } else {
                               this.isSelect = false
                             }
                           }
+                          logger.info('indexArr: ' + JSON.stringify(this.indexArr))
+                          logger.info('isSelect: ' + this.isSelect)
                         })
                         .unselectedColor($r('sys.color.ohos_id_color_switch_outline_off'))
                         .width(20)
