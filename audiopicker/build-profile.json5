@@ -18,7 +18,7 @@
     },
   ],
   "entryModules": [
-    "entry"
+    "audiopicker"
   ],
   "targets": [
     {
