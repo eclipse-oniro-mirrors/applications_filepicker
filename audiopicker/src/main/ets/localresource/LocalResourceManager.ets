@@ -31,7 +31,7 @@ export class LocalResourceManager {
   public terminateSelfWithResult(localAudioFile: Array<LocalAudioFile>): Promise<Array<string>> {
     //赋予权限就放在audiopicker模块，直接调系统接口
     return new Promise(async (resolve) => {
-      let uriList: Array<string> = []
+      let uriList: string[] = []
       for(let item of localAudioFile) {
         try {
           await fileShare.grantUriPermission(item.uri, Constants.AUDIO_PICKER_BUNDLE, wantConstant

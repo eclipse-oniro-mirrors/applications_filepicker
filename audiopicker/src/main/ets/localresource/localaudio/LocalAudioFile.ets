@@ -5,17 +5,17 @@ import { image } from '@kit.ImageKit';
 
 export class LocalAudioFile {
   // 文件uri
-  uri: string = ''
+  public uri: string = ''
   // 名称
-  name: string = ''
+  public name: string = ''
   // 歌手
-  artist: string = ''
+  public artist: string = ''
   // 专辑
-  album: string = ''
+  public album: string = ''
   // 显示名字
-  displayName: string = ''
+  public displayName: string = ''
   // 缩略图
-  getThumbnail?: image.PixelMap | Resource
+  public getThumbnail?: image.PixelMap | Resource
 
   constructor(uri: string, name: string, artist: string, album: string,
     displayName: string, getThumbnail?: image.PixelMap | Resource) {

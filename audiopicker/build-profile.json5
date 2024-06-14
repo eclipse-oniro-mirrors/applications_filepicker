@@ -17,9 +17,6 @@
       }
     },
   ],
-  "entryModules": [
-    "audiopicker"
-  ],
   "targets": [
     {
       "name": "default"

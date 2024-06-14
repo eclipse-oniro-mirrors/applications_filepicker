@@ -11,13 +11,13 @@ import { BaseState, ViewState } from '../../basemvvm/ViewState'
 @Observed
 export class AudioPickerViewData extends AbsBaseViewData<ViewState, LocalAudioFile> {
   // 页面加载状态
-  viewState: ViewState = new ViewState(BaseState.DEFAULT)
+  public viewState: ViewState = new ViewState(BaseState.DEFAULT)
   // 页面错误码
-  errCode: number = -2
+  public errCode: number = -2
   // 是否加载更多
-  hasMoreData: boolean = false
+  public hasMoreData: boolean = false
   // 是否正在加载更多
-  isLoadMore: boolean = false
+  public isLoadMore: boolean = false
 
   constructor() {
     super()

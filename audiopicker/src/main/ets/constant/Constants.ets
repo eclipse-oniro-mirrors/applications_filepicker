@@ -13,15 +13,15 @@ export class Constants {
   /**
    * Bundle name of audioPicker
    */
-  static readonly AUDIO_PICKER_BUNDLE = 'com.ohos.filepicker';
+  public static readonly AUDIO_PICKER_BUNDLE = 'com.ohos.filepicker';
 
   /**
    * AudioPicker每页请求数量
    */
-  static readonly PICKER_PAGE_SIZE: number = 100
+  public static readonly PICKER_PAGE_SIZE: number = 100
 
   /**
    * 每次请求参数
    */
-  static readonly PAGE_COUNT: number = 1
+  public static readonly PAGE_COUNT: number = 1
 }

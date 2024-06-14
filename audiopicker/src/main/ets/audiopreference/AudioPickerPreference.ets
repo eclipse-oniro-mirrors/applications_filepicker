@@ -7,7 +7,7 @@ import { MusicApp } from '../common/global/globalmodel/GlobalModel';
 import { createOrGet, globalKeys } from '../common/global/GlobalThisHelper'
 import { PreferenceManager } from '../common/preference/PreferenceManager'
 
-const key_Permission_TipLog = 'Key_Permission_TipLog'
+const keyPermissionTipLog = 'Key_Permission_TipLog'
 const logger: Logger = new Logger('AudioPickerPreference')
 const app: MusicApp = createOrGet(MusicApp, globalKeys.app, ['phone']);
 
@@ -20,7 +20,7 @@ export class AudioPickerPreference {
    * @param isFirstStartUp
    */
   public saveSafetyTipStatus(isFirstStartUp: boolean): void {
-    this.preferenceManager.put(key_Permission_TipLog, isFirstStartUp, true,
+    this.preferenceManager.put(keyPermissionTipLog, isFirstStartUp, true,
       this.preferenceManager.preferKeys.audioPicker).then((res) => {
       logger.info(`saveSafetyTipStatus Success ? : ${res}`)
     }).catch((err: BusinessError) => {
@@ -35,7 +35,7 @@ export class AudioPickerPreference {
    */
   public getSafetyTipStatus(): Promise<boolean> {
     return new Promise((resolve) => {
-      this.preferenceManager.get(key_Permission_TipLog, false,
+      this.preferenceManager.get(keyPermissionTipLog, false,
         this.preferenceManager.preferKeys.audioPicker).then((res) => {
         resolve(res as boolean)
       }).catch((err: BusinessError) => {

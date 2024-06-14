@@ -59,7 +59,7 @@ export class LocalAudioManager {
    * 将FileAsset转换为LocalAudioFile
    */
   transferFileAssetsToLocalAudioFiles(): Promise<Array<LocalAudioFile>> {
-    let localAudioFile: Array<LocalAudioFile> = []
+    let localAudioFile: LocalAudioFile[] = []
     return new Promise(async (resolve) => {
       if (this.fileAssets) {
         logger.info('fileAsset.length :' + this.fileAssets.length);

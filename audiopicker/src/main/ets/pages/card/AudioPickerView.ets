@@ -2,8 +2,8 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
  */
 import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession'
-import { image } from '@kit.ImageKit';
 import { CustomContentDialog } from '@ohos.arkui.advanced.Dialog';
+import { ability, Context, Want } from '@kit.AbilityKit';
 
 import { Logger } from '../../common/util/HiLogger'
 import { createOrGet, globalKeys } from '../../common/global/GlobalThisHelper'
@@ -31,14 +31,14 @@ export struct AudioPickerView {
   // 是否展示加载更多
   @State showLoadMore: boolean = false
   @State requestCounts: number = 0
-  @State thumbnail: Array<image.PixelMap | Resource> = []
-  @State uriArr: Array<string> = []
+  @State isSelect: boolean = false
   // load more 提前的条目数量
   private loadMoreAdvance: number = 3
   private pageNo: number = 0;
   // 设备信息
   private globalDeviceInfo: DeviceInfo = createOrGet(DeviceInfo, globalKeys.deviceInfo)
   session: UIExtensionContentSession | undefined
+  want: Want | undefined
   scroller: Scroller = new Scroller()
   context: Context = getContext(this)
   // 弹窗知道了按钮回调
@@ -154,16 +154,20 @@ export struct AudioPickerView {
    * 返回赋予临时权限的uri列表回调
    */
   async settingTerminateSelfWithResult() {
-    this.uriArr = await this.localResourceManager.terminateSelfWithResult(this.isSelectedAudioPickerList)
-    logger.info('uriArr length: ' + this.uriArr.length)
+    let uriArr = await this.localResourceManager.terminateSelfWithResult(this.isSelectedAudioPickerList)
+    logger.info('uriArr length: ' + uriArr.length)
     if (this.session) {
-      this.session?.terminateSelfWithResult({
-        resultCode: this.uriArr ? 0 : -1,
+      let abilityResult: ability.AbilityResult = {
+        resultCode: (uriArr === undefined) ? -1 : 0,
         want: {
           parameters: {
-            'uriArr': this.uriArr
+            'ability.params.stream': uriArr,
+            'uriArr': uriArr
           }
         }
+      }
+      this.session?.terminateSelfWithResult(abilityResult, (err) => {
+        logger.error('terminateSelfWithResult is called: ' + err)
       })
     } else {
       logger.error(`oncancel session: ${this.session}`)
@@ -237,6 +241,14 @@ export struct AudioPickerView {
                             this.isSelectedAudioPickerList.push(item)
                           } else {
                             this.isSelectedAudioPickerList = this.isSelectedAudioPickerList.filter(val => val != item)
+                          }
+                          let key_pick_num = this.want?.parameters?.key_pick_num
+                          if (key_pick_num) {
+                            if (this.isSelectedAudioPickerList.length < key_pick_num) {
+                              this.isSelect = true
+                            } else {
+                              this.isSelect = false
+                            }
                           }
                         })
                         .unselectedColor($r('sys.color.ohos_id_color_switch_outline_off'))
