@@ -242,9 +242,9 @@ export struct AudioPickerView {
                           } else {
                             this.isSelectedAudioPickerList = this.isSelectedAudioPickerList.filter(val => val != item)
                           }
-                          let key_pick_num = this.want?.parameters?.key_pick_num
-                          if (key_pick_num) {
-                            if (this.isSelectedAudioPickerList.length < key_pick_num) {
+                          let keyPickNum = this.want?.parameters?.key_pick_num
+                          if (keyPickNum) {
+                            if (this.isSelectedAudioPickerList.length < keyPickNum) {
                               this.isSelect = true
                             } else {
                               this.isSelect = false
