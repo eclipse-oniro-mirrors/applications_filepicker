@@ -4,6 +4,7 @@
 
 import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession';
 import { common } from '@kit.AbilityKit';
+import Want from '@ohos.app.ability.Want';
 
 import { Logger } from '../../common/util/HiLogger'
 import {  MusicApp } from '../../common/global/globalmodel/GlobalModel';
@@ -27,6 +28,7 @@ struct AudioPickerExtension {
   @State actionIsHover: boolean = false
   @State isShow: boolean = false
   private session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session');
+  private want: Want | undefined = storage.get<Want>('want');
   private context = getContext(this) as common.UIAbilityContext;
 
   aboutToAppear(): void {
@@ -56,7 +58,8 @@ struct AudioPickerExtension {
     Column() {
       AudioPickerView({
         isShow: $isShow,
-        session: this.session
+        session: this.session,
+        want: this.want
       });
     }
   }

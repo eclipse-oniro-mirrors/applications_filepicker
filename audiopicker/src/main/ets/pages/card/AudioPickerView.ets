@@ -3,7 +3,8 @@
  */
 import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession'
 import { CustomContentDialog } from '@ohos.arkui.advanced.Dialog';
-import { ability, Context, Want } from '@kit.AbilityKit';
+import Want from '@ohos.app.ability.Want';
+import { ability, Context } from '@kit.AbilityKit';
 
 import { Logger } from '../../common/util/HiLogger'
 import { createOrGet, globalKeys } from '../../common/global/GlobalThisHelper'
@@ -19,6 +20,7 @@ const logger: Logger = new Logger('AudioPickerView')
 
 @Component
 export struct AudioPickerView {
+  @StorageLink('navigatorBarHeight') navigatorBarHeight: number = 200
   @Link isShow: boolean;
   @State audioPickerData: AudioPickerViewData = new AudioPickerViewData()
   @State audioPickerViewModel: AudioPickerViewModel = new AudioPickerViewModel()
@@ -31,7 +33,7 @@ export struct AudioPickerView {
   // 是否展示加载更多
   @State showLoadMore: boolean = false
   @State requestCounts: number = 0
-  @State isSelect: boolean = false
+  @State isSelect: boolean = true
   @State indexArr: Array<number> = []
   // load more 提前的条目数量
   private loadMoreAdvance: number = 3
@@ -178,10 +180,10 @@ export struct AudioPickerView {
 
   build() {
     if (this.audioPickerViewModel.audioTotal > 0) {
-      Stack({ alignContent: Alignment.BottomStart }) {
+      Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {
           Grid() {
-            LazyForEach(this.audioPickerData, async (item: LocalAudioFile, index: number) => {
+            LazyForEach(this.audioPickerData, (item: LocalAudioFile, index: number) => {
               GridItem() {
                 Column() {
                   Row() {
@@ -248,10 +250,10 @@ export struct AudioPickerView {
                               this.indexArr.splice(selectIndex, 1)
                             }
                           }
-                          let key_pick_num = this.want?.parameters?.key_pick_num
-                          logger.info('key_pick_num: ' + JSON.stringify(key_pick_num))
-                          if (key_pick_num) {
-                            if (this.isSelectedAudioPickerList.length < key_pick_num) {
+                          let keyPickNum = this.want?.parameters?.key_pick_num
+                          logger.info('key_pick_num: ' + JSON.stringify(keyPickNum))
+                          if (keyPickNum) {
+                            if (this.isSelectedAudioPickerList.length < keyPickNum) {
                               this.isSelect = true
                             } else {
                               this.isSelect = false
@@ -260,6 +262,7 @@ export struct AudioPickerView {
                           logger.info('indexArr: ' + JSON.stringify(this.indexArr))
                           logger.info('isSelect: ' + this.isSelect)
                         })
+                        .enabled(this.indexArr.indexOf(index) != -1 ? true : this.isSelect)
                         .unselectedColor($r('sys.color.ohos_id_color_switch_outline_off'))
                         .width(20)
                         .height(20)
@@ -304,7 +307,8 @@ export struct AudioPickerView {
             }
             // 判断是否是在加载中
             if (this.audioPickerData.isLoadMore || !this.audioPickerData.hasMoreData) {
-              logger.warn('audioPickerData is showing more view : ' + this.showLoadMore + ' no more data: ' + this.audioPickerData.hasMoreData)
+              logger.warn('audioPickerData is showing more view : ' + this.showLoadMore +
+                ' no more data: ' + this.audioPickerData.hasMoreData)
               return
             }
             // 查询下一页数据
@@ -374,8 +378,10 @@ export struct AudioPickerView {
           .justifyContent(FlexAlign.SpaceBetween)
         }
         .backgroundColor($r('sys.color.ohos_id_blur_style_component_thick_color'))
+        .position({ x: 0, y: 576 })
         .height(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ? 108 : 96)
-        .padding(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ? { bottom: 28 } : { bottom: 0 })
+        .padding(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ?
+          { bottom: `${this.navigatorBarHeight}px` } : { bottom: 0 })
       }
       .width(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ? '100%' : 480)
       .height(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ? 684 : 560)
