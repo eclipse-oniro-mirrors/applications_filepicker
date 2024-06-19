@@ -3,7 +3,7 @@
  */
 
 import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession';
-import { common } from '@kit.AbilityKit';
+import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 
 import { Logger } from '../../common/util/HiLogger'
@@ -82,7 +82,6 @@ struct AudioPickerExtension {
         },
         onDisappear: () => {
           if (this.session !== undefined) {
-            this.session.sendData({ 'isShowUIExtension': false })
             this.session.terminateSelf()
           }
           logger.info('BindSheet onDisappear.') //半模态页面回退回调函数

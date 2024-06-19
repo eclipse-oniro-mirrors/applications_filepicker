@@ -2,10 +2,8 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
  */
 import wantConstant from '@ohos.app.ability.wantConstant';
-import userFileManager from '@ohos.filemanagement.userFileManager';
 import fileShare from '@ohos.fileshare';
 import { BusinessError } from '@ohos.base';
-import { Context } from '@kit.AbilityKit';
 
 import { Logger } from '../common/util/HiLogger'
 import { LocalAudioFile } from './localaudio/LocalAudioFile'

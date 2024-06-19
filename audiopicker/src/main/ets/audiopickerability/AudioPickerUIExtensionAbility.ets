@@ -1,12 +1,11 @@
 import UIExtensionAbility from '@ohos.app.ability.UIExtensionAbility';
 import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession';
 import Want from '@ohos.app.ability.Want';
+import common from '@ohos.app.ability.common';
 
 import { Logger } from '../common/util/HiLogger'
 import { MusicApp } from '../common/global/globalmodel/GlobalModel';
 import { createOrGet, globalKeys } from '../common/global/GlobalThisHelper'
-import { Constants } from '../constant/Constants';
-import { common } from '@kit.AbilityKit';
 
 const logger: Logger = new Logger('AudioPickerExtAbility')
 const app: MusicApp = createOrGet(MusicApp, globalKeys.app, ['phone']);

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
  */
-import { BusinessError } from '@kit.BasicServicesKit'
+import { BusinessError } from '@ohos.base'
 import { Logger } from '../common/util/HiLogger'
 import { MusicApp } from '../common/global/globalmodel/GlobalModel';
 import { createOrGet, globalKeys } from '../common/global/GlobalThisHelper'

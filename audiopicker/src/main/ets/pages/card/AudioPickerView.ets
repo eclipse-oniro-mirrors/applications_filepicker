@@ -2,9 +2,8 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
  */
 import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession'
-import { CustomContentDialog } from '@ohos.arkui.advanced.Dialog';
 import Want from '@ohos.app.ability.Want';
-import { ability, Context } from '@kit.AbilityKit';
+import ability from '@ohos.ability.ability';
 
 import { Logger } from '../../common/util/HiLogger'
 import { createOrGet, globalKeys } from '../../common/global/GlobalThisHelper'
@@ -15,6 +14,7 @@ import { AudioPickerViewData } from '../model/AudioPickerViewData';
 import { AudioPickerViewModel } from '../viewmodel/AudioPickerViewModel';
 import { AudioPickerPreference } from '../../audiopreference/AudioPickerPreference';
 import { Constants } from '../../constant/Constants';
+import { SafetyTipDialog } from '../dialog/SafetyTipDialog';
 
 const logger: Logger = new Logger('AudioPickerView')
 
@@ -51,70 +51,12 @@ export struct AudioPickerView {
     logger.info('isSafetyTip ' + this.isSafetyTip)
     this.dialogController.close()
   }
-  buildCustomDialog: () => void = () => {
-    this.safetyTipDialogBuilder()
-  }
-  dialogController = new CustomDialogController({
-    builder: CustomContentDialog({
-      contentBuilder: this.buildCustomDialog,
-      buttons: [{
-        value: $r('app.string.got_it'),
-        fontColor: $r('sys.color.ohos_id_text_color_active'),
-        action: this.dialogKnow
-      }]
+  dialogController: CustomDialogController = new CustomDialogController({
+    builder: SafetyTipDialog({
+      know: this.dialogKnow
     }),
     alignment: DialogAlignment.Center
   })
-
-  @Builder
-  safetyTipDialogBuilder() {
-    Column() {
-      Stack() {
-        Image($r('app.media.ic_public_privacy_big'))
-          .height(28)
-          .fillColor($r('sys.color.ohos_id_color_component_activated'))
-        Image($r('app.media.img'))
-          .width(24)
-          .height(24)
-          .zIndex(99)
-          .borderRadius(5)
-          .position({
-            x: 24,
-            y: 24
-          })
-      }
-      .width(48)
-      .height(48)
-      .backgroundColor($r('sys.color.ohos_id_color_background'))
-      .borderRadius($r('sys.float.corner_radius_level6'))
-      .border({
-        width: '1px',
-        color: $r('sys.color.ohos_id_color_button_normal')
-      })
-
-      Text($r('app.string.secure_access_to_audio_library'))
-        .width(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ? 280 : 352)
-        .height(56)
-        .fontSize(20)
-        .fontWeight(FontWeight.Medium)
-        .fontFamily('HarmonyHeiTi')
-        .lineHeight(27)
-        .textAlign(TextAlign.Center)
-
-      Text($r('app.string.your_audio_will_be_displayed_here'))
-        .width(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ? 280 : 352)
-        .height(38)
-        .fontSize(14)
-        .fontWeight(FontWeight.Regular)
-        .fontFamily('HarmonyHeiTi')
-        .lineHeight(19)
-        .textAlign(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ? TextAlign.Start : TextAlign.Center)
-    }
-    .width(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ? '100%' : 400)
-    .margin({ left: 16, right: 16 })
-    .alignItems(HorizontalAlign.Center)
-    .justifyContent(FlexAlign.Center)
-  }
 
   async aboutToAppear() {
     this.audioPickerData = this.audioPickerViewModel.getDataSource()
@@ -157,9 +99,9 @@ export struct AudioPickerView {
    * 返回赋予临时权限的uri列表回调
    */
   async settingTerminateSelfWithResult() {
-    let uriArr = await this.localResourceManager.terminateSelfWithResult(this.isSelectedAudioPickerList)
-    logger.info('uriArr length: ' + uriArr.length)
     if (this.session) {
+      let uriArr = await this.localResourceManager.terminateSelfWithResult(this.isSelectedAudioPickerList)
+      logger.info('uriArr length: ' + uriArr.length)
       let abilityResult: ability.AbilityResult = {
         resultCode: (uriArr === undefined) ? -1 : 0,
         want: {
@@ -169,7 +111,7 @@ export struct AudioPickerView {
           }
         }
       }
-      this.session?.terminateSelfWithResult(abilityResult, (err) => {
+      this.session.terminateSelfWithResult(abilityResult, (err) => {
         logger.error('terminateSelfWithResult is called: ' + err)
       })
     } else {
@@ -377,7 +319,6 @@ export struct AudioPickerView {
           .height(28)
           .justifyContent(FlexAlign.SpaceBetween)
         }
-        .backgroundColor($r('sys.color.ohos_id_blur_style_component_thick_color'))
         .position({ x: 0, y: 576 })
         .height(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ? 108 : 96)
         .padding(this.globalDeviceInfo.deviceType === DeviceTypes.PHONE ?

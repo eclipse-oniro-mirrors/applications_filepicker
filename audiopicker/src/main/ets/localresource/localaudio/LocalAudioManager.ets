@@ -3,7 +3,7 @@
  */
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import userFileManager from '@ohos.filemanagement.userFileManager';
-import { image } from '@kit.ImageKit';
+import image from '@ohos.multimedia.image';
 
 import { Logger } from '../../common/util/HiLogger'
 import { LocalAudioFile } from './LocalAudioFile'

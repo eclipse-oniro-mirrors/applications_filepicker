@@ -10,7 +10,6 @@ import { AudioPickerViewData } from '../model/AudioPickerViewData'
 import { LocalResourceManager } from '../../localresource/LocalResourceManager'
 import { Constants } from '../../constant/Constants'
 import { LocalAudioFile } from '../../localresource/localaudio/LocalAudioFile'
-import { Context } from '@kit.AbilityKit'
 
 const logger: Logger = new Logger('AudioPickerViewModel')
 
