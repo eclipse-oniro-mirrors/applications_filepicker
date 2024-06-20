@@ -51,7 +51,7 @@
         "srcEntry": "./ets/audiopickerability/AudioPickerUIExtensionAbility.ets",
         "description": "$string:audiopicker_desc",
         "label": "$string:audiopicker_label",
-        "type": "sys/commonUI",
+        "type": "sysPicker/audioPicker",
         "exported": true
       }
     ]

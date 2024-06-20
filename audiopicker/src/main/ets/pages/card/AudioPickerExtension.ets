@@ -47,6 +47,7 @@ struct AudioPickerExtension {
   @Builder
   titleStyle() {
     Text($r('app.string.select_audio'))
+      .height(56)
       .fontSize(20)
       .fontColor($r('sys.color.ohos_id_color_text_primary'))
       .fontWeight(FontWeight.Bold)

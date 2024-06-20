@@ -7,7 +7,7 @@ import { DeviceInfo, DeviceTypes } from '../../common/global/globalmodel/GlobalM
 import { createOrGet, globalKeys } from '../../common/global/GlobalThisHelper';
 import { Logger } from '../../common/util/HiLogger'
 
-const logger: Logger = new Logger("SafetyTipDialog")
+const logger: Logger = new Logger('SafetyTipDialog')
 
 /*
  *  安全提示弹窗

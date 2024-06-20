@@ -24,14 +24,9 @@ export struct AudioPickerView {
   @Link isShow: boolean;
   @State audioPickerData: AudioPickerViewData = new AudioPickerViewData()
   @State audioPickerViewModel: AudioPickerViewModel = new AudioPickerViewModel()
-  @State localResourceManager: LocalResourceManager = new LocalResourceManager()
   // 选中列表信息
   @State isSelectedAudioPickerList: Array<LocalAudioFile> = []
   @State isSafetyTip: boolean = false
-  @State audioPickerPreference: AudioPickerPreference =
-    createOrGet(AudioPickerPreference, globalKeys.audioPickerPreference)
-  // 是否展示加载更多
-  @State showLoadMore: boolean = false
   @State requestCounts: number = 0
   @State isSelect: boolean = true
   @State indexArr: Array<number> = []
@@ -40,6 +35,9 @@ export struct AudioPickerView {
   private pageNo: number = 0;
   // 设备信息
   private globalDeviceInfo: DeviceInfo = createOrGet(DeviceInfo, globalKeys.deviceInfo)
+  private audioPickerPreference: AudioPickerPreference =
+    createOrGet(AudioPickerPreference, globalKeys.audioPickerPreference)
+  private localResourceManager: LocalResourceManager = new LocalResourceManager()
   session: UIExtensionContentSession | undefined
   want: Want | undefined
   scroller: Scroller = new Scroller()
@@ -249,7 +247,7 @@ export struct AudioPickerView {
             }
             // 判断是否是在加载中
             if (this.audioPickerData.isLoadMore || !this.audioPickerData.hasMoreData) {
-              logger.warn('audioPickerData is showing more view : ' + this.showLoadMore +
+              logger.warn('audioPickerData is showing more view : ' + this.audioPickerData.isLoadMore +
                 ' no more data: ' + this.audioPickerData.hasMoreData)
               return
             }
