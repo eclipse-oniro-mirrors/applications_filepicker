@@ -24,8 +24,6 @@ const logger: Logger = new Logger('AudioPickerExtension')
 @Entry(storage)
 @Component
 struct AudioPickerExtension {
-  @State hoverIndex: number = -1
-  @State actionIsHover: boolean = false
   @State isShow: boolean = false
   private session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session');
   private want: Want | undefined = storage.get<Want>('want');
