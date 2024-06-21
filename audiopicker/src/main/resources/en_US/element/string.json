@@ -1,0 +1,84 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "AudiopickerAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "AudiopickerAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "AccessibilityExtAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "AccessibilityExtAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "AudioPickerExtAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "AudioPickerExtAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "Audio_pickerAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "Audio_pickerAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "media_permission",
+      "value": "Grant access to images, media, and files on your device. This is used to read and write to the memory card, so you can view, search for, and play local audio content."
+    },
+    {
+      "name": "audiopicker_desc",
+      "value": "description"
+    },
+    {
+      "name": "audiopicker_label",
+      "value": "label"
+    },
+    {
+      "name": "got_it",
+      "value": "Got it."
+    },
+    {
+      "name": "secure_access_to_audio_library",
+      "value": "Secure access to audio library"
+    },
+    {
+      "name": "your_audio_will_be_displayed_here",
+      "value": "Your audio will be displayed here and only the audio you select will be accessible."
+    },
+    {
+      "name": "is_elected",
+      "value": "Is selected"
+    },
+    {
+      "name": "complete",
+      "value": "Complete"
+    },
+    {
+      "name": "select_audio",
+      "value": "Select audio"
+    },
+    {
+      "name": "only_selected_items_can_be_accessed",
+      "value": "Only selected items can be accessed"
+    },
+    {
+      "name": "no_matching_content",
+      "value": "No matching content."
+    }
+  ]
+}

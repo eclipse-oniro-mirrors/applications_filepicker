@@ -4,7 +4,7 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "compileSdkVersion": 10,
+        "compileSdkVersion": 12,
         "compatibleSdkVersion": 9
       }
     ]
@@ -13,6 +13,18 @@
     {
       "name": "entry",
       "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "audiopicker",
+      "srcPath": "./audiopicker",
       "targets": [
         {
           "name": "default",

@@ -1,0 +1,84 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "模块描述"
+    },
+    {
+      "name": "AudiopickerAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "AudiopickerAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "AccessibilityExtAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "AccessibilityExtAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "AudioPickerExtAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "AudioPickerExtAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "Audio_pickerAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "Audio_pickerAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "media_permission",
+      "value": "访问您设备上的图片，媒体内容或文件。用于为您读写储卡，以便查看、扫描、播放本地音频。"
+    },
+    {
+      "name": "audiopicker_desc",
+      "value": "description"
+    },
+    {
+      "name": "audiopicker_label",
+      "value": "label"
+    },
+    {
+      "name": "got_it",
+      "value": "知道了"
+    },
+    {
+      "name": "secure_access_to_audio_library",
+      "value": "安全访问音频库"
+    },
+    {
+      "name": "your_audio_will_be_displayed_here",
+      "value": "您的音频会在此处显示，仅可访问您选中的音频。"
+    },
+    {
+      "name": "is_elected",
+      "value": "已选"
+    },
+    {
+      "name": "complete",
+      "value": "完成"
+    },
+    {
+      "name": "select_audio",
+      "value": "选择音频"
+    },
+    {
+      "name": "only_selected_items_can_be_accessed",
+      "value": "仅可访问所选项目"
+    },
+    {
+      "name": "no_matching_content",
+      "value": "没有符合条件的内容"
+    }
+  ]
+}

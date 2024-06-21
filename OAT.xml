@@ -36,6 +36,7 @@
                 <filteritem type="filepath" name="figures/.*.png" desc="self developed image"/>
                 <filteritem type="filepath" name="doc/images/.*.png" desc="self developed image"/>
                 <filteritem type="filepath" name="AppScope/resources/base/media/.*.png" desc="self developed image"/>
+                <filteritem type="filepath" name="audiopicker/src/main/resources/base/media/.*.webp" desc="self developed image"/>
             </filefilter>
 
 
