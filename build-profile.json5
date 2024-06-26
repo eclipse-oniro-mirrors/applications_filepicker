@@ -6,12 +6,6 @@
         "signingConfig": "default",
         "compileSdkVersion": 12,
         "compatibleSdkVersion": 9
-      },
-      {
-        "name": "audioPiker",
-        "signingConfig": "default",
-        "compileSdkVersion": 12,
-        "compatibleSdkVersion": 9
       }
     ]
   },
@@ -35,7 +29,7 @@
         {
           "name": "default",
           "applyToProducts": [
-            "audioPiker"
+            "default"
           ]
         }
       ]
