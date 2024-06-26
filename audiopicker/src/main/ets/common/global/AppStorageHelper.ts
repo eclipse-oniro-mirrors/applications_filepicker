@@ -18,10 +18,6 @@ const logger: Logger = new Logger("AppStorageHelper")
 
 /**
  * [系统全局storage管理类，支持界面绑定]
- *
- * @author
- * @version [V1.0.0.0, 2022/7/20]
- * @since V1.0.0.0
  */
 export class AppStorageHelper {
   active: boolean = true

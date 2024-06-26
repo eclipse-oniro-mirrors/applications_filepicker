@@ -17,10 +17,6 @@ import { Logger } from "../util/HiLogger"
 
 /**
  * [系统全局globalThis管理类，挂载全局变量]
- *
- * @author
- * @version [V1.0.0.0, 2022/7/20]
- * @since V1.0.0.0
  */
 
 const logger: Logger = new Logger("GlobalHelper")

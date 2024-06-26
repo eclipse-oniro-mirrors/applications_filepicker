@@ -6,10 +6,6 @@ import { ViewState } from './ViewState';
 
 /**
  * [AbsBaseViewModel]<BR>
- *
- * @Author: lWX927629
- * @Date: 2024/3/7
- * @Version: V1.0.71
  */
 
 export abstract class  AbsBaseViewModel<VD> {

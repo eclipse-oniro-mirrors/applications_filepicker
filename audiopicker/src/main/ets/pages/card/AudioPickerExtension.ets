@@ -17,9 +17,6 @@ const logger: Logger = new Logger('AudioPickerExtension')
 
 /**
  * [扩展Ability入口页面文件extension]
- *
- * @version [V1.0.0.0, 2024/4/9]
- * @since V1.0.0.0
  */
 @Entry(storage)
 @Component

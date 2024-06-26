@@ -5,9 +5,6 @@
 /**
  * [ObservedArray可观察的数组] <BR>
  *
- * @Author: lWX927629
- * @Date: 2024/3/7
- * @Version: V1.0.71
  */
 
 @Observed

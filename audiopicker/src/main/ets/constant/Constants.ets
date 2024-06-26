@@ -5,9 +5,6 @@
 /**
  * [常量]<BR>
  *
- * @author
- * @version [V1.0.0.0, 2021/12/28]
- * @since V1.0.0.0
  */
 export class Constants {
   /**

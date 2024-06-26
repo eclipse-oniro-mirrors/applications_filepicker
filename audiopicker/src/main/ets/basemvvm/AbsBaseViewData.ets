@@ -5,11 +5,7 @@ import { ObservedArray } from '../data/ObservedArray';
 import { BaseState, ViewState } from './ViewState';
 
 /**
- * [铃声业务页面ViewData]<BR>
  *
- * @Author: lWX927629
- * @Date: 2024/3/7
- * @Version: V1.0.71
  * @param <VS> 页面状态
  * @param <VD> 页面数据
  */
