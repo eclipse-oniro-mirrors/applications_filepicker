@@ -4,10 +4,6 @@
 
 /**
  * [页面状态]<BR>
- *
- * @Author: lWX927629
- * @Date: 2024/3/7
- * @Version: V1.0.71
  */
 
 export enum BaseState {

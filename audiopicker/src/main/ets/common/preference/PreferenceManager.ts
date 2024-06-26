@@ -23,9 +23,6 @@ const preferKeys = ['store', 'setting', 'server_config', 'music_key_sp', 'user_i
 
 /**
  * [系统全局SP管理类]
- *
- * @version [V1.0.0.0, 2022/7/20]
- * @since V1.0.0.0
  */
 export class PreferenceManager {
   preferenceMap: Map<string, Promise<data_preferences.Preferences>> = new Map()

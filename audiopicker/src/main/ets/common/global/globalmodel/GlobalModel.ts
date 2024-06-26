@@ -15,10 +15,6 @@
 
 /**
  * [系统全局globalThis挂载的对象类型定义]
- *
- * @author
- * @version [V1.0.0.0, 2022/7/20]
- * @since V1.0.0.0
  */
 import window from '@ohos.window'
 import display from '@ohos.display'
