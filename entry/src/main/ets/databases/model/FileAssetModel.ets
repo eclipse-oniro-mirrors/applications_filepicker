@@ -24,7 +24,8 @@ import { MimeType } from './MimeType';
 import { THUMBNAIL_SIZE } from '../../base/constants/UiConstant';
 import { BasicDataSource } from './BasicDataSource';
 import Logger from '../../base/log/Logger';
-import AbilityCommonUtil from '../../base/utils/AbilityCommonUtil';
+import AbilityCommonUtil, { ResultCodePicker } from '../../base/utils/AbilityCommonUtil';
+import { StartModeOptions } from '../../base/model/StartModeOptions';
 
 const TAG = 'FileAssetModel';
 
@@ -175,8 +176,8 @@ export class FileAssetModel {
     }
   }
 
-  pickFile(): void {
-    AbilityCommonUtil.terminateFilePicker([this.uri], [this.fileName]);
+  pickFile(startModeOptions: StartModeOptions): void {
+    AbilityCommonUtil.terminateFilePicker([this.uri], ResultCodePicker.SUCCESS, startModeOptions);
   }
 }
 

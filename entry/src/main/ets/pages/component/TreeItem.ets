@@ -73,7 +73,7 @@ export struct TreeItem {
   }
 
   private async getPickPathListFiles(dirUri: string, expandPath: string, level: number): Promise<FileBase[]> {
-    let fileHelper = await FileUtil.getFileAccessHelperAsync(globalThis.abilityContext);
+    let fileHelper = await FileUtil.getFileAccessHelperAsync(getContext());
     let fileInfo: fileAccess.FileInfo = await FileUtil.getFileInfoByUri(dirUri, fileHelper);
     if (ObjectUtil.isNullOrUndefined(fileInfo) || !FileUtil.isFolder(fileInfo.mode)) {
       Logger.e(TAG, 'uri is not folder');

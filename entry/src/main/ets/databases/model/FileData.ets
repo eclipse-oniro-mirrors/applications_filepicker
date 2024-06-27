@@ -19,9 +19,10 @@ import fileAccess from '@ohos.file.fileAccess';
 import { THUMBNAIL_SIZE } from '../../base/constants/UiConstant';
 import { MimeType } from './MimeType';
 import { BasicDataSource } from './BasicDataSource';
-import AbilityCommonUtil from '../../base/utils/AbilityCommonUtil';
+import AbilityCommonUtil, { ResultCodePicker } from '../../base/utils/AbilityCommonUtil';
 import { FileUtil } from '../../base/utils/FileUtil';
 import { ArrayUtil } from '../../base/utils/ArrayUtil';
+import { StartModeOptions } from '../../base/model/StartModeOptions';
 
 export class BreadData {
   public title: string;
@@ -187,8 +188,8 @@ export class FilesData {
     }
   }
 
-  pickFile(): void {
-    AbilityCommonUtil.terminateFilePicker([this.uri], [this.fileName]);
+  pickFile(startModeOptions: StartModeOptions): void {
+    AbilityCommonUtil.terminateFilePicker([this.uri], ResultCodePicker.SUCCESS, startModeOptions);
   }
 
   setSubFolderList(subFolderList: FilesData[]) {

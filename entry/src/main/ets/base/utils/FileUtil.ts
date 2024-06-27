@@ -18,14 +18,14 @@ import fileAccess from '@ohos.file.fileAccess';
 import ObjectUtil from './ObjectUtil';
 import Logger from '../log/Logger';
 import StringUtil from './StringUtil';
-import { FILENAME_MAX_LENGTH,
-  RENAME_CONNECT_CHARACTER } from '../constants/Constant';
+import { FILENAME_MAX_LENGTH, RENAME_CONNECT_CHARACTER } from '../constants/Constant';
 import MediaLibrary from '@ohos.multimedia.mediaLibrary';
+import fs from '@ohos.file.fs';
+import FileUri from '@ohos.file.fileuri';
 
 const TAG = 'FileUtil';
 
 export class FileUtil {
-
   /**
    * uri 格式开头
    */
@@ -68,7 +68,8 @@ export class FileUtil {
    * @param fileAccessHelper fileAccess.FileAccessHelper
    * @returns fileAccess.FileInfo
    */
-  public static async getFileInfoByUri(uri: string, fileAccessHelper: fileAccess.FileAccessHelper): Promise<fileAccess.FileInfo> {
+  public static async getFileInfoByUri(uri: string,
+    fileAccessHelper: fileAccess.FileAccessHelper): Promise<fileAccess.FileInfo> {
     try {
       return await fileAccessHelper.getFileInfoFromUri(uri);
     } catch (err) {
@@ -83,7 +84,8 @@ export class FileUtil {
    * @param fileAccessHelper fileAccess.FileAccessHelper
    * @returns fileAccess.FileInfo
    */
-  public static async getFileInfoByRelativePath(relativePath: string, fileAccessHelper: fileAccess.FileAccessHelper): Promise<fileAccess.FileInfo> {
+  public static async getFileInfoByRelativePath(relativePath: string,
+    fileAccessHelper: fileAccess.FileAccessHelper): Promise<fileAccess.FileInfo> {
     try {
       return await fileAccessHelper.getFileInfoFromRelativePath(relativePath);
     } catch (err) {
@@ -98,7 +100,8 @@ export class FileUtil {
    * @param fileAccessHelper
    * @returns FileIterator
    */
-  public static async getFileIteratorByUri(uri: string, fileAccessHelper: fileAccess.FileAccessHelper): Promise<fileAccess.FileIterator> {
+  public static async getFileIteratorByUri(uri: string,
+    fileAccessHelper: fileAccess.FileAccessHelper): Promise<fileAccess.FileIterator> {
     try {
       let fileInfo = await fileAccessHelper.getFileInfoFromUri(uri);
       return fileInfo.listFile();
@@ -167,7 +170,8 @@ export class FileUtil {
    * @param fileName 文件名
    * return 结果
    */
-  public static async getFileFromFolder(foldrUri: string, fileName, fileAccessHelper: fileAccess.FileAccessHelper): Promise<fileAccess.FileInfo> {
+  public static async getFileFromFolder(foldrUri: string, fileName,
+    fileAccessHelper: fileAccess.FileAccessHelper): Promise<fileAccess.FileInfo> {
     // 先将目录的信息查询出来
     let fileInfo: fileAccess.FileInfo = await this.getFileInfoByUri(foldrUri, fileAccessHelper);
     if (ObjectUtil.isNullOrUndefined(fileInfo)) {
@@ -193,7 +197,11 @@ export class FileUtil {
     return "";
   }
 
-  public static async createFolder(fileAccessHelper: fileAccess.FileAccessHelper, parentUri: string, name: string): Promise<{code, uri}> {
+  public static async createFolder(fileAccessHelper: fileAccess.FileAccessHelper, parentUri: string,
+    name: string): Promise<{
+    code,
+    uri
+  }> {
     let uri: string = '';
     let code: any;
     try {
@@ -202,7 +210,7 @@ export class FileUtil {
       code = error.code;
       Logger.e(TAG, 'createFolder error occurred:' + error.code + ', ' + error.message);
     }
-    return {code: code, uri: uri};
+    return { code: code, uri: uri };
   }
 
   public static async hardDelete(uri: string, mediaLibrary: MediaLibrary.MediaLibrary): Promise<boolean> {
@@ -225,19 +233,26 @@ export class FileUtil {
    * @param newName newName
    * @returns {err, uri}
    */
-  public static async rename(fileAccessHelper: fileAccess.FileAccessHelper, oldUri: string, newName: string): Promise<{err, uri}> {
+  public static async rename(fileAccessHelper: fileAccess.FileAccessHelper, oldUri: string, newName: string): Promise<{
+    err,
+    uri
+  }> {
     let uri: string = '';
     let err: any;
     try {
       uri = await fileAccessHelper.rename(oldUri, newName);
     } catch (error) {
-      err = {code: error.code, message: error.message};
+      err = { code: error.code, message: error.message };
       Logger.e(TAG, 'rename error occurred:' + error.code + ', ' + error.message);
     }
-    return {err: err, uri: uri};
+    return { err: err, uri: uri };
   }
 
-  public static async createFile(fileAccessHelper: fileAccess.FileAccessHelper, parentUri: string, fileName: string): Promise<{err, uri}> {
+  public static async createFile(fileAccessHelper: fileAccess.FileAccessHelper, parentUri: string,
+    fileName: string): Promise<{
+    err,
+    uri
+  }> {
     let retUri: string = '';
     let err: any;
     try {
@@ -245,9 +260,9 @@ export class FileUtil {
       retUri = await fileAccessHelper.createFile(parentUri, fileName);
     } catch (e) {
       Logger.e(TAG, 'createFile error: ' + e.code + ', ' + e.message);
-      err = {code: e.code, message: e.message};
+      err = { code: e.code, message: e.message };
     }
-    return {err: err, uri: retUri};
+    return { err: err, uri: retUri };
   }
 
   public static hasSubFolder(loadPath: string, curFolderPath: string): boolean {
@@ -337,5 +352,66 @@ export class FileUtil {
       return path;
     }
     return null;
+  }
+
+  /**
+   * 根据文件的沙箱路径获取文件uri
+   * @param path 文件的沙箱路径
+   * @returns 文件的uri
+   */
+  public static getUriFromPath(path: string): string {
+    let uri = '';
+    try {
+      // 该接口如果以’/'结尾，返回的uri会以‘/'结尾
+      uri = FileUri.getUriFromPath(path);
+    } catch (error) {
+      Logger.e(TAG, 'getUriFromPath fail, error:' + JSON.stringify(error));
+    }
+    return uri;
+  }
+
+  /**
+   * 将文件uri转换成FileUri对象
+   */
+  public static getFileUriObjectFromUri(uri: string): FileUri.FileUri | undefined {
+    let fileUriObject: FileUri.FileUri | undefined;
+    try {
+      fileUriObject = new FileUri.FileUri(uri);
+    } catch (error) {
+      Logger.e(TAG, 'getFileUriObjectFromUri fail, error:' + JSON.stringify(error));
+    }
+    return fileUriObject;
+  }
+
+  /**
+   * 通过将文件uri转换成FileUri对象获取文件的沙箱路径
+   * @param uri 文件uri
+   * @returns 文件的沙箱路径
+   */
+  public static getPathFromUri(uri: string): string {
+    let path = '';
+    const fileUriObj = FileUtil.getFileUriObjectFromUri(uri);
+    if (!!fileUriObj) {
+      path = fileUriObj.path;
+    }
+    return path;
+  }
+
+  /**
+   * 创建文件夹
+   * @param parentFolderUri 父目录uri
+   * @param newFolderName 新文件夹名
+   * @returns 新文件夹uri
+   */
+  public static createFolderByFs(parentFolderUri: string, newFolderName: string): string {
+    try {
+      const parentFolderPath = FileUtil.getPathFromUri(parentFolderUri);
+      const newFolderPath = parentFolderPath + '/' + newFolderName;
+      fs.mkdirSync(newFolderPath);
+      return FileUtil.getUriFromPath(newFolderPath);
+    } catch (error) {
+      Logger.e(TAG, 'createFolderByFs fail, error:' + JSON.stringify(error));
+      throw error as Error;
+    }
   }
 }

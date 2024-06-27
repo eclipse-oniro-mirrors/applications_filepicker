@@ -15,7 +15,7 @@
     "abilities": [
       {
         "name": "MainAbility",
-        "srcEntry": "./ets/entryability/MainAbility.ts",
+        "srcEntry": "./ets/entryability/MainAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:app_icon",
         "label": "$string:EntryAbility_label",
@@ -31,6 +31,15 @@
           }
         ]
       }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "FilePickerUIExtAbility",
+        "srcEntry": "./ets/entryability/FilePickerUIExtAbility.ets",
+        "description": "FilePickerUIExtAbility",
+        "exported": true,
+        "type": "sysPicker/filePicker",
+      },
     ],
     requestPermissions: [
       // 媒体库管理权限

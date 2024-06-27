@@ -28,20 +28,24 @@ import { Loading } from '../../component/common/Loading';
 import { getMediaType, getDurationByUri } from '../../../databases/model/FileAssetModel';
 import Logger from '../../../base/log/Logger';
 import multimedia_image from '@ohos.multimedia.image';
-import AbilityCommonUtil from '../../../base/utils/AbilityCommonUtil';
+import AbilityCommonUtil, { ResultCodePicker } from '../../../base/utils/AbilityCommonUtil';
 import ObjectUtil from '../../../base/utils/ObjectUtil';
 import StringUtil from '../../../base/utils/StringUtil';
 import { FileUtil } from '../../../base/utils/FileUtil';
 import fileAccess from '@ohos.file.fileAccess';
+import { StartModeOptions } from '../../../base/model/StartModeOptions';
+import { FilePickerUtil } from '../../../base/utils/FilePickerUtil';
 
 const TAG = 'myPhone';
+let storage = LocalStorage.getShared();
 
-@Entry
+@Entry(storage)
 @Component
 struct MyPhone {
   /**
    * 正在加载
    */
+  private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
   @State isShowLoading: boolean = true;
   /**
    * 文件或文件夹数据
@@ -119,7 +123,7 @@ struct MyPhone {
       }
       if (Array.isArray(fileData)) {
         isContinue = true;
-        for (let i = 0;i < fileData.length; i++) {
+        for (let i = 0; i < fileData.length; i++) {
           let fileName: string = fileData[i].fileName;
           let currentDir: string = FileUtil.getPathWithFileSplit(fileData[i].currentDir);
           if (data.startsWith(currentDir)) {
@@ -149,7 +153,7 @@ struct MyPhone {
 
   onPageShow() {
     // 文件选择器并且是多选模式下详情返回不更新，避免原有多选被重置
-    if (globalThis.filePickerViewFlag && this.isMulti) {
+    if (this.isMulti) {
       return;
     }
     setImmersion(false);
@@ -197,7 +201,7 @@ struct MyPhone {
 
   backCallback(): void {
     if (!this.isMulti) {
-      AbilityCommonUtil.terminateFilePicker([], [], AbilityCommonUtil.RESULT_CODE.CANCEL);
+      AbilityCommonUtil.terminateFilePicker([], ResultCodePicker.SUCCESS, this.startModeOptions);
     } else {
       this.initData();
     }
@@ -228,7 +232,7 @@ struct MyPhone {
     multimedia_image.createPixelMap(new ArrayBuffer(4096), { size: { height: 1, width: 2 } }).then((pixelMap) => {
     })
     this.setShowLoading(true);
-    let pickPath = this.getParams();
+    let pickPath = this.getParams(this.startModeOptions);
     if (StringUtil.isEmpty(pickPath)) {
       this.getRootListFile();
     } else {
@@ -241,8 +245,8 @@ struct MyPhone {
     this.fileMkdirDialog = null;
   }
 
-  getParams(): string {
-    let defaultPickPath = globalThis.keyFileDefaultPickPath;
+  getParams(startModeOptions: StartModeOptions): string {
+    let defaultPickPath = startModeOptions.defaultFilePathUri;
     if (!ObjectUtil.isNullOrUndefined(defaultPickPath)) {
       return defaultPickPath;
     }
@@ -294,7 +298,7 @@ struct MyPhone {
             this.getRootListFile();
           }
         } else {
-          AbilityCommonUtil.terminateFilePicker([], [], AbilityCommonUtil.RESULT_CODE.CANCEL);
+          AbilityCommonUtil.terminateFilePicker([], ResultCodePicker.CANCEL, this.startModeOptions);
         }
       }
       return true;
@@ -302,9 +306,30 @@ struct MyPhone {
   }
 
   build() {
+    if (this.startModeOptions.isUxt()) {
+      Column() {
+      }.bindSheet(true, this.mainContent(), {
+        height: SheetSize.FIT_CONTENT,
+        dragBar: false,
+        showClose: false,
+        preferType: SheetType.CENTER,
+        onAppear: () => {
+        },
+        shouldDismiss: () => {
+          this.startModeOptions.session.terminateSelf();
+        }
+      })
+    } else {
+      this.mainContent()
+    }
+  }
+
+  @Builder
+  mainContent() {
     Column() {
       // 头部导航
       TopBar({
+        startModeOptions: this.startModeOptions,
         title: getResourceString($r('app.string.myPhone')),
         isMulti: this.isMulti,
         selectAll: this.selectAll,
@@ -328,6 +353,7 @@ struct MyPhone {
         if (!this.isShowLoading) {
           // 文件列表
           FilesList({
+            startModeOptions: this.startModeOptions,
             fileListSource: $fileListSource,
             direList: $direList,
             isMulti: $isMulti,

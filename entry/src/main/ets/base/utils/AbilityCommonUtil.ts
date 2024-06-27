@@ -25,19 +25,37 @@ import { FILE_MANAGER_PREFERENCES, FILE_SUFFIX, SELECT_MODE } from '../constants
 import StringUtil from './StringUtil'
 import { ArrayUtil } from './ArrayUtil'
 import { getPreferences } from './PreferencesUtil'
+import { ability, Want } from '@kit.AbilityKit'
+import { StartModeOptions } from '../model/StartModeOptions'
+import ctx from '@ohos.app.ability.common';
+import { PickerWindowType } from '../constants/FilePickerItems'
 
 const TAG = 'AbilityCommonUtil'
 
+const BUNDLE_NAME = 'com.ohos.filepicker'
 let mediaLibrary: MediaLibrary.MediaLibrary = null
+
+/**
+ * picker对外返回的响应码
+ */
+export enum ResultCodePicker {
+  SUCCESS = 0,
+  CANCEL = -1
+}
+
+interface abilityResultInterface {
+  want: Want,
+  resultCode: number
+};
 
 /**
  * Ability公共工具类
  */
 namespace AbilityCommonUtil {
 
-/**
- * 需要用户授权的权限列表
- */
+  /**
+   * 需要用户授权的权限列表
+   */
   export const PERMISSION_LIST: Array<Permissions> = [
     "ohos.permission.MEDIA_LOCATION",
     "ohos.permission.READ_MEDIA",
@@ -79,6 +97,7 @@ namespace AbilityCommonUtil {
     FILE_PICKER: 'FilePickerAbility',
     PATH_PICKER: 'PathPickerAbility'
   }
+
   /**
    * 拉起Ability时必要的初始化操作
    */
@@ -108,7 +127,8 @@ namespace AbilityCommonUtil {
         let isDone = result.done
         while (!isDone) {
           const rootInfo: fileAccess.RootInfo = result.value
-          Logger.i(TAG, 'RootInfo: ' + rootInfo.uri + ', ' + rootInfo.deviceType + ', ' + rootInfo.deviceFlags + ', ' + rootInfo.displayName+','+rootInfo.relativePath)
+          Logger.i(TAG, 'RootInfo: ' + rootInfo.uri + ', ' + rootInfo.deviceType + ', ' + rootInfo.deviceFlags + ', ' +
+          rootInfo.displayName + ',' + rootInfo.relativePath)
           rootInfoArr.push(rootInfo)
           result = rootIterator.next()
           isDone = result.done
@@ -185,14 +205,14 @@ namespace AbilityCommonUtil {
           grantSuccessCount++;
         } catch (error) {
           resolve(false);
-          Logger.e(TAG, `grantUriPermission fail,grantSuccessCount:${grantSuccessCount}}, uri: ${uri}, error: ${JSON.stringify(error)}`);
+          Logger.e(TAG,
+            `grantUriPermission fail,grantSuccessCount:${grantSuccessCount}}, uri: ${uri}, error: ${JSON.stringify(error)}`);
           return;
         }
       }
       Logger.i(TAG, "grantUriPermission end,grantSuccessCount = " + grantSuccessCount);
       resolve(true)
     })
-
   }
 
   /**
@@ -201,78 +221,64 @@ namespace AbilityCommonUtil {
    * @param result
    * @param message
    */
-  export async function terminateFilePicker(result: Array<string> = [], displayNames: Array<string> = [], resultCode: number = RESULT_CODE.SUCCESS, message: string = ''): Promise<void> {
-    const bundleName = globalThis.pickerCallerBundleName
-    if (result.length && bundleName) {
-      // uri授权
-      const isSuccess = await grantUriPermission(result, bundleName);
-      if (!isSuccess) {
-        resultCode = ErrorCodeConst.PICKER.GRANT_URI_PERMISSION_FAIL,
-        result = []
-        message = 'uri grant permission fail'
-        displayNames = []
+  export async function terminateFilePicker(result: string[] = [],
+    resultCode: number = ResultCodePicker.SUCCESS, startModeOptions: StartModeOptions): Promise<void> {
+    Logger.i(TAG, 'enter terminateFilePicker, result length： ' + result.length + ', resultCode:' + resultCode);
+    let want: Want = {
+      bundleName: BUNDLE_NAME,
+      flags: wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION,
+      parameters: {
+        'ability.params.stream': result
       }
-    }
-
-    let abilityResult = {
-      resultCode: resultCode,
-      want: {
-        bundleName: globalThis.abilityContext.abilityInfo.bundleName,
-        abilityName: ABILITY_LIST.FILE_PICKER,
-        parameters: {
-          'select_item_list': result,
-          'file_name_list': displayNames,
-          message: message,
-          'result': result[0],
-        }
-      }
-    }
-    globalThis.abilityContext.terminateSelfWithResult(abilityResult, (error) => {
-      if (error.code) {
-        Logger.e(TAG, 'terminateFilePicker failed. Cause: ' + JSON.stringify(error))
-        return
-      }
-      Logger.d(TAG, 'terminateFilePicker success. result: ' + JSON.stringify(abilityResult))
-    })
+    };
+    returnAbilityResult(want, resultCode, startModeOptions);
   }
+
   /**
    * 文件创建完成，返回uri列表
    * @param result
    * @param resultCode
    * @param message
    */
-  export async function terminatePathPicker(result: Array<string>, resultCode: number = RESULT_CODE.SUCCESS, message: string = ''): Promise<void> {
-    const bundleName = globalThis.pathCallerBundleName
-    if (result.length && bundleName) {
-      // uri授权
-      const isSuccess = await grantUriPermission(result, bundleName);
-      if (!isSuccess) {
-        resultCode = ErrorCodeConst.PICKER.GRANT_URI_PERMISSION_FAIL,
-        result = []
-        message = 'uri grant permission fail'
+  export async function terminatePathPicker(result: string[],
+    resultCode: number = ResultCodePicker.SUCCESS, startModeOptions: StartModeOptions): Promise<void> {
+
+    Logger.i(TAG, 'enter terminatePathPicker, result length： ' + result.length + ', resultCode:' + resultCode);
+    let want: Want = {
+      bundleName: BUNDLE_NAME,
+      abilityName: ABILITY_LIST.PATH_PICKER,
+      flags: wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION,
+      parameters: {
+        'ability.params.stream': result,
+        KEY_PICK_SELECT_CLOUD_DISK: false
       }
+    };
+    returnAbilityResult(want, resultCode, startModeOptions);
+  }
+
+
+
+  export function returnAbilityResult(want: Want, resultCode: number, options: StartModeOptions) {
+    Logger.i(TAG, 'returnPicker start');
+    if (options.windowType === PickerWindowType.ABILITY) {
+      let abilityResult: abilityResultInterface = {
+        want: want,
+        resultCode: resultCode
+      };
+      Logger.i(TAG, 'uiContext terminateSelfWithResult start');
+      options.uiContext.terminateSelfWithResult(abilityResult, (error) => {
+        Logger.i(TAG, 'terminateSelfWithResult is called = ' + error.code);
+      });
+    } else {
+      let abilityResult: ability.AbilityResult = {
+        resultCode: resultCode,
+        want: want
+      };
+      Logger.i(TAG, 'session terminateSelfWithResult start');
+      options.session.terminateSelfWithResult(abilityResult, (error) => {
+        Logger.e(TAG, 'closeUIExtFilePicker terminateSelfWithResult is called = ' + error?.code);
+      });
     }
-    let abilityResult = {
-      resultCode: resultCode,
-      want: {
-        bundleName: globalThis.pathAbilityContext.abilityInfo.bundleName,
-        abilityName: ABILITY_LIST.PATH_PICKER,
-        parameters: {
-          'pick_path_return': result,
-          'key_pick_select_clouddisk': false,
-          'message': message,
-          // 兼容老版本picker
-          'result': result[0]
-        }
-      }
-    }
-    globalThis.pathAbilityContext.terminateSelfWithResult(abilityResult, (error) => {
-      if (error.code) {
-        Logger.e(TAG, 'terminatePathPicker failed. Cause: ' + JSON.stringify(error))
-        return
-      }
-      Logger.d(TAG, 'terminatePathPicker success. result: ' + JSON.stringify(abilityResult))
-    })
   }
 
   /**
@@ -293,8 +299,8 @@ namespace AbilityCommonUtil {
    * @param keyPickType 调用方传入文件类型（兼容双框架action）
    * @param keyPickTypeList 调用方传入文件类型列表
    */
-  export function getKeyPickTypeList(keyPickType, keyPickTypeList): Array<string>{
-    let typeList =[]
+  export function getKeyPickTypeList(keyPickType, keyPickTypeList): Array<string> {
+    let typeList = []
     if (keyPickType) {
       typeList.push(keyPickType)
     }
