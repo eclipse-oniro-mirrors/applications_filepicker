@@ -24,14 +24,10 @@ export enum VirtualUri {
   // Storage Location
   MY_PC = 'file://docs/storage/Users/currentUser',
   DOCUMENT = 'file://docs/storage/Users/currentUser/Documents',
-  CLOUD_DRIVE = 'file://com.huawei.hmos.filemanager/data/storage/el2/cloud',
-  SAFE_BOX_URI = 'file://com.huawei.hmos.filemanager/data/storage/el2/base/files/File_SafeBox',
   EXTERNAL_DISK = 'file://docs/storage/External',
   PCENGINE = 'file://docs/storage/Users/currentUser/PCEngine',
   // gallery
   GALLERY = 'gallery',
   // fileTag
   FILE_TAG = 'fileTag',
-  // SafeBox
-  SAFE_BOX = 'file://com.huawei.hmos.filemanager/data/storage/el2/base/files/File_SafeBox'
 }
