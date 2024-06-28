@@ -27,13 +27,17 @@ import { FileUtil } from '../../../base/utils/FileUtil';
 import Logger from '../../../base/log/Logger';
 import { ArrayUtil } from '../../../base/utils/ArrayUtil';
 import ErrorCodeConst from '../../../base/constants/ErrorCodeConst';
+import { StartModeOptions } from '../../../base/model/StartModeOptions';
+import { FilePickerUtil } from '../../../base/utils/FilePickerUtil';
 
-@Styles function pressedStyles () {
+@Styles
+function pressedStyles() {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
 }
 
-@Styles function normalStyles() {
+@Styles
+function normalStyles() {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.transparent_color'))
 }
@@ -42,6 +46,7 @@ const TAG = 'fileTree';
 
 @Component
 export struct fileTree {
+  private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
   @State listLength: number = 0;
   @State positionY: string | number = '100%';
   @State topRotate: boolean = false;
@@ -77,12 +82,12 @@ export struct fileTree {
 
   async aboutToAppear() {
     toast($r('app.string.select_location'))
-    const fileNameList = globalThis.keyPickFileName;
+    const fileNameList = this.startModeOptions.newFileNames;
     this.listLength = fileNameList.length;
     const fileName: string = fileNameList[0];
     if (fileName) {
       const dotIndex = fileName.lastIndexOf('.');
-      let fileSuffix = globalThis.keyFileSuffixChoices;
+      let fileSuffix = this.startModeOptions.PhoneFileSuffixChoices;
       if (!StringUtil.isEmpty(fileSuffix)) {
         this.suffix = fileSuffix;
         if (dotIndex > 0) {
@@ -104,7 +109,7 @@ export struct fileTree {
     if (globalThis.documentInfo) {
       this.selectUri = globalThis.documentInfo.uri;
     }
-    this.loadDefaultExpandPath();
+    this.loadDefaultExpandPath(this.startModeOptions);
   }
 
   aboutToDisappear() {
@@ -200,14 +205,14 @@ export struct fileTree {
   /**
    * 加载默认展开目录，如果是路径选择器拉起的，优先使用三方指定的目录
    */
-  async loadDefaultExpandPath() {
-    let defaultPickDir = globalThis.keyPathDefaultPickDir;
+  async loadDefaultExpandPath(startModeOptions: StartModeOptions) {
+    let defaultPickDir = startModeOptions.defaultFilePathUri;
     let loadUri = this.lastSelectPath;
     if (!StringUtil.isEmpty(defaultPickDir)) {
       loadUri = defaultPickDir;
     }
     if (!StringUtil.isEmpty(loadUri)) {
-      let fileHelper = await FileUtil.getFileAccessHelperAsync(globalThis.abilityContext);
+      let fileHelper = await FileUtil.getFileAccessHelperAsync(startModeOptions.context);
       let fileInfo = await FileUtil.getFileInfoByUri(loadUri, fileHelper);
       if (fileInfo) {
         this.defaultExpandPath = FileUtil.getCurrentFolderByFileInfo(fileInfo);

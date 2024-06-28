@@ -15,7 +15,9 @@
 
 import context from '@ohos.app.ability.common';
 import { renderSize } from '../../../base/utils/Tools';
-import AbilityCommonUtil from '../../../base//utils/AbilityCommonUtil';
+import AbilityCommonUtil, { ResultCodePicker } from '../../../base//utils/AbilityCommonUtil';
+import { StartModeOptions } from '../../../base/model/StartModeOptions';
+import { FilePickerUtil } from '../../../base/utils/FilePickerUtil';
 
 @Styles
 function pressedStyles() {
@@ -24,7 +26,7 @@ function pressedStyles() {
 }
 
 @Styles
-function normalStyles () {
+function normalStyles() {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.transparent_color'))
 }
@@ -35,10 +37,9 @@ function subtitleStyles(fontSize: Resource) {
   .alignSelf(ItemAlign.Start)
 }
 
-const filePickerViewFlag = globalThis.filePickerViewFlag;
-
 @Component
 export struct TopBar {
+  private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
   private title?: string = '';
   private subtitle?: string = '';
   private fileSize?: number = 0;
@@ -57,9 +58,10 @@ export struct TopBar {
   }
 
   initTitle(): string | Resource {
-    if (this.isMulti && !filePickerViewFlag) {
+    if (this.isMulti) {
       return this.checkedNum === 0 ? $r('app.string.selected_none') : this.checkedNum === 1 ?
-      $r('app.string.selected_items_singular', this.checkedNum) : $r('app.string.selected_items_plural', this.checkedNum);
+      $r('app.string.selected_items_singular', this.checkedNum) :
+      $r('app.string.selected_items_plural', this.checkedNum);
     } else {
       return this.title;
     }
@@ -67,7 +69,8 @@ export struct TopBar {
 
   filePickerTitle() {
     if (this.isMulti) {
-      return this.checkedNum === 0 ? $r('app.string.selected_none') : $r('app.string.selected', this.checkedNum, globalThis.filePickNum);
+      return this.checkedNum === 0 ? $r('app.string.selected_none') :
+      $r('app.string.selected', this.checkedNum, globalThis.filePickNum);
     } else {
       return this.title;
     }
@@ -89,7 +92,7 @@ export struct TopBar {
     }
     const uriList = this.checkedList.map(item => item.uri);
     const fileNameList = this.checkedList.map(item => item.fileName);
-    AbilityCommonUtil.terminateFilePicker(uriList, fileNameList);
+    AbilityCommonUtil.terminateFilePicker(uriList, ResultCodePicker.SUCCESS, this.startModeOptions);
   }
 
   build() {
@@ -115,7 +118,7 @@ export struct TopBar {
       })
 
       Column() {
-        Text(filePickerViewFlag ? this.filePickerTitle() : this.initTitle())
+        Text(this.filePickerTitle())
           .fontColor($r('app.color.black'))
           .fontSize($r('app.float.common_font_size20'))
           .fontWeight(FontWeight.Medium)
@@ -136,49 +139,46 @@ export struct TopBar {
       .layoutWeight(1)
       .alignItems(HorizontalAlign.Start)
 
-      if (filePickerViewFlag) {
-        if (!this.isMulti) {
-          Column() {
-            Image($r('app.media.hidisk_cancel_normal'))
-              .objectFit(ImageFit.Contain)
-              .width($r('app.float.common_size24'))
-              .height($r('app.float.common_size24'))
-              .interpolation(ImageInterpolation.Medium)
-          }.padding({
-            left: $r('app.float.common_padding12'),
-            right: $r('app.float.common_padding12'),
-            top: $r('app.float.common_padding10'),
-            bottom: $r('app.float.common_padding10')
-          })
-          .stateStyles({
-            pressed: pressedStyles,
-            normal: normalStyles
-          })
-          .onClick(() => {
-            let abilityContext = getContext(this) as context.UIAbilityContext;
-            abilityContext.terminateSelf();
-          })
-        } else {
-          Column() {
-            Image($r('app.media.ic_ok'))
-              .objectFit(ImageFit.Contain)
-              .width($r('app.float.common_size24'))
-              .height($r('app.float.common_size24'))
-          }.padding({
-            left: $r('app.float.common_padding12'),
-            right: $r('app.float.common_padding12'),
-            top: $r('app.float.common_padding10'),
-            bottom: $r('app.float.common_padding10')
-          })
-          .stateStyles({
-            pressed: pressedStyles,
-            normal: normalStyles
-          })
-          .onClick(() => {
-            this.terminate();
-          })
-          .opacity(this.checkSelectedFileList() ? $r('app.float.common_opacity10') : $r('app.float.common_opacity4'))
-        }
+      if (!this.isMulti) {
+        Column() {
+          Image($r('app.media.hidisk_cancel_normal'))
+            .objectFit(ImageFit.Contain)
+            .width($r('app.float.common_size24'))
+            .height($r('app.float.common_size24'))
+            .interpolation(ImageInterpolation.Medium)
+        }.padding({
+          left: $r('app.float.common_padding12'),
+          right: $r('app.float.common_padding12'),
+          top: $r('app.float.common_padding10'),
+          bottom: $r('app.float.common_padding10')
+        })
+        .stateStyles({
+          pressed: pressedStyles,
+          normal: normalStyles
+        })
+        .onClick(() => {
+          AbilityCommonUtil.terminateFilePicker([], ResultCodePicker.CANCEL, this.startModeOptions);
+        })
+      } else {
+        Column() {
+          Image($r('app.media.ic_ok'))
+            .objectFit(ImageFit.Contain)
+            .width($r('app.float.common_size24'))
+            .height($r('app.float.common_size24'))
+        }.padding({
+          left: $r('app.float.common_padding12'),
+          right: $r('app.float.common_padding12'),
+          top: $r('app.float.common_padding10'),
+          bottom: $r('app.float.common_padding10')
+        })
+        .stateStyles({
+          pressed: pressedStyles,
+          normal: normalStyles
+        })
+        .onClick(() => {
+          this.terminate();
+        })
+        .opacity(this.checkSelectedFileList() ? $r('app.float.common_opacity10') : $r('app.float.common_opacity4'))
       }
     }
     .height($r('app.float.common_mark_y50'))

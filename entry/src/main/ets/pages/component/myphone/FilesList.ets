@@ -16,26 +16,29 @@
 import { BreadData, FilesData, FileDataSource } from '../../../databases/model/FileData';
 import { renderSize, gridName, isDlpFile } from '../../../base/utils/Tools';
 import DateTimeUtil from '../../../base/utils/DateTimeUtil';
-import { pickerStatus, filePickerTip } from '../../../base/utils/FilePickerUtil';
+import { pickerStatus, filePickerTip, FilePickerUtil } from '../../../base/utils/FilePickerUtil';
 import { Z_INDEX } from '../../../base/constants/UiConstant';
 import Logger from '../../../base/log/Logger';
 import { NoContent } from '../common/NoContent';
 import { VideoDurationTag } from '../common/VideoDurationTag';
+import { StartModeOptions } from '../../../base/model/StartModeOptions';
 
 const TAG = 'MyPhone_FilesList';
-const filePickerViewFlag = globalThis.filePickerViewFlag;
 
-@Styles function pressedStyles() {
+@Styles
+function pressedStyles() {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
 }
 
-@Styles function normalStyles() {
+@Styles
+function normalStyles() {
   .borderRadius($r('app.float.common_borderRadius8'))
   .backgroundColor($r('app.color.transparent_color'))
 }
 
-@Extend(Text) function grayText() {
+@Extend(Text)
+function grayText() {
   .fontSize($r('app.float.common_font_size12'))
   .fontColor($r('app.color.black'))
   .lineHeight($r('app.float.common_size19'))
@@ -44,6 +47,7 @@ const filePickerViewFlag = globalThis.filePickerViewFlag;
 
 @Component
 export struct FilesList {
+  private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
   @Link fileListSource: FileDataSource;
   /**
    * 面包屑
@@ -81,6 +85,7 @@ export struct FilesList {
       LazyForEach(this.fileListSource, (item, index) => {
         ListItem() {
           FileListItem({
+            startModeOptions: this.startModeOptions,
             fileItem: item,
             fileListSource: $fileListSource,
             direList: $direList,
@@ -100,6 +105,7 @@ export struct FilesList {
       LazyForEach(this.fileListSource, (item, index) => {
         GridItem() {
           FileListItem({
+            startModeOptions: this.startModeOptions,
             fileItem: item,
             fileListSource: $fileListSource,
             direList: $direList,
@@ -120,6 +126,7 @@ export struct FilesList {
 
 @Component
 struct FileListItem {
+  private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
   @Consume isList: boolean;
   @State fileItem: FilesData = new FilesData({});
   @Link fileListSource: FileDataSource;
@@ -127,7 +134,7 @@ struct FileListItem {
   @Link @Watch('isMultiChange') isMulti: boolean;
   @Link checkedNum: number;
   @State isChecked: boolean = false;
-  @State filePickerViewFlag: boolean = globalThis.filePickerViewFlag;
+  @State filePickerViewFlag: boolean = true;
   @State isImageLoaded: boolean = true;
 
   isShowThumbnail(item) {
@@ -148,7 +155,7 @@ struct FileListItem {
 
   getRightIcon(item): Resource {
     if (this.isMulti) {
-      if (pickerStatus(this.fileItem, this.checkedNum).differentTypes) {
+      if (pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions).differentTypes) {
         return;
       }
       return item.isChecked ? $r('app.media.checkbox_b') : $r('app.media.checkbox_g');
@@ -191,9 +198,9 @@ struct FileListItem {
       if (this.fileItem.isFolder) {
         return;
       }
-      let status = pickerStatus(this.fileItem, this.checkedNum);
+      let status = pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions);
       if (status.exceedLimit) {
-        filePickerTip();
+        filePickerTip(this.startModeOptions);
         return;
       }
       if (status.differentTypes) {
@@ -208,14 +215,14 @@ struct FileListItem {
 
   onClickEvent() {
     Logger.i(TAG, 'onClickEvent start');
-    let status = pickerStatus(this.fileItem, this.checkedNum);
+    let status = pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions);
     if (this.isMulti) {
       if (this.fileItem.isFolder) {
         return;
       }
       // 选择器页面，选择文件超出上限
       if (status.exceedLimit) {
-        filePickerTip();
+        filePickerTip(this.startModeOptions);
         return;
       } else if (status.differentTypes) {
         return;
@@ -238,7 +245,7 @@ struct FileListItem {
         }
         if (!status.exceedLimit && !status.differentTypes) {
           // 选中的数据回调给三方应用
-          this.fileItem.pickFile();
+          this.fileItem.pickFile(this.startModeOptions);
           return;
         }
       }
@@ -258,7 +265,7 @@ struct FileListItem {
   }
 
   calOpacity() {
-    const statusObj = pickerStatus(this.fileItem, this.checkedNum);
+    const statusObj = pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions);
     return statusObj.exceedLimit || (!this.fileItem.isFolder && statusObj.differentTypes) ||
       (this.isMulti && this.fileItem.isFolder) ? $r('app.float.common_opacity2') : $r('app.float.common_opacity10');
   }
@@ -332,8 +339,10 @@ struct FileListItem {
 
   @Builder
   buildGridItemView() {
-    Flex({ direction: FlexDirection.Column,
-      alignItems: ItemAlign.Center }) {
+    Flex({
+      direction: FlexDirection.Column,
+      alignItems: ItemAlign.Center
+    }) {
       Column() {
         Column() {
           Image(this.isShowThumbnail(this.fileItem) ? this.fileItem.thumbUri : this.fileItem.localGridIcon)

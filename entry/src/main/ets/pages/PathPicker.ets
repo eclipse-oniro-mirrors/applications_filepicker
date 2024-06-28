@@ -17,7 +17,7 @@ import { fileTree } from './component/dialog/FileMoveDialog';
 import Logger from '../base/log/Logger';
 import ErrorCodeConst from '../base//constants/ErrorCodeConst';
 import { toast } from '../base/utils/Common';
-import AbilityCommonUtil from '../base/utils/AbilityCommonUtil';
+import AbilityCommonUtil, { ResultCodePicker } from '../base/utils/AbilityCommonUtil';
 import { SYSTEM_BAR_COLOR } from '../base/constants/UiConstant';
 import StringUtil from '../base/utils/StringUtil';
 import { FileUtil } from '../base/utils/FileUtil';
@@ -26,30 +26,34 @@ import MediaLibrary from '@ohos.multimedia.mediaLibrary';
 import fileAccess from '@ohos.file.fileAccess';
 import { ArrayUtil } from '../base/utils/ArrayUtil';
 import { UiUtil } from '../base/utils/UiUtil';
+import { StartModeOptions } from '../base/model/StartModeOptions';
+import { FilePickerUtil } from '../base/utils/FilePickerUtil';
 
 const TAG = 'PathSelector';
+let storage = LocalStorage.getShared();
 
-@Entry
+@Entry(storage)
 @Component
 struct PathSelector {
+  private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
   @State createResultType: number = ErrorCodeConst.PICKER.NORMAL;
 
   aboutToAppear() {
     UiUtil.setWindowBackground(SYSTEM_BAR_COLOR.LIGHT_GRAY);
   }
 
-  async saveFileCallback(res): Promise<void> {
+  async saveFileCallback(res, startModeOptions: StartModeOptions): Promise<void> {
     if (res?.cancel) {
-      globalThis.pathAbilityContext.terminateSelf();
+      AbilityCommonUtil.terminatePathPicker([], ResultCodePicker.CANCEL, startModeOptions);
       return;
     } else {
-      let fileNameList = globalThis.keyPickFileName;
+      let fileNameList = this.startModeOptions.newFileNames;
       // 保存单个文件时文件名可修改，需使用修改后的文件名来创建文件
       if (fileNameList.length <= 1) {
         fileNameList = [res.fileName];
       }
       this.saveFiles(res.selectUri, fileNameList).then((createdFileList) => {
-        AbilityCommonUtil.terminatePathPicker(createdFileList);
+        AbilityCommonUtil.terminatePathPicker(createdFileList, ResultCodePicker.SUCCESS, startModeOptions);
       }).catch((err) => {
         let errorMessage = '';
         let errorCode = 0;
@@ -59,7 +63,7 @@ struct PathSelector {
             errorMessage = 'Same name file already exists';
             errorCode = ErrorCodeConst.PICKER.FILE_NAME_EXIST;
             this.createResultType = errorCode;
-            const pathName = globalThis.keyPickFileName;
+            const pathName = startModeOptions.newFileNames;
             let listLength: number = pathName.length;
             if (listLength == 1) {
               return;
@@ -75,7 +79,7 @@ struct PathSelector {
           errorMessage = err.message ? err.message : err;
           errorCode = ErrorCodeConst.PICKER.OTHER_ERROR;
         }
-        AbilityCommonUtil.terminatePathPicker([], errorCode, errorMessage);
+        AbilityCommonUtil.terminatePathPicker([], errorCode, startModeOptions);
         toast($r('app.string.save_file_fail'));
         Logger.e(TAG, `path select error, errorCode: ${errorCode}, errorMessage: ${errorMessage}`);
       })
@@ -182,7 +186,7 @@ struct PathSelector {
   }
 
   private async tryRenameFileOperate(fileAccessHelper: fileAccess.FileAccessHelper, fileName: string,
-                                     dirUri: string, renameCount: number, fileNameList: string[] = []): Promise<{
+    dirUri: string, renameCount: number, fileNameList: string[] = []): Promise<{
     err,
     uri
   }> {
@@ -229,11 +233,32 @@ struct PathSelector {
   }
 
   build() {
+    if (this.startModeOptions.isUxt()) {
+      Column() {
+      }.bindSheet(true, this.mainContent(), {
+        height: SheetSize.FIT_CONTENT,
+        dragBar: false,
+        showClose: false,
+        preferType: SheetType.CENTER,
+        onAppear: () => {
+        },
+        shouldDismiss: () => {
+          this.startModeOptions.session.terminateSelf();
+        }
+      })
+    } else {
+      this.mainContent()
+    }
+  }
+
+  @Builder
+  mainContent() {
     Row() {
       fileTree({
+        startModeOptions: this.startModeOptions,
         createFileFailType: $createResultType,
         moveCallback: (e) => {
-          this.saveFileCallback(e);
+          this.saveFileCallback(e, this.startModeOptions);
         }
       })
     }
