@@ -12,10 +12,10 @@
       {
         "name": "default",
         "material": {
-          "storePassword": "00000016EFB49535DF91F82E5F3273BD096A3686EAAAF9941D065BEE7D55C685EF0B1226C48F",
+          "storePassword": "0000001637BEC7E2F4EB08FD90267BA4B4D575E5A1E5EEB344821A1BEE943FD3B90CDD805019",
           "certpath": "./signature/applications.cer",
           "keyAlias": "openharmony application release",
-          "keyPassword": "00000016ECB788F2AF878EB9E9AEE54AB2BFCA6CAF3036BF981938C6BA230D7200C1C2AA80B4",
+          "keyPassword": "00000016A6D05ADD61BC426DE25618B51C44326A7299B8E91763C26041B9C2660792628E976F",
           "profile": "./signature/applications.p7b",
           "signAlg": "SHA256withECDSA",
           "storeFile": "./signature/applications.p12"
