@@ -79,6 +79,7 @@ struct AudioPickerExtension {
         },
         onDisappear: () => {
           if (this.session !== undefined) {
+            this.session.sendData({ 'isShowUIExtension': false })
             this.session.terminateSelf()
           }
           logger.info('BindSheet onDisappear.') //半模态页面回退回调函数
