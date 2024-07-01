@@ -7,6 +7,20 @@
         "compileSdkVersion": 12,
         "compatibleSdkVersion": 9
       }
+    ],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "storePassword": "000000164489AC2A2E5E07351F8B2BBCC9CFB3D86ED6080556561600A972AAC61AE0F0B2D3EB",
+          "certpath": "./signature/applications.cer",
+          "keyAlias": "openharmony application release",
+          "keyPassword": "0000001645FACFD155287A5E9F4A076A23F7B2EF0288BA72B96B6A59AFCD3F2AA52833F12172",
+          "profile": "./signature/applications.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "./signature/applications.p12"
+        }
+      }
     ]
   },
   "modules": [
