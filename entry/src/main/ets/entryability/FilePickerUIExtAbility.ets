@@ -38,6 +38,7 @@ export default class FilePickerUIExtAbility extends UIExtensionAbility {
     }
 
     this.abilityKey = `${TAG}+${Date.now()}`;
+    await AbilityCommonUtil.init();
     if (options.isOpenFileMode()) {
       this.initSessionFilePicker(session);
       return;
