@@ -48,7 +48,6 @@ const TAG = 'fileTree';
 export struct fileTree {
   private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
   @State listLength: number = 0;
-  @State positionY: string | number = '100%';
   @State topRotate: boolean = false;
   @State rootData: FilesData[] = [];
   @State selectUri: string = '';
@@ -448,20 +447,5 @@ export struct fileTree {
     .height('100%')
     .backgroundColor($r('app.color.white'))
     .borderRadius({ topLeft: $r('app.float.common_size24'), topRight: $r('app.float.common_size24') })
-    .position({ y: this.positionY })
-
-    .onAppear(() => {
-      animateTo({
-        duration: 500, // 动画时长
-        curve: Curve.Ease, // 动画曲线
-        iterations: 1, // 播放次数
-        playMode: PlayMode.Normal, // 动画模式
-        onFinish: () => {
-        }
-      }, () => {
-        this.positionY = 0
-      })
-    })
-
   }
 }

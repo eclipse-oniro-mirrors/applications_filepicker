@@ -309,7 +309,7 @@ struct MyPhone {
     if (this.startModeOptions.isUxt()) {
       Column() {
       }.bindSheet(true, this.mainContent(), {
-        height: SheetSize.FIT_CONTENT,
+        height: '95%',
         dragBar: false,
         showClose: false,
         preferType: SheetType.CENTER,
