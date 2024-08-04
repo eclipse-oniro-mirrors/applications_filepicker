@@ -18,14 +18,11 @@ import prompt from '@ohos.prompt';
 import { getResourceString } from './Tools';
 import { MILLISECOND, FILENAME_REGEXP } from '../constants/Constant';
 import Logger from '../log/Logger';
-import MediaLibrary from '@ohos.multimedia.mediaLibrary';
 
 const TAG = 'commonUtil';
 
-let mediaLibrary: MediaLibrary.MediaLibrary = null;
-
 export const toast = (text: string | Resource, time = MILLISECOND.ONE_SECOND) => {
-  let resourceString = undefined;
+  let resourceString: string | undefined = undefined;
   if (typeof text !== 'string') {
     resourceString = getResourceString(text);
   } else {

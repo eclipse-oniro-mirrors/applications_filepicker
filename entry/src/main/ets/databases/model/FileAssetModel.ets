@@ -13,19 +13,18 @@
  * limitations under the License.
  */
 
-import MediaLibrary from '@ohos.multimedia.mediaLibrary';
 import { MILLISECOND } from '../../base/constants/Constant';
 import { formatSuffix, getResourceString } from '../../base/utils/Tools';
 import DateTimeUtil from '../../base/utils/DateTimeUtil';
 import { FileMimeTypeUtil } from '../../base/utils/FileMimeTypeUtil';
 import LanguageUtil from '../../base/utils/LanguageUtil';
-import ErrorCodeConst from '../../base/constants/ErrorCodeConst';
 import { MimeType } from './MimeType';
 import { THUMBNAIL_SIZE } from '../../base/constants/UiConstant';
 import { BasicDataSource } from './BasicDataSource';
-import Logger from '../../base/log/Logger';
 import AbilityCommonUtil, { ResultCodePicker } from '../../base/utils/AbilityCommonUtil';
 import { StartModeOptions } from '../../base/model/StartModeOptions';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
+import { dataSharePredicates } from '@kit.ArkData';
 
 const TAG = 'FileAssetModel';
 
@@ -203,12 +202,12 @@ function sortFileAssetList(dataList) {
  * 媒体库查询条件类
  */
 export class MediaFetchOptions {
-  public selections: string = MediaLibrary.FileKey.MEDIA_TYPE + '=?';
+  public selections: string = photoAccessHelper.PhotoKeys.PHOTO_TYPE + '=?';
   public selectionArgs: string[] = [];
-  public order: string = MediaLibrary.FileKey.DATE_MODIFIED + ' DESC';
-  public uri: string;
-  public networkId: string;
-  public extendArgs: string;
+  public order: string = photoAccessHelper.PhotoKeys.DATE_MODIFIED + ' DESC';
+  public uri: string = '';
+  public networkId: string = '';
+  public extendArgs: string = '';
 
   constructor(mediaTypeArg: string = '') {
     if (!mediaTypeArg) {
@@ -230,7 +229,7 @@ export class MediaFetchOptions {
    * @param selection 要查询的关键字
    * @param selectionArg 要查询的值
    */
-  addSelection(selection: MediaLibrary.FileKey, selectionArg: string) {
+  addSelection(selection: photoAccessHelper.PhotoKeys, selectionArg: string) {
     if (this.selections.length) {
       this.selections += ` AND ${selection} = ? `;
     } else {
@@ -245,65 +244,47 @@ export class MediaFetchOptions {
  * @param mediaFetchOptions 媒体库查询条件
  * @return 文件列表
  */
-export function getMediaFileAssets(mediaFetchOptions: MediaFetchOptions): Promise<FileAssetModel[]> {
-  const mediaLibrary = AbilityCommonUtil.getMediaLibrary();
-  if (!mediaLibrary) {
-    return Promise.resolve([]);
+export async function getMediaFileDuration(mediaFetchOptions: MediaFetchOptions): Promise<number> {
+  const photoManageHelper: photoAccessHelper.PhotoAccessHelper = AbilityCommonUtil.getPhotoManageHelper();
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOptions: photoAccessHelper.FetchOptions = {
+    fetchColumns: mediaFetchOptions.selectionArgs,
+    predicates: predicates
+  };
+  if (!photoManageHelper) {
+    return 0;
   }
-  return mediaLibrary.getFileAssets(mediaFetchOptions).then((fetchFileResult: MediaLibrary.FetchFileResult) => {
-    return fetchFileResult.getAllObject().then((fileAssetList: MediaLibrary.FileAsset[]) => {
-      let newFileAssetList = [];
-      fileAssetList.forEach(fileAsset => {
-        newFileAssetList.push(new FileAssetModel(fileAsset));
-      });
-      newFileAssetList = addSortLabel(newFileAssetList);
-      newFileAssetList = sortFileAssetList(newFileAssetList);
-      return newFileAssetList;
-    }).catch((err) => {
-      // 媒体库查询为空code返回3
-      if (err.code === ErrorCodeConst.FILE_ACCESS.GET_MEDIAFILE_NULL) {
-        Logger.e(TAG, 'no media file');
-        return [];
-      }
-      return Promise.reject(err);
-    }).finally(() => {
-      fetchFileResult.close();
-    })
-  }).catch((err) => {
-    return Promise.reject(err);
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+    await photoManageHelper.getAssets(fetchOptions);
+  let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+  let duration: photoAccessHelper.MemberType = photoAsset.get(photoAccessHelper.PhotoKeys.DURATION);
+  return Number(duration) ?? 0;
+}
+
+export function getDurationByUri(mediaType: photoAccessHelper.PhotoType, uri: string): Promise<number> {
+  const option = new MediaFetchOptions(mediaType.toString());
+  option.setUri(uri);
+  return getMediaFileDuration(option).then((res: number) => {
+    return res;
+  }).catch(() => {
+    return 0;
   })
 }
 
 /**
  * 根据文件名（后缀）判断媒体类型
  * @param fileName 文件名
- * @return 媒体类型MediaLibrary.MediaType
+ * @return 媒体类型photoAccessHelper.PhotoType
  */
-export function getMediaType(fileName: string): MediaLibrary.MediaType {
+export function getMediaType(fileName: string): photoAccessHelper.PhotoType {
   const mimeType = FileMimeTypeUtil.getFileMimeType(fileName);
   if (mimeType.isImage()) {
-    return MediaLibrary.MediaType.IMAGE;
+    return photoAccessHelper.PhotoType.IMAGE;
   } else if (mimeType.isVideo()) {
-    return MediaLibrary.MediaType.VIDEO;
-  } else if (mimeType.isAudio()) {
-    return MediaLibrary.MediaType.AUDIO;
+    return photoAccessHelper.PhotoType.VIDEO;
   } else {
-    return MediaLibrary.MediaType.FILE;
-  }
-}
-
-export function getDurationByUri(mediaType: MediaLibrary.MediaType, uri: string): Promise<number> {
-  const option = new MediaFetchOptions(mediaType.toString());
-  option.setUri(uri);
-  return getMediaFileAssets(option).then((res) => {
-    if (res && res.length) {
-      return res[0].duration;
-    } else {
-      return 0;
-    }
-  }).catch(() => {
     return 0;
-  })
+  }
 }
 
 /**

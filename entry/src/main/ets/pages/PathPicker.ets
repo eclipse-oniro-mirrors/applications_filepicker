@@ -22,12 +22,12 @@ import { SYSTEM_BAR_COLOR } from '../base/constants/UiConstant';
 import StringUtil from '../base/utils/StringUtil';
 import { FileUtil } from '../base/utils/FileUtil';
 import ObjectUtil from '../base/utils/ObjectUtil';
-import MediaLibrary from '@ohos.multimedia.mediaLibrary';
 import fileAccess from '@ohos.file.fileAccess';
 import { ArrayUtil } from '../base/utils/ArrayUtil';
 import { UiUtil } from '../base/utils/UiUtil';
 import { StartModeOptions } from '../base/model/StartModeOptions';
 import { FilePickerUtil } from '../base/utils/FilePickerUtil';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 const TAG = 'PathSelector';
 let storage = LocalStorage.getShared();
@@ -123,20 +123,15 @@ struct PathSelector {
         Logger.i(TAG, 'saveFiles err: ' + result.err.code);
         // 失败
         resultErr = { code: result.err.code, message: result.err.message };
-        let mediaLibrary;
-        try {
-          mediaLibrary = MediaLibrary.getMediaLibrary(globalThis.abilityContext);
-        } catch (error) {
-          Logger.e(TAG, 'getMediaLibrary fail, error:' + JSON.stringify(error));
-        }
-        if (ObjectUtil.isNullOrUndefined(mediaLibrary)) {
+        let photoManageHelper: photoAccessHelper.PhotoAccessHelper = AbilityCommonUtil.getPhotoManageHelper();
+        if (ObjectUtil.isNullOrUndefined(photoManageHelper)) {
           break;
         }
         for (let i = 0; i < successArr.length; i++) {
-          await FileUtil.hardDelete(successArr[i], mediaLibrary);
+          await FileUtil.hardDelete(successArr[i]);
         }
         try {
-          mediaLibrary.release();
+          photoManageHelper.release();
         } catch (e) {
           Logger.e(TAG, 'mediaLibrary close error');
         }
