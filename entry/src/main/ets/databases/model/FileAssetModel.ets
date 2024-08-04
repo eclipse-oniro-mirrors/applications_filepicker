@@ -254,6 +254,7 @@ export async function getMediaFileDuration(mediaFetchOptions: MediaFetchOptions)
   if (!photoManageHelper) {
     return 0;
   }
+
   let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
     await photoManageHelper.getAssets(fetchOptions);
   let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
