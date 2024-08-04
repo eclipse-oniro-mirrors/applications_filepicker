@@ -19,21 +19,18 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
 import { Permissions } from '@ohos.abilityAccessCtrl'
 import FileShare from '@ohos.fileshare'
 import wantConstant from '@ohos.app.ability.wantConstant'
-import ErrorCodeConst from '../constants/ErrorCodeConst'
-import MediaLibrary from '@ohos.multimedia.mediaLibrary'
 import { FILE_MANAGER_PREFERENCES, FILE_SUFFIX, SELECT_MODE } from '../constants/Constant'
-import StringUtil from './StringUtil'
 import { ArrayUtil } from './ArrayUtil'
 import { getPreferences } from './PreferencesUtil'
 import { ability, Want } from '@kit.AbilityKit'
 import { StartModeOptions } from '../model/StartModeOptions'
-import ctx from '@ohos.app.ability.common';
 import { PickerWindowType } from '../constants/FilePickerItems'
+import { photoAccessHelper } from '@kit.MediaLibraryKit'
 
 const TAG = 'AbilityCommonUtil'
 
 const BUNDLE_NAME = 'com.ohos.filepicker'
-let mediaLibrary: MediaLibrary.MediaLibrary = null
+let photoManageHelper: photoAccessHelper.PhotoAccessHelper = null
 
 /**
  * picker对外返回的响应码
@@ -103,7 +100,7 @@ namespace AbilityCommonUtil {
    */
   export function init(): Promise<void[]> {
     const fileAccessHelperPromise = createFileAccessHelper();
-    getMediaLibrary();
+    getPhotoManageHelper();
     const getRequestPermission = requestPermission();
     const initData = initLastSelectPath();
     return Promise.all([fileAccessHelperPromise, getRequestPermission, initData]);
@@ -383,23 +380,23 @@ namespace AbilityCommonUtil {
   /**
    * 获取媒体库对象实例的统一接口
    */
-  export function getMediaLibrary(): MediaLibrary.MediaLibrary {
-    if (!mediaLibrary) {
+  export function getPhotoManageHelper(): photoAccessHelper.PhotoAccessHelper {
+    if (!photoManageHelper) {
       try {
-        mediaLibrary = MediaLibrary.getMediaLibrary(globalThis.abilityContext)
+        photoManageHelper = photoAccessHelper.getPhotoAccessHelper(globalThis.abilityContext)
       } catch (error) {
-        Logger.e(TAG, 'getMediaLibrary fail, error:' + JSON.stringify(error))
+        Logger.e(TAG, 'getPhotoManageHelper fail, error:' + JSON.stringify(error))
       }
     }
-    return mediaLibrary
+    return photoManageHelper
   }
 
-  export function releaseMediaLibrary(): void {
-    if (!mediaLibrary) {
+  export function releasePhotoManageHelper(): void {
+    if (!photoManageHelper) {
       try {
-        mediaLibrary.release()
+        photoManageHelper.release()
       } catch (error) {
-        Logger.e(TAG, 'releaseMediaLibrary fail, error: ' + JSON.stringify(error))
+        Logger.e(TAG, 'releasePhotoManageHelper fail, error: ' + JSON.stringify(error))
       }
     }
   }
