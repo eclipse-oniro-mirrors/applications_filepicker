@@ -35,6 +35,7 @@ import { FileUtil } from '../../../base/utils/FileUtil';
 import fileAccess from '@ohos.file.fileAccess';
 import { StartModeOptions } from '../../../base/model/StartModeOptions';
 import { FilePickerUtil } from '../../../base/utils/FilePickerUtil';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 const TAG = 'myPhone';
 let storage = LocalStorage.getShared();
@@ -172,10 +173,10 @@ struct MyPhone {
     this.getVideoAudioDuration(fileList);
   }
 
-  async getVideoAudioDuration(fileList) {
+  async getVideoAudioDuration(fileList: FilesData[]) {
     const videoAudioList = fileList.filter(item => item.mimeTypeObj.isVideo() || item.mimeTypeObj.isAudio());
     for (let item of videoAudioList) {
-      const mediaType = getMediaType(item.fileName);
+      const mediaType: photoAccessHelper.PhotoType = getMediaType(item.fileName);
       await getDurationByUri(mediaType, item.uri).then((duration) => {
         item.duration = duration;
         let index = this.fileListSource.getIndex(item.uri);

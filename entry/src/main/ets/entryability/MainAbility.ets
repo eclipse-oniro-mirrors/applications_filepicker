@@ -52,7 +52,7 @@ export default class MainAbility extends UIAbility {
 
   onDestroy() {
     Logger.i(TAG, 'onDestroy')
-    AbilityCommonUtil.releaseMediaLibrary()
+    AbilityCommonUtil.releasePhotoManageHelper()
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {

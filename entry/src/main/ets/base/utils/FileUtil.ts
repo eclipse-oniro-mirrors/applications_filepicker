@@ -19,9 +19,9 @@ import ObjectUtil from './ObjectUtil';
 import Logger from '../log/Logger';
 import StringUtil from './StringUtil';
 import { FILENAME_MAX_LENGTH, RENAME_CONNECT_CHARACTER } from '../constants/Constant';
-import MediaLibrary from '@ohos.multimedia.mediaLibrary';
 import fs from '@ohos.file.fs';
 import FileUri from '@ohos.file.fileuri';
+import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 const TAG = 'FileUtil';
 
@@ -213,12 +213,9 @@ export class FileUtil {
     return { code: code, uri: uri };
   }
 
-  public static async hardDelete(uri: string, mediaLibrary: MediaLibrary.MediaLibrary): Promise<boolean> {
-    if (ObjectUtil.isNullOrUndefined(mediaLibrary)) {
-      return false;
-    }
+  public static async hardDelete(uri: string): Promise<boolean> {
     try {
-      await mediaLibrary.deleteAsset(uri);
+      await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(globalThis.abilityContext , [uri]);
       return true;
     } catch (e) {
       Logger.e(TAG, 'hardDelete error: ' + JSON.stringify(e));
