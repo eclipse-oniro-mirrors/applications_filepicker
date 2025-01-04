@@ -13,12 +13,13 @@
  * limitations under the License.
  */
 
-import { FilesData } from '../../../databases/model/FileData'
+import { FilesData, MkDirItem } from '../../../databases/model/FileData'
 import FileAccessExec from '../../../base/utils/FileAccessExec'
 import { toast, isValidFileName } from '../../../base/utils/Common'
 import { getResourceString } from '../../../base/utils/Tools'
 import Logger from '../../../base/log/Logger'
 import { DialogTitle, DialogButton, DialogButtonDivider } from '../common/DialogComponent'
+import { BusinessError } from '@ohos.base';
 
 const TAG = 'FileMkdirDialog'
 
@@ -26,11 +27,11 @@ const TAG = 'FileMkdirDialog'
 @CustomDialog
 export struct FileMkdirDialog {
   controller: CustomDialogController
-  cancel: Function
-  confirm: Function
+  cancel: Function = () => {};
+  confirm: Function = (data: MkDirItem) => {};
   @State folderName: string = ''
-  @State errorText: Resource = null
-  fileItems: Array<FilesData>
+  @State errorText: Resource = $r('app.string.illegal');
+  fileItems: Array<FilesData> = [];
   getCurrentDir: string = ''
 
   aboutToAppear() {
@@ -51,7 +52,7 @@ export struct FileMkdirDialog {
   }
 
   isSameName() {
-    let nameArr = []
+    let nameArr: string[] = [];
     this.fileItems.forEach(item => {
       nameArr.push(item.fileName)
     })
@@ -74,7 +75,7 @@ export struct FileMkdirDialog {
         })
         .onChange((value: string) => {
           this.folderName = value
-          this.errorText = null
+          this.errorText =  $r('app.string.illegal')
         })
       Divider().vertical(false).strokeWidth(1).color(Color.Gray)
         .margin({
@@ -106,12 +107,13 @@ export struct FileMkdirDialog {
             } else if (this.isSameName()) {
               this.errorText = $r('app.string.sameName')
             } else {
-              FileAccessExec.createFolder(this.getCurrentDir, this.folderName).then(folderUri => {
-                this.confirm({
+              FileAccessExec.createFolder(this.getCurrentDir, this.folderName).then((folderUri: string) => {
+                let data: MkDirItem = {
                   mkdirName: this.folderName,
                   path: folderUri
-                })
-              }).catch(err => {
+                }
+                this.confirm(data)
+              }).catch((err: BusinessError) => {
                 Logger.e(TAG, 'create Folder err: ' + JSON.stringify(err))
                 toast($r('app.string.addFolder_fail'))
               })

@@ -16,7 +16,7 @@
 import { getFileIcon, randomId, formatSuffix } from '../../base/utils/Tools';
 import { MILLISECOND } from '../../base/constants/Constant';
 import fileAccess from '@ohos.file.fileAccess';
-import { THUMBNAIL_SIZE } from '../../base/constants/UiConstant';
+import { ThumbnailSize } from '../../base/constants/UiConstant';
 import { MimeType } from './MimeType';
 import { BasicDataSource } from './BasicDataSource';
 import AbilityCommonUtil, { ResultCodePicker } from '../../base/utils/AbilityCommonUtil';
@@ -25,15 +25,25 @@ import { ArrayUtil } from '../../base/utils/ArrayUtil';
 import { StartModeOptions } from '../../base/model/StartModeOptions';
 
 export class BreadData {
-  public title: string;
-  public url: string;
+  public title: string = '';
+  public url: string = '';
   public fileIterator?: fileAccess.FileInfo;
+}
 
-  constructor(obj) {
-    this.title = obj.title;
-    this.url = obj.url;
-    this.fileIterator = obj.fileIterator;
-  }
+export interface TransList {
+  fileList: FilesData[];
+  folderList: FilesData[]
+}
+
+export class MkDirItem {
+  mkdirName: string = '';
+  path: string = ''
+}
+
+export class MoveCallBackParams {
+  cancel: boolean = false;
+  fileName: string = '';
+  selectUri: string = ''
 }
 
 export class FileDataSource extends BasicDataSource {
@@ -62,13 +72,13 @@ export class FileDataSource extends BasicDataSource {
     return this.dataArray[index];
   }
 
-  public selectAll(isSelected): void {
+  public selectAll(isSelected: boolean): void {
     this.dataArray.forEach(item => {
       item.isChecked = isSelected;
     });
   }
 
-  public getIndex(uri): number {
+  public getIndex(uri: string): number {
     return this.dataArray.findIndex(item => item.uri === uri);
   }
 
@@ -76,7 +86,7 @@ export class FileDataSource extends BasicDataSource {
     return this.dataArray.filter(item => item.isChecked);
   }
 
-  public replaceData(index, data: FilesData): void {
+  public replaceData(index: number, data: FilesData): void {
     this.dataArray.splice(index, 1, data);
     this.notifyDataChange(index);
   }
@@ -101,24 +111,25 @@ export class FileDataSource extends BasicDataSource {
 }
 
 export class FilesData {
-  public id: string;
-  public uri: string;
-  public thumbUri: string;
-  public displayName: string;
-  public deviceId: string;
-  public flags: number;
-  public name: string;
-  public fileName: string;
-  public mode: string;
-  public size: number;
-  public mtime: number;
-  public suffix: string;
-  public mimeType: string;
-  public icon: any;
-  public gridIcon: any;
-  public localGridIcon: any;
-  public isChecked: boolean;
+  public id: string = '';
+  public uri: string = '';
+  public thumbUri: string = '';
+  public displayName: string = '';
+  public deviceId: string = '';
+  public flags: number = 0;
+  public name: string ='';
+  public fileName: string = '';
+  public mode: string = '';
+  public size: number = 0;
+  public mtime: number = 0;
+  public suffix: string | undefined;
+  public mimeType: string = '';
+  public icon: ESObject;
+  public gridIcon: ESObject;
+  public localGridIcon: ESObject;
+  public isChecked: boolean = false;
   public path?: string;
+  public relativePath: string = '';
   public sub?: number;
   public scale?: number;
   public angle?: number;
@@ -132,23 +143,28 @@ export class FilesData {
   public isVideo: boolean = false;
   public isAudio: boolean = false;
   public isFolder: boolean = false;
-  public duration: number;
-  public mimeTypeObj: MimeType;
-  public subFolderList: FilesData[];
-  public subFileList: FilesData[];
-  public layer: number;
+  public duration: number = 0;
+  public mimeTypeObj: MimeType | undefined = undefined;
+  public subFolderList: FilesData[] = [];
+  public subFileList: FilesData[] = [];
+  public layer: number = 0;
   public autoShow: boolean = false;
   public currentDir?: string;
 
-  constructor(obj) {
-    this.isFolder = obj.isFolder || FileUtil.isFolder(obj.mode);
+  constructor(obj?: FilesData) {
+    if (obj === undefined) {
+      return;
+    }
+    this.isFolder = obj.isFolder || FileUtil.isFolder(parseInt(obj.mode));
     this.id = obj.id || randomId();
     this.uri = obj.uri || '';
     this.deviceId = obj.deviceId || '';
     this.flags = obj.flags || 0;
     this.name = obj.name || '';
     this.fileName = obj.fileName || obj.displayName || '';
-    this.suffix = formatSuffix(this.fileName);
+    if (formatSuffix(this.fileName) !== undefined) {
+      this.suffix = formatSuffix(this.fileName);
+    }
     this.mode = obj.mode || '';
     this.size = obj.size || 0;
     this.mtime = obj.mtime * MILLISECOND.ONE_SECOND || 0;
@@ -165,13 +181,13 @@ export class FilesData {
     this.fileIterator = obj.fileIterator;
     this.duration = obj.duration || 0;
     this.mimeTypeObj = getFileIcon(this.fileName, this.isFolder);
-    this.icon = this.mimeTypeObj.getResID();
-    this.gridIcon = this.mimeTypeObj.getGridResID();
-    this.localGridIcon = this.mimeTypeObj.getLocalGridResID();
-    if (this.mimeTypeObj.isMedia()) {
+    this.icon = this.mimeTypeObj?.getResID();
+    this.gridIcon = this.mimeTypeObj?.getGridResID();
+    this.localGridIcon = this.mimeTypeObj?.getLocalGridResID();
+    if (this.mimeTypeObj?.isMedia()) {
       this.thumbUri = this.uri;
     }
-    if (this.isFolder) {
+    if (this.isFolder && this.fileIterator !== undefined) {
       this.sub = getSubFileNum(this.fileIterator);
     }
     this.currentDir = FileUtil.getCurrentDir(this.path, this.isFolder);
@@ -180,11 +196,11 @@ export class FilesData {
   setFileName(fileName: string): void {
     this.fileName = fileName;
     this.mimeTypeObj = getFileIcon(this.fileName);
-    this.icon = this.mimeTypeObj.getResID();
-    this.gridIcon = this.mimeTypeObj.getGridResID();
-    this.localGridIcon = this.mimeTypeObj.getLocalGridResID();
-    if (this.mimeTypeObj.isMedia()) {
-      this.thumbUri = `${this.uri}/thumbnail/${THUMBNAIL_SIZE.WIDTH}/${THUMBNAIL_SIZE.HEIGHT}`;
+    this.icon = this.mimeTypeObj?.getResID();
+    this.gridIcon = this.mimeTypeObj?.getGridResID();
+    this.localGridIcon = this.mimeTypeObj?.getLocalGridResID();
+    if (this.mimeTypeObj?.isMedia()) {
+      this.thumbUri = `${this.uri}/thumbnail/${ThumbnailSize.WIDTH}/${ThumbnailSize.HEIGHT}`;
     }
   }
 
@@ -270,10 +286,10 @@ export class SelectedFileData {
   public isFolder: boolean;
   public displayName?: string;
 
-  constructor(obj) {
-    this.id = obj.id || -1;
+  constructor(obj: SelectedFileData) {
+    this.id = obj.id || '-1';
     this.uri = obj.uri || '';
-    this.mimeType = obj.mimetype || '';
+    this.mimeType = obj.mimeType || '';
     this.thumbUri = obj.thumbUri || '';
     this.title = obj.title || '';
     this.fileName = obj.fileName || obj.displayName || '';
@@ -317,9 +333,9 @@ export class FileDetail {
   public key: string | Resource;
   public value: string | Resource;
   public path?: string = '';
-  public params?: any;
+  public params?: ESObject;
 
-  constructor(key: string, value: string, path: string, params: any) {
+  constructor(key: string, value: string, path: string, params: ESObject) {
     this.key = key;
     this.value = value;
     this.path = path;

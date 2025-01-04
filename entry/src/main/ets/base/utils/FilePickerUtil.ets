@@ -22,12 +22,19 @@ import Logger from '../log/Logger';
 import { PickerWindowType } from '../constants/FilePickerItems';
 import { StartModeOptions } from '../model/StartModeOptions';
 import AbilityCommonUtil from './AbilityCommonUtil';
+import { FilesData } from '../../databases/model/FileData';
+
 import ctx from '@ohos.app.ability.common';
 
-interface abilityResultInterface {
+export interface abilityResultInterface {
   want: Want,
   resultCode: number
 };
+
+export interface PickerStatus {
+  exceedLimit: boolean,
+  differentTypes: boolean
+}
 
 const TAG = 'FilePickerUtil';
 
@@ -105,20 +112,21 @@ export namespace FilePickerUtil {
  * @param checkedNum 选中数量
  * @return 是否超限  选择类型是否不匹配
  */
-export function pickerStatus(item, checkedNum, startModeOptions:StartModeOptions) {
-  return {
+export function pickerStatus(item: FilesData, checkedNum: number, startModeOptions:StartModeOptions): PickerStatus {
+  let status: PickerStatus = {
     // 选择是否超限
     exceedLimit: checkedNum >= globalThis.filePickNum && !item.isChecked,
     // 选择类型是否不匹配
     differentTypes: !checkFileSelectable(item, startModeOptions)
   };
+  return status;
 }
 
 /**
  * 根据文件后缀判断文件是否可选
  * @param item
  */
-function checkFileSelectable(item, startModeOptions: StartModeOptions): boolean {
+function checkFileSelectable(item: FilesData, startModeOptions: StartModeOptions): boolean {
   // selectMode检查
   let selectMode: number = startModeOptions.selectMode;
   let isFolder = false;
@@ -221,7 +229,7 @@ function checkFileMimetype(fileName: string, startModeOptions: StartModeOptions)
 export const filePickerTip = (startModeOptions: StartModeOptions) => {
   globalThis.abilityContext.resourceManager.getPluralString($r('app.plural.filePickerTip').id,
     startModeOptions.maxSelectNumber)
-    .then((value) => {
+    .then((value: string) => {
       toast(value)
     })
 }

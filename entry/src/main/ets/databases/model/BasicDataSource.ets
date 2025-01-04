@@ -20,7 +20,7 @@ export class BasicDataSource implements IDataSource {
     return 0
   }
 
-  public getData(index: number): any {
+  public getData(index: number): ESObject {
     return undefined
   }
 

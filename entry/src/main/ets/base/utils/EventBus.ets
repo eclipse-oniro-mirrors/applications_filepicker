@@ -12,27 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+let eventMap = new Map<string, Function[]>();
 
-let eventMap = {}
-
-export const emit = (event, ...argument) => {
+export const emit = (event: string, ...argument: ESObject[]) => {
   if (Array.isArray(eventMap[event])) {
     eventMap[event].forEach((fn: Function) => {
-      fn.apply(this, argument)
+      fn(...argument)
     })
   }
 }
 
-export const on = (event, callback) => {
+export const on = (event: string, callback: Function) => {
   if (!eventMap[event]) {
     eventMap[event] = []
   }
   eventMap[event].push(callback)
 }
 
-export const off = (event, callback, flag = true) => {
+export const off = (event: string, callback: Function, flag = true) => {
   if (flag) {
-    const index = eventMap[event].indexOf(item => item === callback)
+    const index: number = eventMap[event].indexOf((item: Function) => item === callback)
     if (index !== -1) {
       eventMap[event].splice(index, 1)
     }
