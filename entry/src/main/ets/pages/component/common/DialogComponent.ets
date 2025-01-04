@@ -26,7 +26,13 @@ function normalStyles() {
 
 @Component
 export struct DialogTitle {
-  title: Resource;
+  title: Resource = $r('app.string.addFolder');
+
+  constructor(title: Resource) {
+    super();
+    this.title = title; // 通过构造函数初始化
+  }
+
 
   build() {
     Text(this.title)
@@ -43,11 +49,11 @@ export struct DialogTitle {
 
 @Component
 export struct DialogButton {
-  text: Resource;
+  text: Resource = $r('app.string.cancel');
   color: Resource = $r('app.color.dialog_button_blue');
   bgColor: Resource = $r('app.color.transparent_color');
   @Prop isDisabled: boolean;
-  click: Function;
+  click: Function = () => {};
 
   build() {
     Row() {

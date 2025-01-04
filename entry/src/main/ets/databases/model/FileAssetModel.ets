@@ -19,7 +19,7 @@ import DateTimeUtil from '../../base/utils/DateTimeUtil';
 import { FileMimeTypeUtil } from '../../base/utils/FileMimeTypeUtil';
 import LanguageUtil from '../../base/utils/LanguageUtil';
 import { MimeType } from './MimeType';
-import { THUMBNAIL_SIZE } from '../../base/constants/UiConstant';
+import { ThumbnailSize } from '../../base/constants/UiConstant';
 import { BasicDataSource } from './BasicDataSource';
 import AbilityCommonUtil, { ResultCodePicker } from '../../base/utils/AbilityCommonUtil';
 import { StartModeOptions } from '../../base/model/StartModeOptions';
@@ -56,7 +56,7 @@ export class FileAssetLazyModel extends BasicDataSource {
     });
   }
 
-  public getIndex(uri): number {
+  public getIndex(uri: string): number {
     return this.dataArray.findIndex(item => item.uri === uri);
   }
 
@@ -64,7 +64,7 @@ export class FileAssetLazyModel extends BasicDataSource {
     return this.dataArray.filter(item => item.isChecked);
   }
 
-  public replaceData(index, data: FileAssetModel): void {
+  public replaceData(index: number, data: FileAssetModel): void {
     this.dataArray.splice(index, 1, data);
     this.notifyDataChange(index);
   }
@@ -117,16 +117,16 @@ export class FileAssetModel {
   public fileName: string;
   public fullPath: string;
   public isChecked: boolean = false;
-  public suffix: string;
+  public suffix: string = '';
   public icon: Resource | PixelMap;
   public gridIcon: Resource | PixelMap;
   public localGridIcon: Resource | PixelMap;
   public lastModifiedDate: string | Resource;
-  public thumbUri: string;
+  public thumbUri: string = '';
   public sortLabel: string = '';
   public mimeTypeObj: MimeType;
 
-  constructor(file) {
+  constructor(file: FileAssetModel) {
     this.id = file.id;
     this.uri = file.uri;
     this.mimeType = file.mimeType;
@@ -152,14 +152,18 @@ export class FileAssetModel {
     this.fileName = file.displayName;
     this.mimeTypeObj = FileMimeTypeUtil.getFileMimeType(this.fileName);
     this.fullPath = getFullPath(this);
-    this.suffix = formatSuffix(file.fileName);
+
+    let suffix = formatSuffix(this.fileName);
+    if (suffix !== undefined) {
+      this.suffix = suffix;
+    }
     this.icon = this.mimeTypeObj.getResID();
     this.gridIcon = this.mimeTypeObj.getGridResID();
     this.localGridIcon = this.mimeTypeObj.getLocalGridResID();
     this.lastModifiedDate = DateTimeUtil.getDateStringForCategory(this.dateModified);
     this.sortLabel = file.sortLabel;
     if (this.mimeTypeObj.isMedia()) {
-      this.thumbUri = `${this.uri}/thumbnail/${THUMBNAIL_SIZE.WIDTH}/${THUMBNAIL_SIZE.HEIGHT}`;
+      this.thumbUri = `${this.uri}/thumbnail/${ThumbnailSize.WIDTH}/${ThumbnailSize.HEIGHT}`;
     }
   }
 
@@ -171,7 +175,7 @@ export class FileAssetModel {
     this.gridIcon = this.mimeTypeObj.getGridResID();
     this.localGridIcon = this.mimeTypeObj.getLocalGridResID();
     if (this.mimeTypeObj.isMedia()) {
-      this.thumbUri = `${this.uri}/thumbnail/${THUMBNAIL_SIZE.WIDTH}/${THUMBNAIL_SIZE.HEIGHT}`;
+      this.thumbUri = `${this.uri}/thumbnail/${ThumbnailSize.WIDTH}/${ThumbnailSize.HEIGHT}`;
     }
   }
 
@@ -187,9 +191,9 @@ export class FileAssetModel {
  * @param isDesc 是否倒序
  * @return 排序后的数组
  */
-function sortFileAssetList(dataList) {
+function sortFileAssetList(dataList: FileAssetModel[]): FileAssetModel[] {
   const language = LanguageUtil.getSystemLanguage();
-  return dataList.sort((a, b) => {
+  return dataList.sort((a: FileAssetModel, b: FileAssetModel) => {
     if (b.dateModified !== a.dateModified) {
       return b.dateModified - a.dateModified;
     } else {
@@ -303,7 +307,7 @@ export function getFullPath(file: FileAssetModel): string {
  * @param order 排序规则
  * @return 设置了label的文件数组
  */
-export function addSortLabel(fileAssetList): FileAssetModel[] {
+export function addSortLabel(fileAssetList: FileAssetModel[]): FileAssetModel[] {
   fileAssetList.forEach((fileAsset: FileAssetModel) => {
     fileAsset.sortLabel = DateTimeUtil.getDateStringForCategory(fileAsset.dateModified);
   });

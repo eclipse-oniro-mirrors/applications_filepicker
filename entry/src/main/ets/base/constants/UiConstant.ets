@@ -14,29 +14,29 @@
  */
 
 // 缩略图获取尺寸
-export const THUMBNAIL_SIZE = {
-  WIDTH: 98,
-  HEIGHT: 98
+export enum ThumbnailSize {
+  WIDTH = 98,
+  HEIGHT = 98
 }
 
-export const Z_INDEX = {
-  TOP: 999,
-  MIDDLE: 99,
-  LOW: 9,
-  LEVEL10: 10,
-  LEVEL100: 100,
-  LEVEL101: 101
+export enum ZIndex {
+  TOP = 999,
+  MIDDLE = 99,
+  LOW = 9,
+  LEVEL10 = 10,
+  LEVEL100 = 100,
+  LEVEL101 = 101
 }
 
 export const TREE_LAYER = 15
 
-export const BOTTOM_BAR_COLOR = {
-  enabled: 1,
-  disabled: 0.3
+export enum BottomBarColor {
+  enabled = 1,
+  disabled = 0.3
 }
 
-export const SYSTEM_BAR_COLOR = {
-  WHITE: '#ffffff',
-  BLACK: '#000000',
-  LIGHT_GRAY: '#f0f1f6'
+export enum SystemBarColor {
+  WHITE = '#ffffff',
+  BLACK = '#000000',
+  LIGHT_GRAY = '#f0f1f6'
 }

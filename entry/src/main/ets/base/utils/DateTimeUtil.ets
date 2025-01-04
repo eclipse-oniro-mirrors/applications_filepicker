@@ -22,17 +22,27 @@ import LanguageUtil from './LanguageUtil';
 const TAG = 'DateTimeUtil';
 
 namespace DateTimeUtil {
+
+  export interface DateFormat {
+    YYYY_MM_DD: string,
+    MM_DD: string,
+    DATE_TIME: string,
+    YYYY_MM_DD_CHINESE: string,
+    MM_DD_CHINESE: string,
+    DATE_TIME_CHINESE: string
+  }
+
   /**
    * 日期格式常量
    */
-  export const DATE_FORMAT = {
+   let DATE_FORMAT: DateFormat = {
     YYYY_MM_DD: 'yyyy/mm/dd',
     MM_DD: 'mm/dd',
     DATE_TIME: 'yyyy/mm/dd HH:MM:SS',
     YYYY_MM_DD_CHINESE: 'yyyy年mm月dd日',
     MM_DD_CHINESE: 'm月d日',
-    DATE_TIME_CHINESE: 'yyyy年mm月dd日 HH:MM'
-  };
+    DATE_TIME_CHINESE: 'yyyy年mm月dd日 HH:MM',
+  }
 
   /**
    * @description 获取指定时间戳当天0点的时间戳
@@ -94,11 +104,11 @@ namespace DateTimeUtil {
    * @param format 格式(可选)
    * @example formatDate(new Date(), "YYYY-mm-dd HH:MM:SS") => 2021-11-02 09:39:59
    */
-  export function formatDate(timestamp, format = DATE_FORMAT.YYYY_MM_DD) {
+  export function formatDate(timestamp: number, format:string = DATE_FORMAT.YYYY_MM_DD): string {
     let res = '';
     try {
       const date = new Date(timestamp);
-      const opt = {
+      const opt: Record<string, string> = {
         'y+': date.getFullYear().toString(), // 年
         'm+': (date.getMonth() + 1).toString(), // 月
         'd+': date.getDate().toString(), // 日
@@ -106,7 +116,7 @@ namespace DateTimeUtil {
         'M+': date.getMinutes().toString(), // 分
         'S+': date.getSeconds().toString(), // 秒
       };
-      for (let key in opt) {
+      Object.keys(opt).forEach((key) => {
         const reg = new RegExp(key);
         let ret = reg.exec(format);
         if (ret) {
@@ -114,7 +124,7 @@ namespace DateTimeUtil {
             reg, ret[0].length == 1 ? opt[key] : opt[key].padStart(ret[0].length, '0')
           );
         }
-      }
+      });
       res = format;
     } catch (error) {
       Logger.e(TAG, 'formatDate error: ' + error.toString());
@@ -165,7 +175,7 @@ namespace DateTimeUtil {
    *  往年：YYYY/MM/DD
    */
   export function getDateStringForRecentCard(timeStamp: number): Resource | string {
-    let dateString = undefined;
+    let dateString : Resource | string;
     const date = new Date();
     const now = date.getTime();
     const nowYear = date.getFullYear();

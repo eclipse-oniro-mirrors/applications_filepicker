@@ -16,8 +16,8 @@
 import { BreadData, FilesData, FileDataSource } from '../../../databases/model/FileData';
 import { renderSize, gridName, isDlpFile } from '../../../base/utils/Tools';
 import DateTimeUtil from '../../../base/utils/DateTimeUtil';
-import { pickerStatus, filePickerTip, FilePickerUtil } from '../../../base/utils/FilePickerUtil';
-import { Z_INDEX } from '../../../base/constants/UiConstant';
+import { pickerStatus, filePickerTip, FilePickerUtil, PickerStatus } from '../../../base/utils/FilePickerUtil';
+import { ZIndex } from '../../../base/constants/UiConstant';
 import Logger from '../../../base/log/Logger';
 import { NoContent } from '../common/NoContent';
 import { VideoDurationTag } from '../common/VideoDurationTag';
@@ -82,7 +82,7 @@ export struct FilesList {
   @Builder
   buildListView() {
     List() {
-      LazyForEach(this.fileListSource, (item, index) => {
+      LazyForEach(this.fileListSource, (item: FilesData, index: number) => {
         ListItem() {
           FileListItem({
             startModeOptions: this.startModeOptions,
@@ -93,7 +93,7 @@ export struct FilesList {
             isMulti: $isMulti
           })
         }
-      }, item => item?.id.toString())
+      }, (item: FilesData) => item?.id.toString())
     }
     .align(Alignment.TopStart)
     .edgeEffect(EdgeEffect.None)
@@ -102,7 +102,7 @@ export struct FilesList {
   @Builder
   buildGridView() {
     Grid() {
-      LazyForEach(this.fileListSource, (item, index) => {
+      LazyForEach(this.fileListSource, (item: FilesData, index) => {
         GridItem() {
           FileListItem({
             startModeOptions: this.startModeOptions,
@@ -113,7 +113,7 @@ export struct FilesList {
             isMulti: $isMulti
           })
         }
-      }, item => item?.id.toString())
+      }, (item: FilesData) => item?.id.toString())
     }
     .columnsTemplate('1fr 1fr 1fr')
     .columnsGap($r('app.float.file_list_columns_gap'))
@@ -128,7 +128,7 @@ export struct FilesList {
 struct FileListItem {
   private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
   @Consume isList: boolean;
-  @State fileItem: FilesData = new FilesData({});
+  @State fileItem: FilesData = new FilesData();
   @Link fileListSource: FileDataSource;
   @Link direList: BreadData[];
   @Link @Watch('isMultiChange') isMulti: boolean;
@@ -137,8 +137,8 @@ struct FileListItem {
   @State filePickerViewFlag: boolean = true;
   @State isImageLoaded: boolean = true;
 
-  isShowThumbnail(item) {
-    return this.isImageLoaded && item.thumbUri;
+  isShowThumbnail(item: FilesData): boolean {
+    return this.isImageLoaded && (item.thumbUri != '');
   }
 
   isMultiChange() {
@@ -153,14 +153,16 @@ struct FileListItem {
     }
   }
 
-  getRightIcon(item): Resource {
+  getRightIcon(item: FilesData): Resource | undefined {
     if (this.isMulti) {
       if (pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions).differentTypes) {
-        return;
+        return undefined;
       }
       return item.isChecked ? $r('app.media.checkbox_b') : $r('app.media.checkbox_g');
     } else if (item.isFolder && this.isList) {
       return $r('app.media.ic_arrow_right');
+    } else {
+      return undefined;
     }
   }
 
@@ -198,7 +200,7 @@ struct FileListItem {
       if (this.fileItem.isFolder) {
         return;
       }
-      let status = pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions);
+      let status: PickerStatus = pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions);
       if (status.exceedLimit) {
         filePickerTip(this.startModeOptions);
         return;
@@ -215,7 +217,7 @@ struct FileListItem {
 
   onClickEvent() {
     Logger.i(TAG, 'onClickEvent start');
-    let status = pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions);
+    let status: PickerStatus = pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions);
     if (this.isMulti) {
       if (this.fileItem.isFolder) {
         return;
@@ -265,7 +267,7 @@ struct FileListItem {
   }
 
   calOpacity() {
-    const statusObj = pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions);
+    const statusObj: PickerStatus = pickerStatus(this.fileItem, this.checkedNum, this.startModeOptions);
     return statusObj.exceedLimit || (!this.fileItem.isFolder && statusObj.differentTypes) ||
       (this.isMulti && this.fileItem.isFolder) ? $r('app.float.common_opacity2') : $r('app.float.common_opacity10');
   }
@@ -290,10 +292,10 @@ struct FileListItem {
             .objectFit(ImageFit.Fill)
             .width($r('app.float.common_size6'))
             .height($r('app.float.common_size8'))
-            .zIndex(Z_INDEX.LEVEL10)
+            .zIndex(ZIndex.LEVEL10)
             .position({ x: $r('app.float.common_position24'), y: $r('app.float.common_position26') })
         }
-        if (this.fileItem.mimeTypeObj.isVideo() && this.isShowThumbnail(this.fileItem)) {
+        if (this.fileItem.mimeTypeObj?.isVideo() && this.isShowThumbnail(this.fileItem)) {
           Image($r('app.media.hidisk_ic_video_list'))
             .objectFit(ImageFit.Contain)
             .autoResize(false)
@@ -315,7 +317,7 @@ struct FileListItem {
             .grayText()
           Text('-')
             .grayText()
-          Text(!this.fileItem.isFolder ? renderSize(this.fileItem.size) : $r('app.string.num', this.fileItem.sub))
+          Text(!this.fileItem.isFolder ? renderSize(this.fileItem.size.toString()) : $r('app.string.num', this.fileItem.sub))
             .grayText()
         }
         .margin({ top: $r('app.float.common_padding2') })
@@ -366,11 +368,11 @@ struct FileListItem {
               .objectFit(ImageFit.Fill)
               .width($r('app.float.common_size10'))
               .height($r('app.float.common_size12'))
-              .zIndex(Z_INDEX.LEVEL10)
+              .zIndex(ZIndex.LEVEL10)
               .markAnchor({ x: $r('app.float.common_markAnchor_28'), y: $r('app.float.common_markAnchor_16') })
               .position({ x: '100%', y: '100%' })
           }
-          if (this.fileItem.mimeTypeObj.isVideo() && this.isShowThumbnail(this.fileItem)) {
+          if (this.fileItem.mimeTypeObj?.isVideo() && this.isShowThumbnail(this.fileItem)) {
             VideoDurationTag({
               duration: this.fileItem.duration
             })
@@ -390,7 +392,7 @@ struct FileListItem {
           .maxLines(1)
           .fontColor($r('app.color.recently_font_color'))
           .opacity($r('app.float.common_opacity6'))
-        Text(this.fileItem.isFolder ? $r('app.string.num', this.fileItem.sub) : renderSize(this.fileItem.size))
+        Text(this.fileItem.isFolder ? $r('app.string.num', this.fileItem.sub) : renderSize(this.fileItem.size.toString()))
           .fontSize($r('app.float.common_font_size10'))
           .textOverflow({ overflow: TextOverflow.Ellipsis })
           .maxLines(1)

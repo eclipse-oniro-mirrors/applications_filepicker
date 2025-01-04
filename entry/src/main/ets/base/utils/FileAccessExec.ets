@@ -25,17 +25,18 @@ import fileExtensionInfo from '@ohos.file.fileExtensionInfo';
 import { FileBase } from '../../databases/model/base/FileBase';
 import ObjectUtil from './ObjectUtil';
 import { FileUtil } from './FileUtil';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG = 'FileAccessExec';
 
 namespace FileAccessExec {
 
   // 创建文件夹
-  export function createFolder(sourceUri: string, folderName: string): any {
-    return new Promise((resolve, reject) => {
+  export function createFolder(sourceUri: string, folderName: string): ESObject {
+    return new Promise<string>((resolve, reject) => {
       try {
-        globalThis.fileAcsHelper.mkDir(sourceUri, folderName, (ret, data) => {
-          if (ret && ret.code !== '0') {
+        globalThis.fileAcsHelper.mkDir(sourceUri, folderName, (ret: BusinessError, data: string) => {
+          if (ret && ret.code !== 0) {
             reject(ret);
             Logger.e(TAG, 'createFolder fail:' + JSON.stringify(ret));
           } else {
@@ -50,11 +51,11 @@ namespace FileAccessExec {
   }
 
   // 创建文件
-  export function createFile(sourceUri: string, fileName: string): any {
-    return new Promise((resolve, reject) => {
+  export function createFile(sourceUri: string, fileName: string): ESObject {
+    return new Promise<string>((resolve, reject) => {
       try {
-        globalThis.fileAcsHelper.createFile(sourceUri, fileName, (ret, data) => {
-          if (ret && ret.code !== '0') {
+        globalThis.fileAcsHelper.createFile(sourceUri, fileName, (ret: BusinessError, data: string) => {
+          if (ret && ret.code !== 0) {
             reject(ret);
             Logger.e(TAG, 'createFile fail:' + JSON.stringify(ret));
           } else {
@@ -68,19 +69,15 @@ namespace FileAccessExec {
     })
   }
 
-  export function getFileData(): any {
+  export function getFileData(): ESObject {
     let folderList: FilesData[] = [];
     let fileList: FilesData[] = [];
     const allData = getRootFolder();
     allData.forEach((item) => {
       if (item.isFolder) {
-        folderList.push(new FilesData({
-          ...item
-        }));
+        folderList.push(new FilesData(item));
       } else {
-        fileList.push(new FilesData({
-          ...item
-        }));
+        fileList.push(new FilesData(item));
       }
     })
 
@@ -98,18 +95,18 @@ namespace FileAccessExec {
       let result = fileIterator.next();
       let isDone = result.done;
       while (!isDone) {
-        const {fileName, relativePath,uri, mode, size, mtime, mimeType} = result.value;
-        let tempFile = new FilesData({
-          id: randomId(),
-          fileName,
-          relativePath,
-          uri,
-          mode,
-          size,
-          mtime,
-          mimeType,
-          fileIterator: result.value
-        });
+        const data = result.value;
+        // const {fileName, relativePath,uri, mode, size, mtime, mimeType} = result.value;
+        let tempFile = new FilesData();
+        tempFile.id = randomId();
+        tempFile.fileName = data.fileName;
+        tempFile.relativePath = data.relativePath;
+        tempFile.uri = data.uri;
+        tempFile.mode = data.mode.toString();
+        tempFile.size = data.size;
+        tempFile.mtime = data.mtime;
+        tempFile.mimeType = data.mimeType;
+        tempFile.fileIterator = result.value;
         fileList.push(tempFile);
         result = fileIterator.next();
         isDone = result.done;

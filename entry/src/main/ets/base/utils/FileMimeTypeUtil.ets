@@ -16,6 +16,8 @@
 import { MimeType } from '../../databases/model/MimeType';
 import StringUtil from '../../base/utils/StringUtil';
 
+const FILE_TYPE_APK = 'APK';
+const FILE_TYPE_JAD = 'JAD';
 /**
  * 文件媒体类型
  */
@@ -141,13 +143,13 @@ export class FileMimeTypeUtil {
   public static FILE_TYPE_UNKNOW: number = 200;
   public static SUFFIX_DLP = 'DLP';
   private static UNKNOW_MIMETYPE: MimeType = new MimeType(
-    null,
+    '',
     MimeType.FILE_CATEGORY_UNKNOW,
     FileMimeTypeUtil.FILE_TYPE_UNKNOW,
     $r('app.media.hidisk_icon_unknown'),
     $r('app.media.hidisk_icon_unknown_grid'),
     $r('app.media.hidisk_icon_unknown_grid_local'),
-    null
+    ''
   );
   private static fileMimeTypeMap: Map<string, MimeType> = new Map<string, MimeType>();
 
@@ -158,533 +160,535 @@ export class FileMimeTypeUtil {
     FileMimeTypeUtil.fileMimeTypeMap.set(extension, mType);
   }
 
+
+
   static setFileMimeTypeMap() {
     // 图片
-    this.addFileMimeType('PNG', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_PNG,
+    FileMimeTypeUtil.addFileMimeType('PNG', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_PNG,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/png');
-    this.addFileMimeType('WBMP', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_WBMP,
+    FileMimeTypeUtil.addFileMimeType('WBMP', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_WBMP,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/vnd.wap.wbmp');
-    this.addFileMimeType('BMP', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_BMP,
+    FileMimeTypeUtil.addFileMimeType('BMP', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_BMP,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/bmp');
-    this.addFileMimeType('GIF', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_GIF,
+    FileMimeTypeUtil.addFileMimeType('GIF', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_GIF,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/gif');
-    this.addFileMimeType('JPEG', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_JPEG,
+    FileMimeTypeUtil.addFileMimeType('JPEG', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_JPEG,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/jpeg');
-    this.addFileMimeType('JPG', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_JPG,
+    FileMimeTypeUtil.addFileMimeType('JPG', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_JPG,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/jpeg');
-    this.addFileMimeType('JPE', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_JPEG,
+    FileMimeTypeUtil.addFileMimeType('JPE', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_JPEG,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/jpeg');
-    this.addFileMimeType('CR2', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_CR2,
+    FileMimeTypeUtil.addFileMimeType('CR2', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_CR2,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/cr2');
-    this.addFileMimeType('PSD', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_PSD,
+    FileMimeTypeUtil.addFileMimeType('PSD', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_PSD,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/psd');
-    this.addFileMimeType('HEIC', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_HEIC,
+    FileMimeTypeUtil.addFileMimeType('HEIC', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_HEIC,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/heif');
-    this.addFileMimeType('HEIF', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_HEIC,
+    FileMimeTypeUtil.addFileMimeType('HEIF', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_HEIC,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/heif');
-    this.addFileMimeType('DNG', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_RAW,
+    FileMimeTypeUtil.addFileMimeType('DNG', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_RAW,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/x-adobe-dng');
-    this.addFileMimeType('WEBP', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_WEBP,
+    FileMimeTypeUtil.addFileMimeType('WEBP', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_WEBP,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/webp');
-    this.addFileMimeType('TIF', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_TIF,
+    FileMimeTypeUtil.addFileMimeType('TIF', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_TIF,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/tiff');
-    this.addFileMimeType('ICO', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_ICO,
+    FileMimeTypeUtil.addFileMimeType('ICO', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_ICO,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/x-icon');
-    this.addFileMimeType('ARW', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_RAW,
+    FileMimeTypeUtil.addFileMimeType('ARW', MimeType.FILE_CATEGORY_IMAGE, FileMimeTypeUtil.FILE_TYPE_RAW,
       $r('app.media.hidisk_icon_picture'), $r('app.media.hidisk_icon_picture_grid'),
       $r('app.media.hidisk_icon_picture_grid_local'), 'image/x-sony-arw');
 
     // 视频
-    this.addFileMimeType('RMVB', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_RMVB,
+    FileMimeTypeUtil.addFileMimeType('RMVB', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_RMVB,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-pn-realvideo');
-    this.addFileMimeType('M4U', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_M4U,
+    FileMimeTypeUtil.addFileMimeType('M4U', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_M4U,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/vnd.mpegurl');
-    this.addFileMimeType('M4V', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_M4V,
+    FileMimeTypeUtil.addFileMimeType('M4V', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_M4V,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-m4v');
-    this.addFileMimeType('MOV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MOV,
+    FileMimeTypeUtil.addFileMimeType('MOV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MOV,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/quicktime');
-    this.addFileMimeType('MP4', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP4,
+    FileMimeTypeUtil.addFileMimeType('MP4', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP4,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/mp4');
-    this.addFileMimeType('MPE', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP4,
+    FileMimeTypeUtil.addFileMimeType('MPE', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP4,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/mpeg');
-    this.addFileMimeType('MPEG', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP2PS,
+    FileMimeTypeUtil.addFileMimeType('MPEG', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP2PS,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/mpeg');
-    this.addFileMimeType('MPG4', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP4,
+    FileMimeTypeUtil.addFileMimeType('MPG4', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP4,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/mpeg');
-    this.addFileMimeType('MKV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MKV,
+    FileMimeTypeUtil.addFileMimeType('MKV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MKV,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-matroska');
-    this.addFileMimeType('WEBM', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_WEBM,
+    FileMimeTypeUtil.addFileMimeType('WEBM', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_WEBM,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-matroska');
-    this.addFileMimeType('3GPP', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_3GPP,
+    FileMimeTypeUtil.addFileMimeType('3GPP', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_3GPP,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/3gpp');
-    this.addFileMimeType('ASF', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_ASF,
+    FileMimeTypeUtil.addFileMimeType('ASF', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_ASF,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-ms-asf');
-    this.addFileMimeType('ASX', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_ASF,
+    FileMimeTypeUtil.addFileMimeType('ASX', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_ASF,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-ms-asf');
-    this.addFileMimeType('AVI', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_AVI,
+    FileMimeTypeUtil.addFileMimeType('AVI', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_AVI,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-msvideo');
-    this.addFileMimeType('FLV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_FLV,
+    FileMimeTypeUtil.addFileMimeType('FLV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_FLV,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-flv');
-    this.addFileMimeType('M2TS', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP2PS,
+    FileMimeTypeUtil.addFileMimeType('M2TS', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP2PS,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/mpeg');
-    this.addFileMimeType('3G2', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_3GPP2,
+    FileMimeTypeUtil.addFileMimeType('3G2', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_3GPP2,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/3gpp2');
-    this.addFileMimeType('WMV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_WMV,
+    FileMimeTypeUtil.addFileMimeType('WMV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_WMV,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-ms-wmv');
-    this.addFileMimeType('MPG', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP4,
+    FileMimeTypeUtil.addFileMimeType('MPG', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP4,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/video/mp2p');
-    this.addFileMimeType('3GP', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_3GPP,
+    FileMimeTypeUtil.addFileMimeType('3GP', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_3GPP,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/video/3gpp');
-    this.addFileMimeType('RV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_RV,
+    FileMimeTypeUtil.addFileMimeType('RV', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_RV,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-pn-realvideo');
-    this.addFileMimeType('TS', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP2TS,
+    FileMimeTypeUtil.addFileMimeType('TS', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_MP2TS,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/mp2ts');
-    this.addFileMimeType('DIVX', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_DIVX,
+    FileMimeTypeUtil.addFileMimeType('DIVX', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_DIVX,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/divx');
-    this.addFileMimeType('F4V', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_F4V,
+    FileMimeTypeUtil.addFileMimeType('F4V', MimeType.FILE_CATEGORY_VIDEO, FileMimeTypeUtil.FILE_TYPE_F4V,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'video/x-f4v');
 
     // 文档
-    this.addFileMimeType('DOCX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
+    FileMimeTypeUtil.addFileMimeType('DOCX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
       $r('app.media.hidisk_icon_doc'), $r('app.media.hidisk_icon_doc_grid'),
       $r('app.media.hidisk_icon_doc_grid_local'),
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-    this.addFileMimeType('DOC', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
+    FileMimeTypeUtil.addFileMimeType('DOC', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
       $r('app.media.hidisk_icon_doc'), $r('app.media.hidisk_icon_doc_grid'),
       $r('app.media.hidisk_icon_doc_grid_local'), 'application/msword');
-    this.addFileMimeType('DOCM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
+    FileMimeTypeUtil.addFileMimeType('DOCM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
       $r('app.media.hidisk_icon_doc'), $r('app.media.hidisk_icon_doc_grid'),
       $r('app.media.hidisk_icon_doc_grid_local'),
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-    this.addFileMimeType('DOTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
+    FileMimeTypeUtil.addFileMimeType('DOTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
       $r('app.media.hidisk_icon_doc'), $r('app.media.hidisk_icon_doc_grid'),
       $r('app.media.hidisk_icon_doc_grid_local'),
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-    this.addFileMimeType('WPT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
+    FileMimeTypeUtil.addFileMimeType('WPT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
       $r('app.media.hidisk_icon_doc'), $r('app.media.hidisk_icon_doc_grid'),
       $r('app.media.hidisk_icon_doc_grid_local'), 'application/wpt');
-    this.addFileMimeType('XLS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
+    FileMimeTypeUtil.addFileMimeType('XLS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
       $r('app.media.hidisk_icon_xls'), $r('app.media.hidisk_icon_xls_grid'),
       $r('app.media.hidisk_icon_xls_grid_local'), 'application/vnd.ms-excel');
-    this.addFileMimeType('XLSX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
+    FileMimeTypeUtil.addFileMimeType('XLSX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
       $r('app.media.hidisk_icon_xls'), $r('app.media.hidisk_icon_xls_grid'),
       $r('app.media.hidisk_icon_xls_grid_local'), 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    this.addFileMimeType('XLSM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
+    FileMimeTypeUtil.addFileMimeType('XLSM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
       $r('app.media.hidisk_icon_xls'), $r('app.media.hidisk_icon_xls_grid'),
       $r('app.media.hidisk_icon_xls_grid_local'), 'application/vnd.ms-excel.sheet.macroEnabled.12');
-    this.addFileMimeType('XLTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
+    FileMimeTypeUtil.addFileMimeType('XLTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
       $r('app.media.hidisk_icon_xls'), $r('app.media.hidisk_icon_xls_grid'),
       $r('app.media.hidisk_icon_xls_grid_local'), 'application/vnd.ms-excel.template.macroEnabled.12');
-    this.addFileMimeType('ET', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
+    FileMimeTypeUtil.addFileMimeType('ET', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
       $r('app.media.hidisk_icon_xls'), $r('app.media.hidisk_icon_xls_grid'),
       $r('app.media.hidisk_icon_xls_grid_local'), 'application/et');
-    this.addFileMimeType('PPS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('PPS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'), 'application/vnd.ms-powerpoint');
-    this.addFileMimeType('PPT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('PPT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'), 'application/vnd.ms-powerpoint');
-    this.addFileMimeType('PPTX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('PPTX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'),
       'application/vnd.openxmlformats-officedocument.presentationml.presentation');
-    this.addFileMimeType('PPTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('PPTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'), 'application/vnd.ms-powerpoint.presentation.macroEnabled.12');
-    this.addFileMimeType('PPSM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('PPSM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'), 'application/vnd.ms-powerpoint.slideshow.macroEnabled.12');
-    this.addFileMimeType('POTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('POTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'), 'application/vnd.ms-powerpoint.presentation.macroEnabled.12');
-    this.addFileMimeType('DPS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('DPS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'), 'application/dps');
-    this.addFileMimeType('DPT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('DPT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'), 'application/dpt');
-    this.addFileMimeType('MSG', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('MSG', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'application/vnd.ms-outlook');
-    this.addFileMimeType('PDF', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_PDF,
+    FileMimeTypeUtil.addFileMimeType('PDF', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_PDF,
       $r('app.media.hidisk_icon_pdf'), $r('app.media.hidisk_icon_pdf_grid'),
       $r('app.media.hidisk_icon_pdf_grid_local'), 'application/pdf');
-    this.addFileMimeType('RTF', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
+    FileMimeTypeUtil.addFileMimeType('RTF', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
       $r('app.media.hidisk_icon_doc'), $r('app.media.hidisk_icon_doc_grid'),
       $r('app.media.hidisk_icon_doc_grid_local'), 'application/rtf');
-    this.addFileMimeType('WPS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
+    FileMimeTypeUtil.addFileMimeType('WPS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
       $r('app.media.hidisk_icon_doc'), $r('app.media.hidisk_icon_doc_grid'),
       $r('app.media.hidisk_icon_doc_grid_local'), 'application/vnd.ms-works');
-    this.addFileMimeType('XHTML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('XHTML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_xml'), $r('app.media.hidisk_icon_xml_grid'),
       $r('app.media.hidisk_icon_xml_grid_local'), 'application/xhtml+xml');
-    this.addFileMimeType('MPC', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('MPC', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/vnd.mpohun.certificate');
-    this.addFileMimeType('JS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('JS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'application/x-javascript');
-    this.addFileMimeType('C', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('C', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/plain');
-    this.addFileMimeType('CONF', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('CONF', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/plain');
-    this.addFileMimeType('CPP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('CPP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/plain');
-    this.addFileMimeType('H', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('H', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/plain');
-    this.addFileMimeType('HTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_HTML,
+    FileMimeTypeUtil.addFileMimeType('HTM', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_HTML,
       $r('app.media.hidisk_icon_html'), $r('app.media.hidisk_icon_html_grid'),
       $r('app.media.hidisk_icon_html_grid_local'), 'text/html');
-    this.addFileMimeType('HTML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_HTML,
+    FileMimeTypeUtil.addFileMimeType('HTML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_HTML,
       $r('app.media.hidisk_icon_html'), $r('app.media.hidisk_icon_html_grid'),
       $r('app.media.hidisk_icon_html_grid_local'), 'text/html');
-    this.addFileMimeType('JAVA', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('JAVA', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/plain');
-    this.addFileMimeType('LOG', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('LOG', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_log'), $r('app.media.hidisk_icon_log_grid'),
       $r('app.media.hidisk_icon_log_grid_local'), 'text/plain');
-    this.addFileMimeType('PROP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('PROP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/plain');
-    this.addFileMimeType('RC', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('RC', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/plain');
-    this.addFileMimeType('SH', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('SH', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/plain');
-    this.addFileMimeType('TXT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('TXT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_TEXT,
       $r('app.media.hidisk_icon_text'), $r('app.media.hidisk_icon_text_grid'),
       $r('app.media.hidisk_icon_text_grid_local'), 'text/plain');
-    this.addFileMimeType('XML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_XML,
+    FileMimeTypeUtil.addFileMimeType('XML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_XML,
       $r('app.media.hidisk_icon_xml'), $r('app.media.hidisk_icon_xml_grid'),
       $r('app.media.hidisk_icon_xml_grid_local'), 'text/plain');
-    this.addFileMimeType('SUB', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('SUB', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/x-subviewer');
-    this.addFileMimeType('ASS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('ASS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/x-ssa');
-    this.addFileMimeType('SSA', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('SSA', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/x-ssa');
-    this.addFileMimeType('JAD', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType(FILE_TYPE_JAD, MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/vnd.sun.j2me.app-descriptor');
-    this.addFileMimeType('DHTML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_HTML,
+    FileMimeTypeUtil.addFileMimeType('DHTML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_HTML,
       $r('app.media.hidisk_icon_html'), $r('app.media.hidisk_icon_html_grid'),
       $r('app.media.hidisk_icon_html_grid_local'), 'text/html');
-    this.addFileMimeType('SHTML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_HTML,
+    FileMimeTypeUtil.addFileMimeType('SHTML', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_HTML,
       $r('app.media.hidisk_icon_html'), $r('app.media.hidisk_icon_html_grid'),
       $r('app.media.hidisk_icon_html_grid_local'), 'text/html');
-    this.addFileMimeType('TEXT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('TEXT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_TEXT,
       $r('app.media.hidisk_icon_text'), $r('app.media.hidisk_icon_text_grid'),
       $r('app.media.hidisk_icon_text_grid_local'), 'text/plain');
-    this.addFileMimeType('INI', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('INI', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/plain');
-    this.addFileMimeType('VCS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('VCS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/x-vcalendar');
-    this.addFileMimeType('ICS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('ICS', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/calendar');
-    this.addFileMimeType('JSP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('JSP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/html');
-    this.addFileMimeType('ASP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('ASP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/html');
-    this.addFileMimeType('PHP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
+    FileMimeTypeUtil.addFileMimeType('PHP', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MORE_TEXT,
       $r('app.media.hidisk_icon_file'), $r('app.media.hidisk_icon_file_grid'),
       $r('app.media.hidisk_icon_file_grid_local'), 'text/html');
-    this.addFileMimeType('DOTX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
+    FileMimeTypeUtil.addFileMimeType('DOTX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
       $r('app.media.hidisk_icon_doc'), $r('app.media.hidisk_icon_doc_grid'),
       $r('app.media.hidisk_icon_doc_grid_local'),
       'application/vnd.openxmlformats-officedocument.wordprocessingml.template');
-    this.addFileMimeType('DOT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
+    FileMimeTypeUtil.addFileMimeType('DOT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_WORD,
       $r('app.media.hidisk_icon_doc'), $r('app.media.hidisk_icon_doc_grid'),
       $r('app.media.hidisk_icon_doc_grid_local'), 'application/msword');
-    this.addFileMimeType('XLT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
+    FileMimeTypeUtil.addFileMimeType('XLT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
       $r('app.media.hidisk_icon_xls'), $r('app.media.hidisk_icon_xls_grid'),
       $r('app.media.hidisk_icon_xls_grid_local'), 'application/vnd.ms-excel');
-    this.addFileMimeType('XLTX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
+    FileMimeTypeUtil.addFileMimeType('XLTX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
       $r('app.media.hidisk_icon_xls'), $r('app.media.hidisk_icon_xls_grid'),
       $r('app.media.hidisk_icon_xls_grid_local'),
       'application/vnd.openxmlformats-officedocument.spreadsheetml.template');
-    this.addFileMimeType('CSV', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
+    FileMimeTypeUtil.addFileMimeType('CSV', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_EXCEL,
       $r('app.media.hidisk_icon_xls'), $r('app.media.hidisk_icon_xls_grid'),
       $r('app.media.hidisk_icon_xls_grid_local'), 'text/comma-separated-values');
-    this.addFileMimeType('POT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('POT', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'), 'application/vnd.ms-powerpoint');
-    this.addFileMimeType('POTX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('POTX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'),
       'application/vnd.openxmlformats-officedocument.presentationml.template');
-    this.addFileMimeType('PPSX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
+    FileMimeTypeUtil.addFileMimeType('PPSX', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_MS_POWERPOINT,
       $r('app.media.hidisk_icon_ppt'), $r('app.media.hidisk_icon_ppt_grid'),
       $r('app.media.hidisk_icon_ppt_grid_local'),
       'application/vnd.openxmlformats-officedocument.presentationml.slideshow');
-    this.addFileMimeType('VCF', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_VCF,
+    FileMimeTypeUtil.addFileMimeType('VCF', MimeType.FILE_CATEGORY_TXT, FileMimeTypeUtil.FILE_TYPE_VCF,
       $r('app.media.hidisk_icon_vcard'), $r('app.media.hidisk_icon_vcard_grid'),
       $r('app.media.hidisk_icon_vcard_grid_local'), 'text/x-vcard');
 
     // 音频
-    this.addFileMimeType('3GPP2', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_3GPP2,
+    FileMimeTypeUtil.addFileMimeType('3GPP2', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_3GPP2,
       $r('app.media.hidisk_icon_video'), $r('app.media.hidisk_icon_video_grid'),
       $r('app.media.hidisk_icon_video_grid_local'), 'audio/3gpp2');
-    this.addFileMimeType('IMY', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_IMY,
+    FileMimeTypeUtil.addFileMimeType('IMY', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_IMY,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/imelody');
-    this.addFileMimeType('AAC', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AAC,
+    FileMimeTypeUtil.addFileMimeType('AAC', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AAC,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/aac');
-    this.addFileMimeType('AMR', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AMR,
+    FileMimeTypeUtil.addFileMimeType('AMR', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AMR,
       $r('app.media.hidisk_icon_music_amr'), $r('app.media.hidisk_icon_audio_amr_grid'),
       $r('app.media.hidisk_icon_audio_amr_grid_local'), 'audio/amr');
-    this.addFileMimeType('MID', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
+    FileMimeTypeUtil.addFileMimeType('MID', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/midi');
-    this.addFileMimeType('MPGA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MPGA,
+    FileMimeTypeUtil.addFileMimeType('MPGA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MPGA,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/mpeg');
-    this.addFileMimeType('MXMF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MXMF,
+    FileMimeTypeUtil.addFileMimeType('MXMF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MXMF,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/mobile-xmf');
-    this.addFileMimeType('RTTTL', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
+    FileMimeTypeUtil.addFileMimeType('RTTTL', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/midi');
-    this.addFileMimeType('RTX', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
+    FileMimeTypeUtil.addFileMimeType('RTX', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/midi');
-    this.addFileMimeType('SMF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_SMF,
+    FileMimeTypeUtil.addFileMimeType('SMF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_SMF,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/sp-midi');
-    this.addFileMimeType('WAV', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_WAV,
+    FileMimeTypeUtil.addFileMimeType('WAV', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_WAV,
       $r('app.media.hidisk_icon_music_wav'), $r('app.media.hidisk_icon_audio_wav_grid'),
       $r('app.media.hidisk_icon_audio_wav_grid_local'), 'audio/x-wav');
-    this.addFileMimeType('WMA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_WMA,
+    FileMimeTypeUtil.addFileMimeType('WMA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_WMA,
       $r('app.media.hidisk_icon_music_wma'), $r('app.media.hidisk_icon_audio_wma_grid'),
       $r('app.media.hidisk_icon_audio_wma_grid_local'), 'audio/x-ms-wma');
-    this.addFileMimeType('OTA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
+    FileMimeTypeUtil.addFileMimeType('OTA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/midi');
-    this.addFileMimeType('XMF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
+    FileMimeTypeUtil.addFileMimeType('XMF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/midi');
-    this.addFileMimeType('OGG', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_OGG,
+    FileMimeTypeUtil.addFileMimeType('OGG', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_OGG,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/ogg');
-    this.addFileMimeType('PLS', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_PLS,
+    FileMimeTypeUtil.addFileMimeType('PLS', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_PLS,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-scpls');
-    this.addFileMimeType('RA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_RA,
+    FileMimeTypeUtil.addFileMimeType('RA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_RA,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-pn-realaudio');
-    this.addFileMimeType('RAM', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_RAM,
+    FileMimeTypeUtil.addFileMimeType('RAM', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_RAM,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-pn-realaudio');
-    this.addFileMimeType('MIDI', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
+    FileMimeTypeUtil.addFileMimeType('MIDI', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MID,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/midi');
-    this.addFileMimeType('M3U', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_M3U,
+    FileMimeTypeUtil.addFileMimeType('M3U', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_M3U,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-mpegurl');
-    this.addFileMimeType('M4A', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_M4A,
+    FileMimeTypeUtil.addFileMimeType('M4A', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_M4A,
       $r('app.media.hidisk_icon_music_m4a'), $r('app.media.hidisk_icon_audio_m4a_grid'),
       $r('app.media.hidisk_icon_audio_m4a_grid_local'), 'audio/mp4a-latm');
-    this.addFileMimeType('M4B', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MP4A,
+    FileMimeTypeUtil.addFileMimeType('M4B', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MP4A,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/mp4a-latm');
-    this.addFileMimeType('M4P', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MP4A,
+    FileMimeTypeUtil.addFileMimeType('M4P', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MP4A,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/mp4a-latm');
-    this.addFileMimeType('AWB', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AWB,
+    FileMimeTypeUtil.addFileMimeType('AWB', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AWB,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/amr-wb');
-    this.addFileMimeType('MP2', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MP2,
+    FileMimeTypeUtil.addFileMimeType('MP2', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MP2,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-mpeg');
-    this.addFileMimeType('MP3', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MP3,
+    FileMimeTypeUtil.addFileMimeType('MP3', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MP3,
       $r('app.media.hidisk_icon_music_mp3'), $r('app.media.hidisk_icon_audio_mp3_grid'),
       $r('app.media.hidisk_icon_audio_mp3_grid_local'), 'audio/x-mpeg');
-    this.addFileMimeType('AU', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AU,
+    FileMimeTypeUtil.addFileMimeType('AU', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AU,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/basic');
-    this.addFileMimeType('OGA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_OGG,
+    FileMimeTypeUtil.addFileMimeType('OGA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_OGG,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'application/ogg');
-    this.addFileMimeType('WPL', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_WPL,
+    FileMimeTypeUtil.addFileMimeType('WPL', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_WPL,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'application/vnd.ms-wpl');
-    this.addFileMimeType('AC3', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AC3,
+    FileMimeTypeUtil.addFileMimeType('AC3', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AC3,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/ac3');
-    this.addFileMimeType('MKA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MKA,
+    FileMimeTypeUtil.addFileMimeType('MKA', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_MKA,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-matroska');
-    this.addFileMimeType('FLAC', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_FLAC,
+    FileMimeTypeUtil.addFileMimeType('FLAC', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_FLAC,
       $r('app.media.hidisk_icon_music_flac'), $r('app.media.hidisk_icon_audio_flac_grid'),
       $r('app.media.hidisk_icon_audio_flac_grid_local'), 'audio/flac');
-    this.addFileMimeType('AIF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AIFF,
+    FileMimeTypeUtil.addFileMimeType('AIF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AIFF,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-aiff');
-    this.addFileMimeType('AIFF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AIFF,
+    FileMimeTypeUtil.addFileMimeType('AIFF', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AIFF,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-aiff');
-    this.addFileMimeType('AIFC', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AIFF,
+    FileMimeTypeUtil.addFileMimeType('AIFC', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_AIFF,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-aiff');
-    this.addFileMimeType('APE', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_APE,
+    FileMimeTypeUtil.addFileMimeType('APE', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_APE,
       $r('app.media.hidisk_icon_music_ape'), $r('app.media.hidisk_icon_audio_ape_grid'),
       $r('app.media.hidisk_icon_audio_ape_grid_local'), 'audio/x-ape');
-    this.addFileMimeType('RM', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_RM_AUDIO,
+    FileMimeTypeUtil.addFileMimeType('RM', MimeType.FILE_CATEGORY_AUDIO, FileMimeTypeUtil.FILE_TYPE_RM_AUDIO,
       $r('app.media.hidisk_icon_music'), $r('app.media.hidisk_icon_audio_grid'),
       $r('app.media.hidisk_icon_audio_grid_local'), 'audio/x-pn-realaudio');
 
     // 压缩包
-    this.addFileMimeType('GTAR', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_ZIP,
+    FileMimeTypeUtil.addFileMimeType('GTAR', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_ZIP,
       $r('app.media.hidisk_icon_compressed_files'), $r('app.media.hidisk_icon_compress_grid'),
       $r('app.media.hidisk_icon_compress_grid_local'), 'application/x-gtar');
-    this.addFileMimeType('RAR', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_RAR,
+    FileMimeTypeUtil.addFileMimeType('RAR', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_RAR,
       $r('app.media.hidisk_icon_rar'), $r('app.media.hidisk_icon_rar_grid'),
       $r('app.media.hidisk_icon_rar_grid_local'), 'application/x-rar-compressed');
-    this.addFileMimeType('TAR', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_TAR,
+    FileMimeTypeUtil.addFileMimeType('TAR', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_TAR,
       $r('app.media.hidisk_icon_compressed_files'), $r('app.media.hidisk_icon_compress_grid'),
       $r('app.media.hidisk_icon_compress_grid_local'), 'application/x-tar');
-    this.addFileMimeType('TGZ', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_TGZ,
+    FileMimeTypeUtil.addFileMimeType('TGZ', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_TGZ,
       $r('app.media.hidisk_icon_compressed_files'), $r('app.media.hidisk_icon_compress_grid'),
       $r('app.media.hidisk_icon_compress_grid_local'), 'application/x-compressed');
-    this.addFileMimeType('Z', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_Z,
+    FileMimeTypeUtil.addFileMimeType('Z', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_Z,
       $r('app.media.hidisk_icon_compressed_files'), $r('app.media.hidisk_icon_compress_grid'),
       $r('app.media.hidisk_icon_compress_grid_local'), 'application/x-compressed');
-    this.addFileMimeType('ZIP', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_ZIP,
+    FileMimeTypeUtil.addFileMimeType('ZIP', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_ZIP,
       $r('app.media.hidisk_icon_zip'), $r('app.media.hidisk_icon_zip_grid'),
       $r('app.media.hidisk_icon_zip_grid_local'), 'application/zip');
-    this.addFileMimeType('JAR', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_JAR,
+    FileMimeTypeUtil.addFileMimeType('JAR', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_JAR,
       $r('app.media.hidisk_icon_compressed_files'), $r('app.media.hidisk_icon_compress_grid'),
       $r('app.media.hidisk_icon_compress_grid_local'), 'text/vnd.sun.j2me.app-descriptor');
-    this.addFileMimeType('GZ', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_GZ,
+    FileMimeTypeUtil.addFileMimeType('GZ', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_GZ,
       $r('app.media.hidisk_icon_compressed_files'), $r('app.media.hidisk_icon_compress_grid'),
       $r('app.media.hidisk_icon_compress_grid_local'), 'application/x-gzip');
-    this.addFileMimeType('BZ', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_BZ,
+    FileMimeTypeUtil.addFileMimeType('BZ', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_BZ,
       $r('app.media.hidisk_icon_compressed_files'), $r('app.media.hidisk_icon_compress_grid'),
       $r('app.media.hidisk_icon_compress_grid_local'), 'application/x-bzip');
-    this.addFileMimeType('BZ2', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_BZ2,
+    FileMimeTypeUtil.addFileMimeType('BZ2', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_BZ2,
       $r('app.media.hidisk_icon_compressed_files'), $r('app.media.hidisk_icon_compress_grid'),
       $r('app.media.hidisk_icon_compress_grid_local'), 'application/x-bzip2');
-    this.addFileMimeType('7Z', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_7Z,
+    FileMimeTypeUtil.addFileMimeType('7Z', MimeType.FILE_CATEGORY_ZIP, FileMimeTypeUtil.FILE_TYPE_7Z,
       $r('app.media.hidisk_icon_7z'), $r('app.media.hidisk_icon_7z_grid'),
       $r('app.media.hidisk_icon_7z_grid_local'), 'application/x-7z-compressed');
 
     // 安装包
-    this.addFileMimeType('APK', MimeType.FILE_CATEGORY_PKG, FileMimeTypeUtil.FILE_TYPE_APK,
+    FileMimeTypeUtil.addFileMimeType(FILE_TYPE_APK, MimeType.FILE_CATEGORY_PKG, FileMimeTypeUtil.FILE_TYPE_APK,
       $r('app.media.hidisk_icon_application'), $r('app.media.hidisk_icon_application_grid'),
       $r('app.media.hidisk_icon_application_grid_local'), 'application/vnd.android.package-archive');
-    this.addFileMimeType('HAP', MimeType.FILE_CATEGORY_PKG, FileMimeTypeUtil.FILE_TYPE_HAP,
+    FileMimeTypeUtil.addFileMimeType('HAP', MimeType.FILE_CATEGORY_PKG, FileMimeTypeUtil.FILE_TYPE_HAP,
       $r('app.media.hidisk_icon_application'), $r('app.media.hidisk_icon_application_grid'),
       $r('app.media.hidisk_icon_application_grid_local'), 'file/*');
 
     // 未知
-    this.addFileMimeType('EXE', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('EXE', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/octet-stream');
-    this.addFileMimeType('BIN', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('BIN', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/octet-stream');
-    this.addFileMimeType('CLASS', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('CLASS', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/octet-stream');
-    this.addFileMimeType('RAW', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('RAW', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/octet-stream');
-    this.addFileMimeType('EPUB', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('EPUB', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/epub+zip');
-    this.addFileMimeType('EBK3', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('EBK3', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/x-expandedbook');
-    this.addFileMimeType('SAMI', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('SAMI', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/x-sami');
-    this.addFileMimeType('SMI', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('SMI', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/x-sami');
-    this.addFileMimeType('STR', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('STR', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/x-subrip');
-    this.addFileMimeType('SWF', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('SWF', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/x-shockwave-flash');
-    this.addFileMimeType('CAB', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('CAB', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/x-shockwave-flash');
-    this.addFileMimeType('CHM', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('CHM', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_chm'), $r('app.media.hidisk_icon_chm_grid'),
       $r('app.media.hidisk_icon_chm_grid_local'), 'application/x-chm');
-    this.addFileMimeType('UMD', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('UMD', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/umd');
-    this.addFileMimeType('PDB', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('PDB', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/ebook');
-    this.addFileMimeType('DCF', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('DCF', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/vnd.oma.drm.content');
-    this.addFileMimeType('K3G', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('K3G', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/octet-stream');
-    this.addFileMimeType('MPO', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
+    FileMimeTypeUtil.addFileMimeType('MPO', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/octet-stream');
-    this.addFileMimeType('MMF', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_MMF,
+    FileMimeTypeUtil.addFileMimeType('MMF', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_MMF,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/vnd.smaf');
-    this.addFileMimeType('QCP', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_QCP,
+    FileMimeTypeUtil.addFileMimeType('QCP', MimeType.FILE_CATEGORY_UNKNOW, FileMimeTypeUtil.FILE_TYPE_QCP,
       $r('app.media.hidisk_icon_unknown'), $r('app.media.hidisk_icon_unknown_grid'),
       $r('app.media.hidisk_icon_unknown_grid_local'), 'application/octet-stream');
   }
@@ -714,8 +718,8 @@ export class FileMimeTypeUtil {
       }
       suffix = splitList[splitList.length-2].toUpperCase();
     }
-    const fileMiMeTypeMap = this.getFileMiMeTypeMap();
-    const mimeType: MimeType = fileMiMeTypeMap.get(suffix);
+    const fileMiMeTypeMap = FileMimeTypeUtil.getFileMiMeTypeMap();
+    const mimeType: MimeType | undefined = fileMiMeTypeMap.get(suffix);
     if (!mimeType) {
       return FileMimeTypeUtil.UNKNOW_MIMETYPE;
     }
@@ -745,7 +749,7 @@ export class FileMimeTypeUtil {
   }
 
   public static getFileTypeOrder(fileName: string): number {
-    const mimeType = this.getFileMimeType(fileName);
+    const mimeType = FileMimeTypeUtil.getFileMimeType(fileName);
     return mimeType.getFileTypeSort();
   }
 }
