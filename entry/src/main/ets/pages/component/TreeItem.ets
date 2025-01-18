@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { FilesData } from '../../databases/model/FileData';
+import { FilesData, TransList, MkDirItem } from '../../databases/model/FileData';
 import { on } from '../../base/utils/EventBus';
 import FileAccessExec from '../../base/utils/FileAccessExec';
 import { TREE_LAYER } from '../../base/constants/UiConstant';
@@ -25,6 +25,7 @@ import Logger from '../../base/log/Logger';
 import fileAccess from '@ohos.file.fileAccess';
 import ObjectUtil from '../../base/utils/ObjectUtil';
 
+
 @Styles
 function pressedStyles() {
   .backgroundColor($r('app.color.hicloud_hmos_bg'))
@@ -34,8 +35,8 @@ const TAG = 'TreeItem';
 
 @Component
 export struct TreeItem {
-  fileItem: FilesData = new FilesData({});
-  loadPath?: string = '';
+  fileItem: FilesData = new FilesData();
+  loadPath: string = '';
   isNeedExpand: boolean = false;
   @State iconRotate: boolean = false;
   @State subFolderList: FilesData[] = [];
@@ -67,9 +68,9 @@ export struct TreeItem {
     let queryRes = await this.getPickPathListFiles(dirUri, defaultExpandPath, this.fileItem.layer);
     this.isLoading = false;
     let subList: FilesData[] = this.fileBaseToFileData(queryRes);
-    let { folderList, fileList } = this.transfer(subList);
-    this.fileList = fileList
-    call(folderList);
+    let transList: TransList = this.transfer(subList);
+    this.fileList = transList.fileList
+    call(transList.folderList);
   }
 
   private async getPickPathListFiles(dirUri: string, expandPath: string, level: number): Promise<FileBase[]> {
@@ -77,31 +78,33 @@ export struct TreeItem {
     let fileInfo: fileAccess.FileInfo = await FileUtil.getFileInfoByUri(dirUri, fileHelper);
     if (ObjectUtil.isNullOrUndefined(fileInfo) || !FileUtil.isFolder(fileInfo.mode)) {
       Logger.e(TAG, 'uri is not folder');
-      return;
+      return [];
     }
     let queryRes = FileAccessExec.getPathPickSubFiles(fileInfo, expandPath, level);
     if (ObjectUtil.isNull(queryRes)) {
       Logger.e(TAG, 'files is null');
-      return;
+      return [];
     }
     return queryRes;
   }
 
-  transfer(list: FilesData[]) {
-    let folderList: FilesData[] = [];
-    let fileList: FilesData[] = [];
+  transfer(list: FilesData[]): TransList {
+    let transList: TransList = {
+      folderList: [],
+      fileList: []
+    }
     if (ArrayUtil.isEmpty(list)) {
-      return { folderList, fileList };
+      return transList;
     }
     for (let i = 0; i < list.length; i++) {
       let fileData = list[i];
       if (fileData.isFolder) {
-        folderList.push(fileData);
+        transList.folderList.push(fileData);
       } else {
-        fileList.push(fileData);
+        transList.fileList.push(fileData);
       }
     }
-    return { folderList, fileList };
+    return transList;
   }
 
   fileBaseToFileData(list: FileBase[]): FilesData[] {
@@ -111,7 +114,7 @@ export struct TreeItem {
     }
     for (let i = 0; i < list.length; i++) {
       let data = list[i];
-      let fileData = new FilesData([]);
+      let fileData = new FilesData();
       fileData.uri = data.uri;
       fileData.fileName = data.fileName;
       fileData.isFolder = data.isFolder;
@@ -160,16 +163,16 @@ export struct TreeItem {
   }
 
   aboutToAppear() {
-    on('fileMkdir', async (e) => {
+    on('fileMkdir', async (e: MkDirItem) => {
       if (this.selectUri === this.fileItem.uri) {
         // 获取当前选中文件夹下的所有子文件
         let queryArray = await this.getPickPathListFiles(this.fileItem.uri, '', this.fileItem.layer);
-        let subList: FilesData[] = this.fileBaseToFileData(queryArray);
-        let { folderList, fileList } = this.transfer(subList);
-        this.fileList = fileList;
+        let subList: FilesData[] = this.fileBaseToFileData(queryArray)
+        let transList: TransList = this.transfer(subList);
+        this.fileList = transList.fileList;
         // 获取当前选中文件夹下的所有子文件
-        this.subFolderList = folderList;
-        this.expandSubFolderCall(folderList);
+        this.subFolderList = transList.folderList;
+        this.expandSubFolderCall(transList.folderList);
         // 查找刚刚新建的文件夹index
         const index = this.subFolderList.findIndex(item => item.fileName === e.mkdirName);
         if (index !== -1 && this.canExpandPath()) {
@@ -196,7 +199,7 @@ export struct TreeItem {
       if (this.iconRotate) {
         this.iconRotate = !this.iconRotate;
         this.changeSelectItem(this.fileItem, false);
-        this.fileItem.subFileList = null;
+        this.fileItem.subFileList = [];
         this.folderList = this.fileItem.subFolderList;
       } else {
         if (this.canExpandPath()) {
@@ -266,7 +269,7 @@ export struct TreeItem {
       })
 
       if (this.subFolderList.length && this.iconRotate) {
-        ForEach(this.subFolderList, (item) => {
+        ForEach(this.subFolderList, (item: FilesData) => {
           TreeItem({
             fileItem: item,
             loadPath: this.loadPath,

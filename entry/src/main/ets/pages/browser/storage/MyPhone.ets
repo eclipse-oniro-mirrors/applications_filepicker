@@ -20,7 +20,7 @@ import { FilesList } from '../../component/myphone/FilesList';
 import { setSystemBar, setImmersion } from '../../../base/utils/Common';
 import router from '@ohos.router';
 import FileAccessExec from '../../../base/utils/FileAccessExec';
-import { SYSTEM_BAR_COLOR } from '../../../base/constants/UiConstant';
+import { SystemBarColor } from '../../../base/constants/UiConstant';
 import { getResourceString } from '../../../base/utils/Tools';
 import { TopOperateBar } from '../../component/common/TopOperateBar';
 import { FileMkdirDialog } from '../../component/dialog/FileMkdirDialog';
@@ -109,8 +109,8 @@ struct MyPhone {
     }
     data = FileUtil.getPathWithFileSplit(data);
 
-    let fileIterator;
-    let fileData;
+    let fileIterator: fileAccess.FileInfo | fileAccess.RootInfo | undefined = undefined;
+    let fileData: FilesData[];
     let isContinue: boolean = true;
     let isRoot: boolean = true;
     while (isContinue) {
@@ -129,7 +129,8 @@ struct MyPhone {
           let currentDir: string = FileUtil.getPathWithFileSplit(fileData[i].currentDir);
           if (data.startsWith(currentDir)) {
             if (fileData[i].isFolder) {
-              this.direList.push({ title: fileName, url: fileData[i].uri, fileIterator: fileData[i].fileIterator });
+              let bread: BreadData = { title: fileName, url: fileData[i].uri, fileIterator: fileData[i].fileIterator }
+              this.direList.push(bread);
               fileIterator = fileData[i].fileIterator;
               if (data === currentDir) {
                 isContinue = false;
@@ -158,7 +159,7 @@ struct MyPhone {
       return;
     }
     setImmersion(false);
-    setSystemBar(SYSTEM_BAR_COLOR.WHITE, SYSTEM_BAR_COLOR.WHITE, SYSTEM_BAR_COLOR.BLACK, SYSTEM_BAR_COLOR.BLACK);
+    setSystemBar(SystemBarColor.WHITE, SystemBarColor.WHITE, SystemBarColor.BLACK, SystemBarColor.BLACK);
   }
 
   getRootListFile() {
@@ -167,14 +168,14 @@ struct MyPhone {
     this.getVideoAudioDuration(fileList);
   }
 
-  getListFile(fileInfo) {
+  getListFile(fileInfo: fileAccess.FileInfo | fileAccess.RootInfo) {
     let fileList = FileAccessExec.getFileByCurIterator(fileInfo);
     this.fileListSource.setData(fileList);
     this.getVideoAudioDuration(fileList);
   }
 
   async getVideoAudioDuration(fileList: FilesData[]) {
-    const videoAudioList = fileList.filter(item => item.mimeTypeObj.isVideo() || item.mimeTypeObj.isAudio());
+    const videoAudioList = fileList.filter(item => item.mimeTypeObj?.isVideo() || item.mimeTypeObj?.isAudio());
     for (let item of videoAudioList) {
       const mediaType: photoAccessHelper.PhotoType = getMediaType(item.fileName);
       await getDurationByUri(mediaType, item.uri).then((duration) => {
@@ -222,7 +223,9 @@ struct MyPhone {
   refreshData() {
     if (this.direList.length) {
       const lastBread = this.direList[this.direList.length-1];
-      this.getListFile(lastBread.fileIterator);
+      if (lastBread.fileIterator !== undefined) {
+        this.getListFile(lastBread.fileIterator);
+      }
     } else {
       this.getRootListFile();
     }
@@ -243,7 +246,6 @@ struct MyPhone {
   }
 
   aboutToDisappear() {
-    this.fileMkdirDialog = null;
   }
 
   getParams(startModeOptions: StartModeOptions): string {
@@ -251,9 +253,9 @@ struct MyPhone {
     if (!ObjectUtil.isNullOrUndefined(defaultPickPath)) {
       return defaultPickPath;
     }
-    let params = router.getParams();
+    let params = router.getParams() as Record<string, string>;
     if (!ObjectUtil.isNullOrUndefined(params)) {
-      defaultPickPath = params['path'];
+      defaultPickPath = params.path as string;
       if (!ObjectUtil.isNullOrUndefined(defaultPickPath)) {
         return defaultPickPath;
       }
@@ -268,7 +270,9 @@ struct MyPhone {
     this.setShowLoading(true);
     if (this.direList.length) {
       const lastBreadCrumb = this.direList[this.direList.length-1];
-      this.getListFile(lastBreadCrumb.fileIterator);
+      if (lastBreadCrumb.fileIterator !== undefined) {
+        this.getListFile(lastBreadCrumb.fileIterator);
+      }
     } else {
       this.getRootListFile();
     }
@@ -294,7 +298,9 @@ struct MyPhone {
           direList.splice(-1, 1);
           if (direList.length) {
             const lastDir = direList[direList.length-1];
-            this.getListFile(lastDir.fileIterator);
+            if (lastDir.fileIterator !== undefined) {
+              this.getListFile(lastDir.fileIterator);
+            }
           } else {
             this.getRootListFile();
           }

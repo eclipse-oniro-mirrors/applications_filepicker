@@ -69,13 +69,13 @@ export struct BreadCrumb {
 
       Scroll(this.scroller) {
         Row() {
-          ForEach(this.direList, (item, index) => {
+          ForEach(this.direList, (item: BreadData, index) => {
             BreadCrumbItem({
               direItem: item,
               index: index,
               direList: $direList,
             })
-          }, item => item.url.toString())
+          }, (item: BreadData) => item.url.toString())
         }
       }
       .layoutWeight(1)
@@ -89,8 +89,8 @@ export struct BreadCrumb {
 
 @Component
 struct BreadCrumbItem {
-  direItem: BreadData;
-  index: number;
+  direItem: BreadData | undefined = undefined;
+  index: number = 0;
   @Link direList: BreadData[];
 
   getTitle(breadCrumb: string) {
@@ -104,7 +104,7 @@ struct BreadCrumbItem {
 
   build() {
     Row() {
-      Text(this.getTitle('' + this.direItem.title))
+      Text(this.getTitle('' + this.direItem?.title))
         .fontSize($r('app.float.common_font_size12'))
         .opacity($r('app.float.common_opacity9'))
         .fontColor(this.isLast() ? $r('app.color.black') : $r('app.color.detail_path_text_color'))

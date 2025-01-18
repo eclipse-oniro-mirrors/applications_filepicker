@@ -19,13 +19,14 @@ import { FileMimeTypeUtil } from './FileMimeTypeUtil';
 import { MimeType } from '../../databases/model/MimeType';
 import Logger from '../log/Logger';
 import { FileBase } from '../../databases/model/base/FileBase';
+import { FilesData } from '../../databases/model/FileData';
 
 const TAG = 'Tools';
 
 /**
  *  格式化显示大小
  */
-export const renderSize = (value, carry = BYTE.ONE_KB) => {
+export const renderSize = (value: string, carry = BYTE.ONE_KB) => {
   if (!value) {
     return '0 B';
   }
@@ -53,14 +54,14 @@ export const formatSuffix = (fileName: string) => {
   if (newValue[newValue.length - 1].toUpperCase() === FileMimeTypeUtil.SUFFIX_DLP) {
     newValue.pop();
   }
-  return newValue.pop().toUpperCase();
+  return newValue.pop()?.toUpperCase();
 }
 
 /**
  * @description 多选框选中状态
  * @param flag 是否选中
  */
-export const getRightIcon = (flag) => {
+export const getRightIcon = (flag: boolean) => {
   return flag ? $r('app.media.checkbox_b') : $r('app.media.checkbox_g');
 }
 
@@ -84,7 +85,7 @@ export const randomId = (): string => {
  * @param resource: 指定资源
  * @return
  */
-export function getResourceString(resource: Resource, ...args): string {
+export function getResourceString(resource: Resource, ...args: (string | number)[]): string {
   let isString = /%s/; // 字符串类型
   let isNum = /%d/; // 数字类型
   let resStr = '';
@@ -116,13 +117,13 @@ export function getResourceString(resource: Resource, ...args): string {
 export const getFileIcon = (fileName: string, isFolder: boolean = false): MimeType => {
   if (isFolder) {
     return new MimeType(
-      null,
+      '',
       MimeType.FILE_CATEGORY_UNKNOW,
       FileMimeTypeUtil.FILE_TYPE_UNKNOW,
       $r('app.media.hidisk_icon_folder'),
       $r('app.media.hidisk_icon_folder_grid'),
       $r('app.media.hidisk_icon_folder_grid'),
-      null
+      ''
     );
   }
   return FileMimeTypeUtil.getFileMimeType(fileName);
@@ -132,11 +133,11 @@ export const getFileIcon = (fileName: string, isFolder: boolean = false): MimeTy
  * @description 实现文件排序，时间倒序
  * @param dataList: 待排序的文件列表
  */
-export const sortDataByTime = (dataList) => {
+export const sortDataByTime = (dataList: FilesData[]): FilesData[] => {
   // 按照时间排序
   // 规避@State修饰的数组变量执行sort方法不生效问题
-  const fileList = dataList.filter(item => item);
-  return fileList.sort((a, b) => {
+  // const fileList: FilesData[] = dataList.filter(((item: bool) => {return item});
+  return [...dataList].sort((a, b): number => {
     if (b.mtime !== a.mtime) {
       return b.mtime - a.mtime;
     } else {
@@ -150,7 +151,7 @@ function compareStr(str1: string, str2: string) {
   return str2.localeCompare(str1, language);
 }
 
-export const gridName = (fileName) => {
+export const gridName = (fileName: string): string => {
   // 文件名超长是中间部分'...'显示
   const MAX_LENGTH = 11;
   if (fileName.length > MAX_LENGTH) {
@@ -165,9 +166,9 @@ export const gridName = (fileName) => {
  * @param value: 文件名
  * @result true/false
  */
-export const isDlpFile = (value): boolean => {
+export const isDlpFile = (value: string): boolean => {
   let newValue = value.split('.');
-  if (newValue.pop().toUpperCase() === 'DLP') {
+  if (newValue.pop()?.toUpperCase() === 'DLP') {
     return true;
   }
   return false;

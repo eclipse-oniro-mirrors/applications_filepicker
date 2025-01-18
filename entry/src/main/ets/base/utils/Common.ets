@@ -18,6 +18,7 @@ import prompt from '@ohos.prompt';
 import { getResourceString } from './Tools';
 import { MILLISECOND, FILENAME_REGEXP } from '../constants/Constant';
 import Logger from '../log/Logger';
+import type { BusinessError } from '@ohos.base';
 
 const TAG = 'commonUtil';
 
@@ -41,7 +42,7 @@ export const toast = (text: string | Resource, time = MILLISECOND.ONE_SECOND) =>
  */
 export const setSystemBar = async (navigationBarColor?: string, statusBarColor?: string,
                                    navigationBarContentColor?: string, statusBarContentColor?: string) => {
-  let w = await window.getTopWindow(getContext(this));
+  let w = await window.getTopWindow(getContext());
   await w.setSystemBarProperties({
     navigationBarColor,
     statusBarColor,
@@ -60,12 +61,11 @@ export const setImmersion = (isImmersion: boolean) => {
   if (!globalThis.windowClass) {
     return;
   }
-  globalThis.windowClass.setFullScreen(isImmersion, (err, data) => {
+  globalThis.windowClass.setFullScreen(isImmersion, (err: BusinessError) => {
     if (err.code) {
       Logger.e(TAG, 'Failed to enable the full-screen mode. Cause:' + JSON.stringify(err));
       return;
     }
-    Logger.i(TAG, 'Succeeded in enabling the full-screen mode. Data: ' + JSON.stringify(data));
   })
 }
 
@@ -75,7 +75,7 @@ export const setImmersion = (isImmersion: boolean) => {
  * @param fileName 文件名
  * @return 是否合法
  */
-export function isValidFileName(fileName): boolean {
+export function isValidFileName(fileName: string): boolean {
   return FILENAME_REGEXP.test(fileName);
 }
 

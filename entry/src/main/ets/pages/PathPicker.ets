@@ -18,9 +18,9 @@ import Logger from '../base/log/Logger';
 import ErrorCodeConst from '../base//constants/ErrorCodeConst';
 import { toast } from '../base/utils/Common';
 import AbilityCommonUtil, { ResultCodePicker } from '../base/utils/AbilityCommonUtil';
-import { SYSTEM_BAR_COLOR } from '../base/constants/UiConstant';
+import { SystemBarColor } from '../base/constants/UiConstant';
 import StringUtil from '../base/utils/StringUtil';
-import { FileUtil } from '../base/utils/FileUtil';
+import { FileUtil, ErrUri, ErrCodeMessage } from '../base/utils/FileUtil';
 import ObjectUtil from '../base/utils/ObjectUtil';
 import fileAccess from '@ohos.file.fileAccess';
 import { ArrayUtil } from '../base/utils/ArrayUtil';
@@ -28,6 +28,8 @@ import { UiUtil } from '../base/utils/UiUtil';
 import { StartModeOptions } from '../base/model/StartModeOptions';
 import { FilePickerUtil } from '../base/utils/FilePickerUtil';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
+import { BusinessError } from '@ohos.base';
+import { MoveCallBackParams } from '../databases/model/FileData'
 
 const TAG = 'PathSelector';
 let storage = LocalStorage.getShared();
@@ -39,10 +41,10 @@ struct PathSelector {
   @State createResultType: number = ErrorCodeConst.PICKER.NORMAL;
 
   aboutToAppear() {
-    UiUtil.setWindowBackground(SYSTEM_BAR_COLOR.LIGHT_GRAY);
+    UiUtil.setWindowBackground(SystemBarColor.LIGHT_GRAY);
   }
 
-  async saveFileCallback(res, startModeOptions: StartModeOptions): Promise<void> {
+  async saveFileCallback(res: MoveCallBackParams, startModeOptions: StartModeOptions): Promise<void> {
     if (res?.cancel) {
       AbilityCommonUtil.terminatePathPicker([], ResultCodePicker.CANCEL, startModeOptions);
       return;
@@ -54,7 +56,7 @@ struct PathSelector {
       }
       this.saveFiles(res.selectUri, fileNameList).then((createdFileList) => {
         AbilityCommonUtil.terminatePathPicker(createdFileList, ResultCodePicker.SUCCESS, startModeOptions);
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         let errorMessage = '';
         let errorCode = 0;
         Logger.e(TAG, JSON.stringify(err));
@@ -76,7 +78,7 @@ struct PathSelector {
             errorCode = ErrorCodeConst.PICKER.OTHER_ERROR;
           }
         } else {
-          errorMessage = err.message ? err.message : err;
+          errorMessage = err.message ? err.message : '';
           errorCode = ErrorCodeConst.PICKER.OTHER_ERROR;
         }
         AbilityCommonUtil.terminatePathPicker([], errorCode, startModeOptions);
@@ -99,7 +101,7 @@ struct PathSelector {
       }
       let fileNameArr = nameList;
       let successArr: string[] = [];
-      let resultErr: any;
+      let resultErr: ErrCodeMessage = new ErrCodeMessage();
       let len: number = fileNameArr.length;
       let fileNameList: string[] = [];
       if (len > 1) {
@@ -109,7 +111,7 @@ struct PathSelector {
       Logger.i(TAG, 'saveFiles subList: ' + JSON.stringify(fileNameList) + ' ; ');
       for (let i = 0; i < len; i++) {
         const currName = fileNameArr[i];
-        let result;
+        let result: ErrUri = new ErrUri();
         if (len === 1) {
           result = await FileUtil.createFile(fileAccessHelper, dirPath, currName);
         } else {
@@ -122,7 +124,8 @@ struct PathSelector {
         }
         Logger.i(TAG, 'saveFiles err: ' + result.err.code);
         // 失败
-        resultErr = { code: result.err.code, message: result.err.message };
+        resultErr.code = result.err.code;
+        resultErr.message = result.err.message;
         let photoManageHelper: photoAccessHelper.PhotoAccessHelper = AbilityCommonUtil.getPhotoManageHelper();
         if (ObjectUtil.isNullOrUndefined(photoManageHelper)) {
           break;
@@ -158,7 +161,7 @@ struct PathSelector {
 
   private getFilesByIterator(fileIterator: fileAccess.FileIterator): string[] {
     if (ObjectUtil.isNull(fileIterator)) {
-      return null;
+      return [];
     }
     let result: string[] = [];
     let isDone = false;
@@ -181,10 +184,7 @@ struct PathSelector {
   }
 
   private async tryRenameFileOperate(fileAccessHelper: fileAccess.FileAccessHelper, fileName: string,
-    dirUri: string, renameCount: number, fileNameList: string[] = []): Promise<{
-    err,
-    uri
-  }> {
+    dirUri: string, renameCount: number, fileNameList: string[] = []): Promise<ErrUri> {
     let index = fileName.lastIndexOf('.');
     let name = fileName;
     let suffix = '';
@@ -252,7 +252,7 @@ struct PathSelector {
       fileTree({
         startModeOptions: this.startModeOptions,
         createFileFailType: $createResultType,
-        moveCallback: (e) => {
+        moveCallback: (e: MoveCallBackParams) => {
           this.saveFileCallback(e, this.startModeOptions);
         }
       })

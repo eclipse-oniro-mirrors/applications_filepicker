@@ -25,6 +25,16 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 const TAG = 'FileUtil';
 
+export class ErrCodeMessage {
+  code: number = 0;
+  message: string = '';
+
+}
+export class ErrUri {
+  err: ErrCodeMessage = new ErrCodeMessage();
+  uri: string = '';
+}
+
 export class FileUtil {
   /**
    * uri 格式开头
@@ -230,36 +240,28 @@ export class FileUtil {
    * @param newName newName
    * @returns {err, uri}
    */
-  public static async rename(fileAccessHelper: fileAccess.FileAccessHelper, oldUri: string, newName: string): Promise<{
-    err,
-    uri
-  }> {
-    let uri: string = '';
-    let err: any;
+  public static async rename(fileAccessHelper: fileAccess.FileAccessHelper, oldUri: string, newName: string): Promise<ErrUri> {
+    let errUri: ErrUri = new ErrUri();
     try {
-      uri = await fileAccessHelper.rename(oldUri, newName);
+      errUri.uri = await fileAccessHelper.rename(oldUri, newName);
     } catch (error) {
-      err = { code: error.code, message: error.message };
+      errUri.err = { code: error.code, message: error.message };
       Logger.e(TAG, 'rename error occurred:' + error.code + ', ' + error.message);
     }
-    return { err: err, uri: uri };
+    return errUri;
   }
 
   public static async createFile(fileAccessHelper: fileAccess.FileAccessHelper, parentUri: string,
-    fileName: string): Promise<{
-    err,
-    uri
-  }> {
-    let retUri: string = '';
-    let err: any;
+    fileName: string): Promise<ErrUri> {
+    let errUri: ErrUri = new ErrUri();
     try {
       Logger.i(TAG, 'createFile ' + fileAccessHelper + '; ' + parentUri + " ; " + fileName);
-      retUri = await fileAccessHelper.createFile(parentUri, fileName);
+      errUri.uri = await fileAccessHelper.createFile(parentUri, fileName);
     } catch (e) {
       Logger.e(TAG, 'createFile error: ' + e.code + ', ' + e.message);
-      err = { code: e.code, message: e.message };
+      errUri.err = { code: e.code, message: e.message };
     }
-    return { err: err, uri: retUri };
+    return errUri;
   }
 
   public static hasSubFolder(loadPath: string, curFolderPath: string): boolean {

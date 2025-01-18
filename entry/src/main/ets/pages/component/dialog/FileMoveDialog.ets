@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { FilesData } from '../../../databases/model/FileData';
+import { FilesData, TransList, MkDirItem } from '../../../databases/model/FileData';
 import FileAccessExec from '../../../base/utils/FileAccessExec';
 import { toast, isValidFileName } from '../../../base/utils/Common';
 import { TreeItem } from '../TreeItem';
@@ -52,11 +52,11 @@ export struct fileTree {
   @State rootData: FilesData[] = [];
   @State selectUri: string = '';
   @State @Watch('nameChange') selectName: string = getResourceString($r('app.string.myPhone'));
-  public moveCallback: (e) => void;
-  @State @Watch('selectChange') chooseItem: FilesData = new FilesData({});
+  public moveCallback:Function =  () => {};
+  @State @Watch('selectChange') chooseItem: FilesData = new FilesData();
   @State folderList: FilesData[] = [];
   @State fileList: FilesData[] = [];
-  @State changeTitle: Resource = undefined;
+  @State changeTitle: Resource = $r('app.string.to_save', this.selectName);
   @State fileName: string = '';
   @State suffix: string = '';
   fileMkdirDialog: CustomDialogController = new CustomDialogController({
@@ -70,11 +70,11 @@ export struct fileTree {
     offset: { dx: 0, dy: -80 }
   });
   @State isSelectRootPath: boolean = true;
-  @State errorText: Resource = undefined;
+  @State errorText: Resource | undefined = undefined;
   @State isNeedLoadDefaultPath: boolean = false;
   @State isClickExpand: boolean = false;
   @Link @Watch('createFileFailTypeChange') createFileFailType: number;
-  lastSelectPath: string = AppStorage.Get<string>(FILE_MANAGER_PREFERENCES.lastSelectPath.key);
+  lastSelectPath: string | undefined = AppStorage.Get<string>(FILE_MANAGER_PREFERENCES.lastSelectPath.key);
   defaultExpandPath: string = '';
   scroller: Scroller = new Scroller();
   context: Context = globalThis.abilityContext;
@@ -100,9 +100,9 @@ export struct fileTree {
     }
     this.nameChange();
     this.isSelectRootPath = true;
-    let { folderList, fileList } = FileAccessExec.getFileData();
-    this.fileList = fileList;
-    this.rootData = folderList;
+    let transList: TransList = FileAccessExec.getFileData();
+    this.fileList = transList.fileList;
+    this.rootData = transList.folderList;
     this.folderList = this.rootData;
     this.topRotate = !this.topRotate;
     if (globalThis.documentInfo) {
@@ -112,15 +112,14 @@ export struct fileTree {
   }
 
   aboutToDisappear() {
-    this.fileMkdirDialog = null;
   }
 
-  fileMkdir(e) {
+  fileMkdir(e: MkDirItem) {
     emit('fileMkdir', e)
     if (this.isSelectRootPath) {
       // 获取当前选中文件夹下的所有子文件
-      let { folderList, fileList } = FileAccessExec.getFileData();
-      this.rootData = folderList;
+      let transList: TransList = FileAccessExec.getFileData();
+      this.rootData = transList.folderList;
       // 查找刚刚新建的文件夹index
       const index = this.rootData.findIndex(item => item.fileName === e.mkdirName);
       if (index !== -1) {
@@ -131,8 +130,8 @@ export struct fileTree {
         this.fileList = [];
         this.folderList = [];
       } else {
-        this.fileList = fileList;
-        this.folderList = folderList;
+        this.fileList = transList.fileList;
+        this.folderList = transList.folderList;
       }
     }
   }
@@ -243,7 +242,7 @@ export struct fileTree {
           })
           .interpolation(ImageInterpolation.Medium)
           .onClick(() => {
-            this.moveCallback.call(this, {
+            this.moveCallback({
               cancel: true
             });
           })
@@ -290,7 +289,7 @@ export struct fileTree {
             } else if (!isValidFileName(fileName)) {
               this.errorText = $r('app.string.input_invalid');
             } else {
-              this.errorText = null;
+              this.errorText = $r('app.string.input_invalid');
               this.moveCallback({
                 selectUri: this.selectUri,
                 fileName: fileName
@@ -338,7 +337,7 @@ export struct fileTree {
             .backgroundColor($r('app.color.text_input_bg_color'))
             .onChange((newVal) => {
               this.fileName = newVal
-              this.errorText = null
+              this.errorText = undefined
             })
           Divider().vertical(false).strokeWidth(1).color(Color.Gray)
             .margin({
@@ -396,10 +395,10 @@ export struct fileTree {
         this.selectName = getResourceString($r('app.string.myPhone'));
         this.selectUri = globalThis.documentInfo && globalThis.documentInfo?.uri;
         this.isSelectRootPath = true;
-        let { folderList, fileList } = await FileAccessExec.getFileData();
+        let transList: TransList = await FileAccessExec.getFileData();
         this.topRotate = !this.topRotate;
-        this.fileList = fileList;
-        this.rootData = folderList;
+        this.fileList = transList.fileList;
+        this.rootData = transList.folderList;
         this.folderList = this.rootData;
         this.isClickExpand = true;
         this.defaultExpandPath = '';
@@ -408,7 +407,7 @@ export struct fileTree {
       Scroll(this.scroller) {
         Column() {
           if (this.rootData.length && this.topRotate) {
-            ForEach(this.rootData, (item) => {
+            ForEach(this.rootData, (item: FilesData) => {
               if (this.isNeedLoadDefaultPath) {
                 TreeItem({
                   fileItem: item,

@@ -27,7 +27,7 @@ function normalStyles() {
 
 @Component
 export struct TopOperateBar {
-  public addFolder: () => void; // 点击新建的事件回调
+  public addFolder: Function = () => {}; // 点击新建的事件回调
   // 是否可用
   @Prop isDisabled: boolean = false;
   // 列表或宫格
@@ -58,7 +58,7 @@ export struct TopOperateBar {
         if (this.isDisabled) {
           return;
         }
-        this.addFolder.call(this);
+        this.addFolder();
       })
 
       Column() {

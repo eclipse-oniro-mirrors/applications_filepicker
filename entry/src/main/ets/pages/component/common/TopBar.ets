@@ -18,6 +18,7 @@ import { renderSize } from '../../../base/utils/Tools';
 import AbilityCommonUtil, { ResultCodePicker } from '../../../base//utils/AbilityCommonUtil';
 import { StartModeOptions } from '../../../base/model/StartModeOptions';
 import { FilePickerUtil } from '../../../base/utils/FilePickerUtil';
+import { FilesData } from '../../../databases/model/FileData';
 
 @Styles
 function pressedStyles() {
@@ -40,18 +41,18 @@ function subtitleStyles(fontSize: Resource) {
 @Component
 export struct TopBar {
   private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
-  private title?: string = '';
+  private title: string = '';
   private subtitle?: string = '';
   private fileSize?: number = 0;
   @Prop selectAll: boolean;
   @Prop isMulti: boolean;
   @Link checkedNum: number;
-  @Link checkedList: any[];
+  @Link checkedList: ESObject[];
   @State active: boolean = false;
   @State rActive: boolean = false;
-  public backCallback: () => void; // 点击返回键的事件回调
-  public menuCallback: () => void; // 点击全选的事件回调
-  filterCallBack: Function;
+  public backCallback: () => void = () => {}; // 点击返回键的事件回调
+  public menuCallback: () => void = () => {}; // 点击全选的事件回调
+  filterCallBack: Function = () => {};
 
   aboutToAppear() {
 
@@ -80,7 +81,7 @@ export struct TopBar {
     if (!this.checkedNum) {
       return false;
     }
-    if (this.checkedList.some(item => item.isFolder)) {
+    if (this.checkedList.some((item: FilesData) => item.isFolder)) {
       return false;
     }
     return true;
@@ -90,8 +91,8 @@ export struct TopBar {
     if (!this.checkSelectedFileList()) {
       return;
     }
-    const uriList = this.checkedList.map(item => item.uri);
-    const fileNameList = this.checkedList.map(item => item.fileName);
+    const uriList: string[] = this.checkedList.map((item: FilesData): string => item.uri);
+    const fileNameList: string[] = this.checkedList.map((item: FilesData): string => item.fileName);
     AbilityCommonUtil.terminateFilePicker(uriList, ResultCodePicker.SUCCESS, this.startModeOptions);
   }
 
@@ -114,7 +115,7 @@ export struct TopBar {
         normal: normalStyles
       })
       .onClick(() => {
-        this.backCallback.call(this);
+        this.backCallback();
       })
 
       Column() {
@@ -125,7 +126,7 @@ export struct TopBar {
           .maxLines(1)
           .textOverflow({ overflow: TextOverflow.Ellipsis })
         if (this.fileSize && this.isMulti) {
-          Text($r('app.string.choose_size', renderSize(this.fileSize)))
+          Text($r('app.string.choose_size', renderSize(this.fileSize.toString())))
             .fontColor($r('app.color.black'))
             .subtitleStyles($r('app.float.common_font_size14'))
         }
