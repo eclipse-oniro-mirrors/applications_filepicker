@@ -25,6 +25,7 @@ import AbilityCommonUtil, { ResultCodePicker } from '../../base/utils/AbilityCom
 import { StartModeOptions } from '../../base/model/StartModeOptions';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { dataSharePredicates } from '@kit.ArkData';
+import { FilePickerUtil } from '../../base/utils/FilePickerUtil';
 
 const TAG = 'FileAssetModel';
 
@@ -180,7 +181,7 @@ export class FileAssetModel {
   }
 
   pickFile(startModeOptions: StartModeOptions): void {
-    AbilityCommonUtil.terminateFilePicker([this.uri], ResultCodePicker.SUCCESS, startModeOptions);
+    FilePickerUtil.terminateFilePicker([this.uri], ResultCodePicker.SUCCESS, startModeOptions);
   }
 }
 

@@ -58,6 +58,19 @@ namespace ObjectUtil {
   export function hasKey(obj: object, key: string): boolean {
     return Object.prototype.hasOwnProperty.call(obj, key);
   }
+
+  /**
+   * 转数组
+   * */
+  export function toArray<T>(obj: object): T[] {
+    if (ObjectUtil.isNullOrUndefined(obj)) {
+      return [];
+    }
+    if (!Array.isArray(obj)) {
+      return [];
+    }
+    return obj as T[];
+  }
 }
 
 export default ObjectUtil;

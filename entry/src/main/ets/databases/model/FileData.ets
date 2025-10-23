@@ -23,6 +23,7 @@ import AbilityCommonUtil, { ResultCodePicker } from '../../base/utils/AbilityCom
 import { FileUtil } from '../../base/utils/FileUtil';
 import { ArrayUtil } from '../../base/utils/ArrayUtil';
 import { StartModeOptions } from '../../base/model/StartModeOptions';
+import { FilePickerUtil } from '../../base/utils/FilePickerUtil';
 
 export class BreadData {
   public title: string = '';
@@ -205,7 +206,7 @@ export class FilesData {
   }
 
   pickFile(startModeOptions: StartModeOptions): void {
-    AbilityCommonUtil.terminateFilePicker([this.uri], ResultCodePicker.SUCCESS, startModeOptions);
+    FilePickerUtil.terminateFilePicker([this.uri], ResultCodePicker.SUCCESS, startModeOptions);
   }
 
   setSubFolderList(subFolderList: FilesData[]) {

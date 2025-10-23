@@ -17,14 +17,18 @@ import { toast } from '../../base/utils/Common';
 import { FileMimeTypeUtil } from '../../base/utils/FileMimeTypeUtil';
 import { FILE_SUFFIX, SELECT_MODE } from '../constants/Constant';
 import ObjectUtil from './ObjectUtil';
-import { ability, Want } from '@kit.AbilityKit';
+import { ability, uriPermissionManager, Want, wantConstant } from '@kit.AbilityKit';
 import Logger from '../log/Logger';
 import { PickerWindowType } from '../constants/FilePickerItems';
 import { StartModeOptions } from '../model/StartModeOptions';
-import AbilityCommonUtil from './AbilityCommonUtil';
+import AbilityCommonUtil, { ResultCodePicker } from './AbilityCommonUtil';
 import { FilesData } from '../../databases/model/FileData';
 
 import ctx from '@ohos.app.ability.common';
+import StringUtil from './StringUtil';
+import { unifiedDataChannel, uniformDataStruct, uniformTypeDescriptor } from '@kit.ArkData';
+import { BatchGrantUriPermissionTask } from '../../taskpool/task/BatchGrantPermissionTask';
+import { TaskManager } from '../../taskpool/manager/TaskManager';
 
 export interface abilityResultInterface {
   want: Want,
@@ -37,6 +41,7 @@ export interface PickerStatus {
 }
 
 const TAG = 'FilePickerUtil';
+const BUNDLE_NAME = 'com.ohos.filepicker';
 
 export namespace FilePickerUtil {
   export function returnAbilityResult(want: Want, resultCode: number, options: StartModeOptions) {
@@ -75,11 +80,22 @@ export namespace FilePickerUtil {
     options.defaultFilePathUri = want.parameters?.key_pick_dir_path as string || '';
     options.extType = want.parameters?.extType as string || '';
     options.pickerType = want.parameters?.pickerType as string || '';
+    let multiAuthMode: boolean = want.parameters?.key_mult_auth_mode as boolean ?? false;
+    let mergeTypeMode: number = want.parameters?.key_merge_type_mode as number ?? 0;
+    options.isBatchAuthMode = multiAuthMode && (mergeTypeMode === 0);
+    if (options.isBatchAuthMode) {
+      options.udkey = want.parameters?.[AbilityCommonUtil.UDKEY] as string ?? '';
+      if (StringUtil.isEmpty(options.udkey)) {
+        options.batchAuthUris = ObjectUtil.toArray<string>(want.parameters?.key_mult_uri_arr) ?? [];
+      }
+      Logger.w(TAG, `file picker batch Auth mode: ${options.udkey}, ${options.batchAuthUris}`);
+    }
     if (options.isOpenFileMode()) {
       options.fileSuffixFilters = want.parameters?.key_file_suffix_filter as string[] || [];
       options.maxSelectNumber = want.parameters?.key_pick_num as number || 1;
       options.setSelectMode(want.parameters?.key_select_mode as number);
       options.isAuthMode = want.parameters?.key_auth_mode as boolean || false;
+      options.tokenID = want.parameters ? want.parameters?.[AbilityCommonUtil.CALLER_TOKEN] as number ?? 0 : 0;
     } else if (options.isCreateFileMode()) {
       options.setNewFileNames(want.parameters?.key_pick_file_name as string[]);
       options.fileSuffixChoices = want.parameters?.key_file_suffix_choices as string[] || [];
@@ -103,6 +119,113 @@ export namespace FilePickerUtil {
     }
     return options;
   }
+
+  export async function batchGrantUriPermission(fileUriList: string[], callerId: number): Promise<string> {
+    if (fileUriList.length === 0) {
+      Logger.w(TAG, 'batchGrantUriPermission fileUriList empty');
+      return '';
+    }
+    Logger.i(TAG, 'batchGrantUriPermission start');
+    let udKey: string = await FilePickerUtil.insertDataToUdmf(fileUriList);
+    if (StringUtil.isEmpty(udKey)) {
+      Logger.e(TAG, 'batchGrantUriPermission get udKey failed');
+      return '';
+    }
+    try {
+      let flag: wantConstant.Flags = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION |
+        wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION |
+        wantConstant.Flags.FLAG_AUTH_PERSISTABLE_URI_PERMISSION;
+      await uriPermissionManager.grantUriPermissionByKey(udKey, flag, callerId);
+    } catch (error) {
+      Logger.e(TAG, `grantUriPermissionByKey error: ${error?.code}`);
+    }
+    Logger.i(TAG, 'batchGrantUriPermission end');
+    return udKey;
+  }
+
+  export async function insertDataToUdmf(fileUris: string[]): Promise<string> {
+    Logger.i(TAG, 'insertDataToUdmf start');
+    let unifiedData: unifiedDataChannel.UnifiedData | undefined = undefined;
+    for (let i = 0; i < fileUris.length; i++) {
+      const fileUri = fileUris[i];
+      let uDFileUri: uniformDataStruct.FileUri = {
+        uniformDataType: uniformTypeDescriptor.UniformDataType.FILE_URI,
+        oriUri: fileUri,
+        fileType: uniformTypeDescriptor.UniformDataType.FILE
+      }
+      try {
+        let curRecord = new unifiedDataChannel.UnifiedRecord(uniformTypeDescriptor.UniformDataType.FILE_URI, uDFileUri);
+        if (!unifiedData) {
+          unifiedData = new unifiedDataChannel.UnifiedData(curRecord);
+        } else {
+          unifiedData.addRecord(curRecord);
+        }
+      } catch (error) {
+        Logger.e(TAG, `unifiedData addRecord error: ${error?.code}`);
+      }
+    }
+    if (!unifiedData) {
+      Logger.e(TAG, `insertDataToUdmf completely failec`);
+    }
+    try {
+      const udKey =
+        await unifiedDataChannel.insertData({ intention: unifiedDataChannel.Intention.PICKER }, unifiedData);
+      return udKey ?? '';
+    } catch (error) {
+      Logger.e(TAG, `insertData error: ${error?.code}`);
+    }
+    Logger.i(TAG, 'insertDataToUdmf end');
+    return '';
+  }
+
+  export async function getBatchAuthUriByUdKey(udKey: string): Promise<string[]> {
+    let uris: string[] = [];
+    try {
+      let data: UnifiedData[] = await unifiedDataChannel.queryData({ intention: unifiedDataChannel.Intention.PICKER, key: udKey});
+      if (data.length >= 0) {
+        let records: unifiedDataChannel.UnifiedRecord[] = data[0].getRecords();
+        Logger.i(TAG, `getBatchAuthUriByUdKey record len: ${records.length}`);
+        records.forEach(record => {
+          uris.push((record.getValue() as uniformDataStruct.FileUri).oriUri);
+        })
+      }
+    } catch (err) {
+      Logger.e(TAG, `getBatchAuthUriByUdKey error: ${err?.code}`);
+    }
+    return uris;
+  }
+
+  /**
+   * 文件选择完成，返回uri列表
+   * @param resultCode
+   * @param result
+   * @param message
+   */
+  export async function terminateFilePicker(result: string[] = [],
+    resultCode: number = ResultCodePicker.SUCCESS, startModeOptions: StartModeOptions): Promise<void> {
+    Logger.i(TAG, 'enter terminateFilePicker, result length： ' + result.length + ', resultCode:' + resultCode);
+    const NORMAL_PICKER_SELECT_NUM: number = 50;
+    if (result.length > NORMAL_PICKER_SELECT_NUM) {
+      let task = new BatchGrantUriPermissionTask(result, startModeOptions.tokenID, (udKey: string) => {
+        let want: Want = {
+          parameters: {
+            'ability.params.udkey': udKey
+          }
+        };
+        returnAbilityResult(want, resultCode, startModeOptions);
+      });
+      TaskManager.getInstance().execute(task, 1, false, 1);
+    } else {
+      let want: Want = {
+        bundleName: BUNDLE_NAME,
+        flags: wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION,
+        parameters: {
+          'ability.params.stream': result
+        }
+      };
+      returnAbilityResult(want, resultCode, startModeOptions);
+    }
+  }
 }
 
 /**
@@ -112,10 +235,11 @@ export namespace FilePickerUtil {
  * @param checkedNum 选中数量
  * @return 是否超限  选择类型是否不匹配
  */
-export function pickerStatus(item: FilesData, checkedNum: number, startModeOptions:StartModeOptions): PickerStatus {
+export function pickerStatus(item: FilesData, checkedNum: number, startModeOptions: StartModeOptions): PickerStatus {
   let status: PickerStatus = {
     // 选择是否超限
-    exceedLimit: checkedNum >= globalThis.filePickNum && !item.isChecked,
+    exceedLimit: (!startModeOptions.isBatchAuthMode) && checkedNum >= startModeOptions.maxSelectNumber &&
+      !item.isChecked,
     // 选择类型是否不匹配
     differentTypes: !checkFileSelectable(item, startModeOptions)
   };

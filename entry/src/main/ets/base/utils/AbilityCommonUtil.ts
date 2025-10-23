@@ -66,6 +66,10 @@ namespace AbilityCommonUtil {
 
   export const CALLER_BUNDLE_NAME = 'ohos.aafwk.param.callerBundleName'
 
+  export const UDKEY = 'ability.want.params.udKey';
+
+  export const CALLER_TOKEN = 'ohos.aafwk.param.callerToken';
+
   /**
    * 最大选择文件的个数
    */
@@ -210,25 +214,6 @@ namespace AbilityCommonUtil {
       Logger.i(TAG, "grantUriPermission end,grantSuccessCount = " + grantSuccessCount);
       resolve(true)
     })
-  }
-
-  /**
-   * 文件选择完成，返回uri列表
-   * @param resultCode
-   * @param result
-   * @param message
-   */
-  export async function terminateFilePicker(result: string[] = [],
-    resultCode: number = ResultCodePicker.SUCCESS, startModeOptions: StartModeOptions): Promise<void> {
-    Logger.i(TAG, 'enter terminateFilePicker, result length： ' + result.length + ', resultCode:' + resultCode);
-    let want: Want = {
-      bundleName: BUNDLE_NAME,
-      flags: wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION,
-      parameters: {
-        'ability.params.stream': result
-      }
-    };
-    returnAbilityResult(want, resultCode, startModeOptions);
   }
 
   /**

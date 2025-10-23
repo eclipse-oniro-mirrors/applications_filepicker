@@ -203,7 +203,7 @@ struct MyPhone {
 
   backCallback(): void {
     if (!this.isMulti) {
-      AbilityCommonUtil.terminateFilePicker([], ResultCodePicker.SUCCESS, this.startModeOptions);
+      FilePickerUtil.terminateFilePicker([], ResultCodePicker.SUCCESS, this.startModeOptions);
     } else {
       this.initData();
     }
@@ -305,7 +305,7 @@ struct MyPhone {
             this.getRootListFile();
           }
         } else {
-          AbilityCommonUtil.terminateFilePicker([], ResultCodePicker.CANCEL, this.startModeOptions);
+          FilePickerUtil.terminateFilePicker([], ResultCodePicker.CANCEL, this.startModeOptions);
         }
       }
       return true;

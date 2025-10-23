@@ -109,6 +109,25 @@ export class StartModeOptions {
    */
   public phonePickerTypeList: string[] = [];
 
+  /**
+   * 是否是批量授权模式
+   * */
+  public isBatchAuthMode: boolean = false;
+
+  /**
+   * 批量授权接收的uri列表
+   * */
+  public batchAuthUris: string[] = [];
+
+  /**
+   * 批量授权接收的udkey
+   * */
+  public udkey: string = '';
+
+  /**
+   * tokenID
+   * */
+  public tokenID: number = 0;
 
   /**************    save  *******************/
   /**

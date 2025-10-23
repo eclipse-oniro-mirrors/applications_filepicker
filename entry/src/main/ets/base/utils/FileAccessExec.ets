@@ -26,6 +26,9 @@ import { FileBase } from '../../databases/model/base/FileBase';
 import ObjectUtil from './ObjectUtil';
 import { FileUtil } from './FileUtil';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { FsUtil } from './FsUtil';
+import fs from '@ohos.file.fs';
+import FileMimeTypeUtil from './FileMimeTypeUtil';
 
 const TAG = 'FileAccessExec';
 
@@ -97,15 +100,23 @@ namespace FileAccessExec {
       while (!isDone) {
         const data = result.value;
         let tempFile = new FilesData();
+        let fd = FsUtil.openSync(data.uri) as fs.File;
+        let fstat = FsUtil.statSync(fd.fd) as fs.Stat;
         tempFile.id = randomId();
         tempFile.fileName = data.fileName;
         tempFile.relativePath = data.relativePath;
         tempFile.uri = data.uri;
         tempFile.mode = data.mode.toString();
         tempFile.size = data.size;
-        tempFile.mtime = data.mtime;
+        tempFile.mtime = data.mtime * 1000; // 秒转毫秒
         tempFile.mimeType = data.mimeType;
+        tempFile.isFolder = fstat.isDirectory();
         tempFile.fileIterator = result.value;
+        tempFile.icon = tempFile.isFolder ? $r('app.media.hidisk_icon_folder') :
+          FileMimeTypeUtil.getFileMimeType(data.fileName).getResID();
+        tempFile.gridIcon = tempFile.isFolder ? $r('app.media.hidisk_icon_folder_grid') :
+          FileMimeTypeUtil.getFileMimeType(data.fileName).getGridResID();
+        tempFile.sub = tempFile.isFolder ? (FsUtil.listFileSync(data.relativePath) as string[])?.length : undefined;
         fileList.push(tempFile);
         result = fileIterator.next();
         isDone = result.done;
@@ -173,6 +184,30 @@ namespace FileAccessExec {
       Logger.e(TAG, 'getRootFolder fail, error:' + JSON.stringify(error) + error);
     }
     return fileList;
+  }
+
+  export async function getFilesDataByUri(uri: string): Promise<FilesData> {
+   let tempFile: FilesData = new FilesData();
+    try {
+      let fd = FsUtil.openSync(uri) as fs.File;
+      let fstat = FsUtil.statSync(fd.fd) as fs.Stat;
+      let dup = fs.dup(fd.fd);
+      let mimetype = FileMimeTypeUtil.getFileMimeType(dup.name);
+      tempFile.id = randomId();
+      tempFile.fileName = dup.name;
+      tempFile.relativePath = dup.path;
+      tempFile.uri = uri;
+      tempFile.mode = fstat.mode.toString();
+      tempFile.size = fstat.size;
+      tempFile.mtime = fstat.mtime * 1000; // 秒转毫秒
+      tempFile.mimeType = mimetype.getMimeType();
+      tempFile.icon = mimetype.getResID();
+      tempFile.gridIcon = mimetype.getGridResID();
+      tempFile.isFolder = fstat.isDirectory();
+    } catch (e) {
+      Logger.e(TAG, `getFilesDataByUri err occured: ${e?.code}`);
+    }
+    return tempFile;
   }
 }
 
