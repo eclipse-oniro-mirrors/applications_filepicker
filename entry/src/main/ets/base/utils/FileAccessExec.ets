@@ -191,15 +191,15 @@ namespace FileAccessExec {
     try {
       let fd = FsUtil.openSync(uri) as fs.File;
       let fstat = FsUtil.statSync(fd.fd) as fs.Stat;
-      let dup = fs.dup(fd.fd);
-      let mimetype = FileMimeTypeUtil.getFileMimeType(dup.name);
+      let fileUriObj = FileUtil.getFileUriObjectFromUri(uri);
       tempFile.id = randomId();
-      tempFile.fileName = dup.name;
-      tempFile.relativePath = dup.path;
+      tempFile.fileName = fileUriObj?.name ?? '';
+      tempFile.relativePath = fileUriObj?.path ?? '';
       tempFile.uri = uri;
       tempFile.mode = fstat.mode.toString();
       tempFile.size = fstat.size;
       tempFile.mtime = fstat.mtime * 1000; // 秒转毫秒
+      let mimetype = FileMimeTypeUtil.getFileMimeType(tempFile.fileName);
       tempFile.mimeType = mimetype.getMimeType();
       tempFile.icon = mimetype.getResID();
       tempFile.gridIcon = mimetype.getGridResID();
