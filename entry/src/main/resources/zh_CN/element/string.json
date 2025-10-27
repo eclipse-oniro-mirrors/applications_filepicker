@@ -119,6 +119,14 @@
     {
       "name": "permission_storage_reason_tips",
       "value": "用于获取和存储照片、媒体内容和文件"
+    },
+    {
+      "name": "batch_auth_page_title",
+      "value": "批量授权"
+    },
+    {
+      "name": "processing",
+      "value": "处理中..."
     }
   ]
 }

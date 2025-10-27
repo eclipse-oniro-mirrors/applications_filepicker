@@ -88,3 +88,13 @@ export const FILE_MANAGER_PREFERENCES = {
     defaultValue: ''
   }
 }
+
+export class Constant {
+  public static readonly SANDBOX_APPDATA_PATH: string =
+    '/data/storage/el2/share/r/docs/storage/Users/currentUser/appdata';
+  public static readonly RECENT_DB_ROOT_PATH: string =
+    '/data/storage/el2/share/r/docs/storage/Users/currentUser/.Recent';
+  public static readonly TRASH_DB_ROOT_PATH: string = '/data/storage/el2/share/r/docs/storage/Users/currentUser/.Trash';
+  public static readonly DESKTOP_ROOT_PATH: string = '/data/storage/el2/share/r/docs/storage/Users/currentUser/DeskTop';
+  public static readonly MEDIA_LIBRARY_URI_HEAD: string = 'file://media';
+}

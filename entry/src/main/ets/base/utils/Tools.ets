@@ -27,7 +27,7 @@ const TAG = 'Tools';
  *  格式化显示大小
  */
 export const renderSize = (value: string, carry = BYTE.ONE_KB) => {
-  if (!value) {
+  if (!value || value === '0') {
     return '0 B';
   }
   let unitArr = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];

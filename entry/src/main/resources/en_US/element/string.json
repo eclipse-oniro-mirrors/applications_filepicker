@@ -119,6 +119,14 @@
     {
       "name": "permission_storage_reason_tips",
       "value": "This is used to acquire and store photos, files, and other media content."
+    },
+    {
+      "name": "batch_auth_page_title",
+      "value": "Select multiple items"
+    },
+    {
+      "name": "processing",
+      "value": "Processing..."
     }
   ]
 }

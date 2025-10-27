@@ -51,7 +51,7 @@ export default class FilePickerUIExtAbility extends UIExtensionAbility {
     this.abilityKey = `${TAG}+${Date.now()}`;
     await AbilityCommonUtil.init();
     if (options.isOpenFileMode()) {
-      this.initSessionFilePicker(session);
+      this.initSessionFilePicker(session, options);
       return;
     }
 
@@ -108,7 +108,7 @@ export default class FilePickerUIExtAbility extends UIExtensionAbility {
     session.setWindowBackgroundColor(TRANSPARENT_COLOR);
   }
 
-  private initSessionFilePicker(session: UIExtensionContentSession) {
+  private initSessionFilePicker(session: UIExtensionContentSession, options: StartModeOptions) {
     Logger.i(TAG, `initSessionFilePicker start`)
     try {
       const promise = dataPreferences.getPreferences(this.context, 'securityWarning');
@@ -129,7 +129,8 @@ export default class FilePickerUIExtAbility extends UIExtensionAbility {
       console.error('Failed to get preferences. code =' + err.code + ', message =' + err.message);
     }
     AbilityCommonUtil.init().then(() => {
-      session.loadContent('pages/browser/storage/MyPhone', this.storage);
+      session.loadContent(options.isBatchAuthMode ? 'pages/browser/storage/FilePickerBatchAuth' :
+        'pages/browser/storage/MyPhone', this.storage);
       session.setWindowBackgroundColor(TRANSPARENT_COLOR);
     });
   }

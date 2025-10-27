@@ -19,6 +19,7 @@ import AbilityCommonUtil, { ResultCodePicker } from '../../../base//utils/Abilit
 import { StartModeOptions } from '../../../base/model/StartModeOptions';
 import { FilePickerUtil } from '../../../base/utils/FilePickerUtil';
 import { FilesData } from '../../../databases/model/FileData';
+import { LoadingDialog } from '@kit.ArkUI';
 
 @Styles
 function pressedStyles() {
@@ -69,9 +70,10 @@ export struct TopBar {
   }
 
   filePickerTitle() {
-    if (this.isMulti) {
+    if (this.isMulti && !this.startModeOptions.isBatchAuthMode) {
       return this.checkedNum === 0 ? $r('app.string.selected_none') :
-      $r('app.string.selected', this.checkedNum, globalThis.filePickNum);
+      $r('app.string.selected', this.checkedNum, this.startModeOptions.maxSelectNumber);
+
     } else {
       return this.title;
     }
@@ -91,9 +93,18 @@ export struct TopBar {
     if (!this.checkSelectedFileList()) {
       return;
     }
+    if (this.checkedList.length > 50) {
+      let processingDialog: CustomDialogController = new CustomDialogController({
+        builder: LoadingDialog({
+          content: $r('app.string.processing')
+        }),
+        autoCancel: false
+      })
+      processingDialog.open();
+    }
     const uriList: string[] = this.checkedList.map((item: FilesData): string => item.uri);
     const fileNameList: string[] = this.checkedList.map((item: FilesData): string => item.fileName);
-    AbilityCommonUtil.terminateFilePicker(uriList, ResultCodePicker.SUCCESS, this.startModeOptions);
+    FilePickerUtil.terminateFilePicker(uriList, ResultCodePicker.SUCCESS, this.startModeOptions);
   }
 
   build() {
@@ -158,7 +169,7 @@ export struct TopBar {
           normal: normalStyles
         })
         .onClick(() => {
-          AbilityCommonUtil.terminateFilePicker([], ResultCodePicker.CANCEL, this.startModeOptions);
+          FilePickerUtil.terminateFilePicker([], ResultCodePicker.CANCEL, this.startModeOptions);
         })
       } else {
         Column() {
