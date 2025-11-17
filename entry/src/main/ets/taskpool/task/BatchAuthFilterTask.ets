@@ -39,8 +39,8 @@ async function startTask(uris: string[], udkey: string): Promise<void> {
   if (!StringUtil.isEmpty(udkey)) {
     originUris = await FilePickerUtil.getBatchAuthUriByUdKey(udkey);
   }
-  for (let i = 0; i < originUris.length; i++) {
-    let uri = originUris[i];
+  let uriSet = new Set<string>(originUris).values();
+  for (let uri of uriSet) {
     if (!uri || (!uri.startsWith(VirtualUri.MY_PC) && !uri.startsWith(VirtualUri.EXTERNAL_DISK)) ||
     FileUriUtil.isForbiddenVisitUri(uri) || uri.startsWith(Constant.MEDIA_LIBRARY_URI_HEAD) ||
     !FileUriUtil.trustedUriExt(uri)) {

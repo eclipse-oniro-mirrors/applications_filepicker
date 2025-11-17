@@ -32,7 +32,7 @@ struct FilePickerBatchAuth {
   @State checkedList: FilesData[] = [];
   @State isMulti: boolean = true;
   @State selectAll: boolean = true;
-  @State checkedNum: number = 0;
+  @State @Watch('checkedNumChange') checkedNum: number = 0;
   private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();
   @State isShowLoading: boolean = true;
   @State fileListSource: FileDataSource = new FileDataSource();
@@ -61,6 +61,11 @@ struct FilePickerBatchAuth {
     this.checkedNum = this.checkedList.length;
     this.fileListSource.setData(fileList);
     this.isShowLoading = false;
+  }
+
+  checkedNumChange(): void {
+    this.selectAll = this.checkedNum === this.fileListSource.totalCount();
+    this.checkedList = this.fileListSource.getSelectedFileList();
   }
 
   aboutToAppear(): void {
