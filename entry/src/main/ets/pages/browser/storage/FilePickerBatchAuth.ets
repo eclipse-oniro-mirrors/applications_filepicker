@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import Logger from '../../../base/log/Logger';
 import { StartModeOptions } from '../../../base/model/StartModeOptions';
 import AbilityCommonUtil, { ResultCodePicker } from '../../../base/utils/AbilityCommonUtil';
 import { FilePickerUtil } from '../../../base/utils/FilePickerUtil';
@@ -58,8 +59,8 @@ struct FilePickerBatchAuth {
       data.isChecked = true;
       this.checkedList.push(data);
     });
-    this.checkedNum = this.checkedList.length;
     this.fileListSource.setData(fileList);
+    this.checkedNum = this.checkedList.length;
     this.isShowLoading = false;
   }
 
