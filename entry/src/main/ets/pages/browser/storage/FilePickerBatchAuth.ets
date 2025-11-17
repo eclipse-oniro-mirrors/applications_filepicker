@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Logger from '../../../base/log/Logger';
 import { StartModeOptions } from '../../../base/model/StartModeOptions';
 import AbilityCommonUtil, { ResultCodePicker } from '../../../base/utils/AbilityCommonUtil';
 import { FilePickerUtil } from '../../../base/utils/FilePickerUtil';
