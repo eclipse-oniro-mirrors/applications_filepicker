@@ -58,8 +58,8 @@ struct FilePickerBatchAuth {
       data.isChecked = true;
       this.checkedList.push(data);
     });
-    this.checkedNum = this.checkedList.length;
     this.fileListSource.setData(fileList);
+    this.checkedNum = this.checkedList.length;
     this.isShowLoading = false;
   }
 
