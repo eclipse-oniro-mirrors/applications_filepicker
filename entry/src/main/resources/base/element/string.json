@@ -127,6 +127,14 @@
     {
       "name": "processing",
       "value": "Processing..."
+    },
+    {
+      "name": "download_tips",
+      "value": "%1$s will save this file to \"/Downloads/%2$s\"."
+    },
+    {
+      "name": "agree",
+      "value": "Agree"
     }
   ]
 }
