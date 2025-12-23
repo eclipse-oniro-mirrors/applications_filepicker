@@ -115,6 +115,14 @@
     {
       "name": "permission_storage_reason_tips",
       "value": "This is used to acquire and store photos, files, and other media content."
+    },
+    {
+      "name": "download_tips",
+      "value": "%1$s will save this file to \"/Downloads/%2$s\"."
+    },
+    {
+      "name": "agree",
+      "value": "Agree"
     }
   ]
 }

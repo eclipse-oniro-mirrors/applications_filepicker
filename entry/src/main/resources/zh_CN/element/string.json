@@ -119,6 +119,14 @@
     {
       "name": "permission_storage_reason_tips",
       "value": "用于获取和存储照片、媒体内容和文件"
+    },
+    {
+      "name": "download_tips",
+      "value": "%1$s会将文件保存至“/Downloads/%2$s”文件夹中。"
+    },
+    {
+      "name": "agree",
+      "value": "同意"
     }
   ]
 }
