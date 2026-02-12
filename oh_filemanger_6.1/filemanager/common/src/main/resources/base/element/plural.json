@@ -1,0 +1,802 @@
+{
+    "plural":[
+        {
+            "name":"error_password_try_again_tips_second",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Try again in %d second.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Try again in %d seconds.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"create_a_new_folder_with_the_selected_options",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Add to new folder (%d item)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Add to new folder (%d items)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"rename_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Rename (%d item)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Rename (%d items)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"selected",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d item selected",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items selected",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"picker_selected",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d selected",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d selected",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"filecount",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d item",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d item",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Copy (%d item)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Copy (%d items)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"cut_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Cut (%d item)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Cut (%d items)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Delete (%d item)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Delete (%d items)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"recent_delete_permanent",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Permanently delete %d file?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Permanently delete %d files?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"storage_file_num",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d file",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d files",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"storage_folder_num",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d folder",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d folders",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"file_num_exceed",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"A maximum of %d file can be opened at a time. Please select again.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"A maximum of %d files can be opened at a time. Please select again.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"transferring_file",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Transferring %d item",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Transferring %d items",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_confirm_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Delete %d file?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Delete %d files?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"selectedItem",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d item selected",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items selected",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_select_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Move %d item to",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Move %d items to",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_select_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Copy %d item to",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Copy %d items to",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"filePickerTip",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"A maximum of %d file can be selected at a time.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"A maximum of %d files can be selected at a time.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"restore_fail_dialog_content_plurals",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d item could not be restored.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items could not be restored.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_fail_dialog_content_plurals",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d item could not be deleted.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items could not be deleted.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"restore_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Restoring %d item…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Restoring %d items…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Deleting %d item…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Deleting %d items…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"confirm_delete_tags_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Delete %d tag?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Delete %d tags?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"restore_progress_content_item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d item has been restored.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items have been restored.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_progress_content_item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d item has been deleted.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items have been deleted.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_fail_result_dialog_content",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d file could not be copied.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d files could not be copied.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Copy %1$d item to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Copy %d items to %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Move %d item to %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Move %d items to %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Dragging & dropping %1$d item to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Dragging & dropping %1$d items to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"remain_login_times",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Incorrect password. %d attempt remaining.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Incorrect password. %d attempts remaining.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"remain_answer_times",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Incorrect answer. %d attempt remaining.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Incorrect answer. %d attempts remaining.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"error_password_try_again_tips",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Try again in %d minute",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Try again in %d minutes",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_dialog_title_other",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Copying %1$d item to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Copying %1$d items to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_dialog_title_other",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Moving %1$d item to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Moving %1$d items to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_out_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Moving %1$d item to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Moving %1$d items to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_in_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Moving %1$d item to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Moving %1$d items to %2$s…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"min_ago",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d min ago",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d min ago",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"file_day_item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d day",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d days",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"filePickerMaxSelect",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Select up to %d file.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Select up to %d files.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"duplicate_files_count",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Duplicate files (%d group)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Duplicate files (%d groups)",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        }
+    ]
+}

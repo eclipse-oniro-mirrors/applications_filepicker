@@ -1,0 +1,18 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"Tệp tin",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_manager_label",
+            "value":"Dịch vụ Tệp tin",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

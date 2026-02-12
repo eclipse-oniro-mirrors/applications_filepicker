@@ -1,0 +1,18 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"Archivos",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_manager_label",
+            "value":"Servicio de Archivos",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

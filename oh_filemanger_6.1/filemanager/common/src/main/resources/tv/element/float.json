@@ -1,0 +1,80 @@
+{
+  "float": [
+    {
+      "name": "common_font_size10",
+      "value": "20fp"
+    },
+    {
+      "name": "common_font_size12",
+      "value": "16fp"
+    },
+    {
+      "name": "common_font_size16",
+      "value": "24fp"
+    },
+    {
+      "name": "common_font_size20",
+      "value": "27fp"
+    },
+    {
+      "name": "common_font_size26",
+      "value": "40fp"
+    },
+    {
+      "name": "common_size03",
+      "value": "0.0vp"
+    },
+    {
+      "name": "common_size05",
+      "value": "0.0vp"
+    },
+    {
+      "name": "common_size14",
+      "value": "24vp"
+    },
+    {
+      "name": "common_size24",
+      "value": "32vp"
+    },
+    {
+      "name": "common_size28",
+      "value": "40vp"
+    },
+    {
+      "name": "common_size40",
+      "value": "50vp"
+    },
+    {
+      "name": "common_size56",
+      "value": "64vp"
+    },
+    {
+      "name": "common_size80",
+      "value": "120vp"
+    },
+    {
+      "name": "common_size224",
+      "value": "264vp"
+    },
+    {
+      "name": "common_margin8",
+      "value": "14vp"
+    },
+    {
+      "name": "common_padding4",
+      "value": "10vp"
+    },
+    {
+      "name": "common_padding8",
+      "value": "14vp"
+    },
+    {
+      "name": "common_padding9_5",
+      "value": "14vp"
+    },
+    {
+      "name": "common_padding40",
+      "value": "50vp"
+    }
+  ]
+}

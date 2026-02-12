@@ -1,0 +1,11 @@
+{
+  "name": "titleBar",
+  "description": "a npm package which contains title bar feature",
+  "main": "index.ets",
+  "version": "1.0.0",
+  "dependencies": {
+    "@ohos/common": "../../common",
+    "@ohos/customDialog": "../customDialog",
+  }
+}
+

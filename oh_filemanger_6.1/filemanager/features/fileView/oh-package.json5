@@ -1,0 +1,13 @@
+{
+  "name": "fileview",
+  "description": "a npm package which contains file view feature",
+  "main": "index.ets",
+  "version": "1.0.0",
+  "dependencies": {
+    "@ohos/common": "../../common",
+    "@ohos/customDialog": "../customDialog",
+    "@ohos/titleBar": "../titleBar",
+//    "@hms-wisesupport/wisesupport": "1.25.9-300",
+//    "@hw-hmos/pickersheet": "5.1.0-301"
+  }
+}

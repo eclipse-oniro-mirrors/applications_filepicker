@@ -1,0 +1,753 @@
+{
+  "string": [
+    {
+      "name": "browse",
+      "value": "参照",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "about_file_manager",
+      "value": "ファイル",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "myPhone",
+      "value": "自分のスマートフォン",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "select_location",
+      "value": "場所を選択してください。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "size",
+      "value": "サイズ",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge_folder_tip",
+      "value": "「%s」という名前のフォルダは、すでにこの場所に存在します。置き換えますか？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop",
+      "value": "無効化",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_welcome_content_adults_all",
+      "value": "このサービスでは、インターネットへの接続とストレージおよびアプリ一覧へのアクセス権限が必要です。また、アカウント、デバイス、ネットワーク、場所、およびアプリ（インストール済みアプリの一覧を含む）の情報のほか、頻繁にアップロードするデータへのアクセス権限も必要となります。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source",
+      "value": "ソース",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "pasteboard_dialog_content",
+      "value": "クリップボードからファイルを貼り付けますか？",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "choose_size",
+      "value": "サイズ：%s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "finish",
+      "value": "完了",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "deleting",
+      "value": "削除中…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "btn_cancel",
+      "value": "キャンセル",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_type",
+      "value": "ファイルタイプ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unknown_error_occurred",
+      "value": "不明なエラー",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "loading",
+      "value": "読み込み中...",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "replace",
+      "value": "置き換え",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "net_work_disconnect",
+      "value": "インターネットに接続されていません。ネットワーク設定を確認してください。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_B",
+      "value": "%s B",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "waiting_progress_message",
+      "value": "お待ちください…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "order_name",
+      "value": "名前",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_GB",
+      "value": "%s GB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_app_version",
+      "value": "バージョン： %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_no",
+      "value": "フィルタなし",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "confirm",
+      "value": "OK",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "externalDisk",
+      "value": "SDカード",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_has_same_file",
+      "value": "このファイル名はすでに存在します",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_complete",
+      "value": "削除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_personal_info",
+      "value": "収集される個人情報",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "type",
+      "value": "タイプ",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than_MB",
+      "value": "%d MB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "text",
+      "value": "テキスト",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path",
+      "value": "保存先",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_custom",
+      "value": "カスタム",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover_confirm_content",
+      "value": "[最近]に存在する上記のアプリのファイルを復元しますか？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "alert_net_disconnect_try_again",
+      "value": "ファイルがお使いのデバイスにキャッシュされませんでした。インターネットに接続して、再試行してください。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_cancel",
+      "value": "キャンセル",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_size",
+      "value": "ファイルサイズ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "check_update_now",
+      "value": "利用可能な更新を確認中…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter",
+      "value": "フィルタサイズ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "rename",
+      "value": "名前を変更",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_title",
+      "value": "コピー",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "total",
+      "value": "合計：%1$s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_complete",
+      "value": "移動完了",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "edit",
+      "value": "編集",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "media_speed",
+      "value": "速度",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy",
+      "value": "コピー",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "skip",
+      "value": "スキップ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recent",
+      "value": "最近",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "open_failure_msg",
+      "value": "開けません。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_preview_detail",
+      "value": "アイテムを選択して詳細を表示",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_max_input",
+      "value": "最大%d KB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_name",
+      "value": "ファイル名",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_app_name",
+      "value": "ファイル",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_agreed",
+      "value": "同意",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "preview",
+      "value": "プレビュー",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_complete",
+      "value": "コピー完了",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "ファイル",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "location",
+      "value": "場所",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "more",
+      "value": "その他",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "files_app_name",
+      "value": "ファイル",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "operation_canceled",
+      "value": "操作が取り消されました",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ok",
+      "value": "OK",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting",
+      "value": "貼り付け",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover",
+      "value": "復元",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_uppercase",
+      "value": "復元",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_KB",
+      "value": "%s KB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than",
+      "value": "%d KB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "share",
+      "value": "共有",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "to_save",
+      "value": "ファイルを%sに保存",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "data_center_terms_welcome",
+      "value": "ようこそ",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yesterday",
+      "value": "昨日",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "restore",
+      "value": "復元",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_fail",
+      "value": "保存できません。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "delete",
+      "value": "削除",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_content_adults_third_divide",
+      "value": "上記の声明をよくお読みください。[同意する]をタップすると、上記の条件に同意したことになります。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "details",
+      "value": "詳細",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "no_content_meets_the_condition",
+      "value": "一致する結果がありません",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge",
+      "value": "結合",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "turn_scrren_and_intelligent_analysis",
+      "value": "お使いのデバイスは、電源オンで画面オフの間にファイルを自動で解析し、時間の経過とともに検索結果の精度を向上させます。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "screen_off_intelligent_analysis",
+      "value": "より正確な検索",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "name",
+      "value": "名前",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "cancel",
+      "value": "キャンセル",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "aboutPage_title",
+      "value": "情報",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "version_is_latest",
+      "value": "ご利用のバージョンは最新です。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "audio",
+      "value": "オーディオ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_MB",
+      "value": "%s MB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_service_phone",
+      "value": "カスタマーサービス",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "disabled",
+      "value": "この機能はまだサポートされていません。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "not_find_the_file_you_want",
+      "value": "お探しのファイルが見つかりませんか？",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support",
+      "value": "ヘルプセンター",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface_contents",
+      "value": "アプリのレイアウトは、お好みに合わせて動かしたり、ほとんど使用しない機能を非表示にしたりして、カスタマイズできるようになりました。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations",
+      "value": "操作の効率化",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations_contents",
+      "value": "共有ボタンなど、最もよく使う機能をメニューの上部に移動し、よりすばやくアクセスできるようにしました。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support_contents",
+      "value": "ユーザーガイドやよくある質問など、役立つコンテンツを多数ご用意しています。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "change_details",
+      "value": "更新の詳細",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_change_tip",
+      "value": "このサービスでのユーザー体験向上のために、個人情報保護に関する声明および利用規約を更新しました。続行する前に、更新された利用規約を注意深くお読みください。このサービスは、この変更に必要なデータ処理に同意した場合にのみ利用できます。詳細については、%1$sおよび%2$sを参照してください。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "get_started",
+      "value": "今すぐ試す",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface",
+      "value": "自分なりのアレンジ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_access_more_secure_contents",
+      "value": "改良されたディレクトリ構造によって、アプリは選択したファイルのみにアクセスできるようになります。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_access_more_secure",
+      "value": "データ保護の強化",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancelled",
+      "value": "キャンセル済み",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_to_dest_completed",
+      "value": "%sにコピー済み",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_to_dest_completed",
+      "value": "%sに移動しました",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "ファイル",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "search",
+      "value": "検索",
+      "attr": {
+        "priority": "LT"
+      }
+    }
+  ]
+}

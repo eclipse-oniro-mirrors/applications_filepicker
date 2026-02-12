@@ -1,0 +1,44 @@
+{
+  "apiType": 'stageMode',
+  "buildOption": {
+    "napiLibFilterOption": {
+      "enableOverride": true
+    },
+    "arkOptions": {
+      "apPath": "./modules.ap",
+      "obfuscation": {
+        "ruleOptions": {
+          "enable": true,
+          "files": [
+            "obfuscation-rules.txt"
+          ]
+        }
+      },
+    }
+  },
+  "targets": [
+    {
+      "name": "default"
+    },
+    {
+      "name": "ohosTest"
+    }
+  ],
+  "buildOptionSet": [
+    {
+      "name": "release",
+      "arkOptions": {
+        "obfuscation": {
+          "ruleOptions": {
+            // true表示进行混淆，false表示不进行混淆。默认为true
+            "enable": true,
+            // 混淆配置文件
+            "files": [
+              "./obfuscation-rules.txt"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -38,6 +38,9 @@
                 <filteritem type="filepath" name="doc/images/.*.png" desc="self developed image"/>
                 <filteritem type="filepath" name="AppScope/resources/base/media/.*.png" desc="self developed image"/>
                 <filteritem type="filepath" name="audiopicker/src/main/resources/base/media/.*.webp" desc="self developed image"/>
+                <filteritem type="filepath" name="oh_filemanger_6.1/*/.*.webp" desc="self developed image"/>
+                <filteritem type="filepath" name="oh_filemanger_6.1/*/.*.png" desc="self developed image"/>
+                <filteritem type="filepath" name="oh_filemanger_6.1/*/.*.ets" desc="self developed file"/>
             </filefilter>
 
 

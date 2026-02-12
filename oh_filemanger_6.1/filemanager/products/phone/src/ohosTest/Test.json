@@ -1,0 +1,35 @@
+{
+  "description": "Configuration for HmFileManager Tests",
+  "driver": {
+    "type": "OHJSUnitTest",
+    "test-timeout": "180000",
+    "bundle-name": "com.ohos.filemanager",
+    "module-name": "phone_test",
+    "shell-timeout": "600000",
+    "testcase-timeout": "90000",
+    "compile-mode": "esmodule",
+    "coverage": true,
+    "package-tool-path": "D:\\Local\\coverage2.0\\node_modules\\@ohos\\coverage"
+  },
+  "kits": [
+    {
+      "test-file-name": [
+        "HmFileManager.hap",
+        "HmFileManagerTest.hap"
+      ],
+      "type": "AppInstallKit",
+      "cleanup-apps": true
+    },
+    {
+      "type": "ShellKit",
+      "run-command": [
+        "power-shell wakeup",
+        "uinput -T -m 300 2700 280 200",
+        "power-shell setmode 602"
+      ],
+      "teardown-command":[
+        "power-shell setmode 600"
+      ]
+    }
+  ]
+}

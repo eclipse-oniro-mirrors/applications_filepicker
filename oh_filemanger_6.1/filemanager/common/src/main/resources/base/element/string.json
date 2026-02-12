@@ -1,0 +1,5269 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"Files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"MainAbility_desc",
+            "value":"pad_MainAbility"
+        },
+        {
+            "name":"MainAbility_label",
+            "value":"Files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recently_deleted_dialog_tip",
+            "value":"Move to Recently deleted",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_file_to_recycle",
+            "value":"Items you move to Recently deleted are permanently deleted after %d days.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"common",
+            "value":"General",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"newWindow",
+            "value":"New windows show",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"display_extension_name",
+            "value":"Show all file extensions",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"display_application_data",
+            "value":"Show app data",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"quick_access",
+            "value":"Quick access",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_location",
+            "value":"Storage location",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent",
+            "value":"Recent",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"desktop",
+            "value":"Home screen",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"user",
+            "value":"User",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_type",
+            "value":"File type",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"download_receive",
+            "value":"Downloads/Received",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bluetooth",
+            "value":"Bluetooth",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_folder_name",
+            "value":"Share",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"download_manager",
+            "value":"Download Manager",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"wlan",
+            "value":"WLAN Direct",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_delete",
+            "value":"Recycle Bin",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"my_pc",
+            "value":"My computer",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"my_pad",
+            "value":"My tablet",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"default",
+            "value":"Default",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_name",
+            "value":"File name",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_date",
+            "value":"Date",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_path",
+            "value":"Path",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"original_file_path",
+            "value":"Original path",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_display_type",
+            "value":"Type",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_size",
+            "value":"File size",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"folder",
+            "value":"Folders",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"image",
+            "value":"Images",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"video",
+            "value":"Videos",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"audio",
+            "value":"Audio",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"public",
+            "value":"Public",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"personal",
+            "value":"Personal",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"letterA2H",
+            "value":"A–H",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"letterI2P",
+            "value":"I–P",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"letterQ2Z",
+            "value":"Q–Z",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pinyinA2F",
+            "value":"A–F (Pinyin)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pinyinG2L",
+            "value":"G–L (Pinyin)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pinyinM2S",
+            "value":"M–S (Pinyin)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pinyinT2Z",
+            "value":"T–Z (Pinyin)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"today",
+            "value":"Today",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"yesterday",
+            "value":"Yesterday",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"this_week",
+            "value":"This week",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_week",
+            "value":"Last week",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"this_month",
+            "value":"This month",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_month",
+            "value":"Last month",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"this_year",
+            "value":"This year",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"long_ago",
+            "value":"Older",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unspecified",
+            "value":"Not specified",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"zero",
+            "value":"Empty (%d KB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tiny",
+            "value":"Tiny (%1$d–%2$d KB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"small",
+            "value":"Small (%1$d KB–%2$d MB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"medium",
+            "value":"Medium (%1$d–%2$d MB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"big",
+            "value":"Large (%1$d MB–%2$d GB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"oversized",
+            "value":"Very large (>%d GB)",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unknown",
+            "value":"Others",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_tag_group",
+            "value":"No tags",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_in_new_window",
+            "value":"Open in new window",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open",
+            "value":"Open",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_folder",
+            "value":"Open file location",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete",
+            "value":"Delete",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"preview",
+            "value":"Preview",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_details",
+            "value":"Details",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_information",
+            "value":"Details",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename",
+            "value":"Rename",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy",
+            "value":"Copy",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cut",
+            "value":"Cut",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ringtone",
+            "value":"Set as",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"share",
+            "value":"Share",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_mode",
+            "value":"Open with",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_rule",
+            "value":"Sort",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"build_new_folder",
+            "value":"New folder",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"none",
+            "value":"None",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"multiple_choices",
+            "value":"Select multiple",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"exit_multiple_choices",
+            "value":"Deselect",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"name",
+            "value":"Name",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"category",
+            "value":"Type",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"size",
+            "value":"Size",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_permanent",
+            "value":"Delete permanently",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore",
+            "value":"Restore",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"paste",
+            "value":"Paste",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"clear_delete",
+            "value":"Empty Recycle Bin",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_recent_record",
+            "value":"Clear recent records",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_multiple_choices",
+            "value":"Deselect all",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"group_and_sort",
+            "value":"Group and sort",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sort",
+            "value":"Sort by",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"grouping",
+            "value":"Group by",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"view",
+            "value":"View",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"grid_view",
+            "value":"Grid",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_view",
+            "value":"List",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"column_view",
+            "value":"Columns",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_all",
+            "value":"Select all",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"next",
+            "value":"Forward",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"back",
+            "value":"Back",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel_all_selection",
+            "value":"Deselect all",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"compressed",
+            "value":"Archives",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_more",
+            "value":"View more",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more",
+            "value":"More",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"go_back",
+            "value":"Go back",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"expanded",
+            "value":"Expanded",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unexpanded",
+            "value":"Not expanded",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"doc",
+            "value":"Document",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"exe",
+            "value":"App",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"music",
+            "value":"Audio",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pdf",
+            "value":"PDF",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picture",
+            "value":"Image",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"ppt",
+            "value":"Presentation",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"text",
+            "value":"Text",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"xls",
+            "value":"Spreadsheet",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_delete_clear",
+            "value":"Empty Recycle Bin?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel",
+            "value":"Cancel",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm",
+            "value":"OK",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_and_close",
+            "value":"Save & close",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_perm_confirm",
+            "value":"Delete",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_clear_confirm",
+            "value":"Empty",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check",
+            "value":"View",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connected",
+            "value":"Connect",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_up",
+            "value":"Settings",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"build_folder_failed",
+            "value":"Failed to create new folder.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename_have_same_name",
+            "value":"A file with the same name already exists in this folder. Please enter a different name.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_have_same_name",
+            "value":"A file with the same name already exists in this folder. Would you like to replace it?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"contains_special_characters",
+            "value":"File name can't contain any of the following characters: []\"':/*?<>|`{}",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_file_failed",
+            "value":"Failed to save file.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_extension_changed",
+            "value":"Changing the extension may cause the file to become unusable. Change anyway?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cannot_open_this_file",
+            "value":"Unable to open",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authing_folder",
+            "value":"Select the folder \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authing_file",
+            "value":"Select the file \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authing_file_not_exist",
+            "value":"Path not found: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file_title",
+            "value":"Replace existing file?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file",
+            "value":"There is already a file named \"%s\" in this location.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_both",
+            "value":"Keep both",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"stop",
+            "value":"Disable",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"replace",
+            "value":"Replace",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_folder",
+            "value":"The destination already has a folder named \"%s\". Replace the folder in the destination?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge_will_combine_two_folders_and_keep_all_new_items",
+            "value":"Merging folders retains all new items.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge",
+            "value":"Merge",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"apply_to_all_files",
+            "value":"Do this for all files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"apply_to_all_folders",
+            "value":"Do this for all folders",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_match_result",
+            "value":"No results",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_new_folder",
+            "value":"New folder",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save",
+            "value":"Save",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_as",
+            "value":"Save as",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_format",
+            "value":"Format",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"connect_line",
+            "value":"%1$s | %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_selected",
+            "value":"None selected",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"get_files_error",
+            "value":"Failed to obtain file list.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"print",
+            "value":"Print",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"child_folder",
+            "value":"Unable to paste. The target directory is a sub-directory of the source directory.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"child_folder_confirm",
+            "value":"OK",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"can_not_drag_in",
+            "value":"Unable to drag to this directory.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"operate_failed",
+            "value":"Operation failed.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_name",
+            "value":"File name: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_folderName",
+            "value":"Folder name: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_type",
+            "value":"File type: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_size",
+            "value":"File size: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_amount",
+            "value":"Contains: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_created_time",
+            "value":"Created: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_modified_time",
+            "value":"Modified: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_recent_time",
+            "value":"Last opened: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_delete_time",
+            "value":"Deleted: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_position",
+            "value":"Location: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_original_path",
+            "value":"Original path: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pasting",
+            "value":"Paste",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"moving",
+            "value":"Moving…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"Emptying",
+            "value":"Emptying Recycle Bin…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_documents",
+            "value":"Documents",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_images",
+            "value":"Images",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_movies",
+            "value":"Videos",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_music",
+            "value":"Music",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_downloads",
+            "value":"Downloads",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_desktop",
+            "value":"Home screen",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_gallery",
+            "value":"Gallery",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select",
+            "value":"Select",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"grant_permission",
+            "value":"Grant access",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picker_file_not_exist",
+            "value":"The folder you entered does not exist. Please select another one.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_filemanager_file_not_exist",
+            "value":"\"%s\" does not exist.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_REMOVED",
+            "value":"Remove \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_FORMATTING",
+            "value":"Format",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_DISK_CAPACITY",
+            "value":"Capacity",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_SYS_FORMAT",
+            "value":"File system",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_START_FORMAT",
+            "value":"Format",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_DISK_FORMAT",
+            "value":"Format \"%s\"",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_FORMAT_CONFIRMATION",
+            "value":"Formatting will delete all data stored on this disk. This cannot be undone.\n\nAre you sure you want to format this disk?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_data_lost",
+            "value":"\"%s\" was not safely removed. Data may have been lost.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_data_lost_menu",
+            "value":"Removing this disk while files are being transferred may result in data loss.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_force_remove",
+            "value":"Remove anyway",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_file_delete",
+            "value":"Selected files will be permanently deleted.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_remove",
+            "value":"Remove",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"formatting",
+            "value":"Formatting…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_format_succeed",
+            "value":"Formatting successful.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_format_fail",
+            "value":"Formatting failed.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password_error",
+            "value":"Incorrect password. Please try again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"is_opening",
+            "value":"Opening \"%s\"…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"skip",
+            "value":"Skip",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"same_name_file_recover",
+            "value":"The destination already contains a file named \"%s\". Restore anyway?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"same_name_folder_recover",
+            "value":"The destination already contains a folder named \"%s\". Restore anyway?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"stop_recover_file",
+            "value":"Stop",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"apply_to_all",
+            "value":"Apply to all",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"readonly_file_system",
+            "value":"This is a read-only file system.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_operate_not_permitted",
+            "value":"\"%s\" could not be copied.\nReason: Restricted by company",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"media_library",
+            "value":"Media",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_file_name",
+            "value":"File name",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_path",
+            "value":"Save as",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_file",
+            "value":"Open",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_space_left",
+            "value":"Insufficient disk space.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_dupFolder_from_child_to_parent",
+            "value":"The folder \"%s\" can't be replaced by a sub-directory with the same name.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_open_date",
+            "value":"Date accessed",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_change_date",
+            "value":"Date modified",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_delete_date",
+            "value":"Deleted",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_creation_date",
+            "value":"Date created",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tags",
+            "value":"Tags",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ascending",
+            "value":"Ascending",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"descending",
+            "value":"Descending",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pasting_file",
+            "value":"Pasting \"%s\"…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_REMOVED_FROM_QUICK_ACCESS",
+            "value":"Remove from Quick access",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_ADD_TO_QUICK_ACCESS",
+            "value":"Add to Quick access",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"deleting_file",
+            "value":"Deleting \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restoring_file",
+            "value":"Restoring \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"quick_access_only_can_have_100_files",
+            "value":"Quick access can have a maximum of %d directories.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"quick_access_path_not_found",
+            "value":"Path not found.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_not_exist",
+            "value":"Path does not exist. Check and try again.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"quick_view",
+            "value":"Preview",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"operate_deny",
+            "value":"Unable to do this with online-only files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_network_connection",
+            "value":"Check your Internet connection and try again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_appdata",
+            "value":"AppData",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"app_data_write_limit",
+            "value":"This directory is read-only in user mode. Enable Developer mode and try again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cant_share_empty_folder",
+            "value":"Empty folders can't be shared.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"share_files_exceed",
+            "value":"Unable to share more than %d files at a time.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unknown_error_occurred",
+            "value":"Unknown error",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"canceling",
+            "value":"Canceling…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_stem_part",
+            "value":"%1$s, %2$s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_stem_all",
+            "value":"%1$s, %2$s | %3$s of %4$s free",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_tag",
+            "value":"Tags",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_file_tag",
+            "value":"Add tag",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_tag_added",
+            "value":"No tag added",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_new_file_tag",
+            "value":"Add new tag",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_color_red",
+            "value":"Red",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_yellow",
+            "value":"Yellow",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_green",
+            "value":"Green",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_blue",
+            "value":"Blue",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_cyan",
+            "value":"Cyan",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_purple",
+            "value":"Purple",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_grey",
+            "value":"Gray",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"big_icon",
+            "value":"Large icons",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"medium_icon",
+            "value":"Medium icons",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"small_icon",
+            "value":"Small icons",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_management",
+            "value":"Tags",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"addFolder",
+            "value":"New folder",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"OtherLocation",
+            "value":"Other location",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"softDelete",
+            "value":"Deleted files are moved to Recently deleted.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_camera",
+            "value":"Camera",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_screen_recording",
+            "value":"Screen recordings",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_screenshot",
+            "value":"Screenshots",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"complete_delete_tips",
+            "value":"Deleted files can't be restored.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"part_external_file_delete_tips",
+            "value":"Files you delete from your device can be restored in Recently deleted. Some files from external devices can't be restored.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_complete_tips",
+            "value":"Permanently delete selected files?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_system_file_tips",
+            "value":"System folders cannot be deleted.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"net_disconnect",
+            "value":"No Internet connection. Please check your network settings.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_not_exist",
+            "value":"%s does not exist.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move",
+            "value":"Move",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rotate",
+            "value":"Rotate",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"otherApp",
+            "value":"Open in app",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"openFolder",
+            "value":"Open folder",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"favorite",
+            "value":"Favorite",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unfavorite",
+            "value":"Unfavorite",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_upper_camelcase",
+            "value":"Delete",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"play",
+            "value":"Play",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pause",
+            "value":"Pause",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"menu_select_all",
+            "value":"Select all",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"menu_deselect_all",
+            "value":"Deselect all",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tab_item_phone",
+            "value":"Internal storage",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"myPhone",
+            "value":"My phone",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recentlyDeleted",
+            "value":"Recently deleted",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"do_associated",
+            "value":"Link",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"do_not_associated",
+            "value":"Not now",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel_associated",
+            "value":"Unlink",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"do_associated_account_tips",
+            "value":"If you forget your password and security question answers, you'll still be able to reset the password.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_folder_size_tips",
+            "value":"Calculating…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"folder_name",
+            "value":"Folder name",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"folder_size",
+            "value":"Size",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"include",
+            "value":"Contains",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_num",
+            "value":"(%d)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"created_time",
+            "value":"Created",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"modified_time",
+            "value":"Modified",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_open_time",
+            "value":"Last accessed",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"original_location",
+            "value":"Original location",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"where",
+            "value":"Location",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"dimension",
+            "value":"Dimensions",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"duration",
+            "value":"Duration",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"note",
+            "value":"Note",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"jump_to_target_note",
+            "value":"Leaving this screen will interrupt the current operation. Continue?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_jump",
+            "value":"Continue",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"suffixErr",
+            "value":"Changing the extension may cause the file to become unusable. Continue anyway?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sameName",
+            "value":"File name already in use.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename_fail",
+            "value":"Renaming failed.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"max_input_length",
+            "value":"Maximum length reached",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"emptyName",
+            "value":"There is no content.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"same_file_exist",
+            "value":"File name already in use.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"completeName",
+            "value":"Enter a complete file name",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_support_characters_new",
+            "value":"Not supported: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"initialization",
+            "value":"Initializing…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"space_not_enough",
+            "value":"Insufficient space.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_paste_itself",
+            "value":"Unable to paste a folder to itself or its subfolder.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"click_view_detail",
+            "value":"Learn more",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"notify_result",
+            "value":"%1$s, %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_notify_result",
+            "value":"Successful: %1$d, Failed: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"securely_remove",
+            "value":"Safely remove",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_notify_result",
+            "value":"Successful: %1$d, Failed: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_notify_result",
+            "value":"Successful: %1$d, Failed: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_copy_toast",
+            "value":"Pull down the Notification Panel to view progress.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_drag_toast",
+            "value":"Pull down the Notification Panel to view progress.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_cut_toast",
+            "value":"Pull down the Notification Panel to view progress.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"images",
+            "value":"Images",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"videos",
+            "value":"Video",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"other",
+            "value":"Other",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_as",
+            "value":"Open as",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_new_tag",
+            "value":"Add new tag",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_select_tip",
+            "value":"Selected tags are shown in the sidebar.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"default_tag",
+            "value":"Default tags",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"default_tag_drag_tip",
+            "value":"Drag tags here to make them available in the \"Add tag\" menu.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"selected_none",
+            "value":"None selected",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"selected",
+            "value":"Selected %d items"
+        },
+        {
+            "name":"storage_total_size",
+            "value":"%s total",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"waiting_network",
+            "value":"Waiting for network…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add",
+            "value":"New",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_icon",
+            "value":"Icon view",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_list",
+            "value":"List view",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"order_time",
+            "value":"Time",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"order_size",
+            "value":"Size",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"order_type",
+            "value":"Type",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_all",
+            "value":"Clear files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"mine_list_help",
+            "value":"Help",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_version",
+            "value":"Check for updates",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"setting_title_about",
+            "value":"About",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"version_info",
+            "value":"Version",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_update",
+            "value":"Check for updates",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"edit",
+            "value":"Edit",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"remove_from_tag",
+            "value":"Remove from tags",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_tag",
+            "value":"Delete tag \"%s\"",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"change_tag_color",
+            "value":"Tag color",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_tags",
+            "value":"All tags",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"input_name",
+            "value":"Enter tag name",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_name_illegal_warning",
+            "value":"Tag name can't contain any of these: []\"':/*?<>|`{}",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"waiting_progress_message",
+            "value":"Please wait…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"folder_not_exist",
+            "value":"Folder does not exist.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_it",
+            "value":"OK",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close",
+            "value":"Close",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_fail_dialog_content_singular",
+            "value":"%s could not be restored.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_fail_dialog_content_singular",
+            "value":"Unable to delete %s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_success",
+            "value":"Successfully restored.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"del_suc",
+            "value":"Successfully deleted.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"del_fail",
+            "value":"Delete failed.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_fail",
+            "value":"Unable to restore.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_suspended",
+            "value":"Restore canceled.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_suspended",
+            "value":"Delete canceled.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unable_open_file_dialog_title",
+            "value":"Unable to open this file.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unable_open_file_dialog_content",
+            "value":"Files in Recently deleted need to be restored before they can be used again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"favorite_title",
+            "value":"Favorites",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_fail_content_dlg",
+            "value":"Unable to copy %s. Please check.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_fail_content_dlg",
+            "value":"Unable to move %s. Please check.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_fail_content_dlg",
+            "value":"Unable to drag & drop %s. Please check.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"discontinue",
+            "value":"End",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_item_drag",
+            "value":"%s is being dragged",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"apply_all",
+            "value":"Apply to all",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_progress_content",
+            "value":"Copied: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_progress_content",
+            "value":"Moved: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_progress_content",
+            "value":"Dragged & dropped: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide",
+            "value":"Hide",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_move_abort_alert",
+            "value":"Files are being copied/moved. Exit without completing these tasks?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"paste_conflict_diglog_btn_message",
+            "value":"Files are currently being copied or moved. End the current transfer before starting a new one.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"continue",
+            "value":"Continue",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"exits",
+            "value":"Exit",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"keep",
+            "value":"Keep both",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge_folder_content",
+            "value":"Merging folders retains all new items.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"video_broadcast",
+            "value":"Video: %1$s, duration %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_grid_toggle",
+            "value":"Switched to %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drop_down_list",
+            "value":"Drop-down list",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge_folder_tip_new",
+            "value":"A folder named \"%s\" already exists in this location.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"replace_file_tip",
+            "value":"A file with the name \"%s\" already exists in this location. Replace it?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_target_path",
+            "value":"Cannot find target path.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"undo",
+            "value":"Undo",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"redo",
+            "value":"Redo",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"addFolder_fail",
+            "value":"Failed to create new folder.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pasteboard_dialog_title",
+            "value":"Note",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"user_agreement_and_permission",
+            "value":"Statement About Files and Privacy",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"privacy_content_second_divide",
+            "value":"We only collect the personal information required to provide this service, and we take adequate measures to ensure that your information is secure. For details, refer to the %s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_services_dialog_subtitle",
+            "value":"In Basic mode, you will only be able to use basic features, such as file management. To provide these features, this service requires an Internet connection and the Storage (Media and files) and App list permissions, and needs to read media data and the list of installed apps. By tapping Use Basic mode, you agree to the above terms and the Permissions Notice.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"privacy_dialog_content_first",
+            "value":"Full mode requires an Internet connection and the Storage and App list permissions. It also needs to access account, device, app (including the list of installed apps), and network information, as well as data you actively upload.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"privacy_content_third",
+            "value":"Please read the above statement carefully. By tapping Agree & Continue, you agree to the statement.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_services_dialog_confirm",
+            "value":"Agree & continue",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_tag_no_name",
+            "value":"Delete tag",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_has_special_char",
+            "value":"Tag name contains special characters. Please rename.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_name_exists",
+            "value":"There is already a tag named \"%s\". Please rename.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_delete_tag_title",
+            "value":"Delete tag \"%s\"?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_delete_tag_text",
+            "value":"This tag will be removed from any files you've added it to.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_num_reached_limit",
+            "value":"Maximum number of tags added.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_folder_or_file",
+            "value":"New",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_file_name",
+            "value":"New %1$s %2$s%3$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_folder",
+            "value":"Folder",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"ascertain",
+            "value":"OK",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"externalDisk",
+            "value":"SD card",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"midnight",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"before_dawn",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"dawn",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"early_morning",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"damaged_file_open_fail",
+            "value":"File corrupted. Unable to open.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"morning",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"noon",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"afternoon",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"dusk",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"evening",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"activate_now",
+            "value":"Enable",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_file_storage_location",
+            "value":"Select storage location",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_storage_location",
+            "value":"Storage location",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"memory_used",
+            "value":"Used %1$s GB/%2$s GB",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"memory_space",
+            "value":"%1$s of %2$s available",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"enter_password",
+            "value":"Enter password",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"re_enter",
+            "value":"Enter password again",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security",
+            "value":"Security questions",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_one",
+            "value":"What's your father's name?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_two",
+            "value":"What's your partner's name?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_three",
+            "value":"What was the name of your middle school?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_four",
+            "value":"What was the name of the street you grew up on?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_five",
+            "value":"Who's your favorite artist or band?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_six",
+            "value":"Custom",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_one",
+            "value":"What's your mother's maiden name?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_two",
+            "value":"What was the name of your elementary school?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_three",
+            "value":"Where was your first family vacation?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_four",
+            "value":"Who's your favorite football team?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_five",
+            "value":"What's your dream job?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"enter_custom_question",
+            "value":"Enter custom question",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_answer",
+            "value":"Answer",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_hint",
+            "value":"Must be %1$d–%2$d letters (or at least 2 Chinese characters).",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_custom_question_hint",
+            "value":"Enter up to %d characters",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_limit",
+            "value":"Length limit reached",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"encrypt_file",
+            "value":"Encrypt",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"encrypted_share",
+            "value":"Encrypted share",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"finish",
+            "value":"Done",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"currently_in_use",
+            "value":"%s (Current)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"new_password",
+            "value":"New password",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password",
+            "value":"Password",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"input_password",
+            "value":"Enter password",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"change_password",
+            "value":"Change password",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"complete",
+            "value":"Done",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_old_password",
+            "value":"Confirm old password",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"next_step",
+            "value":"Next",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"verify_password",
+            "value":"Verify password",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"modify_security_question",
+            "value":"Change security questions",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reset_password",
+            "value":"Reset password",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"forget_password",
+            "value":"Forgot your password?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"face_recognition_dialog",
+            "value":"Link face recognition",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel_face_recognition",
+            "value":"Facial data unlinked.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel_fingerprint_recognition",
+            "value":"Fingerprint unlinked.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"fingerprint_recognition_dialog",
+            "value":"Link fingerprint",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"biometric_change_verification",
+            "value":"Verify biometric changes",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"prompt_recognition_dialog",
+            "value":"Note",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"prompt_recognition",
+            "value":"Would you like Safe to ask for the password if your fingerprint or facial data is changed?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"association",
+            "value":"Link",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_association",
+            "value":"Not now",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"choose_retrieval_method",
+            "value":"Select recovery method",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"verify_security_question",
+            "value":"Answer security questions",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"need",
+            "value":"Yes",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unneeded",
+            "value":"No",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"face_association",
+            "value":"Face recognition linked.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"fingerprint_association",
+            "value":"Fingerprint linked.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"data_changes_associated",
+            "value":"Changes have been linked.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"associate_faces_fail",
+            "value":"Unable to link face recognition.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"associate_fingerprint_fail",
+            "value":"Unable to link fingerprint data.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"associate_data_change_fail",
+            "value":"Unable to link data.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_step",
+            "value":"Previous",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password_reset_failed",
+            "value":"Unable to reset password.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_supported_filesystem",
+            "value":"File system not supported.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"use_password",
+            "value":"Use password",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authenticate_your_identity",
+            "value":"Verify your identity",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bind_face_change",
+            "value":"Facial data has been changed. Verify your password again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bind_fingerprint_change",
+            "value":"Fingerprint data has been changed. Verify your password again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_tips",
+            "value":"Private access to files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_tips_details",
+            "value":"Your files are shown here, but this app can only access the items that you select.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"refresh",
+            "value":"Refresh",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"jump",
+            "value":"Go",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"agree",
+            "value":"Agree",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_safe_password_rules",
+            "value":"Password must be %1$d–%2$d characters (numbers/letters), and contain at least one letter. It cannot be the same as the Safe's name.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"password_reset_success",
+            "value":"Password reset.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unlink_account",
+            "value":"Please memorize your password and security question answer.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"space_transmit",
+            "value":"Add to Space Exchange",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"checked",
+            "value":"Selected",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unchecked",
+            "value":"Not selected",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"button",
+            "value":"Button",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"undo_s",
+            "value":"Undo: %s (U)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"redo_s",
+            "value":"Redo: %s (R)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_new",
+            "value":"New",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recycle",
+            "value":"Delete",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_tag",
+            "value":"Add tag",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"blank",
+            "value":"(Blank)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"media_library_files_migrated_to_gallery",
+            "value":"Your images and videos are found here.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"resident_security_tips",
+            "value":"This app can only access items you select",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picker_security_tips",
+            "value":"This app can only access files you select",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_location",
+            "value":"Select a location.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_file",
+            "value":"Delete files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_file",
+            "value":"Restore files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_file",
+            "value":"Copy files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_file",
+            "value":"Move files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_file",
+            "value":"Drop files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_in_file",
+            "value":"Move in",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_out_file",
+            "value":"Move out",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"permission_usage_explanation_link",
+            "value":"Permissions Notice",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"permission_storage_media_and_files_description",
+            "value":"This is used to allow you to select image and video data.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"about_service_phone",
+            "value":"Customer service",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"net_work_disconnect",
+            "value":"No Internet connection. Check your network settings.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_list_title",
+            "value":"Files permissions",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"about_personal_info",
+            "value":"Personal information collected",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_storage_media_and_files",
+            "value":"Images & videos",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"version_is_latest",
+            "value":"Your version is up to date.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"loading",
+            "value":"Loading…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_internet",
+            "value":"Internet",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"declare_agree_format_info",
+            "value":"Please read the above statement carefully. By clicking Agree, you agree to let us provide you with this service.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"back_up_home_page_tips",
+            "value":"Welcome! During the system update, your images and videos were moved to Gallery, while your audio recordings were moved to Recorder.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_to_backup_recover_phone",
+            "value":"Restored to My phone/UpdateBackup/RecycleBin.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_to_backup_recover_pad",
+            "value":"Restored to My tablet/UpdateBackup/RecycleBin.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cannot_delete_app_data",
+            "value":"Your selection contains app data. Deleting this may cause apps to stop working properly.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cannot_move_app_data",
+            "value":"Your selection contains app data. Moving this may cause apps to stop working properly.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_recent_delete_clear_content",
+            "value":"All files will be permanently deleted.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_bar_title_copy_file",
+            "value":"Copy",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_bar_title_move_file",
+            "value":"Move",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_file",
+            "value":"\"%s\" already exists. Replace it?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_folder",
+            "value":"\"%s\" already exists. Merge these folders?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_recover_file",
+            "value":"\"%s\" already exists. Restore anyway?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_other",
+            "value":"Note",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_sound_recorder",
+            "value":"Recorder",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sound_recorder_not_exist",
+            "value":"App does not exist.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sort_by_name",
+            "value":"Sort by name",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sort_by_time",
+            "value":"Sort by time",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sort_by_size",
+            "value":"Sort by size",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sort_by_type",
+            "value":"Sort by type",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_refresh_page_tips",
+            "value":"Updating… Please wait.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_access_details",
+            "value":"Your files are shown here, but this app can only access the items that you select.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_access_path_details",
+            "value":"This app can only access the files that you select, and can't access other content in the folder. %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"learn_more",
+            "value":"Learn more",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"share_limit_exceed_msg",
+            "value":"A maximum of %d files can be shared at a time.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"share_folder_no_content",
+            "value":"Selected folders are empty.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"touch_share_not_support_folder",
+            "value":"Sharing folders is not supported.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"collapse",
+            "value":"Show less",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"drag_to_change_sort",
+            "value":"Drag to change order",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_to_change_sort_description",
+            "value":"Double-tap and hold, then drag to change the order",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"give_feedback",
+            "value":"Feedback",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"use_network",
+            "value":"Use mobile data",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"filter_samll_images",
+            "value":"Filter small images",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"filter_browsed_samll_images",
+            "value":"Filter out small images in Browse > Images.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"show_hidden_files",
+            "value":"Show hidden files",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"show_files_with_dot",
+            "value":"Files and folders that begin with \".\" will be shown.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_notice",
+            "value":"Always ask first",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"notice_when_over_100mb",
+            "value":"Ask for files over %d MB",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_allow",
+            "value":"Always allow",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cellular_transmission_content",
+            "value":"This will use %s of mobile data.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cellular_transmission_title",
+            "value":"You're using a mobile network",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_notice_desc",
+            "value":"Ask before using mobile data to upload, download, or play files.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"notice_when_over_100mb_desc",
+            "value":"Ask before using mobile data to upload, download, or play files larger than %d MB.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_allow_desc",
+            "value":"Allow files to be uploaded, downloaded, or played using mobile data without confirmation.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recent_load_end",
+            "value":"No more files from the last %d days",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recent_no_content",
+            "value":"No files in the past %d days",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"picture_and_video_migrate_tip",
+            "value":"Images and videos have been moved to the Gallery app.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"audio_files_migrate_tip",
+            "value":"Audio files have been moved to the Recorder app.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"filter",
+            "value":"Filter",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_reset",
+            "value":"Reset",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picture_format",
+            "value":"Image format",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"video_format",
+            "value":"Video format",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"audio_format",
+            "value":"Audio format",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"document_format",
+            "value":"Document format",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_support_modified_directory",
+            "value":"This directory cannot be modified.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_support_drag_in_page",
+            "value":"Unable to drop files here. Try dropping them in the \"My phone\" directory.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"space_cleanup",
+            "value":"Cleanup",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"big_file",
+            "value":"Large files",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_cleanup",
+            "value":"More options",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_cleanup_context",
+            "value":"Go to Settings to find more items to clean up.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"local_trash",
+            "value":"Local junk",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"local_trash_cleanup",
+            "value":"Local junk",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"junk_file",
+            "value":"Junk files",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"return_to_previous_step",
+            "value":"Go back",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"yes",
+            "value":"Yes",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no",
+            "value":"No",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_safe_subtitle",
+            "value":"A safe place to keep important files.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all",
+            "value":"Clear",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all_content",
+            "value":"Clear all files?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all_content_two",
+            "value":"Cleared items cannot be recovered.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_recent_delete_file",
+            "value":"No recently deleted files.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_available_devices",
+            "value":"No available devices found",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_device",
+            "value":"Add device",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ip_address_error",
+            "value":"Incorrect format",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"help",
+            "value":"Help",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"usage_help",
+            "value":"Help",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"my_devices",
+            "value":"My devices",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"other_devices",
+            "value":"Other devices",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"disconnect",
+            "value":"Disconnect",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connection_settings",
+            "value":"Settings",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connect_device",
+            "value":"Connect",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"display_name",
+            "value":"Display name",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hostname_or_ip_address",
+            "value":"Hostname or IP address",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"username",
+            "value":"Username",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"anonymous_login",
+            "value":"Anonymous login",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"auto_login",
+            "value":"Auto-login",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_device_corresponding_to_ip",
+            "value":"Device not found",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"incorrect_username_or_password",
+            "value":"Incorrect username or password",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"username_required",
+            "value":"Can't be blank",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"newly_added_devices_not_found_in_lan",
+            "value":"No new devices found.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_connect_success",
+            "value":"Connected",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_disconnect_tip",
+            "value":"You will no longer be able to view or manage shared files on this device. Disconnect anyway?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_connect_fail",
+            "value":"Connection to %s lost.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_disconnect",
+            "value":"Disconnected.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"disabled",
+            "value":"This feature isn't supported yet.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_and_no_prompt_again",
+            "value":"Don't show again",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_file",
+            "value":"Open file",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_failed",
+            "value":"Unable to save",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"failed_save_to_gallery_root_path",
+            "value":"Files can't be stored in the Gallery root directory. Select another directory.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"mul_nested_folders_save_files_to_gallery_album",
+            "value":"Unable to create folders with subfolders inside the Gallery directory. Images and videos will be relocated accordingly. Continue?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path_for_picker",
+            "value":"Only images and videos can be saved to the Gallery directory. Other files cannot be stored here.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_file",
+            "value":"Save files",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_new_album",
+            "value":"New album",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_image_to_gallery_album",
+            "value":"Only images can be saved to the %1$s directory. Other files cannot be stored here. Continue?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_image_to_gallery_album_for_picker",
+            "value":"Only images can be saved to the %1$s directory. Other files cannot be stored here.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_video_to_gallery_album",
+            "value":"Only videos can be saved to the %1$s directory. Other files cannot be stored here. Continue?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_video_to_gallery_album_for_picker",
+            "value":"Only videos can be saved to the %1$s directory. Other files cannot be stored here.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery",
+            "value":"Unable to create folders with subfolders inside the Gallery directory. Images and videos in the folder will be relocated to the \"%s\" directory. Continue?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery_album",
+            "value":"Unable to create folders with subfolders inside album folders. Related images and videos will be relocated accordingly. Continue?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path",
+            "value":"Only images and videos can be saved to the Gallery directory. Other files cannot be stored here. Continue?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hidisk_file_size_range_larger_gb",
+            "value":"Larger than %d GB",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hidisk_file_size_range_smaller_kb",
+            "value":"Smaller than %d KB",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"just_now",
+            "value":"Just now",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hide_source",
+            "value":"Hide source",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_card",
+            "value":"Hide",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"manager_hidden",
+            "value":"Manage hidden file sources",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_content",
+            "value":"No content",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_page_button",
+            "value":"Restore",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_confirm_tips",
+            "value":"Restore files from this source in Recent?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"files_source_no_appear",
+            "value":"Files from this source will no longer appear in Recent.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_delete_file_save_day",
+            "value":"Files will be permanently deleted after the number of days shown (up to %d days).",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"expand_phone_tip",
+            "value":"Unfold your phone first.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_button_tip",
+            "value":"Find more settings here.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_default",
+            "value":"Sort by default order",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"next_one",
+            "value":"Next",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"anonymous_environment_configuration",
+            "value":"Set up an anonymous environment",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"windows_version1",
+            "value":"Windows Ultimate or Professional",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step1",
+            "value":"Step 1",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enable_Guest_account",
+            "value":"Enable a Guest account",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enable_Guest_account_detail",
+            "value":"Right-click on \"This PC\", then go to Manage > Local Users and Groups > Users. From here, right-click on \"Guest\", select \"Properties\", and deselect \"Account is disabled\". Finally, click \"Apply\" and then click \"OK\".",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step2",
+            "value":"Step 2",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_Guest_account",
+            "value":"Remove guest restrictions",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_Guest_account_detail",
+            "value":"Press Windows+R on the keyboard to bring up the Run box, then enter \"gpedit.msc\" and press Enter. Go to Local Computer Policy > Computer Configuration > Windows Settings > Security Settings > Local Policies > User Rights Assignment. Then double-click \"Deny access to this computer from the network\", and remove \"Guest\" from the list.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step3",
+            "value":"Step 3",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"setting_properties",
+            "value":"Set the sharing and security model for local accounts",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"setting_properties_detail_new",
+            "value":"In Local Policies, open Security Options, double-click \"Network Access: Sharing and Security Model for Local Accounts\" and select \"Guest only\". Click OK. Double-click \"Accounts: Limit local account use of blank passwords to console logon only\" and select \"Disabled\". Click OK. Press Win + R to open the Run window. Enter \"cmd\" to open the Command Prompt. In the Command Prompt, enter \"gpupdate /force\" and press Enter. Wait until the policy update is complete.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step4",
+            "value":"Step 4",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_shared_files",
+            "value":"Add shared files",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step5",
+            "value":"Step 5",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enable_scan",
+            "value":"Finishing up",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"windows_version2",
+            "value":"Windows Home",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"support_argeement",
+            "value":"Set up support protocols",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"support_argeement_configuration_detail",
+            "value":"Open the Control Panel, then go to Programs > Turn Windows features on or off. Look for \"SMB 1.0/CIFS File Sharing Support\" and fill its checkbox. Click OK and restart the computer.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"close_pwd_protection",
+            "value":"Disable password protection",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"close_pwd_protection_detail",
+            "value":"Open the Control Panel, then go to Network and Internet > Network and Sharing Center > Change advanced sharing settings > All Networks. Under Password-protected sharing, select \"Turn off password-protected sharing\", then click \"Save changes\".",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_shared_files_detail_new",
+            "value":"Right-click on the folder you want to share, then go to Properties > Sharing > Share, select \"Guest\" or \"Everyone\", and click \"Add\". Click the arrow on the right to set access permissions, then click \"Share\".",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"batch_grant_permission",
+            "value":"Select multiple items",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"persist_permission_import",
+            "value":"Import",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recommended_cleanup",
+            "value":"Suggested",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"processing",
+            "value":"Processing…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scan_more_cleanable_files",
+            "value":"Scan for cached ads and other unneeded files.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_images",
+            "value":"All",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_videos",
+            "value":"All",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"share_failed_msg",
+            "value":"Unable to share. Maximum of %d items can be shared at a time.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"wechat_not_support_share_notice",
+            "value":"To share to WeChat, open a chat in WeChat, select a file, and send.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file_title_save_both",
+            "value":"Merge folders in this location?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"reset_succeeded",
+            "value":"Reset successful",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"favorited",
+            "value":"Favorited",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unfavorable",
+            "value":"Unfavorited",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"input_content_cannot_be_empty",
+            "value":"Cannot be blank.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"low_memory_notice",
+            "value":"To manage device storage, go to Settings > Storage.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"go_now",
+            "value":"Go now",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"shielding",
+            "value":"Block",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"transfer_completed",
+            "value":"Transfer complete",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_saved_to",
+            "value":"File saved to %s.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"set_as_wallpaper",
+            "value":"Set as wallpaper",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"set_wallpaper_not_support",
+            "value":"Wallpapers can't be edited in small windows.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"system_folder_not_support_operation",
+            "value":"Action unavailable with system directory.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_space_usage",
+            "value":"Used %1$s of %2$s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"play_control_bar_display",
+            "value":"Showing playback controls. Swipe across the video to adjust the playback position.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"play_control_bar_hidden",
+            "value":"Playback controls hidden. Swipe across the video to adjust the playback position.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_menu_bar",
+            "value":"Open menu bar",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"collapse_menu_bar",
+            "value":"Close menu bar",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_documents_folder_instruction",
+            "value":"Documents",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_download_folder_instruction",
+            "value":"Downloads",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_gallery_folder_instruction",
+            "value":"Locally stored Gallery files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_sound_folder_instruction",
+            "value":"Audio files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_updatebackup_folder_instruction",
+            "value":"Clone/Backup data",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_file_restore_folder_instruction",
+            "value":"Restored app data",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_navigation",
+            "value":"Open navigation panel",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close_navigation",
+            "value":"Close navigation panel",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_access_files_tips",
+            "value":"Private access to files",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_access_files_details",
+            "value":"Your files are shown here, but this app can only access the ones that you select. %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_signed_privacy_tip",
+            "value":"To use this feature, first go to the Files app and agree to the Statement About Files and Privacy and Permissions Notice.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"duplicate_files",
+            "value":"Duplicate files",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files_clean",
+            "value":"Delete duplicate files",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scan_now",
+            "value":"Scan now",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"to_clean_up",
+            "value":"Go delete",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files_subheading",
+            "value":"%s of storage is being taken up by duplicate files.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"source_from",
+            "value":"From: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"careful_cleaning",
+            "value":"Caution",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"gallery_change_suffix",
+            "value":"File extensions can't be changed for Gallery files. Copy or move these files to a public directory under \"My phone\" and try again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_item_down",
+            "value":"Move below %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_item_up",
+            "value":"Move above %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename_single_character_fail",
+            "value":"Renaming failed. Can't rename target to a single character.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"space_not_enough_title",
+            "value":"Insufficient storage",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"have_connected",
+            "value":"Connected",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_connected",
+            "value":"Not connected",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level_and_expand",
+            "value":"Level %d expanded",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level_and_unexpand",
+            "value":"Level %d not expanded",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"transfer_progress_visible",
+            "value":"Live transfer tracking",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"transfer_progress_visible_contents",
+            "value":"Effortlessly monitor your file transfer progress with Live view.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_menu_updated",
+            "value":"New menu design",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_menu_updated_contents",
+            "value":"New menu icons make navigation more intuitive.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"media_browse_smooth",
+            "value":"Smoother viewing",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"media_browse_smooth_contents",
+            "value":"Images and videos snap into full screen when opened.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_support_drag_in_page_with_pad",
+            "value":"Unable to drop files here. Try dropping them in the \"My tablet\" directory.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"gallery_change_suffix_with_pad",
+            "value":"File extensions can't be changed for Gallery files. Copy or move these files to a public directory under \"My tablet\" and try again.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"accessibility_checkbox_checked",
+            "value":"Selected, checkbox, double tap with one finger to deselect",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_checkbox_unChecked",
+            "value":"Not selected, checkbox, double tap with one finger to select",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"equipment_temperature_is_too_high",
+            "value":"Device too hot",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"checked_accessibility",
+            "value":"Double-tap with one finger to select",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unchecked_accessibility",
+            "value":"Double-tap with one finger to deselect",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"already_select_all",
+            "value":"All selected",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"already_deselect_all",
+            "value":"Deselected all",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"click_accessibility",
+            "value":"Double-tap to activate",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"new_features_online",
+            "value":"New features available",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"new_version_updates_progress",
+            "value":"Tap to learn more.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_place_down",
+            "value":"Placed below %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_place_up",
+            "value":"Placed above %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reverse_rotation",
+            "value":"Rotate %s degrees counter clockwise",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"arrive_path_select_end_level",
+            "value":"No more levels in this directory",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level",
+            "value":"Level %d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_expand",
+            "value":"Expanded",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_unexpand",
+            "value":"Collapsed",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_file_not_exist_maybe_removed_renamed_deleted",
+            "value":"This file does not exist. It may have been moved, renamed, or deleted. Please restore the file and try again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_not_exist_maybe_removed_renamed_deleted",
+            "value":"The file \"%1$s\" does not exist. It may have been moved, renamed, or deleted. Please restore the file and try again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"help_and_feedback",
+            "value":"Help & feedback",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tip_popup_title",
+            "value":"Only local Gallery content is shown here",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tip_popup_context_one",
+            "value":"%1$s. To view content from apps running in DroiTong or EasyAbroad, go to %2$s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"two_placeholders",
+            "value":"%1$s > %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_to_gallery",
+            "value":"Gallery",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_fusion_album_warning",
+            "value":"This album contains files from apps that run in DroiTong or EasyAbroad. To delete these items, go to \"Compatible data\".",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"remote_source_file_not_exist",
+            "value":"File paste failed. The original file may have been modified or renamed, or there may be a device connection issue. Please check and try again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"remote_file_not_exist",
+            "value":"File paste failed. \"%s\" may have been modified or renamed, or there may be a device connection issue. Please check and try again.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name": "search",
+            "value": "搜索",
+            "attr": {
+                "priority": "translate"
+            }
+        }
+    ]
+}

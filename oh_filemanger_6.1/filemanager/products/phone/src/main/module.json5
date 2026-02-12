@@ -1,0 +1,194 @@
+{
+  module: {
+    "dependencies": [
+      {
+        "bundleName": "com.ohos.security.pickersheet",
+        "moduleName": "pickersheetlibrary",
+        "versionCode": 50100342
+      }
+    ],
+    name: "phone",
+    type: "entry",
+    srcEntry: "./ets/application/AbilityStage.ets",
+    description: "$string:entry_desc",
+    mainElement: "MainAbility",
+    deviceTypes: [
+      "default",
+      "tablet"
+    ],
+    deliveryWithInstall: true,
+    installationFree: false,
+    "compressNativeLibs": true, // 标识libs库以压缩存储方式打包
+    pages: "$profile:main_pages",
+    "metadata": [
+      {
+        "name": "client_id",
+        "value": "107130961"
+      },
+      {
+        "name": "license_file_path",
+        "value": "/system/etc/noticeFile/HmFileManager_OpenSource.html"
+      }
+    ],
+    abilities: [
+      {
+        name: "MainAbility",
+        srcEntry: "./ets/abilities/filemanager/MainAbility.ets",
+        description: "$string:MainAbility_desc",
+        icon: "$media:appIcon",
+        label: "$string:file_manager_label",
+        startWindowIcon: "$media:starting_window",
+        startWindowBackground: "$color:startWindowColor",
+        exported: true,
+        orientation: "auto_rotation_unspecified",
+        skills: [
+          {
+            entities: [
+              "entity.system.home"
+            ],
+            actions: [
+              "action.system.home"
+            ]
+          }
+        ]
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "FilePickerUIExtAbility",
+        "srcEntry": "./ets/abilities/filepicker/FilePickerUIExtAbility.ets",
+        "description": "FilePickerUIExtAbility",
+        "exported": true,
+        "type": "sysPicker/filePicker",
+        "icon": "$media:icon"
+      },
+      {
+        "name": "UIExtAbility",
+        "icon": "$media:icon",
+        "label": "$string:MainAbility_label",
+        "type": "sys/commonUI",
+        "exported": true,
+        "srcEntry": "./ets/abilities/UIExtAbility.ets"
+      },
+      {
+        "name": "FileManagerServiceExtAbility",
+        "srcEntry": "./ets/abilities/ServiceExtAbility/FileManagerServiceExtAbility.ets",
+        "exported": true,
+        "description": "FileManagerServiceExtAbility",
+        "type": "thumbnail",
+        "icon": "$media:icon",
+        "permissions": [
+          "ohos.permission.FILE_ACCESS_PERSIST" // 允许应用或SA支持持久化访问文件URI
+        ]
+      },
+      {
+        "name": "OpenMediaUIExtAbility",
+        "icon": "$media:icon",
+        "type": "sys/commonUI",
+        "exported": true,
+        "extensionProcessMode": "instance", // 每个实例都在单独的进程，和文管的sys/commonUI类型的ExtensionAbility隔离
+        "srcEntry": "./ets/abilities/OpenMediaUIExtAbility.ets"
+      }
+    ],
+    requestPermissions: [
+      {
+        "name": "ohos.permission.GET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.PRIVACY_WINDOW"
+      },
+      // 文件管理权限
+      {
+        name: "ohos.permission.FILE_ACCESS_MANAGER"
+      },
+      // 网络数据权限
+      {
+        name: 'ohos.permission.INTERNET'
+      },
+      // 应用程序包管理权限
+      {
+        name: 'ohos.permission.GET_BUNDLE_INFO'
+      },
+      {
+        name: 'ohos.permission.GET_BUNDLE_INFO_PRIVILEGED'
+      },
+      // 存储空间管理权限
+      {
+        name: 'ohos.permission.STORAGE_MANAGER'
+      },
+      // 获取网络连接状态
+      {
+        name: 'ohos.permission.GET_NETWORK_INFO'
+      },
+      // 公共目录uri代理授权的权限
+      {
+        "name": "ohos.permission.PROXY_AUTHORIZATION_URI"
+      },
+      // 获取登录账号uid权限
+      {
+        "name": "ohos.permission.GET_DISTRIBUTED_ACCOUNTS"
+      },
+      // USB卸载权限，卸载指定卷设备
+      {
+        "name": "ohos.permission.MOUNT_UNMOUNT_MANAGER"
+      },
+      {
+        "name": "ohos.permission.GET_BUNDLE_RESOURCES"
+      },
+      {
+        "name": "ohos.permission.WRITE_IMAGEVIDEO",
+        "reason": "$string:reason_write_media",
+        "usedScene": {
+          "abilities": [
+            "FilePickerUIExtAbility",
+            "UIExtAbility"
+          ]
+        }
+      },
+      {
+        "name": "ohos.permission.READ_IMAGEVIDEO",
+        "reason": "$string:reason_read_media",
+        "usedScene": {
+          "abilities": [
+            "MainAbility"
+          ]
+        }
+      },
+      {
+        "name": "ohos.permission.PERMISSION_USED_STATS"
+      },
+      {
+        "name": "ohos.permission.ACTIVATE_THEME_PACKAGE"
+      },
+      {
+        "name": "ohos.permission.PRINT"
+      },
+      {
+        "name" : "ohos.permission.VIBRATE"
+      },
+      // 剪贴板读取权限
+      {
+        "name" : "ohos.permission.SECURE_PASTE"
+      },
+      {
+        "name": "ohos.permission.CHECK_SANDBOX_POLICY"
+      },
+      {
+        "name": "ohos.permission.MANAGE_PRIVATE_PHOTOS"
+      },
+      {
+        "name": "ohos.permission.VISIBLE_WINDOW_INFO"
+      },
+      {
+        "name": "ohos.permission.MEDIA_LOCATION",
+        "reason": "$string:reason_write_media",
+        "usedScene": {
+          "abilities": [
+            "MainAbility",
+            "UIExtAbility"
+          ]
+        }
+      }
+    ]
+  },
+}

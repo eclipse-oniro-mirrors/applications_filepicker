@@ -1,0 +1,18 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"مدير الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_manager_label",
+            "value":"خدمة الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

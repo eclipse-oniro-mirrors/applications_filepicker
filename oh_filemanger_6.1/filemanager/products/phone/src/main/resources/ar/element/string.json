@@ -1,0 +1,753 @@
+{
+  "string": [
+    {
+      "name": "browse",
+      "value": "استعراض",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "about_file_manager",
+      "value": "مدير الملفات",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "myPhone",
+      "value": "هاتفي",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "select_location",
+      "value": "حدد المكان المطلوب",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "size",
+      "value": "الحجم",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge_folder_tip",
+      "value": "يوجد مجلد باسم \"%s\" في هذا الموقع بالفعل. استبداله؟",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop",
+      "value": "إيقاف",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_welcome_content_adults_all",
+      "value": "تتطلب هذه الخدمة اتصالاً بالإنترنت وأذونات التخزين وقائمة التطبيقات. كما تحتاج أيضًا إلى الوصول إلى معلومات الحساب والجهاز والشبكة والموقع والتطبيق (بما في ذلك قائمة التطبيقات المثبتة)، بالإضافة إلى البيانات التي تقوم برفعها بنشاط.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source",
+      "value": "المصدر",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "pasteboard_dialog_content",
+      "value": "لصق الملفات من الحافظة؟",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "choose_size",
+      "value": "الحجم: %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "finish",
+      "value": "تم",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "deleting",
+      "value": "جارٍ الحذف…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "btn_cancel",
+      "value": "إلغاء",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_type",
+      "value": "نوع الملف",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unknown_error_occurred",
+      "value": "خطأ غير معروف",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "loading",
+      "value": "جارٍ التحميل…",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "replace",
+      "value": "استبدال",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "net_work_disconnect",
+      "value": "غير متصل بالإنترنت، يُرجى التحقق من إعدادات الشبكة",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_B",
+      "value": "%s ب",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "waiting_progress_message",
+      "value": "يُرجى الانتظار...",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "order_name",
+      "value": "الاسم",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_GB",
+      "value": "%s غ.ب",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "about_app_version",
+      "value": "الإصدار: %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_no",
+      "value": "من دون تصفية",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "confirm",
+      "value": "موافق",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "externalDisk",
+      "value": "بطاقة SD",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_has_same_file",
+      "value": "اسم الملف هذا موجود بالفعل",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_complete",
+      "value": "حذف",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_personal_info",
+      "value": "المعلومات الشخصية المُجمَّعة",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "type",
+      "value": "النوع",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than_MB",
+      "value": "%d ميغابايت",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "text",
+      "value": "مستند",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "path",
+      "value": "المسار",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_custom",
+      "value": "تخصيص",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover_confirm_content",
+      "value": "هل تريد استعادة الملفات الموجودة في قسم الملفات الحديثة الواردة من هذا المصدر؟",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "alert_net_disconnect_try_again",
+      "value": "لم يتم تخزين الملف مؤقتًا على جهازك. يُرجى الاتصال بالإنترنت وإعادة المحاولة.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_cancel",
+      "value": "إلغاء",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_size",
+      "value": "حجم الملف",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "check_update_now",
+      "value": "جارٍ التحقق من وجود تحديثات…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter",
+      "value": "حجم التصفية",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "rename",
+      "value": "إعادة التسمية",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_title",
+      "value": "(نسخة)",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "total",
+      "value": "الإجمالي %1$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_complete",
+      "value": "اكتملت عملية النقل.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "edit",
+      "value": "تحرير",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "media_speed",
+      "value": "السرعة",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy",
+      "value": "نسخ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "skip",
+      "value": "تخطي",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recent",
+      "value": "الملفات الحديثة",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "open_failure_msg",
+      "value": "يتعذر الفتح.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_preview_detail",
+      "value": "حدد عنصرًا لعرض التفاصيل",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_max_input",
+      "value": "الحد الأقصى %d كيلوبايت",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_name",
+      "value": "اسم الملف",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_app_name",
+      "value": "مدير الملفات",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_agreed",
+      "value": "أوافق",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "preview",
+      "value": "معاينة",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_complete",
+      "value": "اكتملت عملية النسخ.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "مدير الملفات",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "location",
+      "value": "الموقع",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "more",
+      "value": "المزيد",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "files_app_name",
+      "value": "مدير الملفات",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "operation_canceled",
+      "value": "تم إلغاء العملية.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ok",
+      "value": "موافق",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting",
+      "value": "لصق",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover",
+      "value": "استعادة",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_uppercase",
+      "value": "استعادة",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_KB",
+      "value": "%s ك.ب",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than",
+      "value": "%d كيلوبايت",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "share",
+      "value": "مشاركة",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "to_save",
+      "value": "حفظ الملف إلى %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "data_center_terms_welcome",
+      "value": "مرحبًا بك في",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yesterday",
+      "value": "أمس",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "restore",
+      "value": "استعادة",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_fail",
+      "value": "يتعذّر الحفظ",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete",
+      "value": "حذف",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_content_adults_third_divide",
+      "value": "يُرجى قراءة البيان أعلاه بعناية. بالنقر على \"أوافق\"، فأنت توافق على البنود أعلاه.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "details",
+      "value": "التفاصيل",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "no_content_meets_the_condition",
+      "value": "لا توجد نتائج",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge",
+      "value": "دمج",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "turn_scrren_and_intelligent_analysis",
+      "value": "يحلل جهازك الملفات تلقائيًا في أثناء توصيله وإيقاف تشغيل الشاشة، مما يسمح لنتائج البحث أن تصبح أدق بمرور الوقت.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "screen_off_intelligent_analysis",
+      "value": "نتائج بحث أكثر دقة",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "name",
+      "value": "الاسم",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "cancel",
+      "value": "إلغاء",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "aboutPage_title",
+      "value": "حول",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "version_is_latest",
+      "value": "أنت الآن تستخدم أحدث إصدار.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "audio",
+      "value": "ملف صوتي",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_MB",
+      "value": "%s م.ب",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "about_service_phone",
+      "value": "خدمة العملاء",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "disabled",
+      "value": "هذه الميزة غير مدعومة حاليًا",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "not_find_the_file_you_want",
+      "value": "لا يمكنك العثور على الملف الذي تريده؟",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support",
+      "value": "مركز المساعدة",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface_contents",
+      "value": "يمكنك الآن تخصيص مخطط التطبيق بتغيير أماكن العناصر كما تحب أو إخفاء الميزات التي نادرًا ما تستخدمها.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations",
+      "value": "إنجاز المهام أسرع",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations_contents",
+      "value": "لقد نُقلت الميزات الأكثر استخدامًا، مثل زر المشاركة، إلى أعلى القائمة للوصول إليها بشكل أسرع.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support_contents",
+      "value": "استكشف مجموعة كبيرة من المحتوى المفيد مثل أدلة المستخدم والأسئلة الشائعة.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "change_details",
+      "value": "تفاصيل التحديث",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_change_tip",
+      "value": "لقد حدّثنا بيان الخصوصية واتفاقية المستخدم لدينا لتعزيز تجربة استخدامك لهذه الخدمة. يُرجى قراءة البنود والأحكام المُحدّثة بتمعن قبل المتابعة. لن تعمل هذه الخدمة إلا بعد موافقتك على معالجة البيانات التي يتطلبها هذا التغيير. يمكنك الاطلاع على %1$s و%2$s لمعرفة المزيد من التفاصيل.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "get_started",
+      "value": "جرّب الآن",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface",
+      "value": "التخصيص بحرية",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_access_more_secure_contents",
+      "value": "تضمن بنية الدليل المُطوّرة عدم وصول التطبيقات إلا إلى الملفات التي تحددها.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_access_more_secure",
+      "value": "حماية بيانات مُحسّنة",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancelled",
+      "value": "مُلغى",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_to_dest_completed",
+      "value": "تم النسخ إلى %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_to_dest_completed",
+      "value": "تم النقل إلى %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "مدير الملفات",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "search",
+      "value": "بحث",
+      "attr": {
+        "priority": "LT"
+      }
+    }
+  ]
+}

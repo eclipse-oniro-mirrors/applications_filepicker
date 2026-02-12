@@ -1,0 +1,5254 @@
+{
+    "string":[
+        {
+            "name":"not_support_modified_directory",
+            "value":"يتعذر تعديل هذا الدليل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_Guest_account_detail",
+            "value":"اضغط على Windows + R من لوحة المفاتيح لإظهار مربع التشغيل، ثم أدخل «gpedit.msc» واضغط على Enter (إدخال). انتقل إلى \"نهج الكمبيوتر المحلية > تكوين الكمبيوتر > إعدادات Windows > إعدادات الحماية > السياسات المحلية > تعيين حقوق المستخدم\"، ثم انقر مرتين على \"رفض الوصول إلى هذا الحاسوب من الشبكة\"، وأزل \"الضيف\" من القائمة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_navigation",
+            "value":"فتح لوحة التنقل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"junk_file",
+            "value":"المهملات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"support_argeement_configuration_detail",
+            "value":"افتح لوحة التحكم، ثم انتقل إلى «البرامج > تشغيل ميزات Windows أو إيقاف تشغيلها». وابحث عن «بروتوكول SMB 1.0/CIFS لدعم مشاركة الملفات» وحدد خانة الاختيار الخاصة به. انقر على موافق وأعد تشغيل الحاسوب.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"video_format",
+            "value":"صيغة الفيديو",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_page_button",
+            "value":"استعادة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"setting_properties",
+            "value":"إعداد نموذج المشاركة والحماية للحسابات المحلية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"local_trash_cleanup",
+            "value":"المهملات على الجهاز",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"app_name",
+            "value":"مدير الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"setting_properties_detail_new",
+            "value":"من \"النهج المحلية\"، افتح \"خيارات الأمان\"، وانقر مرتين على \"الاتصال بالشبكة: نموذج المشاركة والأمان للحسابات المحلية نموذج المشاركة والأمان للحسابات المحلية\" واختر \"ضيف فقط\". ثم انقر على \"موافق\". انقر مرتين على \"الحسابات: تقييد استخدام الحسابات المحلية لكلمات المرور الفارغة لتسجيل الدخول من وحدة التحكم فقط\" واختر \"معطّل\" ثم انقر على \"موافق\". اضغط على Win + R لفتح نافذة التشغيل، ثم أدخل \"cmd\" لفتح موجه الأوامر. في موجه الأوامر، أدخل \"gpupdate /force\" الأمر واضغط على مفتاح Enter. انتظر حتى يكتمل تحديث السياسة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_file_to_recycle",
+            "value":"سيتم حذف العناصر التي تم نقلها إلى مجلد «المحذوفات مؤخرًا» نهائيًا بعد %d يومًا.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_file_restore_folder_instruction",
+            "value":"بيانات التطبيقات المُستعادة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close_pwd_protection",
+            "value":"إيقاف تشغيل حماية كلمة المرور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hide_source",
+            "value":"إخفاء المصدر",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"enable_Guest_account_detail",
+            "value":"انقر بزر الفأرة الأيمن على «هذا الكمبيوتر»، ثم انتقل إلى «إدارة > المستخدمون المحليون والمجموعات المحلية > المستخدمون». قم من هنا، بنقر زر الفأرة الأيمن على «ضيف»، وحدد «خصائص»، وقم بإلغاء تحديد «الحساب معطل». أخيرًا، انقر على «تطبيق» ثم انقر على «موافق».",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_shared_files_detail_new",
+            "value":"انقر بزر الفأرة الأيمن على المجلد الذي تريد مشاركته، ثم انتقل إلى «خصائص > مشاركة > يشارك»، وحدد «الضيف» أو «الجميع»، ثم انقر على «إضافة». بعد ذلك انقر على السهم الموجود على اليسار لتعيين أذونات الوصول وانقر على «مشاركة».",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"windows_version1",
+            "value":"‏Windows Ultimate أو Windows Professional",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"windows_version2",
+            "value":"‏Windows Home",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scan_more_cleanable_files",
+            "value":"البحث عن الإعلانات المخزنة مؤقتًا والملفات الأخرى غير الضرورية.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_jump",
+            "value":"متابعة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"source_edit_item_drag",
+            "value":"جارٍ سحب تطبيق %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picture_format",
+            "value":"صيغة الصورة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enable_scan",
+            "value":"اكتمال الإعداد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_new_album",
+            "value":"ألبوم جديد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"close_pwd_protection_detail",
+            "value":"افتح لوحة التحكم، ثم انتقل إلى «الشبكة والإنترنت > مركز الشبكة والمشاركة > تغيير إعدادات المشاركة المتقدمة > كافة الشبكات». من خيار «مشاركة محمية بكلمة مرور»، اختر «إيقاف تشغيل المشاركة المحمية بكلمة مرور»، ثم انقر على «حفظ التغييرات».",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"jump_to_target_note",
+            "value":"ستؤدي مغادرة هذه الشاشة إلى توقف العملية الحالية. هل حقًا تريد المتابعة؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_images",
+            "value":"الكل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_download_folder_instruction",
+            "value":"التنزيلات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"anonymous_environment_configuration",
+            "value":"إعداد بيئة مجهولة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connect_line",
+            "value":"%1$s | %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close_navigation",
+            "value":"إغلاق لوحة التنقل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hidisk_file_size_range_larger_gb",
+            "value":"أكبر من %d غ.ب",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_cleanup_context",
+            "value":"انتقل إلى الإعدادات للعثور على المزيد من العناصر ومسحها.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hidisk_file_size_range_smaller_kb",
+            "value":"أصغر من %d ك.ب",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_shared_files",
+            "value":"إضافة الملفات المشتركة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"system_folder_not_support_operation",
+            "value":"الإجراء غير متوفر مع دليل النظام",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"support_argeement",
+            "value":"إعداد البروتوكولات المدعومة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"just_now",
+            "value":"منذ لحظات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_updatebackup_folder_instruction",
+            "value":"بينات النسخ الاحتياطي/الاستنساخ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_documents_folder_instruction",
+            "value":"المستندات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recently_deleted_dialog_tip",
+            "value":"النقل إلى مجلد \"المحذوفات مؤخرًا\"",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_confirm_tips",
+            "value":"هل تريد استعادة الملفات الموجودة في قسم الملفات الحديثة الواردة من هذا المصدر؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_Guest_account",
+            "value":"إزالة قيود حساب الضيوف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_videos",
+            "value":"الكل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"step4",
+            "value":"الخطوة الرابعة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step5",
+            "value":"الخطوة الخامسة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step1",
+            "value":"الخطوة الأولى",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step2",
+            "value":"الخطوة الثانية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step3",
+            "value":"الخطوة الثالثة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"local_trash",
+            "value":"المهملات على الجهاز",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"space_cleanup",
+            "value":"تفريغ مساحة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"use_network",
+            "value":"استخدام بيانات الجوال",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"drag_to_change_sort",
+            "value":"اسحب لتغيير الترتيب",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_gallery_folder_instruction",
+            "value":"ملفات المعرض المُخزّنة على هذا الجهاز",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"files_source_no_appear",
+            "value":"الملفات الواردة من هذا المصدر لن تظهر مُجددًا في تبويب \"الملفات الحديثة\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_delete_file_save_day",
+            "value":"سيتم حذف الملفات بشكلٍ نهائي بعد انتهاء عدد الأيام المتبقية الذي يظهر على الشاشة (%d يومًا كحد أقصى).",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"manager_hidden",
+            "value":"إدارة مصادر الملفات المخفية في قسم الملفات الحديثة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"document_format",
+            "value":"صيغة المستند",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_content",
+            "value":"لا يوجد محتوى",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"myPhone",
+            "value":"هاتفي",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enable_Guest_account",
+            "value":"تشغيل حساب الضيوف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_sound_folder_instruction",
+            "value":"الملفات الصوتية",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"audio_format",
+            "value":"صيغة الملف الصوتي",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_cleanup",
+            "value":"خيارات إضافية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hide_card",
+            "value":"إخفاء",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"afternoon",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restoring_file",
+            "value":"جارٍ الاستعادة \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_stem_part",
+            "value":"%1$s، %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_up",
+            "value":"الإعدادات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_file",
+            "value":"حذف الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"category",
+            "value":"النوع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_six",
+            "value":"مخصص",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_failed",
+            "value":"تعذر الحفظ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_disconnect_tip",
+            "value":"لن تتمكن بعد الآن من عرض أو إدارة الملفات المشتركة على هذا الجهاز. هل حقًا تريد قطع الاتصال؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unable_open_file_dialog_content",
+            "value":"تجب استعادة الملفات الموجودة في المحذوفات مؤخرًا قبل استخدامها مرة أخرى.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"encrypt_file",
+            "value":"تشفير",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"none",
+            "value":"لا يوجد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"input_content_cannot_be_empty",
+            "value":"مطلوب تعبئة هذا الحقل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"default_tag",
+            "value":"العلامات الافتراضية",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"help",
+            "value":"التعليمات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_file",
+            "value":"فتح الملف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_sound_recorder",
+            "value":"مسجل الصوت",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"change_password",
+            "value":"تغيير كلمة المرور",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"auto_login",
+            "value":"تسجيل الدخول التلقائي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"next_one",
+            "value":"التالي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_update",
+            "value":"التحقق من وجود تحديثات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_copy_toast",
+            "value":"اسحب من أعلى الشاشة نحو الأسفل لمعرفة مستوى سير العملية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"space_transmit",
+            "value":"إضافة إلى حساب Space Exchange",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_fail_content_dlg",
+            "value":"تعذر نقل %s. يُرجى التحقق.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"discontinue",
+            "value":"إنهاء",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"canceling",
+            "value":"جارٍ الإلغاء…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_cut_toast",
+            "value":"اسحب من أعلى الشاشة نحو الأسفل لمعرفة مستوى سير العملية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_data_lost",
+            "value":"لم تتم إزالة \"%s\" بأمان. ربما فُقدت البيانات.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_file_failed",
+            "value":"تعذر حفظ الملف.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password",
+            "value":"كلمة المرور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy",
+            "value":"نسخ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_custom_question_hint",
+            "value":"أدخل %d رمزًا كحدٍ أقصى",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_tag_group",
+            "value":"لا توجد علامات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"newly_added_devices_not_found_in_lan",
+            "value":"لم يتم العثور على أجهزة جديدة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pad_recent_delete_clear_content",
+            "value":"سيتم حذف كل الملفات بشكل نهائي.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"medium_icon",
+            "value":"أيقونات متوسطة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"MainAbility_label",
+            "value":"مدير الملفات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_access_details",
+            "value":"يتم عرض ملفاتك هنا، لكن يمكن لهذا التطبيق فقط الوصول إلى العناصر التي تحددها أنت.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file",
+            "value":"يوجد بالفعل ملف باسم \"%s\" في هذا الموقع.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"noon",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"del_suc",
+            "value":"تم الحذف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"batch_grant_permission",
+            "value":"تحديد عناصر متعددة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"privacy_dialog_content_first",
+            "value":"يتطلب الوضع الكامل اتصالاً بالإنترنت وأذونات التخزين وقائمة التطبيقات. كما يحتاج أيضًا إلى الوصول إلى معلومات الحساب والجهاز والتطبيق (بما في ذلك قائمة التطبيقات المثبتة) والشبكة، بالإضافة إلى البيانات التي تقوم برفعها بنشاط.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"include",
+            "value":"المحتويات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cannot_move_app_data",
+            "value":"يحتوي تحديدك على بيانات التطبيق. قد يؤدي نقل هذا إلى توقف التطبيقات عن العمل بشكل صحيح.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"my_devices",
+            "value":"أجهزتي",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_delete",
+            "value":"إفراغ سلة المحذوفات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_fail_dialog_content_singular",
+            "value":"تعذرت استعادة %s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share",
+            "value":"مشاركة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"formatting",
+            "value":"جارٍ التنسيق…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"face_recognition_dialog",
+            "value":"ربط بصمة الوجه",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_remove",
+            "value":"إزالة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"rename_fail",
+            "value":"تعذرت إعادة التسمية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore",
+            "value":"استعادة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_created_time",
+            "value":"تاريخ الإنشاء: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_tag",
+            "value":"العلامات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"order_type",
+            "value":"النوع",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"expand_phone_tip",
+            "value":"ألغِ طي هاتفك أولاً.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_video_to_gallery_album",
+            "value":"يمكن حفظ الفيديوهات فقط في الدليل %1$s، بينما لا يمكن تخزين الملفات الأخرى هنا. هل تريد المتابعة؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"addFolder",
+            "value":"مجلد جديد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"replace_file_tip",
+            "value":"يوجد ملف بالاسم \"%s\" بالفعل في هذا الموقع. استبداله؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"disabled",
+            "value":"هذه الميزة غير مدعومة حاليًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_location",
+            "value":"حدد المكان المطلوب",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_question_four",
+            "value":"ما اسم الحي الذي نشأت فيه؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connect_device",
+            "value":"اتصال",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"download_receive",
+            "value":"التنزيلات/المُستلمة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"created_time",
+            "value":"تاريخ الإنشاء",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"filter_samll_images",
+            "value":"تصفية الصور الصغيرة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_display_type",
+            "value":"النوع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tab_item_phone",
+            "value":"وحدة التخزين الداخلية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_select_tip",
+            "value":"تظهر العلامات المحددة في الشريط الجانبي.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_target_path",
+            "value":"تعذر العثور على المسار المطلوب.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"favorite",
+            "value":"إضافة إلى المفضلة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_REMOVED_FROM_QUICK_ACCESS",
+            "value":"إزالة من الوصول السريع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"media_library_files_migrated_to_gallery",
+            "value":"توجد صورك وفيديوهاتك هنا.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file_title",
+            "value":"استبدال الملف الموجود؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password_reset_success",
+            "value":"تمت إعادة تعيين كلمة المرور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"common",
+            "value":"عام",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_data_lost_menu",
+            "value":"قد تؤدي إزالة هذا القرص في أثناء نقل الملفات إلى فقدان البيانات.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_delete_date",
+            "value":"تم الحذف",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"max_input_length",
+            "value":"تم بلوغ الحد الأقصى للطول",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_paste_itself",
+            "value":"تعذر لصق مجلد في نفس مكانه أو في مجلد فرعي خاص به.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all_content",
+            "value":"هل تريد مسح جميع الملفات؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"folder_name",
+            "value":"اسم المجلد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"face_association",
+            "value":"تم الربط بميزة التعرف على الوجه",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"do_not_associated",
+            "value":"ليس الآن",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_dupFolder_from_child_to_parent",
+            "value":"لا يمكن استبدال المجلد \"%s\" بدليل فرعي يحمل الاسم نفسه.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"same_file_exist",
+            "value":"اسم الملف مستخدم بالفعل.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_folder",
+            "value":"تحتوي الوجهة بالفعل على مجلد باسم \"%s\". استبدال المجلد في الوجهة؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_ADD_TO_QUICK_ACCESS",
+            "value":"إضافة إلى الوصول السريع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security",
+            "value":"أسئلة الحماية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"apply_to_all_files",
+            "value":"تنفيذ ذلك لكل الملفات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"edit",
+            "value":"تحرير",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"readonly_file_system",
+            "value":"نظام الملفات هذا للقراءة فقط.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_tips_details",
+            "value":"يتم عرض ملفاتك هنا، لكن يمكن لهذا التطبيق فقط الوصول إلى العناصر التي تحددها أنت.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"failed_save_to_gallery_root_path",
+            "value":"لا يمكن تخزين الملفات في الدليل الرئيسي للمعرض. حدد دليلاً آخر.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"today",
+            "value":"اليوم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_name",
+            "value":"اسم الملف: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_recent_time",
+            "value":"تاريخ آخر فتح: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pasting_file",
+            "value":"جارٍ اللصق \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"audio_files_migrate_tip",
+            "value":"تم نقل ملفات الصوتية إلى تطبيق مسجل الصوت.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_name",
+            "value":"اسم الملف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"del_fail",
+            "value":"تعذر الحذف.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"preview",
+            "value":"معاينة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"show_files_with_dot",
+            "value":"إظهار الملفات والمجلدات التي تبدأ أسماؤها بنقطة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_DISK_FORMAT",
+            "value":"التنسيق \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_device",
+            "value":"إضافة جهاز",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"next_step",
+            "value":"التالي",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"encrypted_share",
+            "value":"مشاركة مشفرة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_folder",
+            "value":"مجلد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"letterQ2Z",
+            "value":"Q–Z",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_notify_result",
+            "value":"الناجحة: %1$d، الفاشلة: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_two",
+            "value":"ما اسم مدرستك الابتدائية؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"original_file_path",
+            "value":"المسار الأصلي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"emptyName",
+            "value":"لا يوجد محتوى.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"order_size",
+            "value":"الحجم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open",
+            "value":"فتح",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"memory_space",
+            "value":"تتوفر مساحة %1$s من %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_drag_toast",
+            "value":"اسحب من أعلى الشاشة نحو الأسفل لمعرفة مستوى سير العملية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_operate_not_permitted",
+            "value":"تعذر نسخ \"%s\".\nالسبب: مقيد من قبل الشركة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_format_succeed",
+            "value":"تم التنسيق بنجاح.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery_album",
+            "value":"يتعذر إنشاء مجلدات فرعية داخل مجلدات الألبوم. سيتم نقل الصور والفيديوهات ذات الصلة وفقًا لذلك. هل تريد المتابعة؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_folder",
+            "value":"فتح موقع الملف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"quick_access",
+            "value":"الوصول السريع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"zero",
+            "value":"فارغ (%d كيلوبايت)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_information",
+            "value":"التفاصيل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"quick_access_only_can_have_100_files",
+            "value":"يمكن أن يحتوي الوصول السريع على %d دليل كحد أقصى.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"permission_storage_media_and_files",
+            "value":"الصور والفيديوهات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"other",
+            "value":"أخرى",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"data_changes_associated",
+            "value":"تم ربط التغييرات.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"selected_none",
+            "value":"لم تحدد أي عنصر",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_recover_file",
+            "value":"\"%s\" موجود بالفعل. استعادة على أي حال؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"group_and_sort",
+            "value":"تجميع وفرز",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"do_associated_account_tips",
+            "value":"إذا نسيت كلمة المرور وإجابات أسئلة الحماية الخاصة بك، فسيظل بإمكانك إعادة تعيين كلمة المرور.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_tag",
+            "value":"حذف العلامة \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_icon",
+            "value":"عرض الأيقونات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_desktop",
+            "value":"الشاشة الرئيسية",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pinyinM2S",
+            "value":"M–S (Pinyin)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_recent_delete_file",
+            "value":"لا توجد ملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_open_date",
+            "value":"تاريخ الوصول",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"back",
+            "value":"رجوع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_success",
+            "value":"تمت الاستعادة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"child_folder",
+            "value":"يتعذر اللصق. الدليل الهدف هو دليل فرعي للدليل المصدر.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picker_file_not_exist",
+            "value":"المجلد الذي قمت بإدخاله غير موجود. يُرجى تحديد مجلد آخر.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery",
+            "value":"تعذر إنشاء مجلدات فرعية داخل دليل المعرض. سيتم نقل الصور والفيديوهات الموجودة في المجلد إلى الدليل \"%s\". هل تريد المتابعة؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_face_recognition",
+            "value":"أُلغي ربط بيانات الوجه",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_button_tip",
+            "value":"اعثر على المزيد من الإعدادات هنا.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"notice_when_over_100mb_desc",
+            "value":"السؤال قبل استخدام بيانات الجوال لرفع أو تنزيل أو تشغيل الملفات التي يزيد حجمها عن %d ميغابايت",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"medium",
+            "value":"متوسطة (%1$d–%2$d ميجابايت)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"softDelete",
+            "value":"يتم نقل الملفات المحذوفة إلى المحذوفات مؤخرًا.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm",
+            "value":"موافق",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_notice_desc",
+            "value":"السؤال قبل استخدام بيانات الجوال لرفع أو تنزيل أو تشغيل الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"evening",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide",
+            "value":"إخفاء",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"text",
+            "value":"مستند",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_upper_camelcase",
+            "value":"حذف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_allow",
+            "value":"السماح دومًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_available_devices",
+            "value":"لم يتم العثور على أجهزة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"show_hidden_files",
+            "value":"إظهار الملفات المخفية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_suspended",
+            "value":"تم إلغاء الحذف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"filter",
+            "value":"تصفية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_SYS_FORMAT",
+            "value":"نظام الملفات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"paste",
+            "value":"لصق",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cant_share_empty_folder",
+            "value":"تتعذر مشاركة المجلدات الفارغة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"reset_password",
+            "value":"إعادة تعيين كلمة المرور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_size",
+            "value":"فرز حسب الحجم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"processing",
+            "value":"جارٍ المعالجة…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"verify_password",
+            "value":"التحقق من كلمة المرور",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_suspended",
+            "value":"تم إلغاء الاستعادة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"remove_from_tag",
+            "value":"إزالة من العلامات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"folder",
+            "value":"المجلدات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"skip",
+            "value":"تخطي",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pause",
+            "value":"الإيقاف مؤقتًا",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_answer",
+            "value":"الإجابة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_downloads",
+            "value":"التنزيلات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_FORMATTING",
+            "value":"تنسيق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"media_library",
+            "value":"الوسائط",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"mine_list_help",
+            "value":"مساعدة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"moving",
+            "value":"جارٍ النقل…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_permanent",
+            "value":"الحذف نهائيًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_new_folder",
+            "value":"مجلد جديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authing_file_not_exist",
+            "value":"لم يتم العثور على المسار: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"learn_more",
+            "value":"معرفة المزيد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"descending",
+            "value":"تنازلي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"duration",
+            "value":"المدة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_FORMAT_CONFIRMATION",
+            "value":"ستؤدي التهيئة إلى حذف جميع البيانات المخزنة على هذا القرص. لا يمكن التراجع عن ذلك.\n\nهل تريد بالتأكيد تنسيق هذا القرص؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"column_view",
+            "value":"الأعمدة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_gallery",
+            "value":"المعرض",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"default_tag_drag_tip",
+            "value":"اسحب العلامات هنا لإتاحتها في قائمة \"إضافة علامة\".",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_fail_content_dlg",
+            "value":"يتعذر السحب والإفلات %s. يُرجى التحقق.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unfavorite",
+            "value":"إزالة من المفضلة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_tag_no_name",
+            "value":"حذف العلامة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bluetooth",
+            "value":"البلوتوث",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sort",
+            "value":"فرز حسب",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_blue",
+            "value":"أزرق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_access_path_details",
+            "value":"يمكن لهذا التطبيق الوصول إلى الملفات التي تحددها فقط، ولا يمكنه الوصول إلى المحتويات الأخرى في المجلد. %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_file",
+            "value":"حفظ الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_to_backup_recover_pad",
+            "value":"تمت الاستعادة إلى \"جهازي اللوحي/‏UpdateBackup‏/‏RecycleBin\"",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"music",
+            "value":"صوتيات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select",
+            "value":"تحديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_image_to_gallery_album_for_picker",
+            "value":"يمكن حفظ الصور فقط في الدليل %1$s. لا يمكن تخزين الملفات الأخرى هنا.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_usage_explanation_link",
+            "value":"إشعار الأذونات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"about_service_phone",
+            "value":"خدمة العملاء",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_files_exceed",
+            "value":"تتعذر مشاركة أكثر من %d ملف في الوقت نفسه.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_has_special_char",
+            "value":"اسم العلامة يحتوي على رموز خاصة. يرجى إعادة التسمية.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_images",
+            "value":"الصور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"back_up_home_page_tips",
+            "value":"مرحبًا! في أثناء تحديث النظام، تم نقل صورك والفيديوهات الخاصة بك إلى المعرض، بينما تم نقل تسجيلاتك الصوتية إلى مسجل الصوت.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_network_connection",
+            "value":"يُرجى التحقق من اتصال الإنترنت لديك والمحاولة مجددًا.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"early_morning",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"input_password",
+            "value":"أدخل كلمة المرور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"complete",
+            "value":"تم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_disconnect",
+            "value":"انقطع الاتصال",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_details",
+            "value":"التفاصيل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"waiting_network",
+            "value":"بانتظار الشبكة…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"finish",
+            "value":"تم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"my_pad",
+            "value":"جهازي اللوحي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_clear_confirm",
+            "value":"فارغ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"declare_agree_format_info",
+            "value":"يُرجى قراءة البيان أعلاه بعناية. يعني النقر على \"أوافق\" موافقتك على السماح لنا بتقديم هذه الخدمة لك.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_folder_or_file",
+            "value":"جديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"public",
+            "value":"عام",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"my_pc",
+            "value":"حاسوبي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_REMOVED",
+            "value":"إزالة \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move",
+            "value":"نقل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"memory_used",
+            "value":"المساحة المستخدمة %1$s جيجابايت/%2$s جيجابايت",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"user",
+            "value":"المستخدم",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_storage_location",
+            "value":"موقع وحدة التخزين",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_other",
+            "value":"ملاحظة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"multiple_choices",
+            "value":"تحديد متعدد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"check",
+            "value":"عرض",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_type",
+            "value":"فرز حسب النوع",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy_notify_result",
+            "value":"الناجحة: %1$d، الفاشلة: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"doc",
+            "value":"مستند",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_tag_added",
+            "value":"لم تم إضافة علامة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"change_tag_color",
+            "value":"لون العلامة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_DISK_CAPACITY",
+            "value":"السعة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_load_end",
+            "value":"لا توجد مستندات أخرى خلال آخر %d يومًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"other_devices",
+            "value":"أجهزة أخرى",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"jump",
+            "value":"انتقال",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_services_dialog_subtitle",
+            "value":"في الوضع الأساسي، ستتمكن فقط من استخدام الميزات الأساسية، مثل إدارة الملفات. لتوفير هذه الميزات، تتطلب هذه الخدمة اتصالاً بالإنترنت وأذونات التخزين (الوسائط والملفات) وقائمة التطبيقات، وتحتاج إلى قراءة بيانات الوسائط وقائمة التطبيقات المثبتة. بالنقر على استخدام الوضع الأساسي، فأنت توافق على الشروط المذكورة أعلاه وإشعار الأذونات.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename",
+            "value":"إعادة التسمية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tags",
+            "value":"العلامات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"big",
+            "value":"كبير (%1$d ميجابايت–%2$d جيجابايت)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_two",
+            "value":"ما اسم صديقك؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ascending",
+            "value":"تصاعدي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_management",
+            "value":"العلامات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"long_ago",
+            "value":"أقدم",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"choose_retrieval_method",
+            "value":"تحديد طريقة الاسترداد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"do_associated",
+            "value":"ربط",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_and_no_prompt_again",
+            "value":"عدم الإظهار مرةً أخرى",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_question_five",
+            "value":"مَن فنانك أو فرقتك المفضلة؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_fail_dialog_content_singular",
+            "value":"تعذر حذف %s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"collapse",
+            "value":"إظهار أقل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_old_password",
+            "value":"تأكيد كلمة المرور القديمة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_to_backup_recover_phone",
+            "value":"تمت الاستعادة إلى My phone/UpdateBackup/RecycleBin.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"small",
+            "value":"صغير (%1$d كيلوبايت–%2$d ميجابايت)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_it",
+            "value":"حسنًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"set_file_storage_location",
+            "value":"تحديد موقع وحدة التخزين",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"video",
+            "value":"فيديو",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_questions_three",
+            "value":"أين قضيت أول إجازة عائلية؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"damaged_file_open_fail",
+            "value":"الملف تالف. يتعذر الفتح.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"letterI2P",
+            "value":"I–P",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_folderName",
+            "value":"اسم المجلد: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"compressed",
+            "value":"مضغوطة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pinyinG2L",
+            "value":"G–L (Pinyin)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_creation_date",
+            "value":"تاريخ الإنشاء",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bind_fingerprint_change",
+            "value":"تم تغيير بيانات بصمة الإصبع. تحقق من كلمة المرور الخاصة بك مجددًا.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"complete_delete_tips",
+            "value":"لا يمكن استعادة الملفات المحذوفة.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"display_name",
+            "value":"الاسم المعروض",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"set_safe_password_rules",
+            "value":"يجب أن تحتوي كلمة المرور على %1$d–%2$d رمزًا (أرقام/حروف)، وأن تحتوي على حرف واحد على الأقل. ولا ينبغي أن تكون نفس اسم الخزانة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"drag_file",
+            "value":"إفلات الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"original_location",
+            "value":"الموقع الأصلي",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"this_month",
+            "value":"هذا الشهر",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_hint",
+            "value":"يجب أن تتكون الإجابة من %1$d إلى %2$d حرفًا (أو حرفين صينيين على الأقل).",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"use_password",
+            "value":"استخدام كلمة المرور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_out_file",
+            "value":"نقل للخارج",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"user_agreement_and_permission",
+            "value":"البيان المتعلق بمدير الملفات والخصوصية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file_title_save_both",
+            "value":"دمج المجلدات في هذا الموقع؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"menu_deselect_all",
+            "value":"إلغاء تحديد كل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tiny",
+            "value":"صغير للغاية (%1$d–%2$d كيلوبايت)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_all",
+            "value":"مسح الملفات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"privacy_content_second_divide",
+            "value":"نحن نجمع فقط المعلومات الشخصية اللازمة لتقديم هذه الخدمة، ونتخذ الإجراءات المناسبة لحماية معلوماتك. للحصول على تفاصيل، يُرجى مراجعة %s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_not_exist",
+            "value":"%s غير موجود.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_month",
+            "value":"الشهر الماضي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_move_abort_alert",
+            "value":"الملفات قيد النسخ/النقل. هل تريد الخروج دون إكمال هذه المهام؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pasteboard_dialog_title",
+            "value":"ملاحظة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"next",
+            "value":"إعادة التوجيه",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_type",
+            "value":"نوع الملف",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"device_connect_success",
+            "value":"تم الاتصال",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy_file",
+            "value":"نسخ الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"forget_password",
+            "value":"هل نسيت كلمة المرور؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"list_view",
+            "value":"القائمة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"same_name_folder_recover",
+            "value":"تحتوي الوجهة بالفعل على مجلد باسم \"%s\". استعادة على أي حال؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path",
+            "value":"يمكن حفظ الصور والفيديوهات فقط في دليل المعرض. لا يمكن تخزين الملفات الأخرى هنا. متابعة؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"where",
+            "value":"الموقع",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"waiting_progress_message",
+            "value":"يُرجى الانتظار...",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_list_title",
+            "value":"أذونات الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"folder_size",
+            "value":"الحجم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_recent_record",
+            "value":"مسح السجلات الحديثة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"net_disconnect",
+            "value":"غير متصل بالإنترنت، يُرجى التحقق من إعدادات الشبكة لديك",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"play",
+            "value":"تشغيل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_in_file",
+            "value":"نقل للداخل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no",
+            "value":"لا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"about_personal_info",
+            "value":"المعلومات الشخصية المُجمَّعة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_files_error",
+            "value":"تعذر الحصول على قائمة الملفات.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"usage_help",
+            "value":"التعليمات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"build_new_folder",
+            "value":"مجلد جديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"display_extension_name",
+            "value":"إظهار جميع امتدادات الملفات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"give_feedback",
+            "value":"الإفادة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cannot_open_this_file",
+            "value":"تعذر الفتح",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_mode",
+            "value":"فتح بواسطة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_delete_tag_text",
+            "value":"ستتم إزالة هذه العلامة من أي ملفات أضفتها إليها.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"anonymous_login",
+            "value":"تسجيل الدخول كمجهول",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"this_week",
+            "value":"هذا الأسبوع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"grant_permission",
+            "value":"منح الوصول",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_folder",
+            "value":"\"%s\" موجود بالفعل. دمج هذه المجلدات؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"before_dawn",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_new_tag",
+            "value":"إضافة علامة جديدة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"order_time",
+            "value":"الوقت",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"big_file",
+            "value":"الملفات الكبيرة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"exe",
+            "value":"التطبيق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"always_allow_desc",
+            "value":"السماح باستخدام بيانات الجوال لرفع، أو تنزيل، أو تشغيل الملفات دون تأكيد.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_delete_time",
+            "value":"تاريخ الحذف: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent",
+            "value":"الملفات الحديثة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ppt",
+            "value":"عرض تقديمي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_support_characters_new",
+            "value":"الرموز غير المدعومة: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"completeName",
+            "value":"أدخل اسم الملف كاملًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unable_open_file_dialog_title",
+            "value":"يتعذر فتح هذا الملف.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"newWindow",
+            "value":"عرض نوافذ جديدة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"device_connect_fail",
+            "value":"فُقد الاتصال بـ \u202a%s\u202c",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more",
+            "value":"المزيد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_file",
+            "value":"فتح",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cut",
+            "value":"قص",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"continue",
+            "value":"متابعة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"input_name",
+            "value":"أدخل اسم العلامة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"build_folder_failed",
+            "value":"تعذر إنشاء مجلد جديد.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"permission_internet",
+            "value":"الاتصال بالإنترنت",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_rule",
+            "value":"فرز",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"redo_s",
+            "value":"إعادة: %s (R)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"resident_security_tips",
+            "value":"يمكن لهذا التطبيق الوصول إلى العناصر التي تحددها فقط",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_progress_content",
+            "value":"تم نسخ: %1$s‏/‏%2$s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"same_name_file_recover",
+            "value":"تحتوي الوجهة بالفعل على ملف باسم \"%s\". استعادة على أي حال؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_format_fail",
+            "value":"تعذر التنسيق.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_delete",
+            "value":"سلة المحذوفات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_appdata",
+            "value":"بيانات التطبيق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pinyinT2Z",
+            "value":"T–Z (Pinyin)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"this_year",
+            "value":"هذا العام",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"dimension",
+            "value":"الأبعاد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_both",
+            "value":"الاحتفاظ بكليهما",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_purple",
+            "value":"أرجواني",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_music",
+            "value":"الموسيقى",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_date",
+            "value":"التاريخ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge",
+            "value":"دمج",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ip_address_error",
+            "value":"تنسيق غير صحيح",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"turn_scrren_and_intelligent_analysis",
+            "value":"يحلل جهازك الملفات تلقائيًا في أثناء توصيله وإيقاف تشغيل الشاشة، مما يسمح لنتائج البحث أن تصبح أدق بمرور الوقت.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"keep",
+            "value":"الاحتفاظ بكليهما",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"currently_in_use",
+            "value":"‏%s (الحالي)",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"version_is_latest",
+            "value":"أنت الآن تستخدم أحدث إصدار.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_version",
+            "value":"التحقق من وجود التحديثات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"filter_browsed_samll_images",
+            "value":"تصفية الصور الصغيرة في استعراض > الصور.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"touch_share_not_support_folder",
+            "value":"المجلدات المشتركة غير مدعومة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all_content_two",
+            "value":"لا يمكن استرجاع العناصر التي تم مسحها.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"yes",
+            "value":"نعم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"redo",
+            "value":"إعادة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"desktop",
+            "value":"الشاشة الرئيسية",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"re_enter",
+            "value":"أدخل كلمة المرور مرة أخرى",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_original_path",
+            "value":"المسار الأصلي: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_limit_exceed_msg",
+            "value":"يمكن مشاركة %d ملف كحدٍ أقصى في المرة الواحدة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_perm_confirm",
+            "value":"حذف",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unknown_error_occurred",
+            "value":"خطأ غير معروف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"initialization",
+            "value":"جارٍ التهيئة…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_file",
+            "value":"استعادة الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"loading",
+            "value":"جارٍ التحميل…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_video_to_gallery_album_for_picker",
+            "value":"يمكن حفظ الفيديوهات فقط في الدليل %1$s، بينما لا يمكن تخزين الملفات الأخرى هنا.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_complete_tips",
+            "value":"هل تريد حذف الملفات المحددة بشكل نهائي؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"net_work_disconnect",
+            "value":"غير متصل بالإنترنت، يُرجى التحقق من إعدادات الشبكة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_file",
+            "value":"نقل الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"notice_when_over_100mb",
+            "value":"السؤال مع الملفات التي يزيد حجمها عن %d ميغابايت",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"rotate",
+            "value":"تدوير",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pinyinA2F",
+            "value":"A–F (Pinyin)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"externalDisk",
+            "value":"بطاقة SD",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_file_delete",
+            "value":"ستُحذف الملفات المحددة نهائيًا.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_no_content",
+            "value":"لا توجد ملفات في آخر %d يومًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"grid_view",
+            "value":"شبكة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"return_to_previous_step",
+            "value":"رجوع",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pad_progress_bar_title_copy_file",
+            "value":"نسخ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"prompt_recognition",
+            "value":"هل تود من الخزانة طلب كلمة المرور تلقائيًا في حال تم تغيير بصمة الإصبع أو بيانات الوجه؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cellular_transmission_title",
+            "value":"أنت تستخدم شبكة الجوال",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recentlyDeleted",
+            "value":"المحذوفات مؤخرًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_question_limit",
+            "value":"تم بلوغ الحد الأقصى للطول",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"last_open_time",
+            "value":"تاريخ آخر وصول",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_notify_result",
+            "value":"الناجحة: %1$d، الفاشلة: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_grey",
+            "value":"رمادي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"exits",
+            "value":"خروج",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"grouping",
+            "value":"تجميع حسب",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"disconnect",
+            "value":"قطع الاتصال",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enter_password",
+            "value":"أدخل كلمة المرور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"big_icon",
+            "value":"أيقونات كبيرة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"connected",
+            "value":"اتصال",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"otherApp",
+            "value":"فتح ضمن التطبيق",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_tags",
+            "value":"كل العلامات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_one",
+            "value":"ما اسم أمك؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_match_result",
+            "value":"لا توجد نتائج",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_failed",
+            "value":"تعذرت العملية.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel_multiple_choices",
+            "value":"إلغاء تحديد الكل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"prompt_recognition_dialog",
+            "value":"ملاحظة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_system_file_tips",
+            "value":"لا يمكن حذف مجلدات النظام.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"picker_security_tips",
+            "value":"يمكن لهذا التطبيق الوصول إلى الملفات التي تحددها فقط",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_all_selection",
+            "value":"إلغاء تحديد الكل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"folder_not_exist",
+            "value":"المجلد غير موجود.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"incorrect_username_or_password",
+            "value":"خطأ في اسم المستخدم أو كلمة المرور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"password_reset_failed",
+            "value":"تعذرت استعادة كلمة المرور.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"username_required",
+            "value":"لا يمكن أن يكون فارغًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"stop_recover_file",
+            "value":"إيقاف",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authenticate_your_identity",
+            "value":"التحقق من هويتك",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_filemanager_file_not_exist",
+            "value":"‏\"%s\" غير موجود.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"undo_s",
+            "value":"تراجع: %s (U)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_file_name",
+            "value":"اسم الملف",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"suffixErr",
+            "value":"تغيير امتداد الملف قد يؤدي إلى إمكانية عدم توفر ذلك الملف. هل حقًا تريد تغييره؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"activate_now",
+            "value":"تشغيل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"association",
+            "value":"ربط",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"letterA2H",
+            "value":"A–H",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path_for_picker",
+            "value":"لا يمكن حفظ سوى الصور والفيديوهات في مجلد \"المعرض\"، بينما لا يمكن تخزين الملفات الأخرى هنا.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"share_failed_msg",
+            "value":"تعذرت المشاركة، يمكن مشاركة %d عنصر كحدٍ أقصى في المرة الواحدة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"associate_fingerprint_fail",
+            "value":"يتعذر ربط بيانات بصمة الإصبع",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_supported_filesystem",
+            "value":"نظام الملفات غير مدعوم.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"yesterday",
+            "value":"أمس",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete",
+            "value":"حذف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"dusk",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"view",
+            "value":"العرض",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"wechat_not_support_share_notice",
+            "value":"للمشاركة على WeChat، افتح دردشة في WeChat، وحدد ملفًا وأرسله.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_association",
+            "value":"ليس الآن",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_file_tag",
+            "value":"إضافة علامة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_have_same_name",
+            "value":"يوجد ملف بالفعل في هذا المجلد يحمل الاسم نفسه. هل تريد استبداله؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"name",
+            "value":"الاسم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"audio",
+            "value":"ملف صوتي",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scanning",
+            "value":"جارٍ البحث عن أجهزة…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all",
+            "value":"مسح",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_START_FORMAT",
+            "value":"تنسيق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_bar_title_move_file",
+            "value":"نقل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"undo",
+            "value":"تراجع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_support_drag_in_page",
+            "value":"يتعذر إفلات الملفات هنا، حاول إفلاتها في دليل \"هاتفي\"",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_change_date",
+            "value":"تاريخ التعديل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"exit_multiple_choices",
+            "value":"إلغاء التحديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_modified_time",
+            "value":"تاريخ التعديل: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_format",
+            "value":"تنسيق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"apply_to_all",
+            "value":"تطبيق على الكل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_num_reached_limit",
+            "value":"الحد الأقصى لعدد العلامات المضافة.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"default",
+            "value":"افتراضي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_folder_no_content",
+            "value":"المجلدات المحددة فارغة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_type",
+            "value":"نوع الملف: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"print",
+            "value":"طباعة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_fail_content_dlg",
+            "value":"يتعذر نسخ %s. يُرجى التحقق.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"associate_data_change_fail",
+            "value":"يتعذر ربط البيانات.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_amount",
+            "value":"المحتويات: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"Emptying",
+            "value":"جارٍ تفريغ سلة المحذوفات…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_path",
+            "value":"حفظ باسم",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"contains_special_characters",
+            "value":"لا يمكن أن يحتوي اسم الملف على أي من الرموز التالية: []\"':/*?<>|`{}",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"child_folder_confirm",
+            "value":"موافق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_as",
+            "value":"حفظ باسم",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"favorite_title",
+            "value":"المفضلة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_default",
+            "value":"فرز حسب الترتيب الافتراضي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"refresh",
+            "value":"تحديث",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_file",
+            "value":"\"%s\" موجود بالفعل. استبداله؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_four",
+            "value":"ما هو فريقك المفضل في كرة القدم؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"list_list",
+            "value":"العرض كقائمة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"blank",
+            "value":"(فارغ)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"oversized",
+            "value":"كبير للغاية (>%d جيجابايت)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"xls",
+            "value":"جدول بيانات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge_folder_content",
+            "value":"دمج المجلدات يحتفظ بجميع العناصر الجديدة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_name_exists",
+            "value":"توجد بالفعل علامة باسم \"%s\". يرجى إعادة التسمية.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_safe_subtitle",
+            "value":"مكان آمن لحفظ الملفات المهمة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"version_info",
+            "value":"الإصدار",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_folder_size_tips",
+            "value":"جارٍ الحساب…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_image_to_gallery_album",
+            "value":"يمكن حفظ الصور فقط في الدليل %1$s، بينما لا يمكن تخزين الملفات الأخرى هنا. هل تريد المتابعة؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enter_custom_question",
+            "value":"أدخل سؤالاً مخصصًا",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save",
+            "value":"حفظ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"biometric_change_verification",
+            "value":"التحقق من تغييرات العلامات الحيوية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_delete_tag_title",
+            "value":"حذف العلامة \"%s\"؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"morning",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"videos",
+            "value":"فيديو",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_and_close",
+            "value":"حفظ وإغلاق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_one",
+            "value":"ما اسم أبيك؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"authing_file",
+            "value":"حدد الملف \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"apply_all",
+            "value":"تطبيق على الكل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_services_dialog_confirm",
+            "value":"الموافقة والمتابعة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"menu_select_all",
+            "value":"تحديد الكل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_space_left",
+            "value":"مساحة القرص غير كافية.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_selected",
+            "value":"لم تحدد أي عنصر",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"fingerprint_recognition_dialog",
+            "value":"الربط ببصمة الإصبع",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_location",
+            "value":"موقع وحدة التخزين",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password_error",
+            "value":"كلمة المرور غير صحيحة. يُرجى إعادة المحاولة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unspecified",
+            "value":"غير محدد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cannot_delete_app_data",
+            "value":"يحتوي تحديدك على بيانات التطبيق. قد يؤدي حذف هذا إلى توقف التطبيقات عن العمل بشكل صحيح.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"wlan",
+            "value":"اتصال الشبكة اللاسلكية المباشر",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"app_data_write_limit",
+            "value":"هذا الدليل للقراءة فقط في وضع المستخدم. يُرجى تشغيل وضع المطور وإعادة المحاولة.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"click_view_detail",
+            "value":"معرفة المزيد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unlink_account",
+            "value":"يُرجى حفظ كلمة المرور وإجابة سؤال الحماية الخاصة بك",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_file_name",
+            "value":"%1$s %2$s%3$s جديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add",
+            "value":"جديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"space_not_enough",
+            "value":"مساحة غير كافية.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_progress_content",
+            "value":"تم نقل: %1$s‏/‏%2$s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_question_three",
+            "value":"ماذا كان اسم مدرستك الإعدادية؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"new_password",
+            "value":"كلمة المرور الجديدة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ascertain",
+            "value":"موافق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"notify_result",
+            "value":"%1$s، %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_device_corresponding_to_ip",
+            "value":"لم يتم العثور على الجهاز",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_force_remove",
+            "value":"إزالة على أي حال",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bind_face_change",
+            "value":"تم تغيير بيانات الوجه. تحقق من كلمة المرور الخاصة بك مجددًا.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel",
+            "value":"إلغاء",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"personal",
+            "value":"شخصي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_documents",
+            "value":"مستندات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"display_application_data",
+            "value":"إظهار بيانات التطبيق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_week",
+            "value":"الأسبوع الماضي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"size",
+            "value":"الحجم",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename_have_same_name",
+            "value":"يوجد ملف بالفعل في هذا المجلد يحمل الاسم نفسه. يُرجى إدخال اسم مختلف.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"stop",
+            "value":"إيقاف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_associated",
+            "value":"إلغاء الربط",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"authing_folder",
+            "value":"حدد المجلد \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge_will_combine_two_folders_and_keep_all_new_items",
+            "value":"دمج المجلدات يحتفظ بجميع العناصر الجديدة.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unknown",
+            "value":"أخرى",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_fingerprint_recognition",
+            "value":"تم إلغاء ربط بصمة الإصبع",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"note",
+            "value":"تنويه",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"agree",
+            "value":"أوافق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pdf",
+            "value":"ملف PDF",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"replace",
+            "value":"استبدال",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recent_delete_clear",
+            "value":"إفراغ سلة المحذوفات؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_movies",
+            "value":"الفيديوهات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"can_not_drag_in",
+            "value":"يتعذر السحب إلى هذا الدليل.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_position",
+            "value":"الموقع: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_all",
+            "value":"تحديد الكل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_extension_changed",
+            "value":"تغيير امتداد الملف قد يؤدي إلى إمكانية عدم توفر ذلك الملف. تغير على أي حال؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"modify_security_question",
+            "value":"تغيير أسئلة الحماية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_new_file_tag",
+            "value":"إضافة علامة جديدة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_more",
+            "value":"عرض المزيد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"is_opening",
+            "value":"جارٍ فتح \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"deleting_file",
+            "value":"جارٍ حذف \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"username",
+            "value":"اسم المستخدم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"midnight",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_progress_content",
+            "value":"الملفات المسحوبة والمفلتة: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"dawn",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_tag",
+            "value":"إضافة علامة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cellular_transmission_content",
+            "value":"سيؤدي هذا إلى استخدام حوالي %s من بيانات الجوال.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"picture",
+            "value":"الصورة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"persist_permission_import",
+            "value":"استيراد",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_size",
+            "value":"حجم الملف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_name_illegal_warning",
+            "value":"لا يمكن أن يحتوي اسم العلامة على أي مما يلي: []\"':/*?<>|`{}",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picture_and_video_migrate_tip",
+            "value":"تم نقل الصور والفيديوهات إلى تطبيق المعرض.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hostname_or_ip_address",
+            "value":"اسم المضيف أو عنوان IP",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sameName",
+            "value":"اسم الملف مستخدم بالفعل.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_storage_media_and_files_description",
+            "value":"يُستخدم هذا للسماح لك بتحديد بيانات الصور والفيديو.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_fail",
+            "value":"تتعذر الاستعادة.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"modified_time",
+            "value":"تاريخ التعديل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"merge_folder_tip_new",
+            "value":"يوجد مجلد باسم \"%s\" في هذا الموقع بالفعل.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"images",
+            "value":"صور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"fingerprint_association",
+            "value":"تم ربط بصمة الإصبع بنجاح",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_tips",
+            "value":"الوصول الخاص إلى الملفات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"associate_faces_fail",
+            "value":"يتعذر ربط بصمة الوجه.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"download_manager",
+            "value":"مدير التنزيل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_time",
+            "value":"فرز حسب الوقت",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connection_settings",
+            "value":"الإعدادات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_in_new_window",
+            "value":"فتح في نافذة جديدة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"privacy_content_third",
+            "value":"يُرجى قراءة البيان أعلاه بعناية. بالنقر على الموافقة والمتابعة، فإنك توافق على البيان.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_step",
+            "value":"السابق",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"addFolder_fail",
+            "value":"تعذر إنشاء مجلد جديد.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pasting",
+            "value":"لصق",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"small_icon",
+            "value":"أيقونات صغيرة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_new",
+            "value":"جديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"ringtone",
+            "value":"تعيين كـ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"path_not_exist",
+            "value":"المسار غير موجود. يُرجى التحقق وإعادة المحاولة.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_deny",
+            "value":"يتعذر إجراء ذلك الملفات المتصلة فقط",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_as",
+            "value":"فتح كـ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"image",
+            "value":"الصور",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"apply_to_all_folders",
+            "value":"تنفيذ ذلك لكل المجلدات",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"openFolder",
+            "value":"فتح المجلد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_five",
+            "value":"ما العمل الذي تحلم به؟",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"mul_nested_folders_save_files_to_gallery_album",
+            "value":"تعذر إنشاء مجلدات بمجلدات فرعية داخل دليل المعرض. سيتم نقل الصور والفيديوهات وفقًا لذلك. متابعة؟",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"verify_security_question",
+            "value":"إجابة أسئلة الحماية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_total_size",
+            "value":"الإجمالي %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"quick_view",
+            "value":"معاينة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_stem_all",
+            "value":"%1$s، %2$s | %3$s من %4$s مساحة حرة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"OtherLocation",
+            "value":"مجلدات أخرى",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"setting_title_about",
+            "value":"نبذة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"paste_conflict_diglog_btn_message",
+            "value":"يجري حاليًا نسخ/نقل الملفات. ينبغي إنهاء عملية النقل الحالية قبل بدء عملية جديدة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_refresh_page_tips",
+            "value":"جارِ التحديث… يُرجى الانتظار.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"screen_off_intelligent_analysis",
+            "value":"نتائج بحث أكثر دقة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_size",
+            "value":"حجم الملف: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recycle",
+            "value":"حذف",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"quick_access_path_not_found",
+            "value":"لم يتم العثور على المسار.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sound_recorder_not_exist",
+            "value":"التطبيق غير موجود",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_name",
+            "value":"فرز حسب الاسم",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_access_files_tips",
+            "value":"الوصول الخاص إلى الملفات",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_access_files_details",
+            "value":"ستظهر ملفاتك هنا، ولكن لا يمكن لهذا التطبيق الوصول إلا إلى الملفات التي تحددها. %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_notice",
+            "value":"السؤال أولاً دائمًا",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"source_from",
+            "value":"من: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files_clean",
+            "value":"حذف الملفات المكررة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scan_now",
+            "value":"بحث الآن",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files_subheading",
+            "value":"تشغل الملفات المكررة %s من مساحة التخزين.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"careful_cleaning",
+            "value":"(تحذير)",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_signed_privacy_tip",
+            "value":"لاستخدام هذه الميزة، انتقل أولاً إلى تطبيق مدير الملفات ووافق على البيان المتعلق بمدير الملفات والخصوصية وإشعار الأذونات.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"to_clean_up",
+            "value":"حذف",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files",
+            "value":"الملفات المكررة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_num",
+            "value":"(%d)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recommended_cleanup",
+            "value":"مُقترح",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_green",
+            "value":"أخضر",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_yellow",
+            "value":"أصفر",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_cyan",
+            "value":"سماوي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_red",
+            "value":"أحمر",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"gallery_change_suffix",
+            "value":"لا يمكن تغيير امتدادات الملفات لملفات المعرض. يُرجى نسخ هذه الملفات أو انقلها إلى دليل عام ضمن \"هاتفي\" ثم إعادة المحاولة.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_item_down",
+            "value":"النقل أسفل %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_item_up",
+            "value":"النقل أعلى %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename_single_character_fail",
+            "value":"فشلت إعادة التسمية، تتعذّر إعادة تسمية الهدف إلى حرف واحد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"space_not_enough_title",
+            "value":"مساحة التخزين غير كافية",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_saved_to",
+            "value":"تم حفظ الملف في %s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"low_memory_notice",
+            "value":"لإدارة وحدة تخزين الجهاز، انتقل إلى الإعدادات > التخزين.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unneeded",
+            "value":"لا",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_as_wallpaper",
+            "value":"تعيين كخلفية",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_now",
+            "value":"انتقال الآن",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"device_space_usage",
+            "value":"المُستخدَم %1$s من %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"transfer_completed",
+            "value":"اكتمل النقل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"need",
+            "value":"نعم",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_wallpaper_not_support",
+            "value":"لا يمكن تعديل الخلفيات في النوافذ الصغيرة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"have_connected",
+            "value":"متصل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_connected",
+            "value":"غير متصل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level_and_expand",
+            "value":"تم توسيع المستوى %d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level_and_unexpand",
+            "value":"لم يتم توسيع المستوى %d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_menu_updated",
+            "value":"تصميم جديد للقائمة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_menu_updated_contents",
+            "value":"أيقونات القائمة الجديدة تجعل من التنقل والتصفح أكثر سلاسة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"transfer_progress_visible_contents",
+            "value":"يمكنك مراقبة عمليات نقل الملفات الجارية بسهولة بفضل العرض الحي.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"media_browse_smooth_contents",
+            "value":"عرض مقتطفات الفيديوهات والصور في وضع ملء الشاشة عند فتحها.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"media_browse_smooth",
+            "value":"عرض أكثر سلاسة",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"transfer_progress_visible",
+            "value":"تتبع حي لعمليات النقل",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"gallery_change_suffix_with_pad",
+            "value":"لا يمكن تغيير امتدادات ملفات المعرض. يُرجى نسخ هذه الملفات أو نقلها إلى مجلد عام ضمن \"جهازي اللوحي\" ثم إعادة المحاولة.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_support_drag_in_page_with_pad",
+            "value":"يتعذّر إفلات الملفات هنا، يُرجى محاولة إفلاتها في المجلد \"جهازي اللوحي\"",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"collapse_menu_bar",
+            "value":"إغلاق شريط القائمة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_grid_toggle",
+            "value":"تم التبديل إلى %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"button",
+            "value":"زر",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unchecked",
+            "value":"غير محدد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_back",
+            "value":"رجوع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unfavorable",
+            "value":"تمت الإزالة من المفضلة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close",
+            "value":"إغلاق",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"play_control_bar_display",
+            "value":"جارٍ إظهار أزرار التحكم في التشغيل. اسحب عبر الفيديو لضبط موضع التشغيل.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"favorited",
+            "value":"تمت الإضافة إلى المفضلة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reset_succeeded",
+            "value":"نجحت إعادة الضبط",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"shielding",
+            "value":"حظر",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_menu_bar",
+            "value":"فتح شريط القائمة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unexpanded",
+            "value":"غير موسّع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"play_control_bar_hidden",
+            "value":"أزرار التحكم في التشغيل مخفية. اسحب عبر الفيديو لضبط موضع التشغيل.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_to_change_sort_description",
+            "value":"انقر مرتين ثم مطولاً، ثم اسحب لتغيير الترتيب",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_reset",
+            "value":"إعادة الضبط",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"expanded",
+            "value":"تم التوسيع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"video_broadcast",
+            "value":"الفيديو: %1$s، المدة %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"checked",
+            "value":"محدد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drop_down_list",
+            "value":"قائمة منسدلة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"equipment_temperature_is_too_high",
+            "value":"حرارة الجهاز عالية جدًا",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"already_deselect_all",
+            "value":"تم إلغاء تحديد الكل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"already_select_all",
+            "value":"تم تحديد جميع العناصر",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"checked_accessibility",
+            "value":"انقر مرتين بإصبع واحدة للتحديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unchecked_accessibility",
+            "value":"انقر مرتين بإصبع واحدة لإلغاء التحديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_checkbox_unChecked",
+            "value":"غير محدد، مربع الاختيار، انقر مرتين بإصبع واحدة للتحديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_screenshot",
+            "value":"لقطات الشاشة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_checkbox_checked",
+            "value":"محدد، مربع الاختيار، انقر مرتين بإصبع واحدة لإلغاء التحديد",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_camera",
+            "value":"الكاميرا",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_screen_recording",
+            "value":"تسجيلات الشاشة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"new_version_updates_progress",
+            "value":"انقر هنا لمعرفة المزيد.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"new_features_online",
+            "value":"ميزات جديدة متوفرة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"click_accessibility",
+            "value":"انقر نقرًا مزدوجًا للتفعيل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_place_up",
+            "value":"تم الوضع فوق %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_place_down",
+            "value":"تم الوضع تحت %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_not_exist_maybe_removed_renamed_deleted",
+            "value":"الملف \"%1$s\" غير موجود. ربما تم نقله أو إعادة تسميته أو حذفه. يُرجى استعادة الملف والمحاولة مرة أخرى.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_file_not_exist_maybe_removed_renamed_deleted",
+            "value":"هذا الملف غير موجود. ربما تم نقله، أو إعادة تسميته، أو حذفه. تُرجى استعادة الملف وإعادة المحاولة.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"securely_remove",
+            "value":"إزالة بأمان",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"arrive_path_select_end_level",
+            "value":"لا توجد مستويات أخرى في هذا الدليل",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level",
+            "value":"المستوى %d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_expand",
+            "value":"تم التوسيع",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_unexpand",
+            "value":"تم الطي",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reverse_rotation",
+            "value":"تدوير %s درجة عكس عقارب الساعة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"help_and_feedback",
+            "value":"المساعدة والإفادة",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tip_popup_context_one",
+            "value":"%1$s. لعرض التطبيقات المُشغلة في DroiTong أو EasyAbroad، انتقل إلى %2$s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tip_popup_title",
+            "value":"يُعرض هنا فقط محتوى المعرض الموجود على الجهاز",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_to_gallery",
+            "value":"المعرض",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"two_placeholders",
+            "value":"‏%1$s‏ > %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_fusion_album_warning",
+            "value":"يحتوي هذا الألبوم على ملفات من تطبيقات تعمل في DroiTong أو EasyAbroad. لحذف هذه العناصر، انتقل إلى \"البيانات المتوافقة\".",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"remote_file_not_exist",
+            "value":"تعذّر لصق الملف. ربما تم تعديل \"%s\" أو إعادة تسميته، أو ربما توجد مشكلة في توصيل الأجهزة. يُرجى التحقق وإعادة المحاولة.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"remote_source_file_not_exist",
+            "value":"تعذّر لصق الملف. ربما تم تعديل الملف الأصلي أو إعادة تسميته، أو ربما توجد مشكلة في توصيل الأجهزة. يُرجى التحقق وإعادة المحاولة.",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

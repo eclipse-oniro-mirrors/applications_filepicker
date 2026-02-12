@@ -1,0 +1,753 @@
+{
+  "string": [
+    {
+      "name": "select_location",
+      "value": "དམིགས་ཡུལ་སྤོ་ཡུལ་འདེམས་རོགས།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "size",
+      "value": "ཆེ་ཆུང་།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop",
+      "value": "མཚམས་འཇོག",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "choose_size",
+      "value": "ཁྱོན་ %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "finish",
+      "value": "གྲུབ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "deleting",
+      "value": "སུབ་སྒང་ཡིན...",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "btn_cancel",
+      "value": "འདོར་བ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_type",
+      "value": "ཡིག་ཆའི་རིགས།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "loading",
+      "value": "སྣོན་འཇུག་བྱེད་བཞིན་པ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "replace",
+      "value": "བརྗེ་སྒྱུར།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_B",
+      "value": "%s B",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "waiting_progress_message",
+      "value": "ཏོག་ཙམ་སྒུག་རོགས།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "order_name",
+      "value": "མིང་།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_GB",
+      "value": "%s GB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_app_version",
+      "value": "པར་གཞི། %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm",
+      "value": "གཏན་འཁེལ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "externalDisk",
+      "value": "གསོག་འཇོག་བྱང་བུ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "browse",
+      "value": "བཤར་ལྟ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "delete_complete",
+      "value": "བསུབ་འདོར།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_personal_info",
+      "value": "མི་སྒེར་གྱི་ཆ་འཕྲིན་བསྡུ་རུབ་ཀྱི་གསལ་ཐོ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "type",
+      "value": "རིགས།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "text",
+      "value": "ཡི་གེ",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path",
+      "value": "འགྲོ་ལམ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_confirm_content",
+      "value": "ཉེ་ཆར་གྱི་ནང་ནས་ཡོང་ཁུངས་འདི་ལས་བྱུང་བའི་ཡིག་ཆ་སླར་གསོ་བྱེད་དམ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_cancel",
+      "value": "འདོར་བ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_file_manager",
+      "value": "ཡིག་ཆ་དོ་དམ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_size",
+      "value": "ཡིག་ཆའི་ཆེ་ཆུང་།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "rename",
+      "value": "མིང་བསྐྱར་འདོགས།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_title",
+      "value": "པར་སློག",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "total",
+      "value": "ཁྱོན་བསྡོམས་ %1$s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_complete",
+      "value": "གནས་སྤོས་ཚར། རྡེབ་ནས་ལྟ་ཞིབ་བྱེད།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "edit",
+      "value": "རྩོམ་སྒྲིག",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "media_speed",
+      "value": "ལྡབ་འགྲོས།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy",
+      "value": "འདྲ་བཤུས།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "skip",
+      "value": "མཆོངས་པ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recent",
+      "value": "ཉེ་ཆར།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "open_failure_msg",
+      "value": "ཁ་འབྱེད་མི་ཐུབ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_preview_detail",
+      "value": "རེའུ་མིག་གི་གཡོན་དུ་བརྡབས་ནས་ཞིབ་ཕྲའི་གནས་ཚུལ་ལ་ལྟ་ཞིབ་བྱེད།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_name",
+      "value": "ཡིག་ཆའི་མིང་།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_app_name",
+      "value": "ཡིག་ཆ་དོ་དམ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_agreed",
+      "value": "མོས་མཐུན།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "preview",
+      "value": "སྔོན་ལྟ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_complete",
+      "value": "འདྲ་བཤུས་བྱས་ཚར། རྡེབ་ནས་ལྟ་ཞིབ་བྱེད།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "ཡིག་ཆ་དོ་དམ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "location",
+      "value": "གནས་ཡུལ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "more",
+      "value": "དེ་ལས་མང་བ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "operation_canceled",
+      "value": "སྒྲིག་བཀོལ་དོར་ཟིན།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "ok",
+      "value": "གཏན་འཁེལ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting",
+      "value": "སྦྱར་བ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover",
+      "value": "སླར་གསོ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_uppercase",
+      "value": "སླར་གསོ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_KB",
+      "value": "%s KB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "share",
+      "value": "མཉམ་སྤྱོད།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "myPhone",
+      "value": "ངའི་ཁ་པར།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "data_center_terms_welcome",
+      "value": "བེད་སྤྱོད་པར་དགའ་བསུ་ཞུ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yesterday",
+      "value": "ཁ་སང་།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "restore",
+      "value": "སླར་གསོ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_fail",
+      "value": "ཉར་ཚགས་བྱེད་མ་ཐུབ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete",
+      "value": "སུབ་པ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "details",
+      "value": "ཞིབ་ཆ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge",
+      "value": "ཟླ་སྒྲིལ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "name",
+      "value": "མིང་།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "cancel",
+      "value": "འདོར་བ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "aboutPage_title",
+      "value": "སྐོར།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "audio",
+      "value": "སྒྲ་ཟློས།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_MB",
+      "value": "%s MB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_service_phone",
+      "value": "ཞབས་ཞུའི་ཁ་པར།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge_folder_tip",
+      "value": "གནས་ཡུལ་དེ་ལ་མིང་ལ་༼%s༽ཞེས་ཟེར་བའི་ཡིག་ཁུག་གཅིག་ཚུད་ཡོད། གནས་ཡུལ་ནང་གི་ཡིག་ཁུག་གི་ཚབ་བརྗེ་ཀྱི་ཡིན་ནམ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "privacy_welcome_content_adults_all",
+      "value": "ཞབས་ཞུ་འདིར་དྲ་སྦྲེལ་དགོས་ལ། ཉར་གསོག་དང་། ཉེར་སྤྱོད་མཉེན་ཆས་ཀྱི་རེའུ་མིག་གི་དབང་ཚད་འདྲེན་སྤྱོད་བྱ་དགོས་པ། ཐོ་ཨང་དང་སྒྲིག་ཆས། དྲ་རྒྱ། གནས་ཡུལ། ཉེར་སྤྱོད། (དེའི་ནང་ཉེར་སྤྱོད་ཀྱི་རེའུ་མིག་ཚུད་ཡོད) དྲ་རྒྱའི་ཆ་འཕྲིན་དང་དེ་བཞིན་ཁྱེད་ཀྱིས་རང་འགུལ་གྱིས་ཡར་བསྐྱལ་བའི་གཞི་གྲངས་བཅས་ལེན་དགོས།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasteboard_dialog_content",
+      "value": "དྲས་གཏུབ་པང་ལེབ་ནས་བྱུང་བའི་ཡིག་ཆ་སྦྱོར་གྱི་ཡིན་ནམ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unknown_error_occurred",
+      "value": "རྒྱུས་མེད་པའི་ནོར་འཁྲུལ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_file_has_same_file",
+      "value": "མིང་གཅིག་པ་ཡིན་པའི་ཡིག་ཆ་འདུག",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "alert_net_disconnect_try_again",
+      "value": "རང་གནས་སུ་བར་གསོག་བྱས་མེད་པའི་ཡིག་ཆ་ཡིན། དྲ་སྦྲེལ་ནས་ཚོད་ལྟ་གནང་རོགས།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "to_save",
+      "value": "ཡིག་ཆ་༼%s༽ནང་ལ་ཉར་ཚགས་བྱ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_content_adults_third_divide",
+      "value": "ཁྱེད་ཀྱིས་གོང་གི་གསལ་བསྒྲགས་གཟབ་ནན་གྱིས་ལྟ་ཀློག་གནང་རོགས། ༼མོས་མཐུན་༽ཞེས་པར་བརྡབས་ན། ཁྱེད་ཀྱིས་མོས་མཐུན་བྱེད་པ་མཚོན།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "disabled",
+      "value": "གནས་སྐབས་རིང་རྩོལ་ནུས་ལ་རྒྱབ་སྐྱོར་མི་བྱེད། རེ་སྒུག་གནང་རོགས།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "net_work_disconnect",
+      "value": "དྲ་རྒྱར་སྦྲེལ་མཐུད་བྱས་མེད་པས། དྲ་རྒྱའི་སྒྲིག་འགོད་ལ་ཞིབ་བཤེར་གནང་རོགས།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "check_update_now",
+      "value": "གསར་སྒྱུར་ལ་ཞིབ་བཤེར་བྱེད་བཞིན་པ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "version_is_latest",
+      "value": "པར་གཞི་གསར་ཤོས་རེད་འདུག",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "files_app_name",
+      "value": "ཡིག་ཆ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "source",
+      "value": "འབྱུང་ཁུངས།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_no",
+      "value": "འཚག་སེལ་མི་བྱེད།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter",
+      "value": "པར་རིས་འཚག་སེལ་གྱི་ཆེ་ཆུང་།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than",
+      "value": "%d KB ལས་ཆུང་།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_max_input",
+      "value": "ཆེ་ཤོས་སུ་ %d KB འཇུག་ཆོག",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_custom",
+      "value": "རང་སྒྲིག",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than_MB",
+      "value": "%d MB ལས་ཆུང་།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "no_content_meets_the_condition",
+      "value": "ཆ་རྐྱེན་དང་མཐུན་པའི་ནང་དོན་མི་འདུག",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "turn_scrren_and_intelligent_analysis",
+      "value": "ཡོལ་བསྒྲིབས་ནས་གློག་ཁུངས་ལ་མཐུད་དེ་རིག་ལྡན་དབྱེ་ཞིབ་བྱས་ཚར་རྗེས། བཤེར་འཚོལ་དེ་བས་གནད་ལ་འཁེལ་ཐུབ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "screen_off_intelligent_analysis",
+      "value": "ཡོལ་སྒྲིབ་རིག་ལྡན་དབྱེ་ཞིབ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "not_find_the_file_you_want",
+      "value": "དགོས་པའི་ཞབས་ཞུ་མ་རྙེད།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "help_and_support",
+      "value": "རོགས་རམ་དང་ཞབས་ཞུ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface_contents",
+      "value": "མཚམས་ངོས་ཀྱི་འགྲེམ་ཚུལ་བསྒྲིག་ཆོག་ཅིང་། རྒྱུན་དུ་མི་སྤྱོད་པའི་རྩོལ་ནུས་སྦས་ཏེ། མཚམས་ངོས་དེ་བས་གཙང་ཞིང་། ཡིག་ཆ་སྔར་བས་འཚོལ་བདེ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations",
+      "value": "ཡིག་ཆ་ལས་ཕྱོད་ཆེན་པོའི་སྒྲིག་བཀོལ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations_contents",
+      "value": "མཉམ་སྤྱོད་སོགས་རྒྱུན་སྤྱོད་སྒྲིག་བཀོལ་འདེམས་བྱང་གི་ཐོད་དུ་སྤོ་བ། ཡིག་ཆ་སྒྲིག་བཀོལ་དེ་བས་སྟབས་བདེ།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support_contents",
+      "value": "གསར་ཐོན་རྩོལ་ནུས་ངོ་སྤྲོད། རྒྱུན་མཐོང་གནད་དོན་དྲ་ཐོག་ནས་ལན་འདེབས་ཐུབ། ཚོད་ལྟ་གནང་བར་ཕེབས་ཤོག",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "change_details",
+      "value": "གསར་སྒྱུར་གྱི་ཞིབ་ཕྲའི་གནས་ཚུལ་",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_change_tip",
+      "value": "སྔར་ལས་ལེགས་པའི་ཞབས་ཞུ་མཁོ་འདོན་བྱ་ཆེད། ང་ཚོས་གསང་བའི་གསལ་བསྒྲགས་དང་སྤྱོད་པ་པོའི་གྲོས་མཐུན་གསར་བསྒྱུར་བྱས་ཡོད། ཁྱེད་ཀྱིས་འབྲེལ་ཡོད་དོན་ཚན་ཞིབ་ཏུ་དཔེ་ཀློག་གནང་རོགས། གལ་ཏེ་ཁྱེད་ཀྱིས་བསྒྱུར་བཅོས་བྱས་ནས་བྱུང་བའི་གཞི་གྲངས་ཐག་གཅོད་བྱེད་པར་མོས་མཐུན་མ་བྱས་ཚེ། ལས་སྒོ་འདི་རྒྱུན་ལྡན་ངང་བཀོལ་སྤྱོད་བྱེད་པར་ཤུགས་རྐྱེན་ཐེབས་སྲིད། ཐེངས་འདིའི་%1$sདང་པར་གཞི་གསར་ཤོས་ཀྱི་%2$sལ་གཟིགས་རོགས།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "get_started",
+      "value": "ལམ་སེང་ཉམས་ལེན།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface",
+      "value": "མཚམས་ངོས་མཚན་ཉིད་རང་མོས།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_access_more_secure_contents",
+      "value": "དཀར་ཆག་གི་གྲུབ་ཚུལ་སྟབས་བདེ་པོར་འགྱུར། ཉེར་སྤྱོད་ཀྱིས་བདམས་པའི་ཡིག་ཆ་ཁོ་ནར་ལྟ་སྤྱོད་བྱ་ཆོག སྤྱོད་མཁན་གྱི་གཞི་གྲངས་དེ་བས་བདེ་འཇགས་ལྡན།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_access_more_secure",
+      "value": "ཡིག་ཆར་ལྟ་སྤྱོད་དེ་བས་བདེ་འཇགས་ལྡན།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "ཡིག་ཆ།",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancelled",
+      "value": "དོར་ཟིན།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_to_dest_completed",
+      "value": "%s ལ་འདྲ་བཤུ་བྱས་ཚར་སོང་།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_to_dest_completed",
+      "value": "༼%s༽ལ་སྤོས་ཚར་སོང་།",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "search",
+      "value": "བཤེར་འཚོལ།",
+      "attr": {
+        "priority": "LT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "tableConfig":[
+  {
+    "uri":"*",
+    "crossUserMode":1
+  }
+  ],
+  "launchForCleanData": true
+}
