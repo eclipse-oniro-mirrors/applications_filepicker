@@ -1,0 +1,1522 @@
+{
+    "plural":[
+        {
+            "name":"file_day_item",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d дня",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d день",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%1$d дня",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%1$d дней",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"min_ago",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d мин назад",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d мин назад",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%d мин назад",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%d мин назад",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"restore_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Восстановление %d элемента…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Восстановление %d элементов…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Восстановление %d элементов…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Восстановление %d элементов…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Удаление %d элементов…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Удаление %d элемента…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Удаление %d элементов…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Удаление %d элементов…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_fail_dialog_content_plurals",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Сбой удаления %d элементов.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Сбой удаления %d элемента.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Сбой удаления %d элементов.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Сбой удаления %d элементов.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"error_password_try_again_tips",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Повторите попытку через %d минуту",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Повторите попытку через %d минуты",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Повторите попытку через %d минуты",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Повторите попытку через %d минут",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"picker_selected",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Выбрано %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Выбрано %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Выбрано %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Выбрано %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"remain_answer_times",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Неверный ответ. Осталась %d попытка.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Неверный ответ. Осталось %d попытки.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Неверный ответ. Осталось %d попытки.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Неверный ответ. Осталось %d попыток.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"restore_progress_content_item",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Восстановлено %d элемента.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Восстановлен %d элемент.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Восстановлено %d элемента.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Восстановлено %d элементов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"selected",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Выбран %d элемент",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Выбрано %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Выбрано %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Выбрано %d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"confirm_delete_tags_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Удалить %d тега?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Удалить %d тег?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Удалить %d тега?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Удалить %d тегов?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_dialog_title_other",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Перемещение %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Перемещение %1$d элемента в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Перемещение %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Перемещение %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_select_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Копировать %d элемент",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Копировать %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Копировать %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Копировать %d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"item",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d элемент",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"selectedItem",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Выбрано %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Выбран %d элемент",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Выбрано %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Выбрано %d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"recent_delete_permanent",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Удалить %d файл без возможности восстановления?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Удалить %d файла без возможности восстановления?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Удалить %d файла без возможности восстановления?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Удалить %d файлов без возможности восстановления?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"storage_folder_num",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d папки",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d папка",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%d папки",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%d папок",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Удалить (%d элемент)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Удалить (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Удалить (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Удалить (%d элементов)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"cut_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Вырезать (%d элемент)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Вырезать (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Вырезать (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Вырезать (%d элементов)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"filePickerTip",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Одновременно можно выбрать максимум %d файла.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Одновременно можно выбрать максимум %d файл.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Одновременно можно выбрать максимум %d файла.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Одновременно можно выбрать максимум %d файлов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_progress_content_item",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Удалено %d элемента.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Удален %d элемент.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Удалено %d элемента.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Удалено %d элементов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"transferring_file",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Передача %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Передача %d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Передача %d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Передача %d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"restore_fail_dialog_content_plurals",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Сбой восстановления %d элемента.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Сбой восстановления %d элементов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Сбой восстановления %d элементов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Сбой восстановления %d элементов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_out_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Перемещение %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Перемещение %1$d элемента в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Перемещение %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Перемещение %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Копировать (%d элемент)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Копировать (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Копировать (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Копировать (%d элементов)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"storage_file_num",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d файл",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"filecount",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d элемент",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"file_num_exceed",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Максимум %d файла можно открыть единовременно. Выберите повторно.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Максимум %d файл можно открыть единовременно. Выберите повторно.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Максимум %d файла можно открыть единовременно. Выберите повторно.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Максимум %d файлов можно открыть единовременно. Выберите повторно.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_dialog_title_other",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Копирование %1$d элемента в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Копирование %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Копирование %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Копирование %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"remain_login_times",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Неверный пароль. Осталась %d попытка.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Неверный пароль. Осталось %d попытки.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Неверный пароль. Осталось %d попытки.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Неверный пароль. Осталось %d попыток.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Переместить %d элемента в: %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Переместить %d элемент в: %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Переместить %d элемента в: %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Переместить %d элементов в: %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"error_password_try_again_tips_second",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Повторите попытку через %d секунду.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Повторите попытку через %d секунды.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Повторите попытку через %d секунды.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Повторите попытку через %d секунд.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Перетаскивание %1$d элемента в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Перетаскивание %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Перетаскивание %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Перетаскивание %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_fail_result_dialog_content",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Сбой копирования %d файлов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Сбой копирования %d файла.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Сбой копирования %d файлов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Сбой копирования %d файлов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"create_a_new_folder_with_the_selected_options",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Добавить в новую папку (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Добавить в новую папку (%d элемент)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Добавить в новую папку (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Добавить в новую папку (%d элементов)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_select_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Переместить %d элемент",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Переместить %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Переместить %d элемента",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Переместить %d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"rename_multiple",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Изменить имя (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Изменить имя (%d элемент)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Изменить имя (%d элемента)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Изменить имя (%d элементов)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_in_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Перемещение %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Перемещение %1$d элемента в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Перемещение %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Перемещение %1$d элементов в папку %2$s…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_confirm_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Удалить %d файл?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Удалить %d файла?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Удалить %d файла?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Удалить %d файлов?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"filePickerMaxSelect",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Выберите максимум %d файла.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Выберите максимум %d файл.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Выберите максимум %d файла.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Выберите максимум %d файлов.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"duplicate_files_count",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Повторяющиеся файлы (%d группы)",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Повторяющиеся файлы (%d группа)",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Повторяющиеся файлы (%d группы)",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Повторяющиеся файлы (%d групп)",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Копировать %d элемента в: %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Копирование %1$d элемента в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Копирование %d элементов в: %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Копировать %d элементов в: %s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copying_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Копирование %1$d элемента в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Копировать %1$d элемента в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Копирование %1$d элементов в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Копировать %1$d элементов в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"moving_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Переместить %1$d элемента в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Переместить %1$d элемент в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Переместить %1$d элемента в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Переместить %1$d элементов в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d элемент перемещен в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d элемента перемещено в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%1$d элемента перемещено в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%1$d элементов перемещено в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d элемента скопировано в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d элемент скопирован в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%1$d элемента скопировано в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%1$d элементов скопировано в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        }
+    ]
+}

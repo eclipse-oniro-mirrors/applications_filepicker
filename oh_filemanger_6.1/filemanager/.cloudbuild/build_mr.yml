@@ -1,0 +1,34 @@
+version: '2.0'
+env:
+  label: ${buildLabel}
+params:
+  - name: pipelineJobName
+    value: ${ENV_PIPELINE_JOB_NAME}
+  - name: codeRootDir #代码checkout目录
+    value: ${serviceName}
+  - name: scriptPath  #一键式脚本路径，相对于代码跟路径，请跟据实际情况修改
+    value: script/build_MR.sh
+  - name: projectPath
+    value:
+  - name: excludeCfgFile
+    value:
+  - name: includeCfgFile
+    value:
+steps:
+  PRE_BUILD:
+    - checkout:
+        path: ${codeRootDir}
+    - template:
+        url:
+        path:
+        branch: Common
+  BUILD:
+    - template:
+        url:
+        path:
+        branch: Common
+  POST_BUILD:
+    - template:
+        url:
+        path:
+        branch: Common

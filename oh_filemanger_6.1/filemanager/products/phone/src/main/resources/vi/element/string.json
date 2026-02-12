@@ -1,0 +1,753 @@
+{
+  "string": [
+    {
+      "name": "browse",
+      "value": "Duyệt",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "about_file_manager",
+      "value": "Tệp tin",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "myPhone",
+      "value": "Điện thoại của tôi",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "select_location",
+      "value": "Chọn một vị trí.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "size",
+      "value": "Kích cỡ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge_folder_tip",
+      "value": "Đã tồn tại thư mục có tên \"%s\" ở vị trí này. Bạn có muốn thay thế không?",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop",
+      "value": "Tắt",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_welcome_content_adults_all",
+      "value": "Dịch vụ này yêu cầu kết nối Internet cũng như quyền truy cập Bộ nhớ và Danh sách ứng dụng. Chế độ này cũng cần truy cập thông tin về tài khoản, thiết bị, mạng, vị trí và ứng dụng (bao gồm danh sách ứng dụng đã cài đặt), cũng như dữ liệu mà bạn chủ động tải lên.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source",
+      "value": "Nguồn",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "pasteboard_dialog_content",
+      "value": "Dán tệp tin từ bộ nhớ tạm?",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "choose_size",
+      "value": "Kích thước: %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "finish",
+      "value": "Xong",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "deleting",
+      "value": "Đang xóa…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "btn_cancel",
+      "value": "Hủy",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_type",
+      "value": "Loại tệp tin",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unknown_error_occurred",
+      "value": "Lỗi không xác định",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "loading",
+      "value": "Đang tải…",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "replace",
+      "value": "Thay thế",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "net_work_disconnect",
+      "value": "Không có kết nối Internet. Hãy kiểm tra các cài đặt mạng.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_B",
+      "value": "%s B",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "waiting_progress_message",
+      "value": "Vui lòng đợi...",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "order_name",
+      "value": "Tên tệp",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_GB",
+      "value": "%s GB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_app_version",
+      "value": "Phiên bản: %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_no",
+      "value": "Không lọc",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "confirm",
+      "value": "OK",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "externalDisk",
+      "value": "Thẻ SD",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_has_same_file",
+      "value": "Tên tệp tin này đã tồn tại",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_complete",
+      "value": "Xóa",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_personal_info",
+      "value": "Thông tin cá nhân được thu thập",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "type",
+      "value": "Loại",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than_MB",
+      "value": "%d MB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "text",
+      "value": "Văn bản",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path",
+      "value": "Đường dẫn",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_custom",
+      "value": "Tùy chỉnh",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover_confirm_content",
+      "value": "Khôi phục các tệp tin từ nguồn này trong Gần đây?",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "alert_net_disconnect_try_again",
+      "value": "Tệp tin không được lưu vào bộ nhớ đệm trên thiết bị của bạn. Hãy kết nối Internet và thử lại.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_cancel",
+      "value": "Hủy",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_size",
+      "value": "Kích thước tệp tin",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "check_update_now",
+      "value": "Đang kiểm tra bản cập nhật…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter",
+      "value": "Kích thước bộ lọc",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "rename",
+      "value": "Đổi tên",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_title",
+      "value": "Sao chép",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "total",
+      "value": "Tổng %1$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_complete",
+      "value": "Di chuyển hoàn tất",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "edit",
+      "value": "Sửa",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "media_speed",
+      "value": "Tốc độ",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy",
+      "value": "Sao chép",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "skip",
+      "value": "Bỏ qua",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recent",
+      "value": "Gần đây",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "open_failure_msg",
+      "value": "Không mở được.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_preview_detail",
+      "value": "Chọn một mục để xem chi tiết",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_max_input",
+      "value": "Tối đa %d KB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_name",
+      "value": "Tên tệp tin",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_app_name",
+      "value": "Tệp tin",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_agreed",
+      "value": "Đồng ý",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "preview",
+      "value": "Xem trước",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_complete",
+      "value": "Sao chép hoàn tất",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "Tệp tin",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "location",
+      "value": "Vị trí",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "more",
+      "value": "Thêm",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "files_app_name",
+      "value": "Tệp tin",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "operation_canceled",
+      "value": "Đã hủy thao tác.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ok",
+      "value": "OK",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting",
+      "value": "Dán",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover",
+      "value": "Khôi phục",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_uppercase",
+      "value": "Khôi phục",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_KB",
+      "value": "%s KB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than",
+      "value": "%d KB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "share",
+      "value": "Chia sẻ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "to_save",
+      "value": "Lưu tệp tin vào %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "data_center_terms_welcome",
+      "value": "Chào mừng đến",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yesterday",
+      "value": "Hôm qua",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "restore",
+      "value": "Khôi phục",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_fail",
+      "value": "Không lưu được.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete",
+      "value": "Xóa",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_content_adults_third_divide",
+      "value": "Vui lòng đọc kỹ tuyên bố trên. Bằng việc chạm vào Đồng ý, bạn đồng ý với các điều khoản trên.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "details",
+      "value": "Chi tiết",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "no_content_meets_the_condition",
+      "value": "Không có kết quả",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge",
+      "value": "Gộp",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "turn_scrren_and_intelligent_analysis",
+      "value": "Thiết bị của bạn tự động phân tích tệp tin khi cắm nguồn và màn hình tắt, giúp kết quả tìm kiếm trở nên chính xác hơn theo thời gian.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "screen_off_intelligent_analysis",
+      "value": "Tìm kiếm chính xác hơn",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "name",
+      "value": "Tên",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "cancel",
+      "value": "Hủy",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "aboutPage_title",
+      "value": "Giới thiệu",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "version_is_latest",
+      "value": "Bạn đang sử dụng phiên bản mới nhất.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "audio",
+      "value": "Âm thanh",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_MB",
+      "value": "%s MB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_service_phone",
+      "value": "Dịch vụ khách hàng",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "disabled",
+      "value": "Tính năng này chưa được hỗ trợ.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "not_find_the_file_you_want",
+      "value": "Không tìm được tệp tin bạn muốn?",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support",
+      "value": "Trung tâm trợ giúp",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface_contents",
+      "value": "Giờ đây, bạn có thể tùy chỉnh giao diện ứng dụng bằng cách di chuyển các mục theo ý thích hoặc ẩn các tính năng mà bạn hiếm khi sử dụng.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations",
+      "value": "Hoàn thành công việc nhanh hơn",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations_contents",
+      "value": "Chúng tôi đã di chuyển các tính năng được dùng nhiều nhất, như nút chia sẻ, lên đầu menu để truy cập nhanh hơn.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support_contents",
+      "value": "Khám phá hàng loạt nội dung hữu ích như hướng dẫn sử dụng và câu hỏi thường gặp.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "change_details",
+      "value": "Chi tiết cập nhật",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_change_tip",
+      "value": "Chúng tôi đã cập nhật Tuyên bố Quyền riêng tư và Thỏa thuận Người dùng để nâng cao trải nghiệm của bạn khi dùng dịch vụ này. Vui lòng đọc kỹ các điều khoản và điều kiện được cập nhật trước khi tiếp tục. Dịch vụ này sẽ chỉ hoạt động nếu bạn chấp thuận việc xử lý dữ liệu mà thay đổi này yêu cầu. Hãy tham khảo %1$s và %2$s để biết thêm chi tiết.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "get_started",
+      "value": "Dùng thử ngay",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface",
+      "value": "Tùy chỉnh theo ý mình",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_access_more_secure_contents",
+      "value": "Cấu trúc thư mục được cải tiến đảm bảo rằng các ứng dụng chỉ có thể truy cập các tệp tin mà bạn chọn.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_access_more_secure",
+      "value": "Tăng cường bảo vệ dữ liệu",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancelled",
+      "value": "Đã hủy",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_to_dest_completed",
+      "value": "Đã sao chép sang %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_to_dest_completed",
+      "value": "Đã di chuyển đến %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Tệp tin",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "search",
+      "value": "Tìm kiếm",
+      "attr": {
+        "priority": "LT"
+      }
+    }
+  ]
+}

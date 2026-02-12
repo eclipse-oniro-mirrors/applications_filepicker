@@ -1,0 +1,850 @@
+{
+    "plural":[
+        {
+            "name":"item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"ملف واحد",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d عنصرًا",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"%d ملفات",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%d ملفات",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%d ملفًا",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"ملفين",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_move_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"تم نقل %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"تم نقل %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم نقل %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم نقل %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم نقل %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم نقل %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"المسحوبة والمفلتة: ملف واحد",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"المسحوبة والمفلتة: %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"المسحوبة والمفلتة: %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"المسحوبة والمفلتة: %d ملفات",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"المسحوبة والمفلتة: %d ملفًا",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"المسحوبة والمفلتة: ملفان",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"to_save_plural",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"حفظ ملف واحد إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"حفظ %1$d ملف إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"حفظ %1$d ملف إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"حفظ %1$d ملفات إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"حفظ %1$d ملفًا إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"حفظ ملفين إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"تم إيقاف نقل %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"تم إيقاف نقل ملف واحد",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم إيقاف نقل %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم إيقاف نقل %d ملفات",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم إيقاف نقل %d ملفًا",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم إيقاف نقل ملفين",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_copy_success",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"تم نسخ %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"تم نسخ %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم نسخ %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم نسخ %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم نسخ %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم نسخ %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"تم نقل ملف واحد",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"تم نقل %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم نقل %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم نقل %d ملفات",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم نقل %d ملفًا",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم نقل ملفين",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_drag_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"تم سحب %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"تم سحب %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم سحب %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم سحب %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم سحب %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم سحب %d بنجاح",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"تم إيقاف نسخ %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"تم إيقاف نسخ ملف واحد",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم إيقاف نسخ %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم إيقاف نسخ %d ملفات",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم إيقاف نسخ %d ملفًا",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم إيقاف نسخ ملفين",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"تم إيقاف سحب وإفلات ملف واحد",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"تم إيقاف سحب وإفلات %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم إيقاف سحب وإفلات %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم إيقاف سحب وإفلات %d ملفات",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم إيقاف سحب وإفلات %d ملفًا",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم إيقاف سحب وإفلات ملفين",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_fail",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"تعذر %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"تعذر %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تعذر %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تعذر %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تعذر %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تعذر %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"find_files_num",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"تم العثور على عنصر واحد",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"تم العثور على %d عنصر",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم العثور على %d عنصر",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم العثور على %d عناصر",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم العثور على %d عنصرًا",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم العثور على عنصرين",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"تم نسخ %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"تم نسخ ملف واحد",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم نسخ %d ملف",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم نسخ %d ملفات",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم نسخ %d ملفًا",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم نسخ ملفين",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_confirm_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"هل تريد حذف هذا الملف؟",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"هل تريد حذف الـ %d ملف؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"هل تريد حذف الـ %d ملفات؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"هل تريد حذف الملفات الـ %d؟",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"هل تريد حذف الـ %d ملفًا؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"هل تريد حذف الملفين؟",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copying_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"نسخ عنصر واحد إلى \"%2$s\"",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"نسخ %1$d ملف إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"نسخ %1$d ملفات إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"نسخ %1$d ملفات إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"نسخ %1$d ملفًا إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"نسخ عنصرين إلى \"%2$s\"",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"moving_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"نقل %1$d ملف إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"نقل عنصر واحد إلى \"%2$s\"",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"نقل %1$d ملفات إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"نقل %1$d ملفات إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"نقل %1$d ملفًا إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"نقل عنصرين إلى \"%2$s\"",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"تم نقل عنصر واحد إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"تم نقل %1$d عنصر إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم نقل %1$d عناصر إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم نقل %1$d عناصر إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم نقل %1$d عنصرًا إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم نقل عنصرين إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"تم نسخ %1$d عنصر إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"تم نسخ عنصر واحد إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"zero",
+                    "value":"تم نسخ %1$d عناصر إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"تم نسخ %1$d عناصر إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"تم نسخ %1$d عنصرًا إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"two",
+                    "value":"تم نسخ عنصرين إلى %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        }
+    ]
+}

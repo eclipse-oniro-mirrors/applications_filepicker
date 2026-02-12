@@ -1,0 +1,5261 @@
+{
+    "string":[
+        {
+            "name":"not_support_modified_directory",
+            "value":"Эту директорию невозможно изменить.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_Guest_account_detail",
+            "value":"На клавиатуре нажмите Windows+R, чтобы отобразить окно Выполнить, введите в нем \"gpedit.msc\" и нажмите Enter. Выберите Политика локального компьютера > Конфигурация компьютера > Параметры Windows > Параметры безопасности > Локальные политики > Назначение прав пользователя. Затем дважды нажмите на опцию \"Отказать в доступе к этому компьютеру из сети\" и удалите надпись \"Гость\" из списка.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_navigation",
+            "value":"Открыть навигационную панель",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"junk_file",
+            "value":"Ненужные файлы",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"support_argeement_configuration_detail",
+            "value":"Откройте Панель управления, затем выберите Программы > Включение или отключение компонентов Windows. Найдите пункт \"Поддержка общего доступа к файлам SMB 1.0/CIFS\" и поставьте галочку. Нажмите OK и перезагрузите компьютер.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"video_format",
+            "value":"Видео",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_page_button",
+            "value":"Восстановить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"setting_properties",
+            "value":"Настройка моделей защиты и общего доступа для локальных аккаунтов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"local_trash_cleanup",
+            "value":"Ненужные файлы на устройстве",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"app_name",
+            "value":"Файлы",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"setting_properties_detail_new",
+            "value":"В разделе Локальные политики нажмите Параметры безопасности, дважды нажмите на опцию \"Сетевой доступ: модель общего доступа и безопасности для локальных учетных записей\" и выберите \"Гостевая\". Нажмите OK. Дважды нажмите на опцию \"Учетные записи: разрешить использование пустых паролей только при консольном входе\" и выберите \"Выключено\". Нажмите OK. Нажмите Win + R, чтобы открыть окно Выполнить. Введите \"cmd\", чтобы открыть командную строку. В командной строке введите \"gpupdate /force\" и нажмите Enter. Дождитесь завершения обновления политики.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_file_to_recycle",
+            "value":"Элементы, перемещенные в раздел Недавно удаленное, удаляются без возможности восстановления через %d дней.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_file_restore_folder_instruction",
+            "value":"Восстановленные данные приложений",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close_pwd_protection",
+            "value":"Отключение защиты паролем",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hide_source",
+            "value":"Скрыть источник",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"enable_Guest_account_detail",
+            "value":"Правой кнопкой мыши нажмите на \"Этот компьютер\", затем выберите Управление > Локальные пользователи и группы > Пользователи. В этом разделе правой кнопкой мыши нажмите на опцию \"Гости\", выберите \"Свойства\" и отмените выбор опции \"Учетная запись отключена\". Затем нажмите \"Применить\" и \"OK\".",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_shared_files_detail_new",
+            "value":"Правой кнопкой мыши нажмите на папку, доступ к которой хотите предоставить, нажмите Свойства > Общий доступ > Общий доступ, выберите \"Гость\" или \"Все\", затем нажмите \"Добавить\". Нажмите на стрелку справа для настройки прав и нажмите \"Общий доступ\".",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"windows_version1",
+            "value":"Windows Ultimate или Professional",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"windows_version2",
+            "value":"Windows Home",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scan_more_cleanable_files",
+            "value":"Поиск кэшированных объявлений и других ненужных файлов.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_jump",
+            "value":"Продолжить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"source_edit_item_drag",
+            "value":"Опция %s перемещается",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picture_format",
+            "value":"Изображение",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enable_scan",
+            "value":"Завершение",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_new_album",
+            "value":"Новый альбом",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"close_pwd_protection_detail",
+            "value":"Откройте Панель управления, выберите Сеть и Интернет > Управление сетями и общим доступом > Изменить дополнительные параметры общего доступа > Все сети. В разделе Общий доступ с парольной защитой выберите опцию \"Отключить общий доступ с парольной защитой\", затем нажмите \"Сохранить изменения\".",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"jump_to_target_note",
+            "value":"Переход с этого экрана прервет выполняемое действие. Продолжить?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_images",
+            "value":"Все",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_download_folder_instruction",
+            "value":"Загрузки",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"anonymous_environment_configuration",
+            "value":"Настройка анонимного окружения",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connect_line",
+            "value":"%1$s | %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close_navigation",
+            "value":"Закрыть навигационную панель",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hidisk_file_size_range_larger_gb",
+            "value":"Больше %d ГБ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_cleanup_context",
+            "value":"Перейдите в Настройки, чтобы удалить больше элементов.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hidisk_file_size_range_smaller_kb",
+            "value":"Меньше %d КБ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_shared_files",
+            "value":"Добавление файлов общего доступа",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"system_folder_not_support_operation",
+            "value":"Невозможно выполнить действие с системной директорией.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"support_argeement",
+            "value":"Настройка поддерживаемых протоколов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"just_now",
+            "value":"Сейчас",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_updatebackup_folder_instruction",
+            "value":"Клонированные данные/Данные резервной копии",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_documents_folder_instruction",
+            "value":"Документы",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recently_deleted_dialog_tip",
+            "value":"Переместить в Недавно удаленное",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_confirm_tips",
+            "value":"Восстановить файлы из этого источника в папке Недавнее?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_Guest_account",
+            "value":"Удаление запретов для гостевых пользователей",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_videos",
+            "value":"Все",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"step4",
+            "value":"Шаг 4",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step5",
+            "value":"Шаг 5",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"step1",
+            "value":"Шаг 1",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step2",
+            "value":"Шаг 2",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"step3",
+            "value":"Шаг 3",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"local_trash",
+            "value":"Ненужные файлы на устройстве",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"space_cleanup",
+            "value":"Очистка",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"use_network",
+            "value":"Использование мобильного трафика",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"drag_to_change_sort",
+            "value":"Перетащите, чтобы изменить порядок",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_gallery_folder_instruction",
+            "value":"Файлы Галереи, хранящиеся на устройстве",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"files_source_no_appear",
+            "value":"Файлы из этого источника больше не будут отображаться в папке Недавнее.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_delete_file_save_day",
+            "value":"Файлы будут удалены без возможности восстановления через указанное количество дней (максимум %d дней).",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"manager_hidden",
+            "value":"Управление источниками скрытых файлов в разделе Недавнее",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"document_format",
+            "value":"Документ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_content",
+            "value":"Нет контента",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"myPhone",
+            "value":"Мой телефон",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enable_Guest_account",
+            "value":"Включение гостевого аккаунта",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_sound_folder_instruction",
+            "value":"Аудиофайлы",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"audio_format",
+            "value":"Аудио",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_cleanup",
+            "value":"Другие опции",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hide_card",
+            "value":"Скрыть",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"afternoon",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restoring_file",
+            "value":"Восстановление файла \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_stem_part",
+            "value":"%1$s, %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_up",
+            "value":"Настройки",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_file",
+            "value":"Удаление файлов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"category",
+            "value":"Тип",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_six",
+            "value":"Настроить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_failed",
+            "value":"Сбой сохранения",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_disconnect_tip",
+            "value":"Вы больше не сможете просматривать файлы общего доступа и управлять ими на этом устройстве. Отключить?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unable_open_file_dialog_content",
+            "value":"Файлы в разделе Недавно удаленное нужно восстановить, чтобы снова использовать их.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"encrypt_file",
+            "value":"Зашифровать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"none",
+            "value":"Нет",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"input_content_cannot_be_empty",
+            "value":"Не может быть пустым.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"default_tag",
+            "value":"Теги по умолчанию",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"help",
+            "value":"Справка",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_file",
+            "value":"Открытие файла",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_sound_recorder",
+            "value":"Диктофон",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"change_password",
+            "value":"Изменение пароля",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"auto_login",
+            "value":"Войти автоматически",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"next_one",
+            "value":"Далее",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_update",
+            "value":"Проверка обновлений",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_copy_toast",
+            "value":"Потяните панель уведомлений вниз, чтобы посмотреть статус выполнения.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"space_transmit",
+            "value":"Добавить в Общее пространство",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_fail_content_dlg",
+            "value":"Сбой перемещения файла \"%s\". Проверьте.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"discontinue",
+            "value":"Завершить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"canceling",
+            "value":"Отмена…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_cut_toast",
+            "value":"Потяните панель уведомлений вниз, чтобы посмотреть статус выполнения.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_data_lost",
+            "value":"Устройство \"%s\" не было безопасно извлечено. Данные могут быть утрачены.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_file_failed",
+            "value":"Сбой сохранения файла.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password",
+            "value":"Пароль",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy",
+            "value":"Копировать",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_custom_question_hint",
+            "value":"Введите максимум %d символов",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_tag_group",
+            "value":"Нет тегов",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"newly_added_devices_not_found_in_lan",
+            "value":"Нет новых устройств.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pad_recent_delete_clear_content",
+            "value":"Все файлы будут удалены без возможности восстановления.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"medium_icon",
+            "value":"Средние значки",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"MainAbility_label",
+            "value":"Файлы",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_access_details",
+            "value":"Здесь отображаются ваши файлы, но это приложение может получить доступ только к выбранным вами элементам.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file",
+            "value":"В этом месте уже есть файл с именем \"%s\".",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"noon",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"del_suc",
+            "value":"Удалено.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"batch_grant_permission",
+            "value":"Выберите несколько элементов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"privacy_dialog_content_first",
+            "value":"Полному режиму требуется доступ в Интернет, к памяти и списку приложений. Помимо этого, ему требуется доступ к данным аккаунта, устройства и приложения (включая список установленных приложений), а также к данным, которые вы выгружаете.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"include",
+            "value":"Содержимое",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cannot_move_app_data",
+            "value":"Вы выбрали данные приложений. Если переместить их, некоторые приложения могут работать некорректно.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"my_devices",
+            "value":"Мои устройства",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_delete",
+            "value":"Очистить корзину",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_fail_dialog_content_singular",
+            "value":"Сбой восстановления файла \"%s\".",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share",
+            "value":"Отправить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"formatting",
+            "value":"Форматирование…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"face_recognition_dialog",
+            "value":"Привязка данных лица",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_remove",
+            "value":"Извлечь",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"rename_fail",
+            "value":"Сбой изменения имени.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore",
+            "value":"Восстановить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_created_time",
+            "value":"Создано: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_tag",
+            "value":"Теги",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"order_type",
+            "value":"Тип",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"expand_phone_tip",
+            "value":"Сначала раскройте телефон.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_video_to_gallery_album",
+            "value":"В директории %1$s можно сохранить только видео. Другие файлы нельзя сохранить в ней. Продолжить?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"addFolder",
+            "value":"Новая папка",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"replace_file_tip",
+            "value":"Файл с именем \"%s\" уже существует в этом месте. Заменить?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"disabled",
+            "value":"Эта функция еще не поддерживается.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_location",
+            "value":"Выберите место.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_four",
+            "value":"На какой улице вы жили в детстве?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connect_device",
+            "value":"Подключить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"download_receive",
+            "value":"Загруженное и принятое",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"created_time",
+            "value":"Создано",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"filter_samll_images",
+            "value":"Фильтрация маленьких изображений",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_display_type",
+            "value":"Тип",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tab_item_phone",
+            "value":"Внутренняя память",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_select_tip",
+            "value":"Выбранные теги отображаются на боковой панели.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_target_path",
+            "value":"Не удается найти нужный путь.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"favorite",
+            "value":"В Избранное",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_REMOVED_FROM_QUICK_ACCESS",
+            "value":"Удалить из Быстрого доступа",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"media_library_files_migrated_to_gallery",
+            "value":"Ваши изображения и видео доступны здесь.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file_title",
+            "value":"Заменить существующий файл?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password_reset_success",
+            "value":"Пароль сброшен.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"common",
+            "value":"Основное",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_data_lost_menu",
+            "value":"Извлечение этого диска в процессе передачи файлов может привести к утрате данных.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_delete_date",
+            "value":"Удалено",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"max_input_length",
+            "value":"Достигнута максимальная длина",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_paste_itself",
+            "value":"Невозможно вставить папку в саму себя или ее подпапку.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all_content",
+            "value":"Удалить все файлы?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"folder_name",
+            "value":"Имя папки",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"face_association",
+            "value":"Данные лица привязаны.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"do_not_associated",
+            "value":"Позже",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_dupFolder_from_child_to_parent",
+            "value":"Папку \"%s\" невозможно заменить поддиректорией с таким же именем.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"same_file_exist",
+            "value":"Такое имя файла уже используется.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_folder",
+            "value":"Целевое место уже содержит папку с именем \"%s\". Заменить папку в целевом месте?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_ADD_TO_QUICK_ACCESS",
+            "value":"Добавить в Быстрый доступ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security",
+            "value":"Контрольные вопросы",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"apply_to_all_files",
+            "value":"Применить ко всем файлам",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"edit",
+            "value":"Изменить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"readonly_file_system",
+            "value":"Эта файловая система поддерживает только чтение.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_tips_details",
+            "value":"Здесь отображаются ваши файлы, но это приложение может получить доступ только к выбранным вами элементам.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"failed_save_to_gallery_root_path",
+            "value":"Невозможно сохранить файлы в корневой директории приложения Галерея. Выберите другую директорию.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"today",
+            "value":"Сегодня",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_name",
+            "value":"Имя файла: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_recent_time",
+            "value":"Время открытия: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pasting_file",
+            "value":"Вставка файла \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"audio_files_migrate_tip",
+            "value":"Аудиофайлы перемещены в приложение Диктофон.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_name",
+            "value":"Имя файла",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"del_fail",
+            "value":"Сбой удаления.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"preview",
+            "value":"Предпросмотр",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"show_files_with_dot",
+            "value":"Отображение файлов и папок, имена которых начинаются с \".\".",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_DISK_FORMAT",
+            "value":"Форматирование устройства %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_device",
+            "value":"Добавить устройство",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"next_step",
+            "value":"Далее",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"encrypted_share",
+            "value":"Передача с шифрованием",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_folder",
+            "value":"Папка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"letterQ2Z",
+            "value":"Q–Z",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_notify_result",
+            "value":"Выполнено: %1$d. Сбой: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_two",
+            "value":"Как называется начальная школа, в которую вы ходили?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"original_file_path",
+            "value":"Исходный путь",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"emptyName",
+            "value":"Нет содержимого.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"order_size",
+            "value":"Размер",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open",
+            "value":"Открыть",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"memory_space",
+            "value":"Доступно %1$s из %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_drag_toast",
+            "value":"Потяните панель уведомлений вниз, чтобы посмотреть статус выполнения.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_operate_not_permitted",
+            "value":"Файл \"%s\" невозможно скопировать.\nПричина: запрещено компанией",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_format_succeed",
+            "value":"Форматирование выполнено.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery_album",
+            "value":"Невозможно создать папки с подпапками в папках альбомов. Связанные изображения и видео будут соответственно перемещены. Продолжить?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_folder",
+            "value":"Открыть место сохранения файла",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"quick_access",
+            "value":"Быстрый доступ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"zero",
+            "value":"Пустые (%d КБ)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_information",
+            "value":"Сведения",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"quick_access_only_can_have_100_files",
+            "value":"Быстрый доступ может содержать максимум %d директорий.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"permission_storage_media_and_files",
+            "value":"Изображения и видео",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"other",
+            "value":"Другое",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"data_changes_associated",
+            "value":"Изменения привязаны.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"selected_none",
+            "value":"Не выбрано",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_recover_file",
+            "value":"Файл \"%s\" уже существует. Восстановить?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"group_and_sort",
+            "value":"Группировка и сортировка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"do_associated_account_tips",
+            "value":"Если вы забудете пароль и ответы на контрольные вопросы, вы по-прежнему сможете сбросить пароль.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_tag",
+            "value":"Удалить тег \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_icon",
+            "value":"В виде значков",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_desktop",
+            "value":"Рабочий стол",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pinyinM2S",
+            "value":"M–S (пиньинь)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_recent_delete_file",
+            "value":"Нет недавно удаленных файлов.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_open_date",
+            "value":"Дата доступа",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"back",
+            "value":"Назад",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_success",
+            "value":"Восстановление выполнено.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"child_folder",
+            "value":"Сбой вставки. Целевая директория является поддиректорией исходной директории.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picker_file_not_exist",
+            "value":"Указанная вами папка не существует. Выберите другую.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery",
+            "value":"Невозможно создать папки с подпапками в директории приложения Галерея. Изображения и видео из этой папки будут перемещены в директорию \"%s\". Продолжить?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_face_recognition",
+            "value":"Привязка данных лица отменена.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_button_tip",
+            "value":"Больше настроек доступно здесь.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"notice_when_over_100mb_desc",
+            "value":"Спрашивать при выгрузке, загрузке или воспроизведении файлов больше %d МБ по мобильной сети.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"medium",
+            "value":"Средние (%1$d–%2$d МБ)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"softDelete",
+            "value":"Удаляемые файлы перемещаются в раздел Недавно удаленное.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm",
+            "value":"OK",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_notice_desc",
+            "value":"Спрашивать перед использованием мобильного трафика для выгрузки, загрузки или воспроизведения файлов.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"evening",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide",
+            "value":"Скрыть",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"text",
+            "value":"Документы",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_upper_camelcase",
+            "value":"Удалить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_allow",
+            "value":"Всегда разрешать",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_available_devices",
+            "value":"Доступные устройства не найдены",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"show_hidden_files",
+            "value":"Отображение скрытых файлов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_suspended",
+            "value":"Удаление отменено.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"filter",
+            "value":"Фильтр",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_SYS_FORMAT",
+            "value":"Файловая система",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"paste",
+            "value":"Вставить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cant_share_empty_folder",
+            "value":"Невозможно предоставить доступ к пустым папкам.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"reset_password",
+            "value":"Сброс пароля",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_size",
+            "value":"Сортировка по размеру",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"processing",
+            "value":"Обработка…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"verify_password",
+            "value":"Подтвердите пароль",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_suspended",
+            "value":"Восстановление отменено.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"remove_from_tag",
+            "value":"Удалить из списка тегов",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"folder",
+            "value":"Папки",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"skip",
+            "value":"Пропустить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pause",
+            "value":"Пауза",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_answer",
+            "value":"Ответ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_downloads",
+            "value":"Загрузки",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_FORMATTING",
+            "value":"Форматировать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"media_library",
+            "value":"Медиа",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"mine_list_help",
+            "value":"Справка",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"moving",
+            "value":"Перемещение...",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_permanent",
+            "value":"Удалить навсегда",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_new_folder",
+            "value":"Новая папка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authing_file_not_exist",
+            "value":"Путь не найден: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"learn_more",
+            "value":"Подробнее",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"descending",
+            "value":"По убыванию",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"duration",
+            "value":"Длительность",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_FORMAT_CONFIRMATION",
+            "value":"Форматирование удалит все данные на этом диске. Это действие необратимо.\n\nОтформатировать этот диск?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"column_view",
+            "value":"Столбцы",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_gallery",
+            "value":"Галерея",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"default_tag_drag_tip",
+            "value":"Перетащите теги сюда, чтобы они стали доступны в меню Добавить тег.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_fail_content_dlg",
+            "value":"Сбой перетаскивания файла \"%s\". Проверьте.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unfavorite",
+            "value":"Из Избранного",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_tag_no_name",
+            "value":"Удалить тег",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bluetooth",
+            "value":"Bluetooth",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sort",
+            "value":"Сортировка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_blue",
+            "value":"Голубой",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_access_path_details",
+            "value":"Это приложение имеет доступ только к выбранным вами файлам, но не имеет доступа к другим данным в папке. %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_file",
+            "value":"Сохранение файлов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_to_backup_recover_pad",
+            "value":"Восстановлено в: Мой планшет/UpdateBackup/RecycleBin.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"music",
+            "value":"Аудио",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select",
+            "value":"Выберите",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_image_to_gallery_album_for_picker",
+            "value":"В директории %1$s можно сохранить только изображения. Другие файлы нельзя сохранить в ней.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_usage_explanation_link",
+            "value":"Уведомление о правах",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"about_service_phone",
+            "value":"Служба поддержки клиентов",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_files_exceed",
+            "value":"Невозможно отправить более %d файлов одновременно.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_has_special_char",
+            "value":"Имя тега содержит специальные символы. Измените его.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_images",
+            "value":"Изображения",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"back_up_home_page_tips",
+            "value":"Привет! В ходе обновления системы ваши изображения и видео были перемещены в приложение Галерея, а аудиозаписи перемещены в приложение Диктофон.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_network_connection",
+            "value":"Проверьте интернет-соединение и повторите попытку.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"early_morning",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"input_password",
+            "value":"Введите пароль",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"complete",
+            "value":"Готово",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_disconnect",
+            "value":"Отключено.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_details",
+            "value":"Сведения",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"waiting_network",
+            "value":"Ожидание сети…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"finish",
+            "value":"Готово",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"my_pad",
+            "value":"Мой планшет",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_clear_confirm",
+            "value":"Очистить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"declare_agree_format_info",
+            "value":"Внимательно прочтите вышеприведенное уведомление. Нажимая Принимаю, вы даете компании согласие на предоставление этой службы.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_folder_or_file",
+            "value":"Создать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"public",
+            "value":"Доступно всем",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"my_pc",
+            "value":"Мой компьютер",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_REMOVED",
+            "value":"Удалить файл \"%s\"",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move",
+            "value":"Переместить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"memory_used",
+            "value":"Занято %1$s ГБ/%2$s ГБ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"user",
+            "value":"Пользователь",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_storage_location",
+            "value":"Место хранения",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_other",
+            "value":"Внимание",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"multiple_choices",
+            "value":"Выбрать несколько",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"check",
+            "value":"Посмотреть",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_type",
+            "value":"Сортировка по типу",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy_notify_result",
+            "value":"Выполнено: %1$d. Сбой: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"doc",
+            "value":"Документ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_tag_added",
+            "value":"Теги не добавлены",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"change_tag_color",
+            "value":"Цвет тега",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_DISK_CAPACITY",
+            "value":"Емкость",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_load_end",
+            "value":"Нет других документов за последние %d дней",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"other_devices",
+            "value":"Другие устройства",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"jump",
+            "value":"Перейти",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_services_dialog_subtitle",
+            "value":"В Базовом режиме вы сможете использовать только основные функции, например управление файлами. Для предоставления этих функций данной службе требуется доступ в Интернет, к памяти (мультимедиа и файлам) и списку приложений, а также требуется читать медиаданные и список установленных приложений. Нажимая Использовать Базовый режим, вы принимаете вышеизложенные положения и положения Уведомления о правах.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename",
+            "value":"Переименовать",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tags",
+            "value":"Теги",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"big",
+            "value":"Большие (%1$d МБ – %2$d ГБ)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_path",
+            "value":"Путь",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_two",
+            "value":"Как зовут вашего партнера?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ascending",
+            "value":"По возрастанию",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_management",
+            "value":"Теги",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"long_ago",
+            "value":"Старое",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"choose_retrieval_method",
+            "value":"Выберите способ восстановления",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"do_associated",
+            "value":"Привязать",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_and_no_prompt_again",
+            "value":"Больше не показывать",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_question_five",
+            "value":"Кто ваш любимый исполнитель или группа?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_fail_dialog_content_singular",
+            "value":"Невозможно удалить файл \"%s\".",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"collapse",
+            "value":"Скрыть",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_old_password",
+            "value":"Подтвердите старый пароль",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_to_backup_recover_phone",
+            "value":"Восстановлено в: Мой телефон/UpdateBackup/RecycleBin.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"small",
+            "value":"Маленькие (%1$d КБ – %2$d МБ)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_it",
+            "value":"OK",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"set_file_storage_location",
+            "value":"Выберите место хранения",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"video",
+            "value":"Видео",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_three",
+            "value":"Где ваша семья провела свой первый отпуск?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"damaged_file_open_fail",
+            "value":"Файл поврежден. Сбой открытия.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"letterI2P",
+            "value":"I–P",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_folderName",
+            "value":"Имя папки: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"compressed",
+            "value":"Архивы",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pinyinG2L",
+            "value":"G–L (пиньинь)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_creation_date",
+            "value":"Дата создания",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bind_fingerprint_change",
+            "value":"Данные отпечатка пальца изменены. Подтвердите пароль повторно.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"complete_delete_tips",
+            "value":"Удаленные файлы невозможно восстановить.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"display_name",
+            "value":"Отображаемое имя",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"set_safe_password_rules",
+            "value":"Пароль должен содержать %1$d–%2$d символов (буквы или цифры), включая минимум одну букву. Он не может совпадать с именем раздела Личное.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"drag_file",
+            "value":"Перетаскивание файлов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"original_location",
+            "value":"Исходное место",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"this_month",
+            "value":"Этот месяц",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_hint",
+            "value":"Значение должно содержать %1$d–%2$d букв (или минимум 2 китайских иероглифа).",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"use_password",
+            "value":"Использовать пароль",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_out_file",
+            "value":"Перемещение",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"user_agreement_and_permission",
+            "value":"Уведомление о приложении Файлы и конфиденциальности",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file_title_save_both",
+            "value":"Объединить папки в этом месте?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"menu_deselect_all",
+            "value":"Отмен. все",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tiny",
+            "value":"Очень маленькие (%1$d–%2$d КБ)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_all",
+            "value":"Удалить файлы",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"privacy_content_second_divide",
+            "value":"Компания собирает только персональные данные, которые требуются для работы этой службы, и принимает надлежащие меры для обеспечения безопасности ваших данных. Подробную информацию см. в документе %s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_not_exist",
+            "value":"Файл \"%s\" не существует.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_month",
+            "value":"Прошлый месяц",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_move_abort_alert",
+            "value":"Выполняется копирование или перемещение файлов. Выйти без завершения этих задач?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pasteboard_dialog_title",
+            "value":"Внимание",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"next",
+            "value":"Вперед",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_type",
+            "value":"Тип файла",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_connect_success",
+            "value":"Подключено",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy_file",
+            "value":"Копирование файлов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"forget_password",
+            "value":"Забыли пароль?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"list_view",
+            "value":"Список",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"same_name_folder_recover",
+            "value":"Целевое место уже содержит папку с именем \"%s\". Восстановить?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path",
+            "value":"В директории приложения Галерея можно сохранить только изображения и видео. Другие файлы нельзя сохранить в ней. Продолжить?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"where",
+            "value":"Место",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"waiting_progress_message",
+            "value":"Подождите...",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_list_title",
+            "value":"Права приложения Файлы",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"folder_size",
+            "value":"Размер",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_recent_record",
+            "value":"Удалить записи недавнего",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"net_disconnect",
+            "value":"Нет интернет-соединения. Проверьте настройки сети.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"play",
+            "value":"Воспроизвести",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_in_file",
+            "value":"Перемещение",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no",
+            "value":"Нет",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"about_personal_info",
+            "value":"Собираемые персональные данные",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_files_error",
+            "value":"Сбой получения списка файлов.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"usage_help",
+            "value":"Справка",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"build_new_folder",
+            "value":"Новая папка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"display_extension_name",
+            "value":"Отображение расширения всех файлов",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"give_feedback",
+            "value":"Обратная связь",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cannot_open_this_file",
+            "value":"Сбой открытия",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_mode",
+            "value":"Открыть с помощью",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_delete_tag_text",
+            "value":"Этот тег будет удален со всех файлов, на которые он был добавлен.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"anonymous_login",
+            "value":"Анонимный вход",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"this_week",
+            "value":"Эта неделя",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"grant_permission",
+            "value":"Предоставить доступ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_folder",
+            "value":"Папка \"%s\" уже существует. Объединить эти папки?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"before_dawn",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_new_tag",
+            "value":"Добавить новый тег",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"order_time",
+            "value":"Время",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"big_file",
+            "value":"Большие файлы",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"exe",
+            "value":"Приложение",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"always_allow_desc",
+            "value":"Разрешить выгрузку, загрузку или воспроизведение файлов по мобильной сети без подтверждения.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_delete_time",
+            "value":"Удалено: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent",
+            "value":"Недавнее",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ppt",
+            "value":"Презентация",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_support_characters_new",
+            "value":"Не поддерживается: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"completeName",
+            "value":"Введите полное имя файла",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unable_open_file_dialog_title",
+            "value":"Не удалось открыть этот файл.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"newWindow",
+            "value":"Отображение нового окна",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"device_connect_fail",
+            "value":"Соединение с %s потеряно.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more",
+            "value":"Еще",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_file",
+            "value":"Открыть",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cut",
+            "value":"Вырезать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"continue",
+            "value":"Продолжить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"input_name",
+            "value":"Введите имя тега",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"build_folder_failed",
+            "value":"Сбой создания новой папки.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"permission_internet",
+            "value":"Интернет",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_rule",
+            "value":"Сортировка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"redo_s",
+            "value":"Повтор: %s (R)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"resident_security_tips",
+            "value":"Это приложение может осуществлять доступ только к выбранным вами элементам",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_progress_content",
+            "value":"Скопировано: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"same_name_file_recover",
+            "value":"Целевое место уже содержит файл с именем \"%s\". Восстановить?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_format_fail",
+            "value":"Сбой форматирования.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_delete",
+            "value":"Корзина",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_appdata",
+            "value":"AppData",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pinyinT2Z",
+            "value":"T–Z (пиньинь)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"this_year",
+            "value":"Этот год",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"dimension",
+            "value":"Размер",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_both",
+            "value":"Сохранить оба",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_purple",
+            "value":"Пурпур",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_music",
+            "value":"Музыка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_date",
+            "value":"Дата",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge",
+            "value":"Объединить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ip_address_error",
+            "value":"Неверный формат",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"turn_scrren_and_intelligent_analysis",
+            "value":"Когда устройство подключено к сети питания и его экран включен, оно автоматически анализирует файлы, чтобы результаты поиска становились более точными со временем.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"keep",
+            "value":"Сохранить оба",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"currently_in_use",
+            "value":"%s (используется)",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"version_is_latest",
+            "value":"Это последняя версия.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_version",
+            "value":"Проверка обновлений",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"filter_browsed_samll_images",
+            "value":"Фильтрация маленьких изображений в разделе Обзор > Изображения.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"touch_share_not_support_folder",
+            "value":"Папки общего доступа не поддерживаются.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all_content_two",
+            "value":"Удаленные элементы невозможно восстановить.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"yes",
+            "value":"Да",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"redo",
+            "value":"Повторить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"desktop",
+            "value":"Рабочий стол",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"re_enter",
+            "value":"Введите пароль еще раз",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_original_path",
+            "value":"Исходный путь: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_limit_exceed_msg",
+            "value":"Максимум %d файлов можно отправить единовременно.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_perm_confirm",
+            "value":"Удалить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unknown_error_occurred",
+            "value":"Неизвестная ошибка",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"initialization",
+            "value":"Запуск…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_file",
+            "value":"Восстановление файлов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"loading",
+            "value":"Загрузка…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_video_to_gallery_album_for_picker",
+            "value":"В директории %1$s можно сохранить только видео. Другие файлы нельзя сохранить в ней.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_complete_tips",
+            "value":"Удалить выбранные файлы безвозвратно?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"net_work_disconnect",
+            "value":"Нет доступа в Интернет. Проверьте настройки сети.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_file",
+            "value":"Перемещение файлов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"notice_when_over_100mb",
+            "value":"Спрашивать для файлов больше %d МБ",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"rotate",
+            "value":"Повернуть",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pinyinA2F",
+            "value":"A–F (пиньинь)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"externalDisk",
+            "value":"SD-карта",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_file_delete",
+            "value":"Выбранные файлы будут удалены без возможности восстановления.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_no_content",
+            "value":"Нет файлов за последние %d дней",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"grid_view",
+            "value":"Сетка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"return_to_previous_step",
+            "value":"Назад",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pad_progress_bar_title_copy_file",
+            "value":"Копирование",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"prompt_recognition",
+            "value":"Вы хотите, чтобы раздел Личное запрашивал пароль в случае изменения данных отпечатка пальца или лица?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cellular_transmission_title",
+            "value":"Вы используете мобильную сеть",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recentlyDeleted",
+            "value":"Недавно удаленное",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_question_limit",
+            "value":"Достигнута максимальная длина",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"last_open_time",
+            "value":"Последний доступ",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_notify_result",
+            "value":"Выполнено: %1$d. Сбой: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_grey",
+            "value":"Серый",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"exits",
+            "value":"Выйти",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"grouping",
+            "value":"Группировка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"disconnect",
+            "value":"Отключить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enter_password",
+            "value":"Введите пароль",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"big_icon",
+            "value":"Крупные значки",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"connected",
+            "value":"Подключить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"otherApp",
+            "value":"Открыть в приложении",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_tags",
+            "value":"Все теги",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_one",
+            "value":"Какая девичья фамилия у вашей мамы?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_match_result",
+            "value":"Нет результатов",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_failed",
+            "value":"Сбой операции.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel_multiple_choices",
+            "value":"Отменить выбор",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"prompt_recognition_dialog",
+            "value":"Внимание",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_system_file_tips",
+            "value":"Системные папки невозможно удалить.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"picker_security_tips",
+            "value":"Это приложение может осуществлять доступ только к выбранным вами файлам",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_all_selection",
+            "value":"Отменить выбор",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"folder_not_exist",
+            "value":"Папка не существует.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"incorrect_username_or_password",
+            "value":"Неверное имя пользователя или пароль",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"password_reset_failed",
+            "value":"Сбой сброса пароля.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"username_required",
+            "value":"Введите значение",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"stop_recover_file",
+            "value":"Остановить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authenticate_your_identity",
+            "value":"Подтвердите вашу личность",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_filemanager_file_not_exist",
+            "value":"Файл \"%s\" не существует.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"undo_s",
+            "value":"Отмена: %s (U)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_file_name",
+            "value":"Имя файла",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"suffixErr",
+            "value":"Если изменить разрешение, возможно, файл станет недоступен для использования. Продолжить?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"activate_now",
+            "value":"Включить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"association",
+            "value":"Привязать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"letterA2H",
+            "value":"A–H",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path_for_picker",
+            "value":"В директории приложения Галерея можно сохранить только изображения и видео. Другие файлы нельзя сохранить в ней.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"share_failed_msg",
+            "value":"Сбой отправки. Максимум %d элементов можно отправить одновременно.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"associate_fingerprint_fail",
+            "value":"Сбой привязки данных отпечатка пальца.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_supported_filesystem",
+            "value":"Файловая система не поддерживается.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"yesterday",
+            "value":"Вчера",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete",
+            "value":"Удалить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"dusk",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"view",
+            "value":"Вид",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"wechat_not_support_share_notice",
+            "value":"Для отправки через WeChat откройте чат в приложении WeChat, выберите файл и отправьте его.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_association",
+            "value":"Позже",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_file_tag",
+            "value":"Добавить тег",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_have_same_name",
+            "value":"Файл с таким именем уже существует в этой папке. Заменить?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"name",
+            "value":"Имя",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"audio",
+            "value":"Аудио",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scanning",
+            "value":"Поиск устройств…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all",
+            "value":"Удалить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_START_FORMAT",
+            "value":"Форматировать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_bar_title_move_file",
+            "value":"Перемещение",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"undo",
+            "value":"Отменить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_support_drag_in_page",
+            "value":"Невозможно перетащить файлы сюда. Попробуйте перетащить их в директорию Мой телефон.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_change_date",
+            "value":"Изменено",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"exit_multiple_choices",
+            "value":"Отменить выбор",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_modified_time",
+            "value":"Изменено: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_format",
+            "value":"Формат",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"apply_to_all",
+            "value":"Применить ко всем",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_num_reached_limit",
+            "value":"Добавлено максимальное количество тегов.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"default",
+            "value":"По умолчанию",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_folder_no_content",
+            "value":"Выбранные папки пустые.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_type",
+            "value":"Тип файла: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"print",
+            "value":"Печать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_fail_content_dlg",
+            "value":"Сбой копирования файла \"%s\". Проверьте.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"associate_data_change_fail",
+            "value":"Сбой привязки данных.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_amount",
+            "value":"Содержит: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"Emptying",
+            "value":"Очистка корзины…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_path",
+            "value":"Сохранить как",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"contains_special_characters",
+            "value":"Имя файла не может содержать следующие символы: []\"':/*?<>|`{}",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"child_folder_confirm",
+            "value":"OK",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_as",
+            "value":"Сохранить как",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"favorite_title",
+            "value":"Избранное",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_default",
+            "value":"Порядок по умолчанию",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"refresh",
+            "value":"Обновить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_file",
+            "value":"Файл \"%s\" уже существует. Заменить?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_four",
+            "value":"Какая у вас любимая футбольная команда?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"list_list",
+            "value":"В виде списка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"blank",
+            "value":"(пусто)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"oversized",
+            "value":"Очень большие (>%d ГБ)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"xls",
+            "value":"Таблица",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge_folder_content",
+            "value":"При объединении папок сохраняются все новые элементы.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_name_exists",
+            "value":"Тег с именем \"%s\" уже существует. Измените его.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_safe_subtitle",
+            "value":"Безопасное место хранения важных файлов.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"version_info",
+            "value":"Версия",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_folder_size_tips",
+            "value":"Подсчет...",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_image_to_gallery_album",
+            "value":"В директории %1$s можно сохранить только изображения. Другие файлы нельзя сохранить в ней. Продолжить?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enter_custom_question",
+            "value":"Введите свой вопрос",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save",
+            "value":"Сохранить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"biometric_change_verification",
+            "value":"Подтвердите биометрические изменения",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_delete_tag_title",
+            "value":"Удалить тег \"%s\"?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"morning",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"videos",
+            "value":"Видео",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_and_close",
+            "value":"Сохранить и закрыть",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_one",
+            "value":"Как зовут вашего отца?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"authing_file",
+            "value":"Выберите %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"apply_all",
+            "value":"Применить ко всем",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_services_dialog_confirm",
+            "value":"Предоставить и продолжить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"menu_select_all",
+            "value":"Выбрать все",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_space_left",
+            "value":"Недостаточно места на диске.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_selected",
+            "value":"Не выбрано",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"fingerprint_recognition_dialog",
+            "value":"Привязка отпечатка пальца",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_location",
+            "value":"Место хранения",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password_error",
+            "value":"Неверный пароль. Повторите попытку.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unspecified",
+            "value":"Не указано",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cannot_delete_app_data",
+            "value":"Вы выбрали данные приложений. Если удалить их, некоторые приложения могут работать некорректно.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"wlan",
+            "value":"WLAN Direct",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"app_data_write_limit",
+            "value":"Эта директория доступна только для чтения в режиме пользователя. Включите раздел Для разработчиков и повторите попытку.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"click_view_detail",
+            "value":"Подробнее",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unlink_account",
+            "value":"Запомните пароль и ответ на контрольный вопрос.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_file_name",
+            "value":"Новый %1$s %2$s%3$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add",
+            "value":"Добавить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"space_not_enough",
+            "value":"Недостаточно места в памяти.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_progress_content",
+            "value":"Перемещено: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_three",
+            "value":"Как называется средняя школа, в которую вы ходили?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"new_password",
+            "value":"Новый пароль",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ascertain",
+            "value":"OK",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"notify_result",
+            "value":"%1$s, %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_device_corresponding_to_ip",
+            "value":"Устройство не найдено",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_force_remove",
+            "value":"Извлечь",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bind_face_change",
+            "value":"Данные лица изменены. Подтвердите пароль повторно.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel",
+            "value":"Отмена",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"personal",
+            "value":"Личное",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_documents",
+            "value":"Документы",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"display_application_data",
+            "value":"Отображение данных приложений",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_week",
+            "value":"Прошлая неделя",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"size",
+            "value":"Размер",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename_have_same_name",
+            "value":"Файл с таким именем уже существует в этой папке. Введите другое имя.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"stop",
+            "value":"Выключить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_associated",
+            "value":"Отменить привязку",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"authing_folder",
+            "value":"Выберите %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge_will_combine_two_folders_and_keep_all_new_items",
+            "value":"При объединении папок сохраняются все новые элементы.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unknown",
+            "value":"Другое",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_fingerprint_recognition",
+            "value":"Привязка отпечатка пальца отменена.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"note",
+            "value":"Внимание",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"agree",
+            "value":"Принимаю",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pdf",
+            "value":"PDF",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"replace",
+            "value":"Заменить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recent_delete_clear",
+            "value":"Очистить корзину?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_movies",
+            "value":"Видео",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"can_not_drag_in",
+            "value":"Невозможно перетащить в эту директорию.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_position",
+            "value":"Место: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_all",
+            "value":"Выбрать все",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_extension_changed",
+            "value":"Если изменить разрешение, возможно, файл станет недоступен для использования. Изменить?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"modify_security_question",
+            "value":"Изменение контрольных вопросов",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_new_file_tag",
+            "value":"Добавление нового тега",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_more",
+            "value":"Еще",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"is_opening",
+            "value":"Открытие файла \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"deleting_file",
+            "value":"Удаление файла \"%s\"…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"username",
+            "value":"Имя пользователя",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"midnight",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_progress_content",
+            "value":"Перетаскивание выполнено: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"dawn",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_tag",
+            "value":"Добавить тег",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cellular_transmission_content",
+            "value":"Будет использовано %s мобильного трафика.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"picture",
+            "value":"Изображение",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"persist_permission_import",
+            "value":"Импорт",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_size",
+            "value":"Размер файла",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_name_illegal_warning",
+            "value":"Имя тега не может содержать: []\"':/*?<>|`{}",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picture_and_video_migrate_tip",
+            "value":"Изображения и видео перемещены в приложение Галерея.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hostname_or_ip_address",
+            "value":"Имя хоста или IP-адрес",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sameName",
+            "value":"Такое имя файла уже используется.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_storage_media_and_files_description",
+            "value":"Это необходимо, чтобы вы могли выбирать данные изображений и видео.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_fail",
+            "value":"Сбой восстановления.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"modified_time",
+            "value":"Изменено",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"merge_folder_tip_new",
+            "value":"Папка \"%s\" уже существует в этом месте.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"images",
+            "value":"Изображения",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"fingerprint_association",
+            "value":"Отпечаток пальца привязан.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_tips",
+            "value":"Ограниченный доступ к файлам",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"associate_faces_fail",
+            "value":"Сбой привязки данных лица.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"download_manager",
+            "value":"Диспетчер загрузки",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_time",
+            "value":"Сортировка по времени",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connection_settings",
+            "value":"Настройки",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_in_new_window",
+            "value":"Открыть в новом окне",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"privacy_content_third",
+            "value":"Внимательно прочтите вышеприведенное уведомление. Нажимая Принять и продолжить, вы принимаете настоящие положения.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_step",
+            "value":"Назад",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"addFolder_fail",
+            "value":"Сбой создания новой папки.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pasting",
+            "value":"Вставить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"small_icon",
+            "value":"Мелкие значки",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_new",
+            "value":"Создать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"ringtone",
+            "value":"Настроить как",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"path_not_exist",
+            "value":"Путь не существует. Проверьте и повторите попытку.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_deny",
+            "value":"Невозможно выполнить эту операцию с онлайн-файлами",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_as",
+            "value":"Открыть как",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"image",
+            "value":"Изображения",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"apply_to_all_folders",
+            "value":"Применить ко всем папкам",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"openFolder",
+            "value":"Открыть папку",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_five",
+            "value":"Какая у вас работа мечты?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"mul_nested_folders_save_files_to_gallery_album",
+            "value":"Невозможно создать папки с подпапками в директории приложения Галерея. Изображения и видео будут соответственно перемещены. Продолжить?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"verify_security_question",
+            "value":"Ответы на контрольные вопросы",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_total_size",
+            "value":"Всего %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"quick_view",
+            "value":"Предпросмотр",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_stem_all",
+            "value":"%1$s, %2$s | Свободно %3$s из %4$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"OtherLocation",
+            "value":"Другое место",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"setting_title_about",
+            "value":"Сведения",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"paste_conflict_diglog_btn_message",
+            "value":"Выполняется копирование или перемещение файлов. Завершите текущую передачу, чтобы начать новую.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_refresh_page_tips",
+            "value":"Обновление… Подождите.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"screen_off_intelligent_analysis",
+            "value":"Более точный поиск",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_size",
+            "value":"Размер файла: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recycle",
+            "value":"Удалить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"quick_access_path_not_found",
+            "value":"Путь не найден.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sound_recorder_not_exist",
+            "value":"Приложение не существует.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_name",
+            "value":"Сортировка по имени",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_access_files_tips",
+            "value":"Ограниченный доступ к файлам",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_access_files_details",
+            "value":"Здесь отображаются ваши файлы, но это приложение может получить доступ только к выбранным вами элементам. %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_notice",
+            "value":"Всегда спрашивать",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"source_from",
+            "value":"Источник: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files_clean",
+            "value":"Удаление повторяющихся файлов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scan_now",
+            "value":"Поиск",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files_subheading",
+            "value":"%s места в памяти занято повторяющимися файлами.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"careful_cleaning",
+            "value":"Обратите внимание",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"to_clean_up",
+            "value":"Удалить",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files",
+            "value":"Повторяющиеся файлы",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_signed_privacy_tip",
+            "value":"Чтобы использовать эту функцию, сначала откройте приложение Файлы и примите положения Уведомления о приложении Файлы и конфиденциальности и Уведомления о правах.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_num",
+            "value":"(%d)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recommended_cleanup",
+            "value":"Рекомендации",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_green",
+            "value":"Зеленый",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_yellow",
+            "value":"Желтый",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_cyan",
+            "value":"Голубой",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_red",
+            "value":"Красный",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"gallery_change_suffix",
+            "value":"Файлы Галереи не поддерживают изменение расширений. Скопируйте или переместите их в общую директорию под директорией Мой телефон и повторите попытку.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_item_down",
+            "value":"Переместить ниже элемента %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_item_up",
+            "value":"Переместить выше элемента %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename_single_character_fail",
+            "value":"Сбой изменения имени. Имя не может состоять из одного символа.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"space_not_enough_title",
+            "value":"Недостаточно памяти",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_saved_to",
+            "value":"Файл сохранен: %s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"low_memory_notice",
+            "value":"Для управления памятью устройства выберите Настройки > Память.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unneeded",
+            "value":"Нет",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_as_wallpaper",
+            "value":"Установить как обои",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_now",
+            "value":"Перейти",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"device_space_usage",
+            "value":"Занято %1$s из %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"transfer_completed",
+            "value":"Перенос выполнен",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"need",
+            "value":"Да",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_wallpaper_not_support",
+            "value":"Обои невозможно редактировать в маленьком окне.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"have_connected",
+            "value":"Подключено",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_connected",
+            "value":"Не подключено",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level_and_expand",
+            "value":"Директория %d раскрыта",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level_and_unexpand",
+            "value":"Директория %d не раскрыта",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_menu_updated",
+            "value":"Новый дизайн меню",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_menu_updated_contents",
+            "value":"Новые значки функций для более интуитивно понятного интерфейса.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"transfer_progress_visible_contents",
+            "value":"Отображение прогресса передачи файлов в уведомлении в интерактивном виде.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"media_browse_smooth_contents",
+            "value":"Автоматическое открытие изображений и видео в полноэкранном режиме.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"media_browse_smooth",
+            "value":"Удобное отображение",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"transfer_progress_visible",
+            "value":"Отслеживание передачи файлов",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"gallery_change_suffix_with_pad",
+            "value":"Файлы Галереи не поддерживают изменение расширений. Скопируйте или переместите их в общую директорию под директорией Мой планшет и повторите попытку.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_support_drag_in_page_with_pad",
+            "value":"Невозможно перетащить файлы сюда. Попробуйте перетащить их в директорию Мой планшет.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"collapse_menu_bar",
+            "value":"Закрыть панель меню",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_grid_toggle",
+            "value":"Переключено на режим %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"button",
+            "value":"Кнопка",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unchecked",
+            "value":"Не выбрано",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_back",
+            "value":"Назад",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unfavorable",
+            "value":"Удалено из Избранного",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close",
+            "value":"Закрыть",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"play_control_bar_display",
+            "value":"Элементы управления воспроизведением отображаются. Проведите по видео, чтобы изменить место воспроизведения.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"favorited",
+            "value":"Добавлено в Избранное",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reset_succeeded",
+            "value":"Сброс выполнен",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"shielding",
+            "value":"Заблокировать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_menu_bar",
+            "value":"Открыть панель меню",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unexpanded",
+            "value":"Не раскрыто",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"play_control_bar_hidden",
+            "value":"Элементы управления воспроизведением скрыты. Проведите по видео, чтобы изменить место воспроизведения.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_to_change_sort_description",
+            "value":"Нажмите дважды и удерживайте, затем перетащите, чтобы изменить порядок",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_reset",
+            "value":"Сбросить",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"expanded",
+            "value":"Раскрыто",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"video_broadcast",
+            "value":"Видео: %1$s, длительность %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"checked",
+            "value":"Выбрано",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drop_down_list",
+            "value":"Раскрывающийся список",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"equipment_temperature_is_too_high",
+            "value":"Устройство сильно нагрелось",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"already_deselect_all",
+            "value":"Отменен выбор всех",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"already_select_all",
+            "value":"Все выбрано",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"checked_accessibility",
+            "value":"Нажмите дважды одним пальцем, чтобы выбрать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unchecked_accessibility",
+            "value":"Чтобы отменить выбор, нажмите дважды одним пальцем",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_checkbox_unChecked",
+            "value":"Поле для постановки галочки не выбрано, нажмите дважды одним пальцем, чтобы выбрать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_screenshot",
+            "value":"Скриншоты",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_checkbox_checked",
+            "value":"Поле для постановки галочки выбрано, нажмите дважды одним пальцем, чтобы отменить выбор",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_camera",
+            "value":"Камера",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_screen_recording",
+            "value":"Записи с экрана",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"new_version_updates_progress",
+            "value":"Нажмите, чтобы узнать больше.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"new_features_online",
+            "value":"Доступны новые функции",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"click_accessibility",
+            "value":"Нажмите дважды, чтобы активировать",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_place_up",
+            "value":"Размещено над опцией %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_place_down",
+            "value":"Размещено под опцией %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_not_exist_maybe_removed_renamed_deleted",
+            "value":"Файл \"%1$s\" не существует. Возможно, он перемещен, переименован или удален. Восстановите файл и повторите попытку.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_file_not_exist_maybe_removed_renamed_deleted",
+            "value":"Файл не существует. Возможно, он перемещен, переименован или удален. Восстановите файл и повторите попытку.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"securely_remove",
+            "value":"Безопасно извлечь",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"arrive_path_select_end_level",
+            "value":"В этой директории больше нет уровней",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level",
+            "value":"Уровень %d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_expand",
+            "value":"Раскрыто",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_unexpand",
+            "value":"Скрыто",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reverse_rotation",
+            "value":"Повернуть на %s градусов против часовой стрелки",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"help_and_feedback",
+            "value":"Справка и обратная связь",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tip_popup_context_one",
+            "value":"%1$s. Чтобы посмотреть контент приложений, запущенных в DroiTong или EasyAbroad, выберите %2$s.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tip_popup_title",
+            "value":"Здесь отображается только контент Галереи на устройстве",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_to_gallery",
+            "value":"Галерея",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"two_placeholders",
+            "value":"%1$s > %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_fusion_album_warning",
+            "value":"Этот альбом содержит файлы приложений, которые запущены в DroiTong или EasyAbroad. Чтобы удалить файлы, перейдите в раздел Совместимые данные.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"remote_file_not_exist",
+            "value":"Сбой вставки файла. Возможно, файл \"%s\" был изменен или переименован либо возникла проблема с подключением устройства. Проверьте и повторите попытку.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"remote_source_file_not_exist",
+            "value":"Сбой вставки файла. Возможно, исходный файл был изменен или переименован либо возникла проблема с подключением устройства. Проверьте и повторите попытку.",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

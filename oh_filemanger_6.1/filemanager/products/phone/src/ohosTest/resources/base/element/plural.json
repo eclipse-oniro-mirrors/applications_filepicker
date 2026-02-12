@@ -1,0 +1,43 @@
+{
+    "plural":[
+        {
+            "name":"selectedItem",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$s item selected"
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items selected"
+                }
+            ]
+        },
+        {
+            "name":"move_select_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Move %d item to"
+                },
+                {
+                    "quantity":"other",
+                    "value":"Move %d items to"
+                }
+            ]
+        },
+        {
+            "name":"copy_select_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Copy %d item to"
+                },
+                {
+                    "quantity":"other",
+                    "value":"Copy %d items to"
+                }
+            ]
+        }
+    ]
+}

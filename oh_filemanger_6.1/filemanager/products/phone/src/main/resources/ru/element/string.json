@@ -1,0 +1,753 @@
+{
+  "string": [
+    {
+      "name": "browse",
+      "value": "Обзор",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "about_file_manager",
+      "value": "Файлы",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "myPhone",
+      "value": "Мой телефон",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "select_location",
+      "value": "Выберите место.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "size",
+      "value": "Размер",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge_folder_tip",
+      "value": "Папка с именем \"%s\" уже существует в этом месте. Заменить?",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop",
+      "value": "Выключить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_welcome_content_adults_all",
+      "value": "Этой службе требуется доступ в Интернет, а также права доступа к памяти и списку приложений. Также ему требуется доступ к геоданным, данным аккаунта, устройства, сети и приложений (включая список установленных приложений), а также к данным, которые вы выгружаете.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source",
+      "value": "Источник",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "pasteboard_dialog_content",
+      "value": "Вставить файлы из буфера обмена?",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "choose_size",
+      "value": "Размер: %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "finish",
+      "value": "Готово",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "deleting",
+      "value": "Удаление…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "btn_cancel",
+      "value": "Отмена",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_type",
+      "value": "Тип файла",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unknown_error_occurred",
+      "value": "Неизвестная ошибка",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "loading",
+      "value": "Загрузка…",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "replace",
+      "value": "Заменить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "net_work_disconnect",
+      "value": "Нет доступа в Интернет. Проверьте настройки сети.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_B",
+      "value": "%s Б",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "waiting_progress_message",
+      "value": "Подождите...",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "order_name",
+      "value": "Имя",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_GB",
+      "value": "%s ГБ",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_app_version",
+      "value": "Версия: %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_no",
+      "value": "Нет фильтра",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "confirm",
+      "value": "OK",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "externalDisk",
+      "value": "SD-карта",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_has_same_file",
+      "value": "Такое имя файла уже существует",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_complete",
+      "value": "Удалить",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_personal_info",
+      "value": "Собираемые персональные данные",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "type",
+      "value": "Тип",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than_MB",
+      "value": "%d МБ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "text",
+      "value": "Документы",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "path",
+      "value": "Путь",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_custom",
+      "value": "Настроить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover_confirm_content",
+      "value": "Восстановить файлы из этого источника в папке Недавнее?",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "alert_net_disconnect_try_again",
+      "value": "Файл не кэширован на вашем устройстве. Подключитесь к Интернету и повторите попытку.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_cancel",
+      "value": "Отмена",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_size",
+      "value": "Размер файла",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "check_update_now",
+      "value": "Проверка обновлений...",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter",
+      "value": "Фильтрация по размеру",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "rename",
+      "value": "Переименовать",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_title",
+      "value": "Копия",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "total",
+      "value": "Всего %1$s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_complete",
+      "value": "Перемещено",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "edit",
+      "value": "Изменить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "media_speed",
+      "value": "Скорость",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy",
+      "value": "Копировать",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "skip",
+      "value": "Пропустить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recent",
+      "value": "Недавнее",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "open_failure_msg",
+      "value": "Сбой открытия.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_preview_detail",
+      "value": "Нажмите на элемент, чтобы посмотреть сведения",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_max_input",
+      "value": "Максимум %d КБ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_name",
+      "value": "Имя файла",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_app_name",
+      "value": "Файлы",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_agreed",
+      "value": "Принимаю",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "preview",
+      "value": "Предпросмотр",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_complete",
+      "value": "Скопировано",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "Файлы",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "location",
+      "value": "Место",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "more",
+      "value": "Еще",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "files_app_name",
+      "value": "Файлы",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "operation_canceled",
+      "value": "Операция отменена.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ok",
+      "value": "OK",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting",
+      "value": "Вставить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover",
+      "value": "Восстановить",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_uppercase",
+      "value": "Восстановить",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_KB",
+      "value": "%s КБ",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than",
+      "value": "%d КБ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "share",
+      "value": "Отправить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "to_save",
+      "value": "Сохранить файл в папку %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "data_center_terms_welcome",
+      "value": "Вас приветствует приложение",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yesterday",
+      "value": "Вчера",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "restore",
+      "value": "Восстановить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_fail",
+      "value": "Сбой сохранения.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete",
+      "value": "Удалить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_content_adults_third_divide",
+      "value": "Внимательно прочтите вышеприведенное уведомление. Нажимая Принимаю, вы принимаете вышеизложенные положения.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "details",
+      "value": "Сведения",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "no_content_meets_the_condition",
+      "value": "Нет результатов",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge",
+      "value": "Объединить",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "turn_scrren_and_intelligent_analysis",
+      "value": "Когда устройство подключено к сети питания и его экран включен, оно автоматически анализирует файлы, чтобы результаты поиска становились более точными со временем.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "screen_off_intelligent_analysis",
+      "value": "Более точный поиск",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "name",
+      "value": "Имя",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "cancel",
+      "value": "Отмена",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "aboutPage_title",
+      "value": "Сведения",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "version_is_latest",
+      "value": "Это последняя версия.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "audio",
+      "value": "Аудио",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_MB",
+      "value": "%s МБ",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_service_phone",
+      "value": "Служба поддержки клиентов",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "disabled",
+      "value": "Эта функция еще не поддерживается.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "not_find_the_file_you_want",
+      "value": "Не можете найти нужный файл?",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support",
+      "value": "Раздел Справка",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface_contents",
+      "value": "Настраивайте вид приложения так, как вам нравится – перемещайте элементы или скрывайте функции, которыми редко пользуетесь.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations",
+      "value": "Нужные инструменты под рукой",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations_contents",
+      "value": "Популярные функции перемещены в верхнюю часть меню для более быстрого доступа.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support_contents",
+      "value": "В приложение добавлены руководства пользователя и часто задаваемые вопросы, чтобы вы могли быстро найти решение вашей проблемы.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "change_details",
+      "value": "Сведения обновления",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_change_tip",
+      "value": "Для повышения качества работы службы Уведомление о конфиденциальности и Соглашение с пользователем были обновлены. Перед тем как продолжить, внимательно прочтите обновленные положения. Эта служба будет работать, только если вы дадите согласие на обработку данных, связанных с этим обновлением. Подробную информацию см. в документах %1$s и %2$s.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "get_started",
+      "value": "Попробовать",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface",
+      "value": "Широкие возможности настройки",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_access_more_secure_contents",
+      "value": "Благодаря оптимизированной структуре директорий приложения смогут просматривать только те файлы, доступ к которым вы разрешите.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_access_more_secure",
+      "value": "Усиленная защита данных",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancelled",
+      "value": "Отменено",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_to_dest_completed",
+      "value": "Скопировано в папку %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_to_dest_completed",
+      "value": "Перемещено в папку %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Файлы",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "search",
+      "value": "Поиск",
+      "attr": {
+        "priority": "LT"
+      }
+    }
+  ]
+}

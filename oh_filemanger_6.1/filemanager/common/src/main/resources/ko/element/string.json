@@ -1,0 +1,5261 @@
+{
+    "string":[
+        {
+            "name":"open_navigation",
+            "value":"탐색 패널 열기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"local_trash_cleanup",
+            "value":"로컬 정크",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"app_name",
+            "value":"파일",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_file_restore_folder_instruction",
+            "value":"앱 데이터 복원",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_jump",
+            "value":"계속",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"source_edit_item_drag",
+            "value":"%s 드래그 중",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"jump_to_target_note",
+            "value":"이 화면에서 나가면 현재 작업을 중단하게 됩니다. 계속 진행하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_download_folder_instruction",
+            "value":"다운로드",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"connect_line",
+            "value":"%1$s | %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close_navigation",
+            "value":"탐색 패널 닫기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"more_cleanup_context",
+            "value":"정리할 항목을 더 찾으려면 설정으로 이동하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"system_folder_not_support_operation",
+            "value":"시스템 디렉토리에서는 작업을 수행할 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_updatebackup_folder_instruction",
+            "value":"데이터 복제/백업",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"root_path_documents_folder_instruction",
+            "value":"문서",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"local_trash",
+            "value":"로컬 정크",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"use_network",
+            "value":"모바일 데이터 사용",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_gallery_folder_instruction",
+            "value":"로컬에 저장된 갤러리 파일",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"myPhone",
+            "value":"내 휴대폰",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"root_path_sound_folder_instruction",
+            "value":"오디오 파일",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"more_cleanup",
+            "value":"옵션 더 보기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"afternoon",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restoring_file",
+            "value":"\"%s\" 복원 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_stem_part",
+            "value":"%1$s, %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_up",
+            "value":"설정",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_file",
+            "value":"파일 삭제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"category",
+            "value":"유형",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_six",
+            "value":"사용자 설정",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_failed",
+            "value":"저장 불가",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_disconnect_tip",
+            "value":"더 이상 이 장치에서 공유 파일을 보고 관리할 수 없습니다. 그래도 연결을 해제하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unable_open_file_dialog_content",
+            "value":"최근 삭제의 파일은 다시 사용하기 전에 복원해야 합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"encrypt_file",
+            "value":"암호화",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"none",
+            "value":"없음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"input_content_cannot_be_empty",
+            "value":"비워둘 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"default_tag",
+            "value":"기본 태그",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"help",
+            "value":"도움말",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_file",
+            "value":"파일 열기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_sound_recorder",
+            "value":"녹음기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"change_password",
+            "value":"암호 변경",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"auto_login",
+            "value":"자동 로그인",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"next_one",
+            "value":"다음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_update",
+            "value":"업데이트 확인",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_copy_toast",
+            "value":"진행 상황을 보려면 알림 패널을 아래로 당깁니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"space_transmit",
+            "value":"공간 바꾸기에 추가",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_fail_content_dlg",
+            "value":"%s을(를) 이동할 수 없습니다. 확인하시기 바랍니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"discontinue",
+            "value":"종료",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"canceling",
+            "value":"취소 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_cut_toast",
+            "value":"진행 상황을 보려면 알림 패널을 아래로 당깁니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_data_lost",
+            "value":"\"%s\"이(가) 안전하게 제거되었습니다. 데이터가 손실될 수 있습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_file_failed",
+            "value":"파일을 저장하지 못했습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password",
+            "value":"암호",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy",
+            "value":"복사",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_custom_question_hint",
+            "value":"최대 %d자 입력",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_tag_group",
+            "value":"태그 없음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"newly_added_devices_not_found_in_lan",
+            "value":"새 장치를 찾을 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pad_recent_delete_clear_content",
+            "value":"모든 파일은 영구적으로 삭제됩니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"medium_icon",
+            "value":"중간 아이콘",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"MainAbility_label",
+            "value":"파일",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_access_details",
+            "value":"내 파일이 여기에 표시되지만 이 앱은 선택한 항목에만 액세스할 수 있습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file",
+            "value":"이미 이 위치에 \"%s\" 이름의 파일이 있습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"noon",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"del_suc",
+            "value":"삭제를 완료했습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"batch_grant_permission",
+            "value":"여러 항목 선택",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"privacy_dialog_content_first",
+            "value":"전체 모드는 인터넷 연결과 저장 공간 및 앱 목록 권한이 필요합니다. 또한, 계정, 장치, 앱(설치된 앱 목록 포함), 네트워크 정보 및 귀하가 자발적으로 업로드하는 데이터에도 액세스해야 합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"include",
+            "value":"포함",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cannot_move_app_data",
+            "value":"선택하신 데이터에 앱 데이터가 포함되어 있습니다. 이동하면 앱이 제대로 작동하지 않을 수 있습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"my_devices",
+            "value":"내 장치",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_delete",
+            "value":"휴지통 비우기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_fail_dialog_content_singular",
+            "value":"%s 파일이 복원되지 않았습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share",
+            "value":"공유",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"formatting",
+            "value":"포맷 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"face_recognition_dialog",
+            "value":"얼굴 인식 연결",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_remove",
+            "value":"제거",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"rename_fail",
+            "value":"이름 변경에 실패했습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore",
+            "value":"복원",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_created_time",
+            "value":"생성됨: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_tag",
+            "value":"태그",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"order_type",
+            "value":"유형",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"expand_phone_tip",
+            "value":"먼저 휴대폰을 펼칩니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_video_to_gallery_album",
+            "value":"비디오만 %1$s 디렉토리에 저장할 수 있습니다. 기타 파일은 여기에 저장할 수 없습니다. 계속하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"addFolder",
+            "value":"새 폴더",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"replace_file_tip",
+            "value":"이미 이 위치에 \"%s\" 이름의 파일이 존재합니다. 바꾸시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"disabled",
+            "value":"이 기능은 아직 지원되지 않습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_location",
+            "value":"위치를 선택하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_four",
+            "value":"어렸을 때 살았던 동네 이름은 무엇인가요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connect_device",
+            "value":"연결",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"download_receive",
+            "value":"다운로드함/수신함",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"created_time",
+            "value":"생성됨",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"filter_samll_images",
+            "value":"작은 이미지 필터링",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_display_type",
+            "value":"유형",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tab_item_phone",
+            "value":"내부 저장소",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_select_tip",
+            "value":"선택한 태그가 사이드바에 표시됩니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_target_path",
+            "value":"대상 경로를 찾을 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"favorite",
+            "value":"즐겨찾기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_REMOVED_FROM_QUICK_ACCESS",
+            "value":"빠른 액세스에서 제거",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"media_library_files_migrated_to_gallery",
+            "value":"이미지와 비디오를 여기에서 확인할 수 있습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file_title",
+            "value":"기존 파일을 바꾸시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password_reset_success",
+            "value":"암호가 재설정되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"common",
+            "value":"일반",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_data_lost_menu",
+            "value":"파일 전송 중 이 디스크를 제거하면 데이터 손실이 발생할 수 있습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_delete_date",
+            "value":"삭제됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"max_input_length",
+            "value":"최대 길이입니다",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_paste_itself",
+            "value":"해당 폴더나 하위 폴더에 폴더를 붙여넣을 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all_content",
+            "value":"모든 파일을 삭제하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"folder_name",
+            "value":"폴더 이름",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"face_association",
+            "value":"얼굴 인식이 연결되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"do_not_associated",
+            "value":"나중에",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_dupFolder_from_child_to_parent",
+            "value":"\"%s\" 폴더는 동일한 이름의 하위 디렉토리로 대체할 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"same_file_exist",
+            "value":"파일 이름이 이미 사용 중입니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_folder",
+            "value":"대상에 이미 \"%s\" 이름의 폴더가 있습니다. 대상에서 폴더를 바꾸시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_ADD_TO_QUICK_ACCESS",
+            "value":"빠른 액세스에 추가",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security",
+            "value":"보안 질문",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"apply_to_all_files",
+            "value":"모든 파일에 적용",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"edit",
+            "value":"편집",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"readonly_file_system",
+            "value":"읽기 전용 파일 시스템입니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_tips_details",
+            "value":"내 파일이 여기에 표시되지만 이 앱은 선택한 항목에만 액세스할 수 있습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"failed_save_to_gallery_root_path",
+            "value":"갤러리 루트 디렉토리에 파일을 저장할 수 없습니다. 다른 디렉토리를 선택합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"today",
+            "value":"오늘",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_name",
+            "value":"파일 이름: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_recent_time",
+            "value":"최근 연 시간: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pasting_file",
+            "value":"\"%s\" 붙여 넣는 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"audio_files_migrate_tip",
+            "value":"오디오 파일은 녹음기 앱으로 이동되었습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_name",
+            "value":"파일 이름",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"del_fail",
+            "value":"삭제에 실패했습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"preview",
+            "value":"미리보기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"show_files_with_dot",
+            "value":"\".\"로 시작하는 파일 및 폴더가 표시됩니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_DISK_FORMAT",
+            "value":"\"%s\" 포맷",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_device",
+            "value":"장치 추가",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"next_step",
+            "value":"다음",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"encrypted_share",
+            "value":"암호화된 공유",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_folder",
+            "value":"폴더",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"letterQ2Z",
+            "value":"Q~Z",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_notify_result",
+            "value":"성공: %1$d, 실패: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_two",
+            "value":"초등학교 이름은 무엇인가요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"original_file_path",
+            "value":"원래 경로",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"emptyName",
+            "value":"콘텐츠가 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"order_size",
+            "value":"크기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open",
+            "value":"열기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"memory_space",
+            "value":"%1$s/%2$s 사용 가능",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide_drag_toast",
+            "value":"진행 상황을 보려면 알림 패널을 아래로 당깁니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_operate_not_permitted",
+            "value":"\"%s\"을(를) 복사할 수 없습니다.\n사유: 회사에 의해 제한됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_format_succeed",
+            "value":"성공적으로 포맷되었습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery_album",
+            "value":"앨범 폴더 내에 하위 폴더가 있는 폴더를 만들 수 없습니다. 이에 따라 관련 이미지 및 비디오가 재배치됩니다. 계속하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_folder",
+            "value":"파일 위치 열기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"quick_access",
+            "value":"빠른 액세스",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"zero",
+            "value":"빈 파일(%dKB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_information",
+            "value":"상세정보",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"quick_access_only_can_have_100_files",
+            "value":"빠른 액세스는 최대 %d개의 디렉토리를 가질 수 있습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"permission_storage_media_and_files",
+            "value":"이미지 및 비디오",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"other",
+            "value":"기타",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"data_changes_associated",
+            "value":"변경 사항이 연결되었습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"selected_none",
+            "value":"선택 항목 없음",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_recover_file",
+            "value":"\"%s\"은(는) 이미 존재합니다. 그래도 복원하시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"group_and_sort",
+            "value":"그룹 및 정렬",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"do_associated_account_tips",
+            "value":"암호 및 보안 질문 답변을 잊어버리더라도 암호를 재설정할 수 있습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_tag",
+            "value":"\"%s\" 태그 삭제",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_icon",
+            "value":"아이콘 보기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_desktop",
+            "value":"홈 화면",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pinyinM2S",
+            "value":"M~S(중국어 로마자 표기법)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_recent_delete_file",
+            "value":"최근 삭제된 파일이 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_open_date",
+            "value":"액세스 날짜",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"back",
+            "value":"뒤로",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_success",
+            "value":"복원이 완료되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"child_folder",
+            "value":"붙여 넣을 수 없습니다. 대상 디렉토리는 원본 디렉토리의 하위 디렉토리입니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picker_file_not_exist",
+            "value":"입력한 폴더는 존재하지 않습니다. 다른 폴더를 선택하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery",
+            "value":"갤러리 디렉토리 내에 하위 폴더가 있는 폴더를 만들 수 없습니다. 폴더의 이미지 및 비디오는 \"%s\" 디렉토리로 재배치됩니다. 계속하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_face_recognition",
+            "value":"얼굴 데이터가 연결 해제되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more_button_tip",
+            "value":"여기에서 더 많은 설정을 찾아볼 수 있습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"notice_when_over_100mb_desc",
+            "value":"모바일 데이터를 사용하기 전에 %dMB보다 큰 파일을 업로드, 다운로드 또는 재생할 것인지 확인하는 메시지가 표시됩니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"medium",
+            "value":"중간(%1$d~%2$dMB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"softDelete",
+            "value":"삭제된 파일은 최근 삭제로 이동됩니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm",
+            "value":"확인",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_notice_desc",
+            "value":"모바일 데이터를 사용하기 전에 파일을 업로드, 다운로드 또는 재생할 것인지 확인하는 메시지가 표시됩니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"evening",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hide",
+            "value":"숨기기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"text",
+            "value":"텍스트",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_upper_camelcase",
+            "value":"삭제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_allow",
+            "value":"항상 허용",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_available_devices",
+            "value":"사용 가능한 장치 없음",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"show_hidden_files",
+            "value":"숨겨진 파일 표시",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_suspended",
+            "value":"삭제가 취소되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"filter",
+            "value":"필터",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_SYS_FORMAT",
+            "value":"파일 시스템",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"paste",
+            "value":"붙여넣기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cant_share_empty_folder",
+            "value":"빈 폴더는 공유할 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"reset_password",
+            "value":"암호 재설정",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_size",
+            "value":"크기별 정렬",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"processing",
+            "value":"처리 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"verify_password",
+            "value":"암호 확인",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_suspended",
+            "value":"복원이 취소되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"remove_from_tag",
+            "value":"태그에서 제거",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"folder",
+            "value":"폴더",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"skip",
+            "value":"건너뛰기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pause",
+            "value":"일시 정지",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_answer",
+            "value":"답변",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_downloads",
+            "value":"다운로드",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_FORMATTING",
+            "value":"포맷",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"media_library",
+            "value":"미디어",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"mine_list_help",
+            "value":"도움말",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"moving",
+            "value":"이동 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_permanent",
+            "value":"영구적으로 삭제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_new_folder",
+            "value":"새 폴더",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authing_file_not_exist",
+            "value":"경로를 찾을 수 없음: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"learn_more",
+            "value":"자세히 알아보기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"descending",
+            "value":"내림차순",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"duration",
+            "value":"길이",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_FORMAT_CONFIRMATION",
+            "value":"포맷하면 이 디스크에 저장된 모든 데이터가 삭제됩니다. 이 작업은 취소할 수 없습니다.\n\n이 디스크 포맷을 진행하시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"column_view",
+            "value":"열",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_gallery",
+            "value":"갤러리",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"default_tag_drag_tip",
+            "value":"태그를 여기로 드래그하여 \"태그 추가\" 메뉴에서 사용할 수 있도록 합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_fail_content_dlg",
+            "value":"%s을(를) 드래그 앤 드롭할 수 없습니다. 확인하시기 바랍니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unfavorite",
+            "value":"즐겨찾기 해제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_tag_no_name",
+            "value":"태그 삭제",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bluetooth",
+            "value":"블루투스",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sort",
+            "value":"정렬 기준",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_blue",
+            "value":"파란색",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"security_access_path_details",
+            "value":"이 앱은 선택한 파일에만 액세스하고 폴더의 다른 콘텐츠에는 액세스할 수 없습니다. %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_file",
+            "value":"파일 저장",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_to_backup_recover_pad",
+            "value":"내 태블릿/UpdateBackup/RecycleBin에 복원되었습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"music",
+            "value":"오디오",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select",
+            "value":"선택",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_image_to_gallery_album_for_picker",
+            "value":"이미지만 %1$s 디렉토리에 저장할 수 있습니다. 기타 파일은 여기에 저장할 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_usage_explanation_link",
+            "value":"권한 공지",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"about_service_phone",
+            "value":"고객 서비스",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_files_exceed",
+            "value":"한 번에 %d개가 넘는 파일을 공유할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_has_special_char",
+            "value":"태그 이름은 특수 문자를 포함해야 합니다. 이름을 변경하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_images",
+            "value":"이미지",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"back_up_home_page_tips",
+            "value":"반갑습니다! 시스템 업데이트 중에 이미지와 비디오는 갤러리로 이동되었고, 오디오 녹음은 녹음기로 이동되었습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_network_connection",
+            "value":"인터넷 연결을 확인하고 다시 시도하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"early_morning",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"input_password",
+            "value":"암호 입력",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"complete",
+            "value":"완료",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_disconnect",
+            "value":"연결이 해제되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_details",
+            "value":"상세정보",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"waiting_network",
+            "value":"네트워크 대기 중…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"finish",
+            "value":"완료",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"my_pad",
+            "value":"내 태블릿",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_clear_confirm",
+            "value":"비어 있음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"declare_agree_format_info",
+            "value":"위 방침을 주의 깊게 읽어주십시오. 동의를 클릭하면 당사에서 이 서비스를 제공하는 데 동의함을 의미합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_folder_or_file",
+            "value":"신규",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"public",
+            "value":"공개",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"my_pc",
+            "value":"내 컴퓨터",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_REMOVED",
+            "value":"\"%s\" 제거",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move",
+            "value":"이동",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"memory_used",
+            "value":"%1$sGB/%2$sGB 사용 중",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"user",
+            "value":"사용자",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_storage_location",
+            "value":"저장 공간 위치",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_other",
+            "value":"참고",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"multiple_choices",
+            "value":"복수 선택",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"check",
+            "value":"보기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_type",
+            "value":"유형별 정렬",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy_notify_result",
+            "value":"성공: %1$d, 실패: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"doc",
+            "value":"문서",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_tag_added",
+            "value":"추가한 태그 없음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"change_tag_color",
+            "value":"태그 색상",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"PC_FILE_DISK_CAPACITY",
+            "value":"용량",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_load_end",
+            "value":"지난 %d일 이후 더 이상 문서 없음",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"other_devices",
+            "value":"기타 장치",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"jump",
+            "value":"이동",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_services_dialog_subtitle",
+            "value":"기본 모드에서는 파일 관리와 같은 기본 기능만 사용할 수 있습니다. 이 서비스는 이러한 기능을 제공하기 위해 인터넷 연결과 저장 공간(미디어 및 파일) 및 앱 목록 권한이 필요하며, 미디어 데이터 및 설치된 앱 목록을 읽어야 합니다. 기본 모드 사용을 터치하면 위 약관과 권한 공지에 동의함을 의미합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename",
+            "value":"이름 변경",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tags",
+            "value":"태그",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"big",
+            "value":"대용량(%1$dMB~%2$dGB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_path",
+            "value":"경로",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_two",
+            "value":"애인의 이름은 무엇인가요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ascending",
+            "value":"오름차순",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_management",
+            "value":"태그",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"long_ago",
+            "value":"이전",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"choose_retrieval_method",
+            "value":"복원 방법 선택",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"do_associated",
+            "value":"연결",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_and_no_prompt_again",
+            "value":"다시 표시하지 않음",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_question_five",
+            "value":"가장 좋아하는 가수나 밴드는 누구인가요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_fail_dialog_content_singular",
+            "value":"%s을(를) 삭제할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"collapse",
+            "value":"적게 표시",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_old_password",
+            "value":"기존 암호 확인",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_to_backup_recover_phone",
+            "value":"내 휴대폰/UpdateBackup/RecycleBin에 복원되었습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"small",
+            "value":"소용량(%1$dKB~%2$dMB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_it",
+            "value":"확인",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"set_file_storage_location",
+            "value":"저장 공간 위치 선택",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"video",
+            "value":"비디오",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_three",
+            "value":"첫 번째 가족 휴가는 어디였나요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"damaged_file_open_fail",
+            "value":"파일 손상됨. 열 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"letterI2P",
+            "value":"I~P",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_folderName",
+            "value":"폴더 이름: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"compressed",
+            "value":"보관함",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pinyinG2L",
+            "value":"G~L(중국어 로마자 표기법)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_creation_date",
+            "value":"생성일",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bind_fingerprint_change",
+            "value":"지문 데이터가 변경되었습니다. 암호를 다시 확인하십시오.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"complete_delete_tips",
+            "value":"삭제된 파일을 복원할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"display_name",
+            "value":"표시 이름",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"set_safe_password_rules",
+            "value":"암호는 %1$d~%2$d자(숫자/문자) 사이여야 하며 하나 이상의 문자를 포함해야 합니다. 안전 장치 이름과 같을 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"drag_file",
+            "value":"파일 드롭",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"original_location",
+            "value":"원래 위치",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"this_month",
+            "value":"이번 달",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_hint",
+            "value":"%1$d~%2$d자여야 합니다(또는 2자 이상의 중국어).",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"use_password",
+            "value":"암호 사용하기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_out_file",
+            "value":"꺼내기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"user_agreement_and_permission",
+            "value":"파일 및 개인 정보 보호에 대한 방침",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"the_location_already_contains_this_file_title_save_both",
+            "value":"폴더를 이 위치로 병합하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"menu_deselect_all",
+            "value":"모두 선택 취소",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tiny",
+            "value":"초소용량(%1$d~%2$dKB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_all",
+            "value":"파일 삭제",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"privacy_content_second_divide",
+            "value":"당사는 이 서비스를 제공하는 데 필요한 개인정보만을 수집하고 정보가 안전하게 보호될 수 있도록 적절한 조치를 취합니다. 상세정보는 %s의 내용을 참조합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_not_exist",
+            "value":"%s이(가) 존재하지 않습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_month",
+            "value":"지난달",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_move_abort_alert",
+            "value":"파일을 복사/이동 중입니다. 해당 작업을 완료하지 않고 끝내시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pasteboard_dialog_title",
+            "value":"참고",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"next",
+            "value":"앞으로",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_type",
+            "value":"파일 유형",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"device_connect_success",
+            "value":"연결됨",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"copy_file",
+            "value":"파일 복사",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"forget_password",
+            "value":"암호를 잊어버렸나요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"list_view",
+            "value":"목록",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"same_name_folder_recover",
+            "value":"대상에 이미 \"%s\" 이름의 폴더가 포함되어 있습니다. 그래도 복원하시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path",
+            "value":"이미지 및 비디오만 갤러리 디렉토리에 저장할 수 있습니다. 기타 파일은 여기에 저장할 수 없습니다. 계속하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"where",
+            "value":"위치",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"waiting_progress_message",
+            "value":"기다려 주십시오…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"permission_list_title",
+            "value":"파일 권한",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"folder_size",
+            "value":"크기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_recent_record",
+            "value":"최근 기록 삭제",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"net_disconnect",
+            "value":"인터넷에 연결되지 않았습니다. 네트워크 설정을 확인하세요.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"play",
+            "value":"재생",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_in_file",
+            "value":"넣기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no",
+            "value":"아니요",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"about_personal_info",
+            "value":"수집되는 개인정보",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_files_error",
+            "value":"파일 목록을 가져오지 못했습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"usage_help",
+            "value":"도움말",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"build_new_folder",
+            "value":"새 폴더",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"display_extension_name",
+            "value":"모든 파일 확장 표시",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"give_feedback",
+            "value":"피드백",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cannot_open_this_file",
+            "value":"열 수 없음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_mode",
+            "value":"다음으로 열기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"confirm_delete_tag_text",
+            "value":"이 태그는 추가한 파일에서 제거됩니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"anonymous_login",
+            "value":"익명 로그인",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"this_week",
+            "value":"이번 주",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"grant_permission",
+            "value":"액세스 허용",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_folder",
+            "value":"\"%s\"은(는) 이미 존재합니다. 이 폴더를 병합하시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"before_dawn",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_new_tag",
+            "value":"새 태그 추가",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"order_time",
+            "value":"시간",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"big_file",
+            "value":"대용량 파일",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"exe",
+            "value":"앱",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"always_allow_desc",
+            "value":"확인 없이 모바일 데이터를 사용하여 파일을 업로드, 다운로드 또는 재생할 수 있습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_delete_time",
+            "value":"삭제됨: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent",
+            "value":"최근",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ppt",
+            "value":"프레젠테이션",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_support_characters_new",
+            "value":"다음은 지원하지 않음: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"completeName",
+            "value":"완전한 파일 이름을 입력하십시오",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unable_open_file_dialog_title",
+            "value":"이 파일을 열 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"newWindow",
+            "value":"새 창 표시",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"device_connect_fail",
+            "value":"%s에 대한 연결이 끊겼습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"more",
+            "value":"더 보기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_file",
+            "value":"열기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cut",
+            "value":"잘라내기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"continue",
+            "value":"계속",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"input_name",
+            "value":"태그 이름 입력",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"build_folder_failed",
+            "value":"새 폴더를 만들지 못했습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"permission_internet",
+            "value":"인터넷",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_rule",
+            "value":"정렬",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"redo_s",
+            "value":"다시 실행: %s(R)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"resident_security_tips",
+            "value":"이 앱은 선택한 항목에만 액세스할 수 있음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_progress_content",
+            "value":"복사됨: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"same_name_file_recover",
+            "value":"대상에 이미 \"%s\" 이름의 파일이 포함되어 있습니다. 그래도 복원하시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_format_fail",
+            "value":"포맷에 실패했습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_delete",
+            "value":"휴지통",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_appdata",
+            "value":"앱데이터",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pinyinT2Z",
+            "value":"T~Z(중국어 로마자 표기법)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"this_year",
+            "value":"올해",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"dimension",
+            "value":"치수",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_both",
+            "value":"모두 유지",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_purple",
+            "value":"보라색",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_music",
+            "value":"음악",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_date",
+            "value":"날짜",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge",
+            "value":"병합",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ip_address_error",
+            "value":"잘못된 형식입니다",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"turn_scrren_and_intelligent_analysis",
+            "value":"장치는 장치가 연결되어 있고 화면이 꺼져 있는 동안 시간이 지남에 따라 검색 결과가 더 정확해지도록 자동으로 파일을 분석합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"keep",
+            "value":"모두 유지",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"currently_in_use",
+            "value":"%s(현재)",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"version_is_latest",
+            "value":"최신 버전입니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_version",
+            "value":"업데이트 확인",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"filter_browsed_samll_images",
+            "value":"검색 > 이미지에 있는 작은 이미지를 필터링합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"touch_share_not_support_folder",
+            "value":"공유된 폴더는 지원되지 않습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all_content_two",
+            "value":"삭제된 항목은 복구할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"yes",
+            "value":"예",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"redo",
+            "value":"다시 실행",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"desktop",
+            "value":"홈 화면",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"re_enter",
+            "value":"암호 다시 입력",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_original_path",
+            "value":"원래 경로: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_limit_exceed_msg",
+            "value":"한 번에 최대 %d개의 파일을 공유할 수 있습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_perm_confirm",
+            "value":"삭제",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unknown_error_occurred",
+            "value":"알 수 없는 오류",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"initialization",
+            "value":"초기화 중…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_file",
+            "value":"파일 복원",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"loading",
+            "value":"로드 중…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_video_to_gallery_album_for_picker",
+            "value":"비디오만 %1$s 디렉토리에 저장할 수 있습니다. 기타 파일은 여기에 저장할 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_complete_tips",
+            "value":"선택한 파일을 영구적으로 삭제하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"net_work_disconnect",
+            "value":"연결된 인터넷이 없습니다. 네트워크 설정을 확인하십시오.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_file",
+            "value":"파일 이동",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"notice_when_over_100mb",
+            "value":"파일이 %dMB를 넘는 경우에 묻기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"rotate",
+            "value":"회전",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pinyinA2F",
+            "value":"A~F(중국어 로마자 표기법)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"externalDisk",
+            "value":"SD 카드",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_file_delete",
+            "value":"선택한 파일이 영구적으로 삭제됩니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_no_content",
+            "value":"지난 %d일간 파일 없음",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"grid_view",
+            "value":"격자",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"return_to_previous_step",
+            "value":"뒤로",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pad_progress_bar_title_copy_file",
+            "value":"복사",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"prompt_recognition",
+            "value":"지문 또는 얼굴 데이터가 변경되면 안전 장치에서 암호를 요청하도록 하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cellular_transmission_title",
+            "value":"모바일 네트워크를 사용 중입니다",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recentlyDeleted",
+            "value":"최근 삭제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"secret_security_question_limit",
+            "value":"길이 제한에 도달했습니다",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"last_open_time",
+            "value":"지난 액세스",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_notify_result",
+            "value":"성공: %1$d, 실패: %2$d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_grey",
+            "value":"회색",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"exits",
+            "value":"끝내기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"grouping",
+            "value":"그룹화 기준",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"disconnect",
+            "value":"연결 해제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enter_password",
+            "value":"암호 입력",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"big_icon",
+            "value":"큰 아이콘",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"connected",
+            "value":"연결",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"otherApp",
+            "value":"앱에서 열기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_tags",
+            "value":"모든 태그",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_one",
+            "value":"어머니의 결혼 전 성은 무엇인가요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"no_match_result",
+            "value":"결과 없음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_failed",
+            "value":"작업에 실패했습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel_multiple_choices",
+            "value":"모두 선택 취소",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"prompt_recognition_dialog",
+            "value":"참고",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_system_file_tips",
+            "value":"시스템 폴더는 삭제할 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"picker_security_tips",
+            "value":"이 앱은 선택한 파일에만 액세스할 수 있음",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_all_selection",
+            "value":"모두 선택 취소",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"folder_not_exist",
+            "value":"폴더가 존재하지 않습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"incorrect_username_or_password",
+            "value":"잘못된 사용자 이름 또는 암호입니다",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"password_reset_failed",
+            "value":"암호를 재설정할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"username_required",
+            "value":"비워둘 수 없습니다",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"stop_recover_file",
+            "value":"중단",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"authenticate_your_identity",
+            "value":"신원 확인",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"pc_filemanager_file_not_exist",
+            "value":"\"%s\"이(가) 존재하지 않습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"undo_s",
+            "value":"실행취소: %s(U)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_file_name",
+            "value":"파일 이름",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"suffixErr",
+            "value":"파일 확장자를 변경할 경우 파일을 사용하지 못하게 될 수 있습니다. 그래도 계속하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"activate_now",
+            "value":"실행",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"association",
+            "value":"연결",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"letterA2H",
+            "value":"A~H",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path_for_picker",
+            "value":"이미지 및 비디오만 갤러리 디렉토리에 저장할 수 있습니다. 기타 파일은 여기에 저장할 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"share_failed_msg",
+            "value":"공유할 수 없습니다. 한 번에 최대 %d개 항목을 공유할 수 있습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"associate_fingerprint_fail",
+            "value":"지문 데이터를 연결할 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_supported_filesystem",
+            "value":"파일 시스템은 지원되지 않습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"yesterday",
+            "value":"어제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete",
+            "value":"삭제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"dusk",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"view",
+            "value":"보기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"wechat_not_support_share_notice",
+            "value":"WeChat으로 공유하려면 WeChat에서 채팅을 열고 파일을 선택하여 전송합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_association",
+            "value":"나중에",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_file_tag",
+            "value":"태그 추가",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_have_same_name",
+            "value":"이미 이 폴더에 이름이 같은 파일이 존재합니다. 바꾸시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"name",
+            "value":"이름",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"audio",
+            "value":"오디오",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scanning",
+            "value":"장치 검색 중…",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"clear_all",
+            "value":"삭제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"PC_FILE_START_FORMAT",
+            "value":"포맷",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_bar_title_move_file",
+            "value":"이동",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"undo",
+            "value":"실행취소",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_support_drag_in_page",
+            "value":"여기에 파일을 드롭할 수 없습니다. \"내 휴대폰\" 디렉토리에 드롭해 보십시오.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_change_date",
+            "value":"수정일",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"exit_multiple_choices",
+            "value":"선택 취소",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_modified_time",
+            "value":"수정됨: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_format",
+            "value":"포맷",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"apply_to_all",
+            "value":"모두 적용",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_num_reached_limit",
+            "value":"최대 태그 수만큼 추가했습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"default",
+            "value":"기본값",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"share_folder_no_content",
+            "value":"선택한 폴더는 비어있습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_type",
+            "value":"파일 유형: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"print",
+            "value":"인쇄",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"copy_fail_content_dlg",
+            "value":"%s을(를) 복사할 수 없습니다. 확인하시기 바랍니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"associate_data_change_fail",
+            "value":"데이터를 연결할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_amount",
+            "value":"포함: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"Emptying",
+            "value":"휴지통 비우는 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_path",
+            "value":"다음으로 저장",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"contains_special_characters",
+            "value":"파일 이름에는 []\"':/*?<>|`{}의 문자가 포함될 수 없습니다",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"child_folder_confirm",
+            "value":"확인",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save_as",
+            "value":"다음으로 저장",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"favorite_title",
+            "value":"즐겨찾기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_default",
+            "value":"기본 순서로 정렬",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"refresh",
+            "value":"새로 고침",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_file",
+            "value":"\"%s\"은(는) 이미 존재합니다. 바꾸시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_four",
+            "value":"가장 좋아하는 축구팀은 어디인가요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"list_list",
+            "value":"목록 보기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"blank",
+            "value":"(공백)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"oversized",
+            "value":"초대용량(>%dGB)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"xls",
+            "value":"스프레드시트",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge_folder_content",
+            "value":"폴더를 병합하면 모든 새 항목이 유지됩니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_name_exists",
+            "value":"\"%s\" 이름의 태그가 이미 있습니다. 이름을 변경하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_safe_subtitle",
+            "value":"안전 장치는 중요한 파일을 보관할 수 있는 안전한 장소입니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"version_info",
+            "value":"버전",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"get_folder_size_tips",
+            "value":"계산 중...",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_image_to_gallery_album",
+            "value":"이미지만 %1$s 디렉토리에 저장할 수 있습니다. 기타 파일은 여기에 저장할 수 없습니다. 계속하시겠습니까?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enter_custom_question",
+            "value":"사용자 설정 질문 입력",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"save",
+            "value":"저장",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"biometric_change_verification",
+            "value":"생체 인식 변경 확인",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"confirm_delete_tag_title",
+            "value":"\"%s\" 태그를 삭제하시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"morning",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"videos",
+            "value":"동영상",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"save_and_close",
+            "value":"저장 및 닫기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_one",
+            "value":"아버지 성함이 무엇인가요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"authing_file",
+            "value":"파일 \"%s\" 선택",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"apply_all",
+            "value":"모두 적용",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_services_dialog_confirm",
+            "value":"동의 및 계속",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"menu_select_all",
+            "value":"모두 선택",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_space_left",
+            "value":"디스크 공간이 부족합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_selected",
+            "value":"선택한 항목 없음",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"fingerprint_recognition_dialog",
+            "value":"지문 연결",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_location",
+            "value":"저장 공간 위치",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"password_error",
+            "value":"잘못된 암호입니다. 다시 시도하십시오.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"unspecified",
+            "value":"지정되지 않음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cannot_delete_app_data",
+            "value":"선택하신 데이터에 앱 데이터가 포함되어 있습니다. 삭제하면 앱이 제대로 작동하지 않을 수 있습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"wlan",
+            "value":"WLAN Direct",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"app_data_write_limit",
+            "value":"이 디렉토리는 사용자 모드에서 읽기 전용입니다. 개발자 모드를 실행하고 다시 시도하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"click_view_detail",
+            "value":"자세히 알아보기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unlink_account",
+            "value":"암호와 보안 질문 답변을 기억하시기 바랍니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"create_file_name",
+            "value":"신규 %1$s %2$s%3$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add",
+            "value":"신규",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"space_not_enough",
+            "value":"공간이 부족합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"move_progress_content",
+            "value":"이동됨: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_question_three",
+            "value":"중학교 이름이 무엇이었나요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"new_password",
+            "value":"새 암호",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"ascertain",
+            "value":"확인",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"notify_result",
+            "value":"%1$s, %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_device_corresponding_to_ip",
+            "value":"장치를 찾을 수 없음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_force_remove",
+            "value":"계속 제거",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"bind_face_change",
+            "value":"얼굴 데이터가 변경되었습니다. 암호를 다시 확인하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cancel",
+            "value":"취소",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"personal",
+            "value":"개인",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_documents",
+            "value":"문서",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"display_application_data",
+            "value":"앱 데이터 표시",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_week",
+            "value":"지난주",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"size",
+            "value":"크기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename_have_same_name",
+            "value":"이미 이 폴더에 이름이 같은 파일이 존재합니다. 다른 이름을 입력하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"stop",
+            "value":"종료",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_associated",
+            "value":"연결 해제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"authing_folder",
+            "value":"폴더 \"%s\" 선택",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"merge_will_combine_two_folders_and_keep_all_new_items",
+            "value":"폴더를 병합하면 모든 새 항목이 유지됩니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unknown",
+            "value":"기타",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"cancel_fingerprint_recognition",
+            "value":"지문이 연결 해제되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"note",
+            "value":"참고",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"agree",
+            "value":"동의",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pdf",
+            "value":"PDF",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"replace",
+            "value":"교체",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recent_delete_clear",
+            "value":"휴지통을 비우시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pc_movies",
+            "value":"비디오",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"can_not_drag_in",
+            "value":"이 디렉토리로 드래그할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"detail_position",
+            "value":"위치: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_all",
+            "value":"모두 선택",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_extension_changed",
+            "value":"파일 확장자를 변경할 경우 파일을 사용하지 못하게 될 수 있습니다. 그래도 변경하시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"modify_security_question",
+            "value":"보안 질문 변경",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_new_file_tag",
+            "value":"새 태그 추가",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"check_more",
+            "value":"더 보기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"is_opening",
+            "value":"\"%s\" 여는 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"deleting_file",
+            "value":"\"%s\" 삭제 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"username",
+            "value":"사용자 이름",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"midnight",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_progress_content",
+            "value":"드래그 앤 드롭: %1$s/%2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"dawn",
+            "value":"%1$s %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"add_tag",
+            "value":"태그 추가",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"cellular_transmission_content",
+            "value":"%s의 모바일 데이터가 사용됩니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"picture",
+            "value":"이미지",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"persist_permission_import",
+            "value":"가져오기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_size",
+            "value":"파일 크기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_name_illegal_warning",
+            "value":"태그 이름에는 다음 항목이 포함될 수 없음: []\"':/*?<>|`{}",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picture_and_video_migrate_tip",
+            "value":"이미지 및 비디오는 갤러리 앱으로 이동되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hostname_or_ip_address",
+            "value":"호스트 이름 또는 IP 주소",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sameName",
+            "value":"파일 이름이 이미 사용 중입니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"permission_storage_media_and_files_description",
+            "value":"이미지 및 비디오 데이터를 선택할 수 있도록 허용하는 데 사용됩니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_fail",
+            "value":"복원할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"modified_time",
+            "value":"수정됨",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"merge_folder_tip_new",
+            "value":"이미 이 위치에 \"%s\" 이름의 폴더가 존재합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"images",
+            "value":"이미지",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"fingerprint_association",
+            "value":"지문이 연결되었습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_tips",
+            "value":"파일에 비공개 액세스",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"associate_faces_fail",
+            "value":"얼굴 인식을 연결할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"download_manager",
+            "value":"다운로드 관리자",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_time",
+            "value":"시간별 정렬",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"connection_settings",
+            "value":"설정",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"open_in_new_window",
+            "value":"새 창에서 열기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"privacy_content_third",
+            "value":"위 방침을 주의 깊게 읽어주십시오. 동의 및 계속을 탭하면 해당 방침에 동의함을 의미합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"last_step",
+            "value":"이전",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"addFolder_fail",
+            "value":"새 폴더를 만들지 못했습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"pasting",
+            "value":"붙여넣기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"small_icon",
+            "value":"작은 아이콘",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_new",
+            "value":"신규",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"ringtone",
+            "value":"다음으로 설정",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"path_not_exist",
+            "value":"존재하지 않는 경로입니다. 확인하고 다시 시도하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"operate_deny",
+            "value":"온라인 전용 파일로 수행 불가",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_as",
+            "value":"다음으로 열기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"image",
+            "value":"이미지",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"apply_to_all_folders",
+            "value":"모든 폴더에 적용",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"openFolder",
+            "value":"폴더 열기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"secret_security_questions_five",
+            "value":"희망하는 직업은 무엇인가요?",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"mul_nested_folders_save_files_to_gallery_album",
+            "value":"갤러리 디렉토리 내에 하위 폴더가 있는 폴더를 만들 수 없습니다. 이에 따라 이미지 및 비디오가 재배치됩니다. 계속하시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"verify_security_question",
+            "value":"보안 질문 답변",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"storage_total_size",
+            "value":"전체 %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"quick_view",
+            "value":"미리보기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"storage_stem_all",
+            "value":"%1$s, %2$s | %3$s / %4$s 사용 가능",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"OtherLocation",
+            "value":"기타 위치",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"setting_title_about",
+            "value":"정보",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"paste_conflict_diglog_btn_message",
+            "value":"현재 파일을 복사 또는 이동하는 중입니다. 다른 전송을 시작하기 전에 현재 전송을 종료하십시오.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_refresh_page_tips",
+            "value":"업데이트 중… 기다려 주십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"screen_off_intelligent_analysis",
+            "value":"정확한 검색 더 보기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"detail_size",
+            "value":"파일 크기: %s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recycle",
+            "value":"삭제",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"quick_access_path_not_found",
+            "value":"경로를 찾을 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"sound_recorder_not_exist",
+            "value":"앱이 존재하지 않습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"sort_by_name",
+            "value":"이름순 정렬",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_access_files_tips",
+            "value":"파일에 비공개 액세스",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"security_access_files_details",
+            "value":"여기에 파일이 표시되지만, 이 앱은 선택한 파일에만 액세스할 수 있습니다. %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"always_notice",
+            "value":"항상 먼저 묻기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"source_from",
+            "value":"출처: %s",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files_clean",
+            "value":"중복 파일 삭제",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scan_now",
+            "value":"지금 검색",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files_subheading",
+            "value":"중복 파일이 %s의 저장 공간을 차지하고 있습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"careful_cleaning",
+            "value":"주의",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"to_clean_up",
+            "value":"삭제하기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"duplicate_files",
+            "value":"중복 파일",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_signed_privacy_tip",
+            "value":"이 기능을 사용하려면 먼저 파일 앱으로 이동하여 파일 및 개인 정보 보호에 대한 방침과 권한 공지에 동의하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_support_modified_directory",
+            "value":"이 디렉토리는 수정할 수 없습니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_Guest_account_detail",
+            "value":"키보드에서 Windows+R을 눌러 실행 상자를 불러온 다음 \"gpedit.msc\"를 입력하고 Enter를 누릅니다. 로컬 컴퓨터 정책 > 컴퓨터 구성 > Windows 설정 > 보안 설정 > 로컬 정책 > 사용자 권한 할당으로 이동합니다. 그런 다음 \"네트워크에서 이 컴퓨터에 대한 액세스 거부\"를 두 번 클릭하고 목록에서 \"게스트\"를 제거합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"select_num",
+            "value":"(%d)",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"junk_file",
+            "value":"정크 파일",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"support_argeement_configuration_detail",
+            "value":"제어판을 연 다음 프로그램 > Windows 기능 켜기 또는 끄기로 이동합니다. \"SMB 1.0/CIFS 파일 공유 지원\"을 찾고 체크박스를 선택합니다. 확인을 클릭하고 컴퓨터를 다시 시작합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recommended_cleanup",
+            "value":"추천",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"video_format",
+            "value":"비디오 형식",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"restore_page_button",
+            "value":"복원",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"setting_properties",
+            "value":"로컬 계정에 대한 공유 및 보안 모델 설정하기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"setting_properties_detail_new",
+            "value":"로컬 정책에서 보안 옵션을 열어 \"네트워크 액세스: 로컬 계정에 대한 공유 및 보안 모델\"을 두 번 클릭하고 \"게스트 전용\"을 선택합니다. 확인을 클릭합니다. \"계정: 로컬 계정의 빈 암호 사용을 콘솔 로그온으로만 제한\"을 두 번 클릭하고 \"종료됨\"을 선택합니다. 확인을 클릭합니다. Win + R을 눌러 실행 창을 엽니다. \"cmd\"를 입력하여 명령 프롬프트를 엽니다. 명령 프롬프트에서 \"gpupdate /force\"를 입력하고 Enter를 누릅니다. 정책 업데이트가 완료될 때까지 기다립니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"move_file_to_recycle",
+            "value":"최근 삭제로 이동된 항목은 %d일 후 영구적으로 삭제됩니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close_pwd_protection",
+            "value":"암호 보안 종료",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hide_source",
+            "value":"출처 숨기기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"enable_Guest_account_detail",
+            "value":"\"이 PC\"를 마우스 오른쪽 버튼으로 클릭한 다음 관리 > 로컬 사용자 및 그룹 > 사용자로 이동합니다. 여기에서 \"게스트\"를 마우스 오른쪽 버튼으로 클릭하고 \"속성\"을 선택한 다음 \"계정이 종료됨\"을 선택 취소하십시오. 마지막으로 \"적용\"을 클릭한 다음 \"확인\"을 클릭합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_shared_files_detail_new",
+            "value":"공유할 폴더를 마우스 오른쪽 버튼으로 클릭하여 속성 > 공유 중 > 공유로 이동하고 \"게스트\" 또는 \"모든 사용자\"를 선택한 후 \"추가\"를 클릭합니다. 오른쪽 화살표를 클릭하여 액세스 권한을 설정한 다음 \"공유\"를 클릭합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"windows_version1",
+            "value":"Windows Ultimate 또는 Professional",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"windows_version2",
+            "value":"Windows Home",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"scan_more_cleanable_files",
+            "value":"캐시된 광고 및 기타 불필요한 파일을 검색합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_green",
+            "value":"녹색",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"picture_format",
+            "value":"이미지 형식",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"enable_scan",
+            "value":"완료하기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"create_new_album",
+            "value":"새 앨범",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_color_yellow",
+            "value":"노란색",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close_pwd_protection_detail",
+            "value":"제어판을 연 다음 네트워크 및 인터넷 > 네트워크 및 공유 센터 > 고급 공유 설정 변경 > 모든 네트워크로 이동합니다. 암호로 보호된 공유에서 \"암호로 보호된 공유 끄기\"를 선택한 다음 \"변경 사항 저장\"을 클릭합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"all_images",
+            "value":"전체",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"anonymous_environment_configuration",
+            "value":"익명 환경 설정하기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"hidisk_file_size_range_larger_gb",
+            "value":"%dGB 초과",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hidisk_file_size_range_smaller_kb",
+            "value":"%dKB 이하",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"add_shared_files",
+            "value":"공유 파일 추가하기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"support_argeement",
+            "value":"지원 프로토콜 설정",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"just_now",
+            "value":"방금",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"recently_deleted_dialog_tip",
+            "value":"최근 삭제로 이동",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"restore_confirm_tips",
+            "value":"최근에서 이 출처의 파일을 복원하시겠습니까?",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_Guest_account",
+            "value":"게스트 제한 제거하기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"all_videos",
+            "value":"전체",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"step4",
+            "value":"4단계",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"step5",
+            "value":"5단계",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"step1",
+            "value":"1단계",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"step2",
+            "value":"2단계",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"step3",
+            "value":"3단계",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tag_color_cyan",
+            "value":"청록색",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"space_cleanup",
+            "value":"정리",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"tag_color_red",
+            "value":"빨간색",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_to_change_sort",
+            "value":"드래그하여 순서 변경",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"files_source_no_appear",
+            "value":"이 원본의 파일이 최근 항목에 더 이상 나타나지 않습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"recent_delete_file_save_day",
+            "value":"파일은 표시된 일 수(최대 %d일)가 지나면 영구적으로 삭제됩니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"manager_hidden",
+            "value":"최근에 숨겨진 파일 출처 관리",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"document_format",
+            "value":"문서 형식",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"no_content",
+            "value":"콘텐츠 없음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"enable_Guest_account",
+            "value":"게스트 계정 실행하기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"audio_format",
+            "value":"오디오 형식",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"hide_card",
+            "value":"숨기기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"gallery_change_suffix",
+            "value":"갤러리 파일의 파일 확장명은 변경할 수 없습니다. 해당 파일을 '내 휴대폰'의 공개 디렉토리로 복사하거나 이동한 후 다시 시도하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_item_down",
+            "value":"%s 아래로 이동",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_item_up",
+            "value":"%s 위로 이동",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"rename_single_character_fail",
+            "value":"이름 변경에 실패했습니다. 대상 이름을 단일 문자로 변경할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"space_not_enough_title",
+            "value":"저장 공간 부족",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_saved_to",
+            "value":"파일이 %s에 저장되었습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"low_memory_notice",
+            "value":"장치 저장 공간을 관리하려면 설정 > 저장 공간으로 이동합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unneeded",
+            "value":"아니요",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_as_wallpaper",
+            "value":"배경화면으로 설정",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_now",
+            "value":"지금 이동",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"device_space_usage",
+            "value":"%2$s 중 %1$s 사용함",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"transfer_completed",
+            "value":"전송 완료",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"need",
+            "value":"예",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"set_wallpaper_not_support",
+            "value":"작은 창에서는 배경화면을 편집할 수 없습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"have_connected",
+            "value":"연결됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"not_connected",
+            "value":"연결되지 않음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level_and_expand",
+            "value":"레벨 %d 확장됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level_and_unexpand",
+            "value":"레벨 %d 확장되지 않음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_menu_updated",
+            "value":"새로운 메뉴 디자인",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_menu_updated_contents",
+            "value":"새로운 메뉴 아이콘을 통해 더 직관적인 탐색이 가능합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"transfer_progress_visible_contents",
+            "value":"라이브 보기로 파일 전송 진행률을 쉽게 모니터링합니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"media_browse_smooth_contents",
+            "value":"이미지와 동영상을 열면 전체 화면으로 표시됩니다.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"media_browse_smooth",
+            "value":"더 원활한 보기",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"transfer_progress_visible",
+            "value":"실시간 전송 추적",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"gallery_change_suffix_with_pad",
+            "value":"갤러리 파일의 파일 확장명은 변경할 수 없습니다. 해당 파일을 \"내 태블릿\"의 공개 디렉터리로 복사하거나 이동하고 다시 시도하십시오.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"not_support_drag_in_page_with_pad",
+            "value":"여기에는 파일을 드롭할 수 없습니다. \"내 태블릿\" 디렉터리에 드롭해 보십시오.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"collapse_menu_bar",
+            "value":"메뉴 표시줄 닫기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"list_grid_toggle",
+            "value":"%s 옵션으로 전환됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"button",
+            "value":"버튼",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unchecked",
+            "value":"선택되지 않음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_back",
+            "value":"뒤로 돌아가기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unfavorable",
+            "value":"즐겨찾기 해제됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"close",
+            "value":"닫기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"play_control_bar_display",
+            "value":"재생 제어가 표시 중입니다. 비디오에 걸쳐 스와이프하여 재생 위치를 조정합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"favorited",
+            "value":"즐겨찾기됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reset_succeeded",
+            "value":"재설정 성공",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"shielding",
+            "value":"차단",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"open_menu_bar",
+            "value":"메뉴 표시줄 열기",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unexpanded",
+            "value":"확장되지 않음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"play_control_bar_hidden",
+            "value":"재생 제어가 숨겨져 있습니다. 비디오에 걸쳐 스와이프하여 재생 위치를 조정합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drag_to_change_sort_description",
+            "value":"두 번 탭하고 길게 누른 상태로 드래그하여 순서 변경",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"select_reset",
+            "value":"재설정",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"expanded",
+            "value":"확장됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"video_broadcast",
+            "value":"비디오: %1$s, 길이 %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"checked",
+            "value":"선택됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"drop_down_list",
+            "value":"드롭다운 목록",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"equipment_temperature_is_too_high",
+            "value":"장치 온도가 너무 높음",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"already_deselect_all",
+            "value":"모두 선택 해제됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"already_select_all",
+            "value":"모두 선택됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"checked_accessibility",
+            "value":"한 손가락으로 두 번 탭하여 선택",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"unchecked_accessibility",
+            "value":"한 손가락으로 두 번 탭하여 선택 취소",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_checkbox_unChecked",
+            "value":"선택되지 않음, 체크박스, 한 손가락으로 두 번 탭하여 선택",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_screenshot",
+            "value":"스크린샷",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_checkbox_checked",
+            "value":"선택됨, 체크박스, 한 손가락으로 두 번 탭하여 선택 취소",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_camera",
+            "value":"카메라",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_screen_recording",
+            "value":"화면 녹화",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"new_version_updates_progress",
+            "value":"자세히 알아보려면 탭합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"new_features_online",
+            "value":"새 기능 사용 가능",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"click_accessibility",
+            "value":"두 번 탭하여 활성화",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_place_up",
+            "value":"%s 위에 배치됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_edit_place_down",
+            "value":"%s 아래에 배치됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_not_exist_maybe_removed_renamed_deleted",
+            "value":"파일 \"%1$s\"은(는) 존재하지 않습니다. 이동되었거나, 이름이 변경되었거나, 삭제되었을 수 있습니다. 파일을 복원하고 다시 시도하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"source_file_not_exist_maybe_removed_renamed_deleted",
+            "value":"이 파일은 존재하지 않습니다. 이동되었거나, 이름이 변경되었거나, 삭제되었을 수 있습니다. 파일을 복원한 후 다시 시도하세요.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"securely_remove",
+            "value":"안전하게 제거",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"arrive_path_select_end_level",
+            "value":"이 디렉터리에 더 이상의 레벨이 없습니다",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"path_picker_folder_level",
+            "value":"레벨 %d",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_expand",
+            "value":"확장됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"accessibility_unexpand",
+            "value":"축소됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reverse_rotation",
+            "value":"시계 반대 방향으로 %s도 회전",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"help_and_feedback",
+            "value":"도움말 및 피드백",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tip_popup_context_one",
+            "value":"%1$s. DroiTong 또는 EasyAbroad에서 실행되는 앱의 콘텐츠를 보려면 %2$s(으)로 이동합니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"tip_popup_title",
+            "value":"로컬 갤러리 콘텐츠만 여기에 표시됨",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"go_to_gallery",
+            "value":"갤러리",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"two_placeholders",
+            "value":"%1$s > %2$s",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_fusion_album_warning",
+            "value":"이 앨범에는 DroiTong 또는 EasyAbroad에서 실행되는 앱의 파일이 포함되어 있습니다. 해당 항목을 삭제하려면 \"호환 데이터\"로 이동하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"remote_file_not_exist",
+            "value":"파일을 붙여넣지 못했습니다. \"%s\" 파일이 수정되었거나, 이름이 변경되었거나, 장치 연결 문제가 있을 수 있습니다. 확인하고 다시 시도하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"remote_source_file_not_exist",
+            "value":"파일을 붙여넣지 못했습니다. 원래 파일이 수정되었거나, 이름이 변경되었거나, 장치 연결 문제가 있을 수 있습니다. 확인하고 다시 시도하십시오.",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

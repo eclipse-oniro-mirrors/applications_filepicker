@@ -1,0 +1,5287 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "文件管理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "MainAbility_desc",
+      "value": "文件管理"
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "文件管理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recently_deleted_dialog_tip",
+      "value": "移动到最近删除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_file_to_recycle",
+      "value": "移动到最近删除后最长保留 %d 天，之后将永久删除。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "common",
+      "value": "通用",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "newWindow",
+      "value": "开启新窗口时打开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "display_extension_name",
+      "value": "显示所有文件扩展名",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "display_application_data",
+      "value": "显示应用数据",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "quick_access",
+      "value": "快速访问",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_location",
+      "value": "存储位置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recent",
+      "value": "最近",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "desktop",
+      "value": "桌面",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "user",
+      "value": "用户",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_type",
+      "value": "文件种类：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "download_receive",
+      "value": "下载与接收",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "bluetooth",
+      "value": "蓝牙",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "share_folder_name",
+      "value": "分享",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "wlan",
+      "value": "WLAN",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recent_delete",
+      "value": "回收站",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "my_pc",
+      "value": "我的电脑",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "my_pad",
+      "value": "我的平板",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "default",
+      "value": "默认",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_name",
+      "value": "文件名称：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_date",
+      "value": "日期",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_display_type",
+      "value": "类型",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_size",
+      "value": "文件大小：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "folder",
+      "value": "文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image",
+      "value": "图片",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "video",
+      "value": "视频",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "audio",
+      "value": "音频",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "public",
+      "value": "公共",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "personal",
+      "value": "个人",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "letterA2H",
+      "value": "A-H",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "letterI2P",
+      "value": "I-P",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "letterQ2Z",
+      "value": "Q-Z",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pinyinA2F",
+      "value": "拼音 A-F",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pinyinG2L",
+      "value": "拼音 G-L",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pinyinM2S",
+      "value": "拼音 M-S",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pinyinT2Z",
+      "value": "拼音 T-Z",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "today",
+      "value": "今天",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yesterday",
+      "value": "昨天",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "this_week",
+      "value": "本周",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "last_week",
+      "value": "上周",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "this_month",
+      "value": "本月",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "last_month",
+      "value": "上月",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "this_year",
+      "value": "今年",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "long_ago",
+      "value": "很久以前",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unspecified",
+      "value": "未指定的",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "zero",
+      "value": "空 (%d KB)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tiny",
+      "value": "极小 (%1$d-%2$d KB)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "small",
+      "value": "小 (%1$d KB-%2$d MB)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "medium",
+      "value": "中等 (%1$d-%2$d MB)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "big",
+      "value": "大 (%1$d MB-%2$d GB)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "oversized",
+      "value": "超大 (>%d GB)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unknown",
+      "value": "其他",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_tag_group",
+      "value": "无标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "open_in_new_window",
+      "value": "在新窗口中打开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "open",
+      "value": "打开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "open_folder",
+      "value": "打开所在文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete",
+      "value": "删除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "preview",
+      "value": "预览",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_details",
+      "value": "详情",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_information",
+      "value": "信息",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "rename",
+      "value": "重命名",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy",
+      "value": "复制",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cut",
+      "value": "剪切",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ringtone",
+      "value": "设置为",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "share",
+      "value": "分享",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "open_mode",
+      "value": "打开方式",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "sort_rule",
+      "value": "排序方式",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "build_new_folder",
+      "value": "新建文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "none",
+      "value": "无",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "multiple_choices",
+      "value": "多选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "exit_multiple_choices",
+      "value": "退出多选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "name",
+      "value": "名称",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "category",
+      "value": "类别",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "size",
+      "value": "大小",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_permanent",
+      "value": "彻底删除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore",
+      "value": "还原",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "paste",
+      "value": "粘贴",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "clear_delete",
+      "value": "清空回收站",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "clear_recent_record",
+      "value": "删除访问记录",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancel_multiple_choices",
+      "value": "取消多选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "group_and_sort",
+      "value": "分组与排序",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "sort",
+      "value": "排序",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "grouping",
+      "value": "分组",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "view",
+      "value": "视图",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "grid_view",
+      "value": "宫格视图",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "list_view",
+      "value": "列表视图",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "column_view",
+      "value": "分栏视图",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "select_all",
+      "value": "全选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "next",
+      "value": "前进",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "back",
+      "value": "后退",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancel_all_selection",
+      "value": "取消全选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "check_more",
+      "value": "查看更多",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "more",
+      "value": "更多",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "compressed",
+      "value": "压缩包",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "doc",
+      "value": "文档",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "exe",
+      "value": "安装包",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "music",
+      "value": "音频",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pdf",
+      "value": "pdf 文档",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "picture",
+      "value": "图片",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ppt",
+      "value": "演示文稿",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "text",
+      "value": "文本",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "xls",
+      "value": "表格",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recent_delete_clear",
+      "value": "是否清空回收站？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancel",
+      "value": "取消",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm",
+      "value": "确定",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_and_close",
+      "value": "保存并关闭",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_perm_confirm",
+      "value": "彻底删除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_clear_confirm",
+      "value": "清空",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "check",
+      "value": "查看",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "connected",
+      "value": "连接",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "set_up",
+      "value": "设置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "build_folder_failed",
+      "value": "新建文件夹失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "rename_have_same_name",
+      "value": "已有同名文件，请重新输入。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_have_same_name",
+      "value": "已有同名文件，是否替换？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "contains_special_characters",
+      "value": "文件名不能包含：[]\"':/*?<>|`{}",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_file_failed",
+      "value": "保存文件失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_edit_item_drag",
+      "value": "%s已托起",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_extension_changed",
+      "value": "如果要改变文件扩展名，可能会导致文件不可用。确定更改？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cannot_open_this_file",
+      "value": "不能打开此文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "authing_folder",
+      "value": "请选择文件夹“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "authing_file",
+      "value": "请选择文件“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "authing_file_not_exist",
+      "value": "不存在“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_match_result",
+      "value": "没有匹配的结果",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "the_location_already_contains_this_file_title",
+      "value": "是否替换位置中的文件？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "the_location_already_contains_this_file",
+      "value": "该位置已包含一个名为“%s”的文件。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_both",
+      "value": "保留两者",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop",
+      "value": "停止",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "replace",
+      "value": "替换",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "the_location_already_contains_this_folder",
+      "value": "该位置已包含一个名为“%s”的文件夹。是否替换位置中的文件夹？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge_will_combine_two_folders_and_keep_all_new_items",
+      "value": "合并将结合两个文件夹，保留所有新增项目",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge",
+      "value": "合并",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "apply_to_all_files",
+      "value": "应用到全部文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "apply_to_all_folders",
+      "value": "应用到全部文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "create_new_folder",
+      "value": "新建文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save",
+      "value": "保存",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_as",
+      "value": "存储为",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_format",
+      "value": "文件格式",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "connect_line",
+      "value": "%1$s | %2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_selected",
+      "value": "未选择",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "get_files_error",
+      "value": "获取文件列表失败！",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "print",
+      "value": "打印",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "child_folder",
+      "value": "目标文件夹是源文件夹的子文件夹，无法粘贴到此位置。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "child_folder_confirm",
+      "value": "知道了",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "can_not_drag_in",
+      "value": "此路径禁止拖入。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "operate_failed",
+      "value": "操作失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_name",
+      "value": "文件名称：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_folderName",
+      "value": "文件夹名称：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_type",
+      "value": "文件类型：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_size",
+      "value": "文件大小：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_amount",
+      "value": "包括：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_created_time",
+      "value": "创建时间：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_modified_time",
+      "value": "修改时间：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_recent_time",
+      "value": "最近打开时间：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_delete_time",
+      "value": "删除时间：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_position",
+      "value": "路径：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "detail_original_path",
+      "value": "原路径：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting",
+      "value": "粘贴",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "moving",
+      "value": "正在移动中…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "Emptying",
+      "value": "正在清空回收站…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_documents",
+      "value": "文档",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_images",
+      "value": "图片",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_movies",
+      "value": "视频",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_music",
+      "value": "音乐",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_downloads",
+      "value": "下载",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_desktop",
+      "value": "桌面",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_gallery",
+      "value": "图库",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "select",
+      "value": "选择",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "grant_permission",
+      "value": "授予访问权限",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "picker_file_not_exist",
+      "value": "不存在该名字的文件夹，请重新选择。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_filemanager_file_not_exist",
+      "value": "“%s”不存在",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "PC_FILE_REMOVED",
+      "value": "移除“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "PC_FILE_FORMATTING",
+      "value": "格式化",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "PC_FILE_DISK_CAPACITY",
+      "value": "磁盘容量",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "PC_FILE_SYS_FORMAT",
+      "value": "文件系统格式",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "PC_FILE_START_FORMAT",
+      "value": "开始格式化",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "PC_FILE_DISK_FORMAT",
+      "value": "格式化“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "PC_FILE_FORMAT_CONFIRMATION",
+      "value": "格式化将删除磁盘内的所有数据，删除后无法恢复。是否格式化？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "not_supported_filesystem",
+      "value": "不支持的文件系统",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_data_lost",
+      "value": "“%s”未被安全移除，数据可能丢失。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_data_lost_menu",
+      "value": "正在传输数据，移除后数据可能丢失。是否继续移除？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_force_remove",
+      "value": "强制移除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_file_delete",
+      "value": "文件删除后无法恢复。是否删除？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_remove",
+      "value": "移除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "formatting",
+      "value": "正在格式化",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_format_succeed",
+      "value": "格式化成功",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_format_fail",
+      "value": "格式化失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "is_opening",
+      "value": "正在打开“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "skip",
+      "value": "跳过",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "same_name_file_recover",
+      "value": "目标位置已包含一个名为“%s”的文件。是否继续还原？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "same_name_folder_recover",
+      "value": "目标位置已包含一个名为“%s”的文件夹。是否继续还原？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop_recover_file",
+      "value": "停止",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "apply_to_all",
+      "value": "应用到全部",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "readonly_file_system",
+      "value": "只读文件系统。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_operate_not_permitted",
+      "value": "文件%s拷贝失败\n原因：企业管控限制了此次拷贝\n请选择操作",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "media_library",
+      "value": "媒体库",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "select_file_name",
+      "value": "文件名",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "select_path",
+      "value": "选择路径",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "select_file",
+      "value": "选择文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_space_left",
+      "value": "磁盘空间不足。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "operate_dupFolder_from_child_to_parent",
+      "value": "文件夹%s不能被它所包含的同名子文件夹替换。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_open_date",
+      "value": "打开日期",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_change_date",
+      "value": "修改日期",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_delete_date",
+      "value": "删除日期",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_creation_date",
+      "value": "创建日期",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_path",
+      "value": "路径",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "original_file_path",
+      "value": "原路径",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tags",
+      "value": "标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ascending",
+      "value": "递增",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "descending",
+      "value": "递减",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting_file",
+      "value": "正在粘贴“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "PC_FILE_REMOVED_FROM_QUICK_ACCESS",
+      "value": "从“快速访问”中移除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "PC_FILE_ADD_TO_QUICK_ACCESS",
+      "value": "添加至“快速访问”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "deleting_file",
+      "value": "正在删除“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restoring_file",
+      "value": "正在还原“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "quick_access_only_can_have_100_files",
+      "value": "快速访问最多支持收藏 %d 个目录",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "quick_access_path_not_found",
+      "value": "找不到路径",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path_not_exist",
+      "value": "路径不存在，请检查后重试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "quick_view",
+      "value": "快速查看",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "do_associated",
+      "value": "关联",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "do_not_associated",
+      "value": "不关联",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancel_associated",
+      "value": "取消关联",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "do_associated_account_tips",
+      "value": "以便忘记密码和密保问题时重设密码。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "operate_deny",
+      "value": "无法操作仅联机可用文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm_network_connection",
+      "value": "请确保您连接至 Internet，然后再试一次。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cant_share_empty_folder",
+      "value": "无法分享空文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "share_files_exceed",
+      "value": "无法单次分享超过 %d 个文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unknown_error_occurred",
+      "value": "未知错误",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_appdata",
+      "value": "应用数据",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "app_data_write_limit",
+      "value": "普通用户模式应用数据目录只读，请开启开发者模式后重试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "canceling",
+      "value": "正在取消…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_stem_part",
+      "value": "共 %1$s，%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "storage_stem_all",
+      "value": "共 %1$s，%2$s | %3$s 可用，共 %4$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_tag",
+      "value": "标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "add_file_tag",
+      "value": "添加标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_tag_added",
+      "value": "未添加标签…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "create_new_file_tag",
+      "value": "添加新标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_color_red",
+      "value": "红色",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_color_yellow",
+      "value": "黄色",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_color_green",
+      "value": "绿色",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_color_blue",
+      "value": "蓝色",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_color_cyan",
+      "value": "青色",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_color_purple",
+      "value": "紫色",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_color_grey",
+      "value": "灰色",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "undo",
+      "value": "撤销",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "redo",
+      "value": "恢复",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "big_icon",
+      "value": "大图标",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "medium_icon",
+      "value": "中图标",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "small_icon",
+      "value": "小图标",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_management",
+      "value": "标签管理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "addFolder",
+      "value": "新建文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "OtherLocation",
+      "value": "其他位置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "softDelete",
+      "value": "删除的文件将移动到最近删除。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_camera",
+      "value": "相机",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_screen_recording",
+      "value": "屏幕录制",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_screenshot",
+      "value": "截图",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "complete_delete_tips",
+      "value": "确认删除后，文件将无法找回。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "part_external_file_delete_tips",
+      "value": "确认删除后，本地文件将移入最近删除，部分外部设备文件将无法找回。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_complete_tips",
+      "value": "删除后，所选文件将无法恢复。确认删除？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_system_file_tips",
+      "value": "系统文件夹不支持删除。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "net_disconnect",
+      "value": "网络未连接，请检查网络设置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_not_exist",
+      "value": "文件 %s 不存在",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move",
+      "value": "移动",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "rotate",
+      "value": "旋转",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "otherApp",
+      "value": "其他应用打开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "openFolder",
+      "value": "打开所在文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "favorite",
+      "value": "收藏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unfavorite",
+      "value": "取消收藏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_upper_camelcase",
+      "value": "删除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "play",
+      "value": "播放",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pause",
+      "value": "暂停",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "menu_select_all",
+      "value": "全选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "menu_deselect_all",
+      "value": "取消全选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tab_item_phone",
+      "value": "内部存储",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "myPhone",
+      "value": "我的手机",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recentlyDeleted",
+      "value": "最近删除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "get_folder_size_tips",
+      "value": "正在计算...",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "folder_name",
+      "value": "文件夹名称：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "folder_size",
+      "value": "文件夹大小：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "include",
+      "value": "包括：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "select_num",
+      "value": "%d 项",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "created_time",
+      "value": "创建时间：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "modified_time",
+      "value": "修改时间：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "last_open_time",
+      "value": "上次打开时间：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "original_location",
+      "value": "原位置：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "where",
+      "value": "位置：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "dimension",
+      "value": "尺寸：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "duration",
+      "value": "时长：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "note",
+      "value": "提示",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "jump_to_target_note",
+      "value": "立即跳转会中断当前操作，是否继续？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm_jump",
+      "value": "立即跳转",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "suffixErr",
+      "value": "如果改变文件扩展名，可能会导致文件不可用。是否更改？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "sameName",
+      "value": "目标文件夹下面有同名文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "rename_fail",
+      "value": "重命名失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "max_input_length",
+      "value": "已达到长度上限",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "emptyName",
+      "value": "内容为空",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "same_file_exist",
+      "value": "目标文件夹下面有同名文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "completeName",
+      "value": "请输入完整文件名",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "not_support_characters_new",
+      "value": "不支持特殊字符 %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "initialization",
+      "value": "正在初始化...",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "space_not_enough",
+      "value": "存储空间不足",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "not_paste_itself",
+      "value": "无法将一个文件夹粘贴到自身或者它的子文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_view_detail",
+      "value": "点击查看详情",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "notify_result",
+      "value": "%1$s，%2$s。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_notify_result",
+      "value": "复制成功 %1$d 项，失败 %2$d 项",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "securely_remove",
+      "value": "安全移除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_notify_result",
+      "value": "移动成功 %1$d 项，失败 %2$d 项",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "drag_notify_result",
+      "value": "拖拽成功 %1$d 项，失败 %2$d 项",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "hide_copy_toast",
+      "value": "请到下拉通知栏查看复制进度",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "hide_cut_toast",
+      "value": "请到下拉通知栏查看移动进度",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "hide_drag_toast",
+      "value": "请到下拉通知栏查看拖拽进度",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "images",
+      "value": "图片",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "videos",
+      "value": "视频",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "other",
+      "value": "其他",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "open_as",
+      "value": "打开为",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "add_new_tag",
+      "value": "添加新标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_select_tip",
+      "value": "勾选标签可以在侧边栏显示标签。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "default_tag",
+      "value": "默认标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "default_tag_drag_tip",
+      "value": "拖拽个人标签可以替换在“添加标签”菜单中显示的默认标签。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "selected_none",
+      "value": "未选择",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "selected",
+      "value": "已选择 %d 项"
+    },
+    {
+      "name": "storage_total_size",
+      "value": "共 %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "waiting_network",
+      "value": "等待网络…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "add",
+      "value": "新建",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "list_icon",
+      "value": "图标",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "list_list",
+      "value": "列表",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "order_time",
+      "value": "时间",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "order_size",
+      "value": "大小",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "order_type",
+      "value": "类型",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_all",
+      "value": "清空文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "mine_list_help",
+      "value": "帮助与客服",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "check_version",
+      "value": "检测更新",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "setting_title_about",
+      "value": "关于",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "remove_from_tag",
+      "value": "从“标签”中移除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_tag",
+      "value": "删除标签“%s”",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "change_tag_color",
+      "value": "更换标签颜色",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "all_tags",
+      "value": "全部标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "edit",
+      "value": "编辑",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "input_name",
+      "value": "输入显示名称",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_name_illegal_warning",
+      "value": "标签名不能包含：[]\"':/*?<>|`{}",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "waiting_progress_message",
+      "value": "请稍候…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "folder_not_exist",
+      "value": "文件夹不存在",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "get_it",
+      "value": "知道了",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "close",
+      "value": "关闭",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore_fail_dialog_content_singular",
+      "value": "“%s”还原失败。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_fail_dialog_content_singular",
+      "value": "“%s”删除失败。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore_success",
+      "value": "还原已完成",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "del_suc",
+      "value": "删除已完成",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "del_fail",
+      "value": "删除失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore_fail",
+      "value": "还原失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore_suspended",
+      "value": "还原已中止",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_suspended",
+      "value": "删除已中止",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unable_open_file_dialog_title",
+      "value": "不能打开此文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unable_open_file_dialog_content",
+      "value": "最近删除中无法使用此文件，恢复后便可正常使用。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "favorite_title",
+      "value": "收藏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_fail_content_dlg",
+      "value": "%s文件无法复制，请检查。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_fail_content_dlg",
+      "value": "%s文件无法移动，请检查。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "drag_fail_content_dlg",
+      "value": "%s文件无法拖拽，请检查。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "discontinue",
+      "value": "中止",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "apply_all",
+      "value": "应用到全部",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_progress_content",
+      "value": "已复制 %1$s (共 %2$s)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_progress_content",
+      "value": "已移动 %1$s (共 %2$s)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "drag_progress_content",
+      "value": "已拖拽 %1$s (共 %2$s)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "hide",
+      "value": "隐藏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_move_abort_alert",
+      "value": "正在进行复制/移动操作，退出后将停止复制/移动文件。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "paste_conflict_diglog_btn_message",
+      "value": "上次复制或移动尚未结束，需要将其中止才能进行操作。是否要中止？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "continue",
+      "value": "继续",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "exits",
+      "value": "退出",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "keep",
+      "value": "保留两者",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge_folder_content",
+      "value": "合并将结合两个文件夹，保留所有新增项目",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge_folder_tip_new",
+      "value": "该位置已包含一个名为“%s”的文件夹。是否合并位置中的文件夹？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "replace_file_tip",
+      "value": "该目标位置已包含一个名为“%s”的文件。是否替换位置中的文件？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_target_path",
+      "value": "找不到目标路径。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "addFolder_fail",
+      "value": "新建文件夹失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasteboard_dialog_title",
+      "value": "粘贴提醒",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "user_agreement_and_permission",
+      "value": "关于文件管理与隐私的声明",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "privacy_content_second_divide",
+      "value": "我们仅收集实现业务功能所必须的个人信息，并提供充分的安全保障措施，确保您的数据安全。详细情况您可通过%s。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_services_dialog_subtitle",
+      "value": "当前仅可使用基本服务 (管理文件)，需要联网，调用存储 (媒体和文件)、应用软件列表权限，并读取媒体影音数据和已安装应用列表。点击“使用基本服务”，即表示您同意上述内容及权限使用说明。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "privacy_dialog_content_first",
+      "value": "如需使用全部服务，需联网，调用存储、软件应用权限，获取账号、设备、应用 (包括应用列表)、网络信息以及您主动上传的数据。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "privacy_content_third",
+      "value": "请您仔细阅读上述声明，点击“同意并继续”，即表示您同意。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_services_dialog_confirm",
+      "value": "同意并继续",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_tag_no_name",
+      "value": "删除标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_has_special_char",
+      "value": "标签名含有特殊字符，请选择其他名称。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_name_exists",
+      "value": "已存在标签“%s”，请选择其他名称。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm_delete_tag_text",
+      "value": "删除后将清除对应文件内的标签记录，此操作无法撤销。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm_delete_tag_title",
+      "value": "确定删除标签“%s”？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tag_num_reached_limit",
+      "value": "标签添加已达上限。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "create_folder_or_file",
+      "value": "新建",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "create_file_name",
+      "value": "新建 %1$s %2$s%3$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "create_folder",
+      "value": "文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ascertain",
+      "value": "确定",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "damaged_file_open_fail",
+      "value": "文件已损坏，打开失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "externalDisk",
+      "value": "存储卡",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "midnight",
+      "value": "%1$s 半夜%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "before_dawn",
+      "value": "%1$s 凌晨%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "dawn",
+      "value": "%1$s 清晨%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "early_morning",
+      "value": "%1$s 早上%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "morning",
+      "value": "%1$s 上午%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "noon",
+      "value": "%1$s 中午%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "afternoon",
+      "value": "%1$s 下午%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "dusk",
+      "value": "%1$s 傍晚%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "evening",
+      "value": "%1$s 晚上%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "activate_now",
+      "value": "立即启用",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "set_file_storage_location",
+      "value": "设置文件存放位置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_storage_location",
+      "value": "文件存放位置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "memory_used",
+      "value": "已使用 %1$s GB/%2$s GB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "memory_space",
+      "value": "%1$s 可用/%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "enter_password",
+      "value": "输入密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "re_enter",
+      "value": "再次输入",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security",
+      "value": "密保问题",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_question_one",
+      "value": "您父亲的姓名是？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_question_two",
+      "value": "您伴侣的姓名是？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_question_three",
+      "value": "您就读的初中名称是？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_question_four",
+      "value": "您成长的街道名字是？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_question_five",
+      "value": "您最喜欢的歌手或乐队是？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_question_six",
+      "value": "自定义",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_questions_one",
+      "value": "您母亲的姓名是？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_questions_two",
+      "value": "您就读的小学名称是？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_questions_three",
+      "value": "您第一次坐飞机是去哪里？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_questions_four",
+      "value": "您最喜欢的球队是？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_questions_five",
+      "value": "您的理想工作是什么？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "enter_custom_question",
+      "value": "输入自定义问题",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_question_answer",
+      "value": "答案",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_question_hint",
+      "value": "请输入 %1$d-%2$d 个字符 (也可以只输入两个汉字)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_custom_question_hint",
+      "value": "不超过 %d 个字，且不能为空。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "secret_security_question_limit",
+      "value": "输入已达上限",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "encrypt_file",
+      "value": "文件加密",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "encrypted_share",
+      "value": "加密分享",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "finish",
+      "value": "完成",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "currently_in_use",
+      "value": "%s (当前使用)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "new_password",
+      "value": "新密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "password",
+      "value": "密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "input_password",
+      "value": "输入密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "change_password",
+      "value": "修改密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "complete",
+      "value": "完成",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm_old_password",
+      "value": "确认旧密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "next_step",
+      "value": "下一步",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "verify_password",
+      "value": "验证密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "modify_security_question",
+      "value": "修改密保问题",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "reset_password",
+      "value": "重置密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "forget_password",
+      "value": "忘记密码？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "password_error",
+      "value": "密码错误，请重新输入",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "face_recognition_dialog",
+      "value": "关联人脸识别",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancel_face_recognition",
+      "value": "已取消关联人脸识别",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "fingerprint_recognition_dialog",
+      "value": "关联指纹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancel_fingerprint_recognition",
+      "value": "已取消关联指纹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "biometric_change_verification",
+      "value": "生物识别变更验证",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "prompt_recognition_dialog",
+      "value": "提示",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "prompt_recognition",
+      "value": "指纹或面容数据变更时，是否需重新验证密码？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "association",
+      "value": "关联",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "not_association",
+      "value": "不关联",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "choose_retrieval_method",
+      "value": "选择找回方式",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "verify_security_question",
+      "value": "验证密保问题",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "need",
+      "value": "需要",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unneeded",
+      "value": "不需要",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "face_association",
+      "value": "面容已关联",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "fingerprint_association",
+      "value": "指纹已关联",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "data_changes_associated",
+      "value": "数据变更已关联",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "associate_faces_fail",
+      "value": "关联人脸失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "associate_fingerprint_fail",
+      "value": "关联指纹失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "associate_data_change_fail",
+      "value": "关联数据变化失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "last_step",
+      "value": "上一步",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "password_reset_failed",
+      "value": "重置密码失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "use_password",
+      "value": "使用密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "authenticate_your_identity",
+      "value": "请进行身份认证",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "bind_face_change",
+      "value": "系统检测到人脸数据变更，请重新验证密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "bind_fingerprint_change",
+      "value": "系统检测到指纹数据变更，请重新验证密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "security_tips",
+      "value": "安全访问文件管理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "security_tips_details",
+      "value": "您的文件会在此处显示，但应用仅可访问您选定的文件。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "refresh",
+      "value": "刷新",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "jump",
+      "value": "跳转",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agree",
+      "value": "同意",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "password_reset_success",
+      "value": "密码已重置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "set_safe_password_rules",
+      "value": "密码由 %1$d-%2$d 位字母或数字组成，需至少包含一个字母，密码不能与名称相同",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "check_update",
+      "value": "检查更新",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "version_info",
+      "value": "版本信息",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unlink_account",
+      "value": "请妥善保管密码和密保问题",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "open_gallery",
+      "value": "打开图库"
+    },
+    {
+      "name": "space_transmit",
+      "value": "添加到空间互传",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "checked",
+      "value": "已选中",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unchecked",
+      "value": "未选中",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "button",
+      "value": "按钮",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "undo_s",
+      "value": "撤销 %s (U)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "redo_s",
+      "value": "恢复 %s (R)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "create_new",
+      "value": "新建",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recycle",
+      "value": "删除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "blank",
+      "value": "空",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "add_tag",
+      "value": "添加标签",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "media_library_files_migrated_to_gallery",
+      "value": "媒体库文件已迁移至图库",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "resident_security_tips",
+      "value": "仅可访问所选项目",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "picker_security_tips",
+      "value": "仅可访问所选文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "select_location",
+      "value": "请选择目标位置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_file",
+      "value": "删除文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore_file",
+      "value": "还原文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_file",
+      "value": "复制文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_file",
+      "value": "移动文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "drag_file",
+      "value": "拖拽文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_in_file",
+      "value": "移入文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_out_file",
+      "value": "移出文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "permission_usage_explanation_link",
+      "value": "权限使用说明",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "permission_storage_media_and_files_description",
+      "value": "用于为您提供选择图片和视频数据服务。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_service_phone",
+      "value": "客服电话",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "net_work_disconnect",
+      "value": "网络未连接，请检查网络设置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "permission_list_title",
+      "value": "“文件管理”权限使用说明",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_personal_info",
+      "value": "已收集个人信息清单",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "permission_storage_media_and_files",
+      "value": "图片和视频",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "version_is_latest",
+      "value": "已是最新版本",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "loading",
+      "value": "正在加载...",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "permission_internet",
+      "value": "联网",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "declare_agree_format_info",
+      "value": "请您仔细阅读上述声明，点击“同意”，即表示您知悉并同意我们向您提供本应用服务。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "back_up_home_page_tips",
+      "value": "系统升级，图片和视频等媒体文件已迁移至图库应用，录音文件已经迁移至录音机。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore_to_backup_recover_phone",
+      "value": "已还原至 我的手机/升级备份/RecycleBin",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore_to_backup_recover_pad",
+      "value": "已还原至 我的平板/升级备份/RecycleBin",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "go_back",
+      "value": "返回",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "expanded",
+      "value": "已展开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unexpanded",
+      "value": "未展开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cannot_delete_app_data",
+      "value": "包含应用数据，请勿删除该文件，以免导致应用无法正常使用。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cannot_move_app_data",
+      "value": "包含应用数据，请勿移动该文件，以免导致应用无法正常使用。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pad_progress_bar_title_copy_file",
+      "value": "复制文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pad_progress_bar_title_move_file",
+      "value": "移动文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pad_progress_tip_title_copy_or_move_file",
+      "value": "文件 %s 已存在，是否替换？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pad_progress_tip_title_copy_or_move_folder",
+      "value": "文件夹 %s 已存在，是否合并？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pad_progress_tip_title_recover_file",
+      "value": "文件 %s 已存在，是否还原？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pad_progress_tip_title_other",
+      "value": "提示",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pad_recent_delete_clear_content",
+      "value": "清空后，文件将无法恢复。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pc_sound_recorder",
+      "value": "录音机",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "sound_recorder_not_exist",
+      "value": "应用不存在",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "sort_by_name",
+      "value": "按名称排序",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "sort_by_time",
+      "value": "按时间排序",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "sort_by_size",
+      "value": "按大小排序",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "sort_by_type",
+      "value": "按类型排序",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_refresh_page_tips",
+      "value": "升级后文件刷新中，请稍候…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "security_access_details",
+      "value": "应用仅可访问您选定的文件，无法访问文件夹其他内容。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "security_access_path_details",
+      "value": "应用仅可访问您选定的路径，无法访问文件夹其他内容。%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "learn_more",
+      "value": "进一步了解",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "give_feedback",
+      "value": "问题与建议",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "use_network",
+      "value": "使用移动网络上传/下载/播放",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "filter_samll_images",
+      "value": "过滤小图片",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "filter_browsed_samll_images",
+      "value": "过滤“浏览”>“图片”中的小图片",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "show_hidden_files",
+      "value": "显示隐藏文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "show_files_with_dot",
+      "value": "显示以“.”开头的文件和文件夹",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "share_limit_exceed_msg",
+      "value": "每次最多可以分享 %d 个文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "share_folder_no_content",
+      "value": "文件夹为空",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "touch_share_not_support_folder",
+      "value": "暂不支持文件夹分享",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "collapse",
+      "value": "收起",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "drag_to_change_sort",
+      "value": "拖动排序",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "drag_to_change_sort_description",
+      "value": "双击按住即可上下拖动排序",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "always_notice",
+      "value": "始终提示",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "notice_when_over_100mb",
+      "value": "超过 %d MB 提示",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "always_allow",
+      "value": "始终允许",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cellular_transmission_content",
+      "value": "当前使用移动网络，本次将消耗 %s 流量。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cellular_transmission_title",
+      "value": "使用移动网络传输文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "always_notice_desc",
+      "value": "使用移动网络上传/下载/播放文件前需要获得许可",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "notice_when_over_100mb_desc",
+      "value": "仅允许 %d MB 以下文件使用移动网络上传/下载/播放",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "always_allow_desc",
+      "value": "允许所有文件使用移动网络上传/下载/播放",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recent_load_end",
+      "value": "最近 %d 天内，没有更多文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recent_no_content",
+      "value": "最近 %d 天内，没有文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "picture_and_video_migrate_tip",
+      "value": "图片和视频文件已迁移到图库。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "audio_files_migrate_tip",
+      "value": "音频文件已迁移到录音机。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "filter",
+      "value": "筛选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "select_reset",
+      "value": "重置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "picture_format",
+      "value": "图片格式",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "video_format",
+      "value": "视频格式",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "audio_format",
+      "value": "音频格式",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "document_format",
+      "value": "文档格式",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "not_support_modified_directory",
+      "value": "不支持修改该目录",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "not_support_drag_in_page",
+      "value": "当前页面不支持拖入，请拖至“我的手机”目录下",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "space_cleanup",
+      "value": "空间清理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "big_file",
+      "value": "大文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "more_cleanup",
+      "value": "更多清理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "more_cleanup_context",
+      "value": "前往存储进行更多文件清理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "local_trash",
+      "value": "本地垃圾",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "local_trash_cleanup",
+      "value": "本地垃圾清理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "junk_file",
+      "value": "垃圾文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "return_to_previous_step",
+      "value": "返回上一步",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yes",
+      "value": "是",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no",
+      "value": "否",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_safe_subtitle",
+      "value": "加密保存图片、音视频和文档",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "clear_all",
+      "value": "清空",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "clear_all_content",
+      "value": "是否清空最近删除？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "clear_all_content_two",
+      "value": "清空后，文件将无法恢复。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_recent_delete_file",
+      "value": "最近删除为空",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "scanning",
+      "value": "正在扫描…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_available_devices",
+      "value": "未发现可用设备",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "add_device",
+      "value": "添加设备",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ip_address_error",
+      "value": "IP 地址格式错误",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "help",
+      "value": "帮助",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "usage_help",
+      "value": "使用帮助",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "my_devices",
+      "value": "我的设备",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "other_devices",
+      "value": "其他设备",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "disconnect",
+      "value": "断开连接",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "connection_settings",
+      "value": "连接设置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "connect_device",
+      "value": "连接设备",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "display_name",
+      "value": "显示名称",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "hostname_or_ip_address",
+      "value": "主机名或 IP 地址",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "username",
+      "value": "用户名",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "anonymous_login",
+      "value": "匿名登录",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "auto_login",
+      "value": "自动登录",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_device_corresponding_to_ip",
+      "value": "未发现 IP 地址对应设备",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "incorrect_username_or_password",
+      "value": "用户名或密码错误",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "username_required",
+      "value": "请输入用户名",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "newly_added_devices_not_found_in_lan",
+      "value": "未发现局域网内新添加的设备",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "device_connect_success",
+      "value": "连接成功",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "device_disconnect_tip",
+      "value": "断开连接后将无法查看和管理该设备上的共享文件，是否断开？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "device_connect_fail",
+      "value": "%s 连接已失效",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "device_disconnect",
+      "value": "连接已断开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "disabled",
+      "value": "功能暂不支持，敬请期待",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm_and_no_prompt_again",
+      "value": "确定并不再提示",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "open_file",
+      "value": "打开文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_failed",
+      "value": "保存失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "failed_save_to_gallery_root_path",
+      "value": "图库根目录不支持存放文件，请选择其他目录。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_other_type_files_to_gallery_path",
+      "value": "图库目录仅支持存放图片/视频文件，其他文件无法保存。是否继续？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "nested_folders_save_files_to_gallery_album",
+      "value": "相册目录下不支持创建多层文件夹，此文件夹中所有的图片/视频文件，将保存至当前相册目录下。是否继续？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "nested_folders_save_files_to_gallery",
+      "value": "图库目录下不支持创建多层文件夹，此文件夹中所有的图片/视频文件，将保存至“%s”中。是否继续？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "mul_nested_folders_save_files_to_gallery_album",
+      "value": "图库目录下不支持创建多层文件夹，文件夹中所有的图片/视频文件，将保存至对应目录下。是否继续？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_other_type_files_to_gallery_path_for_picker",
+      "value": "图库目录仅支持存放图片/视频文件，其他文件无法保存。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_file",
+      "value": "保存文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "create_new_album",
+      "value": "新建相册",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_image_to_gallery_album",
+      "value": "%1$s目录仅支持存放图片，其他文件无法保存。是否继续？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_image_to_gallery_album_for_picker",
+      "value": "%1$s目录仅支持存放图片，其他文件无法保存。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_video_to_gallery_album",
+      "value": "%1$s目录仅支持存放视频，其他文件无法保存。是否继续？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_video_to_gallery_album_for_picker",
+      "value": "%1$s目录仅支持存放视频，其他文件无法保存。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "hidisk_file_size_range_larger_gb",
+      "value": "%d GB 以上",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "hidisk_file_size_range_smaller_kb",
+      "value": "%d KB 以下",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "just_now",
+      "value": "刚刚",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "hide_source",
+      "value": "不再显示此来源的文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "hide_card",
+      "value": "不再显示此卡片的文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "manager_hidden",
+      "value": "管理“最近”中不显示的来源",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "no_content",
+      "value": "没有屏蔽的来源",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore_page_button",
+      "value": "恢复",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "restore_confirm_tips",
+      "value": "是否在“最近”中恢复此来源生成的文件？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "files_source_no_appear",
+      "value": "此来源的文件将不再显示在“最近”中",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recent_delete_file_save_day",
+      "value": "文件在删除前会显示剩余天数 (最长 %d 天)，之后将永久删除。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "expand_phone_tip",
+      "value": "请展开手机使用",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "more_button_tip",
+      "value": "支持更多自定义设置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "sort_by_default",
+      "value": "按默认排序",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "next_one",
+      "value": "下一个",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "anonymous_environment_configuration",
+      "value": "匿名环境配置",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "windows_version1",
+      "value": "Windows 旗舰版或专业版：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "step1",
+      "value": "第一步",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "enable_Guest_account",
+      "value": "开启 Guest 帐户",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "enable_Guest_account_detail",
+      "value": "右击“计算机”选择“管理”>“本地帐户和组”>“用户”，右击“Guest”，选中“属性”，取消“帐户已禁用”的勾选，点击“应用”选择“确定”。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "step2",
+      "value": "第二步",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_Guest_account",
+      "value": "运行组策略，删除 Guest 帐户",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_Guest_account_detail",
+      "value": "键盘输入“Windows+R”打开运行面板输入“gpedit.msc”回车，点击“本地计算机策略”>“计算机配置”>“windows设置”>“安全设置”>“本地策略”>“用户权限分配”，双击“拒绝从网络上访问这台计算机”，删除“Guest”帐户。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "step3",
+      "value": "第三步",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "setting_properties",
+      "value": "设置本地帐户的共享和安全模型属性",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "setting_properties_detail_new",
+      "value": "在“本地策略”中点击“安全选项”，选中“网络访问：本地帐户的共享和安全模型”，设置为“仅来宾”。选中“帐户：使用空白密码的本地帐户只允许通过控制台登录”，设置为“已禁用”；键盘win+R调出运行窗口打开运行面板，输入“cmd”，窗口中输入“gpupdate /force”，点击回车键，等待更新策略完成。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "step4",
+      "value": "第四步",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "add_shared_files",
+      "value": "添加共享文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "add_shared_files_detail_new",
+      "value": "右击想要共享的文件夹，依次点击“属性”>”共享”，选择“Guest”帐户或“Everyone”，点击“添加”。单击右侧箭头设置访问权限，设置完成点击“共享”。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "step5",
+      "value": "第五步",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "enable_scan",
+      "value": "配置完成，开启扫描",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "windows_version2",
+      "value": "Windows 家庭版：",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "support_argeement",
+      "value": "配置支持协议",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "support_argeement_configuration_detail",
+      "value": "打开控制面板，依次点击“程序”> “启用或关闭 Windows 功能”，找到“SMB 1.0/CIFS 文件共享支持”，全部选中。点击“确定”后，重启计算机。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "close_pwd_protection",
+      "value": "关闭密码保护",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "close_pwd_protection_detail",
+      "value": "打开控制面板，依次点击“网络和Internet”>“网络和共享中心” >“高级共享设置”，选中“无密码保护的共享”，点击“保存更改”。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "screen_off_intelligent_analysis",
+      "value": "熄屏智能分析",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "turn_scrren_and_intelligent_analysis",
+      "value": "熄屏并接入电源，完成智能分析后搜索更精准。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "batch_grant_permission",
+      "value": "批量授权",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "persist_permission_import",
+      "value": "导入",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recommended_cleanup",
+      "value": "推荐清理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "processing",
+      "value": "处理中…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "scan_more_cleanable_files",
+      "value": "扫描广告垃圾和更多可清理文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "all_images",
+      "value": "所有图片",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "all_videos",
+      "value": "所有视频",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "share_failed_msg",
+      "value": "分享失败，建议单次分享数量不超过 %d 个",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "wechat_not_support_share_notice",
+      "value": "若需分享文件到微信，可前往微信聊天窗口选择文件后发送",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "video_broadcast",
+      "value": "视频：%1$s，时长%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "list_grid_toggle",
+      "value": "已切换为%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "drop_down_list",
+      "value": "下拉列表",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "the_location_already_contains_this_file_title_save_both",
+      "value": "是否合并位置中的文件夹？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "reset_succeeded",
+      "value": "重置成功",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "favorited",
+      "value": "已收藏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unfavorable",
+      "value": "已取消收藏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "input_content_cannot_be_empty",
+      "value": "输入内容不能为空",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "low_memory_notice",
+      "value": "请前往“设置”>“存储”进行空间清理。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "go_now",
+      "value": "立即前往",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "shielding",
+      "value": "屏蔽",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "transfer_completed",
+      "value": "传输完成",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_saved_to",
+      "value": "文件已保存至 %s。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "set_as_wallpaper",
+      "value": "设置为壁纸",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "set_wallpaper_not_support",
+      "value": "壁纸不支持在小窗下编辑",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "system_folder_not_support_operation",
+      "value": "系统目录不可操作",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "device_space_usage",
+      "value": "已用 %1$s/%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "play_control_bar_display",
+      "value": "播控栏已显示 可在视频区域左右滑动更改进度",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "play_control_bar_hidden",
+      "value": "播控栏已隐藏 可在视频区域左右滑动更改进度",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "open_menu_bar",
+      "value": "打开菜单栏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "collapse_menu_bar",
+      "value": "收起菜单栏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "root_path_documents_folder_instruction",
+      "value": "文档",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "root_path_download_folder_instruction",
+      "value": "下载",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "root_path_gallery_folder_instruction",
+      "value": "本地图库文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "root_path_sound_folder_instruction",
+      "value": "音频",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "root_path_updatebackup_folder_instruction",
+      "value": "克隆/备份数据",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "root_path_file_restore_folder_instruction",
+      "value": "恢复的应用数据",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "open_navigation",
+      "value": "打开导航栏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "close_navigation",
+      "value": "关闭导航栏",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "security_access_files_tips",
+      "value": "安全访问文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "security_access_files_details",
+      "value": "应用仅可访问您选定的文件，无法访问文件夹其他内容。%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "not_signed_privacy_tip",
+      "value": "请前往文件管理应用同意“关于文件管理与隐私的声明、权限使用说明”，同意后可正常使用此功能。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "duplicate_files",
+      "value": "重复文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "duplicate_files_clean",
+      "value": "重复文件清理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "scan_now",
+      "value": "立即扫描",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "to_clean_up",
+      "value": "去清理",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "duplicate_files_subheading",
+      "value": "内容完全相同的文件占用存储空间 %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_from",
+      "value": "来源：%s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "careful_cleaning",
+      "value": "(谨慎清理)",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "gallery_change_suffix",
+      "value": "图库文件不支持修改后缀，请复制/移动文件到我的手机公共目录下再试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_edit_item_down",
+      "value": "移到%s下方",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_edit_item_up",
+      "value": "移到%s上方",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "rename_single_character_fail",
+      "value": "重命名失败，目标不支持重命名为单字符，请修改后重试",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "space_not_enough_title",
+      "value": "存储空间不足",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "have_connected",
+      "value": "已连接",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "not_connected",
+      "value": "未连接",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path_picker_folder_level_and_expand",
+      "value": "级别 %d 已展开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path_picker_folder_level_and_unexpand",
+      "value": "级别 %d 未展开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "transfer_progress_visible",
+      "value": "传输进度实时可见",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "transfer_progress_visible_contents",
+      "value": "实况窗常驻展示，文件传输进度随时获取，告别传输焦虑；",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_menu_updated",
+      "value": "文件菜单焕新",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_menu_updated_contents",
+      "value": "新增菜单图标，功能一看就懂，操作快人一步；",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "media_browse_smooth",
+      "value": "浏览图片、视频更流畅",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "media_browse_smooth_contents",
+      "value": "点击图片、视频，从缩略图展开至全屏，视野随动效延展，浏览更流畅；",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "not_support_drag_in_page_with_pad",
+      "value": "当前页面不支持拖入，请拖至“我的平板”目录下",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "gallery_change_suffix_with_pad",
+      "value": "图库文件不支持修改后缀，请复制/移动文件到“我的平板”公共目录下再试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "accessibility_checkbox_checked",
+      "value": "已选中，复选框，单指双击即可取消选中",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "accessibility_checkbox_unChecked",
+      "value": "未选中，复选框，单指双击即可选中",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "equipment_temperature_is_too_high",
+      "value": "设备温度过高",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "checked_accessibility",
+      "value": "单指双击即可选中。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unchecked_accessibility",
+      "value": "单指双击即可取消选中。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "already_select_all",
+      "value": "已全选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "already_deselect_all",
+      "value": "已取消全选",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_accessibility",
+      "value": "单指双击即可执行。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "new_features_online",
+      "value": "新功能上线",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "new_version_updates_progress",
+      "value": "了解新版本更新进度",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_edit_place_down",
+      "value": "已放置在 %s 下方",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_edit_place_up",
+      "value": "已放置在 %s 上方",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "reverse_rotation",
+      "value": "逆时针旋转 %s 度",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "arrive_path_select_end_level",
+      "value": "已到末级。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path_picker_folder_level",
+      "value": "级别 %d",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "accessibility_expand",
+      "value": "已展开",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "accessibility_unexpand",
+      "value": "已收起",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source_file_not_exist_maybe_removed_renamed_deleted",
+      "value": "文件不存在，原文件可能已被移动、重命名或删除，请恢复该文件后重试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_not_exist_maybe_removed_renamed_deleted",
+      "value": "文件不存在，“%1$s”文件可能已被移动、重命名或删除，请恢复该文件后重试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "help_and_feedback",
+      "value": "帮助和反馈",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tip_popup_title",
+      "value": "当前文件夹仅显示图库本地文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "tip_popup_context_one",
+      "value": "%1$s. 由卓易通或出境易提供服务的应用，请前往“%2$s”查看更多",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "two_placeholders",
+      "value": "%1$s>%2$s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "go_to_gallery",
+      "value": "前往图库",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_fusion_album_warning",
+      "value": "该相册存在由卓易通或出境易提供服务的应用文件，可前往“兼容应用数据”删除。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "remote_source_file_not_exist",
+      "value": "文件粘贴失败，原文件可能因被修改、复制内容失效或设备连接异常导致无法访问，请检查后重试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "remote_file_not_exist",
+      "value": "文件粘贴失败，“%s”可能因被修改、复制内容失效或设备连接异常导致无法访问，请检查后重试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "search",
+      "value": "搜索",
+      "attr": {
+        "priority": "translate"
+      }
+    }
+  ]
+}

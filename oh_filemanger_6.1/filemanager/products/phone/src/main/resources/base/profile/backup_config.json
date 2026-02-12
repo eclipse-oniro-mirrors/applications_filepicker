@@ -1,0 +1,26 @@
+{
+  "allowToBackupRestore": true,
+  "extraInfo": {
+    "supportScene": [
+      "hmos2next",
+      "next2next"
+    ]
+  },
+  "includes": [
+    "data/storage/el2/database/rdb/File_SafeBox/",
+    "data/storage/el2/base/files/File_SafeBox/",
+    "data/storage/el2/base/files/settings/",
+    "data/storage/el2/base/preferences/",
+    "/storage/Users/currentUser/"
+  ],
+  "excludes": [
+    "/storage/Users/currentUser/.Trash",
+    "/storage/Users/currentUser/appdata",
+    "/storage/Users/currentUser/.Recent",
+    "/storage/Users/currentUser/.thumbs",
+    "/storage/Users/currentUser/.metadata",
+    "/storage/Users/currentUser/.backup"
+  ],
+  "fullBackupOnly": true,
+  "restoreDeps": ""
+}

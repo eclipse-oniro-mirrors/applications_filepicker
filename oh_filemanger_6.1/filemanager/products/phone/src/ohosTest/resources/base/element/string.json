@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "entry_test_desc",
+      "value": "test ability description"
+    },
+    {
+      "name": "TestAbility_desc",
+      "value": "the test ability"
+    },
+    {
+      "name": "TestAbility_label",
+      "value": "文件管理test"
+    },
+    {
+      "name": "selected_none",
+      "value": "未选择"
+    },
+    {
+      "name": "selected_items_singular",
+      "value": "已选择 %d 项"
+    },
+    {
+      "name": "selected_items_plural",
+      "value": "已选择 %d 项"
+    },
+    {
+      "name": "selected",
+      "value": "已选择 %d/%d"
+    }
+  ]
+}

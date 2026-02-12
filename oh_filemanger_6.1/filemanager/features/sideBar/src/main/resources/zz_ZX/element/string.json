@@ -1,0 +1,16 @@
+{
+    "string":[
+        {
+            "name":"available",
+            "value":"[TS_862563]_Available"
+        },
+        {
+            "name":"delete_success",
+            "value":"[TS_873036]_Deleted successfully."
+        },
+        {
+            "name":"removing",
+            "value":"[TS_960442]_Removing…"
+        }
+    ]
+}

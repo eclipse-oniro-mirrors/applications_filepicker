@@ -1,0 +1,3036 @@
+{
+    "string":[
+        {
+            "name":"size",
+            "value":"[TS_862570]_Size"
+        },
+        {
+            "name":"desktop",
+            "value":"[TS_987387]_Home screen"
+        },
+        {
+            "name":"tiny",
+            "value":"[TS_987358]_Tiny (%1$d–%2$d KB)"
+        },
+        {
+            "name":"stop",
+            "value":"[TS_862661]_Disable"
+        },
+        {
+            "name":"download_receive",
+            "value":"[TS_987422]_Downloads/Received"
+        },
+        {
+            "name":"last_month",
+            "value":"[TS_987630]_Last month"
+        },
+        {
+            "name":"back",
+            "value":"[TS_987697]_Back"
+        },
+        {
+            "name":"have_same_name",
+            "value":"[TS_808312]_A file with this name already exists in the target folder. Try with another name."
+        },
+        {
+            "name":"file_display_type",
+            "value":"[TS_987280]_Type"
+        },
+        {
+            "name":"merge_will_combine_two_folders_and_keep_all_new_items",
+            "value":"[TS_987163]_Merging folders retains all new items."
+        },
+        {
+            "name":"unknown",
+            "value":"[TS_862811]_Others"
+        },
+        {
+            "name":"next",
+            "value":"[TS_987576]_Forward"
+        },
+        {
+            "name":"category",
+            "value":"[TS_987679]_Type"
+        },
+        {
+            "name":"pdf",
+            "value":"[TS_987268]_PDF"
+        },
+        {
+            "name":"delete_clear_confirm",
+            "value":"[TS_987575]_Empty"
+        },
+        {
+            "name":"file_type",
+            "value":"[TS_862778]_File type"
+        },
+        {
+            "name":"delete_perm_confirm",
+            "value":"[TS_987737]_Delete"
+        },
+        {
+            "name":"exit_multiple_choices",
+            "value":"[TS_987192]_Deselect"
+        },
+        {
+            "name":"file_format",
+            "value":"[TS_987584]_Format"
+        },
+        {
+            "name":"replace",
+            "value":"[TS_862734]_Replace"
+        },
+        {
+            "name":"list_view",
+            "value":"[TS_987764]_List"
+        },
+        {
+            "name":"recent_delete_clear",
+            "value":"[TS_987217]_Empty Recycle Bin?"
+        },
+        {
+            "name":"my_pc",
+            "value":"[TS_987680]_My computer"
+        },
+        {
+            "name":"medium",
+            "value":"[TS_987445]_Medium (%1$d–%2$d MB)"
+        },
+        {
+            "name":"none",
+            "value":"[TS_862593]_None"
+        },
+        {
+            "name":"confirm",
+            "value":"[TS_862893]_OK"
+        },
+        {
+            "name":"multiple_choices",
+            "value":"[TS_987689]_Select multiple"
+        },
+        {
+            "name":"select_all",
+            "value":"[TS_987535]_Select all"
+        },
+        {
+            "name":"contains_special_characters",
+            "value":"[TS_987726]_File name can't contain any of the following characters: []\"':/*?<>|`{}"
+        },
+        {
+            "name":"file_extension_changed",
+            "value":"[TS_987512]_Changing the extension may cause the file to become unusable. Change anyway?"
+        },
+        {
+            "name":"grid_view",
+            "value":"[TS_987701]_Grid"
+        },
+        {
+            "name":"check_more",
+            "value":"[TS_987455]_View more"
+        },
+        {
+            "name":"save_as",
+            "value":"[TS_987300]_Save as"
+        },
+        {
+            "name":"text",
+            "value":"[TS_862735]_Text"
+        },
+        {
+            "name":"build_new_folder",
+            "value":"[TS_987574]_New folder"
+        },
+        {
+            "name":"doc",
+            "value":"[TS_987488]_Document"
+        },
+        {
+            "name":"the_location_already_contains_this_folder",
+            "value":"[TS_987049]_The destination already has a folder named \"%s\". Replace the folder in the destination?"
+        },
+        {
+            "name":"open_mode",
+            "value":"[TS_987775]_Open with"
+        },
+        {
+            "name":"oversized",
+            "value":"[TS_987152]_Very large (>%d GB)"
+        },
+        {
+            "name":"picture",
+            "value":"[TS_987752]_Image"
+        },
+        {
+            "name":"file_size",
+            "value":"[TS_862812]_File size"
+        },
+        {
+            "name":"xls",
+            "value":"[TS_987623]_Spreadsheet"
+        },
+        {
+            "name":"this_week",
+            "value":"[TS_987707]_This week"
+        },
+        {
+            "name":"rename",
+            "value":"[TS_862798]_Rename"
+        },
+        {
+            "name":"big",
+            "value":"[TS_987753]_Large (%1$d MB–%2$d GB)"
+        },
+        {
+            "name":"paste",
+            "value":"[TS_987427]_Paste"
+        },
+        {
+            "name":"apply_to_all_files",
+            "value":"[TS_987190]_Do this for all files"
+        },
+        {
+            "name":"save_file_failed",
+            "value":"[TS_987557]_Failed to save file."
+        },
+        {
+            "name":"long_ago",
+            "value":"[TS_987291]_Older"
+        },
+        {
+            "name":"exe",
+            "value":"[TS_987320]_App"
+        },
+        {
+            "name":"today",
+            "value":"[TS_862537]_Today"
+        },
+        {
+            "name":"copy",
+            "value":"[TS_862816]_Copy"
+        },
+        {
+            "name":"save",
+            "value":"[TS_987664]_Save"
+        },
+        {
+            "name":"folder",
+            "value":"[TS_987600]_Folders"
+        },
+        {
+            "name":"recent",
+            "value":"[TS_862873]_Recent"
+        },
+        {
+            "name":"no_match_result",
+            "value":"[TS_987677]_No results"
+        },
+        {
+            "name":"file_name",
+            "value":"[TS_862739]_File name"
+        },
+        {
+            "name":"contains_duplicate_filename",
+            "value":"[TS_808243]_A file with this name already exists in this directory."
+        },
+        {
+            "name":"ppt",
+            "value":"[TS_987183]_Presentation"
+        },
+        {
+            "name":"delete_permanent",
+            "value":"[TS_987118]_Delete permanently"
+        },
+        {
+            "name":"MainAbility_desc",
+            "value":"[TS_862884]_pad_MainAbility"
+        },
+        {
+            "name":"create_new_folder",
+            "value":"[TS_987341]_New folder"
+        },
+        {
+            "name":"MainAbility_label",
+            "value":"[TS_862579]_Files"
+        },
+        {
+            "name":"cancel_all_selection",
+            "value":"[TS_987504]_Deselect all"
+        },
+        {
+            "name":"small",
+            "value":"[TS_987187]_Small (%1$d KB–%2$d MB)"
+        },
+        {
+            "name":"more",
+            "value":"[TS_862591]_More"
+        },
+        {
+            "name":"the_location_already_contains_this_file",
+            "value":"[TS_987562]_There is already a file named \"%s\" in this location."
+        },
+        {
+            "name":"no_selected",
+            "value":"[TS_987290]_None selected"
+        },
+        {
+            "name":"open_in_new_window",
+            "value":"[TS_987005]_Open in new window"
+        },
+        {
+            "name":"cut",
+            "value":"[TS_987509]_Cut"
+        },
+        {
+            "name":"video",
+            "value":"[TS_987660]_Videos"
+        },
+        {
+            "name":"storage_location",
+            "value":"[TS_987587]_Storage location"
+        },
+        {
+            "name":"open",
+            "value":"[TS_987041]_Open"
+        },
+        {
+            "name":"build_folder_failed",
+            "value":"[TS_987379]_Failed to create new folder."
+        },
+        {
+            "name":"compressed",
+            "value":"[TS_987650]_Archives"
+        },
+        {
+            "name":"unspecified",
+            "value":"[TS_987226]_Not specified"
+        },
+        {
+            "name":"sort_rule",
+            "value":"[TS_987467]_Sort"
+        },
+        {
+            "name":"clear_delete",
+            "value":"[TS_987412]_Empty Recycle Bin"
+        },
+        {
+            "name":"image",
+            "value":"[TS_987377]_Images"
+        },
+        {
+            "name":"share",
+            "value":"[TS_862589]_Share"
+        },
+        {
+            "name":"apply_to_all_folders",
+            "value":"[TS_987444]_Do this for all folders"
+        },
+        {
+            "name":"open_folder",
+            "value":"[TS_987028]_Open file location"
+        },
+        {
+            "name":"yesterday",
+            "value":"[TS_862639]_Yesterday"
+        },
+        {
+            "name":"recent_delete",
+            "value":"[TS_987739]_Recycle Bin"
+        },
+        {
+            "name":"restore",
+            "value":"[TS_862756]_Restore"
+        },
+        {
+            "name":"this_year",
+            "value":"[TS_987778]_This year"
+        },
+        {
+            "name":"quick_access",
+            "value":"[TS_987465]_Quick access"
+        },
+        {
+            "name":"delete",
+            "value":"[TS_862741]_Delete"
+        },
+        {
+            "name":"zero",
+            "value":"[TS_987774]_Empty (%d KB)"
+        },
+        {
+            "name":"connect_line",
+            "value":"[TS_987365]_%1$s | %2$s"
+        },
+        {
+            "name":"save_both",
+            "value":"[TS_987714]_Keep both"
+        },
+        {
+            "name":"this_month",
+            "value":"[TS_987625]_This month"
+        },
+        {
+            "name":"sort",
+            "value":"[TS_987728]_Sort by"
+        },
+        {
+            "name":"details",
+            "value":"[TS_808340]_Details"
+        },
+        {
+            "name":"file_date",
+            "value":"[TS_987207]_Date"
+        },
+        {
+            "name":"merge",
+            "value":"[TS_862912]_Merge"
+        },
+        {
+            "name":"name",
+            "value":"[TS_862603]_Name"
+        },
+        {
+            "name":"music",
+            "value":"[TS_987402]_Audio"
+        },
+        {
+            "name":"cancel",
+            "value":"[TS_862846]_Cancel"
+        },
+        {
+            "name":"audio",
+            "value":"[TS_862527]_Audio"
+        },
+        {
+            "name":"last_week",
+            "value":"[TS_987177]_Last week"
+        },
+        {
+            "name":"pc_desktop",
+            "value":"[TS_987305]_Home screen"
+        },
+        {
+            "name":"PC_FILE_START_FORMAT",
+            "value":"[TS_987211]_Format"
+        },
+        {
+            "name":"child_folder",
+            "value":"[TS_987025]_Unable to paste. The target directory is a sub-directory of the source directory."
+        },
+        {
+            "name":"detail_type",
+            "value":"[TS_987019]_File type: %s"
+        },
+        {
+            "name":"pc_movies",
+            "value":"[TS_987105]_Videos"
+        },
+        {
+            "name":"picker_file_not_exist",
+            "value":"[TS_987771]_The folder you entered does not exist. Please select another one."
+        },
+        {
+            "name":"print",
+            "value":"[TS_987655]_Print"
+        },
+        {
+            "name":"storage_data_lost_menu",
+            "value":"[TS_987474]_Removing this disk while files are being transferred may result in data loss."
+        },
+        {
+            "name":"can_not_drag_in",
+            "value":"[TS_987155]_Unable to drag to this directory."
+        },
+        {
+            "name":"PC_FILE_REMOVED",
+            "value":"[TS_987385]_Remove \"%s\""
+        },
+        {
+            "name":"detail_position",
+            "value":"[TS_987430]_Location: %s"
+        },
+        {
+            "name":"Emptying",
+            "value":"[TS_987555]_Emptying Recycle Bin…"
+        },
+        {
+            "name":"storage_file_delete",
+            "value":"[TS_987682]_Selected files will be permanently deleted."
+        },
+        {
+            "name":"get_files_error",
+            "value":"[TS_987712]_Failed to obtain file list."
+        },
+        {
+            "name":"pc_pictures",
+            "value":"[TS_837882]_Images"
+        },
+        {
+            "name":"PC_FILE_DISK_CAPACITY",
+            "value":"[TS_987067]_Capacity"
+        },
+        {
+            "name":"storage_data_lost",
+            "value":"[TS_987503]_\"%s\" was not safely removed. Data may have been lost."
+        },
+        {
+            "name":"detail_name",
+            "value":"[TS_987438]_File name: %s"
+        },
+        {
+            "name":"operate_failed",
+            "value":"[TS_987663]_Operation failed."
+        },
+        {
+            "name":"pc_downloads",
+            "value":"[TS_987156]_Downloads"
+        },
+        {
+            "name":"PC_FILE_FORMATTING",
+            "value":"[TS_987637]_Format"
+        },
+        {
+            "name":"moving",
+            "value":"[TS_987761]_Moving…"
+        },
+        {
+            "name":"PC_FILE_DISK_FORMAT",
+            "value":"[TS_987440]_Format \"%s\""
+        },
+        {
+            "name":"pasting",
+            "value":"[TS_862659]_Paste"
+        },
+        {
+            "name":"pc_filemanager_file_not_exist",
+            "value":"[TS_987037]_\"%s\" does not exist."
+        },
+        {
+            "name":"pc_gallery",
+            "value":"[TS_987117]_Gallery"
+        },
+        {
+            "name":"pc_music",
+            "value":"[TS_987134]_Music"
+        },
+        {
+            "name":"storage_force_remove",
+            "value":"[TS_987087]_Remove anyway"
+        },
+        {
+            "name":"skip",
+            "value":"[TS_862910]_Skip"
+        },
+        {
+            "name":"detail_time",
+            "value":"[TS_831871]_Modified: %s"
+        },
+        {
+            "name":"pc_documents",
+            "value":"[TS_987494]_Documents"
+        },
+        {
+            "name":"restoring_file",
+            "value":"[TS_987421]_Restoring \"%s\"…"
+        },
+        {
+            "name":"file_open_date",
+            "value":"[TS_987237]_Date accessed"
+        },
+        {
+            "name":"file_change_date",
+            "value":"[TS_987605]_Date modified"
+        },
+        {
+            "name":"apply_to_all",
+            "value":"[TS_987738]_Apply to all"
+        },
+        {
+            "name":"same_name_folder_recover",
+            "value":"[TS_987732]_The destination already contains a folder named \"%s\". Restore anyway?"
+        },
+        {
+            "name":"child_folder_confirm",
+            "value":"[TS_987246]_OK"
+        },
+        {
+            "name":"PC_FILE_SYS_FORMAT",
+            "value":"[TS_987286]_File system"
+        },
+        {
+            "name":"cant_share_empty_folder",
+            "value":"[TS_987493]_Empty folders can't be shared."
+        },
+        {
+            "name":"canceling",
+            "value":"[TS_987425]_Canceling…"
+        },
+        {
+            "name":"media_library",
+            "value":"[TS_987533]_Media"
+        },
+        {
+            "name":"no_space_left",
+            "value":"[TS_987518]_Insufficient disk space."
+        },
+        {
+            "name":"PC_FILE_FORMAT_CONFIRMATION",
+            "value":"[TS_987373]_Formatting will delete all data stored on this disk. This cannot be undone.\n\nAre you sure you want to format this disk?"
+        },
+        {
+            "name":"app_data_write_limit",
+            "value":"[TS_987348]_This directory is read-only in user mode. Enable Developer mode and try again."
+        },
+        {
+            "name":"formatting",
+            "value":"[TS_987141]_Formatting…"
+        },
+        {
+            "name":"storage_remove",
+            "value":"[TS_987088]_Remove"
+        },
+        {
+            "name":"same_name_file_recover",
+            "value":"[TS_987769]_The destination already contains a file named \"%s\". Restore anyway?"
+        },
+        {
+            "name":"storage_format_fail",
+            "value":"[TS_987363]_Formatting failed."
+        },
+        {
+            "name":"pc_appdata",
+            "value":"[TS_987172]_AppData"
+        },
+        {
+            "name":"select",
+            "value":"[TS_987080]_Select"
+        },
+        {
+            "name":"rename_have_same_name",
+            "value":"[TS_987608]_A file with the same name already exists in this folder. Please enter a different name."
+        },
+        {
+            "name":"share_files_exceed",
+            "value":"[TS_987216]_Unable to share more than %d files at a time."
+        },
+        {
+            "name":"pc_images",
+            "value":"[TS_987472]_Images"
+        },
+        {
+            "name":"confirm_network_connection",
+            "value":"[TS_987218]_Check your Internet connection and try again."
+        },
+        {
+            "name":"PC_FILE_REMOVED_FROM_QUICK_ACCESS",
+            "value":"[TS_987055]_Remove from Quick access"
+        },
+        {
+            "name":"unknown_error_occurred",
+            "value":"[TS_873041]_Unknown error"
+        },
+        {
+            "name":"storage_free_size",
+            "value":"[TS_846181]_%s is available, "
+        },
+        {
+            "name":"deleting_file",
+            "value":"[TS_987530]_Deleting \"%s\"…"
+        },
+        {
+            "name":"PC_FILE_ADD_TO_QUICK_ACCESS",
+            "value":"[TS_987259]_Add to Quick access"
+        },
+        {
+            "name":"pasting_file",
+            "value":"[TS_987129]_Pasting \"%s\"…"
+        },
+        {
+            "name":"cancel_multiple_choices",
+            "value":"[TS_987448]_Deselect all"
+        },
+        {
+            "name":"stop_recover_file",
+            "value":"[TS_987669]_Stop"
+        },
+        {
+            "name":"path_not_exist",
+            "value":"[TS_987114]_Path does not exist. Check and try again."
+        },
+        {
+            "name":"operate_deny",
+            "value":"[TS_987541]_Unable to do this with online-only files"
+        },
+        {
+            "name":"select_file_name",
+            "value":"[TS_987034]_File name"
+        },
+        {
+            "name":"storage_format_succeed",
+            "value":"[TS_987175]_Formatting successful."
+        },
+        {
+            "name":"READONLY_FILE_SYSTEM",
+            "value":"[TS_850109]_Feature unavailable due to company restrictions."
+        },
+        {
+            "name":"view",
+            "value":"[TS_987303]_View"
+        },
+        {
+            "name":"storage_total_size",
+            "value":"[TS_987124]_%s total"
+        },
+        {
+            "name":"quick_view",
+            "value":"[TS_987547]_Preview"
+        },
+        {
+            "name":"save_have_same_name",
+            "value":"[TS_987071]_A file with the same name already exists in this folder. Would you like to replace it?"
+        },
+        {
+            "name":"quick_access_only_can_have_100_files",
+            "value":"[TS_987099]_Quick access can have a maximum of %d directories."
+        },
+        {
+            "name":"detail_size",
+            "value":"[TS_987485]_File size: %s"
+        },
+        {
+            "name":"quick_access_path_not_found",
+            "value":"[TS_987270]_Path not found."
+        },
+        {
+            "name":"selected_none",
+            "value":"[TS_862513]_None selected"
+        },
+        {
+            "name":"selected",
+            "value":"[TS_862742]_Selected %d items"
+        },
+        {
+            "name":"waiting_network",
+            "value":"[TS_875587]_Waiting for network…"
+        },
+        {
+            "name":"add",
+            "value":"[TS_862860]_New"
+        },
+        {
+            "name":"list_icon",
+            "value":"[TS_862725]_Icon view"
+        },
+        {
+            "name":"list_list",
+            "value":"[TS_862697]_List view"
+        },
+        {
+            "name":"order_time",
+            "value":"[TS_862786]_Time"
+        },
+        {
+            "name":"order_size",
+            "value":"[TS_862764]_Size"
+        },
+        {
+            "name":"order_type",
+            "value":"[TS_862686]_Type"
+        },
+        {
+            "name":"delete_all",
+            "value":"[TS_865865]_Clear files"
+        },
+        {
+            "name":"mine_list_help",
+            "value":"[TS_862708]_Help"
+        },
+        {
+            "name":"check_version",
+            "value":"[TS_865320]_Check for updates"
+        },
+        {
+            "name":"setting_title_about",
+            "value":"[TS_862652]_About"
+        },
+        {
+            "name":"open_as",
+            "value":"[TS_862787]_Open as"
+        },
+        {
+            "name":"other",
+            "value":"[TS_862509]_Other"
+        },
+        {
+            "name":"videos",
+            "value":"[TS_862614]_Video"
+        },
+        {
+            "name":"images",
+            "value":"[TS_862720]_Images"
+        },
+        {
+            "name":"hide_cut_toast",
+            "value":"[TS_862650]_Pull down the Notification Panel to view progress."
+        },
+        {
+            "name":"hide_drag_toast",
+            "value":"[TS_873023]_Pull down the Notification Panel to view progress."
+        },
+        {
+            "name":"hide_copy_toast",
+            "value":"[TS_862705]_Pull down the Notification Panel to view progress."
+        },
+        {
+            "name":"notify_result",
+            "value":"[TS_873750]_%1$s, %2$s"
+        },
+        {
+            "name":"click_view_detail",
+            "value":"[TS_873744]_Learn more"
+        },
+        {
+            "name":"not_paste_itself",
+            "value":"[TS_862782]_Unable to paste a folder to itself or its subfolder."
+        },
+        {
+            "name":"space_not_enough",
+            "value":"[TS_867247]_Insufficient space."
+        },
+        {
+            "name":"initialization",
+            "value":"[TS_862598]_Initializing…"
+        },
+        {
+            "name":"not_support_characters_new",
+            "value":"[TS_875829]_Not supported: %s"
+        },
+        {
+            "name":"completeName",
+            "value":"[TS_862904]_Enter a complete file name"
+        },
+        {
+            "name":"same_file_exist",
+            "value":"[TS_862611]_File name already in use."
+        },
+        {
+            "name":"emptyName",
+            "value":"[TS_862622]_There is no content."
+        },
+        {
+            "name":"max_input_length",
+            "value":"[TS_862823]_Maximum length reached"
+        },
+        {
+            "name":"rename_fail",
+            "value":"[TS_862709]_Renaming failed."
+        },
+        {
+            "name":"sameName",
+            "value":"[TS_862844]_File name already in use."
+        },
+        {
+            "name":"addFolder",
+            "value":"[TS_862820]_New folder"
+        },
+        {
+            "name":"OtherLocation",
+            "value":"[TS_862701]_Other location"
+        },
+        {
+            "name":"softDelete",
+            "value":"[TS_862838]_Deleted files are moved to Recently deleted."
+        },
+        {
+            "name":"complete_delete_tips",
+            "value":"[TS_862712]_Deleted files can't be restored."
+        },
+        {
+            "name":"part_external_file_delete_tips",
+            "value":"[TS_865741]_Files you delete from your device can be restored in Recently deleted. Some files from external devices can't be restored."
+        },
+        {
+            "name":"delete_complete_tips",
+            "value":"[TS_865861]_Permanently delete selected files?"
+        },
+        {
+            "name":"net_disconnect",
+            "value":"[TS_862595]_No Internet connection. Please check your network settings."
+        },
+        {
+            "name":"file_not_exist",
+            "value":"[TS_862658]_%s does not exist."
+        },
+        {
+            "name":"move",
+            "value":"[TS_862600]_Move"
+        },
+        {
+            "name":"rotate",
+            "value":"[TS_862609]_Rotate"
+        },
+        {
+            "name":"otherApp",
+            "value":"[TS_862766]_Open in app"
+        },
+        {
+            "name":"openFolder",
+            "value":"[TS_865857]_Open folder"
+        },
+        {
+            "name":"favorite",
+            "value":"[TS_862842]_Favorite"
+        },
+        {
+            "name":"unfavorite",
+            "value":"[TS_873033]_Unfavorite"
+        },
+        {
+            "name":"delete_upper_camelcase",
+            "value":"[TS_862819]_Delete"
+        },
+        {
+            "name":"play",
+            "value":"[TS_862580]_Play"
+        },
+        {
+            "name":"pause",
+            "value":"[TS_862549]_Pause"
+        },
+        {
+            "name":"menu_select_all",
+            "value":"[TS_862654]_Select all"
+        },
+        {
+            "name":"menu_deselect_all",
+            "value":"[TS_862699]_Deselect all"
+        },
+        {
+            "name":"tab_item_phone",
+            "value":"[TS_865965]_Internal storage"
+        },
+        {
+            "name":"myPhone",
+            "value":"[TS_862755]_My phone"
+        },
+        {
+            "name":"recentlyDeleted",
+            "value":"[TS_862653]_Recently deleted"
+        },
+        {
+            "name":"get_folder_size_tips",
+            "value":"[TS_862511]_Calculating…"
+        },
+        {
+            "name":"folder_name",
+            "value":"[TS_862631]_Folder name"
+        },
+        {
+            "name":"folder_size",
+            "value":"[TS_862836]_Size"
+        },
+        {
+            "name":"include",
+            "value":"[TS_862601]_Contains"
+        },
+        {
+            "name":"select_num",
+            "value":"[TS_865963]_(%d)"
+        },
+        {
+            "name":"created_time",
+            "value":"[TS_865321]_Created"
+        },
+        {
+            "name":"modified_time",
+            "value":"[TS_862861]_Modified"
+        },
+        {
+            "name":"last_open_time",
+            "value":"[TS_865317]_Last accessed"
+        },
+        {
+            "name":"original_location",
+            "value":"[TS_867249]_Original location"
+        },
+        {
+            "name":"where",
+            "value":"[TS_865860]_Location"
+        },
+        {
+            "name":"dimension",
+            "value":"[TS_873044]_Dimensions"
+        },
+        {
+            "name":"duration",
+            "value":"[TS_862801]_Duration"
+        },
+        {
+            "name":"note",
+            "value":"[TS_862604]_Note"
+        },
+        {
+            "name":"suffixErr",
+            "value":"[TS_862746]_Changing the extension may cause the file to become unusable. Continue anyway?"
+        },
+        {
+            "name":"edit",
+            "value":"[TS_873024]_Edit"
+        },
+        {
+            "name":"folder_not_exist",
+            "value":"[TS_873031]_Folder does not exist."
+        },
+        {
+            "name":"get_it",
+            "value":"[TS_862612]_OK"
+        },
+        {
+            "name":"waiting_progress_message",
+            "value":"[TS_865962]_Please wait…"
+        },
+        {
+            "name":"restore_fail_dialog_content_singular",
+            "value":"[TS_868780]_%s could not be restored."
+        },
+        {
+            "name":"delete_fail_dialog_content_singular",
+            "value":"[TS_865862]_Unable to delete %s."
+        },
+        {
+            "name":"restore_success",
+            "value":"[TS_862605]_Successfully restored."
+        },
+        {
+            "name":"del_suc",
+            "value":"[TS_862732]_Successfully deleted."
+        },
+        {
+            "name":"del_fail",
+            "value":"[TS_862757]_Delete failed."
+        },
+        {
+            "name":"restore_fail",
+            "value":"[TS_862858]_Unable to restore."
+        },
+        {
+            "name":"restore_suspended",
+            "value":"[TS_862815]_Restore canceled."
+        },
+        {
+            "name":"delete_suspended",
+            "value":"[TS_862635]_Delete canceled."
+        },
+        {
+            "name":"unable_open_file_dialog_title",
+            "value":"[TS_862839]_Unable to open this file."
+        },
+        {
+            "name":"unable_open_file_dialog_content",
+            "value":"[TS_862901]_Files in Recently deleted need to be restored before they can be used again."
+        },
+        {
+            "name":"favorite_title",
+            "value":"[TS_877301]_Favorites"
+        },
+        {
+            "name":"copy_fail_content_dlg",
+            "value":"[TS_862532]_Unable to copy %s. Please check."
+        },
+        {
+            "name":"move_fail_content_dlg",
+            "value":"[TS_862792]_Unable to move %s. Please check."
+        },
+        {
+            "name":"drag_fail_content_dlg",
+            "value":"[TS_873047]_Unable to drag & drop %s. Please check."
+        },
+        {
+            "name":"discontinue",
+            "value":"[TS_862797]_End"
+        },
+        {
+            "name":"apply_all",
+            "value":"[TS_862728]_Apply to all"
+        },
+        {
+            "name":"copy_progress_content",
+            "value":"[TS_862882]_Copied: %1$s/%2$s"
+        },
+        {
+            "name":"move_progress_content",
+            "value":"[TS_862715]_Moved: %1$s/%2$s"
+        },
+        {
+            "name":"drag_progress_content",
+            "value":"[TS_873039]_Dragged & dropped: %1$s/%2$s"
+        },
+        {
+            "name":"hide",
+            "value":"[TS_862597]_Hide"
+        },
+        {
+            "name":"copy_move_abort_alert",
+            "value":"[TS_867248]_Files are being copied/moved. Exit without completing these tasks?"
+        },
+        {
+            "name":"paste_conflict_diglog_btn_message",
+            "value":"[TS_862871]_Files are currently being copied or moved. End the current transfer before starting a new one."
+        },
+        {
+            "name":"continue",
+            "value":"[TS_862569]_Continue"
+        },
+        {
+            "name":"exits",
+            "value":"[TS_862523]_Exit"
+        },
+        {
+            "name":"keep",
+            "value":"[TS_862533]_Keep both"
+        },
+        {
+            "name":"merge_folder_content",
+            "value":"[TS_862906]_Merging folders retains all new items."
+        },
+        {
+            "name":"merge_folder_tip_new",
+            "value":"[TS_880303]_A folder named \"%s\" already exists in this location."
+        },
+        {
+            "name":"replace_file_tip",
+            "value":"[TS_862641]_A file with the name \"%s\" already exists in this location. Replace it?"
+        },
+        {
+            "name":"no_target_path",
+            "value":"[TS_862722]_Cannot find target path."
+        },
+        {
+            "name":"addFolder_fail",
+            "value":"[TS_862848]_Failed to create new folder."
+        },
+        {
+            "name":"pasteboard_dialog_title",
+            "value":"[TS_862887]_Note"
+        },
+        {
+            "name":"user_agreement_and_permission",
+            "value":"[TS_862865]_Statement About Files and Privacy"
+        },
+        {
+            "name":"privacy_content_second_divide",
+            "value":"[TS_862623]_We only collect the personal information required to provide this service, and we take adequate measures to ensure that your information is secure. For details, refer to the %s."
+        },
+        {
+            "name":"file_services_dialog_subtitle",
+            "value":"[TS_862575]_In Basic mode, you will only be able to use basic features, such as file management. To provide these features, this service requires an Internet connection and the Storage (Media and files) and App list permissions, and needs to read media data and the list of installed apps. By tapping Use Basic mode, you agree to the above terms and the Permissions Notice."
+        },
+        {
+            "name":"privacy_dialog_content_first",
+            "value":"[TS_862767]_Full mode requires an Internet connection and the Storage and App list permissions. It also needs to access account, device, app (including the list of installed apps), and network information, as well as data you actively upload."
+        },
+        {
+            "name":"privacy_content_third",
+            "value":"[TS_862621]_Please read the above statement carefully. By tapping Agree & Continue, you agree to the statement."
+        },
+        {
+            "name":"file_services_dialog_confirm",
+            "value":"[TS_862789]_Agree & continue"
+        },
+        {
+            "name":"afternoon",
+            "value":"[TS_987634]_%1$s %2$s"
+        },
+        {
+            "name":"storage_stem_part",
+            "value":"[TS_987742]_%1$s, %2$s"
+        },
+        {
+            "name":"set_up",
+            "value":"[TS_987278]_Settings"
+        },
+        {
+            "name":"default_tag",
+            "value":"[TS_987495]_Default tags"
+        },
+        {
+            "name":"display_extension_name",
+            "value":"[TS_987498]_Show all file extensions"
+        },
+        {
+            "name":"confirm_delete_tag_text",
+            "value":"[TS_987545]_This tag will be removed from any files you've added it to."
+        },
+        {
+            "name":"grant_permission",
+            "value":"[TS_987394]_Grant access"
+        },
+        {
+            "name":"before_dawn",
+            "value":"[TS_987681]_%1$s %2$s"
+        },
+        {
+            "name":"add_new_tag",
+            "value":"[TS_987065]_Add new tag"
+        },
+        {
+            "name":"no_tag_group",
+            "value":"[TS_987344]_No tags"
+        },
+        {
+            "name":"detail_delete_time",
+            "value":"[TS_987704]_Deleted: %s"
+        },
+        {
+            "name":"medium_icon",
+            "value":"[TS_987591]_Medium icons"
+        },
+        {
+            "name":"newWindow",
+            "value":"[TS_987161]_New windows show"
+        },
+        {
+            "name":"noon",
+            "value":"[TS_987109]_%1$s %2$s"
+        },
+        {
+            "name":"input_name",
+            "value":"[TS_987642]_Enter tag name"
+        },
+        {
+            "name":"pinyinT2Z",
+            "value":"[TS_987048]_T–Z (Pinyin)"
+        },
+        {
+            "name":"detail_created_time",
+            "value":"[TS_987024]_Created: %s"
+        },
+        {
+            "name":"file_tag",
+            "value":"[TS_987755]_Tags"
+        },
+        {
+            "name":"tag_color_purple",
+            "value":"[TS_987661]_Purple"
+        },
+        {
+            "name":"tag_select_tip",
+            "value":"[TS_987393]_Selected tags are shown in the sidebar."
+        },
+        {
+            "name":"common",
+            "value":"[TS_987137]_General"
+        },
+        {
+            "name":"file_delete_date",
+            "value":"[TS_987471]_Deleted"
+        },
+        {
+            "name":"pinyinA2F",
+            "value":"[TS_987552]_A–F (Pinyin)"
+        },
+        {
+            "name":"externalDisk",
+            "value":"[TS_862740]_SD card"
+        },
+        {
+            "name":"operate_dupFolder_from_child_to_parent",
+            "value":"[TS_987647]_The folder \"%s\" can't be replaced by a sub-directory with the same name."
+        },
+        {
+            "name":"tag_color_grey",
+            "value":"[TS_987734]_Gray"
+        },
+        {
+            "name":"grouping",
+            "value":"[TS_987656]_Group by"
+        },
+        {
+            "name":"readonly_file_system",
+            "value":"[TS_987050]_This is a read-only file system."
+        },
+        {
+            "name":"big_icon",
+            "value":"[TS_987322]_Large icons"
+        },
+        {
+            "name":"connected",
+            "value":"[TS_987145]_Connect"
+        },
+        {
+            "name":"all_tags",
+            "value":"[TS_987691]_All tags"
+        },
+        {
+            "name":"detail_recent_time",
+            "value":"[TS_987463]_Last opened: %s"
+        },
+        {
+            "name":"app_name",
+            "value":"[TS_987081]_Files"
+        },
+        {
+            "name":"create_folder",
+            "value":"[TS_987314]_Folder"
+        },
+        {
+            "name":"letterQ2Z",
+            "value":"[TS_987404]_Q–Z"
+        },
+        {
+            "name":"original_file_path",
+            "value":"[TS_987499]_Original path"
+        },
+        {
+            "name":"file_operate_not_permitted",
+            "value":"[TS_987201]_\"%s\" could not be copied.\nReason: Restricted by company"
+        },
+        {
+            "name":"letterA2H",
+            "value":"[TS_987367]_A–H"
+        },
+        {
+            "name":"tag_color_cyan",
+            "value":"[TS_987321]_Cyan"
+        },
+        {
+            "name":"dusk",
+            "value":"[TS_987162]_%1$s %2$s"
+        },
+        {
+            "name":"file_information",
+            "value":"[TS_987631]_Details"
+        },
+        {
+            "name":"add_file_tag",
+            "value":"[TS_987228]_Add tag"
+        },
+        {
+            "name":"group_and_sort",
+            "value":"[TS_987281]_Group and sort"
+        },
+        {
+            "name":"delete_tag",
+            "value":"[TS_987235]_Delete tag \"%s\""
+        },
+        {
+            "name":"pinyinM2S",
+            "value":"[TS_987140]_M–S (Pinyin)"
+        },
+        {
+            "name":"tag_color_red",
+            "value":"[TS_987122]_Red"
+        },
+        {
+            "name":"undo",
+            "value":"[TS_987004]_Undo"
+        },
+        {
+            "name":"detail_modified_time",
+            "value":"[TS_987686]_Modified: %s"
+        },
+        {
+            "name":"tag_num_reached_limit",
+            "value":"[TS_987171]_Maximum number of tags added."
+        },
+        {
+            "name":"default",
+            "value":"[TS_862630]_Default"
+        },
+        {
+            "name":"tag_color_green",
+            "value":"[TS_987531]_Green"
+        },
+        {
+            "name":"detail_amount",
+            "value":"[TS_987076]_Contains: %s"
+        },
+        {
+            "name":"evening",
+            "value":"[TS_987066]_%1$s %2$s"
+        },
+        {
+            "name":"tag_name_exists",
+            "value":"[TS_987063]_There is already a tag named \"%s\". Please rename."
+        },
+        {
+            "name":"remove_from_tag",
+            "value":"[TS_987423]_Remove from tags"
+        },
+        {
+            "name":"confirm_delete_tag_title",
+            "value":"[TS_987111]_Delete tag \"%s\"?"
+        },
+        {
+            "name":"morning",
+            "value":"[TS_987678]_%1$s %2$s"
+        },
+        {
+            "name":"save_and_close",
+            "value":"[TS_987441]_Save & close"
+        },
+        {
+            "name":"authing_file",
+            "value":"[TS_987057]_Select the file \"%s\""
+        },
+        {
+            "name":"authing_file_not_exist",
+            "value":"[TS_987121]_Path not found: %s"
+        },
+        {
+            "name":"descending",
+            "value":"[TS_987523]_Descending"
+        },
+        {
+            "name":"password_error",
+            "value":"[TS_987267]_Incorrect password. Please try again."
+        },
+        {
+            "name":"column_view",
+            "value":"[TS_987339]_Columns"
+        },
+        {
+            "name":"default_tag_drag_tip",
+            "value":"[TS_987573]_Drag tags here to make them available in the \"Add tag\" menu."
+        },
+        {
+            "name":"create_file_name",
+            "value":"[TS_987520]_New %1$s %2$s%3$s"
+        },
+        {
+            "name":"ascertain",
+            "value":"[TS_987667]_OK"
+        },
+        {
+            "name":"delete_tag_no_name",
+            "value":"[TS_987135]_Delete tag"
+        },
+        {
+            "name":"tag_color_blue",
+            "value":"[TS_987571]_Blue"
+        },
+        {
+            "name":"tag_has_special_char",
+            "value":"[TS_987241]_Tag name contains special characters. Please rename."
+        },
+        {
+            "name":"authing_folder",
+            "value":"[TS_987727]_Select the folder \"%s\""
+        },
+        {
+            "name":"early_morning",
+            "value":"[TS_987289]_%1$s %2$s"
+        },
+        {
+            "name":"file_details",
+            "value":"[TS_987397]_Details"
+        },
+        {
+            "name":"tag_color_yellow",
+            "value":"[TS_987668]_Yellow"
+        },
+        {
+            "name":"create_folder_or_file",
+            "value":"[TS_987519]_New"
+        },
+        {
+            "name":"user",
+            "value":"[TS_987013]_User"
+        },
+        {
+            "name":"check",
+            "value":"[TS_987449]_View"
+        },
+        {
+            "name":"create_new_file_tag",
+            "value":"[TS_987757]_Add new tag"
+        },
+        {
+            "name":"is_opening",
+            "value":"[TS_987313]_Opening \"%s\"…"
+        },
+        {
+            "name":"no_tag_added",
+            "value":"[TS_987506]_No tag added"
+        },
+        {
+            "name":"change_tag_color",
+            "value":"[TS_987767]_Tag color"
+        },
+        {
+            "name":"midnight",
+            "value":"[TS_987594]_%1$s %2$s"
+        },
+        {
+            "name":"dawn",
+            "value":"[TS_987325]_%1$s %2$s"
+        },
+        {
+            "name":"tag_name_illegal_warning",
+            "value":"[TS_987538]_Tag name can't contain any of these: []\"':/*?<>|`{}"
+        },
+        {
+            "name":"tags",
+            "value":"[TS_987648]_Tags"
+        },
+        {
+            "name":"file_path",
+            "value":"[TS_987370]_Path"
+        },
+        {
+            "name":"ascending",
+            "value":"[TS_987106]_Ascending"
+        },
+        {
+            "name":"tag_management",
+            "value":"[TS_987269]_Tags"
+        },
+        {
+            "name":"letterI2P",
+            "value":"[TS_987717]_I–P"
+        },
+        {
+            "name":"detail_folderName",
+            "value":"[TS_987780]_Folder name: %s"
+        },
+        {
+            "name":"small_icon",
+            "value":"[TS_987719]_Small icons"
+        },
+        {
+            "name":"pinyinG2L",
+            "value":"[TS_987507]_G–L (Pinyin)"
+        },
+        {
+            "name":"file_creation_date",
+            "value":"[TS_987204]_Date created"
+        },
+        {
+            "name":"storage_stem_all",
+            "value":"[TS_987132]_%1$s, %2$s | %3$s of %4$s free"
+        },
+        {
+            "name":"secret_security_question_six",
+            "value":"[TS_987272]_Custom"
+        },
+        {
+            "name":"forget_password",
+            "value":"[TS_987196]_Forgot your password?"
+        },
+        {
+            "name":"change_password",
+            "value":"[TS_987036]_Change password"
+        },
+        {
+            "name":"check_update",
+            "value":"[TS_987426]_Check for updates"
+        },
+        {
+            "name":"password",
+            "value":"[TS_987188]_Password"
+        },
+        {
+            "name":"face_recognition_dialog",
+            "value":"[TS_987516]_Link face recognition"
+        },
+        {
+            "name":"currently_in_use",
+            "value":"[TS_987705]_%s (Current)"
+        },
+        {
+            "name":"secret_security_question_four",
+            "value":"[TS_987673]_What was the name of the street you grew up on?"
+        },
+        {
+            "name":"re_enter",
+            "value":"[TS_987405]_Enter password again"
+        },
+        {
+            "name":"detail_original_path",
+            "value":"[TS_987569]_Original path: %s"
+        },
+        {
+            "name":"face_association",
+            "value":"[TS_987524]_Face recognition linked."
+        },
+        {
+            "name":"do_not_associated",
+            "value":"[TS_987125]_Not now"
+        },
+        {
+            "name":"prompt_recognition",
+            "value":"[TS_987258]_Would you like Safe to ask for the password if your fingerprint or facial data is changed?"
+        },
+        {
+            "name":"secret_security",
+            "value":"[TS_987532]_Security questions"
+        },
+        {
+            "name":"secret_security_question_limit",
+            "value":"[TS_987395]_Length limit reached"
+        },
+        {
+            "name":"enter_password",
+            "value":"[TS_987683]_Enter password"
+        },
+        {
+            "name":"security_tips_details",
+            "value":"[TS_987731]_Your files are shown here, but this app can only access the items that you select."
+        },
+        {
+            "name":"secret_security_questions_one",
+            "value":"[TS_987570]_What's your mother's maiden name?"
+        },
+        {
+            "name":"preview",
+            "value":"[TS_873032]_Preview"
+        },
+        {
+            "name":"prompt_recognition_dialog",
+            "value":"[TS_987166]_Note"
+        },
+        {
+            "name":"next_step",
+            "value":"[TS_987622]_Next"
+        },
+        {
+            "name":"secret_security_questions_two",
+            "value":"[TS_987462]_What was the name of your elementary school?"
+        },
+        {
+            "name":"password_reset_failed",
+            "value":"[TS_987597]_Unable to reset password."
+        },
+        {
+            "name":"set_safe_password_rules",
+            "value":"[TS_987644]_Password must be %1$d–%2$d characters (numbers/letters), and contain at least one letter. It cannot be the same as the Safe's name."
+        },
+        {
+            "name":"authenticate_your_identity",
+            "value":"[TS_987158]_Verify your identity"
+        },
+        {
+            "name":"activate_now",
+            "value":"[TS_987401]_Enable"
+        },
+        {
+            "name":"association",
+            "value":"[TS_987170]_Link"
+        },
+        {
+            "name":"associate_fingerprint_fail",
+            "value":"[TS_987242]_Unable to link fingerprint data."
+        },
+        {
+            "name":"not_supported_filesystem",
+            "value":"[TS_987483]_File system not supported."
+        },
+        {
+            "name":"not_association",
+            "value":"[TS_987062]_Not now"
+        },
+        {
+            "name":"data_changes_associated",
+            "value":"[TS_987298]_Changes have been linked."
+        },
+        {
+            "name":"do_associated_account_tips",
+            "value":"[TS_987617]_If you forget your password and security question answers, you'll still be able to reset the password."
+        },
+        {
+            "name":"associate_data_change_fail",
+            "value":"[TS_987308]_Unable to link data."
+        },
+        {
+            "name":"refresh",
+            "value":"[TS_987284]_Refresh"
+        },
+        {
+            "name":"secret_security_questions_four",
+            "value":"[TS_987234]_Who's your favorite football team?"
+        },
+        {
+            "name":"reset_password",
+            "value":"[TS_987666]_Reset password"
+        },
+        {
+            "name":"version_info",
+            "value":"[TS_987128]_Version"
+        },
+        {
+            "name":"verify_password",
+            "value":"[TS_987388]_Verify password"
+        },
+        {
+            "name":"secret_security_question_answer",
+            "value":"[TS_987159]_Answer"
+        },
+        {
+            "name":"secret_security_question_one",
+            "value":"[TS_987565]_What's your father's name?"
+        },
+        {
+            "name":"fingerprint_recognition_dialog",
+            "value":"[TS_987206]_Link fingerprint"
+        },
+        {
+            "name":"secret_security_question_three",
+            "value":"[TS_987075]_What was the name of your middle school?"
+        },
+        {
+            "name":"new_password",
+            "value":"[TS_987316]_New password"
+        },
+        {
+            "name":"bind_face_change",
+            "value":"[TS_987309]_Facial data has been changed. Verify your password again."
+        },
+        {
+            "name":"personal",
+            "value":"[TS_987529]_Personal"
+        },
+        {
+            "name":"input_password",
+            "value":"[TS_987417]_Enter password"
+        },
+        {
+            "name":"complete",
+            "value":"[TS_987733]_Done"
+        },
+        {
+            "name":"encrypt_file",
+            "value":"[TS_1039613]_Encrypt"
+        },
+        {
+            "name":"encrypted_share",
+            "value":"[TS_1039617]_Encrypted share"
+        },
+        {
+            "name":"finish",
+            "value":"[TS_873048]_Done"
+        },
+        {
+            "name":"public",
+            "value":"[TS_987202]_Public"
+        },
+        {
+            "name":"memory_used",
+            "value":"[TS_987255]_Used %1$s GB/%2$s GB"
+        },
+        {
+            "name":"modify_security_question",
+            "value":"[TS_987505]_Change security questions"
+        },
+        {
+            "name":"secret_security_question_two",
+            "value":"[TS_987484]_What's your partner's name?"
+        },
+        {
+            "name":"choose_retrieval_method",
+            "value":"[TS_987383]_Select recovery method"
+        },
+        {
+            "name":"do_associated",
+            "value":"[TS_987477]_Link"
+        },
+        {
+            "name":"secret_security_question_five",
+            "value":"[TS_987251]_Who's your favorite artist or band?"
+        },
+        {
+            "name":"fingerprint_association",
+            "value":"[TS_987409]_Fingerprint linked."
+        },
+        {
+            "name":"confirm_old_password",
+            "value":"[TS_987443]_Confirm old password"
+        },
+        {
+            "name":"security_tips",
+            "value":"[TS_987053]_Private access to files"
+        },
+        {
+            "name":"associate_faces_fail",
+            "value":"[TS_987126]_Unable to link face recognition."
+        },
+        {
+            "name":"set_file_storage_location",
+            "value":"[TS_987492]_Select storage location"
+        },
+        {
+            "name":"unneeded",
+            "value":"[TS_987335]_No"
+        },
+        {
+            "name":"secret_security_questions_three",
+            "value":"[TS_987003]_Where was your first family vacation?"
+        },
+        {
+            "name":"last_step",
+            "value":"[TS_987045]_Previous"
+        },
+        {
+            "name":"bind_fingerprint_change",
+            "value":"[TS_987620]_Fingerprint data has been changed. Verify your password again."
+        },
+        {
+            "name":"secret_security_questions_five",
+            "value":"[TS_987148]_What's your dream job?"
+        },
+        {
+            "name":"verify_security_question",
+            "value":"[TS_987749]_Answer security questions"
+        },
+        {
+            "name":"need",
+            "value":"[TS_987085]_Yes"
+        },
+        {
+            "name":"secret_security_question_hint",
+            "value":"[TS_987060]_Must be %1$d–%2$d letters (or at least 2 Chinese characters)."
+        },
+        {
+            "name":"use_password",
+            "value":"[TS_987229]_Use password"
+        },
+        {
+            "name":"my_pad",
+            "value":"[TS_987328]_My tablet"
+        },
+        {
+            "name":"password_reset_success",
+            "value":"[TS_987136]_Password reset."
+        },
+        {
+            "name":"agree",
+            "value":"[TS_987684]_Agree"
+        },
+        {
+            "name":"jump",
+            "value":"[TS_987182]_Go"
+        },
+        {
+            "name":"unlink_account",
+            "value":"[TS_987540]_Please memorize your password and security question answer."
+        },
+        {
+            "name":"display_application_data",
+            "value":"[TS_987583]_Show app data"
+        },
+        {
+            "name":"file_storage_location",
+            "value":"[TS_987554]_Storage location"
+        },
+        {
+            "name":"damaged_file_open_fail",
+            "value":"[TS_987375]_File corrupted. Unable to open."
+        },
+        {
+            "name":"clear_recent_record",
+            "value":"[TS_987641]_Clear recent records"
+        },
+        {
+            "name":"redo",
+            "value":"[TS_987703]_Redo"
+        },
+        {
+            "name":"delete_system_file_tips",
+            "value":"[TS_987432]_System folders cannot be deleted."
+        },
+        {
+            "name":"cannot_open_this_file",
+            "value":"[TS_987011]_Unable to open"
+        },
+        {
+            "name":"space_transmit",
+            "value":"[TS_987469]_Add to Space Exchange"
+        },
+        {
+            "name":"redo_s",
+            "value":"[TS_987301]_Redo: %s (R)"
+        },
+        {
+            "name":"resident_security_tips",
+            "value":"[TS_987006]_This app can only access items you select"
+        },
+        {
+            "name":"picker_security_tips",
+            "value":"[TS_992966]_This app can only access files you select"
+        },
+        {
+            "name":"button",
+            "value":"[TS_987090]_Button"
+        },
+        {
+            "name":"select_location",
+            "value":"[TS_862672]_Select a location."
+        },
+        {
+            "name":"media_library_files_migrated_to_gallery",
+            "value":"[TS_987501]_Your images and videos are found here."
+        },
+        {
+            "name":"the_location_already_contains_this_file_title",
+            "value":"[TS_987639]_Replace existing file?"
+        },
+        {
+            "name":"undo_s",
+            "value":"[TS_987578]_Undo: %s (U)"
+        },
+        {
+            "name":"unchecked",
+            "value":"[TS_987502]_Not selected"
+        },
+        {
+            "name":"blank",
+            "value":"[TS_987265]_(Blank)"
+        },
+        {
+            "name":"biometric_change_verification",
+            "value":"[TS_987612]_Verify biometric changes"
+        },
+        {
+            "name":"checked",
+            "value":"[TS_987546]_Selected"
+        },
+        {
+            "name":"add_tag",
+            "value":"[TS_987436]_Add tag"
+        },
+        {
+            "name":"create_new",
+            "value":"[TS_987282]_New"
+        },
+        {
+            "name":"recycle",
+            "value":"[TS_987144]_Delete"
+        },
+        {
+            "name":"cancel_face_recognition",
+            "value":"[TS_987103]_Facial data unlinked."
+        },
+        {
+            "name":"cancel_associated",
+            "value":"[TS_987131]_Unlink"
+        },
+        {
+            "name":"cancel_fingerprint_recognition",
+            "value":"[TS_987123]_Fingerprint unlinked."
+        },
+        {
+            "name":"delete_file",
+            "value":"[TS_987139]_Delete files"
+        },
+        {
+            "name":"restore_file",
+            "value":"[TS_987486]_Restore files"
+        },
+        {
+            "name":"copy_file",
+            "value":"[TS_987619]_Copy files"
+        },
+        {
+            "name":"move_file",
+            "value":"[TS_987002]_Move files"
+        },
+        {
+            "name":"drag_file",
+            "value":"[TS_987629]_Drop files"
+        },
+        {
+            "name":"move_in_file",
+            "value":"[TS_987536]_Move in"
+        },
+        {
+            "name":"move_out_file",
+            "value":"[TS_987461]_Move out"
+        },
+        {
+            "name":"permission_usage_explanation_link",
+            "value":"[TS_987306]_Permissions Notice"
+        },
+        {
+            "name":"permission_storage_media_and_files_description",
+            "value":"[TS_987084]_This is used to allow you to select image and video data."
+        },
+        {
+            "name":"about_service_phone",
+            "value":"[TS_862545]_Customer service"
+        },
+        {
+            "name":"net_work_disconnect",
+            "value":"[TS_939358]_No Internet connection. Check your network settings."
+        },
+        {
+            "name":"permission_list_title",
+            "value":"[TS_987035]_Files permissions"
+        },
+        {
+            "name":"about_personal_info",
+            "value":"[TS_862730]_Personal information collected"
+        },
+        {
+            "name":"permission_storage_media_and_files",
+            "value":"[TS_987513]_Images & videos"
+        },
+        {
+            "name":"version_is_latest",
+            "value":"[TS_939357]_Your version is up to date."
+        },
+        {
+            "name":"loading",
+            "value":"[TS_862559]_Loading…"
+        },
+        {
+            "name":"permission_internet",
+            "value":"[TS_987154]_Internet"
+        },
+        {
+            "name":"declare_agree_format_info",
+            "value":"[TS_987369]_Please read the above statement carefully. By clicking Agree, you agree to let us provide you with this service."
+        },
+        {
+            "name":"secret_security_custom_question_hint",
+            "value":"[TS_987266]_Enter up to %d characters"
+        },
+        {
+            "name":"enter_custom_question",
+            "value":"[TS_987592]_Enter custom question"
+        },
+        {
+            "name":"drag_notify_result",
+            "value":"[TS_987603]_Successful: %1$d, Failed: %2$d"
+        },
+        {
+            "name":"move_notify_result",
+            "value":"[TS_987459]_Successful: %1$d, Failed: %2$d"
+        },
+        {
+            "name":"copy_notify_result",
+            "value":"[TS_987222]_Successful: %1$d, Failed: %2$d"
+        },
+        {
+            "name":"back_up_home_page_tips",
+            "value":"[TS_987751]_Welcome! During the system update, your images and videos were moved to Gallery, while your audio recordings were moved to Recorder."
+        },
+        {
+            "name":"restore_to_backup_recover_pad",
+            "value":"[TS_987779]_Restored to My tablet/UpdateBackup/RecycleBin."
+        },
+        {
+            "name":"restore_to_backup_recover_phone",
+            "value":"[TS_987420]_Restored to My phone/UpdateBackup/RecycleBin."
+        },
+        {
+            "name":"go_back",
+            "value":"[TS_987072]_Go back"
+        },
+        {
+            "name":"select_path",
+            "value":"[TS_987143]_Save as"
+        },
+        {
+            "name":"wlan",
+            "value":"[TS_987556]_WLAN Direct"
+        },
+        {
+            "name":"bluetooth",
+            "value":"[TS_987652]_Bluetooth"
+        },
+        {
+            "name":"download_manager",
+            "value":"[TS_987323]_Download Manager"
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_folder",
+            "value":"[TS_987784]_\"%s\" already exists. Merge these folders?"
+        },
+        {
+            "name":"pad_recent_delete_clear_content",
+            "value":"[TS_987783]_All files will be permanently deleted."
+        },
+        {
+            "name":"pad_progress_bar_title_copy_file",
+            "value":"[TS_987785]_Copy"
+        },
+        {
+            "name":"pad_progress_tip_title_recover_file",
+            "value":"[TS_987786]_\"%s\" already exists. Restore anyway?"
+        },
+        {
+            "name":"pad_progress_bar_title_move_file",
+            "value":"[TS_987782]_Move"
+        },
+        {
+            "name":"pad_progress_tip_title_copy_or_move_file",
+            "value":"[TS_987787]_\"%s\" already exists. Replace it?"
+        },
+        {
+            "name":"pad_progress_tip_title_other",
+            "value":"[TS_987789]_Note"
+        },
+        {
+            "name":"cannot_move_app_data",
+            "value":"[TS_987776]_Your selection contains app data. Moving this may cause apps to stop working properly."
+        },
+        {
+            "name":"cannot_delete_app_data",
+            "value":"[TS_987260]_Your selection contains app data. Deleting this may cause apps to stop working properly."
+        },
+        {
+            "name":"select_file",
+            "value":"[TS_862542]_Open"
+        },
+        {
+            "name":"close",
+            "value":"[TS_987741]_Close"
+        },
+        {
+            "name":"memory_space",
+            "value":"[TS_987070]_%1$s of %2$s available"
+        },
+        {
+            "name":"pc_sound_recorder",
+            "value":"[TS_987743]_Recorder"
+        },
+        {
+            "name":"sound_recorder_not_exist",
+            "value":"[TS_987012]_App does not exist."
+        },
+        {
+            "name":"expanded",
+            "value":"[TS_987355]_Expanded"
+        },
+        {
+            "name":"unexpanded",
+            "value":"[TS_987257]_Not expanded"
+        },
+        {
+            "name":"sort_by_size",
+            "value":"[TS_862617]_Sort by size"
+        },
+        {
+            "name":"sort_by_type",
+            "value":"[TS_862585]_Sort by type"
+        },
+        {
+            "name":"sort_by_time",
+            "value":"[TS_862707]_Sort by time"
+        },
+        {
+            "name":"sort_by_name",
+            "value":"[TS_862508]_Sort by name"
+        },
+        {
+            "name":"file_refresh_page_tips",
+            "value":"[TS_987415]_Updating… Please wait."
+        },
+        {
+            "name":"security_access_details",
+            "value":"[TS_987279]_Your files are shown here, but this app can only access the items that you select."
+        },
+        {
+            "name":"share_limit_exceed_msg",
+            "value":"[TS_865315]_A maximum of %d files can be shared at a time."
+        },
+        {
+            "name":"share_folder_no_content",
+            "value":"[TS_865964]_Selected folders are empty."
+        },
+        {
+            "name":"touch_share_not_support_folder",
+            "value":"[TS_998770]_Sharing folders is not supported."
+        },
+        {
+            "name":"collapse",
+            "value":"[TS_998002]_Show less"
+        },
+        {
+            "name":"drag_to_change_sort",
+            "value":"[TS_1000187]_Drag to change order"
+        },
+        {
+            "name":"drag_to_change_sort_description",
+            "value":"[TS_1000188]_Double-tap and hold, then drag to change the order"
+        },
+        {
+            "name":"give_feedback",
+            "value":"[TS_998775]_Feedback"
+        },
+        {
+            "name":"use_network",
+            "value":"[TS_998774]_Use mobile data"
+        },
+        {
+            "name":"filter_samll_images",
+            "value":"[TS_998772]_Filter small images"
+        },
+        {
+            "name":"filter_browsed_samll_images",
+            "value":"[TS_998773]_Filter out small images in Browse > Images."
+        },
+        {
+            "name":"show_hidden_files",
+            "value":"[TS_998771]_Show hidden files"
+        },
+        {
+            "name":"show_files_with_dot",
+            "value":"[TS_998776]_Files and folders that begin with \".\" will be shown."
+        },
+        {
+            "name":"notice_when_over_100mb",
+            "value":"[TS_998961]_Ask for files over %d MB"
+        },
+        {
+            "name":"notice_when_over_100mb_desc",
+            "value":"[TS_998958]_Ask before using mobile data to upload, download, or play files larger than %d MB."
+        },
+        {
+            "name":"always_notice_desc",
+            "value":"[TS_998952]_Ask before using mobile data to upload, download, or play files."
+        },
+        {
+            "name":"always_allow",
+            "value":"[TS_998960]_Always allow"
+        },
+        {
+            "name":"always_notice",
+            "value":"[TS_998957]_Always ask first"
+        },
+        {
+            "name":"cellular_transmission_content",
+            "value":"[TS_998956]_This will use %s of mobile data."
+        },
+        {
+            "name":"always_allow_desc",
+            "value":"[TS_998955]_Allow files to be uploaded, downloaded, or played using mobile data without confirmation."
+        },
+        {
+            "name":"cellular_transmission_title",
+            "value":"[TS_998954]_You're using a mobile network"
+        },
+        {
+            "name":"recent_load_end",
+            "value":"[TS_989420]_No more files from the last %d days"
+        },
+        {
+            "name":"recent_no_content",
+            "value":"[TS_989421]_No files in the past %d days"
+        },
+        {
+            "name":"audio_files_migrate_tip",
+            "value":"[TS_1010590]_Audio files have been moved to the Recorder app."
+        },
+        {
+            "name":"picture_and_video_migrate_tip",
+            "value":"[TS_1010591]_Images and videos have been moved to the Gallery app."
+        },
+        {
+            "name":"filter",
+            "value":"[TS_1000474]_Filter"
+        },
+        {
+            "name":"select_reset",
+            "value":"[TS_1000472]_Reset"
+        },
+        {
+            "name":"video_format",
+            "value":"[TS_1000473]_Video format"
+        },
+        {
+            "name":"picture_format",
+            "value":"[TS_1000475]_Image format"
+        },
+        {
+            "name":"document_format",
+            "value":"[TS_1000477]_Document format"
+        },
+        {
+            "name":"audio_format",
+            "value":"[TS_1000471]_Audio format"
+        },
+        {
+            "name":"not_support_modified_directory",
+            "value":"[TS_1017419]_This directory cannot be modified."
+        },
+        {
+            "name":"not_support_drag_in_page",
+            "value":"[TS_1015630]_Unable to drop files here. Try dropping them in the \"My phone\" directory."
+        },
+        {
+            "name":"big_file",
+            "value":"[TS_1015494]_Large files"
+        },
+        {
+            "name":"return_to_previous_step",
+            "value":"[TS_1018172]_Go back"
+        },
+        {
+            "name":"yes",
+            "value":"[TS_1018169]_Yes"
+        },
+        {
+            "name":"no",
+            "value":"[TS_1018171]_No"
+        },
+        {
+            "name":"file_safe_subtitle",
+            "value":"[TS_1019381]_A safe place to keep important files."
+        },
+        {
+            "name":"clear_all_content",
+            "value":"[TS_862541]_Clear all files?"
+        },
+        {
+            "name":"clear_all_content_two",
+            "value":"[TS_952003]_Cleared items cannot be recovered."
+        },
+        {
+            "name":"clear_all",
+            "value":"[TS_862700]_Clear"
+        },
+        {
+            "name":"no_recent_delete_file",
+            "value":"[TS_862590]_No recently deleted files."
+        },
+        {
+            "name":"learn_more",
+            "value":"[TS_1015493]_Learn more"
+        },
+        {
+            "name":"security_access_path_details",
+            "value":"[TS_1017873]_This app can only access the files that you select, and can't access other content in the folder. %s"
+        },
+        {
+            "name":"device_disconnect_tip",
+            "value":"[TS_1025680]_You will no longer be able to view or manage shared files on this device. Disconnect anyway?"
+        },
+        {
+            "name":"help",
+            "value":"[TS_1025681]_Help"
+        },
+        {
+            "name":"auto_login",
+            "value":"[TS_1025663]_Auto-login"
+        },
+        {
+            "name":"newly_added_devices_not_found_in_lan",
+            "value":"[TS_1025656]_No new devices found."
+        },
+        {
+            "name":"my_devices",
+            "value":"[TS_1025682]_My devices"
+        },
+        {
+            "name":"connect_device",
+            "value":"[TS_1025677]_Connect"
+        },
+        {
+            "name":"add_device",
+            "value":"[TS_1025665]_Add device"
+        },
+        {
+            "name":"no_available_devices",
+            "value":"[TS_1025683]_No available devices found"
+        },
+        {
+            "name":"device_disconnect",
+            "value":"[TS_1025664]_Disconnected."
+        },
+        {
+            "name":"other_devices",
+            "value":"[TS_1025657]_Other devices"
+        },
+        {
+            "name":"display_name",
+            "value":"[TS_1025669]_Display name"
+        },
+        {
+            "name":"device_connect_success",
+            "value":"[TS_1025679]_Connected"
+        },
+        {
+            "name":"usage_help",
+            "value":"[TS_1025673]_Help"
+        },
+        {
+            "name":"anonymous_login",
+            "value":"[TS_1025655]_Anonymous login"
+        },
+        {
+            "name":"device_connect_fail",
+            "value":"[TS_1025671]_Connection to %s lost."
+        },
+        {
+            "name":"ip_address_error",
+            "value":"[TS_1025670]_Incorrect format"
+        },
+        {
+            "name":"disconnect",
+            "value":"[TS_1025675]_Disconnect"
+        },
+        {
+            "name":"incorrect_username_or_password",
+            "value":"[TS_1025659]_Incorrect username or password"
+        },
+        {
+            "name":"username_required",
+            "value":"[TS_1025666]_Can't be blank"
+        },
+        {
+            "name":"no_device_corresponding_to_ip",
+            "value":"[TS_1025667]_Device not found"
+        },
+        {
+            "name":"username",
+            "value":"[TS_1025674]_Username"
+        },
+        {
+            "name":"hostname_or_ip_address",
+            "value":"[TS_1025678]_Hostname or IP address"
+        },
+        {
+            "name":"connection_settings",
+            "value":"[TS_1025672]_Settings"
+        },
+        {
+            "name":"disabled",
+            "value":"[TS_862576]_This feature isn't supported yet."
+        },
+        {
+            "name":"open_file",
+            "value":"[TS_1036110]_Open file"
+        },
+        {
+            "name":"confirm_and_no_prompt_again",
+            "value":"[TS_1036109]_Don't show again"
+        },
+        {
+            "name":"move_file_to_recycle",
+            "value":"[TS_1038557]_Items you move to Recently deleted are permanently deleted after %d days."
+        },
+        {
+            "name":"recently_deleted_dialog_tip",
+            "value":"[TS_1038512]_Move to Recently deleted"
+        },
+        {
+            "name":"hidisk_file_size_range_larger_gb",
+            "value":"[TS_1038505]_Larger than %d GB"
+        },
+        {
+            "name":"hidisk_file_size_range_smaller_kb",
+            "value":"[TS_1038511]_Smaller than %d KB"
+        },
+        {
+            "name":"recent_delete_file_save_day",
+            "value":"[TS_1037124]_Files will be permanently deleted after the number of days shown (up to %d days)."
+        },
+        {
+            "name":"expand_phone_tip",
+            "value":"[TS_1035757]_Unfold your phone first."
+        },
+        {
+            "name":"more_button_tip",
+            "value":"[TS_1035696]_Find more settings here."
+        },
+        {
+            "name":"sort_by_default",
+            "value":"[TS_1038640]_Sort by default order"
+        },
+        {
+            "name":"restore_page_button",
+            "value":"[TS_1038356]_Restore"
+        },
+        {
+            "name":"hide_source",
+            "value":"[TS_1038351]_Hide source"
+        },
+        {
+            "name":"just_now",
+            "value":"[TS_1038340]_Just now"
+        },
+        {
+            "name":"restore_confirm_tips",
+            "value":"[TS_1038358]_Restore files from this source in Recent?"
+        },
+        {
+            "name":"files_source_no_appear",
+            "value":"[TS_1038342]_Files from this source will no longer appear in Recent."
+        },
+        {
+            "name":"manager_hidden",
+            "value":"[TS_1038354]_Manage hidden file sources"
+        },
+        {
+            "name":"no_content",
+            "value":"[TS_1038348]_No content"
+        },
+        {
+            "name":"hide_card",
+            "value":"[TS_1038355]_Hide"
+        },
+        {
+            "name":"failed_save_to_gallery_root_path",
+            "value":"[TS_1035707]_Files can't be stored in the Gallery root directory. Select another directory."
+        },
+        {
+            "name":"mul_nested_folders_save_files_to_gallery_album",
+            "value":"[TS_1035703]_Unable to create folders with subfolders inside the Gallery directory. Images and videos will be relocated accordingly. Continue?"
+        },
+        {
+            "name":"create_new_album",
+            "value":"[TS_1036988]_New album"
+        },
+        {
+            "name":"save_image_to_gallery_album_for_picker",
+            "value":"[TS_1038352]_Only images can be saved to the %1$s directory. Other files cannot be stored here."
+        },
+        {
+            "name":"save_video_to_gallery_album",
+            "value":"[TS_1038362]_Only videos can be saved to the %1$s directory. Other files cannot be stored here. Continue?"
+        },
+        {
+            "name":"save_video_to_gallery_album_for_picker",
+            "value":"[TS_1038361]_Only videos can be saved to the %1$s directory. Other files cannot be stored here."
+        },
+        {
+            "name":"save_image_to_gallery_album",
+            "value":"[TS_1038347]_Only images can be saved to the %1$s directory. Other files cannot be stored here. Continue?"
+        },
+        {
+            "name":"save_failed",
+            "value":"[TS_1035709]_Unable to save"
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery_album",
+            "value":"[TS_1035706]_Unable to create folders with subfolders inside album folders. Related images and videos will be relocated accordingly. Continue?"
+        },
+        {
+            "name":"nested_folders_save_files_to_gallery",
+            "value":"[TS_1035708]_Unable to create folders with subfolders inside the Gallery directory. Images and videos in the folder will be relocated to the \"%s\" directory. Continue?"
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path",
+            "value":"[TS_1035705]_Only images and videos can be saved to the Gallery directory. Other files cannot be stored here. Continue?"
+        },
+        {
+            "name":"next_one",
+            "value":"[TS_1038560]_Next"
+        },
+        {
+            "name":"save_file",
+            "value":"[TS_1035755]_Save files"
+        },
+        {
+            "name":"save_other_type_files_to_gallery_path_for_picker",
+            "value":"[TS_1035754]_Only images and videos can be saved to the Gallery directory. Other files cannot be stored here."
+        },
+        {
+            "name":"delete_Guest_account_detail",
+            "value":"[TS_1041450]_Press Windows+R on the keyboard to bring up the Run box, then enter \"gpedit.msc\" and press Enter. Go to Local Computer Policy > Computer Configuration > Windows Settings > Security Settings > Local Policies > User Rights Assignment. Then double-click \"Deny access to this computer from the network\", and remove \"Guest\" from the list."
+        },
+        {
+            "name":"support_argeement_configuration_detail",
+            "value":"[TS_1041465]_Open the Control Panel, then go to Programs > Turn Windows features on or off. Look for \"SMB 1.0/CIFS File Sharing Support\" and fill its checkbox. Click OK and restart the computer."
+        },
+        {
+            "name":"setting_properties",
+            "value":"[TS_1041455]_Set the sharing and security model for local accounts"
+        },
+        {
+            "name":"setting_properties_detail_new",
+            "value":"[TS_1041468]_In Local Policies, open Security Options, double-click \"Network Access: Sharing and Security Model for Local Accounts\" and select \"Guest only\". Click OK. Double-click \"Accounts: Limit local account use of blank passwords to console logon only\" and select \"Disabled\". Click OK. Press Win + R to open the Run window. Enter \"cmd\" to open the Command Prompt. In the Command Prompt, enter \"gpupdate /force\" and press Enter. Wait until the policy update is complete."
+        },
+        {
+            "name":"close_pwd_protection",
+            "value":"[TS_1041452]_Disable password protection"
+        },
+        {
+            "name":"enable_Guest_account_detail",
+            "value":"[TS_1041448]_Right-click on \"This PC\", then go to Manage > Local Users and Groups > Users. From here, right-click on \"Guest\", select \"Properties\", and deselect \"Account is disabled\". Finally, click \"Apply\" and then click \"OK\"."
+        },
+        {
+            "name":"add_shared_files_detail_new",
+            "value":"[TS_1041458]_Right-click on the folder you want to share, then go to Properties > Sharing > Share, select \"Guest\" or \"Everyone\", and click \"Add\". Click the arrow on the right to set access permissions, then click \"Share\"."
+        },
+        {
+            "name":"windows_version1",
+            "value":"[TS_1041461]_Windows Ultimate or Professional"
+        },
+        {
+            "name":"windows_version2",
+            "value":"[TS_1041457]_Windows Home"
+        },
+        {
+            "name":"enable_scan",
+            "value":"[TS_1041449]_Finishing up"
+        },
+        {
+            "name":"close_pwd_protection_detail",
+            "value":"[TS_1041459]_Open the Control Panel, then go to Network and Internet > Network and Sharing Center > Change advanced sharing settings > All Networks. Under Password-protected sharing, select \"Turn off password-protected sharing\", then click \"Save changes\"."
+        },
+        {
+            "name":"anonymous_environment_configuration",
+            "value":"[TS_1041463]_Set up an anonymous environment"
+        },
+        {
+            "name":"add_shared_files",
+            "value":"[TS_1041469]_Add shared files"
+        },
+        {
+            "name":"support_argeement",
+            "value":"[TS_1041454]_Set up support protocols"
+        },
+        {
+            "name":"delete_Guest_account",
+            "value":"[TS_1041462]_Remove guest restrictions"
+        },
+        {
+            "name":"step4",
+            "value":"[TS_1041466]_Step 4"
+        },
+        {
+            "name":"step5",
+            "value":"[TS_1041451]_Step 5"
+        },
+        {
+            "name":"step1",
+            "value":"[TS_1041460]_Step 1"
+        },
+        {
+            "name":"step2",
+            "value":"[TS_1041467]_Step 2"
+        },
+        {
+            "name":"step3",
+            "value":"[TS_1041456]_Step 3"
+        },
+        {
+            "name":"enable_Guest_account",
+            "value":"[TS_1041464]_Enable a Guest account"
+        },
+        {
+            "name":"batch_grant_permission",
+            "value":"[TS_1017872]_Select multiple items"
+        },
+        {
+            "name":"processing",
+            "value":"[TS_1035025]_Processing…"
+        },
+        {
+            "name":"persist_permission_import",
+            "value":"[TS_1026220]_Import"
+        },
+        {
+            "name":"junk_file",
+            "value":"[TS_1043906]_Junk files"
+        },
+        {
+            "name":"scan_more_cleanable_files",
+            "value":"[TS_1043905]_Scan for cached ads and other unneeded files."
+        },
+        {
+            "name":"space_cleanup",
+            "value":"[TS_1043904]_Cleanup"
+        },
+        {
+            "name":"ringtone",
+            "value":"[TS_1044458]_Set as"
+        },
+        {
+            "name":"all_images",
+            "value":"[TS_1044073]_All"
+        },
+        {
+            "name":"all_videos",
+            "value":"[TS_1044074]_All"
+        },
+        {
+            "name":"share_failed_msg",
+            "value":"[TS_1044392]_Unable to share. Maximum of %d items can be shared at a time."
+        },
+        {
+            "name":"wechat_not_support_share_notice",
+            "value":"[TS_1045617]_To share to WeChat, open a chat in WeChat, select a file, and send."
+        },
+        {
+            "name":"video_broadcast",
+            "value":"[TS_1047526]_Video: %1$s, duration %2$s"
+        },
+        {
+            "name":"drop_down_list",
+            "value":"[TS_1047525]_Drop-down list"
+        },
+        {
+            "name":"list_grid_toggle",
+            "value":"[TS_1047527]_Switched to %s"
+        },
+        {
+            "name":"the_location_already_contains_this_file_title_save_both",
+            "value":"[TS_1047904]_Merge folders in this location?"
+        },
+        {
+            "name":"unfavorable",
+            "value":"[TS_1047761]_Unfavorited"
+        },
+        {
+            "name":"favorited",
+            "value":"[TS_1047763]_Favorited"
+        },
+        {
+            "name":"reset_succeeded",
+            "value":"[TS_1047762]_Reset successful"
+        },
+        {
+            "name":"input_content_cannot_be_empty",
+            "value":"[TS_1045369]_Cannot be blank."
+        },
+        {
+            "name":"shielding",
+            "value":"[TS_1049586]_Block"
+        },
+        {
+            "name":"recommended_cleanup",
+            "value":"[TS_1086227]_Suggested"
+        },
+        {
+            "name":"low_memory_notice",
+            "value":"[TS_1056908]_To manage device storage, go to Settings > Storage."
+        },
+        {
+            "name":"go_now",
+            "value":"[TS_1056907]_Go now"
+        },
+        {
+            "name":"share_folder_name",
+            "value":"[TS_1054974]_Share"
+        },
+        {
+            "name":"transfer_completed",
+            "value":"[TS_1056906]_Transfer complete"
+        },
+        {
+            "name":"file_saved_to",
+            "value":"[TS_1056909]_File saved to %s."
+        },
+        {
+            "name":"set_as_wallpaper",
+            "value":"[TS_1056903]_Set as wallpaper"
+        },
+        {
+            "name":"set_wallpaper_not_support",
+            "value":"[TS_1056905]_Wallpapers can't be edited in small windows."
+        },
+        {
+            "name":"source_edit_item_drag",
+            "value":"[TS_1062408]_%s is being dragged"
+        },
+        {
+            "name":"device_space_usage",
+            "value":"[TS_1058573]_Used %1$s of %2$s"
+        },
+        {
+            "name":"system_folder_not_support_operation",
+            "value":"[TS_1063310]_Action unavailable with system directory."
+        },
+        {
+            "name":"collapse_menu_bar",
+            "value":"[TS_1066070]_Close menu bar"
+        },
+        {
+            "name":"play_control_bar_display",
+            "value":"[TS_1065919]_Showing playback controls. Swipe across the video to adjust the playback position."
+        },
+        {
+            "name":"open_menu_bar",
+            "value":"[TS_1066069]_Open menu bar"
+        },
+        {
+            "name":"play_control_bar_hidden",
+            "value":"[TS_1065918]_Playback controls hidden. Swipe across the video to adjust the playback position."
+        },
+        {
+            "name":"confirm_jump",
+            "value":"[TS_1068217]_Continue"
+        },
+        {
+            "name":"jump_to_target_note",
+            "value":"[TS_1068216]_Leaving this screen will interrupt the current operation. Continue?"
+        },
+        {
+            "name":"local_trash_cleanup",
+            "value":"[TS_1067185]_Local junk"
+        },
+        {
+            "name":"more_cleanup_context",
+            "value":"[TS_1067183]_Go to Settings to find more items to clean up."
+        },
+        {
+            "name":"local_trash",
+            "value":"[TS_1067184]_Local junk"
+        },
+        {
+            "name":"more_cleanup",
+            "value":"[TS_1067186]_More options"
+        },
+        {
+            "name":"root_path_file_restore_folder_instruction",
+            "value":"[TS_1072326]_Restored app data"
+        },
+        {
+            "name":"root_path_download_folder_instruction",
+            "value":"[TS_1072328]_Downloads"
+        },
+        {
+            "name":"root_path_updatebackup_folder_instruction",
+            "value":"[TS_1072329]_Clone/Backup data"
+        },
+        {
+            "name":"root_path_documents_folder_instruction",
+            "value":"[TS_1072324]_Documents"
+        },
+        {
+            "name":"root_path_gallery_folder_instruction",
+            "value":"[TS_1072325]_Locally stored Gallery files"
+        },
+        {
+            "name":"root_path_sound_folder_instruction",
+            "value":"[TS_1072323]_Audio files"
+        },
+        {
+            "name":"open_navigation",
+            "value":"[TS_1069993]_Open navigation panel"
+        },
+        {
+            "name":"close_navigation",
+            "value":"[TS_1069992]_Close navigation panel"
+        },
+        {
+            "name":"security_access_files_tips",
+            "value":"[TS_1084003]_Private access to files"
+        },
+        {
+            "name":"security_access_files_details",
+            "value":"[TS_1084004]_Your files are shown here, but this app can only access the ones that you select. %s"
+        },
+        {
+            "name":"not_signed_privacy_tip",
+            "value":"[TS_1085555]_To use this feature, first go to the Files app and agree to the Statement About Files and Privacy and Permissions Notice."
+        },
+        {
+            "name":"source_from",
+            "value":"[TS_1080815]_From: %s"
+        },
+        {
+            "name":"duplicate_files_clean",
+            "value":"[TS_1080816]_Delete duplicate files"
+        },
+        {
+            "name":"scan_now",
+            "value":"[TS_1080820]_Scan now"
+        },
+        {
+            "name":"duplicate_files_subheading",
+            "value":"[TS_1080821]_%s of storage is being taken up by duplicate files."
+        },
+        {
+            "name":"careful_cleaning",
+            "value":"[TS_1080825]_Caution"
+        },
+        {
+            "name":"to_clean_up",
+            "value":"[TS_1080824]_Go delete"
+        },
+        {
+            "name":"duplicate_files",
+            "value":"[TS_1080818]_Duplicate files"
+        },
+        {
+            "name":"gallery_change_suffix",
+            "value":"[TS_1090160]_File extensions can't be changed for Gallery files. Copy or move these files to a public directory under \"My phone\" and try again."
+        },
+        {
+            "name":"source_edit_item_down",
+            "value":"[TS_1064384]_Move below %s"
+        },
+        {
+            "name":"source_edit_item_up",
+            "value":"[TS_1064382]_Move above %s"
+        },
+        {
+            "name":"rename_single_character_fail",
+            "value":"[TS_1086569]_Renaming failed. Can't rename target to a single character."
+        },
+        {
+            "name":"space_not_enough_title",
+            "value":"[TS_1085380]_Insufficient storage"
+        },
+        {
+            "name":"have_connected",
+            "value":"[TS_1091619]_Connected"
+        },
+        {
+            "name":"not_connected",
+            "value":"[TS_1091620]_Not connected"
+        },
+        {
+            "name":"path_picker_folder_level_and_expand",
+            "value":"[TS_1098906]_Level %d expanded"
+        },
+        {
+            "name":"path_picker_folder_level_and_unexpand",
+            "value":"[TS_1098907]_Level %d not expanded"
+        },
+        {
+            "name":"file_menu_updated",
+            "value":"[TS_1095368]_New menu design"
+        },
+        {
+            "name":"file_menu_updated_contents",
+            "value":"[TS_1095365]_New menu icons make navigation more intuitive."
+        },
+        {
+            "name":"transfer_progress_visible_contents",
+            "value":"[TS_1095366]_Effortlessly monitor your file transfer progress with Live view."
+        },
+        {
+            "name":"media_browse_smooth_contents",
+            "value":"[TS_1095367]_Images and videos snap into full screen when opened."
+        },
+        {
+            "name":"media_browse_smooth",
+            "value":"[TS_1095364]_Smoother viewing"
+        },
+        {
+            "name":"transfer_progress_visible",
+            "value":"[TS_1095369]_Live transfer tracking"
+        },
+        {
+            "name":"gallery_change_suffix_with_pad",
+            "value":"[TS_1100291]_File extensions can't be changed for Gallery files. Copy or move these files to a public directory under \"My tablet\" and try again."
+        },
+        {
+            "name":"not_support_drag_in_page_with_pad",
+            "value":"[TS_1100288]_Unable to drop files here. Try dropping them in the \"My tablet\" directory."
+        },
+        {
+            "name":"accessibility_checkbox_unChecked",
+            "value":"[TS_1108772]_Not selected, checkbox, double tap with one finger to select"
+        },
+        {
+            "name":"accessibility_checkbox_checked",
+            "value":"[TS_1108771]_Selected, checkbox, double tap with one finger to deselect"
+        },
+        {
+            "name":"checked_accessibility",
+            "value":"[TS_1111024]_Double-tap with one finger to select"
+        },
+        {
+            "name":"equipment_temperature_is_too_high",
+            "value":"[TS_1104297]_Device too hot"
+        },
+        {
+            "name":"unchecked_accessibility",
+            "value":"[TS_1111025]_Double-tap with one finger to deselect"
+        },
+        {
+            "name":"already_deselect_all",
+            "value":"[TS_1106463]_Deselected all"
+        },
+        {
+            "name":"already_select_all",
+            "value":"[TS_1106464]_All selected"
+        },
+        {
+            "name":"click_accessibility",
+            "value":"[TS_1111920]_Double-tap to activate"
+        },
+        {
+            "name":"new_version_updates_progress",
+            "value":"[TS_1112085]_Tap to learn more."
+        },
+        {
+            "name":"new_features_online",
+            "value":"[TS_1112084]_New features available"
+        },
+        {
+            "name":"source_screenshot",
+            "value":"[TS_1112929]_Screenshots"
+        },
+        {
+            "name":"source_camera",
+            "value":"[TS_1112930]_Camera"
+        },
+        {
+            "name":"source_screen_recording",
+            "value":"[TS_1112928]_Screen recordings"
+        },
+        {
+            "name":"source_edit_place_up",
+            "value":"[TS_1112938]_Placed above %s"
+        },
+        {
+            "name":"source_edit_place_down",
+            "value":"[TS_1112939]_Placed below %s"
+        },
+        {
+            "name":"securely_remove",
+            "value":"[TS_1122029]_Safely remove"
+        },
+        {
+            "name":"file_not_exist_maybe_removed_renamed_deleted",
+            "value":"[TS_1119440]_The file \"%1$s\" does not exist. It may have been moved, renamed, or deleted. Please restore the file and try again."
+        },
+        {
+            "name":"reverse_rotation",
+            "value":"[TS_1122975]_Rotate %s degrees counter clockwise"
+        },
+        {
+            "name":"arrive_path_select_end_level",
+            "value":"[TS_1127334]_No more levels in this directory"
+        },
+        {
+            "name":"path_picker_folder_level",
+            "value":"[TS_1127335]_Level %d"
+        },
+        {
+            "name":"accessibility_expand",
+            "value":"[TS_1127332]_Expanded"
+        },
+        {
+            "name":"accessibility_unexpand",
+            "value":"[TS_1127333]_Collapsed"
+        },
+        {
+            "name":"source_file_not_exist_maybe_removed_renamed_deleted",
+            "value":"[TS_1119441]_This file does not exist. It may have been moved, renamed, or deleted. Please restore the file and try again."
+        },
+        {
+            "name":"tip_popup_context_one",
+            "value":"[TS_1124537]_%1$s. To view content from apps running in DroiTong or EasyAbroad, go to %2$s."
+        },
+        {
+            "name":"tip_popup_title",
+            "value":"[TS_1124538]_Only local Gallery content is shown here"
+        },
+        {
+            "name":"go_to_gallery",
+            "value":"[TS_1124535]_Gallery"
+        },
+        {
+            "name":"two_placeholders",
+            "value":"[TS_1124532]_%1$s > %2$s"
+        },
+        {
+            "name":"delete_fusion_album_warning",
+            "value":"[TS_1129176]_This album contains files from apps that run in DroiTong or EasyAbroad. To delete these items, go to \"Compatible data\"."
+        },
+        {
+            "name":"remote_file_not_exist",
+            "value":"[TS_1135564]_File paste failed. \"%s\" may have been modified or renamed, or there may be a device connection issue. Please check and try again."
+        },
+        {
+            "name":"remote_source_file_not_exist",
+            "value":"[TS_1135565]_File paste failed. The original file may have been modified or renamed, or there may be a device connection issue. Please check and try again."
+        }
+    ]
+}

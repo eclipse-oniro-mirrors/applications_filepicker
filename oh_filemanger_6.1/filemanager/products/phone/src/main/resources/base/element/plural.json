@@ -1,0 +1,346 @@
+{
+    "plural":[
+        {
+            "name":"to_save_plural",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Save %1$d file to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Save %1$d files to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d item",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d items",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_confirm_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Delete %d file?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Delete %d files?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"find_files_num",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Found %d item",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Found %d items",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Moved %d file",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Moved %d files",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Copied %d file",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Copied %d files",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Dragged & dropped %d file",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Dragged & dropped %d files",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_fail",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d failed",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d failed",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_copy_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d successful",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d successful",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_move_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d successful",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d successful",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_drag_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d successful",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d successful",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Stopped copying %d file",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Stopped copying %d files",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Stopped moving %d file",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Stopped moving %d files",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Stopped dragging & dropping %d file",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Stopped dragging & dropping %d files",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"moving_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Move %1$d item to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Move %1$d items to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copying_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Copy %1$d item to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Copy %1$d items to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d item moved to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d items moved to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d item copied to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d items copied to %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        }
+    ]
+}

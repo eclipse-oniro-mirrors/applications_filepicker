@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "bottomBar",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}

@@ -1,0 +1,613 @@
+{
+    "plural":[
+        {
+            "name":"item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_862540]_%d item"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_862796]_%d items"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_862587]_%d items"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_862668]_%d items"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_862610]_%d items"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_862894]_%d items"
+                }
+            ]
+        },
+        {
+            "name":"copy_select_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_862581]_Copy %d item to"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_862791]_Copy %d items to"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_862849]_Copy %d items to"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_862888]_Copy %d items to"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_862771]_Copy %d items to"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_862588]_Copy %d items to"
+                }
+            ]
+        },
+        {
+            "name":"selectedItem",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"[TS_862507]_%d items selected"
+                },
+                {
+                    "quantity":"one",
+                    "value":"[TS_862862]_%d item selected"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_862554]_%d items selected"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_862743]_%d items selected"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_862536]_%d items selected"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_862868]_%d items selected"
+                }
+            ]
+        },
+        {
+            "name":"move_select_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"[TS_862710]_Move %d items to"
+                },
+                {
+                    "quantity":"one",
+                    "value":"[TS_862678]_Move %d item to"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_862713]_Move %d items to"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_862859]_Move %d items to"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_862677]_Move %d items to"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_862687]_Move %d items to"
+                }
+            ]
+        },
+        {
+            "name":"delete_confirm_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_865858]_Delete %d file?"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_865854]_Delete %d files?"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_865855]_Delete %d files?"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_865850]_Delete %d files?"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_865863]_Delete %d files?"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_865859]_Delete %d files?"
+                }
+            ]
+        },
+        {
+            "name":"to_save_plural",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_870346]_Save %1$d file to %2$s"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_870335]_Save %1$d files to %2$s"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_870327]_Save %1$d files to %2$s"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_870337]_Save %1$d files to %2$s"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_870336]_Save %1$d files to %2$s"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_870331]_Save %1$d files to %2$s"
+                }
+            ]
+        },
+        {
+            "name":"find_files_num",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_870338]_Found %d item"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_870329]_Found %d items"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_870340]_Found %d items"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_870330]_Found %d items"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_870341]_Found %d items"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_870345]_Found %d items"
+                }
+            ]
+        },
+        {
+            "name":"notify_result_move_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_873761]_%d successful"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_873739]_%d successful"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_873764]_%d successful"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_873751]_%d successful"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_873767]_%d successful"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_873765]_%d successful"
+                }
+            ]
+        },
+        {
+            "name":"drag_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_873766]_Dragged & dropped %d file"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_873742]_Dragged & dropped %d files"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_873737]_Dragged & dropped %d files"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_873760]_Dragged & dropped %d files"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_873735]_Dragged & dropped %d files"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_873753]_Dragged & dropped %d files"
+                }
+            ]
+        },
+        {
+            "name":"notify_result_copy_success",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"[TS_873747]_%d successful"
+                },
+                {
+                    "quantity":"one",
+                    "value":"[TS_873762]_%d successful"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_873758]_%d successful"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_873774]_%d successful"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_873752]_%d successful"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_873745]_%d successful"
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_873775]_Moved %d file"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_873769]_Moved %d files"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_873748]_Moved %d files"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_873743]_Moved %d files"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_873770]_Moved %d files"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_873759]_Moved %d files"
+                }
+            ]
+        },
+        {
+            "name":"notify_result_drag_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_873763]_%d successful"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_873776]_%d successful"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_873749]_%d successful"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_873772]_%d successful"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_873754]_%d successful"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_873740]_%d successful"
+                }
+            ]
+        },
+        {
+            "name":"notify_result_fail",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_873757]_%d failed"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_873741]_%d failed"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_873746]_%d failed"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_873738]_%d failed"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_873756]_%d failed"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_873771]_%d failed"
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"[TS_873773]_Copied %d files"
+                },
+                {
+                    "quantity":"one",
+                    "value":"[TS_873736]_Copied %d file"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_873768]_Copied %d files"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_873777]_Copied %d files"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_873755]_Copied %d files"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_873778]_Copied %d files"
+                }
+            ]
+        },
+        {
+            "name":"drag_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_875571]_Stopped dragging & dropping %d file"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_875572]_Stopped dragging & dropping %d files"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_875575]_Stopped dragging & dropping %d files"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_875580]_Stopped dragging & dropping %d files"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_875567]_Stopped dragging & dropping %d files"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_875573]_Stopped dragging & dropping %d files"
+                }
+            ]
+        },
+        {
+            "name":"move_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"[TS_875568]_Stopped moving %d files"
+                },
+                {
+                    "quantity":"one",
+                    "value":"[TS_875569]_Stopped moving %d file"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_875576]_Stopped moving %d files"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_875577]_Stopped moving %d files"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_875581]_Stopped moving %d files"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_875585]_Stopped moving %d files"
+                }
+            ]
+        },
+        {
+            "name":"copy_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_875579]_Stopped copying %d file"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_875570]_Stopped copying %d files"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_875584]_Stopped copying %d files"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_875586]_Stopped copying %d files"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_875583]_Stopped copying %d files"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_875574]_Stopped copying %d files"
+                }
+            ]
+        },
+        {
+            "name":"copying_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_1092243]_Copy %1$d item to %2$s"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_1092239]_Copy %1$d items to %2$s"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_1092235]_Copy %1$d items to %2$s"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_1092234]_Copy %1$d items to %2$s"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_1092245]_Copy %1$d items to %2$s"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_1092237]_Copy %1$d items to %2$s"
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"[TS_1119497]_%1$d item moved to %2$s"
+                },
+                {
+                    "quantity":"other",
+                    "value":"[TS_1119499]_%1$d items moved to %2$s"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_1119493]_%1$d items moved to %2$s"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_1119500]_%1$d items moved to %2$s"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_1119498]_%1$d items moved to %2$s"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_1119492]_%1$d items moved to %2$s"
+                }
+            ]
+        },
+        {
+            "name":"moving_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"[TS_1092244]_Move %1$d items to %2$s"
+                },
+                {
+                    "quantity":"one",
+                    "value":"[TS_1092246]_Move %1$d item to %2$s"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_1092247]_Move %1$d items to %2$s"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_1092236]_Move %1$d items to %2$s"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_1092238]_Move %1$d items to %2$s"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_1092248]_Move %1$d items to %2$s"
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"[TS_1119495]_%1$d items copied to %2$s"
+                },
+                {
+                    "quantity":"one",
+                    "value":"[TS_1119494]_%1$d item copied to %2$s"
+                },
+                {
+                    "quantity":"zero",
+                    "value":"[TS_1119491]_%1$d items copied to %2$s"
+                },
+                {
+                    "quantity":"few",
+                    "value":"[TS_1119496]_%1$d items copied to %2$s"
+                },
+                {
+                    "quantity":"many",
+                    "value":"[TS_1119502]_%1$d items copied to %2$s"
+                },
+                {
+                    "quantity":"two",
+                    "value":"[TS_1119501]_%1$d items copied to %2$s"
+                }
+            ]
+        }
+    ]
+}

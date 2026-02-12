@@ -1,0 +1,18 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"ཡིག་ཆ་དོ་དམ།",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_manager_label",
+            "value":"ཡིག་ཆའི་ཞབས་ཞུ།",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

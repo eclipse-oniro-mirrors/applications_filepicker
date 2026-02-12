@@ -1,0 +1,25 @@
+<svg width="28.000000" height="28.000000" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<radialGradient gradientTransform="translate(32.5734 -5.16367) rotate(130.894) scale(20.1659 20.1659)" cx="0.000000" cy="0.000000" r="1.000000" id="paint_radial_1_1106_0" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#FFFFFF" stop-opacity="0.278431"/>
+			<stop offset="1.000000" stop-color="#FFFFFF" stop-opacity="0.000000"/>
+		</radialGradient>
+	</defs>
+	<mask id="mask1_1106" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="0.000000" width="28.000000" height="28.000000">
+		<path id="蒙版" d="M5 28L23 28C25.76 28 28 25.76 28 23L28 5C28 2.23 25.76 0 23 0L5 0C2.23 0 0 2.23 0 5L0 23C0 25.76 2.23 28 5 28Z" fill="#FDA82E" fill-opacity="1.000000" fill-rule="evenodd"/>
+		<path id="蒙版" d="M5 28L23 28C25.76 28 28 25.76 28 23L28 5C28 2.23 25.76 0 23 0L5 0C2.23 0 0 2.23 0 5L0 23C0 25.76 2.23 28 5 28Z" fill="url(#paint_radial_1_1106_0)" fill-opacity="0" fill-rule="evenodd"/>
+		<path id="蒙版" d="" fill="#CD2325" fill-opacity="0" fill-rule="evenodd"/>
+	</mask>
+	<path id="蒙版" d="M5 28L23 28C25.76 28 28 25.76 28 23L28 5C28 2.23 25.76 0 23 0L5 0C2.23 0 0 2.23 0 5L0 23C0 25.76 2.23 28 5 28Z" fill="#FDA82E" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="蒙版" d="M5 28L23 28C25.76 28 28 25.76 28 23L28 5C28 2.23 25.76 0 23 0L5 0C2.23 0 0 2.23 0 5L0 23C0 25.76 2.23 28 5 28Z" fill="url(#paint_radial_1_1106_0)" fill-opacity="0" fill-rule="evenodd"/>
+	<path id="蒙版" d="" fill="#CD2325" fill-opacity="0" fill-rule="evenodd"/>
+	<g mask="url(#mask1_1106)">
+		<path id="矩形" d="M12.45 10.65L19.06 15.16C19.5 15.46 19.63 16.07 19.35 16.53C19.27 16.65 19.18 16.75 19.06 16.83L12.45 21.34C12.01 21.63 11.43 21.5 11.14 21.04C11.05 20.88 11 20.69 11 20.5L11 11.49C11 10.94 11.42 10.5 11.94 10.5C12.12 10.5 12.29 10.55 12.45 10.65Z" fill="#FFFFFF" fill-opacity="0.450980" fill-rule="evenodd"/>
+	</g>
+	<g mask="url(#mask1_1106)">
+		<rect id="矩形" width="28.000000" height="6.000000" fill="#FFFFFF" fill-opacity="0.450980"/>
+	</g>
+</svg>

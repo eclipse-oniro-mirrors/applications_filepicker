@@ -1,0 +1,753 @@
+{
+  "string": [
+    {
+      "name": "browse",
+      "value": "Explorar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "about_file_manager",
+      "value": "Archivos",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "myPhone",
+      "value": "Mi teléfono",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "select_location",
+      "value": "Selecciona una ubicación",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "size",
+      "value": "Tamaño",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge_folder_tip",
+      "value": "Ya existe una carpeta con el nombre “%s” en esta ubicación. ¿Reemplazar?",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop",
+      "value": "Deshabilitar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_welcome_content_adults_all",
+      "value": "Este servicio requiere una conexión a Internet, así como los permisos de Almacenamiento y Lista de aplicaciones. También necesita acceder a la información de la cuenta, el dispositivo, la red, la ubicación y las aplicaciones (incluida la lista de aplicaciones instaladas), y a los datos cargados por ti.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "source",
+      "value": "Origen",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "pasteboard_dialog_content",
+      "value": "¿Pegar los archivos desde el portapapeles?",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "choose_size",
+      "value": "Tamaño: %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "finish",
+      "value": "Listo",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "deleting",
+      "value": "Eliminando…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "btn_cancel",
+      "value": "Cancelar",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_type",
+      "value": "Tipo de archivo",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unknown_error_occurred",
+      "value": "Error desconocido",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "loading",
+      "value": "Cargando…",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "replace",
+      "value": "Reemplazar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "net_work_disconnect",
+      "value": "No hay conexión a Internet. Comprueba los ajustes de red.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_B",
+      "value": "%s B",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "waiting_progress_message",
+      "value": "Espera...",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "order_name",
+      "value": "Nombre",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_GB",
+      "value": "%s GB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "about_app_version",
+      "value": "Versión: %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_no",
+      "value": "Sin filtro",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "confirm",
+      "value": "Aceptar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "externalDisk",
+      "value": "Tarjeta SD",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_has_same_file",
+      "value": "Este nombre de archivo ya existe",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete_complete",
+      "value": "Eliminar",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_personal_info",
+      "value": "Información personal recopilada",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "type",
+      "value": "Tipo",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than_MB",
+      "value": "%d MB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "text",
+      "value": "Texto",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path",
+      "value": "Ruta",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_custom",
+      "value": "Personalizar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover_confirm_content",
+      "value": "¿Restaurar archivos de esta fuente en Recientes?",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "alert_net_disconnect_try_again",
+      "value": "Archivo no almacenado en tu dispositivo. Conéctate a Internet e inténtalo de nuevo.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_cancel",
+      "value": "Cancelar",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_size",
+      "value": "Tamaño de archivo",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "check_update_now",
+      "value": "Buscando actualizaciones…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter",
+      "value": "Filtrar por tamaño",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "rename",
+      "value": "Cambiar nombre",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_title",
+      "value": "Copiar",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "total",
+      "value": "Total: %1$s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_complete",
+      "value": "Se han movido",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "edit",
+      "value": "Editar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "media_speed",
+      "value": "Velocidad",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy",
+      "value": "Copiar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "skip",
+      "value": "Omitir",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recent",
+      "value": "Recientes",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "open_failure_msg",
+      "value": "No se puede abrir.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_preview_detail",
+      "value": "Selecciona un elemento para ver detalles",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_max_input",
+      "value": "Máx. %d KB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_name",
+      "value": "Nombre de archivo",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_app_name",
+      "value": "Archivos",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_agreed",
+      "value": "Acepto",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "preview",
+      "value": "Vista previa",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_complete",
+      "value": "Se han copiado",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "Archivos",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "location",
+      "value": "Ubicación",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "more",
+      "value": "Más",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "files_app_name",
+      "value": "Archivos",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "operation_canceled",
+      "value": "Operación cancelada.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "ok",
+      "value": "Aceptar",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting",
+      "value": "Pegar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover",
+      "value": "Restaurar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "recover_uppercase",
+      "value": "Restaurar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_KB",
+      "value": "%s KB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than",
+      "value": "%d KB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "share",
+      "value": "Compartir",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "to_save",
+      "value": "Guardar archivo en %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "data_center_terms_welcome",
+      "value": "Bienvenido a",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yesterday",
+      "value": "Ayer",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "restore",
+      "value": "Restaurar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_fail",
+      "value": "No se ha podido guardar.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete",
+      "value": "Eliminar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "privacy_content_adults_third_divide",
+      "value": "Lee con atención la declaración anterior. Al pulsar Acepto, aceptas los términos anteriores.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "details",
+      "value": "Detalles",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "no_content_meets_the_condition",
+      "value": "No hay resultados",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge",
+      "value": "Combinar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "turn_scrren_and_intelligent_analysis",
+      "value": "El dispositivo analiza automáticamente los archivos mientras está enchufado y con la pantalla apagada. Gracias a ello, los resultados de búsqueda son cada vez más precisos.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "screen_off_intelligent_analysis",
+      "value": "Búsquedas más precisas",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "name",
+      "value": "Nombre",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "cancel",
+      "value": "Cancelar",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "aboutPage_title",
+      "value": "Acerca de",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "version_is_latest",
+      "value": "Tu versión está actualizada.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "audio",
+      "value": "Audio",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unit_MB",
+      "value": "%s MB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "about_service_phone",
+      "value": "Servicio de atención al cliente",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "disabled",
+      "value": "Esta función no está disponible aún.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "not_find_the_file_you_want",
+      "value": "¿No encuentras el archivo que quieres?",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support",
+      "value": "Centro de ayuda",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface_contents",
+      "value": "Ahora puedes personalizar el diseño de la aplicación moviendo los elementos de lugar según tus preferencias u ocultando funciones que no usas con frecuencia.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations",
+      "value": "Operaciones más rápidas",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations_contents",
+      "value": "Hemos movido las funciones más usadas, como el botón compartir, a la parte superior del menú para un acceso más rápido.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support_contents",
+      "value": "Explora un montón de contenido útil como guías de usuario y preguntas frecuentes.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "change_details",
+      "value": "Detalles de actualización",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_change_tip",
+      "value": "Hemos actualizado nuestra Declaración de privacidad y el Contrato de usuario para mejorar tu experiencia con este servicio. Lee atentamente los términos y condiciones actualizados antes de continuar. Este servicio solo funcionará si aceptas el tratamiento de datos requerido por este cambio. Para obtener más información, consulta los %1$s y la %2$s.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "get_started",
+      "value": "Probar ahora",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface",
+      "value": "Personalización",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_access_more_secure_contents",
+      "value": "Una estructura del directorio mejorada garantiza que las aplicaciones solo puedan acceder a los archivos que seleccionas.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_access_more_secure",
+      "value": "Protección de datos optimizada",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancelled",
+      "value": "Se ha cancelado",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy_to_dest_completed",
+      "value": "Se ha copiado en %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "move_to_dest_completed",
+      "value": "Se ha movido a %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Archivos",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "search",
+      "value": "Buscar",
+      "attr": {
+        "priority": "LT"
+      }
+    }
+  ]
+}

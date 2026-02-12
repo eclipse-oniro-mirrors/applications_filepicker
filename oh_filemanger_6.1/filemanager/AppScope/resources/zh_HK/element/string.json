@@ -1,0 +1,18 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"檔案",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_manager_label",
+            "value":"檔案服務",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

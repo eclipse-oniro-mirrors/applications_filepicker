@@ -1,0 +1,30 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"Files",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reason_read_media",
+            "value":"Grant FileManager read media permission"
+        },
+        {
+            "name":"reason_write_media",
+            "value":"Grant FileManager write media permission"
+        },
+        {
+            "name":"get_installed_bundle_list",
+            "value":"Allow app to read the list of installed apps"
+        },
+        {
+            "name":"file_manager_label",
+            "value":"Files Service",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

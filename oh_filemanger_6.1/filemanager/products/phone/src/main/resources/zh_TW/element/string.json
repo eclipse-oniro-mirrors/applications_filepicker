@@ -1,0 +1,753 @@
+{
+  "string": [
+    {
+      "name": "select_location",
+      "value": "請選取目標位置",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "size",
+      "value": "大小",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge_folder_tip",
+      "value": "此位置已包含一個名為「%s」的資料夾。是否取代位置中的資料夾？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop",
+      "value": "停止",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "privacy_welcome_content_adults_all",
+      "value": "本服務需要連線網路，存取儲存、應用程式軟體清單權限，並取得帳號、裝置、網路、位置、應用程式（包括應用程式清單）資訊以及您主動上傳的資料。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasteboard_dialog_content",
+      "value": "是否貼上來自剪貼簿的檔案？",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "choose_size",
+      "value": "共 %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "finish",
+      "value": "完成",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "deleting",
+      "value": "刪除中…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "btn_cancel",
+      "value": "取消",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_type",
+      "value": "檔案類型：",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unknown_error_occurred",
+      "value": "未知錯誤",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "loading",
+      "value": "載入中…",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "replace",
+      "value": "取代",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_B",
+      "value": "%s B",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "waiting_progress_message",
+      "value": "請稍候…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "order_name",
+      "value": "名稱",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_GB",
+      "value": "%s GB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_app_version",
+      "value": "版本 %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm",
+      "value": "確定",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "externalDisk",
+      "value": "記憶卡",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_file_has_same_file",
+      "value": "已存在重複名稱檔案",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "browse",
+      "value": "瀏覽",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "delete_complete",
+      "value": "永久刪除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_personal_info",
+      "value": "個人資訊收集清單",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "type",
+      "value": "類型",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "text",
+      "value": "文字",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path",
+      "value": "路徑",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_confirm_content",
+      "value": "是否在「最近」中還原此來源產生的檔案？",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "alert_net_disconnect_try_again",
+      "value": "未快取至本機的檔案，請連線至網路，然後重試",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_cancel",
+      "value": "取消",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_file_manager",
+      "value": "檔案",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_size",
+      "value": "檔案大小：",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "rename",
+      "value": "重新命名",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_title",
+      "value": "副本",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "total",
+      "value": "總共 %1$s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_complete",
+      "value": "移動完成，輕觸查看",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "edit",
+      "value": "編輯",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "media_speed",
+      "value": "倍速",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy",
+      "value": "複製",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "skip",
+      "value": "跳過",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recent",
+      "value": "最近",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "open_failure_msg",
+      "value": "無法開啟",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_preview_detail",
+      "value": "輕觸左側清單查看詳細資料",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_name",
+      "value": "檔案名稱：",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_app_name",
+      "value": "檔案",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_agreed",
+      "value": "同意",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "preview",
+      "value": "預覽",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_complete",
+      "value": "複製完成，輕觸查看",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "檔案",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "location",
+      "value": "位置",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "more",
+      "value": "更多",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "operation_canceled",
+      "value": "操作已取消",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "ok",
+      "value": "確定",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting",
+      "value": "貼上",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover",
+      "value": "復原",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_uppercase",
+      "value": "復原",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_KB",
+      "value": "%s KB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "share",
+      "value": "分享",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "to_save",
+      "value": "將檔案儲存至「%s」",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "myPhone",
+      "value": "我的手機",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "data_center_terms_welcome",
+      "value": "歡迎使用",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yesterday",
+      "value": "昨天",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "restore",
+      "value": "復原",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_fail",
+      "value": "儲存失敗",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete",
+      "value": "刪除",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "privacy_content_adults_third_divide",
+      "value": "請仔細閱讀上述聲明。若輕觸「同意」，即表示您同意。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "details",
+      "value": "詳細資料",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge",
+      "value": "合併",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "name",
+      "value": "名稱",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "cancel",
+      "value": "取消",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "aboutPage_title",
+      "value": "關於",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "audio",
+      "value": "音訊",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_MB",
+      "value": "%s MB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_service_phone",
+      "value": "客服電話",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "disabled",
+      "value": "暫不支援功能，敬請期待",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "net_work_disconnect",
+      "value": "未連線網路，請檢查網路設定",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "check_update_now",
+      "value": "正在檢查更新…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "version_is_latest",
+      "value": "已是最新版本",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "files_app_name",
+      "value": "檔案",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "source",
+      "value": "來源",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_no",
+      "value": "不篩選",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter",
+      "value": "設定篩選圖片大小",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than",
+      "value": "小於 %d KB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_max_input",
+      "value": "最大輸入 %d KB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_custom",
+      "value": "自訂",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than_MB",
+      "value": "小於 %d MB",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "no_content_meets_the_condition",
+      "value": "沒有符合條件的內容",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "turn_scrren_and_intelligent_analysis",
+      "value": "關閉螢幕並接上電源，完成智慧分析後，搜尋將更精準。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "screen_off_intelligent_analysis",
+      "value": "螢幕關閉智慧分析",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "not_find_the_file_you_want",
+      "value": "找不到想要的檔案",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "help_and_support",
+      "value": "說明與客服",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface_contents",
+      "value": "支援調整畫面配置，隱藏不常用功能，畫面更簡潔，找檔案更方便。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations",
+      "value": "檔案操作高效",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations_contents",
+      "value": "將分享等常用操作向上移動至功能表頂端，使檔案操作更得心應手。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support_contents",
+      "value": "推出新功能介紹，常見問題支援線上解答，快來試試吧！",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "change_details",
+      "value": "變更詳細資料",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_change_tip",
+      "value": "為提供更完善的服務，我們更新了隱私權聲明和使用者合約。請仔細閱讀相關條款，若您不同意變更帶來的資料處理，會影響該服務的正常使用。請參閱本次的%1$s、最新版本的%2$s。",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "get_started",
+      "value": "立即體驗",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface",
+      "value": "畫面自由定義",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_access_more_secure_contents",
+      "value": "目錄結構簡單化，應用程式僅可存取所選檔案，使用者資料更安全。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_access_more_secure",
+      "value": "檔案存取更安全",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "檔案",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancelled",
+      "value": "已取消",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_to_dest_completed",
+      "value": "已複製到 %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_to_dest_completed",
+      "value": "已移動到 %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "search",
+      "value": "搜尋",
+      "attr": {
+        "priority": "LT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,753 @@
+{
+  "string": [
+    {
+      "name": "select_location",
+      "value": "نىشان ئورۇن تاللاڭ.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "size",
+      "value": "چوڭلۇقى",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "merge_folder_tip",
+      "value": "بۇ ئورۇندا «%s» دېگەن ناملىق قىسقۇچ بار، ئالماشتۇرامسىز؟",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "stop",
+      "value": "ئېتىش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "privacy_welcome_content_adults_all",
+      "value": "بۇ مۇلازىمەت تور ئىشلىتىدۇ؛ بوشلۇق ۋە ئەپ تىزىملىكى ئىجازىتى ئالىدۇ؛ ھېسابات، ئۈسكۈنە، ئورۇن، ئەپ (ئەپ تىزىملىكىمۇ ئىچىدە)، تور ئۇچۇرى ۋە سىز يۈكلىگەن مەلۇماتلارنى توپلايدۇ.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasteboard_dialog_content",
+      "value": "كېسىش تاختىسىدىن ھۆججەت چاپلامسىز؟",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "choose_size",
+      "value": "سىغىمى: %s",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "finish",
+      "value": "پۈتتى",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "deleting",
+      "value": "ئۆچۈرۈلۈۋاتىدۇ...",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "btn_cancel",
+      "value": "بىكار قىلىش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_type",
+      "value": "ھۆججەت تۈرى:",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "unknown_error_occurred",
+      "value": "ئېنىقسىز خاتالىق",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "loading",
+      "value": "يۈكلىنىۋاتىدۇ...",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "replace",
+      "value": "ئالماشتۇرۇش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_B",
+      "value": "%sB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "waiting_progress_message",
+      "value": "سەل ساقلاڭ...",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "order_name",
+      "value": "نام",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_GB",
+      "value": "%sGB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_app_version",
+      "value": "%s نەشرى",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "confirm",
+      "value": "جەزملەش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "externalDisk",
+      "value": "سىغىم كارتىسى",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "save_file_has_same_file",
+      "value": "ئوخشاش ناملىق ھۆججەت بار.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "browse",
+      "value": "كۆرۈش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "delete_complete",
+      "value": "ئۆچۈرۈش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_personal_info",
+      "value": "توپلىغان شەخسىي ئۇچۇر تىزىملىكى",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "type",
+      "value": "تۈر",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "text",
+      "value": "تېكىست",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "path",
+      "value": "يول",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_confirm_content",
+      "value": "«يېقىنقى» دىكى بۇ مەنبەدىن پەيدا بولغان ھۆججەتنى ئەسلىگە كەلتۈرەمسىز؟",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "alert_net_disconnect_try_again",
+      "value": "ھۆججەت ئۈسكۈنىگە غەملەنمىگەن، تورغا ئۇلاپ قايتا سىناڭ.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_cancel",
+      "value": "بىكار قىلىش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_file_manager",
+      "value": "ھۆججەت باشقۇرۇش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_size",
+      "value": "ھۆججەت سىغىمى:",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "rename",
+      "value": "نام ئۆزگەرتىش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_title",
+      "value": "كۆچۈرۈلگەن ھۆججەت",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "total",
+      "value": "جەمئىي %1$s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_complete",
+      "value": "يۆتكەلدى",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "edit",
+      "value": "تەھرىرلەش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "media_speed",
+      "value": "تېزلىك",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "copy",
+      "value": "كۆچۈرۈش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "skip",
+      "value": "ئاتلاپ ئۆتۈش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recent",
+      "value": "يېقىنقى",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "open_failure_msg",
+      "value": "ئاچقىلى بولمىدى",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "click_preview_detail",
+      "value": "ياندىن ھۆججەت تاللاپ تەپسىلاتىنى كۆرۈڭ.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_name",
+      "value": "ھۆججەت نامى:",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_app_name",
+      "value": "ھۆججەت باشقۇرۇش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "agreement_agreed",
+      "value": "قوشۇلىمەن",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "preview",
+      "value": "كۆرەك",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_complete",
+      "value": "كۆچۈرۈلدى",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "ھۆججەت باشقۇرۇش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "location",
+      "value": "ئورۇن",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "more",
+      "value": "باشقىلار",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "operation_canceled",
+      "value": "مەشغۇلات بىكار قىلىندى.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "ok",
+      "value": "مۇقىملاشتۇرۇش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "pasting",
+      "value": "چاپلاش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover",
+      "value": "ئەسلىگە كەلتۈرۈش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "recover_uppercase",
+      "value": "ئەسلىگە كەلتۈرۈش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_KB",
+      "value": "%sKB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "share",
+      "value": "ئورتاقلىشىش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "to_save",
+      "value": "ھۆججەتنى «%s» قىسقۇچىغا ساقلاش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "myPhone",
+      "value": "يانفونۇم",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "data_center_terms_welcome",
+      "value": "خۇش كەلدىڭىز",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "yesterday",
+      "value": "تۈنۈگۈن",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "restore",
+      "value": "ئەسلىگە قايتۇرۇش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "save_file_fail",
+      "value": "ساقلانمىدى.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "delete",
+      "value": "ئۆچۈرۈش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "privacy_content_adults_third_divide",
+      "value": "يۇقىرىقى باياناتنى ئەستايىدىل كۆرۈڭ، «قوشۇلىمەن» نى چەكسىڭىز، ئۇلارغا قوشۇلغان بولىسىز.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "details",
+      "value": "تەپسىلات",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "merge",
+      "value": "بىرلەشتۈرۈش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "name",
+      "value": "نام",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "cancel",
+      "value": "بىكار قىلىش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "audio",
+      "value": "ئۈن",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "unit_MB",
+      "value": "%sMB",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "about_service_phone",
+      "value": "مۇلازىمەت تېلېفونى",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "disabled",
+      "value": "بۇ ئىقتىدار تېخى چىقمىدى.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "aboutPage_title",
+      "value": "ھەققىدە",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "net_work_disconnect",
+      "value": "تور يوق، تور تەڭشىكىنى تەكشۈرۈڭ.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "check_update_now",
+      "value": "يېڭىلانما تەكشۈرۈۋاتىدۇ...",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "version_is_latest",
+      "value": "بۇ ئەڭ يېڭى نەشرى",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "files_app_name",
+      "value": "ھۆججەت",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "source",
+      "value": "مەنبە",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_no",
+      "value": "سۈزۈلمەيدۇ",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter",
+      "value": "رەسىم سۈزۈش",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than",
+      "value": "\u200f%dKB دىن كىچىك",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_max_input",
+      "value": "كۆپىدە %dKB بولسۇن",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_custom",
+      "value": "ئۆزلەشتۈرۈش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "image_size_filter_less_than_MB",
+      "value": "\u200f%dMB دىن كىچىك",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "no_content_meets_the_condition",
+      "value": "شەرتكە ئۇيغۇن مەزمۇن يوق",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "turn_scrren_and_intelligent_analysis",
+      "value": "ئېكران ئېتىك ۋە توكقا چېتىق ھالەتتە ئانالىز يۈرگۈزۈلۈپ، ئىزدەش تېخىمۇ ياخشىلىنىدۇ.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "screen_off_intelligent_analysis",
+      "value": "ئېتىك ئېكران ئاڭلىق ئانالىزى",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "not_find_the_file_you_want",
+      "value": "ئىزدىگەن ھۆججەت تېپىلمىدىمۇ؟",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "help_and_support",
+      "value": "ياردەم ۋە مۇلازىمەت",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface_contents",
+      "value": "ئارايۈز لايىھەسىنى ئۆزلەشتۈرۈپ، كۆپ ئىشلەتمەيدىغان ئىقتىدارلارنى يوشۇرۇشقا بولىدۇ، قولايلىق ۋە ئاددىي.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations",
+      "value": "ئۈنۈملۈك مەشغۇلات",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "efficient_file_operations_contents",
+      "value": "ئورتاقلىشىش قاتارلىق دائىملىق تاللانمىلار تىزىملىكنىڭ ئۈستىگە يۆتكەلدى، ھۆججەت مەشغۇلاتلىرى تېخىمۇ قولاي ۋە ئۈنۈملۈك.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "help_and_support_contents",
+      "value": "ئىقتىدار چۈشەندۈرۈشى، دائىملىق سوئاللار قاتارلىق ياردەم مەزمۇنلىرى توپلاشتۇرۇلدى.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "change_details",
+      "value": "ئۆزگىرىش تەپسىلاتى",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "agreement_change_tip",
+      "value": "تېخىمۇ ياخشى مۇلازىمەت قىلىش ئۈچۈن مەخپىيەتلىك باياناتى ۋە ئىشلەتكۈچىلەر كېلىشىمىنى يېڭىلىدۇق. ئالاقىدار شەرتلەرنى ئەستايىدىل ئوقۇپ چىقىڭ. ئۆزگەرگەن مەلۇمات بىر تەرەپ قىلىش ئۇسۇلىغا قوشۇلمىسىڭىز، بۇ مۇلازىمەت نورمال ئىشلىمەيدۇ. %1$s ۋە يېڭىلانغان «%2$s» نى كۆرۈپ چىقىڭ.",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "get_started",
+      "value": "ئىشلىتىش",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "freely_customizable_interface",
+      "value": "ئۆزلەشتۈرمە ئارايۈز",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "file_access_more_secure_contents",
+      "value": "مۇندەرىجە قۇرۇلمىسى ئاددىيلاشتى، ئەپلەر پەقەت ئىجازەت بېرىلگەن ھۆججەتنى زىيارەت قىلالايدۇ، ئىشلەتكۈچى مەلۇماتلىرىنىڭ بىخەتەرلىكى قوغدىلىدۇ.",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "file_access_more_secure",
+      "value": "ھۆججەت بىخەتەرلىكى يۇقىرى",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "ھۆججەت",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "cancelled",
+      "value": "بىكار قىلىنغان",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "copy_to_dest_completed",
+      "value": "بۇ ئورۇنغا كۆچۈرۈلدى: %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "move_to_dest_completed",
+      "value": "بۇ ئورۇنغا يۆتكەلدى: %s",
+      "attr": {
+        "priority": "LT"
+      }
+    },
+    {
+      "name": "search",
+      "value": "ئىزدەش",
+      "attr": {
+        "priority": "LT"
+      }
+    }
+  ]
+}

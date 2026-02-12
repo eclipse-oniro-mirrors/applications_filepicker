@@ -1,0 +1,160 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "release",
+        "material": {
+          "storePassword": "",
+          "certpath": "signature/OpenHarmony.cer",
+          "keyAlias": "OpenHarmony Application Release",
+          "keyPassword": "",
+          "profile": "signature/filemanager.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "signature/OpenHarmony.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "release",
+//        "compatibleSdkVersion": "5.0.2(14)",
+//        "compatibleSdkVersionStage": "beta3",
+        "compileSdkVersion": 23,
+        "compatibleSdkVersion": 20,
+        "targetSdkVersion": 20,
+        "runtimeOS": "OpenHarmony",
+//        "buildOption": {
+//          "nativeLib": {
+//            "filter": {
+//              "enableOverride": true,
+//              "excludes": [
+//                "**/x86_64/*.so",
+//                "**/armeabi-v7a/*.so"
+//              ]
+//            }
+//          }
+//        }
+      },
+      {
+        "name": "phone",
+        "signingConfig": "release",
+        "compatibleSdkVersion": "5.0.2(14)",
+        "compatibleSdkVersionStage": "beta3",
+        "runtimeOS": "OpenHarmony",
+        "versionCode": 60031442,
+        "versionName": "6.0.31.442",
+//        "buildOption": {
+//          "nativeLib": {
+//            "filter": {
+//              "enableOverride": true,
+//              "excludes": [
+//                "**/x86_64/*.so",
+//                "**/armeabi-v7a/*.so"
+//              ]
+//            }
+//          }
+//        }
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "phone",
+      "srcPath": "./products/phone",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "phone",
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "common",
+      "srcPath": "./common",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "phone"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "addressBar",
+      "srcPath": "./features/addressBar",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "phone"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "customDialog",
+      "srcPath": "./features/customDialog",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "phone"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "fileView",
+      "srcPath": "./features/fileView",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "phone"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sideBar",
+      "srcPath": "./features/sideBar",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "phone"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bottomBar",
+      "srcPath": "./features/bottomBar",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "phone"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "titleBar",
+      "srcPath": "./features/titleBar",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "phone"
+          ]
+        }
+      ]
+    },
+  ],
+}

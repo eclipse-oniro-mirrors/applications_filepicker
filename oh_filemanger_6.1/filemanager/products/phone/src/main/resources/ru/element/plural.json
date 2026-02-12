@@ -1,0 +1,598 @@
+{
+    "plural":[
+        {
+            "name":"item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d элемент",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_move_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Выполнено перетаскивание %d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Выполнено перетаскивание %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Выполнено перетаскивание %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Выполнено перетаскивание %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"to_save_plural",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Сохранить %1$d файл в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Сохранить %1$d файла в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Сохранить %1$d файла в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Сохранить %1$d файлов в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Остановлено перемещение %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Остановлено перемещение %d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Остановлено перемещение %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Остановлено перемещение %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_copy_success",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Перемещен %d файл",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Перемещено %d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Перемещено %d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Перемещено %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_drag_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Выполнено: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Остановлено копирование %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Остановлено копирование %d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Остановлено копирование %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Остановлено копирование %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Остановлено перетаскивание %d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Остановлено перетаскивание %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Остановлено перетаскивание %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Остановлено перетаскивание %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_fail",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"сбой: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"сбой: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"сбой: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"сбой: %d",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"find_files_num",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Найден %d элемент",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Найдено %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Найдено %d элемента",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Найдено %d элементов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Скопировано %d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Скопирован %d файл",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Скопировано %d файла",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Скопировано %d файлов",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_confirm_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Удалить %d файл?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Удалить %d файла?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Удалить %d файла?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Удалить %d файлов?",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copying_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Копирование %1$d элемента в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Копировать %1$d элемента в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Копирование %1$d элементов в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Копировать %1$d элементов в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"moving_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"Переместить %1$d элемента в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"Переместить %1$d элемент в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"Переместить %1$d элемента в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"Переместить %1$d элементов в: %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d элемент перемещен в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d элемента перемещено в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%1$d элемента перемещено в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%1$d элементов перемещено в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d элемента скопировано в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d элемент скопирован в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"few",
+                    "value":"%1$d элемента скопировано в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"many",
+                    "value":"%1$d элементов скопировано в папку %2$s",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "index.ets",
+  "author": "HmFileManager",
+  "license": "Apache-2.0",
+  "dependencies": {
+//    "@hms-security/agoh-crypto": "1.4.8-300",
+//    "@hms-security/agoh-ssl": "1.4.8-300",
+//    "@hms-network/grs": "8.0.9-302",
+    "libSecurity.so": "file:./src/main/cpp/types/libSecurity",
+    "libTrash.so": "file:./src/main/cpp/types/libTrash",
+//    "@hms-wisesupport/wisesupport": "1.25.9-300",
+//    "@hw-hmf/logger": "25.0.4-301"
+  },
+  "overrides": {
+//    "@hw-hmf/logger": "25.0.4-301"
+  }
+}

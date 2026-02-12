@@ -1,0 +1,36 @@
+{
+  "color": [
+    {
+      "name": "startWindowColor",
+      "value": "#000000"
+    },
+    {
+      "name": "status_bar_content_color",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "buttonBar_pressStyles",
+      "value": "#2b2d2e"
+    },
+    {
+      "name": "status_bar_dark_color",
+      "value": "#E5000000"
+    },
+    {
+      "name": "black",
+      "value": "#96FFFFFF"
+    },
+    {
+      "name": "path_pick_selected_bg",
+      "value": "#33317AF7"
+    },
+    {
+      "name": "windows_gray",
+      "value": "#E5000000"
+    },
+    {
+      "name": "windows_path_pick",
+      "value": "#FF666666"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+	license: 'ISC',
+	devDependencies: {},
+	name: 'phone',
+	description: 'FileManager',
+	version: '1.0.0',
+	dependencies: {
+		'@ohos/common': 'file:../../common',
+		'@ohos/customDialog': 'file:../../features/customDialog',
+		'@ohos/bottomBar': 'file:../../features/bottomBar',
+		'@ohos/breadCrumb': 'file:../../features/addressBar',
+		'@ohos/sideBar': 'file:../../features/sideBar',
+		'@ohos/titleBar': 'file:../../features/titleBar',
+		'@ohos/fileView': 'file:../../features/fileView',
+	},
+	'dynamicDependencies': {
+	}
+}

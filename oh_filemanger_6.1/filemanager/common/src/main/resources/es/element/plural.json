@@ -1,0 +1,878 @@
+{
+  "plural": [
+    {
+      "name": "restore_dialog_title",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Restableciendo %d elemento…",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Restableciendo %d elementos…",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Eliminando %d elementos…",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Eliminando %d elemento…",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_fail_dialog_content_plurals",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "No se han podido eliminar %d elementos.",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "No se ha podido eliminar %d elemento.",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "error_password_try_again_tips",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Inténtalo de nuevo en %d minuto",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Inténtalo de nuevo en %d minutos",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "picker_selected",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Selección: %d",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Selección: %d",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remain_answer_times",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Respuesta incorrecta. Queda %d intento.",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Respuesta incorrecta. Quedan %d intentos.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "restore_progress_content_item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Se han restablecido %d elementos.",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Se ha restablecido %d elemento.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "selected",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d elemento seleccionado",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "%d elementos seleccionados",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "confirm_delete_tags_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "¿Eliminar %d etiquetas?",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "¿Eliminar %d etiqueta?",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_dialog_title_other",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Moviendo %1$d elementos a %2$s…",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Moviendo %1$d elemento a %2$s…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_select_title",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Copiar %d elemento a",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Copiar %d elementos a",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d elementos",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "%d elemento",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "selectedItem",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d elementos seleccionados",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "%d elemento seleccionado",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "recent_delete_permanent",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "¿Eliminar de forma permanente %d archivo?",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "¿Eliminar de forma permanente %d archivos?",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "storage_folder_num",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d carpetas",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "%d carpeta",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_multiple",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Eliminar (%d elemento)",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Eliminar (%d elementos)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "cut_multiple",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Cortar (%d elemento)",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Cortar (%d elementos)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "filePickerTip",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Se puede seleccionar un máximo de %d archivos a la vez.",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Solo se puede seleccionar %d archivo a la vez.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_progress_content_item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Se han eliminado %d elementos.",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Se ha eliminado %d elemento.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "transferring_file",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Transfiriendo %d elemento",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Transfiriendo %d elementos",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "restore_fail_dialog_content_plurals",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "No se ha podido restablecer %d elemento.",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "No se han podido restablecer %d elementos.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_out_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Moviendo %1$d elementos a %2$s…",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Moviendo %1$d elemento a %2$s…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_multiple",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Copiar (%d elementos)",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Copiar (%d elementos)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "storage_file_num",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d archivos",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "%d archivo",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "filecount",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d elementos",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "%d elemento",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "file_num_exceed",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Se pueden abrir un máximo de %d archivos a la vez. Vuelve a seleccionar.",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Solo se puede abrir %d archivo a la vez. Vuelve a seleccionar.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_dialog_title_other",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Copiando %1$d elemento en %2$s…",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Copiando %1$d elementos en %2$s…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remain_login_times",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Contraseña incorrecta. Queda %d intento.",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Contraseña incorrecta. Quedan %d intentos.",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Mueve %d elementos a %s",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Mueve %d elemento a %s",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "error_password_try_again_tips_second",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Inténtalo de nuevo en %d segundo.",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Inténtalo de nuevo en %d segundos.",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "drag_dialog_title",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Arrastrando y soltando %1$d elemento a %2$s…",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Arrastrando %1$d elementos a %2$s y soltándolos allí…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_fail_result_dialog_content",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "No se han podido copiar %d archivos.",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "No se ha podido copiar %d archivo.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_a_new_folder_with_the_selected_options",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Añadir a carpeta nueva (%d elementos)",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Añadir a carpeta nueva (%d elemento)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_select_title",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Mover %d elemento a",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Mover %d elementos a",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "rename_multiple",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Cambiar nombre (%d elementos)",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Cambiar nombre (%d elemento)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_in_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Moviendo %1$d elementos a %2$s…",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Moviendo %1$d elemento a %2$s…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_confirm_dialog_title",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "¿Eliminar %d archivo?",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "¿Eliminar %d archivos?",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "filePickerMaxSelect",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Selecciona hasta %d archivos.",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Selecciona %d solo archivo.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "duplicate_files_count",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Archivos duplicados (%d grupos)",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Archivos duplicados (%d grupo)",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Copiar %d elementos en %s",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Copiar %1$d elemento en %2$s",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "file_day_item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d días",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "%1$d día",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "min_ago",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Hace %d min",
+          "attr": {
+            "priority": "LT"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Hace %d min",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copying_notification_title",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "Copiar %1$d elemento en %2$s",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "Copiar %1$d elementos en %2$s",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "moving_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "Mover %1$d elementos a %2$s",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "Mover %1$d elemento a %2$s",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_complete_notification_title",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%1$d elemento movido a %2$s",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "other",
+          "value": "%1$d elementos movidos a %2$s",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_complete_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d elementos copiados en %2$s",
+          "attr": {
+            "priority": "translate"
+          }
+        },
+        {
+          "quantity": "one",
+          "value": "%1$d elemento copiado en %2$s",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    }
+  ]
+}

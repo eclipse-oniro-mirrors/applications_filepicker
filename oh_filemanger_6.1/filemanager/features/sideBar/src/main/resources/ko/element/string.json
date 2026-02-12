@@ -1,0 +1,25 @@
+{
+    "string":[
+        {
+            "name":"removing",
+            "value":"제거 중…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_success",
+            "value":"성공적으로 삭제되었습니다.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"available",
+            "value":"사용 가능",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

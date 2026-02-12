@@ -1,0 +1,11 @@
+{
+    "string":[
+        {
+            "name":"noContent",
+            "value":"Aucun contenu",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}
