@@ -1,0 +1,10 @@
+{
+  "name": "addressBar",
+  "description": "a npm package which contains addressBar feature",
+  "main": "index.ets",
+  "version": "1.0.0",
+  "dependencies": {
+    "@ohos/common": "../../common",
+    "@ohos/fileView": "../fileView"
+  }
+}

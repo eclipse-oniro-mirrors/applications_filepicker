@@ -1,0 +1,25 @@
+{
+    "string":[
+        {
+            "name":"removing",
+            "value":"Retrait en cours.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_success",
+            "value":"Suppression réussie.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"available",
+            "value":"Disponible",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+  "mainTitleResource": "$string:MainAbility_label",
+  "dstBundleName": "com.ohos.filemanager",
+  "dstAbilityName": "FileManagerPrivacyAbility",
+  "displayOOBE": false
+}

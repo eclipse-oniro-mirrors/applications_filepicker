@@ -1,0 +1,10 @@
+{
+  "name": "sidebar",
+  "description": "a npm package which contains leftBar feature",
+  "main": "index.ets",
+  "version": "1.0.0",
+  "dependencies": {
+    "@ohos/common": "../../common",
+    "@ohos/customDialog": "../customDialog"
+  }
+}

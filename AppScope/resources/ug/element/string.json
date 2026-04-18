@@ -1,0 +1,18 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"ھۆججەت",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"file_manager_label",
+            "value":"ھۆججەت مۇلازىمىتى",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

@@ -1,0 +1,556 @@
+{
+  "plural": [
+    {
+      "name": "restore_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムを復元中...",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムを削除中...",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_fail_dialog_content_plurals",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムを削除できませんでした。",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "error_password_try_again_tips",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d分後に再試行してください",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "picker_selected",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d件を選択済み",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remain_answer_times",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "回答が間違っています。残り試行回数：%d。",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "restore_progress_content_item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムが復元されました。",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "selected",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムを選択済み",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "confirm_delete_tags_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のタグを削除しますか？",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_dialog_title_other",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d個のアイテムを%2$sに移動中…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_select_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムのコピー先",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテム",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "selectedItem",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムを選択済み",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "recent_delete_permanent",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のファイルを完全に削除しますか？",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "storage_folder_num",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のフォルダ",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_multiple",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "削除（%d個のアイテム）",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "cut_multiple",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "切り取り（%d個のアイテム）",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "filePickerTip",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "一度に選択できるファイルは最大%d個です。",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_progress_content_item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムが削除されました。",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "transferring_file",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムを転送",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "restore_fail_dialog_content_plurals",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムを復元できませんでした。",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_out_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d個のアイテムを%2$sに移動中…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_multiple",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "コピー（%d個のアイテム）",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "storage_file_num",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のファイル",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "filecount",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテム",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "file_num_exceed",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "一度に開けるファイルは最大%d個です。選択し直してください。",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_dialog_title_other",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d個のアイテムを%2$sにコピー中…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remain_login_times",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "パスワードが間違っています。残り試行回数：%d。",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムを%sに移動",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "error_password_try_again_tips_second",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d秒後に再試行してください。",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "drag_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d個のアイテムを%2$sにドラッグアンドドロップ中…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_fail_result_dialog_content",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のファイルをコピーできませんでした。",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_a_new_folder_with_the_selected_options",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "新規フォルダに追加（%d個のアイテム）",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_select_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムの移動先",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "rename_multiple",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "名前を変更（%d個のアイテム）",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_in_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d個のアイテムを%2$sに移動中…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_confirm_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のファイルを削除しますか？",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "filePickerMaxSelect",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "選択できるファイルは最大%d個です。",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "duplicate_files_count",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "重複ファイル（%d個のグループ）",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d個のアイテムを%sにコピー",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "file_day_item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d日",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "min_ago",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d分前",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copying_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d個のアイテムを%2$sにコピー",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "moving_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d個のアイテムを%2$sに移動",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_complete_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d個のアイテムが%2$sに移動されました",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_complete_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d個のアイテムが%2$sにコピーされました",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    }
+  ]
+}

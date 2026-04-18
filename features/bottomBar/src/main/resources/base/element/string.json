@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "BottomBarAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "BottomBarAbility_label",
+      "value": "label"
+    }
+  ]
+}

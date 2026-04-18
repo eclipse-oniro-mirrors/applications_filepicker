@@ -1,0 +1,25 @@
+{
+    "string":[
+        {
+            "name":"available",
+            "value":"Available",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_success",
+            "value":"Deleted successfully.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"removing",
+            "value":"Removing…",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}
