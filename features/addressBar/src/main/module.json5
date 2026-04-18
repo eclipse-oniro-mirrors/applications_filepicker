@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "addressBar",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}

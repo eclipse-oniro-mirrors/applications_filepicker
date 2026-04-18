@@ -1,0 +1,25 @@
+{
+    "string":[
+        {
+            "name":"removing",
+            "value":"جارٍ الإزالة…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_success",
+            "value":"تم الحذف بنجاح.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"available",
+            "value":"المُتاح",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

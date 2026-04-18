@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/03</title>
+    <defs>
+        <circle id="path-1" cx="15" cy="15" r="15"></circle>
+    </defs>
+    <g id="icon/03" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="#illustration_Group">
+            <g id="Oval-+-矩形-Mask">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#9D76FF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <path d="M18.3904556,-0.5 C18.9965049,-0.5 19.4878049,-0.00869998687 19.4878049,0.597349293 L19.4878049,14.4387953 C19.4878049,14.4833782 19.4851462,14.5273402 19.4799787,14.5705313 C19.3410172,13.1041517 18.498335,11.8425135 17.2932513,11.1273622 L17.2926829,0.597349293 C17.2926829,0.0317032984 17.7206598,-0.433983335 18.2704639,-0.493560904 L18.3904556,-0.5 Z" id="合并形状" fill="#FFFFFF" fill-rule="nonzero" opacity="0.5" mask="url(#mask-2)"></path>
+                <circle id="Oval" fill="#FFFFFF" opacity="0.900000036" mask="url(#mask-2)" cx="15" cy="15" r="4.5"></circle>
+            </g>
+            <path d="M4.75609756,14.8072289 C4.75609756,20.443195 9.3424489,25.0120482 15,25.0120482" id="路径" stroke="#FFFFFF" stroke-width="1.99961427" opacity="0.400000006" stroke-linecap="round" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

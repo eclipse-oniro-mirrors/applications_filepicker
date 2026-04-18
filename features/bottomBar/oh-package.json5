@@ -1,0 +1,14 @@
+{
+  "name": "bottombar",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@ohos/common": "../../common",
+    "@ohos/customDialog": "../customDialog",
+    "@ohos/fileView": "../fileView"
+  }
+}
+

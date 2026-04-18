@@ -1,0 +1,11 @@
+{
+  "name": "customDialog",
+  "description": "a npm package which contains custom dialog feature",
+  "main": "index.ets",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "author": "HmFileManager",
+  "dependencies": {
+    "@ohos/common": "file:../../common"
+  }
+}

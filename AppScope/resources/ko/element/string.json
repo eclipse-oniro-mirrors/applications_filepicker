@@ -1,0 +1,18 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"파일",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_manager_label",
+            "value":"파일 서비스",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

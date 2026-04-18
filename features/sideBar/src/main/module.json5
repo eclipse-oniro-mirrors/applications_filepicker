@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "sideBar",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}

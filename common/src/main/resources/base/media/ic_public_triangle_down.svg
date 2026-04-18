@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>ic_next</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ic_next" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" x="0" y="0" width="20" height="20"></rect>
+        <path d="M14.5,7 C14.7761424,7 15,7.22385763 15,7.5 C15,7.60914199 14.9650305,7.71011641 14.9056846,7.79233011 C14.9056132,7.79374097 14.9056396,7.79379272 14.9056396,7.79379272 C14.9056396,7.79379272 10.9222565,13.7700653 10.9222565,13.7700653 C10.8311217,13.9088529 10.6762051,14 10.5,14 C10.3237949,14 10.1688783,13.9088529 10.0798267,13.7711351 L10.078125,13.7700653 L6.09347534,7.79379272 C6.03468919,7.70930524 6,7.60870367 6,7.5 C6,7.22385763 6.22385763,7 6.5,7 L6.5,7 Z" id="形状结合" fill="#000000"></path>
+    </g>
+</svg>

@@ -1,0 +1,878 @@
+{
+    "plural":[
+        {
+            "name":"restore_fail_dialog_content_plurals",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە ئەسلىگە كەلمىدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە ئەسلىگە كەلمىدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"restore_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە ئەسلىگە كېلىۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە ئەسلىگە كېلىۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە ئۆچۈرۈلۈۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە ئۆچۈرۈلۈۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"كۆچۈرۈش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"كۆچۈرۈش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسىنى «%s» غا كۆچۈرۈش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسىنى «%2$s» غا كۆچۈرۈش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_fail_dialog_content_plurals",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە ئۆچۈرۈلمىدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە ئۆچۈرۈلمىدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"storage_file_num",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەت",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەت",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"filecount",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"file_num_exceed",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"بۇ ئەپ بىر قېتىمدا كۆپىدە %d ھۆججەت ئاچالايدۇ، قايتا تاللاڭ.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"بۇ ئەپ بىر قېتىمدا كۆپىدە %d ھۆججەت ئاچالايدۇ، قايتا تاللاڭ.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"restore_progress_content_item",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە ئەسلىگە كەلدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە ئەسلىگە كەلدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"selected",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"تاللاندى (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"تاللاندى (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسىنى «%s» غا يۆتكەش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسىنى «%s» غا يۆتكەش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_select_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسىنى كۆچۈرۈش:",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسىنى كۆچۈرۈش:",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"selectedItem",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"تاللاندى (%d)",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"تاللاندى (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"recent_delete_permanent",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەتنى مەڭگۈلۈك ئۆچۈرەمسىز؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەتنى مەڭگۈلۈك ئۆچۈرەمسىز؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە سۆرەپ تاشلىنىۋاتىدۇ...",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە سۆرەپ تاشلىنىۋاتىدۇ...",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"storage_folder_num",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d قىسقۇچ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d قىسقۇچ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"ئۆچۈرۈش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"ئۆچۈرۈش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"cut_multiple",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"كېسىش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"كېسىش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_fail_result_dialog_content",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەت كۆچۈرۈلمىدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەت كۆچۈرۈلمىدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_select_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسىنى يۆتكەش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسىنى يۆتكەش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"create_a_new_folder_with_the_selected_options",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"قىسقۇچلاش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"قىسقۇچلاش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"rename_multiple",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"نام ئۆزگەرتىش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"نام ئۆزگەرتىش (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"filePickerTip",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"بىر قېتىمدا كۆپىدە %d ھۆججەت تاللىنىدۇ.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"بىر قېتىمدا كۆپىدە %d ھۆججەت تاللىنىدۇ.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_confirm_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەتنى ئۆچۈرەمسىز؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەتنى ئۆچۈرەمسىز؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_progress_content_item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە ئۆچۈرۈلدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە ئۆچۈرۈلدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"transferring_file",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە يوللىنىۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە يوللىنىۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"error_password_try_again_tips_second",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d سېكۇنتتىن كېيىن قايتا سىناڭ.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d سېكۇنتتىن كېيىن قايتا سىناڭ.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"error_password_try_again_tips",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d مىنۇتتىن كېيىن قايتا سىناڭ.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d مىنۇتتىن كېيىن قايتا سىناڭ.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"remain_login_times",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"پارول خاتا، يەنە %d پۇرسەت قالدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"پارول خاتا، يەنە %d پۇرسەت قالدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"picker_selected",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"تاللاندى (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"تاللاندى (%d)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"confirm_delete_tags_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d خەتكۈچنى ئۆچۈرەمسىز؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d خەتكۈچنى ئۆچۈرەمسىز؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"remain_answer_times",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"جاۋاب خاتا، يەنە %d پۇرسەت قالدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"جاۋاب خاتا، يەنە %d پۇرسەت قالدى.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_dialog_title_other",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە كۆچۈرۈلۈۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە كۆچۈرۈلۈۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_dialog_title_other",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە يۆتكىلىۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە يۆتكىلىۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_out_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە يۆتكەپ چىقىرىلىۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە يۆتكەپ چىقىرىلىۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_in_dialog_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە يۆتكەپ كىرگۈزۈلۈۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسە «%2$s» ئىچىگە يۆتكەپ كىرگۈزۈلۈۋاتىدۇ",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"file_day_item",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d كۈن",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d كۈن",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"min_ago",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d مىنۇت بۇرۇن",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d مىنۇت بۇرۇن",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"filePickerMaxSelect",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"كۆپىدە %d ھۆججەت تاللىنىدۇ.",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"كۆپىدە %d ھۆججەت تاللىنىدۇ.",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"duplicate_files_count",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"تەكرار ھۆججەت (%d گۇرۇپپا)",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"تەكرار ھۆججەت (%d گۇرۇپپا)",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copying_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسىنى «%2$s» غا كۆچۈرۈش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسىنى «%2$s» غا كۆچۈرۈش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"moving_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسىنى «%2$s» غا يۆتكەش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسىنى «%2$s» غا يۆتكەش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسە «%2$s» غا يۆتكەلدى",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسە «%2$s» غا يۆتكەلدى",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسە «%2$s» غا كۆچۈرۈلدى",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسە «%2$s» غا كۆچۈرۈلدى",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        }
+    ]
+}
