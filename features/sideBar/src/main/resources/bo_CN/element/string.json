@@ -1,0 +1,25 @@
+{
+    "string":[
+        {
+            "name":"available",
+            "value":"སྤྱོད་ཆོག",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"delete_success",
+            "value":"སུབ་ཐུབ་སོང་།",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"removing",
+            "value":"སྤོ་འབུད་བྱེད་བཞིན་པ།",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

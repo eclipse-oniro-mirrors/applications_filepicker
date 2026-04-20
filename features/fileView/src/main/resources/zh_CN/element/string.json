@@ -1,0 +1,11 @@
+{
+    "string":[
+        {
+            "name":"noContent",
+            "value":"没有文件",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

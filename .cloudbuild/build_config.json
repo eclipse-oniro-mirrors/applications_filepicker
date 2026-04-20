@@ -1,0 +1,8 @@
+{
+  "buildEnvPrepare":
+  {
+    "JDK_VERSION": "11",
+    "OHPM_VERSION": "1.4.1",
+    "SDK_VERSION": "OH4.1.6.3-HMSCORE4.1.0.22"
+  }
+}

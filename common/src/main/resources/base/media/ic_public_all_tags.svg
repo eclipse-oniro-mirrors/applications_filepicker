@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>dot all</title>
+    <g id="dot-all" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+        <circle id="椭圆形" stroke="#999999" cx="16" cy="12" r="7"></circle>
+        <path d="M12.0801905,6.31146236 C10.931458,5.48605725 9.52249137,5 8,5 C4.13400675,5 1,8.13400675 1,12 C1,15.8659932 4.13400675,19 8,19 C9.65838463,19 11.1820743,18.4233022 12.3814642,17.4595114" id="路径" stroke="#999999"></path>
+    </g>
+</svg>

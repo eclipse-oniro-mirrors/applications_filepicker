@@ -1,11 +1,14 @@
 {
+  "modelVersion": "5.0.0",
   "license": "ISC",
   "devDependencies": {
-    "@ohos/hypium": "1.0.6"
+    //    "@ohos/hypium": "1.0.16"
   },
-  "name": "filepicker",
-  "description": "example description",
+  "name": "HmFileManager",
+  "description": "FileManager",
   "repository": {},
   "version": "1.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "harmonyos-sdk-for-openharmony": "file:lib/harmonyos-sdk-for-openharmony.har"
+  }
 }

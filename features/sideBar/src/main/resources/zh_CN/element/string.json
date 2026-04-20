@@ -1,0 +1,25 @@
+{
+    "string":[
+        {
+            "name":"available",
+            "value":"可用",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_success",
+            "value":"删除成功",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"removing",
+            "value":"正在移除…",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

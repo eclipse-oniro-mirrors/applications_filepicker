@@ -1,0 +1,25 @@
+{
+    "string":[
+        {
+            "name":"removing",
+            "value":"Удаление…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_success",
+            "value":"Удалено.",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"available",
+            "value":"Доступно",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

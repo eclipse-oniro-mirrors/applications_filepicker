@@ -1,0 +1,556 @@
+{
+  "plural": [
+    {
+      "name": "restore_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목 복원 중…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목 삭제 중…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_fail_dialog_content_plurals",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목을 삭제할 수 없습니다.",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "error_password_try_again_tips",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d분 후에 다시 시도",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "picker_selected",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 선택됨",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remain_answer_times",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "잘못된 답변입니다. %d번의 시도 횟수가 남아 있습니다.",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "restore_progress_content_item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목이 복원되었습니다.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "selected",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목이 선택됨",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "confirm_delete_tags_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 태그를 삭제하시겠습니까?",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_dialog_title_other",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d개 항목 %2$s 폴더로 이동 중…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_select_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목 복사 위치",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "selectedItem",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목 선택됨",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "recent_delete_permanent",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 파일을 영구적으로 삭제하시겠습니까?",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "storage_folder_num",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 폴더",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_multiple",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "삭제(%d개 항목)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "cut_multiple",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "잘라내기(%d개 항목)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "filePickerTip",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "한 번에 최대 %d개의 파일을 선택할 수 있습니다.",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_progress_content_item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목이 삭제되었습니다.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "transferring_file",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목 전송됨",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "restore_fail_dialog_content_plurals",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목이 복원되지 않았습니다.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_out_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d개 항목 %2$s 폴더로 이동 중…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_multiple",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "복사(%d개 항목)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "storage_file_num",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 파일",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "filecount",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "file_num_exceed",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "한 번에 최대 %d개의 파일을 열 수 있습니다. 다시 선택하십시오.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_dialog_title_other",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d개 항목 %2$s에 복사중…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remain_login_times",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "잘못된 암호입니다. %d번의 시도 횟수가 남아 있습니다.",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%s에 %d개 항목 이동",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "error_password_try_again_tips_second",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d초 후에 다시 시도하십시오.",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "drag_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d개 항목 %2$s에 드래그 앤 드롭 중…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_fail_result_dialog_content",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 파일을 복사할 수 없습니다.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_a_new_folder_with_the_selected_options",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "새 폴더에 추가(%d개 항목)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_select_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 항목 이동 대상",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "rename_multiple",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "이름 변경(%d 개 항목)",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_in_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d개 항목 %2$s 폴더로 이동 중…",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete_confirm_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개 파일을 삭제하시겠습니까?",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "filePickerMaxSelect",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "최대 %d개의 파일을 선택할 수 있습니다.",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "duplicate_files_count",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "중복 파일(%d개 그룹)",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_dialog_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d개의 항목을 %s에 복사",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "file_day_item",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d일",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "min_ago",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%d분 전",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copying_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d개의 항목을 %2$s에 복사",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "moving_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%2$s에 %1$d개 항목 이동",
+          "attr": {
+            "priority": "LT"
+          }
+        }
+      ]
+    },
+    {
+      "name": "move_complete_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d개 항목이 %2$s 폴더로 이동됨",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy_complete_notification_title",
+      "value": [
+        {
+          "quantity": "other",
+          "value": "%1$d개 항목이 %2$s에 복사됨",
+          "attr": {
+            "priority": "translate"
+          }
+        }
+      ]
+    }
+  ]
+}

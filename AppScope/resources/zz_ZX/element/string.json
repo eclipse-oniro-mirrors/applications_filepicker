@@ -1,0 +1,24 @@
+{
+    "string":[
+        {
+            "name":"reason_write_media",
+            "value":"[TS_1047906]_Grant FileManager write media permission"
+        },
+        {
+            "name":"app_name",
+            "value":"[TS_987081]_Files"
+        },
+        {
+            "name":"reason_read_media",
+            "value":"[TS_1047907]_Grant FileManager read media permission"
+        },
+        {
+            "name":"get_installed_bundle_list",
+            "value":"[TS_1047905]_Allow app to read the list of installed apps"
+        },
+        {
+            "name":"file_manager_label",
+            "value":"[TS_1047908]_Files Service"
+        }
+    ]
+}

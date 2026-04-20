@@ -1,0 +1,18 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"Fichiers",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"file_manager_label",
+            "value":"Service Fichiers",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}
