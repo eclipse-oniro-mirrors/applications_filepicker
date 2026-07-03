@@ -1,0 +1,346 @@
+{
+    "plural":[
+        {
+            "name":"item",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d نەرسە",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d نەرسە",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_move_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"ئوڭۇشلۇق بولغان: %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"ئوڭۇشلۇق بولغان: %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەت سۆرەپ تاشلاش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەت سۆرەپ تاشلاش",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"to_save_plural",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d ھۆججەتنى «%2$s» قىسقۇچىغا ساقلاش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d ھۆججەتنى «%2$s» قىسقۇچىغا ساقلاش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەتنى يۆتكەش توختىدى",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەتنى يۆتكەش توختىدى",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_copy_success",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"ئوڭۇشلۇق بولغان: %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"ئوڭۇشلۇق بولغان: %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەت يۆتكەش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەت يۆتكەش",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_drag_success",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"ئوڭۇشلۇق بولغان: %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"ئوڭۇشلۇق بولغان: %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەتنى كۆچۈرۈش توختىدى",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەتنى كۆچۈرۈش توختىدى",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"drag_stop_notify_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەتنى سۆرەپ تاشلاش توختىدى",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەتنى سۆرەپ تاشلاش توختىدى",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"notify_result_fail",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"ئوڭۇشلۇق بولمىغان: %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"ئوڭۇشلۇق بولمىغان: %d",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"find_files_num",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەت تېپىلدى",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەت تېپىلدى",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notify_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەت كۆچۈرۈش",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەت كۆچۈرۈش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"delete_confirm_dialog_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%d ھۆججەتنى ئۆچۈرەمسىز؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%d ھۆججەتنى ئۆچۈرەمسىز؟",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copying_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسىنى «%2$s» غا كۆچۈرۈش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسىنى «%2$s» غا كۆچۈرۈش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"moving_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسىنى «%2$s» غا يۆتكەش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسىنى «%2$s» غا يۆتكەش",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"move_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسە «%2$s» غا يۆتكەلدى",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسە «%2$s» غا يۆتكەلدى",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"copy_complete_notification_title",
+            "value":[
+                {
+                    "quantity":"other",
+                    "value":"%1$d نەرسە «%2$s» غا كۆچۈرۈلدى",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"one",
+                    "value":"%1$d نەرسە «%2$s» غا كۆچۈرۈلدى",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        }
+    ]
+}

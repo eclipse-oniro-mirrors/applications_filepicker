@@ -1,0 +1,30 @@
+{
+    "string":[
+        {
+            "name":"app_name",
+            "value":"文件管理",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"reason_read_media",
+            "value":"用于文件读操作"
+        },
+        {
+            "name":"reason_write_media",
+            "value":"用于文件写操作"
+        },
+        {
+            "name":"get_installed_bundle_list",
+            "value":"允许应用读取已安装应用列表"
+        },
+        {
+            "name":"file_manager_label",
+            "value":"文件服务",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}

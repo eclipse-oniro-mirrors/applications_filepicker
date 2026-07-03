@@ -1,0 +1,172 @@
+{
+  "id": "HmosFileManagerConfig",
+  "version": 2,
+  "AppSourceDualArchCfg": {
+    "version": 4,
+    "sourceList": [
+      {
+        "hmos_bundle_name": "com.ohos.soundrecorder",
+        "path": [
+          "Sounds"
+        ],
+        "defaultOrder": 3,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.ohos.browser",
+        "path": [
+          "Download/Browser",
+          "Pictures/Browser",
+          "UpdateBackup/Movies/Browser",
+          "UpdateBackup/Music/Browser"
+        ],
+        "defaultOrder": 4,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.tencent.wechat",
+        "path": [
+          "UpdateBackup/tencent/MicroMsg/WeiXin",
+          "UpdateBackup/tencent/MicroMsg/Download",
+          "UpdateBackup/tencent/MicroMsg/weChat",
+          "Pictures/WeiXin",
+          "Pictures/WeChat",
+          "Download/WeiXin",
+          "Download/WeChat",
+          "DCIM/WeiXin"
+        ],
+        "defaultOrder": 5,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.tencent.mqq",
+        "path": [
+          "UpdateBackup/Tencent/QQfile_recv",
+          "UpdateBackup/Tencent/QQ_Images",
+          "UpdateBackup/Tencent/QQ_Images/QQEditPic"
+        ],
+        "defaultOrder": 6,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.ohos.email",
+        "path": [
+          "Download/Email"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.ohos.meetime",
+        "path": [
+          "Pictures/MeeTime",
+          "UpdateBackup/MeeTime/Media",
+          "UpdateBackup/MeeTime/direct"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.baidu.baiduapp",
+        "path": [
+          "UpdateBackup/baidu/searchbox/downloads",
+          "UpdateBackup/baidu/searchbox/landing",
+          "UpdateBackup/BaiduBox/downloads",
+          "Download/baidu/searchbox/downloads",
+          "UpdateBackup/Movies/baidu/searchbox/downloads",
+          "Pictures/baidu/searchbox/downloads",
+          "UpdateBackup/Music/baidu/searchbox/downloads"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.tencent.mtthm",
+        "path": [
+          "UpdateBackup/QQBrowser"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.dingtalk.hmos",
+        "path": [
+          "UpdateBackup/DingTalk"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.uc.mobile",
+        "path": [
+          "UpdateBackup/UCDownloads"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.baidu.netdisk.hmos",
+        "path": [
+          "UpdateBackup/BaiduNetDisk"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.intsig.camscanner.hap",
+        "path": [
+          "UpdateBackup/CamScanner/images",
+          "UpdateBackup/CamScanner/OcrText",
+          "UpdateBackup/CamScanner"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.ss.feishu",
+        "path": [
+          "Pictures/Lark",
+          "UpdateBackup/Lark/download"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.qihoo.hms.browser",
+        "path": [
+          "UpdateBackup/360Browser/download"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.xunlei.thunder",
+        "path": [
+          "UpdateBackup/ThunderDownload"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.alicloud.hmdatabox",
+        "path": [
+          "UpdateBackup/AliYunPan"
+        ],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.tencent.hm.qqmusic",
+        "path": [],
+        "defaultOrder": -1,
+        "isShow": 1
+      },
+      {
+        "hmos_bundle_name": "com.dlife.ecloud",
+        "path": [],
+        "defaultOrder": -1,
+        "isShow": 1
+      }
+    ]
+  }
+}

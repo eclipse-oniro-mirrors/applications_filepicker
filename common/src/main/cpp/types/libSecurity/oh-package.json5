@@ -1,0 +1,5 @@
+{
+  "name": "libSecurity.so",
+  "types": "./index.d.ts",
+  "version": ""
+}

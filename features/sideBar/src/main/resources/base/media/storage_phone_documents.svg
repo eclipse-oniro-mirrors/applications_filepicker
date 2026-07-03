@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/02</title>
+    <g id="icon/02" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="#illustration_Group" transform="translate(15, 15) scale(1, -1) translate(-15, -15)translate(3, 0)">
+            <g id="Group-2">
+                <path d="M2.79945997,0 L16,0 L16,0 L24,7.93181818 L24,27.0005786 C24,28.6571133 22.6571133,30 21.0005786,30 L2.9994214,30 C1.3428867,30 -7.86744924e-16,28.6571133 -8.8817842e-16,27.0005786 L0,2.79945997 C-1.89342525e-16,1.25336092 1.25336092,1.07752095e-15 2.79945997,8.8817842e-16 Z" id="Rectangle-19" fill="#27A3FF" transform="translate(12, 15) scale(1, -1) translate(-12, -15)"></path>
+                <path d="M16,22.1136364 L16,27.9387913 C16,29.0771654 16.9263805,30 18.0691288,30 L23.9166667,30 L16,22.1136364 Z" id="Path-14" fill="#FFFFFF" opacity="0.5" transform="translate(19.9583, 26.0568) scale(1, -1) translate(-19.9583, -26.0568)"></path>
+            </g>
+            <line x1="5.75" y1="10.125" x2="18.25" y2="10.125" id="Path-17-Copy" stroke="#FFFFFF" stroke-width="1.99961427" opacity="0.900000036" stroke-linecap="round"></line>
+            <line x1="5.75" y1="16.125" x2="11.25" y2="16.125" id="Path-17-Copy-2" stroke="#FFFFFF" stroke-width="1.99961427" opacity="0.900000036" stroke-linecap="round"></line>
+        </g>
+    </g>
+</svg>

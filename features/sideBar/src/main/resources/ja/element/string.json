@@ -1,0 +1,25 @@
+{
+    "string":[
+        {
+            "name":"removing",
+            "value":"削除中…",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"delete_success",
+            "value":"正常に削除されました。",
+            "attr":{
+                "priority":"translate"
+            }
+        },
+        {
+            "name":"available",
+            "value":"使用可能",
+            "attr":{
+                "priority":"LT"
+            }
+        }
+    ]
+}

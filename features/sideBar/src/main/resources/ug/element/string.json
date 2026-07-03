@@ -1,0 +1,25 @@
+{
+    "string":[
+        {
+            "name":"delete_success",
+            "value":"ئۆچۈرۈلدى.",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"available",
+            "value":"بوش",
+            "attr":{
+                "priority":"LT"
+            }
+        },
+        {
+            "name":"removing",
+            "value":"چىقىرىلىۋاتىدۇ...",
+            "attr":{
+                "priority":"translate"
+            }
+        }
+    ]
+}
