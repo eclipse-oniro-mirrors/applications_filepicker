@@ -1,7 +1,4 @@
-@rem Copyright (c) Huawei Technologies Co., Ltd. 2010-2018. All rights reserved.
-@rem Description: asn script
-
-@echo off
+@if "%DEBUG%" == "" @echo off
 @rem ##########################################################################
 @rem
 @rem  Hvigor startup script for Windows
@@ -54,7 +51,7 @@ goto fail
 
 :execute
 @rem Execute hvigor
-"%NODE_EXE%" %WRAPPER_MODULE_PATH% %*
+"%NODE_EXE%" "%WRAPPER_MODULE_PATH%" %*
 
 if "%ERRORLEVEL%" == "0" goto hvigorwEnd
 
@@ -65,5 +62,3 @@ exit /b 1
 if "%OS%" == "Windows_NT" endlocal
 
 :end
-
-@echo on

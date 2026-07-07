@@ -1,0 +1,13 @@
+{
+  "app": {
+    "bundleName": "com.ohos.filemanager",
+    "vendor": "Huawei File Manager",
+    "versionCode": 60031446,
+    "versionName": "6.0.31.446",
+    "icon": "$media:appIcon",
+    "label": "$string:file_manager_label",
+    "distributedNotificationEnabled": true,
+    "generateBuildHash": true,
+    "configuration": "$profile:configuration"
+  }
+}
