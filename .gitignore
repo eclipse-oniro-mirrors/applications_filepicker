@@ -1,13 +1,8 @@
+/.hvigor
 /node_modules
 /local.properties
 /.idea
 **/build
-/package-lock.json
-/.hvigor
-/.clang-format
-/.clangd
-/.clang-tidy
+/tsconfig.json
 /oh_modules/
 oh-package-lock.json5
-/sign/hapsign-online-plugin.jar
-/sign/hap-sign-tool.jar

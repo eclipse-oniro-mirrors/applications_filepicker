@@ -1,0 +1,8 @@
+{
+  "src": [
+    "pages/PathPicker",
+    "pages/browser/storage/MyPhone",
+    "pages/browser/storage/FilePickerBatchAuth",
+    "pages/DownloadAuth"
+  ]
+}
