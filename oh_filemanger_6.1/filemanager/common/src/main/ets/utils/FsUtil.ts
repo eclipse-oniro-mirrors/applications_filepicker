@@ -607,6 +607,23 @@ export class FsUtil {
     }
   }
 
+  private static processDirEntries(currentDir: string, queue: string[]): void {
+    try {
+      const fileList = fs.listFileSync(currentDir);
+      for (const fileName of fileList) {
+        const filepath = `${currentDir}/${fileName}`;
+        const stat = fs.statSync(filepath);
+        if (stat.isDirectory()) {
+          queue.push(filepath);
+        } else {
+          FsUtil.syncFile(filepath);
+        }
+      }
+    } catch (e) {
+      HiLog.error(TAG, `syncFolderRecursively failed, error code: ${(e as BusinessError)?.code}`);
+    }
+  }
+
   /**
    * 递归同步目录数据(一般应用于外盘场景)
    * @param rootFolderPath 目录路径
@@ -620,20 +637,7 @@ export class FsUtil {
     while (queue.length > 0) {
       const currentDir = queue.shift() as string;
       FsUtil.syncFile(currentDir, fs.OpenMode.DIR);
-      try {
-        const fileList = fs.listFileSync(currentDir);
-        for (const fileName of fileList) {
-          const filepath = `${currentDir}/${fileName}`;
-          const stat = fs.statSync(filepath);
-          if (stat.isDirectory()) {
-            queue.push(filepath);
-          } else {
-            FsUtil.syncFile(filepath);
-          }
-        }
-      } catch (e) {
-        HiLog.error(TAG, `syncFolderRecursively failed, error code: ${(e as BusinessError)?.code}`);
-      }
+      FsUtil.processDirEntries(currentDir, queue);
     }
   }
 }

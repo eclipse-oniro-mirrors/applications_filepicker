@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { FileInfo, HiLog, toast } from "@ohos/common";
-import { common, InsightIntentFunctionMethod } from "@kit.AbilityKit";
-import { systemSoundManager } from "@kit.AudioKit";
+import { FileInfo, HiLog, toast } from '@ohos/common';
+import { common, InsightIntentFunctionMethod } from '@kit.AbilityKit';
+import { systemSoundManager } from '@kit.AudioKit';
 import fs from '@ohos.file.fs'
 
 const TAG: string = 'RingtoneTypeMenu';
@@ -148,8 +148,7 @@ export struct RingtoneTypeMenu {
             .padding({ top: 10, bottom: 10 })
             .onClick(() => item.onclick())
             .bindMenu(this.CallRingtoneMenu, { placement: Placement.Right });
-          } // 为"设为信息铃声"单独处理
-          else if (item.text === '设为信息铃声') {
+          } else if (item.text === '设为信息铃声') {
             Row({ space: 16 }) {
               SymbolGlyph(item.icon as Resource)
                 .fontSize(24);
@@ -289,7 +288,7 @@ export struct RingtoneTypeMenu {
     let want: Want = {
       bundleName: 'com.ohos.settings',
       abilityName: 'com.ohos.settings.MainAbility',
-      uri: 'volume_settings', // NavEntryKey.WIFI_ENTRY
+      uri: 'volume_settings',
     }
     context?.startAbility(want);
     // 关闭半模态

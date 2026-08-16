@@ -112,7 +112,8 @@ export class MediaThumbnailUtil {
         MediaThumbnailConst.VIDEO_THUMBNAIL_FETCH_HEVC_MAX_EDGE :
         MediaThumbnailConst.VIDEO_THUMBNAIL_FETCH_MAX_EDGE;
       const coverParam = MediaThumbnailUtil.buildVideoCoverParams(mediaMetaData, firstMaxEdge);
-      cacheFilePathResult = await MediaThumbnailUtil.fetchAndCacheVideoCover(avImageGenerator, coverParam, cacheFilePath);
+      cacheFilePathResult = await MediaThumbnailUtil.fetchAndCacheVideoCover(
+        avImageGenerator, coverParam, cacheFilePath);
       if (!StringUtil.isEmpty(cacheFilePathResult)) {
         return cacheFilePathResult;
       }
@@ -122,7 +123,8 @@ export class MediaThumbnailUtil {
         Math.min(MediaThumbnailConst.VIDEO_THUMBNAIL_FETCH_RETRY_MAX_EDGE, 200) :
         MediaThumbnailConst.VIDEO_THUMBNAIL_FETCH_RETRY_MAX_EDGE;
       const retryParam = MediaThumbnailUtil.buildVideoCoverParams(mediaMetaData, retryMaxEdge);
-      cacheFilePathResult = await MediaThumbnailUtil.fetchAndCacheVideoCover(avImageGenerator, retryParam, cacheFilePath);
+      cacheFilePathResult = await MediaThumbnailUtil.fetchAndCacheVideoCover(
+        avImageGenerator, retryParam, cacheFilePath);
     } catch (error) {
       HiLog.error(TAG, `getVideoCoverThumbNail fail, error: ${(error as BusinessError)?.code}`);
     } finally {

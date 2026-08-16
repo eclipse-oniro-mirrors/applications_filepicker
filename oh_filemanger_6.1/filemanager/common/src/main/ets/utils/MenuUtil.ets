@@ -14,7 +14,6 @@
  */
 import { HiLog } from '../dfx/HiLog';
 import { common } from '@kit.AbilityKit';
-// import lazy { ringtone } from '../../../../indexLazyLoadTs';
 import { UEUtil } from '../dfx/UEUtil';
 import { DFX } from '../dfx/const/DFXConst';
 import { FileInfo } from '../fileoperate/FileInfo';
@@ -38,20 +37,10 @@ export class MenuUtil {
    * @param fileInfo 文件信息
    * @param backCallback 回调函数
    */
-  // public static setRingtone(fileInfo: FileInfo,
-  //   backCallback: () => void): void {
-  //   const context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-  //   // ringtone.startRingtoneSetting(context, fileInfo.relativePath, fileInfo.fileName, (err, data) => {
-  //   //   backCallback();
-  //   //   HiLog.info(TAG, 'setFlag : ' + JSON.stringify(data) + ' , ' +
-  //   //   JSON.stringify(err === undefined ? 'Set the ringtone successfully.' : 'Failed to set the ringhtone, ' + err));
-  //   //   UEUtil.reportSetRingtone(err === undefined, data);
-  //   // });
-  // }
+
   public static setRingtone(fileInfo: FileInfo, backCallback: () => void): void {
     HiLog.info(TAG, `setRingtone ${JSON.stringify(fileInfo)}`)
     const context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-    // const filePath = FileUtil.getPathFromUri(fileInfo.uri)
     HiLog.info(TAG, `文件路径: ${fileInfo.uri}`)
     const systemSoundManagerInstance: systemSoundManager.SystemSoundManager =
       systemSoundManager.getSystemSoundManager();
