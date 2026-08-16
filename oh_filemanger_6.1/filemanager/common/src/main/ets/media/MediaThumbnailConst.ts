@@ -76,9 +76,26 @@ export class MediaThumbnailConst {
    */
   public static readonly THUMBNAIL_CACHE_PATH_PREFIX: string = 'file://';
   /**
-   * 最大并发任务数
+   * 最大并发任务数（视频缩略图调度器与 AV 抽帧共用此上限）
    */
   public static readonly MAX_CONCURRENT_TASK_NUM: number = 2;
+  /**
+   * 列表项可见比例阈值：超过后以 HIGH 优先级触发本地视频缩略图加载
+   */
+  public static readonly THUMBNAIL_VISIBLE_MIN_RATIO: number = 0.01;
+  /**
+   * 普通视频首次抽帧长边上限（像素）。
+   * 不按原片分辨率抽帧，降低解码压力；最终仍裁成 THUMBNAIL_SIZE 展示。
+   */
+  public static readonly VIDEO_THUMBNAIL_FETCH_MAX_EDGE: number = 400;
+  /**
+   * HEVC 首次抽帧长边上限（比普清更保守，减少 5400106）
+   */
+  public static readonly VIDEO_THUMBNAIL_FETCH_HEVC_MAX_EDGE: number = 320;
+  /**
+   * 抽帧失败（5400106）后重试时的长边上限
+   */
+  public static readonly VIDEO_THUMBNAIL_FETCH_RETRY_MAX_EDGE: number = 240;
   /**
    * 最长任务队列
    */

@@ -16,6 +16,7 @@ import { ToolOperateAreDialog } from '@ohos/customDialog';
 import { CopyCutManager } from '../../base/manager/CopyCutManager';
 import { DiskInfo, WorkerConst, CopyCutConst } from '@ohos/common';
 import { CommonDialogs, CopyCutDialogs, DeleteRestoreDialogs } from '@ohos/customDialog/indexPhoneOnly';
+import { CompressDialogs } from '@ohos/compress';
 
 const TAG: string = 'AppDialogs';
 
@@ -56,6 +57,8 @@ export struct AppDialogs {
         })
         // 公共弹窗组件
         CommonDialogs()
+        // 压缩解压弹框
+        CompressDialogs()
         ToolOperateAreDialog()
       }
     }.width(0)

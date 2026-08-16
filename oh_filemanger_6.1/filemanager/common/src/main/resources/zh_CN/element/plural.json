@@ -551,6 +551,30 @@
           }
         }
       ]
+    },
+    {
+      "name":"compressing_file",
+      "value":[
+        {
+          "quantity":"other",
+          "value":"正在压缩 %d 个项目…",
+          "attr":{
+            "priority":"translate"
+          }
+        }
+      ]
+    },
+    {
+      "name":"decompressing_file",
+      "value":[
+        {
+          "quantity":"other",
+          "value":"正在解压 %d 个项目…",
+          "attr":{
+            "priority":"translate"
+          }
+        }
+      ]
     }
   ]
 }

@@ -50,6 +50,7 @@ import lazy { UTD } from '@ohos/common/indexLazyLoadTs';
 import { MENU_ICONS } from '@ohos/titleBar';
 
 const TAG = 'LongPressFileMenu';
+
 @Styles
 function pressedStyles() {
   .backgroundColor($r('sys.color.ohos_id_color_click_effect'))
@@ -73,17 +74,18 @@ export struct LongPressFileMenu {
   @Prop isChecked: boolean;
   @Link showContextMenu: boolean;
   @Prop toOperateFileList: FileInfo[];
+  @Prop curFolderUri: string = '';
+  @Prop isInArchivePreview: boolean = false;
   private isMulti: boolean = false;
   // 来源于哪个搜索页
   private geometryId: string = '';
   private simplifiedArrayLength: number = 0;
-
   // 更多菜单标志位
-  private isMoreMenu: boolean = false;
+  @Prop isMoreMenu: boolean = false;
   // 更多菜单数组
   private moreBottomMenuItems: MenuItemName[] = [];
-  private doClickFun: Function = () => {};
-
+  private doClickFun: Function = () => {
+  };
   @State isOutsideFolded: boolean = false;
   @State private menuArray: MenuItemName[][] = [];
   @State private simplifiedMenuArray: MenuItemName[][] = [];
@@ -91,7 +93,7 @@ export struct LongPressFileMenu {
   @State isListMenuNeedScroll: boolean = false;
 
   async aboutToAppear(): Promise<void> {
-    HiLog.infoPrivate(TAG, `aboutToAppear ${ this.pageName }`, `, fileName :${this.fileInfo?.fileName}`);
+    HiLog.infoPrivate(TAG, `aboutToAppear ${this.pageName}`, `, fileName :${this.fileInfo?.fileName}`);
     UiUtil.touchVibrate(VibrateType.LONG_PRESS);
     this.buildMenuArray();
     // 根据menuArray构建MoreArray
@@ -100,8 +102,10 @@ export struct LongPressFileMenu {
     this.simplifiedMenuArray.forEach((group: MenuItemName[]) => {
       this.simplifiedArrayLength += group.length;
     });
-    this.doClickFun = () => {};
-    HiLog.warn(TAG, `temp menu is MoreMenu: ${this.isMoreMenu}, temp fileList length: ${this.toOperateFileList.length}`);
+    this.doClickFun = () => {
+    };
+    HiLog.warn(TAG,
+      `temp menu is MoreMenu: ${this.isMoreMenu}, temp fileList length: ${this.toOperateFileList.length}`);
   }
 
   buildMoreMenuArray() {
@@ -123,8 +127,8 @@ export struct LongPressFileMenu {
   }
 
   shouldShowMoreItem(name: number): boolean {
-    // 当前更多菜单仅存在 复制、删除和更多菜单的组合
-    if (name === MenuItemName.COPY || name === MenuItemName.DELETE) {
+    // 当前更多菜单仅存在分享 复制、删除和更多菜单的组合
+    if (name === MenuItemName.SHARE || name === MenuItemName.COPY || name === MenuItemName.DELETE) {
       return false;
     }
     if (name === MenuItemName.SET_WALLPAPER && this.isOutsideFolded) {
@@ -137,10 +141,11 @@ export struct LongPressFileMenu {
     HiLog.warn(TAG, `temp menuArray length ${this.menuArray.length} icon menu length ${this.longPressIconMenus.length},
       simplified menu ${this.simplifiedArrayLength}, more menu length ${this.moreBottomMenuItems.length}`);
     this.doClickFun();
-    this.doClickFun = () => {};
+    this.doClickFun = () => {
+    };
     this.menuArray = [];
     this.moreBottomMenuItems = [];
-    HiLog.infoPrivate(TAG, `aboutToDisappear ${ this.pageName}`, `, fileName :${this.fileInfo?.fileName}`);
+    HiLog.infoPrivate(TAG, `aboutToDisappear ${this.pageName}`, `, fileName :${this.fileInfo?.fileName}`);
   }
 
   build() {
@@ -332,7 +337,8 @@ export struct LongPressFileMenu {
       case Constant.EVENTS.LONG_PRESS_MOVE:
       case Constant.EVENTS.LONG_PRESS_COPY: {
         AppStorage.setOrCreate<DFX.OperateSource>(DFX.StorageKey.OPERATE_SOURCE, DFX.OperateSource.PRESS_MENU);
-        const page = this.fileInfo.isExternalStorageDeviceFile? DFX.PageName.EXTERNAL:EnumTransferUtil.transferToPageName(this.pageName);
+        const page = this.fileInfo.isExternalStorageDeviceFile ? DFX.PageName.EXTERNAL :
+          EnumTransferUtil.transferToPageName(this.pageName);
         AppStorage.setOrCreate<DFX.PageName>(DFX.StorageKey.OPERATE_PAGE, page);
         break;
       }
@@ -349,7 +355,7 @@ export struct LongPressFileMenu {
       .strokeWidth(isThick ? 8 : '1px')
       .color(isThick ? $r('sys.color.comp_background_tertiary') : $r('sys.color.comp_divider'))
       .width('100%')
-      .margin( isThick ? {bottom: LengthMetrics.vp(0),top: LengthMetrics.vp(0)} :
+      .margin(isThick ? { bottom: LengthMetrics.vp(0), top: LengthMetrics.vp(0) } :
         { left: $r('sys.float.padding_level8'), right: $r('sys.float.padding_level8') })
   }
 
@@ -375,11 +381,17 @@ export struct LongPressFileMenu {
 
   private buildOpenMediaSingleChoiceMenuArray() {
     // 拉起视频页，单选右键菜单功能裁剪要求
-    // 1. 右键菜单保留 重命名，删除，详情，其余屏蔽
+    // 1. 右键菜单保留 重命名，删除，分享，详情，其余屏蔽
     // 2. 详情屏蔽路径跳转
     // 3. 删除、重命名这种对文件修改的，打点区分外部和文管入口
     this.menuArray = [];
     let menuGroupArray: MenuItemName[] = [];
+    // 分享
+    if (this.shouldShowMenuItem(MenuItemName.SHARE)) {
+      this.longPressIconMenus.push(new MenuOptions(Constant.OPERATION_TYPE.SHARE, BOTTOM_BAR_MAP.share,
+        MENU_ICONS.share,
+        MenuItemName.SHARE));
+    }
     // 多选
     if (this.shouldShowMenuItem(MenuItemName.MULTIPLE_CHOICES)) {
       this.menuArray.push([MenuItemName.MULTIPLE_CHOICES]);
@@ -406,7 +418,7 @@ export struct LongPressFileMenu {
     if (simplifiedMenu.length > 0) {
       this.simplifiedMenuArray.push(simplifiedMenu);
     }
-    if (menuGroupArray.length > 0 ){
+    if (menuGroupArray.length > 0) {
       this.menuArray.push(menuGroupArray);
     }
   }
@@ -417,6 +429,12 @@ export struct LongPressFileMenu {
     // 2. 删除打点区分外部和文管入口
     this.menuArray = [];
     let menuGroupArray: MenuItemName[] = [];
+    // 分享
+    if (this.shouldShowMenuItem(MenuItemName.SHARE)) {
+      this.longPressIconMenus.push(new MenuOptions(Constant.OPERATION_TYPE.SHARE, BOTTOM_BAR_MAP.share,
+        MENU_ICONS.share,
+        MenuItemName.SHARE))
+    }
     // 删除
     if (this.shouldShowMenuItem(MenuItemName.DELETE)) {
       menuGroupArray.push(MenuItemName.DELETE);
@@ -429,6 +447,11 @@ export struct LongPressFileMenu {
 
   // 构建单选菜单项
   private buildSingleChoiceMenuArray() {
+    // 分享
+    if (this.shouldShowMenuItem(MenuItemName.SHARE)) {
+      this.longPressIconMenus.push(new MenuOptions(Constant.OPERATION_TYPE.SHARE, BOTTOM_BAR_MAP.share,
+        $r('sys.symbol.share'), MenuItemName.SHARE))
+    }
     // 复制
     if (this.shouldShowMenuItem(MenuItemName.COPY)) {
       this.longPressIconMenus.push(new MenuOptions(Constant.OPERATION_TYPE.COPY, BOTTOM_BAR_MAP.copy,
@@ -470,6 +493,13 @@ export struct LongPressFileMenu {
     // 打印
     if (this.shouldShowMenuItem(MenuItemName.PRINT)) {
       menuGroupArray.push(MenuItemName.PRINT);
+    }
+    // 压缩/解压
+    if (this.shouldShowMenuItem(MenuItemName.COMPRESS)) {
+      menuGroupArray.push(MenuItemName.COMPRESS);
+    }
+    if (this.shouldShowMenuItem(MenuItemName.DECOMPRESS)) {
+      menuGroupArray.push(MenuItemName.DECOMPRESS);
     }
     // 重命名   系统文件夹不可移动删除重命名
     if (this.shouldShowMenuItem(MenuItemName.RENAME)) {
@@ -523,6 +553,12 @@ export struct LongPressFileMenu {
       this.menuArray.push(menuGroupArray);
     }
     menuGroupArray = [];
+    // 分享
+    if (this.shouldShowMenuItem(MenuItemName.SHARE)) {
+      this.longPressIconMenus.push(new MenuOptions(Constant.OPERATION_TYPE.SHARE, BOTTOM_BAR_MAP.share,
+        MENU_ICONS.share,
+        MenuItemName.SHARE))
+    }
     // 复制
     if (this.shouldShowMenuItem(MenuItemName.COPY)) {
       this.longPressIconMenus.push(new MenuOptions(Constant.OPERATION_TYPE.COPY, BOTTOM_BAR_MAP.copy, MENU_ICONS.copy,
@@ -532,6 +568,10 @@ export struct LongPressFileMenu {
     if (this.shouldShowMenuItem(MenuItemName.MOVE)) {
       this.longPressIconMenus.push(new MenuOptions(Constant.OPERATION_TYPE.MOVE, BOTTOM_BAR_MAP.move, MENU_ICONS.move,
         MenuItemName.MOVE))
+    }
+    // 压缩
+    if (this.shouldShowMenuItem(MenuItemName.COMPRESS)) {
+      menuGroupArray.push(MenuItemName.COMPRESS);
     }
     // 删除
     if (this.shouldShowMenuItem(MenuItemName.DELETE)) {
@@ -679,8 +719,11 @@ export struct LongPressFileMenu {
       EventBus.emit(Constant.EVENTS.MENU_CLICK,
         new MenuInfo(menuItem, this.toOperateFileList, this.fileInfo, isLongPress));
       return;
-    } else if (emitLocation === Constant.EVENTS.LONG_PRESS_RINGTONE ||
-      emitLocation === Constant.EVENTS.LONG_PRESS_SHARE) {
+    } else if (emitLocation === Constant.EVENTS.LONG_PRESS_RINGTONE) {
+      // 发送新的事件，用于显示铃声类型选择菜单
+      EventBus.emit(Constant.EVENTS.SHOW_RINGTONE_TYPE_MENU, this.fileInfo);
+      // this.onLongPressClick(emitLocation);
+    } else if (emitLocation === Constant.EVENTS.LONG_PRESS_SHARE) {
       // 避免toOperateFileList未刷新
       EventBus.emit(Constant.EVENTS.MENU_CLICK,
         new MenuInfo(menuItem, this.toOperateFileList, this.fileInfo, isLongPress));
@@ -702,6 +745,61 @@ export struct LongPressFileMenu {
     return this.toOperateFileList.some(file => (file.albumType === PhotoAlbumType.SOURCE));
   }
 
+  private isMultiSelectMode(): boolean {
+    return this.checkedNum >= 2 && this.isChecked;
+  }
+
+  private getOperateFileList(): FileInfo[] {
+    if (this.isMultiSelectMode()) {
+      return this.toOperateFileList;
+    }
+    return this.fileInfo ? [this.fileInfo] : [];
+  }
+
+  private isArchiveFile(fileInfo: FileInfo): boolean {
+    return !fileInfo.isFolder && FileUtil.isArchiveByUri(fileInfo.uri);
+  }
+
+  private isInArchivePreviewPage(): boolean {
+    if (this.isInArchivePreview) {
+      return true;
+    }
+    return FileUtil.isArchiveByUri(this.curFolderUri);
+  }
+
+  private isCompressDecompressBlocked(): boolean {
+    return this.isFromRecentDelete() || this.isSpecialDir() || OpenMediaUtil.isOpenMedia() ||
+      this.isInArchivePreviewPage();
+  }
+
+  private shouldShowCompressMenu(): boolean {
+    if (this.isCompressDecompressBlocked()) {
+      return false;
+    }
+    if (this.isMultiSelectMode()) {
+      return true;
+    }
+    const fileList = this.getOperateFileList();
+    if (fileList.length === 0) {
+      return false;
+    }
+    return !this.isArchiveFile(fileList[0]);
+  }
+
+  private shouldShowDecompressMenu(): boolean {
+    if (this.isCompressDecompressBlocked()) {
+      return false;
+    }
+    if (this.isMultiSelectMode()) {
+      return false;
+    }
+    const fileList = this.getOperateFileList();
+    if (fileList.length === 0) {
+      return false;
+    }
+    return this.isArchiveFile(fileList[0]);
+  }
+
   /**
    * 菜单项显示逻辑
    * @param MenuItemName
@@ -714,12 +812,15 @@ export struct LongPressFileMenu {
         return !this.fileInfo.isFolder && !this.isSpecialDir();
       case MenuItemName.PRINT:
         return !this.fileInfo.isFolder &&
-          PrintUtil.printCondition(FileUtil.getFileTypeFromUri(this.fileInfo.uri)) &&
+        PrintUtil.printCondition(FileUtil.getFileTypeFromUri(this.fileInfo.uri)) &&
           !this.isSpecialDir();
       case MenuItemName.FAVORITE:
         return this.isShowFavorite() && !this.isFavorite() && !this.isSpecialDir();
       case MenuItemName.UN_FAVORITE:
         return this.isShowFavorite() && this.isFavorite() && !this.isSpecialDir();
+      case MenuItemName.SHARE:
+        return !this.fileInfo.isFolder && !this.isSpecialDir();
+      // return false; // 直接返回false隐藏分享按钮
       case MenuItemName.SET_RINGTONE:
         return this.canSetAsRingtone(this.fileInfo) && !this.isSpecialDir();
       case MenuItemName.SET_WALLPAPER:
@@ -740,15 +841,19 @@ export struct LongPressFileMenu {
       case MenuItemName.RESTORE:
         return (this.pageName === PAGE_ROUTE_CONST.RECENT_DELETE ||
           this.fileInfo.sourceType === FileSourceType.RECENT_DELETE) && !this.isSpecialDir();
+      case MenuItemName.COMPRESS:
+        return this.shouldShowCompressMenu();
+      case MenuItemName.DECOMPRESS:
+        return this.shouldShowDecompressMenu();
       default:
         return false;
     }
   }
 
   private canSetAsRingtone(fileInfo: FileInfo): boolean {
-    const uriLowerCase: string = fileInfo.uri.toLowerCase();
-    // 获取文件类型的后缀
-    const fileNameExtension: string = UTD.getUniformDataTypeByFilenameExtension("." + fileInfo.mimeTypeObj.extension);
+    // const uriLowerCase: string = fileInfo.uri.toLowerCase();
+    // // 获取文件类型的后缀
+    // const fileNameExtension: string = UTD.getUniformDataTypeByFilenameExtension("." + fileInfo.mimeTypeObj.extension);
     // 获取所有支持的铃声类型
     // const supportedTypes: ringtone.RingtoneType[] = ringtone.getSupportedRingtoneTypes();
     // // 遍历支持的铃声类型，检查文件类型是否匹配
@@ -762,7 +867,13 @@ export struct LongPressFileMenu {
     //   }
     // }
     // 文件类型不符合任一铃声类型
-    return false;
+    // return false;
+    // 支持的铃声文件类型
+    const supportedExtensions: string[] = ['m4a', 'aac', 'mp3', 'ogg', 'wav', 'flac', 'amr', 'ape'];
+    // 获取文件后缀并转为小写
+    const fileExtension: string = fileInfo.mimeTypeObj.extension.toLowerCase();
+    // 检查是否在支持的类型列表中
+    return supportedExtensions.includes(fileExtension);
   }
 }
 

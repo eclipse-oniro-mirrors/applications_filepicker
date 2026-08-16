@@ -184,6 +184,11 @@ export class TaskPoolName {
    * 检查uri是否禁止跳转
    */
   static readonly CHECK_IS_FORBIDDEN_URI: string = 'checkIsForbiddenUriTask';
+
+  /**
+   * 解压文件加密判断
+   */
+  static readonly DECOMPRESSION_ENCRYPTED_JUDGE: string = 'decompressionEncryptedJudge';
 }
 
 

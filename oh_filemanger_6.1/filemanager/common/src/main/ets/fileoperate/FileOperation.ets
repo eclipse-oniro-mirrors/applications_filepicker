@@ -47,10 +47,10 @@ export class FileOperation {
     HiLog.infoPrivate(tag, 'openFileByOtherApp: ', fileUri + ' ; ' + chooseApp);
     let ctx: common.UIAbilityContext | common.ServiceExtensionContext | common.UIExtensionContext | undefined;
     let grantFlag: number = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION |
-      wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_PERSISTABLE_URI_PERMISSION;
+    wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_PERSISTABLE_URI_PERMISSION;
 
     ctx = GlobalHolder.getInstance().getMainAbilityContext() || GlobalHolder.getInstance().getUIExtensionContext() ||
-      GlobalHolder.getInstance().getExtensionContext();
+    GlobalHolder.getInstance().getExtensionContext();
 
     const want: Want = {
       action: Actions.VIEW_DATA,
@@ -131,13 +131,13 @@ export class FileOperation {
   public static quickView(fileUri: string, filename?: string): boolean {
     HiLog.info(tag, 'quickView begin to execute');
     let grantFlag: number = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION |
-      wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_PERSISTABLE_URI_PERMISSION;
+    wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION | wantConstant.Flags.FLAG_AUTH_PERSISTABLE_URI_PERMISSION;
 
     grantFlag = wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION;
     filename = FileUtil.getFileNameFromUri(fileUri);
 
     let ctx = GlobalHolder.getInstance().getMainAbilityContext() ||
-      GlobalHolder.getInstance().getUIExtensionContext() || GlobalHolder.getInstance().getExtensionContext();
+    GlobalHolder.getInstance().getUIExtensionContext() || GlobalHolder.getInstance().getExtensionContext();
     let want: Want = {
       action: Actions.VIEW_DATA,
       bundleName: 'com.ohos.hipreview',

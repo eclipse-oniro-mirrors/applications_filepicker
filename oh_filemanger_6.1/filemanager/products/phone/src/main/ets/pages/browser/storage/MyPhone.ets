@@ -118,24 +118,31 @@ import {
   CustomTransition,
   StandardAnimation,
   CreateDownloadUriShowMapTask,
+  EncryptCheckTask,
   CommonUtil,
   COLOR_MODE,
   TabBarStyle,
   AccessibilityStorageKey,
-  DataStatus
+  DataStatus,
+  SystemShareUtil,
+  FileCompressBusiness
 } from '@ohos/common';
 import { getCurrentFolderPathByBreadCrumb, getDiskDes, menuCanClick } from '../../../base/utils/Common';
+import lazy { FileCompressConst } from '@ohos/common/indexLazyLoad';
 import lazy {
   PrintUtil,
   QueryLocalFileTask,
   QueryDownloadReceiveFileTask,
   promptAction
 } from '@ohos/common/indexLazyLoad';
-import { CellularTransmissionDialog, FileTypeFilterDialog } from '@ohos/customDialog';
+import { CellularTransmissionDialog, ConfirmTemplateDialog, FileTypeFilterDialog } from '@ohos/customDialog';
 import { Loading } from '../../component/common/Loading';
 import lazy { FileListView, OutsideScreenFileListView } from '@ohos/fileView';
 import { CopyCutManager } from '../../../base/manager/CopyCutManager';
 import lazy { PreviewUtil } from '@ohos/common/src/main/ets/utils/PreviewUtil';
+import lazy {
+  ArchivePreviewError, ArchivePreviewUtil
+} from '@ohos/common/src/main/ets/utils/ArchivePreviewUtil';
 import CopyCutConst from '../../../base/constants/CopyCutConst';
 import { FileCommonUtil } from '../../../base/utils/FileCommonUtil';
 import { FileReportUtils } from '../../../base/report/FileReportUtils';
@@ -150,11 +157,16 @@ import { FileListViewLayout } from '@ohos/fileView/src/main/ets/default/viewMode
 import lazy { LoadingDialog } from '@ohos/common/indexLazyLoad';
 import { ShieldUri } from '@ohos/common/src/main/ets/const/FolderRecord';
 import { MenuActionHandler } from '../../../base/manager/MenuActionHandler';
+import { RingtoneTypeMenu } from '@ohos/fileview'
 import { SideBarItem, SideBarItemModel } from '@ohos/sideBar';
+import { systemShare } from '@kit.ShareKit';
 import lazy { PhotoAccessUtil } from '@ohos/common/indexLazyLoad';
 import { displaySync } from '@kit.ArkGraphics2D';
 import { inputConsumer, KeyCode, KeyEvent } from '@kit.InputKit'
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { FileShareManager } from '../../../base/manager/share/FileShareManager';
+import { CompressDataUtil, CompressDialog, PasswordDialogOptions } from '@ohos/compress';
+import { StandardErrCode } from '@ohos/common/src/main/ets/workermanager/filecompressmanager/CompressStandardErrCode';
 
 const TAG: string = 'myPhone';
 
@@ -173,6 +185,7 @@ const ORDER_NO_LOADING_FILES_THRESHOLD: number = 10000; // 排序不显示Loadin
 export struct MyPhone {
   // private timer: number = 0;
   // private oldValue: string = '';
+  private localStorage: LocalStorage = this.getUIContext()?.getSharedLocalStorage() ?? new LocalStorage();
   @State changeValue: string = '';
   controller: SearchController = new SearchController()
   @State isSearching: boolean = false;
@@ -183,6 +196,9 @@ export struct MyPhone {
    */
   @State isShowLoading: boolean = false;
   private timeoutId: number = -1;
+  /** 当前压缩包目录读取密码（仅用于包内目录浏览，换包时清空） */
+  private archiveListPassword: string = '';
+  private archivePreviewRootUri: string = '';
   @State isQueryEnd: boolean = false;
   /**
    * 面包屑
@@ -305,6 +321,8 @@ export struct MyPhone {
   private printBind: Function = (): void => this.printChange();
   private copyBind: Function = (filInfo?: FileInfo): void => this.longPressCopy(filInfo);
   private moveBind: Function = (): void => this.moveChange();
+  private compressBind: Function = (fileInfo?: FileInfo): void => this.longPressCompress(fileInfo);
+  private decompressBind: Function = (fileInfo?: FileInfo): void => this.longPressDecompress(fileInfo);
   private setAsWallpaperBind: Function =
     (filInfo?: FileInfo): void => this.longPressTypeChange(Constant.OPERATION_TYPE.SET_AS_WALLPAPER, filInfo);
   private deleteBind: Function = (): void => this.longPressTypeChange(Constant.OPERATION_TYPE.DELETE);
@@ -329,6 +347,8 @@ export struct MyPhone {
       operationType);
   private resolvePathSelectEndBind: Function =
     (folderUri: string): Promise<void> => this.resolvePathSelectEnd(folderUri);
+  private compressTaskEndBind: Function =
+    (taskType: string, outputPath: string): void => this.onCompressTaskEnd(taskType, outputPath);
   private preventBackPressBind: Function = (isPreventBack: boolean) => this.preventBackPress(isPreventBack);
   private initDataBind: Function = () => this.initData();
   @StorageLink(Constant.SHOW_HIDDEN_ITEM_OPTION_NAME) @Watch('refreshData') showHiddenItem: boolean = false;
@@ -357,6 +377,8 @@ export struct MyPhone {
   private oldTotal: number = 0;
   // 聚合视图下图片与视频下的文件夹，我的手机/图库目录下的文件夹，仅支持详情和删除操作
   private defaultBottomOption: BottomOptions[] = [
+    // 分享
+    new BottomOptions(Constant.OPERATION_TYPE.SHARE, BOTTOM_BAR_MAP.share, MENU_ICONS.share, false, true),
     // 复制
     new BottomOptions(Constant.OPERATION_TYPE.COPY, BOTTOM_BAR_MAP.copy, MENU_ICONS.copy, false, true),
     // 删除
@@ -429,6 +451,18 @@ export struct MyPhone {
   private originalFileList: FileInfo[] = []; //原始文件列表
   private searchQueryId: number = 0;
   private searchConcatData: FileInfo[] = []; // 添加累积变量
+  // 铃声菜单
+  @State showRingtoneTypeMenu: boolean = false;
+  @State currentFileInfo: FileInfo | null = null;
+  private showRingtoneTypeMenuBind: Function = (fileInfo: FileInfo): void => this.showRingtoneTypeMenuHandler(fileInfo);
+
+  private showRingtoneTypeMenuHandler(fileInfo: FileInfo) {
+    this.currentFileInfo = fileInfo;
+    this.showRingtoneTypeMenu = true;
+    HiLog.info(TAG,
+      `showRingtoneTypeMenuHandler called with fileInfo:${JSON.stringify(fileInfo)},  this.showRingtoneTypeMenu=${this.showRingtoneTypeMenu}`
+    );
+  }
 
   aboutToAppear(): void {
     TraceUtils.startTrace(HiTraceConst.MY_PHONE_PAGE_ABOUT_TO_APPEAR);
@@ -463,7 +497,7 @@ export struct MyPhone {
     FileReportUtils.reportPageEvent('myphone');
     this.menuActionHandler = new MenuActionHandler(this.getFromPage());
     this.menuActionHandler.registerMenuEvent([MenuItemName.FAVORITE, MenuItemName.UN_FAVORITE,
-      MenuItemName.SET_RINGTONE],
+      MenuItemName.SET_RINGTONE, MenuItemName.SHARE],
       this.menuActionCallback);
     this.addFrameListener();
     TraceUtils.finishTrace(HiTraceConst.MY_PHONE_PAGE_ABOUT_TO_APPEAR);
@@ -634,6 +668,15 @@ export struct MyPhone {
       Stack() {
         if (this.isSecondFrame) {
           this.myPhoneMainContent()
+        }
+        // 添加 RingtoneTypeMenu 组件
+        if (this.showRingtoneTypeMenu) {
+          RingtoneTypeMenu({
+            fileInfo: this.currentFileInfo,
+            onClose: () => {
+              this.showRingtoneTypeMenu = false;
+            }
+          })
         }
         if (this.showMaskLayer && !this.filePickerViewFlag && !this.isOpenMedia) {
           this.pickerMaskLayer()
@@ -929,9 +972,7 @@ export struct MyPhone {
             },
             goToCurrentUri: this.getGoToCurrentUriAndSetItBlank()
           })
-            .padding(
-              this.filePickerViewFlag && this.userState === UserState.BROWSER ?
-                { bottom: $r('app.float.common_size24') } : {})
+            .padding({ bottom: this.getFileListBottomPadding() })
         } else {
           // 文件列表
           FileListView({
@@ -979,9 +1020,7 @@ export struct MyPhone {
             },
             goToCurrentUri: this.getGoToCurrentUriAndSetItBlank()
           })
-            .padding(
-              this.filePickerViewFlag && this.userState === UserState.BROWSER ?
-                { bottom: $r('app.float.common_size24') } : {})
+            .padding({ bottom: this.getFileListBottomPadding() })
         }
 
         Loading({
@@ -994,6 +1033,11 @@ export struct MyPhone {
           .padding({ bottom: this.bottomNavBarHeight })
           .visibility(this.isShowLoading ? Visibility.Visible : Visibility.None)
           .size({ width: '100%', height: `calc(100% - ${Constant.TOP_BAR_AVOID_AREA_HEIGHT}vp)` })
+
+        // 压缩包预览：底部「全部解压缩」栏
+        if (this.shouldShowArchiveDecompressAllBar()) {
+          this.archiveDecompressAllBar()
+        }
 
         // selectItem BottomBar点击事件
         if (!this.filePickerViewFlag) {
@@ -1017,7 +1061,8 @@ export struct MyPhone {
             isFromExternal: ExternalStorageUtil.isExternalStorageUri(this.currentFolderUri),
             wallpaperPreviewPopCallBack: (popInfo: PopInfo): void => this.previewPagePopCallBack(popInfo),
             pageName: this.pageFrom || PAGE_ROUTE_CONST.MY_PHONE,
-            isShowBottomBar: this.userState !== UserState.BROWSER
+            isShowBottomBar: this.userState !== UserState.BROWSER,
+            isInArchivePreview: this.isInArchivePreviewPage()
           })
         }
       }.layoutWeight(1)
@@ -1235,8 +1280,9 @@ export struct MyPhone {
   }
 
   private shouldDisableSwipe() {
-    // 禁用列表左右滑动删除文件
-    return this.filePickerViewFlag || this.virtualRootUri === VirtualUri.DOWNLOAD_RECEIVE;
+    // 禁用列表左右滑动删除文件；压缩包预览内也不允许左滑
+    return this.filePickerViewFlag || this.virtualRootUri === VirtualUri.DOWNLOAD_RECEIVE ||
+    this.isInArchivePreviewPage();
   }
 
   private getParams(): AbilityOrRouterParams {
@@ -1327,6 +1373,16 @@ export struct MyPhone {
 
   private buildRightIcons(): TitleMenuItem[] {
     let newRightIcons: TitleMenuItem[] = [];
+    // 压缩包预览页：屏蔽多选、搜索
+    if (this.isInArchivePreviewPage()) {
+      if (this.filePickerViewFlag) {
+        const cancelButton =
+          new TitleMenuItem(MENU_ICONS.cancel, MENU_NAME.close, () => this.onPickerCancelClick(),
+            true, false, true, false);
+        newRightIcons.push(cancelButton);
+      }
+      return newRightIcons;
+    }
     if (this.virtualRootUri !== VirtualUri.DOWNLOAD_RECEIVE &&
       this.currentFolderUri !== PAGE_ROUTE_CONST.IMAGE &&
       this.currentFolderUri !== PAGE_ROUTE_CONST.VIDEO &&
@@ -1341,8 +1397,6 @@ export struct MyPhone {
       newRightIcons.push(this.buildMultipleChoiceButton());
       this.userState = UserState.MULTI_START;
     }
-
-    const isDownloadRecvView = this.virtualRootUri === VirtualUri.DOWNLOAD_RECEIVE;
 
     if (this.filePickerViewFlag) {
       const cancelButton =
@@ -1490,40 +1544,41 @@ export struct MyPhone {
       // 检查是否在图库子目录下，如果是且数据已加载，直接对当前数据进行过滤
       if (currentUri.startsWith(VirtualUri.GALLERY_URI) && this.fileSource.totalCount() > 0) {
         HiLog.info(TAG, `在图库子目录下，使用已有数据进行搜索，文件总数: ${this.fileSource.totalCount()}`);
-        
+
         // 保存原始数据以便恢复
         if (this.originalFileList.length === 0) {
           this.originalFileList = [...this.fileSource.getDataArray()];
         }
-        
+
         // 获取当前的过滤条件
         const queryParam: QueryFileParam = this.getSearchQueryParam(currentUri, keyword);
-        let suffixSet: Set<string> = new Set<string>(queryParam.suffixList.map((suffix: string) => suffix.toLowerCase()));
-        
+        let suffixSet: Set<string> =
+          new Set<string>(queryParam.suffixList.map((suffix: string) => suffix.toLowerCase()));
+
         // 过滤符合条件的文件
         const filteredFiles = this.originalFileList.filter((file: FileInfo) => {
           // 检查文件名是否包含搜索关键词
           const nameMatch = file.fileName.toLowerCase().includes(keyword.toLowerCase());
-          
+
           // 检查文件后缀是否符合过滤条件
           let suffixMatch = true;
           if (suffixSet.size > 0) {
             let fileSuffix: string = FileMimeTypeUtil.getFileSuffix(file.fileName).toLowerCase();
             suffixMatch = suffixSet.has(fileSuffix) !== queryParam.isBlackSuffix;
           }
-          
+
           return nameMatch && suffixMatch;
         });
-        
+
         HiLog.info(TAG, `搜索完成，找到匹配文件数: ${filteredFiles.length}`);
-        
+
         // 更新搜索结果
         this.isSearching = false;
         this.searchResults = filteredFiles;
         this.updateFileSource(this.searchResults);
         return;
       }
-      
+
       // 非图库子目录或数据未加载的情况，使用原有搜索逻辑
       const queryParam: QueryFileParam = this.getSearchQueryParam(currentUri, keyword);
       this.queryTask = new QueryLocalFileTask(
@@ -2123,6 +2178,8 @@ export struct MyPhone {
     EventBus.on(Constant.EVENTS.LONG_PRESS_PRINT, this.printBind, true);
     EventBus.on(Constant.EVENTS.LONG_PRESS_COPY, this.copyBind, true);
     EventBus.on(Constant.EVENTS.LONG_PRESS_MOVE, this.moveBind, true);
+    EventBus.on(Constant.EVENTS.LONG_PRESS_COMPRESS, this.compressBind, true);
+    EventBus.on(Constant.EVENTS.LONG_PRESS_DECOMPRESS, this.decompressBind, true);
     EventBus.on(Constant.EVENTS.LONG_PRESS_DELETE, this.deleteBind, true);
     EventBus.on(Constant.EVENTS.LONG_PRESS_RENAME, this.renameBind, true);
     EventBus.on(Constant.EVENTS.LONG_PRESS_DETAIL, this.detailBind, true);
@@ -2132,6 +2189,9 @@ export struct MyPhone {
     EventBus.on(Constant.EVENTS.LONG_PRESS_OPEN_FOLDER, this.openFolderBind, true);
     EventBus.on(Constant.EVENTS.LONG_PRESS_WALLPAPER, this.setAsWallpaperBind, true);
     EventBus.on(Constant.EVENTS.ADD_NEW_FOLDER, this.addNewFolderBind, true);
+    EventBus.on(Constant.EVENTS.COMPRESS_TASK_END, this.compressTaskEndBind, true);
+    // 监听显示铃声类型菜单事件
+    EventBus.on(Constant.EVENTS.SHOW_RINGTONE_TYPE_MENU, this.showRingtoneTypeMenuBind, true)
   }
 
   // 状态改变
@@ -2385,6 +2445,12 @@ export struct MyPhone {
     // 检查是否有系统文件夹
     const selectSystemFolder: boolean = this.checkContainSystemFolder();
     const selectGalleryFolder: boolean = this.checkContainGalleryFolder();
+    // “我的手机-图库”多选场景下，仅当选中包含文件夹/不支持项时，分享置灰不可点
+    const isMyPhoneGalleryMultiSelect: boolean = this.userState === UserState.MULTI_START &&
+      (FileUtil.isGalleryAddress(this.currentFolderUri) ||
+        this.currentFolderUri === VirtualUri.GALLERY ||
+      this.currentFolderUri.startsWith(VirtualUri.GALLERY_URI));
+    const hasFolderInMultiSelect: boolean = this.selectFilesList.some((file) => file.isFolder);
     // 检查是否多选了2个以上的文件/文件夹
     const isMultiSelectOverTwo: boolean = this.selectFilesList.length >= 2;
 
@@ -2392,6 +2458,10 @@ export struct MyPhone {
       item.display = true;
       // 如果更多按钮里面为空，则置灰 更多菜单当前不存在为空的场景
       item.disabled = false;
+
+      if (isMyPhoneGalleryMultiSelect && hasFolderInMultiSelect && item.type === Constant.OPERATION_TYPE.SHARE) {
+        item.disabled = true;
+      }
 
       // 系统文件夹不可删除移动
       if (selectSystemFolder) {
@@ -2403,9 +2473,11 @@ export struct MyPhone {
           item.disabled = true;
         }
       }
-      if (this.getCurrentDirUri() === VirtualUri.GALLERY) {
-        item.disabled = true;
-      }
+      // 我的手机-图库 与其他部分规则相同
+      // if (this.getCurrentDirUri() === VirtualUri.GALLERY&&
+      //         item.type === Constant.OPERATION_TYPE.SHARE) {
+      // item.disabled = true;
+      // }
       this.bottomOption.push(item);
     });
   }
@@ -2508,9 +2580,10 @@ export struct MyPhone {
     if (dirUrl.startsWith(Constant.MediaLibrary_URI_HEAD)) {
       this.incrementalQueryStart = true;
     }
-    if (FileUtil.isArchiveByUri(queryParam.dirUri)) {
+    if (FileUtil.isArchiveByUri(queryParam.dirUri) || this.isInArchivePreviewPage()) {
       this.initMenu();
       this.rightIcons = this.buildRightIcons();
+      this.loadArchivePreviewList(isShowLoading);
     } else {
       this.initMenu();
       this.rightIcons = this.buildRightIcons();
@@ -2520,6 +2593,163 @@ export struct MyPhone {
       this.queryTask = new QueryLocalFileTask(this.queryLocalFileCallbackBind, queryParam, this.filePickerViewFlag);
       TaskManager.getInstance().executeTask<FileInfo[]>(this.queryTask);
     }
+  }
+
+  private async loadArchivePreviewList(isShowLoading: boolean = false): Promise<void> {
+    const archiveUri = ArchivePreviewUtil.getArchiveRootUri(this.direList);
+    if (!archiveUri) {
+      HiLog.warn(TAG, 'loadArchivePreviewList: archiveUri empty');
+      this.archiveListPassword = '';
+      this.archivePreviewRootUri = '';
+      this.fileSource.setData([]);
+      this.finishArchivePreviewLoading();
+      return;
+    }
+    if (archiveUri !== this.archivePreviewRootUri) {
+      this.archivePreviewRootUri = archiveUri;
+      this.archiveListPassword = '';
+    }
+    if (isShowLoading) {
+      this.setShowLoading(true);
+    }
+    const archivePath = FileUtil.getPathFromUri(archiveUri);
+    const innerPrefix = ArchivePreviewUtil.getArchiveInnerPrefix(this.direList);
+    try {
+      const info = await ArchivePreviewUtil.getArchiveInfo(archivePath, this.archiveListPassword);
+      if (ArchivePreviewUtil.isPasswordRelatedCode(info.code)) {
+        HiLog.info(TAG, `loadArchivePreviewList need password code=${info.code}`);
+        this.finishArchivePreviewLoading();
+        this.promptArchivePassword(async (password: string, fromDialog: boolean) => {
+          const retry = await ArchivePreviewUtil.getArchiveInfo(archivePath, password);
+          if (retry.code === StandardErrCode.ERR_FILEMGR_OK ||
+            retry.code === StandardErrCode.ERR_COMPRESS_PREVIEW_ARCHIVE_SUCC) {
+            this.archiveListPassword = password;
+            if (fromDialog) {
+              CompressDialog.closePasswordDialog();
+            }
+            const list = ArchivePreviewUtil.buildFileListAtLevel(archiveUri, retry.files || [], innerPrefix);
+            this.fileSource.setData(list);
+            this.finishArchivePreviewLoading();
+            return;
+          }
+          if (fromDialog && (ArchivePreviewUtil.isPasswordRelatedCode(retry.code) ||
+            retry.code === StandardErrCode.ERR_COMPRESS_PREVIEW_ARCHIVE_FAILED ||
+            retry.code === StandardErrCode.ERR_UNKNOWN)) {
+            CompressDialog.showPasswordDialogError(true);
+            return;
+          }
+          HiLog.error(TAG, `loadArchivePreviewList retry fail code=${retry.code}`);
+          if (fromDialog) {
+            CompressDialog.closePasswordDialog();
+          }
+          toast($r('app.string.open_failure_msg'));
+          this.fileSource.setData([]);
+          this.finishArchivePreviewLoading();
+        });
+        return;
+      }
+      if (info.code !== StandardErrCode.ERR_FILEMGR_OK &&
+        info.code !== StandardErrCode.ERR_COMPRESS_PREVIEW_ARCHIVE_SUCC) {
+        HiLog.error(TAG, `loadArchivePreviewList fail code=${info.code}`);
+        toast($r('app.string.open_failure_msg'));
+        this.fileSource.setData([]);
+        this.finishArchivePreviewLoading();
+        return;
+      }
+      const list = ArchivePreviewUtil.buildFileListAtLevel(archiveUri, info.files || [], innerPrefix);
+      HiLog.info(TAG, `loadArchivePreviewList count=${list.length}, prefix=${innerPrefix}`);
+      this.fileSource.setData(list);
+      this.finishArchivePreviewLoading();
+    } catch (e) {
+      HiLog.error(TAG, `loadArchivePreviewList exception: ${JSON.stringify(e)}`);
+      toast($r('app.string.open_failure_msg'));
+      this.fileSource.setData([]);
+      this.finishArchivePreviewLoading();
+    }
+  }
+
+  /** 取消 resetQueryTask 的延时 loading，避免预览已出列表后 200ms 又被打开 */
+  private finishArchivePreviewLoading(): void {
+    clearTimeout(this.timeoutId);
+    this.setShowLoading(false);
+    this.isQueryEnd = true;
+  }
+
+  /**
+   * 弹出解压密码框；fromDialog=true 表示已在弹窗内二次确认
+   */
+  private promptArchivePassword(onPassword: (password: string, fromDialog: boolean) => void): void {
+    const option = new PasswordDialogOptions();
+    option.onConfirm = (password: string) => {
+      onPassword(password, true);
+    };
+    option.onCancel = () => {
+      CompressDialog.closePasswordDialog();
+    };
+    CompressDialog.openPasswordDialog(option);
+  }
+
+  private getArchivePreviewErrorCode(e: Object): number {
+    if (e instanceof ArchivePreviewError) {
+      return e.code;
+    }
+    const withCode = e as ArchivePreviewError;
+    if (withCode && typeof withCode.code === 'number') {
+      return withCode.code;
+    }
+    return StandardErrCode.ERR_UNKNOWN;
+  }
+
+  private openArchiveInnerFile(fileItem: FileInfo): void {
+    const archiveUri = ArchivePreviewUtil.getArchiveRootUri(this.direList);
+    if (!archiveUri || !fileItem.relativePath) {
+      HiLog.warn(TAG, 'clickFile in archive: invalid path');
+      toast($r('app.string.open_failure_msg'));
+      return;
+    }
+    const doOpen = (password: string, fromDialog: boolean): void => {
+      ArchivePreviewUtil.partDecompressAndOpen(archiveUri, fileItem.relativePath, fileItem.fileName, password)
+        .then(() => {
+          if (fromDialog) {
+            CompressDialog.closePasswordDialog();
+          }
+        })
+        .catch((e: Object) => {
+          const code = this.getArchivePreviewErrorCode(e);
+          HiLog.error(TAG, `partDecompressAndOpen fail code=${code}`);
+          if (ArchivePreviewUtil.isPasswordRelatedCode(code) ||
+            code === StandardErrCode.ERR_COMPRESS_FILE_DECOMPRESS_FAILED ||
+            code === StandardErrCode.ERR_UNKNOWN) {
+            if (fromDialog) {
+              CompressDialog.showPasswordDialogError(true);
+            } else {
+              this.promptArchivePassword((pwd: string, dialog: boolean) => {
+                doOpen(pwd, dialog);
+              });
+            }
+            return;
+          }
+          if (fromDialog) {
+            CompressDialog.closePasswordDialog();
+          }
+          toast($r('app.string.open_failure_msg'));
+        });
+    };
+    const archivePath = FileUtil.getPathFromUri(archiveUri);
+    const task = new EncryptCheckTask(archivePath);
+    TaskManager.getInstance().execute<boolean>(task);
+    task.onReceiveData((isEncrypted: boolean | undefined) => {
+      if (ObjectUtil.isNullOrUndefined(isEncrypted)) {
+        return;
+      }
+      if (isEncrypted) {
+        this.promptArchivePassword((pwd: string, dialog: boolean) => {
+          doOpen(pwd, dialog);
+        });
+      } else {
+        doOpen('', false);
+      }
+    });
   }
 
   private async queryDownloadReceive() {
@@ -2614,6 +2844,14 @@ export struct MyPhone {
       this.selectItem = '';
       return;
     }
+    // 压缩/解压到图库目录时拦截
+    if ((this.operationType === Constant.OPERATION_TYPE.COMPRESSION ||
+      this.operationType === Constant.OPERATION_TYPE.DECOMPRESSION) &&
+      this.showGalleryNotSupportForCompressDialog(folderUri)) {
+      this.operationType = '';
+      this.selectItem = '';
+      return;
+    }
     if (FileUtil.getFileParentPathFromUri(folderUri) === VirtualUri.EXTERNAL_DISK) {
       const storageDeviceList = await StorageDeviceManager.getInstance().getStorageDeviceList();
       for (let rootInfo of storageDeviceList) {
@@ -2626,11 +2864,45 @@ export struct MyPhone {
     } else {
       this.selectName = FileUtil.getFileNameFromUri(folderUri);
     }
-    if (this.moveType === Constant.OPERATION_TYPE.MOVE) {
+    if (this.operationType === Constant.OPERATION_TYPE.COMPRESSION) {
+      this.fileCompress(folderUri);
+    } else if (this.operationType === Constant.OPERATION_TYPE.DECOMPRESSION) {
+      this.fileDecompress(folderUri);
+    } else if (this.moveType === Constant.OPERATION_TYPE.MOVE) {
       this.moveFiles(this.selectFilesList, folderUri);
     } else if (this.moveType === Constant.OPERATION_TYPE.COPY) {
       this.pasteFiles(this.selectFilesList, folderUri);
     }
+  }
+
+  /**
+   * 压缩/解压目标为图库时弹框拦截；返回 true 表示已拦截
+   */
+  private showGalleryNotSupportForCompressDialog(folderUri: string): boolean {
+    let content: Resource | undefined = undefined;
+    if (folderUri === VirtualUri.GALLERY) {
+      content = $r('app.string.failed_save_to_gallery_root_path');
+    } else if (folderUri.startsWith(VirtualUri.GALLERY_URI) ||
+      folderUri.startsWith(Constant.MediaLibrary_URI_HEAD)) {
+      content = $r('app.string.save_other_type_files_to_gallery_path_for_picker');
+    }
+    if (!content) {
+      return false;
+    }
+    HiLog.warn(TAG, `compress/decompress blocked by gallery path: ${folderUri}`);
+    const dialog: CustomDialogController = new CustomDialogController({
+      builder: ConfirmTemplateDialog({
+        title: $r('app.string.save_file'),
+        content: content,
+        firstButtonText: $r('app.string.get_it'),
+        firstButtonCallback: (): void => {
+          dialog.close();
+        }
+      }),
+      autoCancel: false
+    });
+    dialog.open();
+    return true;
   }
 
   private pasteFiles(fileList: FileInfo[], targetFolderUri: string) {
@@ -2962,6 +3234,8 @@ export struct MyPhone {
     EventBus.off(Constant.EVENTS.LONG_PRESS_PRINT, this.printBind);
     EventBus.off(Constant.EVENTS.LONG_PRESS_COPY, this.copyBind);
     EventBus.off(Constant.EVENTS.LONG_PRESS_MOVE, this.moveBind);
+    EventBus.off(Constant.EVENTS.LONG_PRESS_COMPRESS, this.compressBind);
+    EventBus.off(Constant.EVENTS.LONG_PRESS_DECOMPRESS, this.decompressBind);
     EventBus.off(Constant.EVENTS.LONG_PRESS_DELETE, this.deleteBind);
     EventBus.off(Constant.EVENTS.LONG_PRESS_RENAME, this.renameBind);
     EventBus.off(Constant.EVENTS.LONG_PRESS_DETAIL, this.detailBind);
@@ -2971,6 +3245,24 @@ export struct MyPhone {
     EventBus.off(Constant.EVENTS.LONG_PRESS_OPEN_FOLDER, this.openFolderBind);
     EventBus.off(Constant.EVENTS.LONG_PRESS_WALLPAPER, this.setAsWallpaperBind);
     EventBus.off(Constant.EVENTS.ADD_NEW_FOLDER, this.addNewFolderBind);
+    EventBus.off(Constant.EVENTS.COMPRESS_TASK_END, this.compressTaskEndBind);
+  }
+
+  private onCompressTaskEnd(taskType: string, outputPath: string): void {
+    if (taskType !== FileCompressConst.TaskType.DECOMPRESS || outputPath === '') {
+      return;
+    }
+    HiLog.info(TAG, `onCompressTaskEnd, navigate to: ${outputPath}`);
+    void this.toTargetFolder(outputPath);
+  }
+
+  private shareChange(): void {
+    let fileShareManager = new FileShareManager();
+    fileShareManager.showShareDialog(this.selectFilesList).then((result: boolean) => {
+      if (result) {
+        UEUtil.reportShowShareDialog(DFX.OperateSource.PRESS_MENU, this.selectFilesList.length);
+      }
+    });
   }
 
   private printChange(): void {
@@ -3007,9 +3299,127 @@ export struct MyPhone {
     HiLog.info(TAG, 'pullUpPicker');
     this.moveType = Constant.OPERATION_TYPE.COPY;
     this.operationType = Constant.OPERATION_TYPE.COPY;
+    this.copyOperation();
     EventBus.on(Constant.EVENTS.PATH_SELECT_END, this.resolvePathSelectEndBind);
     const pathSelectParam = new PathSelectParam(this.selectFilesList, Constant.OPERATION_TYPE.PASTING)
     EventBus.emit(Constant.EVENTS.SHOW_PATH_PICKER, pathSelectParam);
+  }
+
+  private longPressCompress(fileInfo?: FileInfo): void {
+    const list = this.getLongPressOperateFileList(fileInfo);
+    if (list.length === 0) {
+      HiLog.warn(TAG, 'longPressCompress: no files selected');
+      return;
+    }
+    this.selectFilesList = list;
+    this.compressChange();
+  }
+
+  private longPressDecompress(fileInfo?: FileInfo): void {
+    const list = this.getLongPressOperateFileList(fileInfo);
+    if (list.length === 0) {
+      HiLog.warn(TAG, 'longPressDecompress: no files selected');
+      return;
+    }
+    if (!FileUtil.isArchiveByUri(list[0].uri)) {
+      HiLog.warn(TAG, 'longPressDecompress: not archive file');
+      return;
+    }
+    this.selectFilesList = list;
+    this.decompressChange();
+  }
+
+  private getLongPressOperateFileList(fileInfo?: FileInfo): FileInfo[] {
+    if (fileInfo) {
+      return [fileInfo];
+    }
+    if (this.userState === UserState.MULTI_START) {
+      return this.selectFilesList;
+    }
+    if (this.fileInfo?.uri) {
+      return [this.fileInfo];
+    }
+    return [];
+  }
+
+  private compressChange(): void {
+    HiLog.info(TAG, 'compressChange');
+    this.operationType = Constant.OPERATION_TYPE.COMPRESSION;
+    EventBus.on(Constant.EVENTS.PATH_SELECT_END, this.resolvePathSelectEndBind);
+    const pathSelectParam = new PathSelectParam(this.selectFilesList, this.operationType);
+    EventBus.emit(Constant.EVENTS.SHOW_PATH_PICKER, pathSelectParam);
+  }
+
+  private decompressChange(): void {
+    HiLog.info(TAG, 'decompressChange');
+    this.operationType = Constant.OPERATION_TYPE.DECOMPRESSION;
+    EventBus.on(Constant.EVENTS.PATH_SELECT_END, this.resolvePathSelectEndBind);
+    const pathSelectParam = new PathSelectParam(this.selectFilesList, this.operationType);
+    EventBus.emit(Constant.EVENTS.SHOW_PATH_PICKER, pathSelectParam);
+  }
+
+  /** 压缩包预览底栏高度（略高于普通 BottomBar，给列表避让） */
+  private getArchiveDecompressAllBarHeight(): number {
+    return ToolBarStyle.BOTTOM_BAR_HEIGHT + 20 + this.bottomNavBarHeight;
+  }
+
+  private shouldShowArchiveDecompressAllBar(): boolean {
+    return this.isInArchivePreviewPage() && this.userState === UserState.BROWSER && !this.filePickerViewFlag;
+  }
+
+  private getFileListBottomPadding(): Length {
+    if (this.shouldShowArchiveDecompressAllBar()) {
+      return this.getArchiveDecompressAllBarHeight();
+    }
+    if (this.filePickerViewFlag && this.userState === UserState.BROWSER) {
+      return $r('app.float.common_size24');
+    }
+    return 0;
+  }
+
+  /**
+   * 压缩包预览页：全部解压缩 → 选路径 → 既有解压链路
+   */
+  private decompressAllFromArchivePreview(): void {
+    const archiveUri = ArchivePreviewUtil.getArchiveRootUri(this.direList);
+    if (!archiveUri) {
+      HiLog.warn(TAG, 'decompressAllFromArchivePreview: archiveUri empty');
+      toast($r('app.string.open_failure_msg'));
+      return;
+    }
+    let fileInfo = FileInfo.fromFileUri(archiveUri);
+    if (!fileInfo?.uri) {
+      fileInfo = new FileInfo();
+      fileInfo.uri = archiveUri;
+      fileInfo.fileName = FileUtil.getFileNameFromUri(archiveUri);
+      fileInfo.isFolder = false;
+    }
+    this.selectFilesList = [fileInfo];
+    this.decompressChange();
+  }
+
+  @Builder
+  archiveDecompressAllBar() {
+    Column() {
+      Button($r('app.string.decompress_all'))
+        .type(ButtonType.Capsule)
+        .fontSize($r('sys.float.Body_L'))
+        .fontWeight(FontWeight.Medium)
+        // 与标题栏返回/多选/搜索同底色，文字用强调蓝
+        .fontColor($r('sys.color.ohos_id_color_emphasize'))
+        .backgroundColor($r('sys.color.ohos_id_color_button_normal'))
+        .width('90%')
+        .margin({ top: $r('app.float.common_padding16'), bottom: $r('app.float.common_padding16') })
+        .onClick(() => {
+          this.decompressAllFromArchivePreview();
+        })
+    }
+    .width('100%')
+    .height(this.getArchiveDecompressAllBarHeight())
+    .padding({ bottom: this.bottomNavBarHeight })
+    .backgroundColor($r('sys.color.ohos_id_color_bottom_tab_sub_bg'))
+    .justifyContent(FlexAlign.Start)
+    .alignItems(HorizontalAlign.Center)
   }
 
   private moveChange(): void {
@@ -3135,6 +3545,42 @@ export struct MyPhone {
     }
   }
 
+  private fileCompress(folderUri: string): void {
+    const workerName = ThreadCommonUtil.getWorkerName(Constant.OPERATION_TYPE.COMPRESSION);
+    const destFilePath = FileUtil.isArchiveByUri(folderUri) ?
+      FileUtil.getPathFromUri(folderUri) : this.buildCompressDestPath(folderUri);
+    FileCompressBusiness.fileCompress([...this.selectFilesList], workerName, destFilePath);
+    CompressDialog.showProgressDialog(workerName);
+    this.operationType = '';
+    this.initData();
+  }
+
+  private buildCompressDestPath(folderUri: string): string {
+    const destFolderPath = FileUtil.getPathFromUri(folderUri);
+    const destFolderUri = folderUri;
+    let fileName = `${getResourceString($r('app.string.compressed'))}.zip`;
+    if (this.selectFilesList.length === 1) {
+      const srcName = this.selectFilesList[0].fileName;
+      if (this.selectFilesList[0].isFolder) {
+        fileName = `${srcName}.zip`;
+      } else {
+        const dotIndex = srcName.lastIndexOf('.');
+        fileName = dotIndex > 0 ? `${srcName.substring(0, dotIndex)}.zip` : `${srcName}.zip`;
+      }
+    }
+    const dupResult = ThreadCommonUtil.getDupFileName(fileName, destFolderUri, false);
+    const finalName = dupResult[0] || fileName;
+    return `${destFolderPath}/${finalName}`;
+  }
+
+  private fileDecompress(folderUri: string): void {
+    const workerName = ThreadCommonUtil.getWorkerName(Constant.OPERATION_TYPE.DECOMPRESSION);
+    const targetDir = FileUtil.getPathFromUri(folderUri);
+    CompressDataUtil.fileDecompress(this.selectFilesList[0], workerName, targetDir);
+    this.operationType = '';
+    this.initData();
+  }
+
   /**
    * 当前只处理打开文件或文件夹
    * @param fileItem fileItem
@@ -3145,13 +3591,11 @@ export struct MyPhone {
       this.originalTitle = fileItem.fileName;
     }
 
-    // 目录点进去
-    if (fileItem.isFolder) {
+    // 目录点进去，压缩包也当作目录点进去（包内浏览）
+    if (fileItem.isFolder || FileUtil.isArchiveByUri(fileItem.uri)) {
       this.clickFolder(fileItem);
       return;
     }
-    // 目前文件不支持本地预览，所有文件均只能用第三方应用打开
-    // 压缩包也走第三方应用打开的逻辑，可以通过FileUtil.isArchiveByUri(fileItem.uri)判断是否是压缩包
     this.clickFile(fileItem);
   }
 
@@ -3225,20 +3669,24 @@ export struct MyPhone {
     HiLog.info(TAG, `clickFolder this.scrollStartIndex:${this.scrollStartIndex}, this listYOffset:${this.listYOffset}`);
     HiSysEventUtil.reportFileOperation(OperateName.OPEN, 'folder', OperateResult.SUCCESS);
     this.recordOffset();
-    // 沙箱压缩文件内文件夹须支持跳转
-    if (!FileUtil.isGalleryAddress(this.currentFolderUri) && !this.checkItemAndBreadUri(fileItem.relativePath) &&
+    // 沙箱压缩文件内文件夹须支持跳转；压缩包预览内不走真实路径校验
+    if (!FileUtil.isArchiveByUri(fileItem.uri) && !this.isInArchivePreviewPage() &&
+      !FileUtil.isGalleryAddress(this.currentFolderUri) && !this.checkItemAndBreadUri(fileItem.relativePath) &&
       !(FileUtil.isSandboxUri(fileItem.uri) && FileUtil.isArchiveByUri(fileItem.uri))) {
       this.onDireListChange();
       return;
     }
-    const tempBreadData: AddressData = new AddressData(fileItem.uri, fileItem.fileName);
+    const tempBreadData: AddressData =
+      new AddressData(fileItem.uri, fileItem.fileName, 'LOCAL',
+        FileUtil.isArchiveByUri(fileItem.uri) || this.isInArchivePreviewPage());
     if (fileItem.uri.startsWith(VirtualUri.GALLERY_URI)) {
       tempBreadData.albumType = fileItem.albumType;
       tempBreadData.albumSubType = fileItem.albumSubType;
     }
     this.reportEnterAlbumUE(fileItem, DFX.EnterAlbumType.GALLERY_FOLDER);
-    if (this.showMaskLayer || FileUtil.isArchiveByUri(fileItem.uri)) {
-      this.direList.push(tempBreadData);
+    if (this.showMaskLayer || FileUtil.isArchiveByUri(fileItem.uri) || this.isInArchivePreviewPage()) {
+      // 触发 @Watch：重新赋值数组而非仅 push
+      this.direList = this.direList.concat([tempBreadData]);
       this.listYOffset = 0;
       this.scrollStartIndex = 0;
       this.accessibilityFocusNextFloor();
@@ -3327,6 +3775,10 @@ export struct MyPhone {
   private clickFile(fileItem: FileInfo): void {
     HiSysEventUtil.reportFileOperation(OperateName.OPEN, 'files', OperateResult.SUCCESS);
     this.recordOffset();
+    if (this.isInArchivePreviewPage()) {
+      this.openArchiveInnerFile(fileItem);
+      return;
+    }
     PreviewUtil.filePreview(fileItem);
   }
 
@@ -3500,8 +3952,19 @@ export struct MyPhone {
   }
 
   private isArchiveOrInArchive() {
-    return this.direList && this.direList.length > 0 &&
-    FileUtil.isArchiveByUri(this.direList[this.direList.length - 1].uri)
+    return this.isInArchivePreviewPage();
+  }
+
+  private isInArchivePreviewPage(): boolean {
+    if (!this.direList || this.direList.length === 0) {
+      return false;
+    }
+    for (const item of this.direList) {
+      if (FileUtil.isArchiveByUri(item.uri)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private onMenuActionCallback(menuInfo: MenuInfo): void {
@@ -3513,6 +3976,9 @@ export struct MyPhone {
     switch (menuInfo.menuName) {
       case MenuItemName.SET_RINGTONE:
         this.backCallback(false);
+        break;
+      case MenuItemName.SHARE:
+        this.shareMenuClickCallBack();
         break;
       default:
         break;
@@ -3531,6 +3997,30 @@ export struct MyPhone {
       this.isQueryEnd = true;
       this.setShowLoading(false);
     }
+  }
+
+  // 分享的另存为的场景需要退出多选，触发页面刷新
+  private shareCompleteEventCallBack: Callback<systemShare.ShareOperationResult> =
+    (operateResult: systemShare.ShareOperationResult) => {
+      HiLog.info(TAG, `operateResult: ${operateResult.targetAbilityInfo.name}.`);
+      if (SystemShareUtil.isSaveOperation(operateResult.targetAbilityInfo.name)) {
+        this.initData();
+      }
+    }
+  // 分享半模态关闭监听回调事件，需要把监听事件销毁
+  private shareDialogDismissEventCallBack: Callback<void> = () => {
+    HiLog.info(TAG, 'shareDialog dismiss.');
+    // 销毁分享完成事件
+    SystemShareUtil.offShareCompleteEvent(this.shareCompleteEventCallBack);
+    // 销毁分享半模态关闭事件
+    SystemShareUtil.offDialogDismissEvent(this.shareDialogDismissEventCallBack);
+  }
+
+  private shareMenuClickCallBack(): void {
+    // 监听分享完成事件
+    SystemShareUtil.onShareCompleteEvent(this.shareCompleteEventCallBack);
+    // 监听分享半模态关闭事件
+    SystemShareUtil.onDialogDismissEvent(this.shareDialogDismissEventCallBack);
   }
 
   /**

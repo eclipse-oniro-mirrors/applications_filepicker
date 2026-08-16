@@ -36,7 +36,7 @@ export struct OtherInfo {
   private isShowFolderSubCount: boolean = false;
   // 是否是选择器场景
   @Prop filePickerViewFlag: boolean;
-  private showHiddenItem: boolean = true;
+  private showHiddenItem: boolean = false;
   @Consume isOutsideFolded: boolean;
 
   aboutToAppear(): void {

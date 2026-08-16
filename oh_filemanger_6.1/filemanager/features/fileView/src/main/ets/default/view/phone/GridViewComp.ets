@@ -95,6 +95,7 @@ export struct GridViewComp {
   @Consume('showHiddenItemStatus') showHiddenItem: boolean;
   public isShowAlbumCover: boolean = false;
   @Prop curFolderUri: string = '';
+  @Prop isInArchivePreview: boolean = false;
   private index: number = 0;
   @State iconSize: number = Constant.GRID_VIEW_IMAGE_SIZE;
   @State fileNameWidth: Resource = $r('app.float.grid_view_text_area_width');
@@ -470,6 +471,8 @@ export struct GridViewComp {
       geometryId: this.geometryId,
       isMulti: this.userState === UserState.MULTI_START,
       toOperateFileList: this.toOperateFileList,
+      curFolderUri: this.curFolderUri,
+      isInArchivePreview: this.isInArchivePreview,
     })
   }
 

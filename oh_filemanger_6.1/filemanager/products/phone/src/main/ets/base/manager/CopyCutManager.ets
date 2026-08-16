@@ -127,6 +127,8 @@ export class CopyCutManager {
   private isHidden: boolean = false;
   // 任务是否已完成
   private taskCompleted: boolean = false;
+  // 用户是否主动隐藏
+  private isUserHidden: boolean = false;
 
   public static getInstance() {
     if (ObjectUtil.isNullOrUndefined(CopyCutManager.instance)) {
@@ -279,6 +281,7 @@ export class CopyCutManager {
     this.oldProgressPercent = -1;
     // 重置隐藏标志，确保新的操作可以正常显示UI通知
     this.isHidden = false;
+    this.isUserHidden = false; // 重置用户主动隐藏标志
     // 重置任务完成标志
     this.taskCompleted = false;
     // 重置通知状态，确保新的操作可以正常发送通知
@@ -409,8 +412,85 @@ export class CopyCutManager {
       default:
         break;
     }
-    // 设置隐藏标志
+    // 设置用户主动隐藏标志
+    this.isUserHidden = true;
     this.isHidden = true;
+
+    // 用户点击隐藏后立刻展示实况窗（通知栏进度通知），不等待初始化/首个进度回调
+    // 这里不 await，避免阻塞 UI 点击响应；后续真实进度会在 dealProcessRunning() 中持续更新
+    this.publishHiddenInitNotification(taskType);
+  }
+
+  /**
+   * 用户点击隐藏时立即发送一次进度通知，避免初始化阶段没有PROGRESS回调导致实况窗延迟出现。
+   */
+  private publishHiddenInitNotification(taskType?: WorkerConst.OperateType): void {
+    try {
+      if (!this.taskIsRun) {
+        return;
+      }
+      const abilityContext = GlobalHolder.getInstance().getAppContext();
+      const operatingFileName: string =
+        (AppStorage.get<string>('copyCutOperatingFileName') ?? '') ||
+        abilityContext.resourceManager.getStringSync($r('app.string.initialization').id);
+      const folderUri: string =
+        (AppStorage.get<string>('copyCutNotifyUri') ?? '') ||
+          (this.taskData?.destFolderUri ?? '');
+      if (StringUtil.isEmpty(folderUri)) {
+        return;
+      }
+
+      const progressData: CopyCutProgressData = {
+        folderUri: folderUri,
+        progress: this.oldProgressPercent >= 0 ? this.oldProgressPercent : 0,
+        deliveryTime: this.startTime,
+        operatingFileName: operatingFileName,
+        operateType: this.getProgressOperateType(taskType ?? this.taskKind),
+        selectCount: this.taskData?.toOperateFiles?.length ?? this.selectCount,
+        destFolderName: this.taskData?.destFolderName ?? ''
+      };
+      const count: number = progressData.selectCount ?? 1;
+      const title: string = (taskType ?? this.taskKind) === WorkerConst.OperateType.COPY_FILE ?
+        ResourceUtil.getPluralStringValue($r('app.plural.copying_notification_title'), count, count,
+          this.taskData?.destFolderName ?? '') :
+        ResourceUtil.getPluralStringValue($r('app.plural.moving_notification_title'), count, count,
+          this.taskData?.destFolderName ?? '');
+
+      CopyCutNotificationUtil.publishProgressNotification(progressData, title);
+    } catch (error) {
+      HiLog.error(TAG, `publishHiddenInitNotification error: ${JSON.stringify(error)}`);
+    }
+  }
+
+  /**
+   * 处理应用进入后台的情况
+   */
+  public handleAppBackground() {
+    if (this.taskIsRun && !this.isHidden) {
+      // 应用进入后台，自动隐藏进度弹窗，显示实况窗
+      this.isHidden = true;
+      EventBus.emit(Constant.EVENTS.COPY_CUT_PROGRESS_VISIBLE, false);
+    }
+  }
+
+  /**
+   * 处理应用回到前台的情况
+   */
+  public async handleAppForeground() {
+    if (this.taskIsRun && this.isHidden) {
+      // 如果是用户主动隐藏，保持实况窗显示
+      if (this.isUserHidden) {
+        return;
+      }
+      // 如果是应用进入后台导致的隐藏，显示进度弹窗
+      // 先设置isHidden为false，防止dealProcessRunning()发送实况窗通知
+      this.isHidden = false;
+      // 然后取消实况窗通知（先排空进度 publish 队列，避免与 cancel 竞态）
+      await CopyCutNotificationUtil.waitProgressPublishIdle();
+      await CopyCutNotificationUtil.cancelProgressNotification();
+      // 最后显示进度弹窗
+      EventBus.emit(Constant.EVENTS.COPY_CUT_PROGRESS_VISIBLE, true);
+    }
   }
 
   /**
@@ -652,13 +732,16 @@ export class CopyCutManager {
     // 立即设置任务状态为结束，防止后续进度消息处理
     this.taskIsRun = false;
     this.taskCompleted = true;
-    
+
+    // 先排空进度通知串行队列，避免 in-flight 的 publish 在 cancel 之后完成导致进度通知残留
+    await CopyCutNotificationUtil.waitProgressPublishIdle();
+
     // 禁止后续的进度通知
     CopyCutNotificationUtil.disableProgressNotifications();
-    
+
     // 立即取消所有进度通知，无论是否隐藏
     await CopyCutNotificationUtil.cancelProgressNotification();
-    
+
     // 复制结束
     this.emitEnd(result);
     PasteBoardUtil.removePasteDateFromGlobalPasteDateMap(result.workerName);
@@ -851,13 +934,13 @@ export class CopyCutManager {
       HiLog.error(TAG, 'dealRunning data is null');
       return;
     }
-    
+
     // 检查任务是否已经结束或完成，如果结束则不处理进度消息
     if (!this.taskIsRun || this.taskCompleted) {
       HiLog.info(TAG, 'Task is already ended or completed, skipping progress message');
       return;
     }
-    
+
     HiLog.info(TAG, 'process complete: ' + result.completeSize + ' totalSize: ' + result.totalSize);
     let useSizeCalculated: boolean = (result.totalSize !== 0);
     let percent: number = useSizeCalculated ? this.getPercent(result.totalSize, result.completeSize) :
@@ -902,7 +985,7 @@ export class CopyCutManager {
         selectCount: result.totalCount,
         destFolderName: this.taskData?.destFolderName ?? ''
       });
-      
+
       // 只有隐藏后才向通知栏发送通知
       if (this.isHidden) {
         // 再次检查任务状态，确保任务仍在运行且未完成
@@ -910,7 +993,7 @@ export class CopyCutManager {
           HiLog.info(TAG, 'Task ended before sending notification, skipping');
           return;
         }
-        
+
         const progressData: CopyCutProgressData = {
           folderUri: result.notifyUri,
           progress: this.oldProgressPercent,
@@ -925,13 +1008,13 @@ export class CopyCutManager {
             result.totalCount, this.taskData?.destFolderName ?? '') :
           ResourceUtil.getPluralStringValue($r('app.plural.moving_notification_title'), result.totalCount,
             result.totalCount, this.taskData?.destFolderName ?? '');
-        
+
         // 再次检查任务状态，确保任务仍在运行且未完成
         if (!this.taskIsRun || this.taskCompleted) {
           HiLog.info(TAG, 'Task ended before sending notification, skipping');
           return;
         }
-        
+
         CopyCutNotificationUtil.publishProgressNotification(progressData, title);
       }
       HiLog.info(TAG, `dealProcessRunning progress:  ${JSON.stringify(this.oldProgressPercent)}`)

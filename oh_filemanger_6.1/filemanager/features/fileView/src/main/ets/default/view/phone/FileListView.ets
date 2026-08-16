@@ -75,7 +75,8 @@ import {
   StorageDeviceManager,
   StringUtil,
   DataStatus,
-  TabBarStyle
+  TabBarStyle,
+  VideoThumbnailScheduler,
 } from '@ohos/common';
 import { NoContent } from './basicComp/NoContent';
 import lazy { FileViewComp } from './FileViewComp';
@@ -320,7 +321,7 @@ export struct FileListView {
   @State longPressColor: ResourceStr = $r('app.color.transparent_color');
   @Link pickerCheckArr: string[] | undefined;
   @Link @Watch('needHighlightChanged') needHighlight: boolean;
-  @Provide('showHiddenItemStatus') showHiddenItemStatus: boolean = true;
+  @Provide('showHiddenItemStatus') showHiddenItemStatus: boolean = false;
   @Prop @Watch('showHiddenItemChanged') showHiddenItem: boolean;
   // picker 相关的属性
   @Consume isShowPickerTips: boolean;
@@ -901,6 +902,7 @@ export struct FileListView {
       scrollBackward: NestedScrollMode.SELF_FIRST
     })
     .onScrollStart(() => {
+      this.onVideoThumbnailScrollStart();
       // 滑动时隐藏键盘
       try {
         if (this.keyBoardHeight > 0) {
@@ -911,6 +913,7 @@ export struct FileListView {
       }
     })
     .onScrollStop(() => {
+      this.onVideoThumbnailScrollStop();
       if (this.isOutsideScreenDevice) {
         // 记录当前的位置
         AppStorage.setOrCreate(Constant.OUTSIDE_SCREEN_SCROLL_KEY, this.scrollStartIndex);
@@ -1015,6 +1018,7 @@ export struct FileListView {
       scrollBackward: NestedScrollMode.SELF_FIRST
     })
     .onScrollStart(() => {
+      this.onVideoThumbnailScrollStart();
       // 滑动时隐藏键盘
       try {
         if (this.keyBoardHeight > 0) {
@@ -1025,6 +1029,7 @@ export struct FileListView {
       }
     })
     .onScrollStop(() => {
+      this.onVideoThumbnailScrollStop();
       if (this.isOutsideScreenDevice) {
         // 记录当前的位置
         AppStorage.setOrCreate<number>(Constant.OUTSIDE_SCREEN_SCROLL_KEY, this.scrollStartIndex);
@@ -1520,6 +1525,7 @@ export struct FileListView {
       return this.onScrollFrameChange(offset, this.gridScroller.currentOffset()?.yOffset);
     })
     .onScrollStart(() => {
+      this.onVideoThumbnailScrollStart();
       // 滑动时隐藏键盘
       try {
         if (this.keyBoardHeight > 0) {
@@ -1530,6 +1536,7 @@ export struct FileListView {
       }
     })
     .onScrollStop(() => {
+      this.onVideoThumbnailScrollStop();
       if (this.isOutsideScreenDevice) {
         // 记录当前的位置
         AppStorage.setOrCreate(Constant.OUTSIDE_SCREEN_SCROLL_KEY, this.scrollStartIndex);
@@ -1603,8 +1610,10 @@ export struct FileListView {
       isShowFileSource: this.isShowFileSource,
       isShowCheckBox: this.isShowCheckBox,
       curFolderUri: this.curFolderUri,
-      // 图库文件夹、大文件清理页面文件禁止拖出
+      isInArchivePreview: this.isInArchivePreviewPage(),
+      // 图库文件夹、大文件清理页面、压缩包预览禁止拖出
       enableDrag: this.enableDrag
+        && !this.isInArchivePreviewPage()
         && this.curFolderUri !== PAGE_ROUTE_CONST.IMAGE
         && this.curFolderUri !== PAGE_ROUTE_CONST.VIDEO,
       onDropCallback: this.onDropCallback,
@@ -1615,7 +1624,7 @@ export struct FileListView {
       toOperateFileList: this.toOperateFileList,
       swipeDeleteDialogCallback: this.swipeDeleteDialogCallback,
       listScroller: isSourceMix ? this.listScrollerMap.get(item.uri) : this.listScroller,
-      disableSwipe: this.disableSwipe,
+      disableSwipe: this.disableSwipe || this.isInArchivePreviewPage(),
       geometryId: this.geometryId,
       pickerCheckArr: this.pickerCheckArr,
       needHighlight: this.needHighlight,
@@ -1643,8 +1652,10 @@ export struct FileListView {
       isShowFileSource: this.isShowFileSource,
       isShowCheckBox: this.isShowCheckBox,
       curFolderUri: this.curFolderUri,
-      // 图库文件夹、大文件清理页面文件禁止拖出
+      isInArchivePreview: this.isInArchivePreviewPage(),
+      // 图库文件夹、大文件清理页面、压缩包预览禁止拖出
       enableDrag: this.enableDrag
+        && !this.isInArchivePreviewPage()
         && this.curFolderUri !== PAGE_ROUTE_CONST.IMAGE
         && this.curFolderUri !== PAGE_ROUTE_CONST.VIDEO,
       onDropCallback: this.onDropCallback,
@@ -1655,7 +1666,7 @@ export struct FileListView {
       toOperateFileList: this.toOperateFileList,
       swipeDeleteDialogCallback: this.swipeDeleteDialogCallback,
       listScroller: this.listScroller,
-      disableSwipe: this.disableSwipe,
+      disableSwipe: this.disableSwipe || this.isInArchivePreviewPage(),
       geometryId: this.geometryId,
       pickerCheckArr: this.pickerCheckArr,
       needHighlight: this.needHighlight,
@@ -1958,7 +1969,8 @@ export struct FileListView {
     return (this.longPressFileMenuShow && !this.startModeOptions.pickerFlag &&
       this.userState !== UserState.MULTI_START) &&
       this.curFolderUri !== PAGE_ROUTE_CONST.IMAGE &&
-      this.curFolderUri !== PAGE_ROUTE_CONST.VIDEO;
+      this.curFolderUri !== PAGE_ROUTE_CONST.VIDEO &&
+      !this.isInArchivePreviewPage();
   }
 
   /**
@@ -1988,6 +2000,16 @@ export struct FileListView {
     }, 20);
     this.setGroupFilesData();
     this.listYOffset = 0;
+  }
+
+  /** 列表滚动开始：暂停低优先级视频缩略图，优先保证可见项流畅 */
+  private onVideoThumbnailScrollStart(): void {
+    VideoThumbnailScheduler.getInstance().onScrollStart();
+  }
+
+  /** 列表滚动结束：恢复视频缩略图队列调度 */
+  private onVideoThumbnailScrollStop(): void {
+    VideoThumbnailScheduler.getInstance().onScrollStop();
   }
 
   private onScrollFrameChange(offset: number, currentOffset: number): OffsetRemainParam {
@@ -2128,8 +2150,19 @@ export struct FileListView {
   }
 
   private isArchiveOrInArchive() {
-    return this.direList && this.direList.length > 0 &&
-    FileUtil.isArchiveByUri(this.direList[this.direList.length - 1].uri)
+    return this.isInArchivePreviewPage();
+  }
+
+  private isInArchivePreviewPage(): boolean {
+    if (!this.direList || this.direList.length === 0) {
+      return false;
+    }
+    for (const item of this.direList) {
+      if (FileUtil.isArchiveByUri(item.uri)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private getColumnsTemplate() {

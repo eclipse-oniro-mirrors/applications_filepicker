@@ -197,8 +197,7 @@ export class FileInfo {
     fileInfo.thumbnailType = ThumbnailUtil.getThumbnailType(fileInfo);
     fileInfo.useCacheImage = false;
     // 支持缩略图的，使用cachedImage
-    if (fileInfo.uri.startsWith(Constant.MediaLibrary_URI_HEAD) &&
-    ThumbnailUtil.THUMBNAIL_SUPPORT_TYPE.has(fileInfo.thumbnailType)) {
+    if (ThumbnailUtil.THUMBNAIL_SUPPORT_TYPE.has(fileInfo.thumbnailType)) {
       fileInfo.useCacheImage = true;
     }
   }

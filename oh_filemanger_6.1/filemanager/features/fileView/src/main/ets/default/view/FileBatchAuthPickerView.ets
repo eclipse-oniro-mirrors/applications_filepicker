@@ -43,13 +43,13 @@ export struct FileBatchAuthPickerView {
   @Provide operationType: string = '';
   @Provide order: string = SortOrder.NAME; // 排序
   @Provide isDesc: boolean = true; // 是否倒序
-  @Provide('showHiddenItemStatus') showHiddenItemStatus: boolean = true;
+  @Provide('showHiddenItemStatus') showHiddenItemStatus: boolean = false;
   @Prop disableSwipe: boolean = false;
   @State listYOffset: number = 0;
   @State direList: AddressData[] = [];
   @State listScrollShow: boolean = true; // 列表滚动显示
   @State updateTimer: number = new Date().valueOf();
-  @State showHiddenItem: boolean = true;
+  @State showHiddenItem: boolean = false;
   public onItemClick: Function = () => {
   };
   private startModeOptions: StartModeOptions = FilePickerUtil.getStartOptionsFromStorage();

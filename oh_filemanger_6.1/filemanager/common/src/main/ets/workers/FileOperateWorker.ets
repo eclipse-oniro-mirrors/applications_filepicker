@@ -17,9 +17,11 @@ import type { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope } from '@ohos.w
 import worker from '@ohos.worker';
 import type { CopyCutSendParam } from '../workermanager/copycutmanager/CopyCutSendParam';
 import type { DeleteRestoreSendParam } from '../workermanager/deleterestoremanager/DeleteRestoreSendParam';
+import type { FileCompressSendParam } from '../workermanager/filecompressmanager/FileCompressSendParam';
 import type { SendParams } from '../worker/SendParams';
 import { FileCopyUtil } from '../workeroperate/fs/FileCopyUtil';
 import { FileDeleteUtil } from '../workeroperate/fs/FileDeleteUtil';
+import { FileCompressUtil } from '../workeroperate/fs/FileCompressUtil';
 import { HiLog } from '../dfx/HiLog';
 import { WorkerConst } from '../worker/WorkerConst';
 
@@ -30,6 +32,7 @@ let workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
 let fileCopyUtil: FileCopyUtil | undefined;
 let fileDeleteUtil: FileDeleteUtil | undefined;
+let fileCompressUtil: FileCompressUtil | undefined;
 
 const SWITCH_CASE_MAP = new Map([
   [WorkerConst.OperateType.COPY_FILE, async (sendParams: SendParams): Promise<void> => {
@@ -67,6 +70,11 @@ const SWITCH_CASE_MAP = new Map([
     fileDeleteUtil.workerPort = workerPort;
     await fileDeleteUtil.dealMessage(sendParams as DeleteRestoreSendParam);
   }],
+  [WorkerConst.OperateType.COMPRESS_FILE, async (sendParams: SendParams): Promise<void> => {
+    let compressUtil = getFileCompressUtil();
+    compressUtil.workerPort = workerPort;
+    await compressUtil.dealMessage(sendParams as FileCompressSendParam);
+  }],
 ]);
 
 function getFileCopyUtil(): FileCopyUtil {
@@ -83,6 +91,13 @@ function getFileDeleteUtil(): FileDeleteUtil {
   return fileDeleteUtil;
 }
 
+function getFileCompressUtil(): FileCompressUtil {
+  if (!fileCompressUtil) {
+    fileCompressUtil = new FileCompressUtil();
+  }
+  return fileCompressUtil;
+}
+
 /**
  * 接收主线程发送的worker消息
  * @param e message data
@@ -94,7 +109,12 @@ workerPort.onmessage = async (e: MessageEvents): Promise<void> => {
     HiLog.info(TAG, 'FileOperateWorker task canceled');
     return;
   }
-  await SWITCH_CASE_MAP.get(sendParams.operateType)!!(sendParams);
+  const handler = SWITCH_CASE_MAP.get(sendParams.operateType);
+  if (!handler) {
+    HiLog.error(TAG, `FileOperateWorker unsupported operateType: ${sendParams.operateType}`);
+    return;
+  }
+  await handler(sendParams);
 };
 
 /**

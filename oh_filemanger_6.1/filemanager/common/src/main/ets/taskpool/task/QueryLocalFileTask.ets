@@ -114,6 +114,10 @@ async function startTask(data: QueryFileParam, filePickerViewFlag: boolean, abil
           return false; // 返回false，停止查询任务
         }
         let nativeFileInfo = files[i];
+        // 压缩包预览临时目录：即使开启「显示隐藏文件」也不展示
+        if (FileUtil.isArchivePreviewTempName(nativeFileInfo.fileName)) {
+          continue;
+        }
         if (!data.showHiddenItem && nativeFileInfo.fileName.startsWith('.')) {
           continue;
         }

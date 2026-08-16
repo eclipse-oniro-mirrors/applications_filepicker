@@ -585,4 +585,55 @@ export class FsUtil {
       err.message + ', error code: ' + err.code);
     });
   }
+
+  /**
+   * 同步文件或目录数据(一般应用于外盘场景)
+   * @param filepath 文件或目录路径
+   * @param mode 打开模式(文件:READ_WRITE, 目录:DIR)
+   * */
+  public static syncFile(filepath: string, mode: number = fs.OpenMode.READ_WRITE): void {
+    if (StringUtil.isEmpty(filepath)) {
+      HiLog.error(TAG, 'syncFile failed, filepath is empty');
+      return;
+    }
+    let file: fs.File | undefined = undefined;
+    try {
+      file = fs.openSync(filepath, mode);
+      FsUtil.fsyncSync(file.fd);
+    } catch (error) {
+      HiLog.error(TAG, `syncFile failed, error code: ${(error as BusinessError)?.code}`);
+    } finally {
+      file && FsUtil.closeSync(file);
+    }
+  }
+
+  /**
+   * 递归同步目录数据(一般应用于外盘场景)
+   * @param rootFolderPath 目录路径
+   * */
+  public static syncFolderRecursively(rootFolderPath: string): void {
+    if (StringUtil.isEmpty(rootFolderPath)) {
+      HiLog.error(TAG, 'syncFolderRecursively failed, filepath is empty');
+      return;
+    }
+    const queue: string[] = [rootFolderPath];
+    while (queue.length > 0) {
+      const currentDir = queue.shift() as string;
+      FsUtil.syncFile(currentDir, fs.OpenMode.DIR);
+      try {
+        const fileList = fs.listFileSync(currentDir);
+        for (const fileName of fileList) {
+          const filepath = `${currentDir}/${fileName}`;
+          const stat = fs.statSync(filepath);
+          if (stat.isDirectory()) {
+            queue.push(filepath);
+          } else {
+            FsUtil.syncFile(filepath);
+          }
+        }
+      } catch (e) {
+        HiLog.error(TAG, `syncFolderRecursively failed, error code: ${(e as BusinessError)?.code}`);
+      }
+    }
+  }
 }

@@ -482,6 +482,10 @@ export struct PathSelectTree {
     if (this.operationType === Constant.OPERATION_TYPE.MOVE) {
       this.operationTitle = $r('app.plural.move_dialog_title', this.selectFilesList.length,
         this.selectFilesList.length, this.selectName);
+    } else if (this.operationType === Constant.OPERATION_TYPE.COMPRESSION) {
+      this.operationTitle = $r('app.string.compress_file');
+    } else if (this.operationType === Constant.OPERATION_TYPE.DECOMPRESSION) {
+      this.operationTitle = $r('app.string.decompress_file');
     } else {
       this.operationTitle =
         $r('app.plural.copy_dialog_title', this.selectFilesList.length, this.selectFilesList.length, this.selectName);
@@ -748,6 +752,10 @@ export struct PathSelectTree {
     if (this.isInsufficientSpace(freeSize)) {
       return;
     }
+    // 压缩/解压不支持保存到图库根目录或图库子目录
+    if (this.isCompressOrDecompressToGallery(this.selectUri)) {
+      return;
+    }
     this.addUEEvent(false);
     TraceUtils.startTrace('PathSelectTree confirm');
     HiLog.infoPrivate(TAG, 'confirm selectUri: ', this.selectUri);
@@ -757,6 +765,27 @@ export struct PathSelectTree {
       this.selectUri);
     HiLog.infoPrivate(TAG, 'confirm selectUri: end', this.selectUri);
     TraceUtils.finishTrace('PathSelectTree confirm');
+  }
+
+  /**
+   * 压缩/解压目标为图库时拦截并弹框；返回 true 表示已拦截
+   */
+  private isCompressOrDecompressToGallery(folderUri: string): boolean {
+    if (this.operationType !== Constant.OPERATION_TYPE.COMPRESSION &&
+      this.operationType !== Constant.OPERATION_TYPE.DECOMPRESSION) {
+      return false;
+    }
+    if (folderUri === VirtualUri.GALLERY) {
+      HiLog.warn(TAG, 'compress/decompress to gallery root not supported');
+      this.showErrorDialog($r('app.string.failed_save_to_gallery_root_path'));
+      return true;
+    }
+    if (folderUri.startsWith(VirtualUri.GALLERY_URI) || folderUri.startsWith(Constant.MediaLibrary_URI_HEAD)) {
+      HiLog.warn(TAG, 'compress/decompress to gallery album not supported');
+      this.showErrorDialog($r('app.string.save_other_type_files_to_gallery_path_for_picker'));
+      return true;
+    }
+    return false;
   }
 
   showErrorDialog(mainContent: Resource) {

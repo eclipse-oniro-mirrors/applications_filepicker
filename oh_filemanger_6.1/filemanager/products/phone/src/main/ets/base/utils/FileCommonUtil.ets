@@ -222,6 +222,10 @@ export class FileCommonUtil {
           HiLog.warn(TAG, 'getSubFolderListWithFs has canceled');
           return [];
         }
+        // 排除压缩包预览临时目录
+        if (FileUtil.isArchivePreviewTempName(fileName)) {
+          continue;
+        }
         // 排除不需要显示的系统目录，如桌面目录、存放最近和存放回收站文件数据的目录
         if (isRootUri && Constant.PHONE_SYSTEM_FOLDER_NAME.includes(fileName)) {
           continue;

@@ -102,6 +102,7 @@ export struct FileViewComp {
   @Link isSelectAll: boolean;
   // 当前文件所在目录的uri
   @Link curFolderUri: string;
+  @Prop isInArchivePreview: boolean = false;
   // 文件列表所展示在的页面名
   @Prop pageName: string;
   @Prop gridCompactLayout: boolean;
@@ -657,9 +658,10 @@ export struct FileViewComp {
       isSelectAll: this.isSelectAll,
       isShowAlbumCover: this.isShowAlbumCover,
       curFolderUri: this.curFolderUri,
+      isInArchivePreview: this.isInArchivePreview,
       showGridIconMenu: this.showGridIconMenu,
       menuLayoutRegionMargin: this.menuLayoutRegionMargin,
-      isContextMenuForbidden: false,
+      isContextMenuForbidden: this.isInArchivePreview,
       onLongClick: (emitLocation?: string) => this.onLongClick(emitLocation),
       enableDrag: this.enableDrag,
       dragStart: (event: DragEvent, extraParams?: string) => {
@@ -728,7 +730,10 @@ export struct FileViewComp {
 
   @Builder
   LongPressFileMenu() {
-    this.longPressFileMenuContent();
+    // 压缩包预览内禁止长按菜单
+    if (!this.isInArchivePreview) {
+      this.longPressFileMenuContent();
+    }
   }
 
   @Builder
@@ -751,6 +756,8 @@ export struct FileViewComp {
       geometryId: this.geometryId,
       isMulti: this.userState === UserState.MULTI_START,
       toOperateFileList: this.toOperateFileList,
+      curFolderUri: this.curFolderUri,
+      isInArchivePreview: this.isInArchivePreview,
     })
   }
 
@@ -794,6 +801,10 @@ export struct FileViewComp {
         Constant.LONG_PRESS_DELAY_TIME : Constant.MUL_LONG_PRESS_DELAY_TIME
       })
         .onAction(() => {
+          // 压缩包预览内禁止长按菜单
+          if (this.isInArchivePreview) {
+            return;
+          }
           this.isLongPress = !this.mouseLeftPressed; // 鼠标左键长按的时候，使能触发单击
           this.disableSwipe = true; // 长按的时候，禁止左滑
           if (!this.mouseLeftPressed) {
@@ -888,6 +899,10 @@ export struct FileViewComp {
    * 长按事件
    */
   onLongClick(emitLocation?: string): void {
+    // 压缩包预览内禁止长按（进多选/菜单）
+    if (this.isInArchivePreview) {
+      return;
+    }
     if (this.userState === UserState.MULTI_START && !this.itemViewModel.isChecked) {
       // 多选模式下长按未选中对象
       // 重置数据源所有fileInfo选中状态
@@ -1000,6 +1015,7 @@ export struct FileViewComp {
 
   private updateSwipeAction(): SwipeActionOptions {
     let shouldDisableSwipe = this.disableSwipe ||
+      this.isInArchivePreview ||
     AppStorage.has('dragStatus') ||
       this.itemViewModel.fileInfo.fileName === MyPhoneConstant.MY_PHONE_GALLERY ||
       this.itemViewModel.fileInfo.fileName === MyPhoneConstant.MY_PHONE_SOUND_RECORDER ||

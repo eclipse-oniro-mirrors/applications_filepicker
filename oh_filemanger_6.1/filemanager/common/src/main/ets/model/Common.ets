@@ -70,6 +70,7 @@ export interface BottomBarMap {
   delete: Resource,
   play: Resource,
   pause: Resource,
+  share: Resource,
   more: Resource,
   details: Resource,
   otherLocation: Resource,

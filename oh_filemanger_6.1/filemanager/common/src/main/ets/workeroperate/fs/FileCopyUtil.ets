@@ -2456,24 +2456,37 @@ export class FileCopyUtil {
     return !needDelete;
   }
 
+  /**
+   * 图库单文件粘贴到本地（相册批量粘贴、单张复制均走此入口）。
+   * 优先媒体库 API；失败时降级 fd 读写，最后兼容旧版 fs.copy。
+   */
   private async pastePhotoFileToLocal(photoAsset: photoAccessHelper.PhotoAsset, destFileUri: string): Promise<boolean> {
     let res: boolean = false;
-    let photoSubType = photoAsset.get(photoAccessHelper.PhotoKeys.PHOTO_SUBTYPE) as photoAccessHelper.PhotoSubtype;
-    if (photoSubType !== photoAccessHelper.PhotoSubtype.MOVING_PHOTO) {
-      res = await this.copyFileContent(photoAsset.uri, destFileUri);
-    } else {
-      try {
-        res = await PhotoAccessUtil.copyMovingImage(photoAsset, destFileUri, this.context, true);
-        if (res) {
-          let photoSize: number = photoAsset.get(photoAccessHelper.PhotoKeys.SIZE) as number;
-          await this.computeProgress(photoSize === 0 ? 1 : photoSize);
-        }
-      } catch (err) {
-        HiLog.warn(TAG, `copyMovingImage failed. message: ${err?.message}`);
-        throw err as Error;
+    // 主路径：MediaAssetManager 经授权读流，适配 LTS 沙箱
+    try {
+      res = await PhotoAccessUtil.copyPhotoAssetToLocal(photoAsset, destFileUri, this.context);
+      if (res) {
+        let photoSize: number = photoAsset.get(photoAccessHelper.PhotoKeys.SIZE) as number;
+        await this.computeProgress(photoSize === 0 ? 1 : photoSize);
       }
+      return res;
+    } catch (err) {
+      HiLog.warn(TAG, `copyPhotoAssetToLocal failed: ${JSON.stringify(err)}, try pasteFileByBuffer`);
     }
-    return res;
+    // 降级：与图库内 pasteFileByFd 同类，直接 open 源 URI 读流
+    try {
+      res = await this.pasteFileByBuffer(photoAsset.uri, destFileUri);
+      return res;
+    } catch (err) {
+      HiLog.warn(TAG, `pasteFileByBuffer failed: ${JSON.stringify(err)}, try copyFileContent`);
+    }
+    // 兜底：旧系统未收紧跨域时，grantUri + fs.copy 仍可用
+    const isSuccess = await FilePickerUtil.grantPhonePermissionUri(photoAsset.uri,
+      Constant.FILE_MANAGER_BUNDLE_NAME);
+    if (!isSuccess) {
+      HiLog.warn(TAG, 'pastePhotoFileToLocal PhonePermissionUri failed.');
+    }
+    return await this.copyFileContent(photoAsset.uri, destFileUri);
   }
 
   private checkFavoriteParams(oldPath: string, newPath: string, newFileName: string): boolean {

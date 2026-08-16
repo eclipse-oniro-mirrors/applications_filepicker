@@ -21,8 +21,11 @@ import image from '@ohos.multimedia.image';
 import media from '@ohos.multimedia.media';
 import type { MediaMetaData } from './MediaMetaData';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { VideoThumbnailSupportUtil } from './VideoThumbnailSupportUtil';
 
 const TAG = 'MediaThumbnailUtil';
+/** AVImageGenerator.fetchFrameByTime 抽帧失败（规格不支持或解码过载） */
+const FETCH_FRAME_FAILED_CODE = 5400106;
 
 /**
  * 缩略图工具类
@@ -93,11 +96,9 @@ export class MediaThumbnailUtil {
   }
 
   /**
-   * 获取视频的封面
-   * @param fdSrc 文件的fd、size等信息
-   * @param mediaMetaData 视频的元数据
-   * @param cacheFilePath 缩略图的缓存路径
-   * @returns string 封面缓存地址
+   * 获取视频的封面。
+   * 优化策略：按长边降分辨率抽帧（减轻 HEVC 等高码率解码压力），
+   * 首次失败（5400106）后延迟并以更小尺寸重试一次。
    */
   public static async getVideoCoverThumbnail(fdSrc: media.AVFileDescriptor, mediaMetaData: MediaMetaData,
                                              cacheFilePath: string): Promise<string> {
@@ -106,29 +107,84 @@ export class MediaThumbnailUtil {
     try {
       avImageGenerator = await media.createAVImageGenerator();
       avImageGenerator.fdSrc = fdSrc;
-      // 视频的封面按宽高比1：1展示，colorFormat：media.PixelFormat.RGBA_8888
-      const coverParam: media.PixelMapParams = {
-        width: mediaMetaData.width,
-        height: mediaMetaData.height,
-        colorFormat: media.PixelFormat.RGBA_8888
-      };
-      const timeUs = 0;
-      const options = 0;
-      // 获取视频的第一帧作为封面
-      let pixelMap = await avImageGenerator.fetchFrameByTime(timeUs, options, coverParam);
-
-      const imageSource = await MediaThumbnailUtil.convertPixelMap2ImageSource(pixelMap);
-      pixelMap = await MediaThumbnailUtil.processPixelMap(imageSource, true);
-      const cacheResult = await MediaThumbnailCacheUtil.cacheThumbnail(pixelMap, cacheFilePath);
-      if (cacheResult) {
-        cacheFilePathResult = cacheFilePath;
+      const isHevc = VideoThumbnailSupportUtil.isHevcVideo(mediaMetaData);
+      const firstMaxEdge = isHevc ?
+        MediaThumbnailConst.VIDEO_THUMBNAIL_FETCH_HEVC_MAX_EDGE :
+        MediaThumbnailConst.VIDEO_THUMBNAIL_FETCH_MAX_EDGE;
+      const coverParam = MediaThumbnailUtil.buildVideoCoverParams(mediaMetaData, firstMaxEdge);
+      cacheFilePathResult = await MediaThumbnailUtil.fetchAndCacheVideoCover(avImageGenerator, coverParam, cacheFilePath);
+      if (!StringUtil.isEmpty(cacheFilePathResult)) {
+        return cacheFilePathResult;
       }
+      // 首次抽帧失败，等待解码器释放后以更保守的尺寸重试
+      await MediaThumbnailUtil.delay(400);
+      const retryMaxEdge = isHevc ?
+        Math.min(MediaThumbnailConst.VIDEO_THUMBNAIL_FETCH_RETRY_MAX_EDGE, 200) :
+        MediaThumbnailConst.VIDEO_THUMBNAIL_FETCH_RETRY_MAX_EDGE;
+      const retryParam = MediaThumbnailUtil.buildVideoCoverParams(mediaMetaData, retryMaxEdge);
+      cacheFilePathResult = await MediaThumbnailUtil.fetchAndCacheVideoCover(avImageGenerator, retryParam, cacheFilePath);
     } catch (error) {
       HiLog.error(TAG, `getVideoCoverThumbNail fail, error: ${(error as BusinessError)?.code}`);
     } finally {
       MediaThumbnailUtil.releaseSource(avImageGenerator);
     }
     return cacheFilePathResult;
+  }
+
+  /**
+   * 将原片宽高按比例缩放到长边不超过 maxEdge，供 fetchFrameByTime 使用。
+   * 最终展示尺寸仍由 processPixelMap 裁成 THUMBNAIL_SIZE。
+   */
+  private static buildVideoCoverParams(mediaMetaData: MediaMetaData, maxEdge: number): media.PixelMapParams {
+    let width = mediaMetaData.width > 0 ? mediaMetaData.width : MediaThumbnailConst.THUMBNAIL_SIZE;
+    let height = mediaMetaData.height > 0 ? mediaMetaData.height : MediaThumbnailConst.THUMBNAIL_SIZE;
+    const longEdge = Math.max(width, height);
+    if (longEdge > maxEdge) {
+      const scale = maxEdge / longEdge;
+      width = Math.max(16, Math.round(width * scale));
+      height = Math.max(16, Math.round(height * scale));
+    }
+    return {
+      width: width,
+      height: height,
+      colorFormat: media.PixelFormat.RGBA_8888
+    };
+  }
+
+  /**
+   * 抽取单帧并写入缩略图缓存。
+   * 5400106 仅记录告警并返回空串，由上层触发重试；其他错误向上抛出。
+   */
+  private static async fetchAndCacheVideoCover(avImageGenerator: media.AVImageGenerator,
+                                               coverParam: media.PixelMapParams,
+                                               cacheFilePath: string): Promise<string> {
+    const timeUs = 0;
+    const options = 0;
+    try {
+      let pixelMap = await avImageGenerator.fetchFrameByTime(timeUs, options, coverParam);
+      const imageSource = await MediaThumbnailUtil.convertPixelMap2ImageSource(pixelMap);
+      pixelMap = await MediaThumbnailUtil.processPixelMap(imageSource, true);
+      const cacheResult = await MediaThumbnailCacheUtil.cacheThumbnail(pixelMap, cacheFilePath);
+      if (cacheResult) {
+        return cacheFilePath;
+      }
+    } catch (error) {
+      const errorCode = (error as BusinessError)?.code;
+      if (errorCode === FETCH_FRAME_FAILED_CODE) {
+        HiLog.warn(TAG, `fetchFrameByTime retry later, size=${coverParam.width}x${coverParam.height}`);
+      } else {
+        HiLog.error(TAG, `fetchFrameByTime fail, error: ${errorCode}`);
+        throw error as Error;
+      }
+    }
+    return '';
+  }
+
+  /** 抽帧重试前的短暂等待，避免与元数据任务争抢解码器 */
+  private static delay(ms: number): Promise<void> {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
   }
 
 
@@ -211,8 +267,9 @@ export class MediaThumbnailUtil {
   }
 
   /**
-   * 将pixelMap转换成图片源
-   * @param pixelMap 通过其他方式获取到的pixelMap
+   * 将pixelMap转换成图片源。
+   * packing 完成后会释放输入 pixelMap（数据已拷贝到 arrayBuffer）；返回的 ImageSource 由下游 processPixelMap 负责释放。
+   * @param pixelMap 通过其他方式获取到的pixelMap（本方法结束后所有权结束，调用方勿再使用）
    * @returns ImageSource 图片源
    */
   private static async convertPixelMap2ImageSource(pixelMap: PixelMap): Promise<image.ImageSource> {
@@ -238,6 +295,12 @@ export class MediaThumbnailUtil {
       throw new Error(JSON.stringify(error));
     } finally {
       await MediaThumbnailUtil.releaseSource(imagePacker);
+      // packing 已完成（或失败），输入 PixelMap 不再需要，及时释放避免音视频缩略图路径泄漏
+      try {
+        await pixelMap.release();
+      } catch (releaseError) {
+        HiLog.error(TAG, 'release input pixelMap fail, error:' + JSON.stringify(releaseError) + releaseError);
+      }
     }
   }
 

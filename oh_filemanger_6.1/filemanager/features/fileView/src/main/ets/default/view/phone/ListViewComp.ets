@@ -39,6 +39,7 @@ import {
   FileSourceUri,
   LanguageUtil,
   ACCESSIBILITY_LEVEL,
+  DeviceConfig,
 } from '@ohos/common';
 import { FileContentComp } from './basicComp/FileContentComp';
 import { FileIconComp } from './basicComp/FileIconComp';
@@ -318,9 +319,8 @@ export struct ListViewComp {
       }
       // 文件来源
       if (this.isShowFileSource) {
-        //判断是不是最近删除页,最近删除页根据SrcPath来显示来源，其他页通过uri来判断
         Span(' - ')
-        Span(' - ')
+        Span(this.getRecentDeleteFileSource())
       }
       // 我的手机根目录下的文件说明提示
       if (this.rootFolderInstruction) {
@@ -340,6 +340,13 @@ export struct ListViewComp {
     let displayTime: number | undefined =
       this.itemViewModel.getShowTime(this.isShowRecentTime, this.pageName === PAGE_ROUTE_CONST.RECENT_DELETE);
     return DateUtil.getPhoneDateText(displayTime);
+  }
+
+  private getRecentDeleteFileSource(): Resource {
+    if (this.itemViewModel.fileInfo.isGallery || FileUtil.isGalleryAddress(this.itemViewModel.fileInfo.uri)) {
+      return $r('app.string.pc_gallery');
+    }
+    return DeviceConfig.getInstance().config.myDevice;
   }
 
   isShowTime() {

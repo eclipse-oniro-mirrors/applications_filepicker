@@ -18,6 +18,7 @@ import { Constant, EventBus, HiLog, WorkerConst } from '@ohos/common';
 import { LineProgress } from './Lineprogress';
 
 const TAG: string = 'CopyCutProgressDialog';
+const MANY_FILES_TIP_THRESHOLD: number = 1000;
 
 /**
  * 复制移动进度弹框
@@ -54,6 +55,7 @@ export struct CopyCutProgressDialog {
    * 文件数量
    */
   filesNum: number = 0;
+  @State showManyFilesTip: boolean = false;
   /**
    * 取消点击事件
    */
@@ -101,6 +103,7 @@ export struct CopyCutProgressDialog {
     HiLog.info(TAG, 'aboutToAppear');
     this.initTitle();
     this.initContent();
+    this.updateManyFilesTip();
     if ((this.totalSize === 0) && (this.totalCount === 0)) {
       this.content = $r('app.string.initialization');
     } else {
@@ -156,6 +159,11 @@ export struct CopyCutProgressDialog {
     if (this.totalCount !== 0) {
       this.filesNum = this.totalCount;
     }
+    this.updateManyFilesTip();
+  }
+
+  private updateManyFilesTip(): void {
+    this.showManyFilesTip = this.filesNum > MANY_FILES_TIP_THRESHOLD;
   }
 
   setProgress(): void {
@@ -185,9 +193,12 @@ export struct CopyCutProgressDialog {
       LineProgress({
         progress: this.progress,
         content: this.content,
-        contentShow: this.contentShow
+        contentShow: this.contentShow,
+        extraTipShow: this.showManyFilesTip,
+        extraTip: $r('app.string.copy_cut_many_files_wait_tip'),
       })
-        .margin({ bottom: $r('app.float.common_margin8') })
+        .width('100%')
+        .margin({ bottom: this.showManyFilesTip ? 4 : $r('app.float.common_margin8') })
       this.bottomButton();
     }
     .padding(

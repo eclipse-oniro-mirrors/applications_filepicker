@@ -28,3 +28,5 @@ export { FileBatchAuthPickerView } from './src/main/ets/default/view/FileBatchAu
 export { PhoneItemViewModel } from './src/main/ets/default/viewModel/PhoneItemViewModel';
 
 export { LongPressFileMenu } from './src/main/ets/default/view/phone/LongPressFileMenu';
+
+export { RingtoneTypeMenu } from './src/main/ets/default/view/phone/RingtoneTypeMenu';

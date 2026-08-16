@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { systemShare } from '@kit.ShareKit';
 import bundleMonitor from '@ohos.bundle.bundleMonitor';
 import print from '@ohos.print';
 import { asset } from '@kit.AssetStoreKit';
@@ -42,6 +43,8 @@ export { asset }
 
 export { recent }
 
+export { systemShare }
+
 export { bundleMonitor }
 
 export { print }
@@ -57,6 +60,8 @@ export { QueryGalleryFolderSizeTask } from './src/main/ets/taskpool/task/QueryGa
 export { QueryLocalFolderSizeTask } from './src/main/ets/taskpool/task/QueryLocalFolderSizeTask';
 
 export { QueryMediaSizeAndDurationTask } from './src/main/ets/taskpool/task/QueryMediaMetaDataTask';
+
+export { SystemShareUtil } from './src/main/ets/share/SystemShareUtil';
 
 export { appManager }
 
@@ -79,3 +84,5 @@ export { LoadingDialog };
 export { dialogRequest };
 
 export { net };
+
+export { FileCompressConst } from './src/main/ets/workermanager/filecompressmanager/FileCompressConst';

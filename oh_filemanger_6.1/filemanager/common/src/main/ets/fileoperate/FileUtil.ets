@@ -438,6 +438,22 @@ export class FileUtil {
   }
 
   /**
+   * 是否为压缩包内预览临时目录/路径（列表与计数永久排除）
+   */
+  public static isArchivePreviewTempName(name: string): boolean {
+    if (!name) {
+      return false;
+    }
+    const parts = name.replace(/\\/g, '/').split('/');
+    for (let i = 0; i < parts.length; i++) {
+      if (parts[i].startsWith(Constant.ARCHIVE_PREVIEW_DIR_PREFIX)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
    * 根据Uri通过fs获取文件夹下的子文件信息
    * @param uri 文件夹uri
    * @param recursion 是否递归获取子文件夹下的文件
@@ -452,6 +468,7 @@ export class FileUtil {
     const path = FileUtil.getPathFromUri(uri);
     try {
       fileNameList = await fs.listFile(path, option);
+      fileNameList = fileNameList.filter((name: string) => !FileUtil.isArchivePreviewTempName(name));
     } catch (error) {
       HiLog.errorPrivate(TAG, `getFileNameListByFs fail, code: ${error?.code}, error: ${error?.message}`, `, path = ${path}`);
     }
@@ -472,6 +489,7 @@ export class FileUtil {
         { recursion: recursion, filter: { displayName: [Constant.HIDDEN_ITEM_FILTER] } };
     try {
       fileNameList = await fs.listFile(path, option);
+      fileNameList = fileNameList.filter((name: string) => !FileUtil.isArchivePreviewTempName(name));
     } catch (error) {
       HiLog.error(TAG, 'getFileNameListByFs fail, error:' + JSON.stringify(error));
     }

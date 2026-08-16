@@ -797,6 +797,44 @@
                     }
                 }
             ]
+        },
+        {
+            "name":"compressing_file",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Compressing %d item…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Compressing %d items…",
+                    "attr":{
+                        "priority":"LT"
+                    }
+                }
+            ]
+        },
+        {
+            "name":"decompressing_file",
+            "value":[
+                {
+                    "quantity":"one",
+                    "value":"Extracting %d item…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                },
+                {
+                    "quantity":"other",
+                    "value":"Extracting %d items…",
+                    "attr":{
+                        "priority":"translate"
+                    }
+                }
+            ]
         }
     ]
 }

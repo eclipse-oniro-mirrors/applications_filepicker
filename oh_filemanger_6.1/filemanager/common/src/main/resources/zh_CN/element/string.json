@@ -2119,6 +2119,13 @@
       }
     },
     {
+      "name": "copy_cut_many_files_wait_tip",
+      "value": "当前文件较多请耐心等待",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
       "name": "space_not_enough",
       "value": "存储空间不足",
       "attr": {
@@ -5279,6 +5286,126 @@
     {
       "name": "search",
       "value": "搜索",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "decompress_auto_truncate_tips",
+      "value": "解压操作已完成，存在文件名超长，已自动截断"
+    },
+    {
+      "name": "decompress_full_path_too_long_fail",
+      "value": "目标路径过长，请缩短文件名称长度或调整目标路径后重试"
+    },
+    {
+      "name": "decompression_failed",
+      "value": "解压失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "compression_failed",
+      "value": "压缩失败",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "compress_insufficient_disk_space",
+      "value": "磁盘空间已满，请清理空间后重试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "archive_except",
+      "value": "文件已损坏，无法解压",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "volume_file_preview_fail",
+      "value": "无法解压此压缩文件",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "compress_fail",
+      "value": "压缩失败，请重试",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "decompress_fail",
+      "value": "解压失败，请重试",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "compress_exist_duplicate_file",
+      "value": "存在重复文件名，无法压缩。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "enter_decompress_password",
+      "value": "请输入压缩文件的密码",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "compress_service_error",
+      "value": "压缩服务异常，请重试。",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "compress_file",
+      "value": "压缩至",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "decompress_file",
+      "value": "解压至",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "decompress_all",
+      "value": "全部解压缩",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "background_speed_limit_prompt",
+      "value": "后台运行或锁屏可能导致文件操作变慢",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "compressing_file",
+      "value": "正在压缩“%s”…",
+      "attr": {
+        "priority": "translate"
+      }
+    },
+    {
+      "name": "decompressing_file",
+      "value": "正在解压“%s”…",
       "attr": {
         "priority": "translate"
       }

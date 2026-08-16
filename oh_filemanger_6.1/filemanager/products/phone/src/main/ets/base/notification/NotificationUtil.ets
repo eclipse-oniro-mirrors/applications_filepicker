@@ -114,7 +114,7 @@ export class NotificationUtil {
         wants: [
           {
             bundleName: AppConfig.APP_PACKAGE_NAME,
-            abilityName: 'EntryAbility',
+            abilityName: 'MainAbility',
             parameters: {
               param: param
             }

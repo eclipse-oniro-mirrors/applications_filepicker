@@ -748,6 +748,13 @@
       "attr": {
         "priority": "LT"
       }
+    },
+    {
+      "name": "set_up",
+      "value": "설정",
+      "attr": {
+        "priority": "LT"
+      }
     }
   ]
 }

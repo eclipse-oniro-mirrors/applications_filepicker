@@ -305,7 +305,7 @@ export struct OutsideScreenFileListView {
   @State longPressColor: ResourceStr = $r('app.color.transparent_color');
   @Link pickerCheckArr: string[] | undefined;
   @Link @Watch('needHighlightChanged') needHighlight: boolean;
-  @Provide('showHiddenItemStatus') showHiddenItemStatus: boolean = true;
+  @Provide('showHiddenItemStatus') showHiddenItemStatus: boolean = false;
   @Prop @Watch('showHiddenItemChanged') showHiddenItem: boolean;
   // picker 相关的属性
   @Consume isShowPickerTips: boolean;
@@ -1504,8 +1504,10 @@ export struct OutsideScreenFileListView {
       isShowFileSource: this.isShowFileSource,
       isShowCheckBox: this.isShowCheckBox,
       curFolderUri: this.curFolderUri,
-      // 图库文件夹、大文件清理页面文件禁止拖出
+      isInArchivePreview: this.isInArchivePreviewPage(),
+      // 图库文件夹、大文件清理页面、压缩包预览禁止拖出
       enableDrag: this.enableDrag
+        && !this.isInArchivePreviewPage()
         && this.curFolderUri !== PAGE_ROUTE_CONST.IMAGE
         && this.curFolderUri !== PAGE_ROUTE_CONST.VIDEO,
       onDropCallback: this.onDropCallback,
@@ -1515,7 +1517,7 @@ export struct OutsideScreenFileListView {
       toOperateFileList: this.toOperateFileList,
       swipeDeleteDialogCallback: this.swipeDeleteDialogCallback,
       listScroller: isSourceMix ? this.listScrollerMap.get(item.uri) : this.listScroller,
-      disableSwipe: this.disableSwipe,
+      disableSwipe: this.disableSwipe || this.isInArchivePreviewPage(),
       geometryId: this.geometryId,
       pickerCheckArr: this.pickerCheckArr,
       needHighlight: this.needHighlight,
@@ -1543,8 +1545,10 @@ export struct OutsideScreenFileListView {
       isShowFileSource: this.isShowFileSource,
       isShowCheckBox: this.isShowCheckBox,
       curFolderUri: this.curFolderUri,
-      // 图库文件夹、大文件清理页面文件禁止拖出
+      isInArchivePreview: this.isInArchivePreviewPage(),
+      // 图库文件夹、大文件清理页面、压缩包预览禁止拖出
       enableDrag: this.enableDrag
+        && !this.isInArchivePreviewPage()
         && this.curFolderUri !== PAGE_ROUTE_CONST.IMAGE
         && this.curFolderUri !== PAGE_ROUTE_CONST.VIDEO,
       onDropCallback: this.onDropCallback,
@@ -1554,7 +1558,7 @@ export struct OutsideScreenFileListView {
       toOperateFileList: this.toOperateFileList,
       swipeDeleteDialogCallback: this.swipeDeleteDialogCallback,
       listScroller: this.listScroller,
-      disableSwipe: this.disableSwipe,
+      disableSwipe: this.disableSwipe || this.isInArchivePreviewPage(),
       geometryId: this.geometryId,
       pickerCheckArr: this.pickerCheckArr,
       needHighlight: this.needHighlight,
@@ -1733,7 +1737,8 @@ export struct OutsideScreenFileListView {
     return (this.longPressFileMenuShow && !this.startModeOptions.pickerFlag &&
       this.userState !== UserState.MULTI_START) &&
       this.curFolderUri !== PAGE_ROUTE_CONST.IMAGE &&
-      this.curFolderUri !== PAGE_ROUTE_CONST.VIDEO;
+      this.curFolderUri !== PAGE_ROUTE_CONST.VIDEO &&
+      !this.isInArchivePreviewPage();
   }
 
   /**
@@ -1895,8 +1900,19 @@ export struct OutsideScreenFileListView {
   }
 
   private isArchiveOrInArchive() {
-    return this.direList && this.direList.length > 0 &&
-    FileUtil.isArchiveByUri(this.direList[this.direList.length - 1].uri)
+    return this.isInArchivePreviewPage();
+  }
+
+  private isInArchivePreviewPage(): boolean {
+    if (!this.direList || this.direList.length === 0) {
+      return false;
+    }
+    for (const item of this.direList) {
+      if (FileUtil.isArchiveByUri(item.uri)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private async initLongPressFileMenuShow(): Promise<void> {

@@ -748,6 +748,13 @@
       "attr": {
         "priority": "LT"
       }
+    },
+    {
+      "name": "set_up",
+      "value": "སྒྲིག་སྟངས།",
+      "attr": {
+        "priority": "LT"
+      }
     }
   ]
 }

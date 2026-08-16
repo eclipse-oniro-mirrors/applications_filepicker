@@ -52,6 +52,10 @@ export struct WallpaperPreview {
    **/
   private thumbnailUri: string = '';
   /**
+   * 小缩略图路径
+   **/
+  @State smallThumbnailUri: string = '';
+  /**
    * 判断是否正在加载
    */
   @State isLoading: boolean = true;
@@ -83,6 +87,16 @@ export struct WallpaperPreview {
     this.thumbnailUri = ThumbnailUtil.getThumbnailUri(this.fileInfo);
     this.uri = params.fileData.uri;
     HiLog.infoPrivate(TAG, 'fileDataURL:', this.uri);
+    this.loadSmallThumbnailAsync();
+  }
+
+  async loadSmallThumbnailAsync(): Promise<void> {
+    try {
+      this.smallThumbnailUri = await ThumbnailUtil.getSmallThumbnailUri(this.fileInfo);
+      HiLog.info(TAG, `loadSmallThumbnailAsync smallThumbnailUri = ${this.smallThumbnailUri}`);
+    } catch (error) {
+      HiLog.error(TAG, `loadSmallThumbnailAsync error ${error}`);
+    }
   }
 
   aboutToDisappear(): void {
@@ -262,7 +276,7 @@ export struct WallpaperPreview {
         })
 
       if (!this.isLcdComplete) {
-        MediaCachedImage(ThumbnailUtil.getSmallThumbnailUri(this.fileInfo))
+        MediaCachedImage(this.smallThumbnailUri)
           .fitOriginalSize(true)
           .objectFit(ImageFit.Cover)
           .sourceSize(

@@ -2340,6 +2340,114 @@ export class PhotoAccessUtil {
   }
 
   /**
+   * 图库资源拷贝到本地路径。
+   * LTS 等版本对 file://media → file://docs 的 fs.copy 沙箱校验更严，需经媒体库 API 读流后写入。
+   * @param photoAsset 图库媒体资产
+   * @param destFileUri 目标文件 URI（file://docs/...）
+   * @param context Ability 上下文，供 MediaAssetManager 使用
+   */
+  public static async copyPhotoAssetToLocal(photoAsset: photoAccessHelper.PhotoAsset, destFileUri: string,
+    context?: Context): Promise<boolean> {
+    if (!context) {
+      HiLog.info(TAG, 'copyPhotoAssetToLocal context is null.');
+      return false;
+    }
+    let photoSubType = photoAsset.get(photoAccessHelper.PhotoKeys.PHOTO_SUBTYPE) as photoAccessHelper.PhotoSubtype;
+    if (photoSubType === photoAccessHelper.PhotoSubtype.MOVING_PHOTO) {
+      return PhotoAccessUtil.copyMovingImage(photoAsset, destFileUri, context, true);
+    }
+    let mimeType = FileMimeTypeUtil.getFileMimeType(photoAsset.displayName);
+    if (mimeType.fileCategory === MimeType.FILE_CATEGORY_VIDEO) {
+      return PhotoAccessUtil.copyVideoAssetToLocal(photoAsset, destFileUri, context);
+    }
+    return PhotoAccessUtil.copyImageAssetToLocal(photoAsset, destFileUri, context);
+  }
+
+  /**
+   * 普通图片：requestImageData 回调获取 ArrayBuffer，写入本地文件。
+   */
+  private static async copyImageAssetToLocal(photoAsset: photoAccessHelper.PhotoAsset, destFileUri: string,
+    context: Context): Promise<boolean> {
+    return new Promise(async (resolve, reject) => {
+      HiLog.infoPrivate(TAG, 'copyImageAssetToLocal start.', `dest file: ${destFileUri}`);
+      const dataHandler: photoAccessHelper.MediaAssetDataHandler<ArrayBuffer> = {
+        async onDataPrepared(data: ArrayBuffer): Promise<void> {
+          if (!data) {
+            HiLog.error(TAG, 'copyImageAssetToLocal image data is null.');
+            reject('image data is null.');
+            return;
+          }
+          let destFile: fs.File | undefined;
+          let isNeedDelete: boolean = false;
+          try {
+            let destFilePath = FileUtil.getPathFromUri(destFileUri);
+            destFile = fs.openSync(destFilePath,
+              fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.SYNC);
+            isNeedDelete = true;
+            let writeLen = fs.writeSync(destFile.fd, data, { length: data.byteLength });
+            HiLog.info(TAG, `copyImageAssetToLocal writeSync: ${writeLen}`);
+            isNeedDelete = false;
+          } catch (err) {
+            HiLog.error(TAG, `copyImageAssetToLocal failed, code: ${err?.code}, message: ${err?.message}`);
+            reject(err);
+            return;
+          } finally {
+            if (destFile) {
+              FsUtil.closeSync(destFile);
+            }
+            if (isNeedDelete) {
+              FsUtil.forceDelete(destFileUri);
+            }
+          }
+          resolve(true);
+        }
+      };
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions = {
+          deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+        };
+        let requestId: string = await photoAccessHelper.MediaAssetManager.requestImageData(context,
+          photoAsset, requestOptions, dataHandler);
+        HiLog.info(TAG, `copyImageAssetToLocal requested successfully. request id: ${requestId}`);
+      } catch (err) {
+        HiLog.error(TAG, `copyImageAssetToLocal request failed, code: ${err?.code}, message: ${err?.message}`);
+        reject(err);
+      }
+    });
+  }
+
+  /**
+   * 视频：requestVideoFile 由媒体库直接写入目标 URI，避免大文件整包加载到内存。
+   */
+  private static async copyVideoAssetToLocal(photoAsset: photoAccessHelper.PhotoAsset, destFileUri: string,
+    context: Context): Promise<boolean> {
+    return new Promise(async (resolve, reject) => {
+      HiLog.infoPrivate(TAG, 'copyVideoAssetToLocal start.', `dest file: ${destFileUri}`);
+      const dataHandler: photoAccessHelper.MediaAssetDataHandler<boolean> = {
+        async onDataPrepared(data: boolean): Promise<void> {
+          if (data) {
+            resolve(true);
+          } else {
+            HiLog.error(TAG, 'copyVideoAssetToLocal requestVideoFile returned false.');
+            reject('requestVideoFile failed');
+          }
+        }
+      };
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions = {
+          deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+        };
+        let requestId: string = await photoAccessHelper.MediaAssetManager.requestVideoFile(context,
+          photoAsset, requestOptions, destFileUri, dataHandler);
+        HiLog.info(TAG, `copyVideoAssetToLocal requested successfully. request id: ${requestId}`);
+      } catch (err) {
+        HiLog.error(TAG, `copyVideoAssetToLocal request failed, code: ${err?.code}, message: ${err?.message}`);
+        reject(err);
+      }
+    });
+  }
+
+  /**
    * @param 动图图库copy到图库，使用数据流的方式move
    * needCreateFile 媒体库需要用特定接口创建文件，本地在open时创建
    */

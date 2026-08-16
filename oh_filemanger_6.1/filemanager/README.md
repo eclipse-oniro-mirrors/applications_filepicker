@@ -1,34 +1,118 @@
 # FileManager
 
-## 简介
+## Description
 
-FileManager应用是OpenHarmony标准系统中预置的系统应用，为用户提供基础的文件管理功能，包括查看文件，查找文件，
-快捷键，文管设置，整理文件。
+FileManager is a pre-installed system application in the OpenHarmony standard system.
+It provides users with basic file management functionalities, including viewing files,
+searching for files, using keyboard shortcuts, configuring file management settings,
+and organizing files.
 
-### 项目架构
+### Core Features
 
+1. **Storage Location Management**: Supports browsing and managing multiple storage locations, including My Phone (
+   internal storage), external storage cards (USB drives, SD cards), Favorites folder, and Recently Deleted (Recycle
+   Bin). Also supports File Manager Gallery for quickly browsing images and video files.
+
+2. **File Picker**: Provides a file picker supporting single/multiple file selection. Also provides a path picker that
+   allows custom save paths to save files to a specified directory.
+
+3. **Viewing and Browsing**: Supports two display modes: grid view and list view, which can be freely switched; supports
+   file sorting (by name, type, time, size); a live window displays file operation progress in real time; supports
+   viewing file details (name, path, size, modification time, etc.).
+
+4. **Image/Video Thumbnails**: Supports thumbnail display for image and video files in list/grid views; thumbnails are
+   loaded asynchronously and cached to reduce repeated decoding overhead and improve browsing smoothness in large
+   directories.
+
+5. **Compress/Decompress**: Supports compressing one or more files/folders; supports extracting archives to a specified
+   directory; supports browsing inside archives and previewing/opening archive entries with third-party apps.
+
+6. **File Organization Operations**: Provides comprehensive file management operation capabilities: supports
+   multi-selection, open, open with other apps, create new directory, rename, copy, paste, delete (move to Recently
+   Deleted), permanently delete, restore (restore from Recently Deleted), move, favorite/unfavorite. Supports printing
+   files, setting images as wallpapers, and setting audio files as ringtones. Supports emptying the Recycle Bin.
+
+7. **Supplementary Features**: Supports file search within the current directory. Supports keyboard shortcut
+   operations (copy/paste). Supports general settings to show hidden files (display files and folders starting
+   with '.').
+
+#### Software Architecture
+
+![FileManager Architecture](./figures/01-filemanager-layered-architecture-en.png)
+![FileManager Subsystem](./figures/02-filemanager-build-deploy-en.png)
+![FileManager Deploy](./figures/03-filemanager-build-deploy-en.png)
+
+##### Directory Layout
 
 ```
-/applications/standard/filemanager
-├─ products                         # 产品相关代码
-│  └─ phone
+filemanager
+├─ AppScope                              # Application-level config (app.json5, app resources)
+├─ products                              # Product project (application entry)
+│  └─ phone 
 │     └─ src
-│        ├─ ohosTest                # OpenHarmony测试代码
 │        ├─ main
-│           ├─ ets
-│              ├─ abilities         # 应用能力模块
-│              ├─ application       # 应用程序相关代码
-│              ├─ base              # 基础功能
-│              ├─ common            # 通用功能
-│              ├─ databases         # 数据库相关
-│              ├─ pages             # 页面组件
-│              ├─ taskpool          # 任务池相关
-│           ├─ resources            # 资源文件
-├─  common                   # 通用模块
-├─  features                 # 功能模块
-├─  script                   # 脚本文件
-├─  sign                     # 签名相关
-├─  signature                # 签名配置文件
+│        │  ├─ ets
+│        │  │  ├─ abilities              # UIAbility
+│        │  │  │  ├─ filemanager         # Main file manager ability
+│        │  │  │  ├─ filepicker          # File picker UIExtAbility
+│           │  │  │  ├─ ServiceExtAbility   # Background service ability
+│        │  │  │  ├─ UIExtAbility.ets
+│        │  │  │  └─ OpenMediaUIExtAbility.ets
+│        │  │  ├─ application            # AbilityStage
+│        │  │  ├─ base
+│        │  │  │  ├─ const / constants   # Constants
+│        │  │  │  ├─ extension           # Extension models
+│        │  │  │  ├─ manager             # Business managers (CopyCutManager / MenuActionHandler / ThumbnailCacheManager, etc.)
+│        │  │  │  ├─ notification        # System notification wrappers (CopyCutNotificationUtil / NotificationUtil)
+│        │  │  │  ├─ report              # Telemetry / reporting
+│        │  │  │  └─ utils               # Utilities (including ThumbnailUtil, etc.)
+│        │  │  ├─ databases              # Database models
+│        │  │  ├─ pages                  # Pages (MainEntry / Settings / PathPicker / picker / preview / browser, etc.)
+│        │  │  └─ taskpool               # TaskPool task wrappers
+│        │  └─ resources                 # Strings, icons, media and other resources
+│        └─ ohosTest                     # OpenHarmony unit / UI tests
+├─ common                                # Shared HAR (HmCommon)
+│  └─ src/main/ets
+│     ├─ animation                       # Animation
+│     ├─ config                          # Global configuration
+│     ├─ const / constants               # Shared constants
+│     ├─ data                            # Data models
+│     ├─ database                        # Database primitives
+│     ├─ dfx                             # Logging / telemetry (HiLog, etc.)
+│     ├─ dragfile                        # Drag & drop
+│     ├─ error                           # Error codes
+│     ├─ favorite                        # Favorites
+│     ├─ filecompress                    # Compress/decompress business entry (FileCompressBusiness, etc.)
+│     ├─ fileoperate                     # File operations (CRUD / move / copy)
+│     ├─ filesort                        # Sorting
+│     ├─ gallery / media                 # Multimedia
+│     ├─ global                          # Global objects such as GlobalHolder
+│     ├─ menu / model                    # Menu / shared models
+│     ├─ pasteboard                      # Pasteboard
+│     ├─ preference                      # Persistence
+│     ├─ security                        # Encryption
+│     ├─ share                           # Sharing
+│     ├─ taskpool                        # Task pool
+│     ├─ utils                           # Utilities (including ArchivePreviewUtil for in-archive preview, thumbnail helpers, etc.)
+│     └─ worker / workermanager / workeroperate / workers
+│           # Worker thread infrastructure
+│           # - copycutmanager: copy / cut
+│           # - deleterestoremanager: delete / restore
+│           # - filecompressmanager: compress/decompress task scheduling and SDK wrapper (oh7zip)
+├─ features                              # Business feature HARs
+│  ├─ addressBar                         # Address bar
+│  ├─ bottomBar                          # Bottom action bar
+│  ├─ compress                           # Compress/decompress UI (progress dialog, password dialog, etc.)
+│  ├─ customDialog                       # Custom dialogs (copy/move progress, confirmation, errors, etc.)
+│  ├─ fileView                           # File list / grid view (including thumbnail display)
+│  ├─ sideBar                            # Side bar
+│  └─ titleBar                           # Title bar
+├─ open_source                           # Open-source notice
+├─ sign / signature                      # Signing certificates and provisioning profiles
+├─ build-profile.json5                   # Build & signing configuration
+├─ oh-package.json5                      # Project-level dependencies
+├─ LICENSE
+└─ README.md / README_zh.md
+
 
 ```
-

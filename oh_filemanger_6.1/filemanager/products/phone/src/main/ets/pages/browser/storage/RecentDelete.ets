@@ -104,7 +104,7 @@ export struct RecentDelete {
   @Consume('navMode') @Watch('onNavModeChange') navMode: NavigationMode;
   // 标题栏右侧icons
   @State rightIcons: Array<TitleMenuItem> = [];
-  @State showHiddenItem: boolean = true;
+  @State showHiddenItem: boolean = false;
   // 右上角菜单
   @State topMenu: Array<TopMenuItem> = [];
   @State checkedNum: number = 0;

@@ -41,7 +41,7 @@ export struct DragPreview {
 
   @State isShowFolderSubCount: boolean = false;
   @State isCachedImageLoad: boolean = false;
-  private showHiddenItem: boolean = true;
+  private showHiddenItem: boolean = false;
   @Consume isOutsideFolded: boolean;
   @State minHeight: Resource = DEFAULT_MIN_HEIGHT;
   @State fontSize: number = 1;

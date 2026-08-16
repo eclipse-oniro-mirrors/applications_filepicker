@@ -15,10 +15,7 @@
 import { WindowModelData } from '../model/WindowModelData';
 
 import {
-  ZIndex,
-  BottomBarColor,
-  SystemBarColor,
-  BottomBarMap,
+  ZIndex, BottomBarColor, SystemBarColor, BottomBarMap,
 } from '../model/Common';
 import { MenuItemName } from '../menu/MenuInfo';
 import { Constant } from '../const/Constant';
@@ -42,9 +39,12 @@ export const BOTTOM_BAR_COLOR: BottomBarColor = {
 export const SYSTEM_BAR_COLOR: SystemBarColor = {
   WHITE: new WindowModelData($r('sys.color.ohos_id_color_statusbar_bg'), $r('sys.color.ohos_id_color_background')),
   BLACK: new WindowModelData($r('sys.color.ohos_id_color_foreground'), $r('sys.color.ohos_id_color_background')),
-  LIGHT_GRAY: new WindowModelData($r('sys.color.ohos_id_color_focused_content_tertiary'), $r('sys.color.ohos_id_color_background')),
-  PATH_PICK: new WindowModelData($r('sys.color.ohos_id_color_sub_background'), $r('sys.color.ohos_id_color_background')),
-  PATH_PICK_DARK: new WindowModelData($r('sys.color.ohos_id_color_sub_background_dark'), $r('sys.color.ohos_id_color_background')),
+  LIGHT_GRAY: new WindowModelData($r('sys.color.ohos_id_color_focused_content_tertiary'),
+    $r('sys.color.ohos_id_color_background')),
+  PATH_PICK: new WindowModelData($r('sys.color.ohos_id_color_sub_background'),
+    $r('sys.color.ohos_id_color_background')),
+  PATH_PICK_DARK: new WindowModelData($r('sys.color.ohos_id_color_sub_background_dark'),
+    $r('sys.color.ohos_id_color_background')),
 }
 
 export const BOTTOM_BAR_MAP: BottomBarMap = {
@@ -54,6 +54,7 @@ export const BOTTOM_BAR_MAP: BottomBarMap = {
   delete: $r('app.string.delete_upper_camelcase'),
   play: $r('app.string.play'),
   pause: $r('app.string.pause'),
+  share: $r('app.string.share'),
   more: $r('app.string.more'),
   details: $r('app.string.file_details'),
   otherLocation: $r('app.string.OtherLocation'),
@@ -70,11 +71,13 @@ export const moreMap: Record<string, Resource> = {
   'detail': $r('app.string.file_details'),
   'rotate': $r('app.string.rotate'),
   'otherApp': $r('app.string.otherApp'),
-  'openFolder':  $r('app.string.openFolder'),
+  'openFolder': $r('app.string.openFolder'),
   'favorite': $r('app.string.favorite'),
   'unfavorite': $r('app.string.unfavorite'),
   'clearRecentRecord': $r('app.string.clear_recent_record'),
-  'setAsWallpaper': $r('app.string.set_as_wallpaper')
+  'setAsWallpaper': $r('app.string.set_as_wallpaper'),
+  'compression': $r('app.string.compress_file'),
+  'decompression': $r('app.string.decompress_file')
 }
 
 export interface MenuIcons {
@@ -93,6 +96,7 @@ export interface MenuIcons {
   detail: Resource,
   copy: Resource,
   rename: Resource,
+  share: Resource,
   restore: Resource,
   move: Resource,
   otherApp: Resource,
@@ -108,7 +112,9 @@ export interface MenuIcons {
   edit: Resource,
   clean: Resource,
   remove: Resource,
-  unFavourite: Resource
+  unFavourite: Resource,
+  compress: Resource,
+  decompress: Resource
 }
 
 export const MENU_ICONS: MenuIcons = {
@@ -127,6 +133,7 @@ export const MENU_ICONS: MenuIcons = {
   detail: $r('sys.symbol.doc_text'),
   rename: $r('sys.symbol.rename'),
   copy: $r('sys.symbol.plus_square_on_square'),
+  share: $r('sys.symbol.share'),
   restore: $r('sys.symbol.arrow_clockwise'),
   move: $r('sys.symbol.arrow_right_folder_circle'),
   otherApp: $r('sys.symbol.arrow_right_up_and_square'),
@@ -142,7 +149,9 @@ export const MENU_ICONS: MenuIcons = {
   edit: $r('sys.symbol.square_and_pencil'),
   clean: $r('sys.symbol.clean'),
   remove: $r('sys.symbol.minus_circle'),
-  unFavourite: $r('sys.symbol.heart_slash')
+  unFavourite: $r('sys.symbol.heart_slash'),
+  compress: $r('sys.symbol.decompress'),
+  decompress: $r('sys.symbol.decompress')
 }
 
 export interface MENU_ITEM_CONTENT {
@@ -153,33 +162,72 @@ export interface MENU_ITEM_CONTENT {
 
 export const MENU_ITEM_MAP: Map<number, MENU_ITEM_CONTENT> = new Map<number, MENU_ITEM_CONTENT>([
   [MenuItemName.OPEN_FOLDER,
-    { content: $r('app.string.open_folder'), event: Constant.EVENTS.LONG_PRESS_OPEN_FOLDER, icon: MENU_ICONS.openFolder }],
+    {
+      content: $r('app.string.open_folder'),
+      event: Constant.EVENTS.LONG_PRESS_OPEN_FOLDER,
+      icon: MENU_ICONS.openFolder
+    }],
   [MenuItemName.OPEN_BY_OTHER_APP,
     { content: $r('app.string.otherApp'), event: Constant.EVENTS.LONG_PRESS_OTHER_APP, icon: MENU_ICONS.otherApp }],
-  [MenuItemName.FAVORITE, { content: $r('app.string.favorite'), event: Constant.EVENTS.LONG_PRESS_FAVORITE,
-    icon: MENU_ICONS.favorite }],
-  [MenuItemName.UN_FAVORITE, { content: $r('app.string.unfavorite'), event: Constant.EVENTS.LONG_PRESS_UNFAVORITE,
-    icon: MENU_ICONS.unFavorite }],
-  [MenuItemName.PRINT, { content: $r('app.string.print'), event: Constant.EVENTS.LONG_PRESS_PRINT,
-    icon: MENU_ICONS.print }],
-  [MenuItemName.SET_RINGTONE, { content: $r('app.string.ringtone'), event: Constant.EVENTS.LONG_PRESS_RINGTONE,
-    icon: MENU_ICONS.setRingtone }],
-  [MenuItemName.SET_WALLPAPER, { content: $r('app.string.set_as_wallpaper'), event: Constant.EVENTS.LONG_PRESS_WALLPAPER,
-    icon: MENU_ICONS.setWallpaper }],
+  [MenuItemName.FAVORITE, {
+    content: $r('app.string.favorite'), event: Constant.EVENTS.LONG_PRESS_FAVORITE,
+    icon: MENU_ICONS.favorite
+  }],
+  [MenuItemName.UN_FAVORITE, {
+    content: $r('app.string.unfavorite'), event: Constant.EVENTS.LONG_PRESS_UNFAVORITE,
+    icon: MENU_ICONS.unFavorite
+  }],
+  [MenuItemName.PRINT, {
+    content: $r('app.string.print'), event: Constant.EVENTS.LONG_PRESS_PRINT,
+    icon: MENU_ICONS.print
+  }],
+  [MenuItemName.SET_RINGTONE, {
+    content: $r('app.string.ringtone'), event: Constant.EVENTS.LONG_PRESS_RINGTONE,
+    icon: MENU_ICONS.setRingtone
+  }],
+  [MenuItemName.SET_WALLPAPER, {
+    content: $r('app.string.set_as_wallpaper'), event: Constant.EVENTS.LONG_PRESS_WALLPAPER,
+    icon: MENU_ICONS.setWallpaper
+  }],
+  [MenuItemName.SHARE, {
+    content: $r('app.string.share'), event: Constant.EVENTS.LONG_PRESS_SHARE,
+    icon: MENU_ICONS.share
+  }],
   [MenuItemName.MULTIPLE_CHOICES,
-    { content: $r('app.string.multiple_choices'), event: Constant.EVENTS.LONG_PRESS_SELECT,
-      icon: MENU_ICONS.multipleChoice }],
-  [MenuItemName.MOVE, { content: $r('app.string.move'), event: Constant.EVENTS.LONG_PRESS_MOVE,
-    icon: MENU_ICONS.move }],
-  [MenuItemName.COPY, { content: $r('app.string.copy'), event: Constant.EVENTS.LONG_PRESS_COPY, icon: MENU_ICONS.copy }],
-  [MenuItemName.RENAME, { content: $r('app.string.rename'), event: Constant.EVENTS.LONG_PRESS_RENAME,
-    icon: MENU_ICONS.rename }],
-  [MenuItemName.DETAILS, { content: $r('app.string.details'), event: Constant.EVENTS.LONG_PRESS_DETAIL,
-    icon: MENU_ICONS.detail }],
-  [MenuItemName.DELETE, { content: $r('app.string.delete'), event: Constant.EVENTS.LONG_PRESS_DELETE,
-    icon: MENU_ICONS.delete }],
-  [MenuItemName.RESTORE, { content: $r('app.string.restore'), event: Constant.EVENTS.LONG_PRESS_RESTORE,
-    icon: MENU_ICONS.restore }],
+    {
+      content: $r('app.string.multiple_choices'), event: Constant.EVENTS.LONG_PRESS_SELECT,
+      icon: MENU_ICONS.multipleChoice
+    }],
+  [MenuItemName.MOVE, {
+    content: $r('app.string.move'), event: Constant.EVENTS.LONG_PRESS_MOVE,
+    icon: MENU_ICONS.move
+  }],
+  [MenuItemName.COPY,
+    { content: $r('app.string.copy'), event: Constant.EVENTS.LONG_PRESS_COPY, icon: MENU_ICONS.copy }],
+  [MenuItemName.RENAME, {
+    content: $r('app.string.rename'), event: Constant.EVENTS.LONG_PRESS_RENAME,
+    icon: MENU_ICONS.rename
+  }],
+  [MenuItemName.DETAILS, {
+    content: $r('app.string.details'), event: Constant.EVENTS.LONG_PRESS_DETAIL,
+    icon: MENU_ICONS.detail
+  }],
+  [MenuItemName.DELETE, {
+    content: $r('app.string.delete'), event: Constant.EVENTS.LONG_PRESS_DELETE,
+    icon: MENU_ICONS.delete
+  }],
+  [MenuItemName.RESTORE, {
+    content: $r('app.string.restore'), event: Constant.EVENTS.LONG_PRESS_RESTORE,
+    icon: MENU_ICONS.restore
+  }],
+  [MenuItemName.COMPRESS, {
+    content: $r('app.string.compress_file'), event: Constant.EVENTS.LONG_PRESS_COMPRESS,
+    icon: MENU_ICONS.compress
+  }],
+  [MenuItemName.DECOMPRESS, {
+    content: $r('app.string.decompress_file'), event: Constant.EVENTS.LONG_PRESS_DECOMPRESS,
+    icon: MENU_ICONS.decompress
+  }],
 ]);
 
 export const MORE_MENU_ICON_MAP: Map<string, Resource> = new Map<string, Resource>([
@@ -197,13 +245,13 @@ export class HdsUIConfig {
    * 高端精致适配标题栏高度
    */
   public static readonly HDS_TITLE_HEIGHT = 56;
-
 }
 
 // HomePage页面 Hds菜单参数
 export interface HdsMenuItemParam {
   // 菜单标签
   label: Resource,
+
   // 菜单点击回调
   clickFunc: () => void
 }

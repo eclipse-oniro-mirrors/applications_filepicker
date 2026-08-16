@@ -72,8 +72,8 @@ export namespace ERROR_CODE {
     FILE_NOT_EXIST = 13900002,
 
     /**
-    * 没有这个文件或目录（文管服务返回的错误码）
-    */
+     * 没有这个文件或目录（文管服务返回的错误码）
+     */
     FILE_NOT_EXIST_SERVER = 19900021,
 
     /**
@@ -156,5 +156,25 @@ export namespace ERROR_CODE {
      * 不支持的文件系统
      */
     NOT_SUPPORTED_FILESYSTEM = 13600002
+  }
+
+  export enum TouchShare {
+    // 请稍后重试
+    TRY_AGAIN_LATER = 0,
+    // 当前无可分享文件
+    NO_FILES_TO_SHARE = 1203,
+    // 文件夹内暂无可分享内容
+    FOLDER_IS_EMPTY = 1213,
+    // 分享数量超过上限
+    TOO_MANY_FILES = 1214,
+    // 沙箱混合本地文件夹分享失败
+    SANDBOX_FILE_AND_LOCAL_FOLDER_FAIL = 1227
+  }
+
+  export enum SystemShare {
+    // 超过分享数量限制
+    EXCEED_MAXIMUM = 1003700001,
+    // 超过IPC数据限制
+    EXCEED_IPC = 1003702002
   }
 }

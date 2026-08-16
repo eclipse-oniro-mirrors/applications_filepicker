@@ -33,7 +33,11 @@ import {
   FileInfo,
   FormatListItem,
   GlobalHolder,
+  VideoThumbnailScheduler,
+  VideoThumbnailPriority,
+  MediaThumbnailConst,
 } from '@ohos/common';
+import { ArchivePreviewUtil } from '@ohos/common/src/main/ets/utils/ArchivePreviewUtil';
 import { PhoneItemViewModel } from '../../../viewModel/PhoneItemViewModel';
 import { CachedImageModifier, ColumnModifier, ImageModifier } from '../../../viewModel/CustomedModifier';
 
@@ -58,16 +62,17 @@ export struct FileIconComp {
   private isShowAlbumCover: boolean = false;
   @Prop gridCompactLayout: boolean;
   @Prop isListView: boolean;
-
   @Consume @Watch('onPreviewFileUriChange') previewFileUri: string;
   @Consume @Watch('onIsPageShowAllChange') isPageShowAll: boolean;
-
   @StorageProp('isDarkMode') isDarkMode: boolean = false;
   @State iconType: IconType = IconType.NONE
+  @State thumbnailUri: string = '';
+  @State isThumbnailLoaded: boolean = false;
+  /** 递增序号，用于丢弃列表复用/滑出后的过期缩略图回调 */
+  private thumbnailLoadSeq: number = 0;
   private cachedImageModifier: CachedImageModifier = new CachedImageModifier();
   private columnModifier: ColumnModifier = new ColumnModifier();
   private imageModifier: ImageModifier = new ImageModifier();
-
   private geometryTransitionId: string = '';
 
   aboutToAppear(): void {
@@ -85,19 +90,128 @@ export struct FileIconComp {
 
   // 组件首次和复用的时候的共同初始化逻辑
   initStates(): void {
+    this.thumbnailUri = '';
+    this.isThumbnailLoaded = false;
+    if (this.itemViewModel) {
+      HiLog.info(TAG,
+        `astro fileiconcomp initStates this.itemViewModel.fileInfo.coverUri = ${this.itemViewModel.fileInfo.coverUri}`);
+    }
     this.isShowAlbumCover = !StringUtil.isEmpty(this.itemViewModel?.fileInfo.coverUri);
     this.useCachedImage = this.isShowAlbumCover ? true : this.itemViewModel.fileInfo.useCacheImage;
+    HiLog.info(TAG, `astro fileiconcomp initStates useCachedImage = ${this.useCachedImage}`);
     this.setIconType();
     this.geometryTransitionId = this.getGeometryTransitionId();
+    // 压缩包内虚拟 URI 不走真实缩略图，保持扩展名/MIME 默认类型图标
+    if (ArchivePreviewUtil.isArchiveInnerUri(this.itemViewModel?.fileInfo?.uri)) {
+      this.useCachedImage = false;
+      return;
+    }
+    if (this.iconType === IconType.CACHE_IMAGE) {
+      const fileInfo = this.itemViewModel.fileInfo;
+      if (!fileInfo.uri.startsWith(Constant.MediaLibrary_URI_HEAD)) {
+        const existingUri = ThumbnailUtil.tryGetExistingLocalThumbnailUriSync(fileInfo);
+        if (!StringUtil.isEmpty(existingUri)) {
+          this.thumbnailUri = existingUri;
+          this.isThumbnailLoaded = true;
+          this.updateCacheImage();
+        }
+      }
+      // 本地视频：等可见后再加载；图片仍立即加载
+      if (this.isLocalVideoThumbnail()) {
+        this.thumbnailLoadSeq++;
+      } else {
+        this.loadThumbnailAsync();
+      }
+    }
+  }
+
+  /** 是否为非媒体库 URI 的本地视频（需走调度器限流） */
+  private isLocalVideoThumbnail(): boolean {
+    const fileInfo = this.itemViewModel?.fileInfo;
+    if (!fileInfo || fileInfo.uri.startsWith(Constant.MediaLibrary_URI_HEAD)) {
+      return false;
+    }
+    return FileMimeTypeUtil.isVideo(fileInfo.mimeTypeObj);
+  }
+
+  /**
+   * 可见区变化回调：进入可见区以 HIGH 优先级加载，完全滑出则取消排队任务。
+   */
+  private onThumbnailVisibleAreaChange(isExpanded: boolean, currentRatio: number): void {
+    if (this.iconType !== IconType.CACHE_IMAGE || !this.isLocalVideoThumbnail()) {
+      return;
+    }
+    if (!isExpanded && currentRatio <= 0.0) {
+      VideoThumbnailScheduler.getInstance().cancelPending(this.itemViewModel.fileInfo.uri);
+      return;
+    }
+    if (currentRatio < MediaThumbnailConst.THUMBNAIL_VISIBLE_MIN_RATIO) {
+      return;
+    }
+    if (!this.isThumbnailLoaded) {
+      this.loadThumbnailAsync(VideoThumbnailPriority.HIGH);
+    }
+  }
+
+  /**
+   * 异步加载缩略图。
+   * @param priority 本地视频可传 HIGH（可见区）或 LOW（默认入队）
+   */
+  async loadThumbnailAsync(priority?: VideoThumbnailPriority): Promise<void> {
+    if (!this.itemViewModel?.fileInfo) {
+      return;
+    }
+    if (ArchivePreviewUtil.isArchiveInnerUri(this.itemViewModel.fileInfo.uri)) {
+      this.useCachedImage = false;
+      return;
+    }
+    if (this.isThumbnailLoaded && !StringUtil.isEmpty(this.thumbnailUri) &&
+      !this.itemViewModel.fileInfo.uri.startsWith(Constant.MediaLibrary_URI_HEAD)) {
+      return;
+    }
+    const requestUri = this.itemViewModel.fileInfo.uri;
+    const hadCachedThumbnail = this.isThumbnailLoaded;
+    const loadSeq = this.thumbnailLoadSeq;
+    try {
+      let uri = await ThumbnailUtil.getFileIconCompThumbnailUri(this.itemViewModel.fileInfo, priority);
+      // 列表项已复用或新一轮加载开始时，忽略过期结果
+      if (requestUri !== this.itemViewModel.fileInfo.uri || loadSeq !== this.thumbnailLoadSeq) {
+        return;
+      }
+      HiLog.info(TAG, `loadThumbnailAsync uri = ${uri}`);
+      if (!StringUtil.isEmpty(uri)) {
+        this.thumbnailUri = uri;
+        this.isThumbnailLoaded = true;
+        this.updateCacheImage();
+      } else if (!hadCachedThumbnail) {
+        this.useCachedImage = false;
+        this.isThumbnailLoaded = false;
+      }
+    } catch (error) {
+      HiLog.error(TAG, `loadThumbnailAsync error ${error}`);
+      if (requestUri !== this.itemViewModel?.fileInfo?.uri || loadSeq !== this.thumbnailLoadSeq) {
+        return;
+      }
+      if (!hadCachedThumbnail) {
+        this.useCachedImage = false;
+        this.isThumbnailLoaded = false;
+      }
+    }
   }
 
   aboutToRecycle(): void {
     this.columnModifier.attribute?.geometryTransition('');
     this.isShowBorder = false;
+    // 复用时递增序号并取消未执行的排队任务，避免错图
+    if (this.isLocalVideoThumbnail()) {
+      this.thumbnailLoadSeq++;
+      VideoThumbnailScheduler.getInstance().cancelPending(this.itemViewModel.fileInfo.uri);
+    }
   }
 
   onUseCachedImageChange(useCachedImage: boolean): void {
     this.useCachedImage = useCachedImage;
+    HiLog.info(TAG, `astro fileiconcomp onUseCachedImageChange useCachedImage = ${this.useCachedImage}`);
     this.updateCacheImage();
   }
 
@@ -161,13 +275,19 @@ export struct FileIconComp {
             .aspectRatio(this.getCacheImageAspectRatio())
             .draggable(false)
             .onError((e: ImageError) => {
-              HiLog.warn(TAG, `load thumbnail on error`);
+              HiLog.warn(TAG, `load thumbnail on error thumbnailUri=${this.thumbnailUri}`);
+              if (StringUtil.isEmpty(this.thumbnailUri)) {
+                HiLog.warn(TAG, `thumbnailUri is empty, ignore error`);
+                return;
+              }
               if (this.isShowAlbumCover || this.isShowDefaultMediaIcon()) {
                 HiLog.warn(TAG, `load thumbnail width default cover`);
                 return;
               }
               this.isShowBorder = false;
               this.onUseCachedImageChange(false);
+              this.useCachedImage = false;
+              this.isThumbnailLoaded = false;
             })
             .onComplete((event) => {
               HiLog.warn(TAG, `load thumbnail on complete`);
@@ -186,6 +306,10 @@ export struct FileIconComp {
             })
         }
       }
+      // 本地视频缩略图：可见区驱动加载（配合 VideoThumbnailScheduler 优先级）
+      .onVisibleAreaChange([0.0], (isExpanded: boolean, currentRatio: number) => {
+        this.onThumbnailVisibleAreaChange(isExpanded, currentRatio);
+      })
       .geometryTransition(this.geometryTransitionId)
       .transition(TransitionEffect.IDENTITY)
       .attributeModifier(this.columnModifier)
@@ -243,7 +367,7 @@ export struct FileIconComp {
       return this.gridCompactLayout ? $r('app.float.common_size05') : 0;
     }
     return this.isShowBorder ||
-      this.isShowAlbumCover ? $r('app.float.common_size05') : $r('app.float.common_size0');
+    this.isShowAlbumCover ? $r('app.float.common_size05') : $r('app.float.common_size0');
   }
 
   getBorderRadius() {
@@ -256,10 +380,12 @@ export struct FileIconComp {
   }
 
   private isShowDefaultMediaIcon() {
-    return !this.useCachedImage;
+    return !this.useCachedImage || !this.isThumbnailLoaded;
   }
 
   getThumbnail() {
+    HiLog.info(TAG,
+      `astro getThumbnail isShowDefaultMediaIcon = ${this.isShowDefaultMediaIcon()} thumbnailUri = ${this.thumbnailUri}`);
     if (this.isShowDefaultMediaIcon()) {
       let thumbnailType = this.itemViewModel.fileInfo?.thumbnailType ?? '';
       if (this.gridCompactLayout) {
@@ -281,22 +407,25 @@ export struct FileIconComp {
       }
       return ThumbnailLoad.getImageThumbnailByType(thumbnailType);
     } else {
-      return ThumbnailUtil.getFileIconCompThumbnailUri(this.itemViewModel?.fileInfo);
+      return this.thumbnailUri;
     }
   }
 
   getThumbnailAlt() {
     if (this.isShowDefaultMediaIcon()) {
-      // ALT的默认值是null
       return null;
     } else {
-      return ThumbnailLoad.getImageThumbnailByType(this.itemViewModel.fileInfo?.thumbnailType ?? '');
+      let thumbnailType = this.itemViewModel.fileInfo?.thumbnailType ?? '';
+      if (ThumbnailLoad.resourcePixelMap.size === 0) {
+        return null;
+      }
+      return ThumbnailLoad.getImageThumbnailByType(thumbnailType);
     }
   }
 
   private isImageOrVideo(): boolean {
     return FileMimeTypeUtil.isImage(this.itemViewModel.fileInfo.mimeTypeObj) ||
-      FileMimeTypeUtil.isVideo(this.itemViewModel.fileInfo.mimeTypeObj);
+    FileMimeTypeUtil.isVideo(this.itemViewModel.fileInfo.mimeTypeObj);
   }
 }
 
@@ -434,6 +563,6 @@ struct FolderIcon {
       (this.isOutsideFolded ? { bottom: $r('app.float.common_size6') } : { bottom: $r('app.float.common_size10') });
 
     this.appCloneTextSize = this.isListView ? $r('app.float.common_size4') : $r('app.float.common_size6');
-    this.appCloneOffSet = this.isListView  ? { x: 7, y: -2 } : { x: 16, y: -10 };
+    this.appCloneOffSet = this.isListView ? { x: 7, y: -2 } : { x: 16, y: -10 };
   }
 }

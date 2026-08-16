@@ -50,18 +50,20 @@ import {
   MenuInfo,
   MenuItemName,
   ToolBarStyle,
-  StandardAnimation,
 } from '@ohos/common';
 import { BottomOptions } from '../model/UiModelData';
 import { MoreItems } from './MoreItems';
 import lazy { FileDeleteDialog, FileRenameDialog } from '@ohos/customDialog/indexPhoneOnly';
 import lazy { PhotoAccessUtil } from '@ohos/common/indexLazyLoad';
-import { curves, display, window } from '@kit.ArkUI';
+import { display, window } from '@kit.ArkUI';
 import { BaseItem } from './BaseItem'
 import { LongPressFileMenu } from '@ohos/fileView/src/main/ets/default/view/phone/LongPressFileMenu';
 
 const TAG = 'BottomBar';
 const FILE_DELETE_DIALOG_WIDTH: number = 375;
+// 固定时长转场，避免弹簧回弹带来的卡顿观感
+const BOTTOM_BAR_ENTER_DURATION: number = 240;
+const BOTTOM_BAR_EXIT_DURATION: number = 220;
 
 @Component
 export struct BottomBar {
@@ -80,6 +82,7 @@ export struct BottomBar {
   @State copy: boolean = true;
   @Prop moreOptions: string[] = [];
   onDownloadFinishBind: Function = () => {
+    this.onDownloadFinishRefreshShare();
   };
   public dialogCallback: Function = (e: BottomCallParams) => {
   };
@@ -119,6 +122,7 @@ export struct BottomBar {
   private isBottomMenu: boolean = false;
   public isFromSource: boolean = false;
   public isFromExternal: boolean = false;
+  @Prop isInArchivePreview: boolean = false;
   @Consume('navMode') navMode: NavigationMode;
   /**
    * 点击某一个文件的回调
@@ -221,7 +225,7 @@ export struct BottomBar {
         const deleteType: DFX.DeleteType =
           this.isRecentDeletePage || isHardDelete ? DFX.DeleteType.DELETE : DFX.DeleteType.SOFT_DELETE;
         const operateSource: DFX.OperateSource = this.isBottomMenu ? DFX.OperateSource.BOTTOM_MENU :
-        DFX.OperateSource.PRESS_MENU;
+          DFX.OperateSource.PRESS_MENU;
         UEUtil.reportDeleteFile(this.getUEPageName(), deleteType, operateSource, this.selectFilesList.length);
       },
       isShowCheckBox: this.isShowCheckBox,
@@ -283,6 +287,11 @@ export struct BottomBar {
   }
 
   async openFileDetail(fileInfo: FileInfo): Promise<void> {
+    // 详情半模态关闭时需要退出多选态：
+    // MainEntry 的 sheet.onWillDisappear 会在存在该标志时触发 EXIT_MULTI_STATE
+    if (this.isShowBottomBar) {
+      GlobalHolder.getInstance().setObject<boolean>(Constant.EVENTS.EXIT_MULTI_STATE, true);
+    }
     if (this.isNeedRefreshMedia(fileInfo) && !fileInfo.isGallery) {
       await this.getMediaInfomation(fileInfo);
     }
@@ -351,6 +360,15 @@ export struct BottomBar {
         break;
       case Constant.OPERATION_TYPE.SET_AS_WALLPAPER:
         this.dealSetAsWallpaper(false);
+        break;
+      case Constant.EVENTS.LONG_PRESS_COMPRESS:
+      case Constant.OPERATION_TYPE.COMPRESSION:
+        break;
+      case Constant.EVENTS.LONG_PRESS_DECOMPRESS:
+      case Constant.OPERATION_TYPE.DECOMPRESSION:
+        break;
+      case Constant.EVENTS.LONG_PRESS_COPY:
+      case Constant.EVENTS.LONG_PRESS_MOVE:
         break;
       default:
         HiLog.error(TAG, `${moreItem} exec fail`);
@@ -464,7 +482,7 @@ export struct BottomBar {
           .color($r('sys.color.ohos_id_color_subheading_separator'))
           .backgroundColor($r('sys.color.ohos_id_color_subheading_separator'))
           .visibility((this.backgroundBlurStyleValue == BlurStyle.NONE && !this.isScrollReachEnd) ?
-          Visibility.Visible : Visibility.Hidden)
+            Visibility.Visible : Visibility.Hidden)
         Row() {
           if (this.filePickerViewFlag && this.bottomOptions.length > 0) {
             this.filePickerBuilder()
@@ -482,15 +500,15 @@ export struct BottomBar {
       .width('100%')
       .height(ToolBarStyle.BOTTOM_BAR_HEIGHT + this.bottomNavBarHeight)
       .backgroundColor($r('sys.color.ohos_id_color_bottom_tab_sub_bg'))
-      .transition(TransitionEffect.translate(
-        { x: 0, y: ToolBarStyle.BOTTOM_BAR_HEIGHT + this.bottomNavBarHeight }
-      ).animation(
-        {
-          curve: curves.interpolatingSpring(0, 1,
-            StandardAnimation.AnimationConstants.SHOW_ANIMATE_STIFFNESS,
-            StandardAnimation.AnimationConstants.SHOW_ANIMATE_DAMPING)
-        }
-      )
+      .transition(
+        TransitionEffect.asymmetric(
+          TransitionEffect.translate({ x: 0, y: ToolBarStyle.BOTTOM_BAR_HEIGHT + this.bottomNavBarHeight })
+            .animation({ duration: BOTTOM_BAR_ENTER_DURATION, curve: Curve.EaseOut })
+            .combine(TransitionEffect.OPACITY.animation({ duration: 120, curve: Curve.EaseOut })),
+          TransitionEffect.translate({ x: 0, y: ToolBarStyle.BOTTOM_BAR_HEIGHT + this.bottomNavBarHeight })
+            .animation({ duration: BOTTOM_BAR_EXIT_DURATION, curve: Curve.EaseIn })
+            .combine(TransitionEffect.OPACITY.animation({ duration: 90, curve: Curve.EaseIn }))
+        )
       )
       .padding({ bottom: this.bottomNavBarHeight })
       .margin(this.filePickerViewFlag ?
@@ -620,6 +638,7 @@ export struct BottomBar {
       isMulti: true,
       toOperateFileList: this.selectFilesList,
       isMoreMenu: true,
+      isInArchivePreview: this.isInArchivePreview,
     })
   }
 
@@ -689,6 +708,11 @@ export struct BottomBar {
       AppStorage.setOrCreate<DFX.PageName>(DFX.StorageKey.OPERATE_PAGE,
         EnumTransferUtil.transferToPageName(this.fromPage));
       return;
+    } else if (item.type === Constant.OPERATION_TYPE.SHARE) {
+      AppStorage.setOrCreate<DFX.OperateSource>(DFX.StorageKey.OPERATE_SOURCE, DFX.OperateSource.BOTTOM_MENU);
+      EventBus.emit(Constant.EVENTS.MENU_CLICK,
+        new MenuInfo(MenuItemName.SHARE, this.selectFilesList, undefined, false));
+      // 文件分享
     } else if (item.type === Constant.OPERATION_TYPE.OTHER_APP) {
       this.openFileByOtherApp();
     }
@@ -719,6 +743,35 @@ export struct BottomBar {
       display.off('foldStatusChange', this.foldStatusChangeCallback);
     } catch (error) {
       HiLog.error(TAG, 'removeFoldModeChangedListener err.');
+    }
+  }
+
+  // 选中文件下载完成后刷新底部分享按钮
+  private onDownloadFinishRefreshShare() {
+    if (!this.isShowBottomBar) {
+      HiLog.warn(TAG, 'BottomBar is hidden not refresh share');
+      return;
+    }
+    // “我的手机-图库”多选场景下：仅当选择包含文件夹/不支持项时，分享置灰后不可恢复可点
+    const isGallerySelect: boolean = this.selectFilesList.some(fileInfo => {
+      return FileUtil.isGalleryAddress(fileInfo.uri) ||
+        fileInfo.uri === VirtualUri.GALLERY ||
+      fileInfo.uri.startsWith(VirtualUri.GALLERY_URI);
+    });
+    const hasFolderInSelection: boolean = this.selectFilesList.some((fileInfo) => fileInfo.isFolder);
+    if (isGallerySelect && hasFolderInSelection) {
+      return;
+    }
+    const canShare: boolean = this.selectFilesList.every(fileInfo => {
+      return true;
+    });
+    HiLog.info(TAG, `onDownloadFinishRefreshShare canShare: ${canShare}`);
+    for (let i = 0; i < this.bottomOptions.length; i++) {
+      let item: BottomOptions = this.bottomOptions[i];
+      if (item.type === Constant.OPERATION_TYPE.SHARE && item.disabled && canShare) {
+        this.bottomOptions[i] = new BottomOptions(item.type, item.name, item.icon, false, item.display);
+        return;
+      }
     }
   }
 
@@ -766,12 +819,17 @@ export struct BottomBar {
         EnumTransferUtil.transferToPageName(this.fromPage));
     } else if (this.longPressChangeType === Constant.OPERATION_TYPE.DETAIL) {
       let fileInfo = this.selectFilesList[0];
-      GlobalHolder.getInstance().setObject<boolean>(Constant.EVENTS.EXIT_MULTI_STATE, true);
       this.openFileDetail(fileInfo);
+      // 点击“更多-详情”时立刻退出多选，避免详情半模态关闭/切换期间底部按钮栏闪现
+
     } else if (this.longPressChangeType === Constant.OPERATION_TYPE.OPEN_FOLDER) {
       this.dealOpenFolder();
     } else if (this.longPressChangeType === Constant.OPERATION_TYPE.SET_AS_WALLPAPER) {
       this.dealSetAsWallpaper(true);
+    } else if (this.longPressChangeType === Constant.OPERATION_TYPE.COMPRESSION) {
+      EventBus.emit(Constant.EVENTS.LONG_PRESS_COMPRESS);
+    } else if (this.longPressChangeType === Constant.OPERATION_TYPE.DECOMPRESSION) {
+      EventBus.emit(Constant.EVENTS.LONG_PRESS_DECOMPRESS);
     }
     this.longPressChangeType = Constant.OPERATION_TYPE.PLAY;
   }
@@ -830,7 +888,6 @@ export struct BottomBar {
     let bundleName: string = "";
 
 
-
     EventBus.emit(Constant.EVENTS.RESET_LOCAL_CLOUD_FOLDER, PAGE_ROUTE_CONST.MY_PHONE);
     let tempParams: AbilityOrRouterParams;
     if (sourceFlag) {
@@ -868,15 +925,15 @@ export struct BottomBar {
         return $r('app.string.softDelete');
       }
       return this.selectFilesList.every((item: FileInfo) => item.isExternalStorageDeviceFile) ?
-      $r('app.string.complete_delete_tips') :
-      $r('app.string.part_external_file_delete_tips');
+        $r('app.string.complete_delete_tips') :
+        $r('app.string.part_external_file_delete_tips');
     }
     if (this.isRecentDeletePage) {
       return $r('app.string.delete_complete_tips');
     }
     return this.isExternalStorageDeviceFile ?
-    $r('app.string.complete_delete_tips') :
-    $r('app.string.softDelete');
+      $r('app.string.complete_delete_tips') :
+      $r('app.string.softDelete');
   }
 
   private renameAction(newFileName: string, newFileUri: string): void {

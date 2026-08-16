@@ -53,11 +53,14 @@ export class CopyCutNotificationUtil {
   private static sendLock: boolean = false;
   // 是否禁止发送进度通知
   private static disableProgressNotification: boolean = false;
+  /** 进度通知 publish 串行链，避免 dealProcessEnd 中 cancel 与异步 publish 交错导致进度通知「复活」 */
+  private static progressSerialTail: Promise<void> = Promise.resolve();
 
   public static resetState(): void {
     CopyCutNotificationUtil.lastProgress = -1;
     CopyCutNotificationUtil.sendLock = false;
     CopyCutNotificationUtil.disableProgressNotification = false;
+    CopyCutNotificationUtil.progressSerialTail = Promise.resolve();
   }
   
   public static disableProgressNotifications(): void {
@@ -112,14 +115,35 @@ export class CopyCutNotificationUtil {
   };
 
   /**
-   * 发送复制移动的进度通知
-   * @param folderUri 点通知栏后需要打开的目标目录
-   * @param progress 复制移动的进度百分比
-   * @param deliveryTime 开始发送进度通知的时间
-   * @param folderName 正在进行操作的文件名
-   * @returns 是否发送成功
+   * 等待队列中所有进度通知发布完成（含当前 in-flight 的 publish），供任务结束栅栏使用。
    */
-  public static async publishProgressNotification(progressData: CopyCutProgressData, title: string): Promise<boolean> {
+  public static async waitProgressPublishIdle(): Promise<void> {
+    await CopyCutNotificationUtil.progressSerialTail;
+  }
+
+  /**
+   * 发送复制移动的进度通知（串行入队，避免与 cancel 竞态）
+   */
+  public static publishProgressNotification(progressData: CopyCutProgressData, title: string): Promise<boolean> {
+    const run: Promise<boolean> = CopyCutNotificationUtil.progressSerialTail.then(() =>
+      CopyCutNotificationUtil.publishProgressNotificationUnqueued(progressData, title)
+    );
+    CopyCutNotificationUtil.progressSerialTail = run.then(
+      (): void => {
+        return;
+      },
+      (): void => {
+        return;
+      }
+    );
+    return run;
+  }
+
+  /**
+   * 实际执行一次进度通知发布（由 publishProgressNotification 串行调用）
+   */
+  private static async publishProgressNotificationUnqueued(progressData: CopyCutProgressData, title: string):
+    Promise<boolean> {
     // 检查是否禁止发送进度通知
     if (CopyCutNotificationUtil.disableProgressNotification) {
       HiLog.info(TAG, 'Progress notifications are disabled, skipping');

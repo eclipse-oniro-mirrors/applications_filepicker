@@ -70,7 +70,7 @@ export class QueryFileParam {
   /**
    * 显示隐藏文件
    */
-  public showHiddenItem: boolean = true;
+  public showHiddenItem: boolean = false;
   /**
    * 是否黑名单
    */

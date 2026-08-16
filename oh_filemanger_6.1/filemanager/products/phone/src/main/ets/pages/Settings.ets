@@ -16,7 +16,7 @@ import { Constant, HiLog, ResourceUtil, ToolBarStyle } from "@ohos/common"
 
 const TAG: string = 'Settings'
 // 持久化
-PersistentStorage.persistProp(Constant.SHOW_HIDDEN_ITEM_OPTION_NAME, true)
+PersistentStorage.persistProp(Constant.SHOW_HIDDEN_ITEM_OPTION_NAME, false)
 
 @Builder
 export function SettingsBuilder(name: string, param: Object) {
@@ -27,11 +27,11 @@ export function SettingsBuilder(name: string, param: Object) {
 export struct Settings {
   @Consume('pageInfos') pageInfos: NavPathStack
   @State isOn: boolean = (AppStorage.get(Constant.SHOW_HIDDEN_ITEM_OPTION_NAME) !== undefined)
-    ? AppStorage.get(Constant.SHOW_HIDDEN_ITEM_OPTION_NAME) as boolean : true
+    ? AppStorage.get(Constant.SHOW_HIDDEN_ITEM_OPTION_NAME) as boolean : false
 
   aboutToAppear(): void {
     this.isOn = (AppStorage.get(Constant.SHOW_HIDDEN_ITEM_OPTION_NAME) !== undefined)
-      ? AppStorage.get(Constant.SHOW_HIDDEN_ITEM_OPTION_NAME) as boolean : true
+      ? AppStorage.get(Constant.SHOW_HIDDEN_ITEM_OPTION_NAME) as boolean : false
   }
 
   build() {

@@ -28,6 +28,7 @@ import { MediaThumbnailCacheUtil } from './MediaThumbnailCacheUtil';
 import { MediaThumbnailUtil } from './MediaThumbnailUtil';
 import { MediaThumbnailConst } from './MediaThumbnailConst';
 import { FsUtil } from '../utils/FsUtil';
+import { VideoThumbnailSupportUtil } from './VideoThumbnailSupportUtil';
 import { FileInfo } from '../fileoperate/FileInfo';
 
 const TAG = 'MediaMetaDataUtil';
@@ -227,10 +228,7 @@ export class MediaMetaDataUtil {
         HiLog.warnPrivate(TAG, 'tempMetadata is empty object, fileUri:', fileUri);
       } else {
         HiLog.debug(TAG, 'fetchMetadata success, tempMetadata:' + JSON.stringify(tempMetadata));
-        metaData.duration = Number(tempMetadata.duration);
-        metaData.height = Number(tempMetadata.videoHeight);
-        metaData.width = Number(tempMetadata.videoWidth);
-        metaData.mimeType = tempMetadata.mimeType ?? '';
+        MediaMetaDataUtil.fillMetaDataFromAVMetadata(metaData, tempMetadata);
       }
       metaData.thumbnailPath =
         await MediaMetaDataUtil.getThumbnailPath(fileUri, thumbnailCacheFilePath, undefined, fdSrc, metaData,
@@ -277,10 +275,7 @@ export class MediaMetaDataUtil {
         HiLog.warnPrivate(TAG, 'tempMetadata is empty object, fileUri:', fileUri);
       } else {
         HiLog.debug(TAG, 'fetchMetadata success, tempMetadata:' + JSON.stringify(tempMetadata));
-        metaData.duration = Number(tempMetadata.duration);
-        metaData.height = Number(tempMetadata.videoHeight);
-        metaData.width = Number(tempMetadata.videoWidth);
-        metaData.mimeType = tempMetadata.mimeType ?? '';
+        MediaMetaDataUtil.fillMetaDataFromAVMetadata(metaData, tempMetadata);
       }
       HiLog.infoPrivate(TAG, `getAVSizeAndDurationData success`,
         `metaData: ${JSON.stringify(metaData)}, fileUri:${fileUri}`);
@@ -321,7 +316,11 @@ export class MediaMetaDataUtil {
         thumbnailPath = await MediaThumbnailUtil.getImageThumbnail(imageSource!!, thumbnailCacheFilePath);
         break;
       case MimeType.FILE_CATEGORY_VIDEO:
-        if ((!!metaData) && (metaData.height !== 0) && needVideoThumb) {
+        if ((!!metaData) && needVideoThumb) {
+          // 元数据判定不支持时跳过抽帧，避免 5400106 与队列空转
+          if (VideoThumbnailSupportUtil.shouldSkipVideoThumbnail(metaData)) {
+            break;
+          }
           thumbnailPath = await MediaThumbnailUtil.getVideoCoverThumbnail(fdSrc!!, metaData, thumbnailCacheFilePath);
         }
         break;
@@ -332,6 +331,55 @@ export class MediaMetaDataUtil {
         break;
     }
     return thumbnailPath;
+  }
+
+  /**
+   * 从 AVMetadata 填充媒体元数据（含视频轨 codec）。
+   * 统一入口，供缩略图与时长查询共用，避免字段解析不一致。
+   */
+  public static fillMetaDataFromAVMetadata(metaData: MediaMetaData, tempMetadata: media.AVMetadata | undefined): void {
+    if (!tempMetadata || !tempMetadata.duration) {
+      return;
+    }
+    metaData.duration = Number(tempMetadata.duration);
+    metaData.height = Number(tempMetadata.videoHeight);
+    metaData.width = Number(tempMetadata.videoWidth);
+    metaData.mimeType = tempMetadata.mimeType ?? '';
+    metaData.codecMime = MediaMetaDataUtil.extractVideoCodecMime(tempMetadata);
+  }
+
+  /**
+   * 从 fetchMetadata 结果解析视频轨 codec mime。
+   * 兼容直接字段与 tracks JSON 两种系统返回格式。
+   */
+  private static extractVideoCodecMime(tempMetadata: media.AVMetadata): string {
+    const raw = tempMetadata as object as Record<string, string>;
+    const directKeys: string[] = ['videoCodecMime', 'codec_mime', 'videoMime'];
+    for (let i = 0; i < directKeys.length; i++) {
+      const value = raw[directKeys[i]];
+      if (!StringUtil.isEmpty(value)) {
+        return value;
+      }
+    }
+    const tracks = raw['tracks'];
+    if (!StringUtil.isEmpty(tracks)) {
+      try {
+        const trackList = JSON.parse(tracks) as Array<Record<string, string>>;
+        for (let i = 0; i < trackList.length; i++) {
+          const track = trackList[i];
+          const trackType = (track['track_type'] ?? track['trackType'] ?? '').toLowerCase();
+          if (trackType === 'video') {
+            const codec = track['codec_mime'] ?? track['codecMime'] ?? '';
+            if (!StringUtil.isEmpty(codec)) {
+              return codec;
+            }
+          }
+        }
+      } catch (error) {
+        HiLog.debug(TAG, 'extractVideoCodecMime parse tracks fail');
+      }
+    }
+    return '';
   }
 
   /**

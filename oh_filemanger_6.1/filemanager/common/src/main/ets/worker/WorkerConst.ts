@@ -63,6 +63,11 @@ export namespace WorkerConst {
      * 还原移动
      */
     UNDO_MOVE,
+
+    /**
+     * 压缩解压缩文件
+     */
+    COMPRESS_FILE,
   }
 
   export class ResultType {

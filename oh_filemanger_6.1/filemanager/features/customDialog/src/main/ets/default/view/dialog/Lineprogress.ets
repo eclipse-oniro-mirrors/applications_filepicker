@@ -23,6 +23,8 @@ export struct LineProgress {
   @Prop progress: number = 0;
   @Prop content: Resource;
   @Prop contentShow?: boolean = true;
+  @Prop extraTip?: Resource;
+  @Prop extraTipShow?: boolean = false;
   private isBigMode: Boolean = UiUtil.getFontSize() >= Constant.BIG_MODE.BIG_MODE_1_15x;
   build() {
     Column() {
@@ -57,6 +59,18 @@ export struct LineProgress {
       }
       .height(24)
       .justifyContent(FlexAlign.Center)
+
+      if (this.extraTipShow && this.extraTip) {
+        Text(this.extraTip)
+          .width('100%')
+          .textAlign(TextAlign.Start)
+          .fontColor($r('sys.color.ohos_id_color_primary'))
+          .fontSize($r('sys.float.ohos_id_text_size_body2'))
+          .opacity(0.6)
+          .margin({ top: 4 })
+          .maxLines(1)
+          .textOverflow({ overflow: TextOverflow.Ellipsis })
+      }
     }
     .constraintSize({
       minHeight: 56

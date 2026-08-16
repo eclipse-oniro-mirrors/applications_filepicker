@@ -41,8 +41,7 @@ export { DiskInfo, RootInfo, DiskChangeInfo, StorageSpaceInfo } from './src/main
 export { ProgressInfo } from './src/main/ets/workermanager/ProgressInfo';
 
 export {
-  UnityStartMode,
-  WindowType as PickerWindowType
+  UnityStartMode, WindowType as PickerWindowType
 } from './src/main/ets/const/FilePickerItems';
 
 export {
@@ -180,7 +179,7 @@ export { PREVIEW_TYPE, FileSourceUri } from './src/main/ets/const/Constant';
 export { PAGE_ROUTE_CONST } from './src/main/ets/const/PageRouteConst';
 
 
-export { 
+export {
   UserState,
   ScrollPosition,
   SlideActionType,
@@ -272,8 +271,7 @@ export { FileOperation } from './src/main/ets/fileoperate/FileOperation';
 
 
 export type {
-  RenameItem,
-  BottomCallParams
+  RenameItem, BottomCallParams
 } from './src/main/ets/fileoperate/FileOperation';
 
 export { FavoriteDataEnum, FavoriteDataConst } from './src/main/ets/const/FavoriteDataConst';
@@ -349,6 +347,8 @@ export { DeleteRestoreResultParam } from './src/main/ets/workermanager/deleteres
 export { MediaThumbnailCacheUtil } from './src/main/ets/media/MediaThumbnailCacheUtil';
 
 export { MediaThumbnailUtil } from './src/main/ets/media/MediaThumbnailUtil';
+
+export { VideoThumbnailScheduler, VideoThumbnailPriority } from './src/main/ets/media/VideoThumbnailScheduler';
 
 export { StoragePathUtil } from './src/main/ets/utils/StoragePathUtil';
 
@@ -453,3 +453,9 @@ export { GetLocationTypeTask } from './src/main/ets/taskpool/task/GetLocationTyp
 export { PrivacyModeManager } from './src/main/ets/utils/PrivacyModeManager';
 
 export { CheckIsForbiddenUriTask } from './src/main/ets/taskpool/task/CheckIsForbiddenUriTask';
+
+export { FileCompressBusiness } from './src/main/ets/filecompress/FileCompressBusiness';
+
+export { EncryptCheckTask } from './src/main/ets/taskpool/task/ArchiveEncryptedTask';
+
+export { SystemShareUtil } from './src/main/ets/share/SystemShareUtil'

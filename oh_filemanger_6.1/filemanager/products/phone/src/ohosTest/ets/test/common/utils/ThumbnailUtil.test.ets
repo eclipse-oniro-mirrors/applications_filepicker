@@ -195,33 +195,33 @@ export default function ThumbnailUtilTest() {
       done();
     })
 
-    it("getSmallThumbnailUri_media", 0, (done: Function) => {
+    it("getSmallThumbnailUri_media", 0, async (done: Function) => {
       let fileInfo = new FileInfo();
       fileInfo.uri = Constant.MediaLibrary_URI_HEAD + '/test.png';
-      let uriSrc = ThumbnailUtil.getSmallThumbnailUri(fileInfo);
+      let uriSrc = await ThumbnailUtil.getSmallThumbnailUri(fileInfo);
       expect(uriSrc).assertContain(fileInfo.uri + `?timestampApp=`);
       done();
     })
 
-    it("getSmallThumbnailUri_notMedia", 0, (done: Function) => {
+    it("getSmallThumbnailUri_notMedia", 0, async (done: Function) => {
       let fileInfo = new FileInfo();
       fileInfo.uri = VirtualUri.MY_PHONE + '/test.png';
-      let uriSrc = ThumbnailUtil.getSmallThumbnailUri(fileInfo);
-      expect(uriSrc).assertContain(fileInfo.uri + `?filemanager?`);
-      done();
-    })
-
-    it("getFileIconCompThumbnailUri_undefined", 0, (done: Function) => {
-      let fileInfo = undefined;
-      let uriSrc = ThumbnailUtil.getFileIconCompThumbnailUri(fileInfo!);
+      let uriSrc = await ThumbnailUtil.getSmallThumbnailUri(fileInfo);
       expect(uriSrc).assertEqual('');
       done();
     })
 
-    it("getFileIconCompThumbnailUri_media", 0, (done: Function) => {
+    it("getFileIconCompThumbnailUri_undefined", 0, async (done: Function) => {
+      let fileInfo = undefined;
+      let uriSrc = await ThumbnailUtil.getFileIconCompThumbnailUri(fileInfo!);
+      expect(uriSrc).assertEqual('');
+      done();
+    })
+
+    it("getFileIconCompThumbnailUri_media", 0, async (done: Function) => {
       let fileInfo = new FileInfo();
       fileInfo.uri = Constant.MediaLibrary_URI_HEAD + '/test.png';
-      let uriSrc = ThumbnailUtil.getFileIconCompThumbnailUri(fileInfo);
+      let uriSrc = await ThumbnailUtil.getFileIconCompThumbnailUri(fileInfo);
       expect(uriSrc).assertContain(fileInfo.uri + `?timestampApp=`);
       done();
     })

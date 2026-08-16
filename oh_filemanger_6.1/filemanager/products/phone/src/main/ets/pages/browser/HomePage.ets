@@ -51,7 +51,8 @@ import {
   UiUtil,
   VIEW_MODE,
   ThrottlingUtil,
-  toast
+  toast,
+  ToolBarStyle
 } from '@ohos/common';
 import lazy {
   FavoriteList, FavouriteDataSource, StorageDeviceList,
@@ -201,7 +202,6 @@ export struct HomePage {
     }
     },
   ]
-
   private favoriteTitleModifier: TextModifier = new TextModifier()
     .fontSize($r('sys.float.Subtitle_S'))
     .fontColor($r('sys.color.font_secondary'))
@@ -361,32 +361,51 @@ export struct HomePage {
       Blank()
         .layoutWeight(1)
 
-      Button() {
-        SymbolGlyph($r('sys.symbol.dot_grid_2x2'))
-          .fontSize('24vp')
-          .fontColor([$r('sys.color.icon_primary')])
-          .renderingStrategy(SymbolRenderingStrategy.SINGLE)
-          .focusable(true)
-          .draggable(false)
-      }
-      .width(40)
-      .height(40)
-      .borderRadius(20)
-      .focusOnTouch(true)
-      .align(Alignment.Center)
-      .backgroundColor($r('sys.color.ohos_id_color_button_normal'))
-      .bindMenu([
-        {
-          value: '设置',
-          action: () => {
-            // 跳转到设置页面
-            this.pageInfos.pushPath({ name: 'Settings' })
-          }
+      if (!this.startModeOptions.isUxt()) {
+        Button() {
+          SymbolGlyph($r('sys.symbol.dot_grid_2x2'))
+            .fontSize('24vp')
+            .fontColor([$r('sys.color.icon_primary')])
+            .renderingStrategy(SymbolRenderingStrategy.SINGLE)
+            .focusable(true)
+            .draggable(false)
         }
-      ])
+        .width(40)
+        .height(40)
+        .borderRadius(20)
+        .focusOnTouch(true)
+        .align(Alignment.Center)
+        .backgroundColor($r('sys.color.ohos_id_color_button_normal'))
+        .bindMenu([
+          {
+            value: $r('app.string.set_up'),
+            action: () => {
+              // 跳转到设置页面
+              this.pageInfos.pushPath({ name: 'Settings' })
+            }
+          }
+        ])
+      } else {
+        Button() {
+          SymbolGlyph($r('sys.symbol.xmark'))
+            .fontColor([$r('sys.color.ohos_id_color_primary')])
+            .fontSize($r('app.float.common_size18'))
+            .draggable(false)
+            .focusable(true)
+        }
+        .accessibilityText(ResourceUtil.getStringByResource($r('app.string.cancel')))
+        .width($r('app.float.common_size40'))
+        .height($r('app.float.common_size40'))
+        .padding($r('app.float.common_size11'))
+        .borderRadius(ToolBarStyle.ITEM_BORDER_RADIUS)
+        .onClick(() => {
+          EventBus.emit(Constant.EVENTS.CLOSE_UI_FILE_PICKER + this.startModeOptions.currentCreateTimeStamp);
+        })
+        .backgroundColor($r('sys.color.ohos_id_color_button_normal'))
+      }
     }
     .width('100%')
-    .padding({ left: 24, right: 24 })
+    .padding({ left: 24, right: 24, top: 16 })
   }
 
   @Builder

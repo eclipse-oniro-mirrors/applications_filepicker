@@ -118,6 +118,7 @@ import { ShellAppCompatibleVersion } from '../base/const/CommonConst';
 import FeatureIntroducePage from './browser/storage/FeatureIntroducePage';
 import { SelectMode } from '@ohos/common/src/main/ets/const/FilePickerItems';
 import { Settings, SettingsBuilder } from './Settings';
+import { NotificationUtil } from '../base/notification/NotificationUtil';
 
 let storage = LocalStorage.getShared();
 const TAG = 'MainEntry';
@@ -209,6 +210,7 @@ struct MainEntry {
   private externalChangeBind: Function = (uriArray: string[]): void => this.externalChange(uriArray);
   private preventBackPressBind: Function = (flag: boolean): void => this.preventBackPress(flag);
   private pickerCurrentIndexBind: Function = (index: number): void => this.pickerCurrentIndexChange(index);
+  private shareJumpDialogController: CustomDialogController | undefined = undefined;
   // 文件选择器跳转指定目录是否完成
   loadPickFinish: boolean = false;
   /**
@@ -447,6 +449,27 @@ struct MainEntry {
     this.setTabsScroller();
     HiLog.info(TAG, `aboutToAppear. shellAppVer: ${GlobalHolder.getInstance()
       .getObject<number>(GlobalKey.SHELL_APP_COMPATIBLE_VERSION)}, passState: ${this.appGuidancePass}`)
+    this.requestNotificationIfFirstLaunch();
+  }
+
+  /**
+   * 首次进入主界面时申请通知权限（延后到页面 aboutToAppear，避免 onWindowStageCreate 阶段 NAPI 回调异常）
+   */
+  private requestNotificationIfFirstLaunch(): void {
+    if (this.filePickerViewFlag) {
+      return;
+    }
+    CommonPreferenceUtil.getFirstLaunch().then((isFirstLaunch: boolean) => {
+      HiLog.info(TAG, `isFirstLaunch=${JSON.stringify(isFirstLaunch)}`);
+      if (!isFirstLaunch) {
+        return;
+      }
+      NotificationUtil.getNotificationStatus().then((status: boolean) => {
+        HiLog.info(TAG, `notificationStatus=${JSON.stringify(status)}`);
+        NotificationUtil.requestEnableNotification();
+        void CommonPreferenceUtil.setFirstLaunch(false);
+      });
+    });
   }
 
   preventBackPress(flag: boolean): void {
@@ -818,7 +841,7 @@ struct MainEntry {
               showLongTakeAnimation: this.showLongTakeAnimation,
               homeScroller: this.homeScroller
             })
-              // .visibility(this.pickerCurrentIndex === 1 ? Visibility.Visible : Visibility.None)
+            // .visibility(this.pickerCurrentIndex === 1 ? Visibility.Visible : Visibility.None)
           }
         }
         .navDestination(this.pageMap)
@@ -1516,6 +1539,28 @@ struct MainEntry {
         this.isSingleScreenDisplay = width <= BreakPoint.SM;
       }
     });
+  }
+
+  private openJumpConfirmDialog(otherFrom: string) {
+    this.shareJumpDialogController?.close();
+    if (ObjectUtil.isNullOrUndefined(this.shareJumpDialogController)) {
+      this.shareJumpDialogController = new CustomDialogController({
+        builder: JumpConfirmDialog({
+          callBack: async (): Promise<void> => {
+            if (isFastClick()) {
+              HiLog.info(TAG, 'toTargetFolder too fast return');
+              return;
+            }
+            await this.toTargetFolder(otherFrom);
+          }
+        }),
+        cancel: () => {
+          EventBus.emit(Constant.EVENTS.CANCEL_WAITING_DIALOG);
+        },
+        autoCancel: false
+      });
+    }
+    this.shareJumpDialogController?.open();
   }
 
   /**

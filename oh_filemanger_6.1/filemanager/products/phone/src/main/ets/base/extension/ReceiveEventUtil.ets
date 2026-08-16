@@ -40,7 +40,7 @@ export class ReceiveEventUtil {
     const sendData = receiveData.data as SendData;
     HiLog.info(TAG, `receiveEventFromHostApp event: ${sendData?.event}`);
     switch (sendData.event) {
-    // 页面跳转
+      // 页面跳转
       case EventConst.JUMP_PAGE:
         const pageData = sendData.data as JumpPageData;
         if (StringUtil.isEmpty(pageData.pageName)) {

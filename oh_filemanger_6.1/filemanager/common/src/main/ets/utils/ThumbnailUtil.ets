@@ -24,8 +24,34 @@ import { Constant } from '../const/Constant';
 import { StringUtil } from './StringUtil';
 import { ObjectUtil } from './ObjectUtil';
 import { HiLog } from '../dfx/HiLog';
+import { MediaMetaDataUtil } from '../media/MediaMetaDataUtil';
+import { MediaThumbnailCacheUtil } from '../media/MediaThumbnailCacheUtil';
+import { MediaThumbnailUtil } from '../media/MediaThumbnailUtil';
+import { MimeType } from '../model/MimeType';
+import { MediaThumbnailConst } from '../media/MediaThumbnailConst';
+import { HashUtil } from './HashUtil';
+import { MediaMetaData } from '../media/MediaMetaData';
+import { VideoThumbnailPriority, VideoThumbnailScheduler } from '../media/VideoThumbnailScheduler';
+import { VideoThumbnailSupportUtil } from '../media/VideoThumbnailSupportUtil';
+import { image } from '@kit.ImageKit';
+import media from '@ohos.multimedia.media';
 
 const TAG = 'ThumbnailUtil';
+
+let videoThumbnailSchedulerInitialized: boolean = false;
+
+/**
+ * 懒加载初始化视频缩略图调度器，并注入实际加载实现。
+ * 放在 ThumbnailUtil 侧注册是为打破 Scheduler 与 ThumbnailUtil 的循环依赖。
+ */
+function ensureVideoThumbnailScheduler(): void {
+  if (videoThumbnailSchedulerInitialized) {
+    return;
+  }
+  VideoThumbnailScheduler.getInstance()
+    .setLoadExecutor((fileInfo: FileInfo) => ThumbnailUtil.loadFileIconCompThumbnailUriDirect(fileInfo));
+  videoThumbnailSchedulerInitialized = true;
+}
 
 /*
    * File Display Type
@@ -426,17 +452,66 @@ export class ThumbnailUtil {
     return uriSrc;
   }
 
-  public static getSmallThumbnailUri(fileInfo: FileInfo): string {
-    return ThumbnailUtil.getFileIconCompThumbnailUri(fileInfo);
+  public static async getSmallThumbnailUri(fileInfo: FileInfo): Promise<string> {
+    return await ThumbnailUtil.getFileIconCompThumbnailUri(fileInfo);
+  }
+
+  private static getCacheFileNameSync(fileInfo: FileInfo): string {
+    const cacheKey = `${fileInfo.uri}_${fileInfo.mtime}_${fileInfo.size}`;
+    return HashUtil.getSHA256Sync(cacheKey);
+  }
+
+  private static async getCacheFileName(fileInfo: FileInfo): Promise<string> {
+    return ThumbnailUtil.getCacheFileNameSync(fileInfo);
+  }
+
+  private static buildLocalThumbnailCacheFilePath(fileInfo: FileInfo): string {
+    const cacheFileName = ThumbnailUtil.getCacheFileNameSync(fileInfo);
+    if (StringUtil.isEmpty(cacheFileName)) {
+      return '';
+    }
+    const cacheFolderPath = MediaThumbnailCacheUtil.getCacheFolderPath(MediaThumbnailConst.DEFAULT_STORAGE_DEVICE_UID);
+    if (StringUtil.isEmpty(cacheFolderPath)) {
+      return '';
+    }
+    return cacheFolderPath + cacheFileName + MediaThumbnailConst.CURRENT_FILE_SUFFIX;
+  }
+
+  /**
+   * 同步读取本地文件已有沙箱缓存缩略图 URI，供「我的手机」列表项秒显
+   */
+  public static tryGetExistingLocalThumbnailUriSync(fileInfo: FileInfo): string {
+    if (ObjectUtil.isNullOrUndefined(fileInfo)) {
+      return '';
+    }
+    const uri: string = fileInfo.coverUri || fileInfo.uri;
+    if (uri.startsWith(Constant.MediaLibrary_URI_HEAD)) {
+      return '';
+    }
+    const thumbnailType = ThumbnailUtil.getThumbnailType(fileInfo);
+    if (!ThumbnailUtil.THUMBNAIL_SUPPORT_TYPE.has(thumbnailType)) {
+      return '';
+    }
+    const cacheFilePath = ThumbnailUtil.buildLocalThumbnailCacheFilePath(fileInfo);
+    if (StringUtil.isEmpty(cacheFilePath)) {
+      return '';
+    }
+    if (!FsUtil.checkAccessSync(cacheFilePath)) {
+      return '';
+    }
+    return FileUtil.getUriFromPath(cacheFilePath);
   }
 
   /*
    * 获取图片或视频图标缩略图
    * @param fileInfo 文件信息
+   * @param schedulePriority 本地视频缩略图调度优先级，不传则低优先级入队
    * @returns 缩略图uri
    */
-  public static getFileIconCompThumbnailUri(fileInfo: FileInfo): string {
+  public static async getFileIconCompThumbnailUri(fileInfo: FileInfo,
+    schedulePriority?: VideoThumbnailPriority): Promise<string> {
     let uriSrc: string = '';
+    HiLog.info(TAG, `getFileIconCompThumbnailUri uri = ${fileInfo?.uri} mimeType = ${fileInfo?.mimeType}`);
     if (ObjectUtil.isNullOrUndefined(fileInfo)) {
       HiLog.error(TAG, `getFileIconCompThumbnailUri fileInfo is null or undefined`);
       return uriSrc;
@@ -448,6 +523,144 @@ export class ThumbnailUtil {
         `?timestampApp=${fileInfo.timesStampApp}` +
         `&thumbnailModifiledMs=${fileInfo.thumbnailModifiledMs}` +
         `&oper=astc&width=0&height=0&path=${fileInfo.path}`;
+      return uriSrc;
+    }
+    if (ThumbnailUtil.getThumbnailType(fileInfo) === ThumbnailUtil.VIDEO_TYPE) {
+      // 本地视频走全局调度队列；不支持格式直接显示默认图标
+      if (VideoThumbnailSupportUtil.shouldSkipByExtension(fileInfo)) {
+        fileInfo.isLoadThumbnailError = true;
+        return '';
+      }
+      ensureVideoThumbnailScheduler();
+      const priority = schedulePriority ?? VideoThumbnailPriority.LOW;
+      return VideoThumbnailScheduler.getInstance().requestThumbnail(fileInfo, priority);
+    }
+    return ThumbnailUtil.loadFileIconCompThumbnailUriDirect(fileInfo);
+  }
+
+  /**
+   * 直接加载本地文件缩略图（不经视频调度队列），供 VideoThumbnailScheduler 内部调用。
+   */
+  public static async loadFileIconCompThumbnailUriDirect(fileInfo: FileInfo): Promise<string> {
+    let uriSrc: string = '';
+    HiLog.info(TAG, `loadFileIconCompThumbnailUriDirect uri = ${fileInfo?.uri}`);
+    if (ObjectUtil.isNullOrUndefined(fileInfo)) {
+      return uriSrc;
+    }
+    HiLog.info(TAG, `getFileIconCompThumbnailUri local file thumbnail`);
+    const existingUri = ThumbnailUtil.tryGetExistingLocalThumbnailUriSync(fileInfo);
+    if (!StringUtil.isEmpty(existingUri)) {
+      HiLog.info(TAG, `getFileIconCompThumbnailUri hit local cache`);
+      return existingUri;
+    }
+    try {
+      let cacheFileName = await ThumbnailUtil.getCacheFileName(fileInfo);
+        if (StringUtil.isEmpty(cacheFileName)) {
+          HiLog.error(TAG, `getFileIconCompThumbnailUri cacheFileName is empty`);
+          return uriSrc;
+        }
+        let cacheFilePath = await MediaThumbnailUtil.getThumbnailCacheFilePath(cacheFileName,
+          MediaThumbnailConst.DEFAULT_STORAGE_DEVICE_UID);
+        if (StringUtil.isEmpty(cacheFilePath)) {
+          HiLog.error(TAG, `getFileIconCompThumbnailUri cacheFilePath is empty`);
+          return uriSrc;
+        }
+        HiLog.info(TAG, `getFileIconCompThumbnailUri cacheFilePath = ${cacheFilePath}`);
+
+        let fileFd: number = FileUtil.openFile(fileInfo.uri);
+        if (fileFd === 0) {
+          const filePath = FileUtil.getPathFromUri(fileInfo.uri);
+          if (!StringUtil.isEmpty(filePath)) {
+            fileFd = FileUtil.openFile(FileUtil.getUriFromPath(filePath));
+          }
+        }
+        if (fileFd === 0) {
+          HiLog.error(TAG, `getFileIconCompThumbnailUri openFile failed`);
+          return uriSrc;
+        }
+        let thumbnailType = ThumbnailUtil.getThumbnailType(fileInfo);
+        let fileCategory = MimeType.FILE_CATEGORY_IMAGE;
+        if (thumbnailType === ThumbnailUtil.VIDEO_TYPE) {
+          fileCategory = MimeType.FILE_CATEGORY_VIDEO;
+        }
+
+        if (fileCategory === MimeType.FILE_CATEGORY_VIDEO) {
+          if (VideoThumbnailSupportUtil.shouldSkipByExtension(fileInfo)) {
+            fileInfo.isLoadThumbnailError = true;
+            return uriSrc;
+          }
+          let avMetadataExtractor: media.AVMetadataExtractor | undefined;
+          try {
+            avMetadataExtractor = await media.createAVMetadataExtractor();
+            const stat = await FileUtil.getFileStatByFs(fileFd);
+            if (stat?.size === 0) {
+              HiLog.error(TAG, 'getFileIconCompThumbnailUri FileUtil.getFileStatByFs is undefined!');
+              return uriSrc;
+            }
+            const fdSrc: media.AVFileDescriptor = {
+              fd: fileFd,
+              length: stat?.size
+            };
+            avMetadataExtractor.fdSrc = fdSrc;
+            let tempMetadata: media.AVMetadata | undefined;
+            try {
+              tempMetadata = await avMetadataExtractor.fetchMetadata();
+            } catch (error) {
+              HiLog.error(TAG, `getFileIconCompThumbnailUri fetchMetadata fail, error: ${JSON.stringify(error)}`);
+            }
+            let metaData: MediaMetaData = new MediaMetaData();
+            MediaMetaDataUtil.fillMetaDataFromAVMetadata(metaData, tempMetadata);
+            // fetchMetadata 后二次校验（如 FLV mime=invalid、height=0）
+            if (VideoThumbnailSupportUtil.shouldSkipVideoThumbnail(metaData, fileInfo)) {
+              fileInfo.isLoadThumbnailError = true;
+              return uriSrc;
+            }
+            uriSrc = await MediaMetaDataUtil.getThumbnailPath(
+              fileInfo.uri,
+              cacheFilePath,
+              undefined,
+              fdSrc,
+              metaData,
+              avMetadataExtractor,
+              fileCategory,
+              true
+            );
+          } finally {
+            if (avMetadataExtractor) {
+              await avMetadataExtractor.release();
+            }
+            await FsUtil.close(fileFd);
+          }
+        } else {
+          let imageSource: image.ImageSource | undefined;
+          try {
+            imageSource = image.createImageSource(fileFd);
+            uriSrc = await MediaMetaDataUtil.getThumbnailPath(
+              fileInfo.uri,
+              cacheFilePath,
+              imageSource,
+              undefined,
+              undefined,
+              undefined,
+              fileCategory
+            );
+          } finally {
+            if (imageSource) {
+              await imageSource.release();
+            }
+            await FsUtil.close(fileFd);
+          }
+        }
+        if (!StringUtil.isEmpty(uriSrc)) {
+          uriSrc = FileUtil.getUriFromPath(uriSrc);
+        }
+        HiLog.info(TAG, `loadFileIconCompThumbnailUriDirect getThumbnailPath result = ${uriSrc} mimetyoe = ${fileCategory}`);
+        // 抽帧失败时标记错误，FileIconComp 继续展示默认视频图标
+        if (StringUtil.isEmpty(uriSrc) && fileCategory === MimeType.FILE_CATEGORY_VIDEO) {
+          fileInfo.isLoadThumbnailError = true;
+        }
+    } catch (error) {
+      HiLog.error(TAG, `loadFileIconCompThumbnailUriDirect error: ${JSON.stringify(error)}`);
     }
     return uriSrc;
   }

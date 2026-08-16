@@ -34,15 +34,15 @@ import {
   CheckIsForbiddenUriTask,
   TaskManager,
   toast,
-  CommonPreferenceUtil,
 } from '@ohos/common';
+import { ArchivePreviewUtil } from '@ohos/common/src/main/ets/utils/ArchivePreviewUtil';
 import type AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import type Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@kit.BasicServicesKit';
 import window from '@ohos.window';
 import { display } from '@kit.ArkUI';
 import { Configuration, ConfigurationConstant } from '@kit.AbilityKit';
-import { NotificationUtil } from '../../base/notification/NotificationUtil';
+import { CopyCutManager } from '../../base/manager/CopyCutManager';
 
 const TAG = 'MainAbility';
 const KEY_FILE_URI = 'fileUri';
@@ -134,12 +134,37 @@ export default class MainAbility extends UIAbility {
             globalHolder.setObject<string>(GlobalKey.FROM, Constant.FROM_TYPE.THIRD_APP);
             globalHolder.setObject<string>(GlobalKey.OPEN_PAGE, Constant.PAGE_TYPE.MY_PHONE);
             globalHolder.setObject<string>(GlobalKey.URI_PATH, tempFileUri);
+            // 目标路径写入后再触发跳转，避免异步校验导致 openPage 读到空路径
+            EventBus.emit(Constant.EVENTS.FILE_MANAGER_ON_NEW_WANT);
           });
         TaskManager.getInstance().execute<number>(task, 1, false, 30);
       }
     } else if (!!parameters.param) {
-      let uriPath = AssertExtUtil.coverToString(parameters[Constant.URI_PATH], Constant.URI_PATH);
-      let errorStr = AssertExtUtil.checkUriTrusted(uriPath); // 路径可信
+      // 通知栏点击进入：param 为 OpenFolderParam，路径在 param.folderUri，来源在 param.from
+      const paramObj = parameters.param as Record<string, Object>;
+      const fromParam = (typeof paramObj?.from === 'string')
+        ? (paramObj.from as string)
+        : AssertExtUtil.coverToString(parameters[Constant.FROM], Constant.FROM);
+
+      // 进度通知：仅切前台，不校验路径，不跳转
+      if (fromParam === Constant.FROM_TYPE.COPY_CUT_PROGRESS_NOTIFICATION) {
+        globalHolder.setObject<string>(GlobalKey.URI_PATH, Constant.MY_PHONE_URI);
+        globalHolder.setObject<string>(GlobalKey.FROM, fromParam);
+        globalHolder.setObject<string>(GlobalKey.OPEN_PAGE, Constant.PAGE_TYPE.MY_PHONE);
+        PasteBoardManager.getInstance().setWhetherToReadPasteBoard(false);
+        HiLog.info(TAG, 'initFromNotify: from progress notification, only bring to foreground');
+        HiLog.info(TAG, 'initFromNotify end');
+        return;
+      }
+
+      const uriPath = (typeof paramObj?.folderUri === 'string')
+        ? (paramObj.folderUri as string)
+        : AssertExtUtil.coverToString(parameters[Constant.URI_PATH], Constant.URI_PATH);
+      const openPageParam = (typeof paramObj?.openPage === 'string')
+        ? (paramObj.openPage as string)
+        : AssertExtUtil.coverToString(parameters[Constant.OPEN_PAGE], Constant.OPEN_PAGE);
+
+      let errorStr = AssertExtUtil.checkUriTrusted(uriPath);
       if (AssertExtUtil.checkIsError(TAG, errorStr)) {
         return;
       }
@@ -149,7 +174,6 @@ export default class MainAbility extends UIAbility {
           HiLog.info(TAG, `CheckIsForbiddenUriTask result: ${isForbiddenUri}`);
           let tempFileUri: string = Constant.MY_PHONE_URI;
           if (isForbiddenUri) {
-            // toast提示路径不存在，加延时避免文管冷启动提示空白
             let timeoutBox = setTimeout(() => {
               toast($r('app.string.path_not_exist'));
               clearTimeout(timeoutBox);
@@ -158,10 +182,13 @@ export default class MainAbility extends UIAbility {
             tempFileUri = uriPath;
           }
           globalHolder.setObject<string>(GlobalKey.URI_PATH, tempFileUri);
-          globalHolder.setObject<string>(GlobalKey.FROM,
-            AssertExtUtil.coverToString(parameters[Constant.FROM], Constant.FROM));
-          globalHolder.setObject<string>(GlobalKey.OPEN_PAGE,
-            AssertExtUtil.coverToString(parameters[Constant.OPEN_PAGE], Constant.OPEN_PAGE));
+          globalHolder.setObject<string>(GlobalKey.FROM, fromParam);
+          const openPage = (typeof paramObj?.folderUri === 'string')
+            ? Constant.PAGE_TYPE.MY_PHONE
+            : (StringUtil.isEmpty(openPageParam) ? Constant.PAGE_TYPE.MY_PHONE : openPageParam);
+          globalHolder.setObject<string>(GlobalKey.OPEN_PAGE, openPage);
+          // 目标路径写入后再触发跳转，避免异步校验导致 openPage 读到空路径
+          EventBus.emit(Constant.EVENTS.FILE_MANAGER_ON_NEW_WANT);
         });
       TaskManager.getInstance().execute<number>(task, 1, false, 30);
     }
@@ -178,7 +205,7 @@ export default class MainAbility extends UIAbility {
     HiLog.info(TAG, 'onDestroy');
   }
 
-  async onWindowStageCreate(windowStage: window.WindowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     HiLog.info(TAG, 'onWindowStageCreate');
     const context = this.context;
@@ -201,17 +228,6 @@ export default class MainAbility extends UIAbility {
       })
     } catch (error) {
       HiLog.error(TAG, 'windowStage getMainWindow fail, error:' + JSON.stringify(error))
-    }
-    // 检查是否首次启动应用
-    const isFirstLaunch = await CommonPreferenceUtil.getFirstLaunch();
-    const status = await NotificationUtil.getNotificationStatus();
-    HiLog.info(TAG, `isFirstLaunch=${JSON.stringify(isFirstLaunch)}`);
-    HiLog.info(TAG, `notificationStatus=${JSON.stringify(status)}`);
-    if (isFirstLaunch) {
-      // 首次启动，申请通知权限
-      NotificationUtil.requestEnableNotification();
-      // 设置首次启动状态为 false
-      await CommonPreferenceUtil.setFirstLaunch(false);
     }
   }
 
@@ -258,7 +274,7 @@ export default class MainAbility extends UIAbility {
     HiLog.info(TAG, 'onWindowStageDestroy');
   }
 
-  onForeground(): void {
+  async onForeground(): Promise<void> {
     // Ability has brought to foreground
     let globalHolder: GlobalHolder = GlobalHolder.getInstance();
     globalHolder.setMainAbilityContext(this.context);
@@ -267,13 +283,19 @@ export default class MainAbility extends UIAbility {
     globalHolder.setObject<boolean>(GlobalKey.PICKER_FLAG, false);
     EventBus.emit(Constant.EVENTS.ABILITY_ON_FOREGROUND);
     EventBus.emit(Constant.EVENTS.ON_VIEW_FOREGROUND_EVENT);
+    // 应用回到前台，处理复制进度弹窗显示
+    await CopyCutManager.getInstance().handleAppForeground();
+    // 压缩包内预览结束后，清理 Download 下公共临时目录
+    ArchivePreviewUtil.onAppForeground();
     HiLog.info(TAG, 'MainAbility has brought to foreground');
   }
 
   onBackground(): void {
     // Ability has back to background
-    HiLog.info(TAG, 'MainAbility has back to background');
+    // 应用进入后台，处理复制进度弹窗隐藏
+    CopyCutManager.getInstance().handleAppBackground();
     EventBus.emit(Constant.EVENTS.ON_BACKGROUND);
     EventBus.emit(Constant.EVENTS.ON_VIEW_BACKGROUND_EVENT);
+    HiLog.info(TAG, 'MainAbility has back to background');
   }
 }

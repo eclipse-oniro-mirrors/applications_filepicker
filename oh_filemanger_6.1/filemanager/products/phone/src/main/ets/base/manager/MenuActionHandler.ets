@@ -28,6 +28,7 @@ import {
   toast,
   UEUtil
 } from '@ohos/common';
+import lazy { FileShareManager } from '../../base/manager/share/FileShareManager';
 
 export class MenuActionHandler {
   private TAG: string = 'MenuActionHandler';
@@ -41,6 +42,9 @@ export class MenuActionHandler {
     }],
     [MenuItemName.SET_RINGTONE, (menuInfo: MenuInfo) => {
       this.handleSetRingtone(menuInfo)
+    }],
+    [MenuItemName.SHARE, (menuInfo: MenuInfo) => {
+      this.handleShare(menuInfo)
     }],
     [MenuItemName.RESTORE, (menuInfo: MenuInfo) => {
       this.handleRestore(menuInfo)
@@ -143,6 +147,27 @@ export class MenuActionHandler {
     MenuUtil.setRingtone(menuInfo.fileInfo, () => {
       this.menuActionCallback?.(menuInfo);
     })
+  }
+
+  private handleShare(menuInfo: MenuInfo): void {
+    if (!menuInfo) {
+      HiLog.warn(this.TAG, 'handleShare: menuInfo is null');
+      return;
+    }
+    let fileList: FileInfo[] = menuInfo.selectedFiles;
+    // 长按一个文件，且此文件未被选中时，只操作这个文件
+    if (menuInfo.isLongPress && menuInfo.fileInfo && !menuInfo.fileInfo.isChecked) {
+      HiLog.warn(this.TAG, `handleShare: longPress and only op fileInfo`);
+      fileList = [menuInfo.fileInfo];
+    }
+    let fileShareManager = new FileShareManager();
+    fileShareManager.showShareDialog(fileList).then((result: boolean) => {
+      if (result) {
+        UEUtil.reportShowShareDialog(menuInfo.isLongPress ? DFX.OperateSource.PRESS_MENU :
+          DFX.OperateSource.BOTTOM_MENU, fileList.length);
+      }
+      this.menuActionCallback?.(menuInfo);
+    });
   }
 
   private handleRestore(menuInfo: MenuInfo): void {

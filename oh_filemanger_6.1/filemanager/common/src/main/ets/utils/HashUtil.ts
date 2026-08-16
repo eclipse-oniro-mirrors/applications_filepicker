@@ -32,14 +32,30 @@ export class HashUtil {
    * @param value 普通string
    * @returns
    */
-  public static async getSHA256(value: string): Promise<string> {
-    let result = '';
+  public static getSHA256Sync(value: string): string {
+    if (StringUtil.isEmpty(value)) {
+      return '';
+    }
     try {
-      // result = await AegSha256.ohAegSha256Hex(StringUtil.stringToHexString(value));
+      const msg = HashUtil.stringToArray(value);
+      const hashArray = HashUtil.coreAlgSHA256(msg, value.length * CHAR_LENGTH);
+      return HashUtil.arrayToString(hashArray);
+    } catch (error) {
+      HiLog.error(TAG, `getSHA256Sync fail, error: ${JSON.stringify(error)}`);
+      return '';
+    }
+  }
+
+  public static async getSHA256(value: string): Promise<string> {
+    if (StringUtil.isEmpty(value)) {
+      return '';
+    }
+    try {
+      return HashUtil.getSHA256Sync(value);
     } catch (error) {
       HiLog.error(TAG, `getSHA256 fail, error: ${JSON.stringify(error)}`);
+      return '';
     }
-    return result;
   }
 
   private static addSecurity(value1: number, value2: number): number {

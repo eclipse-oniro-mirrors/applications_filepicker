@@ -37,6 +37,10 @@ export class MediaMetaData {
    * 缩略图的缓存地址
    */
   thumbnailPath: string = '';
+  /**
+   * 视频轨编码 mime（如 video/hevc），用于 HEVC 抽帧降采样策略
+   */
+  codecMime: string = '';
 
   constructor() {
   }

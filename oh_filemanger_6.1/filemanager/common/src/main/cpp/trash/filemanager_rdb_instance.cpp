@@ -102,16 +102,20 @@ int FileManagerRdbInstance::Init()
 
 int FileManagerRdbInstance::CreateRdb(const std::string& dbPath)
 {
-    HILOGI("CreateRdb begin");
+    HILOGI("CreateRdb begin, dbPath: %{public}s", dbPath.c_str());
     CHECK_AND_RETURN_RET_LOG(dbPath.empty(), E_FILEMGR_ERR, "dbPath is empty");
-    OH_Rdb_ConfigV2 *rdbConfig_ = OH_Rdb_CreateConfig();
-    OH_Rdb_SetDatabaseDir(rdbConfig_, "/data/storage/el2/database");
-    OH_Rdb_SetArea(rdbConfig_, RDB_SECURITY_AREA_EL2);
-    OH_Rdb_SetStoreName(rdbConfig_, "Rdbfilemanager.db");
-    OH_Rdb_SetBundleName(rdbConfig_, "com.ohos.filemanager");
-    OH_Rdb_SetSecurityLevel(rdbConfig_,   OH_Rdb_SecurityLevel::S2);
+    rdbConfig_ = std::shared_ptr<OH_Rdb_ConfigV2>(OH_Rdb_CreateConfig(), [](OH_Rdb_ConfigV2 *config) {
+        if (config != nullptr) {
+            OH_Rdb_DestroyConfig(config);
+        }
+    });
+    OH_Rdb_SetDatabaseDir(rdbConfig_.get(), dbPathDir_.c_str());
+    OH_Rdb_SetArea(rdbConfig_.get(), RDB_SECURITY_AREA_EL2);
+    OH_Rdb_SetStoreName(rdbConfig_.get(), FileConsts::RDB_FILE_NAME.c_str() + 1);
+    OH_Rdb_SetBundleName(rdbConfig_.get(), "com.ohos.filemanager");
+    OH_Rdb_SetSecurityLevel(rdbConfig_.get(), OH_Rdb_SecurityLevel::S2);
     int32_t errCode = OH_Rdb_ErrCode::RDB_OK;
-    OH_Rdb_Store *rdbStore = OH_Rdb_CreateOrOpen(rdbConfig_, &errCode);
+    OH_Rdb_Store *rdbStore = OH_Rdb_CreateOrOpen(rdbConfig_.get(), &errCode);
     rdbStore_.reset(rdbStore);
     if (errCode != OH_Rdb_ErrCode::RDB_OK || rdbStore_ == nullptr) {
         HILOGE("Failed to create db store, errCode = %{public}d", errCode);
@@ -238,9 +242,9 @@ bool FileManagerRdbInstance::CheckBackUpConditions(const bool isExit)
 void FileManagerRdbInstance::CloseRdbStore()
 {
     HILOGI("CloseRdbStore enter");
-    OH_Rdb_DestroyConfig(rdbConfig_.get());
     OH_Rdb_CloseStore(rdbStore_.get());
     rdbStore_ = nullptr;
+    rdbConfig_.reset();
 }
 }  // namespace FileManager
 }  // namespace OHOS

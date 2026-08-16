@@ -29,6 +29,8 @@ export enum MenuItemName {
   SET_RINGTONE,
   // 设置为壁纸
   SET_WALLPAPER,
+  // 分享
+  SHARE,
   // 多选
   MULTIPLE_CHOICES,
   // 剪切 移动
@@ -43,6 +45,10 @@ export enum MenuItemName {
   DELETE,
   // 还原
   RESTORE,
+  // 压缩
+  COMPRESS,
+  // 解压
+  DECOMPRESS,
   // 删除访问记录
   CLEAR_RECENT_RECORD
 }

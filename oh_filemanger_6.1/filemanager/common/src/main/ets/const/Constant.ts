@@ -118,6 +118,8 @@ export class Constant {
     LPATH_SCREEN_RECORDING: '/Pictures/Screenrecords',
   };
   public static readonly HIDDEN_ITEM_FILTER: string = '[^.]*';
+  /** 压缩包内预览临时目录前缀（落在 Download 下，列表/计数永久排除） */
+  public static readonly ARCHIVE_PREVIEW_DIR_PREFIX: string = '.archive_preview_';
   public static readonly THREE_BUTTON_NAVIGATION_HEIGHT: number = 40;
   // 壳应用Common preference 文件路径
   public static readonly HM_FILES_COMMON_PREFERENCE_URL: string =
@@ -178,8 +180,7 @@ export class Constant {
   /**
    * 可以通过开放媒体能力拉起聚合视图的APP
    */
-  public static readonly OPEN_MEDIA_APP_NAME = {
-  }
+  public static readonly OPEN_MEDIA_APP_NAME = {}
   /**
    * 开放媒体能力拉起支持的传参
    */
@@ -225,6 +226,9 @@ export class Constant {
     PASTING: 'pasting',
     RENAME: 'rename',
     MORE: 'more',
+    SHARE: 'share',
+    COMPRESSION: 'compression',
+    DECOMPRESSION: 'decompression',
     ROTATE: 'rotate',
     DELETE: 'delete',
     OTHER_APP: 'otherApp',
@@ -306,6 +310,11 @@ export class Constant {
     STOP_COPY_CUT_TASK: 'stopCopyCutTask', // 终止复制移动
     START_DELETE_RESTORE_FILE_TASK: 'startDeleteRestoreTask', // 开始删除或还原文件的任务
     DELETE_RESTORE_FILE_TASK_END: 'deleteRestoreTaskEnd', // 删除或还原文件的任务结束
+    START_COMPRESS_FILE_TASK: 'startCompressFileTask', // 开始压缩任务
+    START_DECOMPRESS_FILE_TASK: 'startDecompressFileTask', // 开始解压任务
+    COMPRESS_TASK_START: 'compressTaskStart', // 压缩/解压任务已启动
+    COMPRESS_TASK_END: 'compressTaskEnd', // 压缩/解压任务结束
+    COMPRESS_TASK_ERROR: 'compressTaskError', // 压缩/解压任务失败
     REMOVE_DELETED_RESTORED_FILE_FROM_LIST: 'removeDeletedRestoredFileFromList', // 从列表中移除删除和还原成功的文件
     SHOW_UNABLE_OPEN_DELETED_FILE_DIALOG: 'unableOpenDeletedFileDialog', // 点击文件提示无法打开弹窗
     SHOW_RECENT_DELETED_FILE_DETAIL_DIALOG: 'recentDeleteFileDetailDialog', // 点击最近删除的文件打开详情弹窗
@@ -319,6 +328,7 @@ export class Constant {
     TAG_CHANGE: 'tagChange', // 标签自身属性改变
     FILE_CHANGE_OF_TAG: 'fileChangeOfTag', // 标签下的文件改变
     DIALOG_LOADED: 'dialog_loaded', // dialog进度
+    SHOW_RINGTONE_TYPE_MENU: 'showRingtoneTypeMenu', // 显示铃声菜单
     LONG_PRESS_RINGTONE: 'longPressRingtone', //长按设置铃声操作
     LONG_PRESS_WALLPAPER: 'longPressWallpaper', // 长按设置为壁纸
     LONG_PRESS_SHARE: 'longPressShare', // 长按分享操作
@@ -327,6 +337,8 @@ export class Constant {
     LONG_PRESS_DELETE: 'longPressDelete', // 长按删除操作
     LONG_PRESS_RENAME: 'longPressRname', // 长按重命名操作
     LONG_PRESS_RESTORE: 'longPressRestore', // 长按还原操作
+    LONG_PRESS_COMPRESS: 'longPressCompress', // 长按/更多菜单压缩操作
+    LONG_PRESS_DECOMPRESS: 'longPressDecompress', // 长按/更多菜单解压操作
     LONG_PRESS_CLEAR_RECENT_RECORD: 'longPressClearRecentRecord', // 删除最近访问记录
     FILE_RENAME: 'fileRename', // 重命名文件
     FILE_DELETE: 'fileDelete', // 删除文件
@@ -377,6 +389,8 @@ export class Constant {
     DUPLICATE_FILE_SCAN_STATE: 'duplicateFileScanState',
 
     STOP_EDITING: 'stopEditing', // 搜索框停止，键盘收起
+
+    COMPRESS_OR_DECOMPRESS_FAIL: 'compressOrDecompressFail', // 压缩解压失败
   };
   // 移动网络通知选项
   public static readonly NETWORK_OPTION = {
@@ -549,6 +563,8 @@ export class Constant {
    * 来源
    */
   public static readonly FROM_TYPE = {
+    COPY_CUT_PROGRESS_NOTIFICATION: 'copyCutProgressNotification',
+    COPY_CUT_COMPLETE_NOTIFICATION: 'copyCutCompleteNotification',
     COPY_CUT_NOTIFICATION: 'copyCutNotification',
     FROM_MEDIA_VIEW: 'mediaView',
     THIRD_APP: 'thirdApp',
@@ -667,7 +683,7 @@ export class Constant {
    * 需要监听回调的底部按钮点击类型(滑动多选）
    * */
   public static readonly BOTTOM_TYPE_LIST =
-    [Constant.OPERATION_TYPE.DELETE, Constant.OPERATION_TYPE.SELECT_ALL,
+    [Constant.OPERATION_TYPE.DELETE, Constant.OPERATION_TYPE.SELECT_ALL, Constant.OPERATION_TYPE.SHARE,
       Constant.OPERATION_TYPE.MOVE, Constant.OPERATION_TYPE.COPY];
   /*
    * 需要判断的widowStage的状态(滑动多选)
@@ -953,4 +969,16 @@ export class AccessibilityStorageKey {
 
   // 无障碍模式下，标题规避冗余播报, 判断有这个key的时候不发起主动播报
   public static readonly MULTIPLE_CHOICE_KEY = 'multiple_choice_key';
+}
+
+/**
+ * 铃声类型枚举
+ */
+export enum RingtoneType {
+  RINGTONE_TYPE_SIM_CARD_0 = 'ringtone_type_sim_card_0', // sim卡1铃声
+  RINGTONE_TYPE_SIM_CARD_1 = 'ringtone_type_sim_card_1', // sim卡2铃声
+  SYSTEM_TONE_TYPE_SIM_CARD_0 = 'system_tone_type_sim_card_0', // sim卡1短信提示音
+  SYSTEM_TONE_TYPE_SIM_CARD_1 = 'system_tone_type_sim_card_1', // sim卡2短信提示音
+  SYSTEM_TONE_TYPE_NOTIFICATION = 'system_tone_type_notification', // 通知提示音
+  TONE_CATEGORY_ALARM = 'tone_category_alarm', // 闹钟
 }

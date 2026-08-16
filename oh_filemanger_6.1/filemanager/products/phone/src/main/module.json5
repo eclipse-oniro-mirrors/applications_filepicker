@@ -40,7 +40,7 @@
         startWindowIcon: "$media:starting_window",
         startWindowBackground: "$color:startWindowColor",
         exported: true,
-        orientation: "auto_rotation_unspecified",
+        orientation: "follow_desktop",
         skills: [
           {
             entities: [
@@ -49,6 +49,17 @@
             actions: [
               "action.system.home"
             ]
+          },
+          {
+            "actions": ["ohos.want.action.viewData"],
+            "entities": ["entity.system.browsable"],
+            "uris": [
+              {
+                "scheme": "filemanager",
+                "host": "openDirectory"
+              }
+            ],
+            "domainVerify": true   // 开启域名校验
           }
         ]
       }
@@ -91,6 +102,9 @@
       }
     ],
     requestPermissions: [
+      {
+        "name": "ohos.permission.WRITE_RINGTONE"
+      },
       {
         "name": "ohos.permission.GET_WIFI_INFO"
       },

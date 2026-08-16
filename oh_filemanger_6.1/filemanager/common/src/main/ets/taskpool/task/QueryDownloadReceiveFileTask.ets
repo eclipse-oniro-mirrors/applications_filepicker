@@ -91,6 +91,9 @@ async function startTask(data: QueryFileParam, needMerge:boolean, bundleName: st
         taskpool.Task.sendData([], TaskStatus.CANCEL, data.queryId);
         return;
       }
+      if (FileUtil.isArchivePreviewTempName(relativePath)) {
+        continue;
+      }
       const fullUri = dirUri + encodeURIComponent(relativePath).replace(/%2F/g, '/');
       const fileInfo = FileInfo.fromFileUriByPhone(fullUri);
       FileInfo.getThumbnailType(fileInfo);

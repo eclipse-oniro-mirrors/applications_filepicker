@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { ArrayUtil, ThumbnailUtil, FileDefaultIconUtil, FileInfo, HiLog } from '@ohos/common';
+import { ArrayUtil, ThumbnailUtil, FileDefaultIconUtil, FileInfo, HiLog, StringUtil } from '@ohos/common';
 
 const TAG: string = 'FileIconStackComp';
 
@@ -27,6 +27,10 @@ export struct FileIconStackComp {
   @State secondImageSize: Resource = $r('app.float.common_size44');
   @State firstUseCachedImage: boolean = false;
   @State secondUseCachedImage: boolean = false;
+  @State firstThumbnailUri: string = '';
+  @State secondThumbnailUri: string = '';
+  @State firstThumbnailLoaded: boolean = false;
+  @State secondThumbnailLoaded: boolean = false;
 
   aboutToAppear() {
     this.initData();
@@ -47,6 +51,10 @@ export struct FileIconStackComp {
   }
 
   initData(): void {
+    this.firstThumbnailUri = '';
+    this.secondThumbnailUri = '';
+    this.firstThumbnailLoaded = false;
+    this.secondThumbnailLoaded = false;
     this.firstUseCachedImage = this.selectFilesList[0]?.useCacheImage ?? false;
     this.secondUseCachedImage = this.selectFilesList[1]?.useCacheImage ?? false;
     // 拉起路径选择器保存文件场景只展示默认图标
@@ -57,6 +65,40 @@ export struct FileIconStackComp {
       return;
     }
     this.initIconSize();
+    this.loadThumbnailsAsync();
+  }
+
+  async loadThumbnailsAsync(): Promise<void> {
+    if (this.selectFilesList[0]) {
+      try {
+        let uri = await ThumbnailUtil.getFileIconCompThumbnailUri(this.selectFilesList[0]);
+        HiLog.info(TAG, `loadThumbnailsAsync firstThumbnailUri = ${uri}`);
+        if (!StringUtil.isEmpty(uri)) {
+          this.firstThumbnailUri = uri;
+          this.firstThumbnailLoaded = true;
+        } else {
+          this.firstUseCachedImage = false;
+        }
+      } catch (error) {
+        HiLog.error(TAG, `loadThumbnailsAsync first error ${error}`);
+        this.firstUseCachedImage = false;
+      }
+    }
+    if (this.selectFilesList.length > 1 && this.selectFilesList[1]) {
+      try {
+        let uri = await ThumbnailUtil.getFileIconCompThumbnailUri(this.selectFilesList[1]);
+        HiLog.info(TAG, `loadThumbnailsAsync secondThumbnailUri = ${uri}`);
+        if (!StringUtil.isEmpty(uri)) {
+          this.secondThumbnailUri = uri;
+          this.secondThumbnailLoaded = true;
+        } else {
+          this.secondUseCachedImage = false;
+        }
+      } catch (error) {
+        HiLog.error(TAG, `loadThumbnailsAsync second error ${error}`);
+        this.secondUseCachedImage = false;
+      }
+    }
   }
 
   /**
@@ -85,8 +127,8 @@ export struct FileIconStackComp {
   build() {
     Stack() {
       if (this.selectFilesList.length > 1) {
-        if (this.secondUseCachedImage) {
-          MediaCachedImage(ThumbnailUtil.getFileIconCompThumbnailUri(this.selectFilesList[1]))
+        if (this.secondUseCachedImage && this.secondThumbnailLoaded && !StringUtil.isEmpty(this.secondThumbnailUri)) {
+          MediaCachedImage(this.secondThumbnailUri)
             .objectFit(ImageFit.Cover)
             .alt(this.getDefaultIcon(this.selectFilesList[1]))
             .interpolation(ImageInterpolation.High)
@@ -102,6 +144,7 @@ export struct FileIconStackComp {
               HiLog.errorPrivate(TAG, `MediaCachedImage fail, error: ${error?.message}`,
                 `uri:${this.selectFilesList[1]?.uri}`);
               this.secondUseCachedImage = false;
+              this.secondThumbnailLoaded = false;
             })
         } else {
           Image('')
@@ -121,8 +164,8 @@ export struct FileIconStackComp {
       }
 
       if (this.selectFilesList.length) {
-        if (this.firstUseCachedImage) {
-          MediaCachedImage(ThumbnailUtil.getFileIconCompThumbnailUri(this.selectFilesList[0]))
+        if (this.firstUseCachedImage && this.firstThumbnailLoaded && !StringUtil.isEmpty(this.firstThumbnailUri)) {
+          MediaCachedImage(this.firstThumbnailUri)
             .objectFit(ImageFit.Cover)
             .alt(this.getDefaultIcon(this.selectFilesList[0]))
             .interpolation(ImageInterpolation.High)
@@ -135,6 +178,7 @@ export struct FileIconStackComp {
               HiLog.errorPrivate(TAG, `MediaCachedImage fail, error: ${error?.message}`,
                 `uri:${this.selectFilesList[0]?.uri}`);
               this.firstUseCachedImage = false;
+              this.firstThumbnailLoaded = false;
             })
         } else {
           Image('')

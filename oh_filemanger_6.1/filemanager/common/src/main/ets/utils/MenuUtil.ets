@@ -23,6 +23,9 @@ import { MimeType } from '../model/MimeType';
 import { FileSourceType } from '../const/Constant';
 import { FileUtil } from '../fileoperate/FileUtil';
 import { DeviceConfig } from '../data/DeviceConfig';
+import { systemSoundManager } from '@kit.AudioKit';
+import { toast } from './Tools';
+import fs from '@ohos.file.fs'
 
 const TAG = 'MenuUtil';
 
@@ -35,15 +38,51 @@ export class MenuUtil {
    * @param fileInfo 文件信息
    * @param backCallback 回调函数
    */
-  public static setRingtone(fileInfo: FileInfo,
-    backCallback: () => void): void {
+  // public static setRingtone(fileInfo: FileInfo,
+  //   backCallback: () => void): void {
+  //   const context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+  //   // ringtone.startRingtoneSetting(context, fileInfo.relativePath, fileInfo.fileName, (err, data) => {
+  //   //   backCallback();
+  //   //   HiLog.info(TAG, 'setFlag : ' + JSON.stringify(data) + ' , ' +
+  //   //   JSON.stringify(err === undefined ? 'Set the ringtone successfully.' : 'Failed to set the ringhtone, ' + err));
+  //   //   UEUtil.reportSetRingtone(err === undefined, data);
+  //   // });
+  // }
+  public static setRingtone(fileInfo: FileInfo, backCallback: () => void): void {
+    HiLog.info(TAG, `setRingtone ${JSON.stringify(fileInfo)}`)
     const context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
-    // ringtone.startRingtoneSetting(context, fileInfo.relativePath, fileInfo.fileName, (err, data) => {
-    //   backCallback();
-    //   HiLog.info(TAG, 'setFlag : ' + JSON.stringify(data) + ' , ' +
-    //   JSON.stringify(err === undefined ? 'Set the ringtone successfully.' : 'Failed to set the ringhtone, ' + err));
-    //   UEUtil.reportSetRingtone(err === undefined, data);
-    // });
+    // const filePath = FileUtil.getPathFromUri(fileInfo.uri)
+    HiLog.info(TAG, `文件路径: ${fileInfo.uri}`)
+    const systemSoundManagerInstance: systemSoundManager.SystemSoundManager =
+      systemSoundManager.getSystemSoundManager();
+    const type: systemSoundManager.RingtoneType = systemSoundManager.RingtoneType.RINGTONE_TYPE_SIM_CARD_0
+    const toneAttrs = systemSoundManager.createCustomizedToneAttrs()
+    toneAttrs.setTitle(fileInfo.fileName)
+    toneAttrs.setFileName(fileInfo.fileName)
+    toneAttrs.setCategory(systemSoundManager.TONE_CATEGORY_RINGTONE)
+
+    const file = fs.openSync(fileInfo.uri, fs.OpenMode.READ_ONLY)
+    const fd = file.fd; // 获取文件描述符
+    HiLog.info(TAG, `文件描述符: ${fd}`)
+    try {
+      systemSoundManagerInstance.addCustomizedTone(context, toneAttrs, fd, 0).then((value: string) => {
+        HiLog.info(TAG, `Succeeded in doing addCustomizedTone. value=${value}`);
+        systemSoundManagerInstance.setRingtoneUri(context, value, type).then(() => {
+          HiLog.info(TAG, 'Succeeded in doing setRingtoneUri')
+          toast('铃声设置成功')
+          fs.closeSync(file)
+        }).catch((err: BusinessError) => {
+          HiLog.error(TAG, `Failed to setRingtoneUri. Code: ${err.code}, message: ${err.message}`);
+          fs.closeSync(file)
+        })
+      }).catch((err: BusinessError) => {
+        HiLog.error(TAG, `Failed to addCustomizedTone. Code: ${err.code}, message: ${err.message}`);
+        fs.closeSync(file)
+      })
+    } catch (error) {
+      HiLog.error(TAG, `setRingtone error ${JSON.stringify(error)}`)
+      fs.closeSync(file)
+    }
   }
 
   /**

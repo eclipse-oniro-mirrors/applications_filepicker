@@ -748,6 +748,13 @@
       "attr": {
         "priority": "LT"
       }
+    },
+    {
+      "name": "set_up",
+      "value": "\tالإعدادات",
+      "attr": {
+        "priority": "LT"
+      }
     }
   ]
 }
