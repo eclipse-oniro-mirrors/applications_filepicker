@@ -156,7 +156,7 @@ import { FileListViewLayout } from '@ohos/fileView/src/main/ets/default/viewMode
 import lazy { LoadingDialog } from '@ohos/common/indexLazyLoad';
 import { ShieldUri } from '@ohos/common/src/main/ets/const/FolderRecord';
 import { MenuActionHandler } from '../../../base/manager/MenuActionHandler';
-import { RingtoneTypeMenu } from '@ohos/fileview'
+import { RingtoneTypeMenu } from '@ohos/fileView'
 import { SideBarItem, SideBarItemModel } from '@ohos/sideBar';
 import lazy { PhotoAccessUtil } from '@ohos/common/indexLazyLoad';
 import { displaySync } from '@kit.ArkGraphics2D';
@@ -3984,6 +3984,10 @@ export struct MyPhone {
     return Constant.FROM_TYPE.MY_PHONE;
   }
 
+  private resetFolderOperateType(): void {
+    this.folderOperateType = FolderOperationType.NONE;
+  }
+
   queryStateEndHandle(): void {
     if (this.isPersistPermission && this.isQueryStateEnd) {
       HiLog.info(TAG, 'isPersistPermission, isQueryStateEnd');
@@ -3993,8 +3997,6 @@ export struct MyPhone {
       this.setShowLoading(false);
     }
   }
-
-  private getFromPage(): string {
 }
 
 /**

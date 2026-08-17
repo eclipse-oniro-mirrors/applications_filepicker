@@ -133,5 +133,17 @@
         }
       ]
     },
+    {
+      "name": "compress",
+      "srcPath": "./features/compress",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "phone"
+          ]
+        }
+      ]
+    },
   ],
 }

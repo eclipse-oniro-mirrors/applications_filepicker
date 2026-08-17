@@ -10,8 +10,14 @@ import { AddressData } from '../model/address/AddressData';
 import FileMimeTypeUtil from './FileMimeTypeUtil';
 import { GlobalHolder } from '../global/GlobalHolder';
 import { compress } from '../workermanager/filecompressmanager/FileCompressSdk';
+import { StandardErrCode } from '../workermanager/filecompressmanager/CompressStandardErrCode';
+import fs from '@ohos.file.fs';
+import { FileOperation } from '../fileoperate/FileOperation';
+import { VirtualUri } from '../const/FolderRecord';
+import { Constant } from '../const/Constant';
+import { EventBus } from './EventBus';
 // TODO: oh7zip 上库后恢复 import { DeCompressProp, GetArchiveInfoProp } from '@ohos/oh7zip';
-// import type { ArchiveFileInfo, CallbackArchiveInfo, CallbackCompress } from '@ohos/oh7zip';
+// TODO: oh7zip 上库后恢复 import type { ArchiveFileInfo, CallbackArchiveInfo, CallbackCompress } from '@ohos/oh7zip';
 
 class DeCompressProp {
   public inFile: string = '';
@@ -26,32 +32,30 @@ class GetArchiveInfoProp {
   public password?: string = undefined;
 }
 
-type ArchiveFileInfo = {
-  innerFile: string;
-  beforeSize: number;
-  afterSize: number;
-  isDir: boolean;
-  isEncrypted: boolean;
-  modifyTime: number;
-  fileHash: string;
-};
+class ArchiveFileInfo {
+  public innerFile: string = '';
+  public beforeSize: number = 0;
+  public afterSize: number = 0;
+  public isDir: boolean = false;
+  public isEncrypted: boolean = false;
+  public modifyTime: number = 0;
+  public fileHash: string = '';
+}
 
-type CallbackArchiveInfo = {
-  code: number;
-  files: ArchiveFileInfo[];
-  beforeSize: number;
-  afterSize: number;
-  filesNum: number;
-  foldersNum: number;
-};
+class CallbackArchiveInfo {
+  public code: number = 0;
+  public files: ArchiveFileInfo[] = [];
+  public beforeSize: number = 0;
+  public afterSize: number = 0;
+  public filesNum: number = 0;
+  public foldersNum: number = 0;
+}
 
-type CallbackCompress = { code: number; progress: number; file: string };
-import { StandardErrCode } from '../workermanager/filecompressmanager/CompressStandardErrCode';
-import fs from '@ohos.file.fs';
-import { FileOperation } from '../fileoperate/FileOperation';
-import { VirtualUri } from '../const/FolderRecord';
-import { Constant } from '../const/Constant';
-import { EventBus } from './EventBus';
+class CallbackCompress {
+  public code: number = 0;
+  public progress: number = 0;
+  public file: string = '';
+}
 
 const TAG = 'ArchivePreviewUtil';
 /** 压缩包后缀后跟包内路径时，视为虚拟 URI */

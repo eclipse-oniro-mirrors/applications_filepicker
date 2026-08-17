@@ -22,8 +22,14 @@ import type { ThreadWorkerGlobalScope } from '@ohos.worker';
 import WorkerConst from '../../worker/WorkerConst';
 import { FileInfo } from '../../fileoperate/FileInfo';
 import lazy { compress } from '../../workermanager/filecompressmanager/FileCompressSdk';
+import { StandardErrCode } from '../../workermanager/filecompressmanager/CompressStandardErrCode';
+import { FileUtil } from '../../fileoperate/FileUtil';
+import { ExternalStorageUtil } from '../../externel/ExternalStorageUtil';
+import fs from '@ohos.file.fs';
+import { FsUtil } from '../../utils/FsUtil';
+import { ThreadCommonUtil } from './ThreadCommonUtil';
 // TODO: oh7zip 上库后恢复 import { CompressProp, DeCompressProp } from '@ohos/oh7zip';
-// import type { CallbackCompress } from '@ohos/oh7zip';
+// TODO: oh7zip 上库后恢复 import type { CallbackCompress } from '@ohos/oh7zip';
 
 class CompressProp {
   inFiles: string[] = [];
@@ -46,13 +52,11 @@ class DeCompressProp {
   outName?: string = undefined;
 }
 
-type CallbackCompress = { code: number; progress: number; file: string };
-import { StandardErrCode } from '../../workermanager/filecompressmanager/CompressStandardErrCode';
-import { FileUtil } from '../../fileoperate/FileUtil';
-import { ExternalStorageUtil } from '../../externel/ExternalStorageUtil';
-import fs from '@ohos.file.fs';
-import { FsUtil } from '../../utils/FsUtil';
-import { ThreadCommonUtil } from './ThreadCommonUtil';
+class CallbackCompress {
+  public code: number = 0;
+  public progress: number = 0;
+  public file: string = '';
+}
 
 const COMPLETE_PROGRESS = 100;
 const MAX_FULL_PATH_LEN: number = 4095; // 全路径超出该值均无法在操作系统中成功创建对应路径

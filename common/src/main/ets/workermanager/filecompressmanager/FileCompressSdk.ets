@@ -9,23 +9,31 @@
 const ERR_COMPRESS_FAILED = 1014001020;
 const ERR_DECOMPRESS_FAILED = 1014001021;
 
-export const compress = {
-  compression: (_taskKey: string, _prop: object, callback: Function): void => {
+class CompressionKit {
+  compression(_taskKey: string, _prop: object, callback: Function): void {
     callback({ code: ERR_COMPRESS_FAILED, progress: 0, file: '' });
-  },
-  deCompression: (_taskKey: string, _prop: object, callback: Function): void => {
+  }
+  deCompression(_taskKey: string, _prop: object, callback: Function): void {
     callback({ code: ERR_DECOMPRESS_FAILED, progress: 0, file: '' });
-  },
-  cancel: (_taskKey: string): number => 0,
-  getArchiveInfo: (_taskKey: string, _prop: object, callback: Function): void => {
+  }
+  cancel(_taskKey: string): number {
+    return 0;
+  }
+  getArchiveInfo(_taskKey: string, _prop: object, callback: Function): void {
     callback({ code: ERR_DECOMPRESS_FAILED, files: [], beforeSize: 0, afterSize: 0, filesNum: 0, foldersNum: 0 });
-  },
-  partDeCompress: (_taskKey: string, _prop: object, callback: Function): void => {
+  }
+  partDeCompress(_taskKey: string, _prop: object, callback: Function): void {
     callback({ code: ERR_DECOMPRESS_FAILED, progress: 0, file: '' });
-  },
-  addCompress: (_taskKey: string, _prop: object, callback: Function): void => {
+  }
+  addCompress(_taskKey: string, _prop: object, callback: Function): void {
     callback({ code: ERR_COMPRESS_FAILED, progress: 0, file: '' });
-  },
-  isCompressEncryptedSync: (_inFile: string): boolean => false,
-  isCompressEncrypted: (_inFile: string): Promise<boolean> => Promise.resolve(false),
-};
+  }
+  isCompressEncryptedSync(_inFile: string): boolean {
+    return false;
+  }
+  isCompressEncrypted(_inFile: string): Promise<boolean> {
+    return Promise.resolve(false);
+  }
+}
+
+export const compress = new CompressionKit();
