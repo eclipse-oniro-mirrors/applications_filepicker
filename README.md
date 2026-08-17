@@ -1,100 +1,118 @@
-# FilePicker
+# FileManager
 
-## 简介
+## Description
 
-FilePicker应用是OpenHarmony中预置的系统应用，为用户提供文件选择及保存功能
+FileManager is a pre-installed system application in the OpenHarmony standard system.
+It provides users with basic file management functionalities, including viewing files,
+searching for files, using keyboard shortcuts, configuring file management settings,
+and organizing files.
 
-### 架构图
+### Core Features
 
-![](figures/FP_FMS.png)
+1. **Storage Location Management**: Supports browsing and managing multiple storage locations, including My Phone (
+   internal storage), external storage cards (USB drives, SD cards), Favorites folder, and Recently Deleted (Recycle
+   Bin). Also supports File Manager Gallery for quickly browsing images and video files.
 
-## 目录
+2. **File Picker**: Provides a file picker supporting single/multiple file selection. Also provides a path picker that
+   allows custom save paths to save files to a specified directory.
+
+3. **Viewing and Browsing**: Supports two display modes: grid view and list view, which can be freely switched; supports
+   file sorting (by name, type, time, size); a live window displays file operation progress in real time; supports
+   viewing file details (name, path, size, modification time, etc.).
+
+4. **Image/Video Thumbnails**: Supports thumbnail display for image and video files in list/grid views; thumbnails are
+   loaded asynchronously and cached to reduce repeated decoding overhead and improve browsing smoothness in large
+   directories.
+
+5. **Compress/Decompress**: Supports compressing one or more files/folders; supports extracting archives to a specified
+   directory; supports browsing inside archives and previewing/opening archive entries with third-party apps.
+
+6. **File Organization Operations**: Provides comprehensive file management operation capabilities: supports
+   multi-selection, open, open with other apps, create new directory, rename, copy, paste, delete (move to Recently
+   Deleted), permanently delete, restore (restore from Recently Deleted), move, favorite/unfavorite. Supports printing
+   files, setting images as wallpapers, and setting audio files as ringtones. Supports emptying the Recycle Bin.
+
+7. **Supplementary Features**: Supports file search within the current directory. Supports keyboard shortcut
+   operations (copy/paste). Supports general settings to show hidden files (display files and folders starting
+   with '.').
+
+#### Software Architecture
+
+![FileManager Architecture](./figures/01-filemanager-layered-architecture-en.png)
+![FileManager Subsystem](./figures/02-filemanager-build-deploy-en.png)
+![FileManager Deploy](./figures/03-filemanager-build-deploy-en.png)
+
+##### Directory Layout
 
 ```
-/applications/standard/filepicker
-├── figures                     # 架构图目录
-├── product                     # 产品层模块目录
-│   └── pad                     # pad模式模块目录
-|       └── src
-|           ├── main
-|               ├── ets
-│                   ├── MainAbility              # MainAbility代码目录
-|                       ├── module               # 公共文件目录
-|                       ├── pages                # 业务特性的View层目录
-|                       ├── workers              # worker对于的js文件目录
-│                   └── AbilityStage.ts
-|               ├── resources   # 资源目录
-|               └── config.json # 项目配置信息
-│   └── phone                   # phone模式模块目录
-|       └── src
-|           ├── main
-|               ├── ets
-│                   ├── MainAbility              # MainAbility代码目录
-|                       ├── module               # 公共文件目录
-|                       ├── pages                # 业务特性的View层目录
-|                       ├── workers              # worker对于的js文件目录
-│                   └── AbilityStage.ts
-|               ├── resources   # 资源目录
-|               └── config.json # 项目配置信息
-├── signature                   # 证书文件目录
-├── LICENSE                     # 许可文件
+filemanager
+├─ AppScope                              # Application-level config (app.json5, app resources)
+├─ products                              # Product project (application entry)
+│  └─ phone 
+│     └─ src
+│        ├─ main
+│        │  ├─ ets
+│        │  │  ├─ abilities              # UIAbility
+│        │  │  │  ├─ filemanager         # Main file manager ability
+│        │  │  │  ├─ filepicker          # File picker UIExtAbility
+│           │  │  │  ├─ ServiceExtAbility   # Background service ability
+│        │  │  │  ├─ UIExtAbility.ets
+│        │  │  │  └─ OpenMediaUIExtAbility.ets
+│        │  │  ├─ application            # AbilityStage
+│        │  │  ├─ base
+│        │  │  │  ├─ const / constants   # Constants
+│        │  │  │  ├─ extension           # Extension models
+│        │  │  │  ├─ manager             # Business managers (CopyCutManager / MenuActionHandler / ThumbnailCacheManager, etc.)
+│        │  │  │  ├─ notification        # System notification wrappers (CopyCutNotificationUtil / NotificationUtil)
+│        │  │  │  ├─ report              # Telemetry / reporting
+│        │  │  │  └─ utils               # Utilities (including ThumbnailUtil, etc.)
+│        │  │  ├─ databases              # Database models
+│        │  │  ├─ pages                  # Pages (MainEntry / Settings / PathPicker / picker / preview / browser, etc.)
+│        │  │  └─ taskpool               # TaskPool task wrappers
+│        │  └─ resources                 # Strings, icons, media and other resources
+│        └─ ohosTest                     # OpenHarmony unit / UI tests
+├─ common                                # Shared HAR (HmCommon)
+│  └─ src/main/ets
+│     ├─ animation                       # Animation
+│     ├─ config                          # Global configuration
+│     ├─ const / constants               # Shared constants
+│     ├─ data                            # Data models
+│     ├─ database                        # Database primitives
+│     ├─ dfx                             # Logging / telemetry (HiLog, etc.)
+│     ├─ dragfile                        # Drag & drop
+│     ├─ error                           # Error codes
+│     ├─ favorite                        # Favorites
+│     ├─ filecompress                    # Compress/decompress business entry (FileCompressBusiness, etc.)
+│     ├─ fileoperate                     # File operations (CRUD / move / copy)
+│     ├─ filesort                        # Sorting
+│     ├─ gallery / media                 # Multimedia
+│     ├─ global                          # Global objects such as GlobalHolder
+│     ├─ menu / model                    # Menu / shared models
+│     ├─ pasteboard                      # Pasteboard
+│     ├─ preference                      # Persistence
+│     ├─ security                        # Encryption
+│     ├─ share                           # Sharing
+│     ├─ taskpool                        # Task pool
+│     ├─ utils                           # Utilities (including ArchivePreviewUtil for in-archive preview, thumbnail helpers, etc.)
+│     └─ worker / workermanager / workeroperate / workers
+│           # Worker thread infrastructure
+│           # - copycutmanager: copy / cut
+│           # - deleterestoremanager: delete / restore
+│           # - filecompressmanager: compress/decompress task scheduling and SDK wrapper (oh7zip)
+├─ features                              # Business feature HARs
+│  ├─ addressBar                         # Address bar
+│  ├─ bottomBar                          # Bottom action bar
+│  ├─ compress                           # Compress/decompress UI (progress dialog, password dialog, etc.)
+│  ├─ customDialog                       # Custom dialogs (copy/move progress, confirmation, errors, etc.)
+│  ├─ fileView                           # File list / grid view (including thumbnail display)
+│  ├─ sideBar                            # Side bar
+│  └─ titleBar                           # Title bar
+├─ open_source                           # Open-source notice
+├─ sign / signature                      # Signing certificates and provisioning profiles
+├─ build-profile.json5                   # Build & signing configuration
+├─ oh-package.json5                      # Project-level dependencies
+├─ LICENSE
+└─ README.md / README_zh.md
+
+
 ```
-
-## 签名
-1. 针对product下的每一个模块，配置build.gradle中的signingConfig。
-2. 将signature目录下的sign_files.rar解压后放在build.gradle目录中配置的相应路径即可完成默认签名配置。
-3. 把signature目录下的sig_hap.rar解压到任意目录。
-
-## 编译运行
-1. 签名配置完成后通过IDE Build -> Make All Modules即可编译出每个模块对应的hap包。
-2. 将编译生成的签名后的hap包 如phone模块的phone-entry-debug-standard-ark-signed.hap放到sig_hap.rar解压的目录。
-3. 修改sign-filepicker-phone.bat中的-inputFile、-outputFile并运行sign-filepicker-phone.bat即可生成可安装的hap包。
-
-## 使用方法
-
-通过startAbilityForResult拉起FilePicker并获取FilePicker返回的数据，示例代码如下
-
-```js
-// 拉起FilePicker选择文件
-globalThis.context.startAbilityForResult(
-    {
-        bundleName: "com.ohos.filepicker",
-        abilityName: "com.ohos.filepicker.MainAbility",
-        parameters: {
-            'startMode': 'choose', //choose or save    
-        }
-    },
-    { windowMode: 102 }
-)
-
-// 拉起FilePicker保存文件
-globalThis.context.startAbilityForResult(
-    {
-        bundleName: "com.ohos.filepicker",
-        abilityName: "com.ohos.filepicker.MainAbility",
-        parameters: {
-            'startMode': 'save', //choose or save
-            'saveFile': 'test.jpg',
-        }
-    },
-    { windowMode: 102 }
-)
-
-// file picker返回给startAbilityForResult的数据
-var abilityResult = {
-    resultCode: resultCode,
-    want: {
-        parameters: {
-            'startMode': startMode,
-            'result': result
-        }
-    }
-}
-globalThis.context.terminateSelfWithResult(abilityResult)
-```
-
-## 相关仓
-
-系统应用
-
-**applications_filepicker**
