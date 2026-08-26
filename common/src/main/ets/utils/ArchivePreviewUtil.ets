@@ -397,12 +397,16 @@ export class ArchivePreviewUtil {
   }
 
   private static ensureNoMediaFile(outDir: string): void {
+    let file: fs.File | undefined = undefined;
     try {
       const nomediaPath = `${outDir}/${Constant.NO_MEDIA}`;
-      const file = fs.openSync(nomediaPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-      fs.closeSync(file);
+      file = fs.openSync(nomediaPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     } catch (e) {
       HiLog.warn(TAG, `create .nomedia fail: ${JSON.stringify(e)}`);
+    } finally {
+      if (file) {
+        fs.closeSync(file);
+      }
     }
   }
 

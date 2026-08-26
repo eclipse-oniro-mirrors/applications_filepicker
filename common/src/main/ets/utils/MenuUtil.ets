@@ -50,27 +50,28 @@ export class MenuUtil {
     toneAttrs.setFileName(fileInfo.fileName)
     toneAttrs.setCategory(systemSoundManager.TONE_CATEGORY_RINGTONE)
 
-    const file = fs.openSync(fileInfo.uri, fs.OpenMode.READ_ONLY)
-    const fd = file.fd; // 获取文件描述符
-    HiLog.info(TAG, `文件描述符: ${fd}`)
+    let file: fs.File | undefined = undefined;
     try {
+      file = fs.openSync(fileInfo.uri, fs.OpenMode.READ_ONLY)
+      const fd = file.fd;
+      HiLog.info(TAG, `文件描述符: ${fd}`)
       systemSoundManagerInstance.addCustomizedTone(context, toneAttrs, fd, 0).then((value: string) => {
         HiLog.info(TAG, `Succeeded in doing addCustomizedTone. value=${value}`);
         systemSoundManagerInstance.setRingtoneUri(context, value, type).then(() => {
           HiLog.info(TAG, 'Succeeded in doing setRingtoneUri')
           toast('铃声设置成功')
-          fs.closeSync(file)
         }).catch((err: BusinessError) => {
           HiLog.error(TAG, `Failed to setRingtoneUri. Code: ${err.code}, message: ${err.message}`);
-          fs.closeSync(file)
         })
       }).catch((err: BusinessError) => {
         HiLog.error(TAG, `Failed to addCustomizedTone. Code: ${err.code}, message: ${err.message}`);
-        fs.closeSync(file)
       })
     } catch (error) {
       HiLog.error(TAG, `setRingtone error ${JSON.stringify(error)}`)
-      fs.closeSync(file)
+    } finally {
+      if (file) {
+        fs.closeSync(file)
+      }
     }
   }
 
