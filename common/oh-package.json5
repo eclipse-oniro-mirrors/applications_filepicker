@@ -1,0 +1,15 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "index.ets",
+  "author": "HmFileManager",
+  "license": "Apache-2.0",
+  "dependencies": {
+    // TODO: oh7zip 上库后恢复 "@ohos/oh7zip": "file:",
+    "libSecurity.so": "file:./src/main/cpp/types/libSecurity",
+    "libTrash.so": "file:./src/main/cpp/types/libTrash",
+  },
+  "overrides": {
+  }
+}

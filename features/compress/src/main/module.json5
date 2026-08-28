@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "compress",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}
